@@ -184,8 +184,25 @@ Folder: `C:\Users\User\OneDrive\Desktop\Academy Design`
      row** of flames; glows in the lesson's category accent; confetti (reduced-motion
      aware). Adaptive: two-column when a badge is earned, single centred column otherwise.
    - ✅ all of step 5 done — see the per-screen entries above. ← NEXT is step 6 (polish).
-6. Polish: transitions ("zoom into island"), reduced-motion, responsive/portrait, perf.
-   (Overworld + trail mobile/portrait still desktop-first; orb clean-plate swap-in pending.)
+6. Polish — **IN PROGRESS (2026-05-31):**
+   - ✅ **Zoom-into-island transition** — clicking a live hub island blooms its accent
+     out from its position to a white-out (`SubjectsHub` dive overlay + click intercept),
+     then navigates; `CategoryOverworld` fades a matching accent veil out on arrival.
+     Reduced-motion → instant Link nav.
+   - ✅ **Reduced-motion audit** — journey chrome verified; fixed the StatBar XP-bar
+     (now `transition:{duration:0}` under reduce). (Scope = navigational/atmospheric layer,
+     not the 70 educational sims — those animate on purpose.)
+   - ✅ **Responsive** — lesson **trail** now has a real narrow mode (<680px → single
+     centred column, labels below nodes). Overworld + badges get a `min-width` horizontal-
+     pan wrapper so fixed-position orbs/coins never overlap on phones. Lesson player /
+     complete / HUD already stack via Tailwind. (Bespoke portrait layouts for overworld/
+     badges still TBD — pan is the safe interim.)
+   - ✅ **Perf (safe wins)** — `decoding="async"` on island/orb/badge imgs + `loading="lazy"`
+     on orbs/badge coins.
+   - ← **Follow-up (needs an image tool + in-browser check):** convert the 4 heavy
+     coming-soon island PNGs (biology/CS/chemistry/math, ~4.7 MB; physics is only 260 KB)
+     to **webp/avif** and serve via `<picture>` (png fallback). No `magick`/`cwebp` on the
+     box; `npx sharp-cli` would add a native dep — left for the owner to run + verify.
 
 ## 9. Decisions log
 - 2026-05-31 — Direction: **Cosmic Glass system** + islands(subjects)/path(categories) hybrid,

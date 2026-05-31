@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import { Link } from '@tanstack/react-router'
+import { useEffect, useRef, useState } from 'react'
+import { Link, useNavigate } from '@tanstack/react-router'
 import { motion, useReducedMotion } from 'motion/react'
 import { Icon } from '#/components/ui/Icon'
 import { CosmosCanvas } from '#/components/hub/CosmosCanvas'
@@ -63,6 +63,7 @@ const TIER_PARALLAX: Record<Tier, number> = { far: 10, mid: 22, near: 38 }
 
 export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
   const reduce = useReducedMotion()
+  const navigate = useNavigate()
   const wrapRef = useRef<HTMLDivElement>(null)
   const mouseRef = useRef({ x: 0, y: 0 })
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -70,6 +71,19 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
     far: useRef<HTMLDivElement>(null),
     mid: useRef<HTMLDivElement>(null),
     near: useRef<HTMLDivElement>(null),
+  }
+
+  // "Dive into the island" transition: clicking a live island blooms its accent
+  // out from its position to a white-out, then navigates to the category world.
+  const [dive, setDive] = useState<{
+    slug: string
+    accent: string
+    x: number
+    y: number
+  } | null>(null)
+  const startDive = (cfg: IslandCfg) => {
+    if (dive) return
+    setDive({ slug: cfg.slug, accent: cfg.accent, x: cfg.x, y: cfg.y })
   }
 
   const bySlug = new Map(subjects.map((s) => [s.slug, s]))
@@ -269,11 +283,41 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
                 subject={subject}
                 reduce={Boolean(reduce)}
                 index={i}
+                onDive={reduce ? undefined : () => startDive(cfg)}
               />
             )
           })}
         </div>
       ))}
+
+      {/* dive transition — accent bloom expands from the island, whites out,
+          then navigates into the category world */}
+      {dive && (
+        <div className="pointer-events-none fixed inset-0 z-50">
+          <div className="absolute" style={{ left: `${dive.x}%`, top: `${dive.y}%` }}>
+            <motion.div
+              className="rounded-full"
+              style={{
+                width: '42vmax',
+                height: '42vmax',
+                x: '-50%',
+                y: '-50%',
+                background: `radial-gradient(circle, #ffffff 0%, ${dive.accent} 36%, ${dive.accent}00 70%)`,
+                mixBlendMode: 'screen',
+              }}
+              initial={{ scale: 0.06, opacity: 0.65 }}
+              animate={{ scale: 7, opacity: 1 }}
+              transition={{ duration: 0.5, ease: [0.42, 0, 1, 1] }}
+              onAnimationComplete={() =>
+                navigate({
+                  to: '/subjects/$subjectSlug',
+                  params: { subjectSlug: dive.slug },
+                })
+              }
+            />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -283,11 +327,13 @@ function Island({
   subject,
   reduce,
   index,
+  onDive,
 }: {
   cfg: IslandCfg
   subject: HubSubject
   reduce: boolean
   index: number
+  onDive?: () => void
 }) {
   const live = subject.isPublished
   const widthPct = cfg.scale * 19
@@ -348,6 +394,7 @@ function Island({
             src={`/islands/${cfg.slug}.png?v=3`}
             alt=""
             draggable={false}
+            decoding="async"
             className={cn(
               'relative block w-full select-none',
               !live && 'opacity-80 grayscale-[0.4]',
@@ -464,6 +511,14 @@ function Island({
         params={{ subjectSlug: subject.slug }}
         className={cn(cls, 'cursor-pointer')}
         style={style}
+        onClick={(e) => {
+          // Play the dive transition, then navigate ourselves. Modified clicks
+          // (new tab) and reduced-motion (no onDive) keep the plain Link nav.
+          if (onDive && !e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0) {
+            e.preventDefault()
+            onDive()
+          }
+        }}
       >
         {inner}
       </Link>

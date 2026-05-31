@@ -119,10 +119,16 @@ export function BadgeConstellation({
   }, [])
 
   return (
+    // Narrow screens: keep a usable min width and pan horizontally rather than
+    // letting the fixed-position coins overlap (portrait redesign TBD).
     <div
-      className="relative w-full overflow-hidden"
+      className="w-full overflow-x-auto overflow-y-hidden"
       style={{ height: 'calc(100vh - 52px)', minHeight: 640, background: '#070a16' }}
     >
+      <div
+        className="relative h-full w-full overflow-hidden"
+        style={{ minWidth: 900, background: '#070a16' }}
+      >
       {/* layer 1 — animated nebula tinted by badge accents */}
       <CosmosCanvas mouseRef={mouseRef} reduce={Boolean(reduce)} islands={islands} />
       <div
@@ -200,6 +206,7 @@ export function BadgeConstellation({
           </div>
         </div>
       ))}
+      </div>
     </div>
   )
 }
@@ -228,6 +235,8 @@ function ConstellationBadge({
       src={img}
       alt=""
       draggable={false}
+      loading="lazy"
+      decoding="async"
       className="h-full w-full select-none"
       style={{
         filter: earned

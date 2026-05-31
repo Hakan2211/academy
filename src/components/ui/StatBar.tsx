@@ -1,5 +1,5 @@
 import { Link, useRouterState } from '@tanstack/react-router'
-import { motion } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 import { convexQuery } from '@convex-dev/react-query'
 import { useQuery } from '@tanstack/react-query'
 import { api } from '../../../convex/_generated/api'
@@ -22,6 +22,7 @@ function Divider() {
 // (calc(100vh - 52px)) stay aligned. New/unknown devices fall back to Lv.1.
 export function StatBar() {
   const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const reduce = useReducedMotion()
   const deviceId = useDeviceId()
   const statsQ = useQuery({
     ...convexQuery(api.progress.getUserStats, { deviceId: deviceId ?? '' }),
@@ -83,7 +84,7 @@ export function StatBar() {
                 style={{ boxShadow: '0 0 10px rgba(79,140,255,0.9)' }}
                 initial={false}
                 animate={{ width: `${pct}%` }}
-                transition={{ duration: 0.6, ease: 'easeOut' }}
+                transition={reduce ? { duration: 0 } : { duration: 0.6, ease: 'easeOut' }}
               />
             </div>
             <span className="hidden shrink-0 text-xs text-muted sm:inline">

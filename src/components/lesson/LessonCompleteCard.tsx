@@ -280,6 +280,7 @@ function BadgeReward({ badgeKey, reduce }: { badgeKey: string; reduce: boolean }
             src={img}
             alt=""
             draggable={false}
+            decoding="async"
             className="relative h-28 w-28 select-none"
             style={{
               filter: `drop-shadow(0 0 16px ${meta.color}) drop-shadow(0 8px 16px rgba(0,0,0,0.5))`,

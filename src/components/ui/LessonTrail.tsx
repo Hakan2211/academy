@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from '@tanstack/react-router'
 import { useReducedMotion } from 'motion/react'
 import { CosmosCanvas } from '#/components/hub/CosmosCanvas'
@@ -115,26 +115,39 @@ export function LessonTrail({
 
   const n = lessons.length
 
-  // Layout: alternate left/right of centre; deep-dive capstones go centred with
-  // extra breathing room. y grows downward (the trail scrolls).
+  // Narrow / portrait screens (< ~680px): the side-label layout gets unusably
+  // tight, so stack the trail into a single centred column with labels BELOW
+  // each node. Initial false = SSR/wide; the effect adjusts on the client.
+  const [narrow, setNarrow] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 680px)')
+    const apply = () => setNarrow(mq.matches)
+    apply()
+    mq.addEventListener('change', apply)
+    return () => mq.removeEventListener('change', apply)
+  }, [])
+  const rowH = narrow ? 200 : ROW
+
+  // Layout: wide = alternate left/right of centre (deep-dives centred); narrow =
+  // a straight centred column. y grows downward (the trail scrolls).
   const layout = useMemo<Array<Pt>>(() => {
     const out: Array<Pt> = []
-    let y = HEADER_H + ROW / 2
+    let y = HEADER_H + rowH / 2
     lessons.forEach((l, i) => {
       const cap = l.format === 'deepdive'
       if (cap && i > 0) y += CAP_PAD
       out.push({
-        x: cap ? CENTER_X : i % 2 === 0 ? LEFT_X : RIGHT_X,
+        x: narrow ? CENTER_X : cap ? CENTER_X : i % 2 === 0 ? LEFT_X : RIGHT_X,
         y,
         cap,
       })
-      y += ROW + (cap ? CAP_PAD : 0)
+      y += rowH + (cap ? CAP_PAD : 0)
     })
     return out
-  }, [lessons])
+  }, [lessons, narrow, rowH])
 
   const contentH =
-    (layout.length ? layout[layout.length - 1].y : HEADER_H) + ROW / 2 + BOTTOM
+    (layout.length ? layout[layout.length - 1].y : HEADER_H) + rowH / 2 + BOTTOM
 
   // How far the lit "completed" trail reaches: up to the current lesson, else
   // the last completed one (whole category finished).
@@ -446,25 +459,36 @@ export function LessonTrail({
                 </div>
               </div>
 
-              {/* glass label on the outward side, clear of the curve */}
+              {/* glass label — outward side (wide) or centred below (narrow) */}
               <div
                 className="absolute z-[15] flex flex-col"
-                style={{
-                  top: p.y,
-                  transform: 'translateY(-50%)',
-                  width: cap
-                    ? 'calc(50% - 96px)'
-                    : `calc(${LEFT_X}% - 78px)`,
-                  ...(left || cap
-                    ? { left: 16, alignItems: 'flex-end', textAlign: 'right' }
-                    : { right: 16, alignItems: 'flex-start', textAlign: 'left' }),
-                }}
+                style={
+                  narrow
+                    ? {
+                        top: p.y + (cap ? 82 : 58),
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: 'min(86vw, 380px)',
+                        alignItems: 'center',
+                        textAlign: 'center',
+                      }
+                    : {
+                        top: p.y,
+                        transform: 'translateY(-50%)',
+                        width: cap
+                          ? 'calc(50% - 96px)'
+                          : `calc(${LEFT_X}% - 78px)`,
+                        ...(left || cap
+                          ? { left: 16, alignItems: 'flex-end', textAlign: 'right' }
+                          : { right: 16, alignItems: 'flex-start', textAlign: 'left' }),
+                      }
+                }
               >
                 <TrailLabel
                   data={l}
                   accent={accent}
                   order={i + 1}
-                  side={left || cap ? 'left' : 'right'}
+                  side={narrow ? 'center' : left || cap ? 'left' : 'right'}
                 />
               </div>
             </div>
@@ -484,7 +508,7 @@ function TrailLabel({
   data: LessonNodeData
   accent: string
   order: number
-  side: 'left' | 'right'
+  side: 'left' | 'right' | 'center'
 }) {
   const isDeep = data.format === 'deepdive'
   const muted = data.state === 'locked' || data.state === 'soon'
@@ -528,7 +552,11 @@ function TrailLabel({
       <div
         className={cn(
           'mt-1.5 flex flex-wrap items-center gap-1.5',
-          side === 'left' ? 'justify-end' : 'justify-start',
+          side === 'center'
+            ? 'justify-center'
+            : side === 'left'
+              ? 'justify-end'
+              : 'justify-start',
         )}
       >
         {isDeep && (

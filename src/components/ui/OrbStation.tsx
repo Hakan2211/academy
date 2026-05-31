@@ -94,6 +94,8 @@ export function OrbStation({
         src={image}
         alt=""
         draggable={false}
+        loading="lazy"
+        decoding="async"
         className="block h-full w-full select-none"
         style={{
           opacity: locked ? 0.84 : 1,

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { Link } from '@tanstack/react-router'
-import { useReducedMotion } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 import { CosmosCanvas } from '#/components/hub/CosmosCanvas'
 import type { HubIsland } from '#/components/hub/CosmosCanvas'
 import { OrbStation } from './OrbStation'
@@ -385,11 +385,17 @@ export function CategoryOverworld({
   }, [layout, n, fillUpTo, orbGlow])
 
   return (
+    // Narrow screens: keep the stage at a usable min width and pan horizontally
+    // rather than letting the fixed-position orbs overlap (portrait redesign TBD).
     <div
-      ref={wrapRef}
-      className="relative w-full overflow-hidden"
+      className="w-full overflow-x-auto overflow-y-hidden"
       style={{ height: 'calc(100vh - 52px)', minHeight: 620, background: '#070a16' }}
     >
+      <div
+        ref={wrapRef}
+        className="relative h-full w-full overflow-hidden"
+        style={{ minWidth: 920, background: '#070a16' }}
+      >
       {/* layer 1 — animated WebGL nebula, tinted by the category accents */}
       <CosmosCanvas mouseRef={mouseRef} reduce={Boolean(reduce)} islands={islands} />
       {/* depth vignette */}
@@ -402,6 +408,19 @@ export function CategoryOverworld({
       />
       {/* layer 2 — the luminous winding path */}
       <canvas ref={canvasRef} className="pointer-events-none absolute inset-0" />
+
+      {/* arrival flash — fades out the hub's "dive into the island" bloom */}
+      {!reduce && (
+        <motion.div
+          className="pointer-events-none fixed inset-0 z-40"
+          style={{
+            background: `radial-gradient(circle at 50% 48%, ${subjectColor}, #050710 70%)`,
+          }}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+        />
+      )}
 
       {/* chrome — back link + subject progress (glass) */}
       <div className="absolute left-4 top-4 z-30 flex flex-col items-start gap-2">
@@ -474,6 +493,7 @@ export function CategoryOverworld({
           </div>
         )
       })}
+      </div>
     </div>
   )
 }
