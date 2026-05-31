@@ -46,6 +46,9 @@ const LAYOUT: Array<IslandCfg> = [
 // hub; the rim islands also wire to their neighbours so the cluster reads as a
 // single lit network. Drawn center-to-center — the islands occlude the ends, so
 // only the span between two silhouettes shows (reads as edge-to-edge docks).
+// Island positions + accent colours that tint the WebGL nebula (stable ref).
+const HUB_ISLANDS = LAYOUT.map((c) => ({ x: c.x, y: c.y, accent: c.accent }))
+
 const BRIDGES: Array<[string, string]> = [
   ['physics', 'chemistry'],
   ['physics', 'computer-science'],
@@ -231,8 +234,8 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
       className="relative w-full overflow-hidden"
       style={{ height: 'calc(100vh - 52px)', minHeight: 600, background: '#070a16' }}
     >
-      {/* cosmos backdrop — animated WebGL nebula + parallax starfield */}
-      <CosmosCanvas mouseRef={mouseRef} reduce={Boolean(reduce)} />
+      {/* cosmos backdrop — animated WebGL nebula tinted by the islands */}
+      <CosmosCanvas mouseRef={mouseRef} reduce={Boolean(reduce)} islands={HUB_ISLANDS} />
       <div
         className="pointer-events-none absolute inset-0"
         style={{

@@ -1,10 +1,14 @@
 // Animated deep-space nebula + parallax starfield with a Milky-Way dust band
-// and sporadic shooting stars. Resolution-driven (uses gl_FragCoord /
-// uResolution) so it fills the viewport regardless of plane size.
+// and sporadic shooting stars. The nebula is TINTED BY THE ISLANDS: each subject
+// accent bleeds into the space around its island and blends with its neighbours.
+// Resolution-driven (gl_FragCoord / uResolution) so it fills any viewport.
 uniform float uTime;
 uniform vec2 uResolution;
 uniform vec2 uMouse;
 uniform float uReduced;
+uniform vec2 uIslandPos[8];   // centred, y-up; x is multiplied by aspect below
+uniform vec3 uIslandColor[8]; // accent rgb (0..1, sRGB)
+uniform float uIslandCount;
 
 float hash21(vec2 p) {
   p = fract(p * vec2(123.34, 345.45));
@@ -94,6 +98,20 @@ void main() {
   p.x *= aspect;
   vec2 mo = uMouse * 0.03;
 
+  // island-tinted colour field — each subject world bleeds its accent into space
+  vec3 acc = vec3(0.0);
+  float wsum = 0.0;
+  for (int i = 0; i < 8; i++) {
+    if (float(i) >= uIslandCount) break;
+    vec2 ipos = vec2(uIslandPos[i].x * aspect, uIslandPos[i].y);
+    float d = length(p - ipos);
+    float w = exp(-d * d * 4.5);
+    acc += uIslandColor[i] * w;
+    wsum += w;
+  }
+  vec3 islandHue = acc / max(wsum, 0.0001);
+  float presence = 1.0 - exp(-wsum * 1.3); // ~1 near islands, ~0 in the void
+
   // drifting nebula clouds
   vec2 q = p * 1.5 + mo;
   float t = uTime * 0.025;
@@ -101,24 +119,23 @@ void main() {
   float n2 = fbm(q * 2.1 - vec2(t * 0.7, t * 0.2) + n);
   float clouds = n * 0.6 + n2 * 0.4;
 
-  vec3 base = vec3(0.018, 0.027, 0.072);
-  vec3 blue = vec3(0.09, 0.20, 0.48);
-  vec3 violet = vec3(0.30, 0.17, 0.58);
-  vec3 magenta = vec3(0.44, 0.12, 0.40);
-
+  vec3 base = vec3(0.015, 0.02, 0.05);
   vec3 col = base;
-  col = mix(col, blue, smoothstep(0.45, 1.0, clouds) * 0.55);
-  col = mix(col, violet, smoothstep(0.55, 1.15, clouds + n2 * 0.25) * 0.7);
-  col = mix(col, magenta, smoothstep(0.75, 1.2, n2) * 0.22);
-  col += violet * pow(clamp(clouds - 0.25, 0.0, 1.0), 3.0) * 0.45;
+  // island-coloured gas, strongest in dense clouds near the islands
+  col += islandHue * clouds * (0.22 + presence * 1.0);
+  // faint deep-indigo ambient in the void so it isn't dead black
+  col += vec3(0.06, 0.07, 0.16) * clouds * (1.0 - presence) * 0.4;
+  // bright cloud cores glow in the local island hue
+  col += islandHue * pow(clamp(clouds - 0.3, 0.0, 1.0), 3.0) * presence * 0.8;
 
-  // Milky Way — a diagonal dust band with denser, smaller stars
+  // Milky Way — a diagonal dust band, lightly tinted by the local hue
   vec2 bdir = normalize(vec2(1.0, 0.42));
   vec2 bnorm = vec2(-bdir.y, bdir.x);
   float wob = (fbm(p * 1.6 + 7.0) - 0.5) * 0.35;
   float band = smoothstep(0.42, 0.0, abs(dot(p, bnorm) + wob));
   float dustN = fbm(p * 3.0 + 20.0);
-  col += vec3(0.45, 0.50, 0.72) * band * (0.04 + dustN * 0.09);
+  vec3 dustCol = mix(vec3(0.45, 0.50, 0.72), islandHue, 0.35 * presence);
+  col += dustCol * band * (0.04 + dustN * 0.09);
   col += starLayer((p + mo * 0.4) * 46.0, 0.55, 0.085) * band * 1.1;
 
   // parallax star layers (closer layers drift more with the pointer)
