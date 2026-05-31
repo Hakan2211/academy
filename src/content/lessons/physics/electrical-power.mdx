@@ -1,0 +1,85 @@
+---
+title: Electrical Power & Energy
+subject: physics
+contentSlug: physics/electrical-power
+order: 7
+estimatedMinutes: 7
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="Power: energy every second" kind="explain">
+
+Every electrical device is rated in **watts** — a 60 W bulb, a 2000 W kettle, a 5 W phone charger. That number is its **power**: how much electrical energy it converts each second.
+
+Power ties voltage and current together. Voltage is energy *per charge*, current is charge *per second* — multiply them and the charges cancel, leaving energy *per second*, which is power:
+
+<Formula tex="P = V \times I" block />
+
+Watts are just joules per second, the same unit of power you met back in the energy unit.
+
+</Step>
+
+<Step title="Watch the power" kind="interactive">
+
+Here's the circuit again, now reporting power as well as current. Push the voltage or ease the resistance and watch the wattage — and the bulb's brightness — respond.
+
+<CircuitLab showPower={true} />
+
+A brighter bulb is simply one converting more **power**. Notice how raising the voltage drives power up sharply: more voltage gives both more energy per charge *and* more current, so the effect compounds.
+
+</Step>
+
+<Step title="Three faces of the same formula" kind="explain">
+
+Combine `P = VI` with Ohm's law (`V = IR`) and power can be written three equivalent ways:
+
+- **P = V × I** — when you know voltage and current.
+- **P = I² × R** — when you know current and resistance.
+- **P = V² / R** — when you know voltage and resistance.
+
+The middle form, `P = I²R`, explains why wires get warm: any current through any resistance dissipates power as heat. It's why kettles and heaters use high current through a resistive element on purpose — and why a **fuse** (a deliberately thin wire) melts and breaks the circuit if the current climbs dangerously high.
+
+</Step>
+
+<Step title="Paying for energy" kind="explain">
+
+Power is the *rate* of using energy; the total **energy** used is just power multiplied by time:
+
+<Formula tex="E = P \times t" block />
+
+<Callout type="info" title="What's on your electricity bill">
+Energy companies don't charge for watts — they charge for energy, in **kilowatt-hours (kWh)**: one kilowatt running for one hour. A 2 kW heater left on for 3 hours uses 6 kWh. That's why leaving a high-power device on for a long time is what really costs money: it's power *times time* that you pay for.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A device runs at 3 A from a 12 V supply. What is its power?"
+  options={[
+    "4 W",
+    "15 W",
+    "36 W",
+    "0.25 W",
+  ]}
+  correctIndex={2}
+  explanation="Power = voltage × current = 12 V × 3 A = 36 W. The device converts 36 joules of electrical energy every second."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Power** is energy converted per second, in **watts**: `P = V × I`.
+- Equivalent forms via Ohm's law: **P = I²R** and **P = V²/R**; `I²R` is why resistance produces heat (and why fuses work).
+- **Energy = power × time** (`E = P × t`); bills are charged in **kilowatt-hours**.
+
+<Formula tex="P = V \times I" block />
+
+</Step>
+
+</Lesson>

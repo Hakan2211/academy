@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" font-family="ui-sans-serif, system-ui, sans-serif">
+  <rect width="480" height="320" fill="#0d1326"/>
+  <!-- axes -->
+  <line x1="70" y1="260" x2="440" y2="260" stroke="#2f3650" stroke-width="2"/>
+  <line x1="70" y1="260" x2="70" y2="40" stroke="#2f3650" stroke-width="2"/>
+
+  <!-- resultant velocity v at angle theta -->
+  <line x1="70" y1="260" x2="330" y2="110" stroke="#fdcb6e" stroke-width="5"/>
+  <polygon points="330,110 314,114 322,128" fill="#fdcb6e"/>
+  <text x="210" y="170" fill="#fdcb6e" font-size="16" transform="rotate(-30 210 170)">v</text>
+
+  <!-- horizontal component vx -->
+  <line x1="70" y1="260" x2="330" y2="260" stroke="#00cec9" stroke-width="4"/>
+  <polygon points="330,260 316,254 316,266" fill="#00cec9"/>
+  <text x="200" y="282" fill="#00cec9" font-size="15" text-anchor="middle">vₓ = v·cos θ  (constant)</text>
+
+  <!-- vertical component vy -->
+  <line x1="330" y1="260" x2="330" y2="110" stroke="#74b9ff" stroke-width="4"/>
+  <polygon points="330,110 324,124 336,124" fill="#74b9ff"/>
+  <text x="410" y="190" fill="#74b9ff" font-size="15" text-anchor="middle">v_y = v·sin θ</text>
+
+  <!-- angle marker -->
+  <path d="M 110 260 A 40 40 0 0 0 96 238" fill="none" stroke="#8a93b2" stroke-width="2"/>
+  <text x="118" y="246" fill="#8a93b2" font-size="14">θ</text>
+</svg>

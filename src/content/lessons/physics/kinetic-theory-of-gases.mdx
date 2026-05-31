@@ -1,0 +1,122 @@
+---
+title: The Kinetic Theory of Gases
+subject: physics
+contentSlug: physics/kinetic-theory-of-gases
+order: 8
+estimatedMinutes: 12
+level: advanced
+format: deepdive
+---
+
+<Lesson>
+
+<Step title="A world made of tiny billiard balls" kind="explain">
+
+So far you've met pressure, temperature, and the gas laws as separate rules you simply accept. Now we'll reveal the single hidden picture that produces *all* of them — the **kinetic theory of gases**.
+
+The idea is audacious in its simplicity. Model a gas as a swarm of countless tiny particles that:
+
+- are in **constant, random motion**,
+- are so small and far apart that they're mostly **empty space**,
+- **collide** with the walls and each other without losing energy overall.
+
+That's it. No new forces, no special rules. Everything else — pressure, temperature, Boyle's Law — falls out of particles bouncing around. Let's watch it happen.
+
+</Step>
+
+<Step title="Temperature *is* motion" kind="interactive">
+
+First, the deepest link of all. **Temperature is not a substance — it's the average kinetic energy of the particles.**
+
+<ThermalJiggle />
+
+Crank the temperature and every particle speeds up; cool it and they slow toward stillness. Hot and cold aren't two different things flowing around — they're just *fast jiggling* and *slow jiggling*. This is the bridge between the world you can see (a thermometer reading) and the world you can't (particles in motion).
+
+</Step>
+
+<Step title="Where pressure comes from" kind="interactive">
+
+Now, pressure. A gas has no permanent push — what feels like steady pressure is really a relentless hail of particle collisions, billions every instant, each one a microscopic tap on the wall.
+
+<GasPistonLab />
+
+Squeeze the volume and the particles strike the walls more often, so the pressure climbs. Pressure is nothing but **collisions per second per unit area**. Suddenly Boyle's Law isn't a mystery — it's just counting impacts.
+
+</Step>
+
+<Step title="The gas laws fall out for free" kind="explain">
+
+Watch how every gas law you learned now drops straight out of the particle picture:
+
+- **Boyle** (squeeze → pressure up): less space means each particle reaches a wall sooner, so collisions per second rise.
+- **Gay-Lussac** (heat at fixed volume → pressure up): hotter particles move faster, hitting harder *and* more often.
+- **Charles** (heat at fixed pressure → volume up): faster particles need more room to keep the collision rate — and therefore the pressure — unchanged.
+
+What looked like three separate experimental rules are three views of the same swarm.
+
+</Step>
+
+<Step title="The ideal gas law" kind="explain">
+
+Combine all of it into one equation and you get the crown jewel of the theory, the **ideal gas law**:
+
+<Callout type="info" title="Everything in one line">
+<Formula tex="P V = n R T" /> — pressure times volume equals the amount of gas (`n`, in moles) times a universal constant `R` times the absolute temperature.
+</Callout>
+
+This single relation contains Boyle, Charles, and Gay-Lussac all at once — fix any two quantities and it tells you how the others must move. It works astonishingly well for real gases under everyday conditions.
+
+</Step>
+
+<Step title="How fast are they really?" kind="explain">
+
+If temperature is motion, exactly how fast are the air molecules around you right now? The answer is startling: roughly **500 metres per second** — faster than a passenger jet, at ordinary room temperature.
+
+They don't get anywhere quickly because they collide billions of times a second, ricocheting in a frantic zigzag. And they don't all move at the same speed: there's a whole spread, described by the **Maxwell–Boltzmann distribution** — some crawling, some sprinting, with a characteristic peak. Heat the gas and the entire distribution shifts faster and spreads wider.
+
+</Step>
+
+<Step title="The floor: absolute zero" kind="explain">
+
+If temperature is average kinetic energy, then there must be a coldest possible temperature — the point where particle motion is as low as it can go. That's **absolute zero**: 0 kelvin, or −273.15 °C.
+
+You can approach it but never quite reach it. It's also why the gas laws insist on the **kelvin** scale: kelvin counts up from the true zero of motion, so "twice the temperature" genuinely means "twice the average kinetic energy." Celsius, with its zero arbitrarily set at water's freezing point, can't make that claim.
+
+</Step>
+
+<Step title="Where the simple model breaks" kind="explain">
+
+The kinetic theory assumes particles have *no size* and *don't attract each other*. Real molecules do both, a little. Most of the time it doesn't matter — but squeeze a gas hard enough or cool it enough and those tiny attractions take over, the particles clump, and the gas **condenses into a liquid**.
+
+That's the boundary of the "ideal" model: it describes gases beautifully right up until the particles get close enough to feel one another, at which point real-gas behaviour — and the states of matter you started this unit with — takes over.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In the kinetic theory, what does the pressure of a gas on its container actually consist of?"
+  options={[
+    "A steady force the gas constantly exerts",
+    "The combined effect of countless particle collisions with the walls every second",
+    "The weight of the gas pressing down",
+    "Attraction between the gas and the container",
+  ]}
+  correctIndex={1}
+  explanation="Pressure is the cumulative result of billions of particles striking the walls each second. More frequent or harder collisions (from less volume or higher temperature) mean higher pressure — which is exactly why the gas laws hold."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **kinetic theory** models a gas as countless tiny particles in constant random motion — and explains *everything* else from that.
+- **Temperature** = average kinetic energy; **pressure** = the rate of particle collisions on the walls.
+- The gas laws (**Boyle, Charles, Gay-Lussac**) all fall out of this picture and combine into the **ideal gas law** `PV = nRT`.
+- Molecules move at hundreds of m/s with a spread of speeds; motion bottoms out at **absolute zero** (0 K), and the model breaks only when particles get close enough to attract and condense.
+
+<Formula tex="P V = n R T" block />
+
+</Step>
+
+</Lesson>

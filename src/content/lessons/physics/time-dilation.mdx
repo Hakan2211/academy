@@ -1,0 +1,86 @@
+---
+title: Time Dilation
+subject: physics
+contentSlug: physics/time-dilation
+order: 2
+estimatedMinutes: 7
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="A clock made of light" kind="explain">
+
+To see what holding c constant does to time, build the simplest possible clock: a **light clock**. Two mirrors face each other, and a single photon bounces between them. Each round trip is one "tick." It's a perfectly good clock — and because it's built from light, it lets us reason directly from Einstein's postulate.
+
+Now ask a deceptively simple question: what happens to this clock when it's *moving*?
+
+</Step>
+
+<Step title="A moving clock runs slow" kind="interactive">
+
+Watch a stationary clock beside a moving one.
+
+<LightClock />
+
+For the stationary clock, the photon goes straight up and down. But when the clock moves, *you* see the photon travel a longer **diagonal** path to reach the mirror — it has to move sideways with the clock as well as up and down.
+
+Here's the crux. The photon can't travel any faster to cover that longer path — its speed is locked at c. So each bounce simply *takes longer*. The moving clock ticks **slower** than the one at rest. This is **time dilation**, and it isn't an illusion or a mechanical glitch: moving clocks genuinely run slow.
+
+</Step>
+
+<Step title="The Lorentz factor" kind="explain">
+
+How much slower? Working through the geometry of that longer diagonal gives a single factor that appears throughout relativity — the **Lorentz factor**, γ:
+
+<Formula tex="\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}}" block />
+
+A moving clock's ticks are stretched by exactly this factor. Plug in some numbers and you see why nobody noticed for centuries:
+
+- At everyday speeds (even a jet), v/c is so tiny that γ ≈ 1.0000000001 — utterly invisible.
+- At **87% of c**, γ = 2: time runs at half speed.
+- At **99.5% of c**, γ ≈ 10.
+
+Time dilation was always there. It only becomes dramatic as you approach the speed of light.
+
+</Step>
+
+<Step title="This really happens" kind="explain">
+
+Time dilation isn't a thought experiment — it's measured daily.
+
+<Callout type="info" title="The muons that shouldn't reach us">
+**Muons** are particles created when cosmic rays hit the upper atmosphere. They decay so fast they should expire long before reaching the ground. Yet they arrive in floods — because they travel near c, their internal "clocks" run slow, and their brief lives are stretched enough to complete the journey. Physicists have also flown **atomic clocks** around the world on airliners and landed them measurably behind clocks left at home, exactly as γ predicts.
+</Callout>
+
+This is also the root of the famous **twin paradox**: a twin who races away near light-speed and returns will have aged *less* than the twin who stayed home. Strange, but true — and a direct consequence of the bouncing photon you just watched.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why does a moving light clock tick more slowly than an identical one at rest?"
+  options={[
+    "The mirrors get heavier and respond more sluggishly when moving",
+    "The photon travels a longer diagonal path but can't exceed c, so each tick takes longer",
+    "Moving light actually slows down below c",
+    "The photon loses energy each time it bounces",
+  ]}
+  correctIndex={1}
+  explanation="To an outside observer the moving clock's photon must travel a longer, diagonal path. Since its speed is fixed at c and can't increase, covering the extra distance takes more time — so each tick lengthens. Time itself runs slow for the moving clock."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **light clock** turns Einstein's postulate into a clear prediction about time.
+- A moving clock's photon travels a longer **diagonal** path at the same speed c, so each tick takes longer: **time dilation**.
+- The slowdown factor is the **Lorentz factor γ = 1/√(1 − v²/c²)** — about 1 at everyday speeds, growing without limit near c.
+- It's confirmed by **muons**, **flown atomic clocks**, and underlies the **twin paradox**.
+
+</Step>
+
+</Lesson>

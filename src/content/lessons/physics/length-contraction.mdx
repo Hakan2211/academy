@@ -1,0 +1,83 @@
+---
+title: Length Contraction
+subject: physics
+contentSlug: physics/length-contraction
+order: 3
+estimatedMinutes: 7
+level: advanced
+format: core
+---
+
+<Lesson>
+
+<Step title="If time bends, so must space" kind="explain">
+
+Time dilation came with a hidden partner. Return to those atmospheric **muons**: from our point of view on the ground, their stretched lifetimes let them cross tens of kilometres of atmosphere. But what does the journey look like *from the muon's own frame*, where its lifetime is perfectly ordinary and far too short for such a trip?
+
+The only way both views can be true is if the muon sees the atmosphere as much **thinner** — the distance shrinks. Just as motion stretches time, it must also **contract space**. The two effects are locked together by the same factor γ.
+
+</Step>
+
+<Step title="Moving objects shrink" kind="interactive">
+
+A moving object is measured to be **shorter along its direction of motion** than its length at rest. The faster it goes, the more it contracts.
+
+<LengthContraction />
+
+The relationship uses the very same Lorentz factor from time dilation:
+
+<Formula tex="L = \dfrac{L_0}{\gamma} = L_0\sqrt{1 - v^2/c^2}" block />
+
+Here L₀ is the **rest length** (measured when the object is at rest with you) and L is what you measure as it flies past. At everyday speeds γ ≈ 1 and nothing changes; near c, the object collapses toward a sliver.
+
+</Step>
+
+<Step title="Only along the motion — and who's right?" kind="explain">
+
+Two crucial subtleties. First, contraction happens **only along the direction of motion**. A spaceship racing past you is squashed front-to-back but keeps its full height and width.
+
+Second — and this is the mind-bender — there's **no contradiction** in the fact that each observer sees the *other's* lengths contracted. To you, the passing ship is short. To the ship's crew, *you and your whole world* are the ones contracted, while their ship is perfectly normal. Neither is wrong.
+
+<Callout type="info" title="Both frames are equally valid">
+Special relativity insists there is **no privileged "really at rest" frame**. Length contraction and time dilation aren't about who is *truly* moving — that question has no answer. They're about how two observers in relative motion measure each other. The muon and the mountain simply describe the same journey with different splits of space and time.
+</Callout>
+
+</Step>
+
+<Step title="The muon paradox, resolved" kind="explain">
+
+Now the muon makes perfect sense from *both* points of view, which is exactly what a good theory demands.
+
+- **From the ground:** the muon's lifetime is stretched by γ (time dilation), giving it just enough time to cross the full thickness of atmosphere.
+- **From the muon:** its lifetime is normal, but the atmosphere ahead is contracted by γ to a fraction of its thickness — a short hop it easily completes before decaying.
+
+Same outcome, same surviving muons, two descriptions that agree on what actually happens. Space and time trade off against each other so that every observer sees a consistent universe — and so that everyone still measures light at c.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A 100 m rocket flies past you at a speed where γ = 4. What length do you measure, and in which direction is it contracted?"
+  options={[
+    "400 m, stretched along its motion",
+    "25 m, contracted along its direction of motion (its height is unchanged)",
+    "25 m, contracted in every direction equally",
+    "100 m — length is the same for all observers",
+  ]}
+  correctIndex={1}
+  explanation="Length contracts by the factor γ: L = L₀/γ = 100/4 = 25 m. The contraction acts only along the direction of motion, so the rocket appears shortened front-to-back while its height and width stay the same."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Motion contracts space just as it dilates time: a moving object is measured **shorter along its motion**, by **L = L₀/γ**.
+- Contraction acts **only in the direction of travel** — not sideways.
+- Each observer sees the *other's* lengths contracted; there is **no privileged rest frame**, and no contradiction.
+- The effect resolves the **muon puzzle** consistently from both the ground's and the muon's point of view.
+
+</Step>
+
+</Lesson>

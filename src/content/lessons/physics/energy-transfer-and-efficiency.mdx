@@ -1,0 +1,88 @@
+---
+title: Energy Transfer & Efficiency
+subject: physics
+contentSlug: physics/energy-transfer-and-efficiency
+order: 6
+estimatedMinutes: 7
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="Energy on the move" kind="explain">
+
+Every machine is really an **energy converter**. A car turns chemical energy into motion; a lamp turns electrical energy into light; your body turns food into movement and warmth.
+
+But no converter is perfect. Some of the input energy always slips away into a form you didn't want — almost always **heat**. That stray energy is still conserved; it's just no longer **useful**.
+
+</Step>
+
+<Step title="Watch the leak" kind="interactive">
+
+Turn the **friction** up. Now the swap isn't fair anymore — a little energy escapes into the **heat** bar on every pass, and the dashed total sinks. The motion slowly dies.
+
+<EnergySkater friction={4} />
+
+That orange bar is energy that's been *transferred*, not destroyed — but it's spread into warmth you can't get back as motion.
+
+</Step>
+
+<Step title="Useful vs. wasted" kind="explain">
+
+We split a machine's output into two piles:
+
+- **Useful** energy — the form you actually wanted (light, motion, lift).
+- **Wasted** energy — everything that leaked out, usually as heat.
+
+**Efficiency** is the fraction that ends up useful:
+
+<Formula tex="\text{efficiency} = \dfrac{\text{useful energy out}}{\text{total energy in}}" block />
+
+It's always between 0 and 1 (or 0–100%), because you can never get more useful energy out than you put in.
+
+</Step>
+
+<Step title="How good is good?" kind="explain">
+
+Some real numbers:
+
+- An old **incandescent bulb**: only ~5% of the electricity becomes light — the rest is heat.
+- A modern **LED**: around 40–50% — far less waste.
+- A **car engine**: roughly 25–30% becomes motion; most is lost as exhaust and engine heat.
+- A large **electric motor**: can top 90%.
+
+<Callout type="tip" title="Why we care">
+Higher efficiency means the same job for less fuel — cheaper to run and easier on the planet.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="An electric motor takes in 100 J of electrical energy and delivers 85 J of mechanical work. The other 15 J became heat. What's its efficiency?"
+  options={[
+    "15%",
+    "85%",
+    "100% — energy is always conserved",
+    "It can't be calculated",
+  ]}
+  correctIndex={1}
+  explanation="Efficiency = useful out ÷ total in = 85 J ÷ 100 J = 0.85, or 85%. The 15 J of heat is energy that's conserved but no longer useful."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Machines **convert** energy from one form to another, but never perfectly.
+- Wasted energy is usually **heat** — still conserved, just no longer useful.
+- **Efficiency = useful out ÷ total in**, always ≤ 100%.
+- Better efficiency means less fuel wasted for the same result.
+
+<Formula tex="\text{efficiency} = \dfrac{\text{useful out}}{\text{total in}}" block />
+
+</Step>
+
+</Lesson>

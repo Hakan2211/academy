@@ -1,0 +1,80 @@
+---
+title: The Gas Laws
+subject: physics
+contentSlug: physics/gas-laws
+order: 5
+estimatedMinutes: 7
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="Squeezable matter" kind="explain">
+
+Try to compress a bottle of water — it barely budges. Now cover the end of a bicycle pump and push: the air squashes easily. Gases are the one state of matter you can dramatically **compress**, because their particles are mostly empty space with lots of room to close up.
+
+That squeezability makes gases obey neat, predictable rules linking three quantities: **pressure (P)**, **volume (V)**, and **temperature (T)**. These are the gas laws.
+
+</Step>
+
+<Step title="Boyle's Law: squeeze and the pressure climbs" kind="interactive">
+
+Hold the temperature fixed and change only the volume. Push the piston in and watch the pressure gauge.
+
+<GasPistonLab />
+
+Halve the volume and the pressure **doubles**. The product `P × V` stays constant — that's **Boyle's Law**. The particle picture makes it obvious: cram the same particles into half the space and they strike the walls twice as often, so they push twice as hard.
+
+<Formula tex="P \times V = \text{constant}" block />
+
+</Step>
+
+<Step title="Temperature matters too" kind="explain">
+
+Now hold the volume fixed and **heat** the gas instead. The particles speed up, slam into the walls harder and more often, and the pressure rises. This is **Gay-Lussac's Law**: pressure is proportional to temperature.
+
+Let the gas expand freely instead, at constant pressure, and heating makes its **volume** grow — that's **Charles's Law**. It's why a balloon swells in the sun and shrinks in the freezer, and why a hot-air balloon rises (warm air expands, becomes less dense, and floats).
+
+</Step>
+
+<Step title="The combined picture" kind="explain">
+
+Stitch the three together and you get one relationship covering all of them:
+
+<Callout type="info" title="The combined gas law">
+<Formula tex="\dfrac{P \, V}{T} = \text{constant}" /> — for a fixed amount of gas, this quantity never changes. Squeeze, heat, or expand it however you like, and `PV/T` stays put.
+</Callout>
+
+One crucial catch: **T must be measured in kelvin**, counting up from absolute zero (−273 °C), not in everyday Celsius. The laws only work from the true zero of temperature.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A sealed syringe of gas is squeezed to half its volume at constant temperature. What happens to the pressure?"
+  options={[
+    "It halves",
+    "It stays the same",
+    "It doubles",
+    "It drops to zero",
+  ]}
+  correctIndex={2}
+  explanation="Boyle's Law: at constant temperature, P × V is constant. Halving the volume must double the pressure — the same particles hit the walls twice as often in the smaller space."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Gases are **compressible**, so their pressure, volume, and temperature are tightly linked.
+- **Boyle's Law**: at fixed temperature, `P × V = constant` (squeeze → pressure up).
+- **Charles / Gay-Lussac**: heating a gas raises its volume (free to expand) or its pressure (fixed volume).
+- **Combined**: `PV/T = constant`, with **T in kelvin**.
+
+<Formula tex="\dfrac{P \, V}{T} = \text{constant}" block />
+
+</Step>
+
+</Lesson>

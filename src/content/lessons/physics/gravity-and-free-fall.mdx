@@ -1,0 +1,77 @@
+---
+title: Gravity & Free Fall
+subject: physics
+contentSlug: physics/gravity-and-free-fall
+order: 10
+estimatedMinutes: 6
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="Weight is a force" kind="explain">
+
+Earth pulls every object toward its center. That pull is the object's **weight** — a force, measured in newtons. It depends on mass and the local gravity **g**:
+
+<Formula tex="W = m g" block />
+
+Near Earth's surface **g ≈ 9.8 m/s²**. Weight isn't the same as mass: take your mass to the Moon and it's unchanged, but your weight drops to about a sixth.
+
+</Step>
+
+<Step title="Heavy and light fall together" kind="interactive">
+
+Here's the surprise that fooled people for 2,000 years: with no air, **all objects fall at the same rate**, whatever their mass.
+
+<FreeFall />
+
+Galileo argued it; Apollo 15 proved it on the Moon by dropping a hammer and a feather — they hit the dust together.
+
+</Step>
+
+<Step title="Why does mass cancel?" kind="explain">
+
+A heavier object *is* pulled harder — but it also has *more inertia* to move. The two effects cancel exactly. Watch it fall out of **F = ma**:
+
+<Formula tex="a = \dfrac{F}{m} = \dfrac{m g}{m} = g" block />
+
+The mass divides away, leaving the same acceleration **g** for everything. That's **free fall**: motion under gravity alone.
+
+</Step>
+
+<Step title="The catch: air" kind="explain">
+
+So why does a real feather flutter down slowly? **Air resistance** — not gravity. Air pushes up on the broad, light feather far more than on a dense hammer.
+
+"Free fall" means *gravity only*. Remove the air (or drop dense objects where air barely matters) and the textbook result snaps back into view.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In a vacuum chamber, you release a hammer and a feather at the same instant. Which lands first?"
+  options={[
+    "The hammer",
+    "The feather",
+    "They land at the same time",
+    "The heavier one, always",
+  ]}
+  correctIndex={2}
+  explanation="With no air, both accelerate at the same g regardless of mass, so they land together. Air resistance is the only reason a feather normally lags."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Weight** is the force of gravity: **W = mg** (g ≈ 9.8 m/s² near Earth).
+- In **free fall**, every object accelerates at the same **g** — mass cancels out in F = ma.
+- **Air resistance**, not gravity, is what slows light, fluffy objects.
+
+<Formula tex="a = \dfrac{m g}{m} = g" block />
+
+</Step>
+
+</Lesson>

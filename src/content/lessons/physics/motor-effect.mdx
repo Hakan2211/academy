@@ -1,0 +1,82 @@
+---
+title: The Motor Effect
+subject: physics
+contentSlug: physics/motor-effect
+order: 4
+estimatedMinutes: 7
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="A force on a wire" kind="explain">
+
+You've seen that a current creates its own magnetic field. So what happens if you put a current-carrying wire **inside another magnetic field** — say, between the poles of a magnet?
+
+The wire's field and the magnet's field interact, pushing on each other. The result is a **force on the wire** that shoves it sideways. This is the **motor effect** — the phenomenon that turns electrical energy into motion, and the beating heart of every electric motor.
+
+</Step>
+
+<Step title="Fleming's left-hand rule" kind="interactive">
+
+The force isn't along the current or along the field — it's at **right angles to both**. To find its direction, use **Fleming's left-hand rule**: thumb, first finger, and second finger held mutually perpendicular stand for **F**orce (thumb), **F**ield (first finger), and **C**urrent (second finger).
+
+<MotorEffect />
+
+Reverse the current **or** the field and the force flips. Reverse **both** and it stays the same. Try the toggles and watch the wire's push change direction.
+
+</Step>
+
+<Step title="How big is the force?" kind="explain">
+
+The size of the force depends on three things, captured in a tidy equation:
+
+<Formula tex="F = B \, I \, L" block />
+
+- **B** — the strength of the magnetic field,
+- **I** — the current in the wire,
+- **L** — the length of wire sitting in the field.
+
+Stronger field, more current, or more wire in the field — each one increases the push. (The force is greatest when the wire is at right angles to the field, and drops to zero if the wire runs *along* the field.)
+
+</Step>
+
+<Step title="Making it spin: the electric motor" kind="explain">
+
+Now the payoff. Bend the wire into a **loop** in the field. The current runs *one way* down one side of the loop and the *other way* back up the opposite side — so the motor effect pushes one side **up** and the other side **down**. That pair of opposite forces makes the loop **rotate**.
+
+<Callout type="info" title="The commutator trick">
+There's a catch: after half a turn, each side would be pushed the wrong way and the loop would stall. A clever switch called a **commutator** reverses the current every half-turn, so the push always keeps it spinning the same way. That's a working **electric motor** — in your fan, drill, washing machine, and electric car.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A current-carrying wire sits between magnet poles and feels an upward force. You reverse BOTH the current and the field direction. What happens to the force?"
+  options={[
+    "It now points downward",
+    "It still points upward",
+    "It disappears",
+    "It points sideways",
+  ]}
+  correctIndex={1}
+  explanation="Reversing the current flips the force; reversing the field flips it again. Two flips cancel, so the force points the same way as before — still upward. (Reversing just one of them would flip it.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **motor effect**: a current-carrying wire in a magnetic field feels a **force**, at right angles to both current and field.
+- **Fleming's left-hand rule** gives the direction; reversing current *or* field flips it.
+- Force size: **F = B I L** — bigger field, current, or wire length means more push.
+- A current **loop** in a field rotates, and a **commutator** keeps it spinning — that's an **electric motor**.
+
+<Formula tex="F = B \, I \, L" block />
+
+</Step>
+
+</Lesson>

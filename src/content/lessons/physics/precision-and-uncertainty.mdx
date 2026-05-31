@@ -1,0 +1,88 @@
+---
+title: Precision & Uncertainty
+subject: physics
+contentSlug: physics/precision-and-uncertainty
+order: 5
+estimatedMinutes: 7
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="No measurement is perfect" kind="explain">
+
+Measure your desk with a ruler and you might get 1.20 m. Measure again, more carefully, and perhaps 1.203 m. Use a laser and maybe 1.2027 m. Each answer is better — but **none is the exact truth**, and there's always a finer scale you haven't reached.
+
+Every real measurement carries some **uncertainty**. Far from being sloppy, admitting this is what makes science honest: a measurement isn't a single number, it's a number *plus* a statement of how much it might be off.
+
+</Step>
+
+<Step title="Accuracy is not precision" kind="interactive">
+
+Two words people muddle every day mean very different things to a scientist. **Accuracy** is how close you land to the *true* value. **Precision** is how close your repeated attempts land to *each other*. You can have one without the other.
+
+<AccuracyPrecision />
+
+A precise-but-inaccurate instrument is the sneaky one: it gives beautifully consistent answers that are all wrong the same way. Consistency can fool you into trusting a bias.
+
+</Step>
+
+<Step title="Two kinds of error" kind="explain">
+
+Where does uncertainty come from? Two distinct places:
+
+- **Random error** scatters your results unpredictably — small misreadings, tiny vibrations, a fluctuating reading. It bloats *precision* (the scatter) but averages out over many tries.
+- **Systematic error** pushes every result the same way — a ruler that starts at 2 mm instead of 0, a scale not zeroed, a clock running fast. It wrecks *accuracy*, and no amount of repeating will reveal it.
+
+The dartboard tells the story: random error spreads the darts; systematic error slides the whole cluster off-centre.
+
+</Step>
+
+<Step title="Repeat, then average" kind="explain">
+
+You can fight **random** error by measuring many times and taking the **mean**. The scatter partly cancels, and the average closes in on the truth. The spread of your readings even tells you *how uncertain* the result is — a tight cluster means a small uncertainty, a wide one means a large one.
+
+But averaging does nothing against **systematic** error — that requires hunting down the cause: re-zeroing the scale, calibrating against a known standard, checking your method.
+
+<Callout type="tip" title="More data fixes only half the problem">
+Taking 1,000 readings shrinks random scatter beautifully. If your instrument is miscalibrated, though, those 1,000 readings just agree very precisely on the wrong answer. Precision is no substitute for calibration.
+</Callout>
+
+</Step>
+
+<Step title="Significant figures" kind="explain">
+
+How you *write* a result should reflect how well you know it. Reporting a desk as "1.2027 m" claims you're sure down to a tenth of a millimetre. If your ruler only resolves millimetres, the honest answer is **1.203 m** — four **significant figures**, no more.
+
+Extra digits aren't extra knowledge; they're a false promise of precision you don't have. A good rule: keep only the digits your instrument can actually justify, and let the last one carry the uncertainty.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A kitchen scale always reads 50 g heavier than the true weight, but gives the same reading every time. How would you describe it?"
+  options={[
+    "Accurate but not precise",
+    "Precise but not accurate",
+    "Both accurate and precise",
+    "Neither accurate nor precise",
+  ]}
+  correctIndex={1}
+  explanation="Identical readings every time means high precision — but a fixed 50 g offset is a systematic error that makes every reading wrong, so it's not accurate. Averaging won't help; only re-zeroing the scale will."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Every measurement has **uncertainty** — report a result as a value *and* its likely error.
+- **Accuracy** = closeness to the truth; **precision** = closeness of repeats to each other. They're independent.
+- **Random** error scatters results and averages out; **systematic** error biases them all and doesn't.
+- **Repeat and average** to beat random error; **calibrate** to beat systematic error.
+- Use **significant figures** that match what your instrument can really resolve — no more.
+
+</Step>
+
+</Lesson>

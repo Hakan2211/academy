@@ -1,0 +1,82 @@
+---
+title: Electromagnetic Induction
+subject: physics
+contentSlug: physics/electromagnetic-induction
+order: 5
+estimatedMinutes: 8
+level: advanced
+format: core
+---
+
+<Lesson>
+
+<Step title="Running it backwards" kind="explain">
+
+Ørsted showed that a current creates magnetism. Michael Faraday asked the obvious follow-up: could **magnetism create a current**?
+
+For years the answer seemed to be no — a magnet sitting next to a coil does nothing at all. Then Faraday spotted the missing ingredient: the magnetic field has to be **changing**. A steady field induces nothing; a *changing* one drives a current. This is **electromagnetic induction**, and it powers virtually all the electricity you use.
+
+</Step>
+
+<Step title="Move the magnet" kind="interactive">
+
+Watch what happens as a magnet moves in and out of a coil connected to a sensitive meter.
+
+<Induction />
+
+- While the magnet **moves in**, current flows one way.
+- While it **moves out**, current flows the other way.
+- Hold it **still** — even deep inside the coil — and the current vanishes.
+- Move it **faster** and the induced current is bigger.
+
+The current appears only while the field through the coil is *changing*.
+
+</Step>
+
+<Step title="Faraday's law" kind="explain">
+
+Faraday pinned the effect down precisely. The induced voltage (EMF) depends on how *fast* the magnetic field through the coil changes — the rate of change of **magnetic flux**:
+
+> The induced EMF is proportional to the **rate of change of flux** through the coil.
+
+So you get a bigger voltage by changing the flux faster, and you can change the flux in several ways: move the magnet quicker, use a stronger magnet, add **more turns** to the coil, or move the coil instead of the magnet. Anything that makes the field through the coil change will do.
+
+</Step>
+
+<Step title="Lenz's law: nature pushes back" kind="explain">
+
+Which *direction* does the induced current flow? **Lenz's law** gives a beautifully simple answer:
+
+<Callout type="info" title="The induced current always opposes the change">
+The induced current flows in whatever direction *opposes the change that created it*. Push a magnet's north pole into a coil and the coil's near face becomes a north pole too — pushing back against you.
+</Callout>
+
+This isn't arbitrary — it's **energy conservation**. You have to do work against that opposing push, and that work is exactly the electrical energy the coil generates. If the current helped you instead, you'd get free energy from nothing. The resistance you feel *is* the electricity being made.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A bar magnet is held perfectly still inside a coil. What current is induced?"
+  options={[
+    "A large steady current",
+    "A current that slowly fades",
+    "No current at all",
+    "A current only if the magnet is strong enough",
+  ]}
+  correctIndex={2}
+  explanation="Induction depends on a *changing* magnetic field. A stationary magnet — no matter how strong, or how deep inside the coil — produces no change in flux, so no current is induced. Only motion (or some other change) drives a current."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Electromagnetic induction**: a *changing* magnetic field through a coil induces a voltage (and current). A steady field does nothing.
+- **Faraday's law**: induced EMF ∝ the **rate of change of flux** — change it faster, or add turns, for a bigger voltage.
+- **Lenz's law**: the induced current always **opposes the change** that caused it — a direct consequence of energy conservation.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,86 @@
+---
+title: Ohm's Law
+subject: physics
+contentSlug: physics/ohms-law
+order: 5
+estimatedMinutes: 7
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="Tying the three together" kind="explain">
+
+You now have the three central quantities of any circuit:
+
+- **Voltage (V)** — the push, in volts.
+- **Current (I)** — the flow, in amps.
+- **Resistance (R)** — the opposition, in ohms.
+
+They aren't independent. In 1827, Georg Ohm pinned down the exact relationship between them — a single equation that lets you find any one from the other two. It's the workhorse formula of all of electronics.
+
+<Formula tex="V = I \times R" block />
+
+</Step>
+
+<Step title="The law in action" kind="interactive">
+
+The clearest way to read Ohm's law is rearranged as **I = V / R** — current equals voltage divided by resistance. Drive the two sliders and watch the current obey.
+
+<CircuitLab />
+
+Double the voltage and the current doubles. Double the resistance and the current halves. The current readout is always just `V ÷ R` — that's Ohm's law computing itself in real time.
+
+</Step>
+
+<Step title="Rearranging the equation" kind="explain">
+
+Because it's a simple product, you can solve for whichever quantity you need:
+
+- Find voltage: **V = I × R**
+- Find current: **I = V / R**
+- Find resistance: **R = V / I**
+
+*Worked example:* a 12 V battery drives a 4 Ω heater. The current is `I = V / R = 12 / 4 = 3 A`. Want to halve that current to 1.5 A at the same voltage? You'd need to double the resistance to 8 Ω. The whole of basic circuit design is juggling these three numbers.
+
+</Step>
+
+<Step title="When the law holds — and when it doesn't" kind="explain">
+
+Ohm's law describes **ohmic** components — ones whose resistance stays constant, so current rises in a perfectly straight line with voltage. A plain resistor at steady temperature is the classic example.
+
+<Callout type="warn" title="Not everything is ohmic">
+Some components break the straight line. A **filament bulb** heats up as current rises, increasing its resistance, so it bends away. A **diode** blocks current one way entirely and lets it through the other. For these, `V = IR` still defines resistance *at each instant*, but R is no longer a fixed number.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A resistor has 6 V across it and 2 A flowing through it. What is its resistance?"
+  options={[
+    "12 Ω",
+    "3 Ω",
+    "8 Ω",
+    "0.33 Ω",
+  ]}
+  correctIndex={1}
+  explanation="Rearrange Ohm's law to R = V / I = 6 V ÷ 2 A = 3 Ω. The resistance is the ratio of the voltage across a component to the current through it."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Ohm's law** links the three core quantities: `V = I × R`.
+- Rearranged: **I = V/R** and **R = V/I** — find any one from the other two.
+- **Ohmic** components (resistors) keep R constant, giving current proportional to voltage.
+- **Non-ohmic** ones (filament bulbs, diodes) have a resistance that changes with conditions.
+
+<Formula tex="V = I \times R" block />
+
+</Step>
+
+</Lesson>

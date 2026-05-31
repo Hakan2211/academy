@@ -1,0 +1,82 @@
+---
+title: Radioactive Decay & Half-Life
+subject: physics
+contentSlug: physics/radioactive-decay
+order: 4
+estimatedMinutes: 7
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="Pure chance, nucleus by nucleus" kind="explain">
+
+Here's something genuinely unsettling about radioactive decay: it is **completely random**. Take a single unstable nucleus and there is *no way*, even in principle, to predict when it will decay. It might go in the next second or sit unchanged for a thousand years. Nothing about its history makes it "due."
+
+And yet — gather a huge number of them together and their collective behaviour becomes astonishingly precise and predictable. Individual randomness adds up to a crowd that obeys an exact law. That law is the **half-life**.
+
+</Step>
+
+<Step title="Half gone, every half-life" kind="interactive">
+
+The **half-life** is the time it takes for **half** of the nuclei in a sample to decay. After one half-life, half remain. After a second, half of *those* are gone — so a quarter remain. Then an eighth, a sixteenth, and so on.
+
+Watch 100 nuclei decay and trace the curve they carve out.
+
+<HalfLifeLab />
+
+Notice two things. The sample never quite reaches zero — it keeps halving. And the curve's *shape* is identical no matter how long the half-life is; shortening it just runs the same story faster. This repeated-halving shape is called **exponential decay**.
+
+</Step>
+
+<Step title="The maths of halving" kind="explain">
+
+If you start with N₀ nuclei, the number still around after a time *t* is found by halving once for every half-life T that has passed:
+
+<Formula tex="N = N_0 \left(\tfrac{1}{2}\right)^{t/T}" block />
+
+Plug in t = T and you halve once; t = 2T and you halve twice. Simple, and exact for large samples.
+
+Half-lives span an almost absurd range. Some isotopes decay in **fractions of a second**; uranium-238 has a half-life of **4.5 billion years** — about the current age of the Earth, which is why some of the original uranium is still here. That huge spread is what makes different isotopes suited to wildly different jobs.
+
+</Step>
+
+<Step title="Reading the age of things" kind="explain">
+
+Because each isotope's clock ticks at a fixed rate, decay lets us **measure time** — sometimes across thousands or billions of years.
+
+<Callout type="info" title="Radiocarbon dating">
+Living things constantly take in carbon, including a trace of radioactive **carbon-14**. The moment an organism dies, the intake stops and its carbon-14 begins to decay with a half-life of 5,730 years. Measure how much is left in a bone, a scroll, or a piece of charcoal, and you can read off how long ago it was alive. Older still? Rocks are dated with uranium, whose billion-year half-lives reach back to the birth of the planet.
+</Callout>
+
+The same principle powers medical tracers (short half-lives, so they fade quickly and safely) and the dating of everything from Ice Age fossils to meteorites.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="An isotope has a half-life of 8 days. You start with 80 mg. How much remains after 24 days?"
+  options={[
+    "40 mg",
+    "20 mg",
+    "10 mg",
+    "0 mg — it's all gone",
+  ]}
+  correctIndex={2}
+  explanation="24 days is three half-lives (24 ÷ 8 = 3). Halve three times: 80 → 40 → 20 → 10 mg. Each half-life removes half of whatever is left, so the sample shrinks but never quite hits zero."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A single nucleus decays at a **completely random** moment — but a large sample follows an **exact** law.
+- The **half-life** T is the time for **half** the nuclei to decay; the amount remaining follows **N = N₀(½)^(t/T)** — exponential decay.
+- Half-lives range from **split seconds to billions of years**.
+- Fixed decay rates let us **date** materials — carbon-14 for the recent past, uranium for the age of rocks and the Earth.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,83 @@
+---
+title: Powers of Ten
+subject: physics
+contentSlug: physics/powers-of-ten
+order: 3
+estimatedMinutes: 6
+level: beginner
+format: core
+---
+
+<Lesson>
+
+<Step title="From atoms to galaxies" kind="explain">
+
+An atom is about 0.0000000001 metres across. The observable universe is about 880,000,000,000,000,000,000,000,000 metres wide. Physics has to handle *both* — and writing all those zeros is a recipe for disaster.
+
+The trick is to stop counting zeros and start counting **powers of ten**. Each extra zero is just one more factor of ten, and that simple idea tames the entire range of nature into a few tidy digits.
+
+</Step>
+
+<Step title="Scientific notation" kind="explain">
+
+In **scientific notation** every number is written as a digit-or-two times a power of ten:
+
+<Formula tex="3 \times 10^8 \quad\text{means}\quad 3 \times 100{,}000{,}000 = 300{,}000{,}000" block />
+
+The exponent just says how many places to shift the decimal point — right for positive, left for negative.
+
+- The speed of light, 300 million m/s, becomes <Formula tex="3 \times 10^8\ \text{m/s}" />.
+- An atom's width, 0.0000000001 m, becomes <Formula tex="1 \times 10^{-10}\ \text{m}" />.
+
+Same numbers, no parade of zeros — and far harder to miscount.
+
+</Step>
+
+<Step title="The ladder of scale" kind="interactive">
+
+Because each step is a *factor of ten*, you can climb from the smallest things to the largest in a surprisingly small number of hops. Slide through the sizes of the universe and watch how few powers of ten separate you from everything else.
+
+<CosmicScale />
+
+From a human being to the edge of the observable universe is only about **27 steps**. That's the power of powers of ten.
+
+</Step>
+
+<Step title="Orders of magnitude" kind="explain">
+
+Each power of ten is called an **order of magnitude**. When two things differ by one order of magnitude, one is ten times the other; by three orders, a thousand times.
+
+Thinking in orders of magnitude lets you compare wildly different things at a glance. A human (~1 m) and a bacterium (~10⁻⁶ m) differ by **six** orders of magnitude — a factor of a million. You don't need the exact figures to grasp the gulf; the exponent tells the story.
+
+<Callout type="tip" title="The exponent is the story">
+Often in physics the *order of magnitude* matters more than the precise number. Is this effect a thousand times bigger than that one, or a billion? Get the power of ten right and you already understand the situation.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A red blood cell is about 8 × 10⁻⁶ m wide. How is that written in full?"
+  options={[
+    "8,000,000 m",
+    "0.000008 m",
+    "0.0000008 m",
+    "8.0 m",
+  ]}
+  correctIndex={1}
+  explanation="A negative exponent means a small number: 10⁻⁶ shifts the decimal six places left, giving 0.000008 m — eight millionths of a metre. (That's why we usually just call it 8 micrometres.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Scientific notation** writes any number as a small figure times a power of ten — no endless zeros.
+- A **positive** exponent means a large number; a **negative** one means small.
+- Each power of ten is an **order of magnitude** — a factor of ten up or down.
+- Comparing orders of magnitude lets you size up the universe, from atoms to galaxies, in just a couple of dozen steps.
+
+</Step>
+
+</Lesson>

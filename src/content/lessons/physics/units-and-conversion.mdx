@@ -1,0 +1,88 @@
+---
+title: Units, Prefixes & Conversion
+subject: physics
+contentSlug: physics/units-and-conversion
+order: 4
+estimatedMinutes: 7
+level: beginner
+format: core
+---
+
+<Lesson>
+
+<Step title="Shorthand for big and small" kind="explain">
+
+Nobody says a journey is 5,000 metres — they say **5 kilometres**. Nobody measures a virus in metres — they use **nanometres**. A *prefix* is a one-word shortcut for a power of ten, bolted onto any unit so the numbers stay friendly.
+
+"Kilo" means a thousand, "milli" a thousandth, "nano" a billionth. Learn the ladder once and it works for every unit: kilometres, kilograms, kilowatts; milliseconds, millilitres, milligrams.
+
+</Step>
+
+<Step title="The prefix ladder" kind="interactive">
+
+Each common prefix is a jump of a thousand — three powers of ten — up or down from the base unit. Slide along and see what each one means.
+
+<PrefixLadder />
+
+Going up: kilo (10³), mega (10⁶), giga (10⁹), tera (10¹²). Going down: milli (10⁻³), micro (10⁻⁶), nano (10⁻⁹), pico (10⁻¹²). The base unit sits in the middle at 10⁰ = 1.
+
+</Step>
+
+<Step title="Converting is just multiplying by one" kind="explain">
+
+To switch units, multiply by a clever form of the number **1**. Since 1 km = 1000 m, the fraction <Formula tex="\tfrac{1000\ \text{m}}{1\ \text{km}}" /> equals 1 — and multiplying by 1 never changes the real quantity, only how it's written.
+
+<Formula tex="2.5\ \text{km} \times \dfrac{1000\ \text{m}}{1\ \text{km}} = 2500\ \text{m}" block />
+
+The "km" cancels top-and-bottom, leaving metres. Arrange the conversion factor so the unit you *don't* want cancels, and you can never go wrong.
+
+</Step>
+
+<Step title="Let the units check your work" kind="explain">
+
+Units aren't just labels — they obey algebra, and that's a free error-detector. If you compute a speed and the units come out as kilograms, you know you've made a mistake *before* you ever check the number.
+
+<Callout type="info" title="Dimensional checking">
+Whatever you do to the numbers, do to the units. If a formula claims that distance = speed × time, check it: (m/s) × s = m. The seconds cancel and you're left with metres — a distance. The units balance, so the formula is at least plausible.
+</Callout>
+
+This habit — watching that both sides of an equation carry the **same** units — catches more mistakes than almost anything else in physics.
+
+</Step>
+
+<Step title="A worked conversion" kind="explain">
+
+How fast is 90 km/h in metres per second? Convert each part:
+
+<Formula tex="90\ \tfrac{\text{km}}{\text{h}} \times \dfrac{1000\ \text{m}}{1\ \text{km}} \times \dfrac{1\ \text{h}}{3600\ \text{s}} = 25\ \tfrac{\text{m}}{\text{s}}" block />
+
+The kilometres and hours cancel, leaving metres per second. A handy rule falls out: **divide km/h by 3.6 to get m/s**. So a 90 km/h motorway speed is 25 m/s.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A film of dust is 0.5 mm thick. How many micrometres (µm) is that?"
+  options={[
+    "0.0005 µm",
+    "5 µm",
+    "500 µm",
+    "5000 µm",
+  ]}
+  correctIndex={2}
+  explanation="1 mm = 1000 µm (milli is 10⁻³, micro is 10⁻⁶, so they differ by a factor of 1000). Thus 0.5 mm × 1000 = 500 µm."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **prefix** is shorthand for a power of ten — kilo (×1000), milli (÷1000), and so on.
+- The engineering ladder steps by **factors of a thousand**: …nano, micro, milli, base, kilo, mega, giga…
+- **Convert** by multiplying by a fraction equal to 1, arranged so the unwanted unit cancels.
+- Units follow algebra, so **checking the units** is a quick, powerful way to catch errors.
+
+</Step>
+
+</Lesson>

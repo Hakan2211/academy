@@ -1,0 +1,92 @@
+---
+title: "Semiconductors: The Physics of the Chip"
+subject: physics
+contentSlug: physics/semiconductors
+order: 2
+estimatedMinutes: 8
+level: advanced
+format: core
+---
+
+<Lesson>
+
+<Step title="The material that runs the modern world" kind="explain">
+
+Every computer, phone, solar panel, and LED runs on a class of materials that are neither good conductors nor good insulators: **semiconductors**, above all **silicon**. Their superpower is that we can *switch* them between conducting and not — billions of times a second, in a chip the size of a fingernail.
+
+To see how a lump of sand becomes the brain of a computer, we need one idea from quantum physics: the **energy band**.
+
+</Step>
+
+<Step title="Bands and the gap" kind="interactive">
+
+In a single atom, electrons can only sit at specific energy levels. Pack trillions of atoms into a crystal and those levels smear into broad **bands** of allowed energy, separated by forbidden gaps. What decides whether a material conducts is the **gap above its highest filled band**.
+
+<BandGap />
+
+- **No gap** (bands overlap) → electrons move freely → a **conductor** (metal).
+- **Huge gap** → electrons are stuck → an **insulator**.
+- **Small gap** → normally stuck, but a little energy frees them → a **semiconductor**.
+
+That small, bridgeable gap is everything.
+
+</Step>
+
+<Step title="Electrons and holes" kind="explain">
+
+When an electron in a semiconductor absorbs enough energy — from heat or light — it jumps the gap into the empty conduction band, where it's free to carry current. But it leaves something behind: an empty spot in the lower band called a **hole**.
+
+A neighbouring electron can slide into that hole, which makes the hole appear to move the *other* way. So a hole behaves like a **positive** charge carrier in its own right. In a semiconductor, current flows two ways at once: negative electrons up top, positive holes down below.
+
+</Step>
+
+<Step title="Doping: tuning a crystal on purpose" kind="explain">
+
+Pure silicon is a mediocre conductor. The breakthrough is **doping** — deliberately seeding the lattice with a trace of foreign atoms (recall, from crystals, that a few impurity atoms can transform a material).
+
+- Add atoms with a **spare** electron (like phosphorus) → extra free electrons → **n-type** silicon (negative carriers).
+- Add atoms with one **too few** (like boron) → extra holes → **p-type** silicon (positive carriers).
+
+A few impurity atoms per million can change silicon's conductivity by a factor of thousands. We don't accept the material as found — we *engineer* its electronic behaviour atom by atom.
+
+</Step>
+
+<Step title="The junction and the transistor" kind="explain">
+
+Press a piece of **p-type** silicon against a piece of **n-type** and something remarkable happens at the boundary: current flows easily one way but not the other. That one-way valve is a **diode** — and it's how an LED emits light and a solar cell turns light into current.
+
+Sandwich three layers together and a small voltage on the middle layer can switch the current through the whole device on or off. That's the **transistor** — an electronic switch with no moving parts.
+
+<Callout type="info" title="A billion switches on a fingernail">
+A transistor is just a tiny tap for electric current, controlled by another current. Wire billions of them together and "on/off" becomes "1/0" — the binary logic of every computer. A modern chip packs over **50 billion** transistors into a few square centimetres of doped silicon.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why can a semiconductor be switched between conducting and non-conducting, while a metal is always a conductor?"
+  options={[
+    "A semiconductor has no electrons at all until you switch it on",
+    "A metal's bands overlap, but a semiconductor has a small gap electrons can be made to cross — or not",
+    "Semiconductors are liquids and metals are solids",
+    "Metals are doped and semiconductors are pure",
+  ]}
+  correctIndex={1}
+  explanation="In a metal the conduction band is already accessible, so it always conducts. A semiconductor has a small band gap: with no extra energy its electrons stay put (insulator-like), but heat, light, doping, or an applied voltage can push them across — letting us switch conduction on and off."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- In a crystal, electron energies form **bands**; conduction depends on the **gap** above the filled band.
+- Metals have no gap (always conduct); insulators a huge one; **semiconductors a small, bridgeable one**.
+- Freed electrons carry current — and the **holes** they leave behave like positive carriers.
+- **Doping** with trace impurities makes **n-type** (extra electrons) or **p-type** (extra holes) silicon.
+- A **p–n junction** is a one-way valve (diode); stacking layers makes the **transistor**, the switch behind all digital electronics.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,69 @@
+---
+title: Why a Pendulum Swings
+subject: physics
+contentSlug: physics/simple-harmonic-motion
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="The restoring force" kind="explain">
+
+A **pendulum** is just a mass on a string. Pull it aside and gravity tugs it back toward the middle — but it overshoots, swings past, and comes back. That endless back-and-forth is **simple harmonic motion**.
+
+The time for one complete swing is the **period**, T:
+
+<Formula tex="T = 2\pi\sqrt{\tfrac{L}{g}}" block />
+
+Look closely at what's *inside* that formula — and, just as importantly, what isn't.
+
+</Step>
+
+<Step title="Watch the rhythm" kind="explain">
+
+If you plot the bob's position over time, you get a smooth wave. One full cycle of that wave is exactly one period.
+
+<SineWave />
+
+The motion is perfectly regular — like a metronome. That steadiness is why pendulums kept time in clocks for centuries.
+
+</Step>
+
+<Step title="Play with it" kind="interactive">
+
+Drag the sliders. Change the **length** and the **gravity**, and watch the period readout respond in real time.
+
+<Scene3D component="pendulum" />
+
+<Callout type="tip" title="Try this">
+Make the string longer. Does each swing take **more** or **less** time? Now crank gravity up — what changes?
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You double the length L of the pendulum. What happens to the period T?"
+  options={["It doubles", "It increases by about 1.4×", "It halves", "It stays exactly the same"]}
+  correctIndex={1}
+  explanation="Since T is proportional to √L, doubling L multiplies the period by √2 ≈ 1.41 — not by 2."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+The period of a pendulum depends on just two things:
+
+- the **length** L — longer string, slower swing
+- the local **gravity** g — stronger gravity, faster swing
+
+It does **not** depend on the mass of the bob, nor (for small swings) on how far you pull it aside.
+
+<Formula tex="T = 2\pi\sqrt{\tfrac{L}{g}}" block />
+
+</Step>
+
+</Lesson>

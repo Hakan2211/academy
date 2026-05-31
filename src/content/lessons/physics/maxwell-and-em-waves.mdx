@@ -1,0 +1,116 @@
+---
+title: Maxwell's Unification & Electromagnetic Waves
+subject: physics
+contentSlug: physics/maxwell-and-em-waves
+order: 8
+estimatedMinutes: 12
+level: advanced
+format: deepdive
+---
+
+<Lesson>
+
+<Step title="Two forces, or one?" kind="explain">
+
+By the 1860s, physics had collected a remarkable set of clues. Ørsted: currents make magnetism. Faraday: changing magnetism makes currents. Electricity and magnetism were clearly entangled — yet they were still written down as separate sets of rules, a patchwork of experimental laws.
+
+It took **James Clerk Maxwell** to see that they weren't two forces at all, but **one**: electromagnetism. His unification stands among the greatest achievements in the history of science — and it ended with a prediction that nobody saw coming.
+
+</Step>
+
+<Step title="Maxwell's great synthesis" kind="explain">
+
+Maxwell gathered the known laws of electricity and magnetism into a compact set of equations. But as he assembled them, he noticed they were lopsided — and to make them consistent, he had to add one missing piece.
+
+<Callout type="info" title="The symmetry Maxwell completed">
+Faraday had shown that a **changing magnetic field creates an electric field**. Maxwell argued the reverse must also be true: a **changing electric field creates a magnetic field**. With that one addition, the equations became perfectly symmetric — and something extraordinary fell out.
+</Callout>
+
+That new symmetry is the secret to everything that follows.
+
+</Step>
+
+<Step title="The leapfrog: a self-sustaining wave" kind="interactive">
+
+Put the two halves together and watch what they imply. A changing electric field makes a magnetic field; that magnetic field is itself changing, so it makes an electric field; which is changing, so it makes a magnetic field…
+
+<EMWave />
+
+Each field continually regenerates the other, and the pattern **propagates through completely empty space** — no medium required. The electric and magnetic fields oscillate at right angles to each other and to the direction of travel, locked perfectly in step. This is an **electromagnetic wave**.
+
+</Step>
+
+<Step title="It travels at… the speed of light" kind="explain">
+
+Maxwell could calculate how fast his wave should travel, using only two constants already measured in the lab — one from electricity, one from magnetism. The answer came out at about **300,000 km/s**.
+
+That number was already famous: it was the measured **speed of light**. The conclusion was inescapable and breathtaking — **light itself is an electromagnetic wave.**
+
+<Formula tex="c = \dfrac{1}{\sqrt{\mu_0 \varepsilon_0}}" block />
+
+Optics, which you studied as its own subject, turned out to be a *branch of electromagnetism*. Maxwell had explained what light *is*.
+
+</Step>
+
+<Step title="One family, many faces" kind="interactive">
+
+If light is an EM wave, are there others? Maxwell's theory said yes — waves of *any* wavelength should exist, all travelling at `c`, differing only in frequency. Visible light is just the slice our eyes happen to detect.
+
+<SpectrumBar />
+
+Radio, microwaves, infrared, visible, ultraviolet, X-rays, gamma rays — one continuous **electromagnetic spectrum**, all the same phenomenon at different scales. The colours you met in **Light & Optics** are a tiny window in this vast family, and `c = fλ` ties the whole thing together.
+
+</Step>
+
+<Step title="Hertz makes the invisible real" kind="explain">
+
+A prediction is only physics once it's tested. In 1887, **Heinrich Hertz** built a spark gap that pushed charge back and forth — a changing electric field — and across the room, a second loop sparked in response. He had **generated and detected radio waves**, exactly as Maxwell predicted, travelling at the speed of light.
+
+Asked what use his discovery was, Hertz reportedly shrugged: "Nothing." Within a few decades it had become radio, television, radar, and eventually every wireless device on Earth. Maxwell's equation had become an industry.
+
+</Step>
+
+<Step title="Why unification changed everything" kind="explain">
+
+Maxwell didn't just explain light — he set the **template** for modern physics. Showing that two seemingly different forces are one deepened what we mean by understanding nature, and physicists have chased unification ever since (later merging electromagnetism with the weak nuclear force into the *electroweak* force).
+
+His equations also revealed that EM waves **carry energy and information** across empty space. Every photo beamed from a phone, every signal from a distant spacecraft, every glimpse of a faraway galaxy reaches us as an electromagnetic wave — Maxwell's leapfrogging fields, crossing the void.
+
+</Step>
+
+<Step title="The crack that led to relativity" kind="explain">
+
+There was one last, deeply strange detail. Maxwell's equations give a single, definite speed for light, `c` — but a speed *relative to what?* Every other speed depends on the observer's motion. Light, the equations insisted, did not.
+
+This puzzle gnawed at physics for decades. Its resolution, by a young Albert Einstein, was that space and time themselves must bend to keep `c` constant for everyone — **special relativity**. The electromagnetic wave you just watched leapfrog across the screen is the very thread that, pulled hard enough, unravelled our old ideas of space and time. That story is the next unit.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What was the stunning conclusion when Maxwell calculated the speed of his predicted electromagnetic waves?"
+  options={[
+    "They travelled instantly",
+    "Their speed matched the measured speed of light — so light itself is an electromagnetic wave",
+    "They moved slower than sound",
+    "They could only travel through wires",
+  ]}
+  correctIndex={1}
+  explanation="Maxwell's wave speed, computed from the electric and magnetic constants, equalled the known speed of light. This revealed that light is an electromagnetic wave — unifying optics with electromagnetism, and predicting the entire spectrum from radio to gamma rays."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Maxwell unified** electricity and magnetism into one theory, adding the key idea that a **changing electric field makes a magnetic field**.
+- Together the fields form a **self-sustaining electromagnetic wave** that needs no medium, with **E ⊥ B ⊥ direction of travel**.
+- Its speed, from electric and magnetic constants alone, is **c** — proving **light is an EM wave**, one slice of the full **spectrum** (radio → gamma).
+- **Hertz** confirmed it with radio waves; the constancy of `c` later cracked open **special relativity**.
+
+<Formula tex="c = \dfrac{1}{\sqrt{\mu_0 \varepsilon_0}}" block />
+
+</Step>
+
+</Lesson>

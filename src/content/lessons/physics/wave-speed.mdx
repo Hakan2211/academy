@@ -1,0 +1,81 @@
+---
+title: Wave Speed (v = fλ)
+subject: physics
+contentSlug: physics/wave-speed
+order: 4
+estimatedMinutes: 6
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="How fast does a wave move?" kind="explain">
+
+In one **period**, a wave advances by exactly one **wavelength**. Speed is distance over time, so:
+
+<Formula tex="v = \dfrac{\lambda}{T} = f \lambda" block />
+
+That tidy little equation — **v = f λ** — ties together everything from the last few lessons. Frequency and wavelength always trade off to give the wave's speed.
+
+</Step>
+
+<Step title="See the trade-off" kind="interactive">
+
+Watch the speed readout as you drag the sliders. Raise the **frequency** *or* stretch the **wavelength** and the wave moves faster; the product f × λ is the speed.
+
+<WaveLab />
+
+Try to find two different slider settings that give the *same* speed — a fast, short wave can match a slow, long one.
+
+</Step>
+
+<Step title="The medium sets the speed" kind="explain">
+
+Here's the twist: for a given material, the wave speed is essentially **fixed by the medium**, not by the source.
+
+- **Sound** in air: about **343 m/s**.
+- **Sound** in water: ~1,500 m/s; in steel, ~5,000 m/s.
+- **Light** in a vacuum: **300,000,000 m/s** — the cosmic speed limit.
+
+Shout louder or softer and your voice still travels at 343 m/s. The medium calls the shots.
+
+</Step>
+
+<Step title="So what changes when v is fixed?" kind="explain">
+
+If the speed is locked by the medium and you change the frequency, then **wavelength must adjust** to keep v = f λ true:
+
+<Formula tex="\lambda = \dfrac{v}{f}" block />
+
+A high-pitched (high-f) sound has a short wavelength; a deep bass note has a long one — both travelling at the same 343 m/s. This is also why a wave's wavelength shrinks when it enters a slower medium (coming up in refraction).
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A sound wave has frequency 170 Hz and travels at 343 m/s in air. Roughly what is its wavelength?"
+  options={[
+    "About 2 m",
+    "About 0.5 m",
+    "About 58,000 m",
+    "About 170 m",
+  ]}
+  correctIndex={0}
+  explanation="λ = v / f = 343 / 170 ≈ 2 m. Rearranging v = fλ lets you find any one quantity from the other two."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A wave moves one wavelength per period, so **v = f λ**.
+- For a given medium the **speed is roughly constant**, set by the material.
+- With v fixed, raising **frequency shortens the wavelength** (and vice versa).
+
+<Formula tex="v = f \lambda" block />
+
+</Step>
+
+</Lesson>

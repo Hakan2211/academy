@@ -1,0 +1,120 @@
+---
+title: How a Circuit Really Works
+subject: physics
+contentSlug: physics/how-circuits-work
+order: 8
+estimatedMinutes: 12
+level: advanced
+format: deepdive
+---
+
+<Lesson>
+
+<Step title="A puzzle to start" kind="explain">
+
+You flick a switch and the light comes on *instantly* — no perceptible delay, even if the bulb is across a large room on metres of wire.
+
+But here's the strange part: the electrons inside that wire barely move at all. In a typical household wire they drift at well under a **millimetre per second** — slower than a snail. At that crawl, an electron leaving the switch would take *hours* to reach the bulb.
+
+So how does the light turn on the moment you flick the switch? Resolving this puzzle reveals what's *really* happening in a circuit — and it's not what the simple "electrons carry energy to the bulb" picture suggests.
+
+</Step>
+
+<Step title="The electrons barely move" kind="interactive">
+
+First, let's be honest about the electrons. Their actual net motion — the **drift velocity** — is glacial.
+
+<CurrentFlow />
+
+Even at high current, the *average* progress of any individual electron is tiny. They're zipping around at hundreds of km/s randomly (their thermal motion), but the organised *drift* in the current's direction is a barely-there shuffle. The electrons are emphatically **not** racing from the battery to the bulb to deliver the energy.
+
+</Step>
+
+<Step title="So why does the bulb light at once?" kind="explain">
+
+The resolution: what travels almost instantly isn't the electrons — it's the **electric field**.
+
+The moment you close the switch, the battery sets up an electric field that propagates through the wire at close to the **speed of light**. That field reaches every electron in the whole circuit almost simultaneously and nudges them all into motion *at once* — including the ones already sitting in the bulb's filament.
+
+It's like a pipe already full of water: open the tap and water comes out the far end immediately, even though any single water molecule has only edged forward a little. The *signal* to move travels far faster than the *stuff* that moves.
+
+</Step>
+
+<Step title="The whole loop acts together" kind="interactive">
+
+Because the field fills the entire loop, current is the **same all the way around** a single series loop — charges don't pile up or get "used up." The same number flow out of the battery's negative terminal as flow back into its positive one.
+
+<CircuitLab />
+
+Speed up the flow with more voltage and *every* charge in the loop responds together. Nothing gets consumed on the journey: the charges are conserved. What the circuit delivers to the bulb isn't *charge* — it's **energy**.
+
+</Step>
+
+<Step title="Where the energy actually goes" kind="explain">
+
+Follow the energy, not the electrons. A charge leaves the battery loaded with energy (the battery raised its electrical potential). It carries that energy around and **drops** it where it meets resistance — in the bulb's filament — where it's converted to heat and light. Then it returns to the battery, empty, to be re-energised.
+
+<Callout type="info" title="The loop's energy budget balances">
+Add up the voltage *gained* at the source and the voltage *dropped* across all the components, and they're exactly equal around any loop. Every joule the battery supplies is accounted for by a joule converted somewhere in the circuit — energy conservation, written for circuits (Kirchhoff's voltage law).
+</Callout>
+
+</Step>
+
+<Step title="EMF and internal resistance" kind="explain">
+
+A real battery isn't a perfect source. Its full "no-load" voltage is its **EMF**, but the battery has its own **internal resistance** too. When current flows, some energy is dissipated *inside* the battery, so the voltage you actually get at its terminals sags a little below the EMF — and the battery warms up.
+
+<Formula tex="V_{\text{terminal}} = \text{EMF} - I \, r" block />
+
+This is why a fading battery struggles under heavy load, why a car's headlights dim slightly when you crank the engine, and why batteries get warm when delivering a big current. The harder you draw on it, the more its own internal resistance bites.
+
+</Step>
+
+<Step title="The water analogy, refined" kind="explain">
+
+The water-circuit picture is genuinely useful — now you can see exactly how far it goes:
+
+- The **pump** is the battery (it raises pressure/energy, it doesn't create water).
+- **Pressure** is voltage; **flow rate** is current; a **narrow section** of pipe is resistance.
+- The pipe is **already full** — open the valve and flow begins everywhere at once, just like the field-driven current.
+
+Its limit: water molecules really do travel the loop, whereas in a wire it's the *field and energy* that propagate while the electrons barely shuffle. Keep the analogy for intuition, but remember what's actually carrying the energy.
+
+</Step>
+
+<Step title="Pushing resistance to zero" kind="explain">
+
+If resistance is what wastes energy as heat, what if you could remove it entirely? Some materials, cooled to extreme cold, become **superconductors** — their resistance drops to *exactly* zero.
+
+In a superconductor a current, once started, can flow **forever** with no voltage and no loss. There's no `I²R` heating because R is zero. This isn't science fiction: superconducting coils carry the enormous currents inside **MRI scanners** and **maglev trains**. They're a glimpse of circuits freed from the resistive friction that warms every ordinary wire.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A light switch is metres from the bulb, yet the light comes on instantly even though electrons drift at under a millimetre per second. Why?"
+  options={[
+    "The electrons actually travel at the speed of light",
+    "The electric field propagates through the circuit at nearly light speed, nudging all electrons — including those in the bulb — into motion at once",
+    "The bulb stores electrons in advance",
+    "Light is produced by the switch itself",
+  ]}
+  correctIndex={1}
+  explanation="It's the electric field, not the electrons, that travels fast. Closing the switch sets up a field through the whole circuit almost instantly, so every electron — including those already in the filament — starts drifting at the same moment. The electrons themselves barely move."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Electrons **drift extremely slowly**, yet circuits respond instantly because the **electric field** propagates at nearly light speed and moves all charges at once.
+- Current is the **same around a series loop**; charge is conserved — circuits deliver **energy**, not charge.
+- Charges gain energy at the **source** and drop it across **resistances**; the loop's energy budget balances (Kirchhoff's voltage law).
+- Real sources have **internal resistance**, so terminal voltage = EMF − I·r; removing resistance entirely gives lossless **superconductors**.
+
+<Formula tex="V_{\text{terminal}} = \text{EMF} - I \, r" block />
+
+</Step>
+
+</Lesson>

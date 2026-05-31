@@ -1,0 +1,87 @@
+---
+title: Wave–Particle Duality & the Atom
+subject: physics
+contentSlug: physics/wave-particle-duality
+order: 7
+estimatedMinutes: 8
+level: advanced
+format: core
+---
+
+<Lesson>
+
+<Step title="If light is a particle, is matter a wave?" kind="explain">
+
+The photoelectric effect showed that light — the textbook *wave* — also behaves like a *particle*. In 1924 a young physicist, **Louis de Broglie**, asked the daring reverse question: if waves can act like particles, can **particles act like waves**?
+
+He proposed that every moving object has a wavelength, set by its momentum:
+
+<Formula tex="\lambda = \dfrac{h}{p} = \dfrac{h}{mv}" block />
+
+For anything large — a thrown ball, a person — the wavelength is so absurdly tiny it's utterly unnoticeable. But for something as light as an **electron**, the wavelength is comparable to the size of an atom. And within a few years, experimenters fired electrons at crystals and watched them **diffract**, producing the exact interference pattern only waves can make. Matter really is wavy.
+
+</Step>
+
+<Step title="The electron as a standing wave" kind="interactive">
+
+This wave idea cracked open a mystery that had stumped physics: why are an atom's electrons allowed only **certain** energies, and never the values in between?
+
+Picture the electron's wave wrapped around the nucleus. For it to survive, the wave must **join up smoothly** with itself — meaning only a whole number of wavelengths can fit around the loop. The same rule that lets a guitar string play only its fundamental and harmonics.
+
+<StandingWave />
+
+Just as the string allows only n = 1, 2, 3… and nothing in between, the electron-wave allows only certain orbits. Each "fits" at a specific, **quantised** energy. The in-between values simply don't form a stable wave — so they're forbidden.
+
+</Step>
+
+<Step title="Energy levels and the colours of atoms" kind="interactive">
+
+Those allowed states are the atom's **energy levels** — rungs on a ladder the electron can occupy but never hover between. An electron can jump between rungs, but only by gaining or losing the **exact** energy difference, carried by a single photon (E = hf from the last lesson).
+
+<EnergyLevels />
+
+- Drop to a **lower** level → the atom **emits** a photon of a precise colour. A big drop means more energy, hence bluer light.
+- Climb to a **higher** level → it **absorbs** a photon of exactly that colour.
+
+Because every element has its own unique ladder, it emits its own unique set of colours — a **spectral fingerprint**. This is how we know what distant stars are made of: we read the colours in their light.
+
+</Step>
+
+<Step title="Why atoms don't collapse" kind="explain">
+
+The wave picture also rescued the atom from a classical disaster.
+
+<Callout type="info" title="The atom that should have died">
+Classical physics insisted that an electron circling the nucleus — an accelerating charge — must continuously radiate energy, spiral inward, and crash into the nucleus in a fraction of a second. By that logic, no atom could exist at all. Yet here we are.
+</Callout>
+
+Quantisation is the rescue. There is a **lowest** rung — the *ground state* — and the electron simply cannot fall below it, because there's no allowed wave-state beneath it to fall into. The electron's wave nature gives the atom a floor. That's why matter is stable, and why you don't dissolve into the chair you're sitting on.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why can an atom's electron only have certain specific energies?"
+  options={[
+    "Because the nucleus physically blocks other energies",
+    "Because only a whole number of electron-wavelengths can fit into a stable standing wave, like harmonics on a string",
+    "Because electrons are too small to measure precisely",
+    "Because energy is always a whole number of joules",
+  ]}
+  correctIndex={1}
+  explanation="Treating the electron as a wave, only states where a whole number of wavelengths fits form a stable standing wave — exactly like the harmonics of a guitar string. The in-between energies don't form a stable wave, so they're forbidden, giving the atom its discrete energy levels."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **De Broglie**: matter has a wavelength **λ = h/p**; for electrons it's atom-sized, and electron **diffraction** confirms it.
+- An electron orbit survives only as a **standing wave** — a whole number of wavelengths — which forces energies to be **quantised**.
+- Jumps between **energy levels** emit or absorb photons of exact colours, giving each element a **spectral fingerprint**.
+- Quantisation gives the atom a **ground state** it can't fall below — which is why atoms (and you) are stable.
+
+</Step>
+
+</Lesson>

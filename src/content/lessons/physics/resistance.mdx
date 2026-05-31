@@ -1,0 +1,83 @@
+---
+title: Resistance
+subject: physics
+contentSlug: physics/resistance
+order: 4
+estimatedMinutes: 6
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="Opposing the flow" kind="explain">
+
+Voltage pushes charge through a circuit — but the circuit pushes back. Every material puts up some opposition to current, and we call it **resistance**.
+
+Where does it come from? As electrons drift through a wire, they keep bumping into the vibrating atoms of the material. Each collision slows them and transfers a little energy, which shows up as **heat**. Resistance is essentially this microscopic friction. It's measured in **ohms (Ω)**.
+
+</Step>
+
+<Step title="Choke the current" kind="interactive">
+
+Hold the voltage steady and increase the resistance instead. Watch the current drop and the bulb fade.
+
+<CircuitLab />
+
+**More resistance means less current** for the same push. It's the opposite lever to voltage: voltage drives the flow, resistance restrains it. Together they decide exactly how much current you get.
+
+</Step>
+
+<Step title="What sets a material's resistance" kind="explain">
+
+Four things determine how much a wire resists:
+
+- **Material** — copper and silver conduct beautifully (low resistance); nichrome and carbon resist far more.
+- **Length** — a longer wire means more collisions, so more resistance.
+- **Thickness** — a thicker wire gives electrons more room, so *less* resistance.
+- **Temperature** — for most metals, hotter atoms vibrate more and get in the way more, raising resistance.
+
+Think of water again: a long, narrow pipe resists flow far more than a short, wide one.
+
+</Step>
+
+<Step title="Resistance as a tool" kind="explain">
+
+Resistance isn't just a nuisance — it's deliberately useful, precisely *because* it turns electrical energy into heat and light.
+
+<Callout type="info" title="Resistance put to work">
+- A **kettle** or **heater** uses a high-resistance coil to get hot on purpose.
+- An old-style **light bulb** runs current through a thin filament until it glows white-hot.
+- A **thermistor** changes resistance with temperature, making a simple electronic thermometer.
+</Callout>
+
+So engineers add resistance where they want heat or light, and minimise it (thick copper cables) where they want to deliver energy efficiently without wasting it as warmth.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You replace a short, thick copper wire with a long, thin one of the same metal. What happens to its resistance?"
+  options={[
+    "It decreases",
+    "It increases",
+    "It stays the same",
+    "It depends on the voltage",
+  ]}
+  correctIndex={1}
+  explanation="Longer wires and thinner wires both increase resistance — more length means more collisions, and less cross-section gives electrons less room. Making the wire both longer and thinner raises its resistance substantially."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Resistance** is opposition to current, caused by electrons colliding with atoms and losing energy as **heat**; measured in **ohms (Ω)**.
+- For a fixed voltage, **more resistance → less current**.
+- It depends on **material, length, thickness, and temperature**.
+- Resistance is used on purpose in **heaters, filaments, and thermistors**, and minimised in power cables.
+
+</Step>
+
+</Lesson>

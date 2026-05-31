@@ -1,0 +1,81 @@
+---
+title: Series & Parallel Circuits
+subject: physics
+contentSlug: physics/series-and-parallel-circuits
+order: 6
+estimatedMinutes: 7
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="Two ways to connect" kind="explain">
+
+Once you have more than one component, you have a choice about how to wire them up — and the choice changes everything about how the circuit behaves.
+
+- **Series** — components sit one after another on a *single* loop. There's only one path, so the same current flows through every component in turn.
+- **Parallel** — components sit on *separate* branches across the same two points. The current splits between the branches, and each branch gets the full voltage.
+
+</Step>
+
+<Step title="Compare them side by side" kind="interactive">
+
+Switch between the two layouts, and try pulling a bulb out of each.
+
+<SeriesParallel />
+
+Two lessons jump out. In **series**, the bulbs share the voltage so each glows dimmer — and removing one **breaks the only loop, killing both**. In **parallel**, each bulb has its own full-voltage loop, so both shine brightly — and removing one **leaves the other completely unaffected**.
+
+</Step>
+
+<Step title="Adding it up" kind="explain">
+
+The two arrangements combine resistance in opposite ways:
+
+- **Series resistances add**: `R = R₁ + R₂ + …`. More components in a row means more total resistance, so less current overall.
+- **Parallel resistance drops** below even the smallest branch — because you've opened up extra paths for current to flow. More routes means *less* total opposition.
+
+For current and voltage: in series the **current is the same everywhere** but the **voltage splits** across the components. In parallel the **voltage is the same** across each branch but the **current splits** between them.
+
+</Step>
+
+<Step title="Why your home is wired in parallel" kind="explain">
+
+Look around and almost everything important is parallel — for very practical reasons.
+
+<Callout type="info" title="The case for parallel">
+- Every device gets the **full mains voltage** it's designed for.
+- Each can be **switched on and off independently** — your kettle doesn't dim when you turn on a lamp.
+- If one device **fails**, the rest keep working (unlike old series Christmas lights, where one dead bulb killed the whole string).
+</Callout>
+
+Series still has its uses — for switches and **fuses**, which must sit in series so they can cut the current to everything downstream when needed.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Two identical bulbs are wired in parallel across a battery. You unscrew one. What happens to the other?"
+  options={[
+    "It goes out too",
+    "It keeps glowing at the same brightness",
+    "It gets dimmer",
+    "It gets brighter",
+  ]}
+  correctIndex={1}
+  explanation="In parallel, each bulb has its own independent loop to the battery and gets the full voltage. Removing one bulb only breaks its own branch — the other bulb's circuit is untouched, so it stays just as bright."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Series**: one loop, **same current** through all, **voltage splits**; resistances **add**; one break stops everything.
+- **Parallel**: separate branches, **same voltage** across each, **current splits**; total resistance **drops**; branches are independent.
+- **Homes are wired in parallel** so devices get full voltage, switch independently, and survive each other's failures.
+
+</Step>
+
+</Lesson>

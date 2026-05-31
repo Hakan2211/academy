@@ -1,0 +1,92 @@
+---
+title: Graphs & Relationships
+subject: physics
+contentSlug: physics/graphs-and-relationships
+order: 6
+estimatedMinutes: 7
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="A picture of a relationship" kind="explain">
+
+A table of numbers hides its secrets. Plot those same numbers on a **graph** and the relationship leaps out: a rising line, a curve, a plateau. Physicists reach for graphs constantly because the *shape* of the data reveals the law behind it.
+
+The convention: the thing you change (the **cause**) goes on the horizontal *x*-axis; the thing that responds (the **effect**) goes on the vertical *y*-axis. Read left-to-right and you're watching cause drive effect.
+
+</Step>
+
+<Step title="The straight line through the origin" kind="interactive">
+
+The simplest and most important shape is a **straight line through the origin**. It's the signature of a **proportional** relationship: double the cause and the effect doubles too.
+
+Drag the line until it threads this experiment's data points.
+
+<ProportionGraph />
+
+When it fits, the data obey <Formula tex="y = kx" /> — and the line's **slope**, *k*, is the constant of the relationship. Here that slope is the spring's stiffness. The graph didn't just display the data; it *measured a physical quantity*.
+
+</Step>
+
+<Step title="Slope is rise over run" kind="explain">
+
+The **slope** of a line is how steeply it climbs: the rise (change in *y*) divided by the run (change in *x*).
+
+<Formula tex="\text{slope} = \dfrac{\Delta y}{\Delta x}" block />
+
+Slope always carries real meaning and real units. On a distance-vs-time graph it's metres per second — a **speed**. On a force-vs-extension graph it's newtons per metre — a **stiffness**. Find the slope and you've found a physical quantity, straight off the page.
+
+</Step>
+
+<Step title="The line of best fit" kind="explain">
+
+Real data never sit perfectly on a line — measurement uncertainty scatters them. So you draw a **line of best fit**: the straight line passing as close as possible to *all* the points, with roughly as many above as below.
+
+The best-fit line averages out the random scatter, just like taking the mean of repeated readings. It lets you read off the trend — and the slope — even when no single point is exactly right. Crucially, you don't force the line through every dot; you let it find the pattern *behind* the noise.
+
+<Callout type="info" title="Why not just connect the dots?">
+Connecting points zig-zag treats every wobble as real. The line of best fit assumes the underlying law is smooth and the wobbles are measurement error — usually the right bet, and the reason a graph can be more accurate than any single reading.
+</Callout>
+
+</Step>
+
+<Step title="When the line bends" kind="explain">
+
+Not every relationship is a straight line, and the *shape* of a curve is a clue to the physics:
+
+- An **upward-bending** curve often means *y* grows with the square of *x* — like kinetic energy with speed, or distance in free fall with time.
+- A curve that **drops toward zero** often signals an inverse relationship, *y* ∝ 1/*x* — like a gas's pressure as you expand its volume.
+
+Spotting these shapes turns a graph into a hypothesis about the law at work — which is exactly where the next lesson picks up.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="On a graph of distance (y) against time (x) for a car, the data form a straight line through the origin with a slope of 20. What does that tell you?"
+  options={[
+    "The car is accelerating at 20 m/s²",
+    "The car travels at a constant speed of 20 m/s",
+    "The car covers 20 m in total",
+    "Nothing — slope has no physical meaning",
+  ]}
+  correctIndex={1}
+  explanation="A straight line through the origin means distance is proportional to time. Its slope is Δdistance ÷ Δtime — a speed. A slope of 20 means a steady 20 m/s. (A curve would mean changing speed, i.e. acceleration.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **graph** turns a table of numbers into a visible relationship; cause on *x*, effect on *y*.
+- A **straight line through the origin** means a **proportional** law, y = kx.
+- The **slope** (rise ÷ run) is a physical quantity with units — a speed, a stiffness, and so on.
+- Draw a **line of best fit** to see the trend *through* the measurement scatter.
+- The **shape** of a curve (bending up, falling toward zero) hints at the underlying law.
+
+</Step>
+
+</Lesson>

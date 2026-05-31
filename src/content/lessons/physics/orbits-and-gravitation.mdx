@@ -1,0 +1,107 @@
+---
+title: Orbits & Universal Gravitation
+subject: physics
+contentSlug: physics/orbits-and-gravitation
+order: 14
+estimatedMinutes: 12
+level: advanced
+format: deepdive
+---
+
+<Lesson>
+
+<Step title="One law for apples and moons" kind="explain">
+
+Newton's great leap was to realize that the force pulling an **apple** to the ground is the *same* force holding the **Moon** in its orbit. Not two phenomena — one **universal** law of gravitation governing everything with mass, from dust grains to galaxies.
+
+</Step>
+
+<Step title="The law of gravitation" kind="explain">
+
+Every mass attracts every other mass. The pull grows with the masses and weakens with the **square** of the distance between them:
+
+<Formula tex="F = G\,\dfrac{m_1 m_2}{r^2}" block />
+
+Here **G** is the gravitational constant — a tiny number, which is why gravity feels weak until one of the masses is planet-sized. Double the distance and the force drops to a **quarter**.
+
+</Step>
+
+<Step title="Launch an orbit" kind="interactive">
+
+Give a planet a sideways shove past a star and let gravity do the rest. Try different launch speeds:
+
+<OrbitLab />
+
+<Callout type="tip" title="Explore">
+Start slow — the planet falls inward. Speed up to find a near-perfect **circle**. A bit more gives a stretched **ellipse**.
+</Callout>
+
+</Step>
+
+<Step title="An orbit is endless falling" kind="explain">
+
+So what *is* an orbit? Newton imagined firing a cannon horizontally from a mountain. Fire gently and the ball lands nearby. Fire faster and it lands farther — because the **ground curves away** beneath it.
+
+Fire fast enough and the surface curves away exactly as fast as the ball falls. Now it **never lands** — it perpetually falls *around* the Earth. That's an orbit: free fall that keeps missing the ground.
+
+</Step>
+
+<Step title="Circular speed" kind="explain">
+
+For a circular orbit, gravity must supply *exactly* the centripetal force from the last lesson. Setting them equal gives the speed needed at radius **r** around a mass **M**:
+
+<Formula tex="v = \sqrt{\dfrac{GM}{r}}" block />
+
+A neat consequence: **higher orbits are slower**. The Moon, far out, ambles along; a low satellite has to race around in about 90 minutes.
+
+</Step>
+
+<Step title="Ellipses and escape" kind="interactive">
+
+Now push the launch speed higher and higher. The ellipse stretches… until the planet never returns.
+
+<OrbitLab />
+
+<Callout type="tip" title="Challenge">
+Find the speed where the orbit stops closing back on itself. It happens around **1.41× the circular speed** — that's the edge of escape.
+</Callout>
+
+</Step>
+
+<Step title="Escape velocity" kind="explain">
+
+Reach that threshold and gravity can never reel you back. The **escape velocity** is exactly **√2 ≈ 1.41** times the circular speed:
+
+<Formula tex="v_{\text{esc}} = \sqrt{\dfrac{2GM}{r}}" block />
+
+It's why launching a probe to deep space takes so much more fuel than reaching low orbit — you must pay the full escape toll.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What supplies the centripetal force that keeps a planet in its orbit?"
+  options={[
+    "The planet's own spin",
+    "Gravity from the star",
+    "A push from the solar wind",
+    "Nothing — it moves in a straight line",
+  ]}
+  correctIndex={1}
+  explanation="Gravity is the centripetal force. It continually bends the planet's straight-line motion into a closed orbit — an endless fall around the star."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Universal gravitation:** every mass attracts every other, **F = G m₁m₂ / r²** — an inverse-square law.
+- An **orbit** is continual free fall that keeps missing the ground; gravity provides the centripetal force.
+- **Circular speed** v = √(GM/r); **escape velocity** is √2 times larger.
+
+<Formula tex="v_{\text{esc}} = \sqrt{2}\,\cdot v_{\text{circular}}" block />
+
+</Step>
+
+</Lesson>

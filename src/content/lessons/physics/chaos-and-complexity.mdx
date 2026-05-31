@@ -1,0 +1,85 @@
+---
+title: Chaos & the Butterfly Effect
+subject: physics
+contentSlug: physics/chaos-and-complexity
+order: 5
+estimatedMinutes: 8
+level: advanced
+format: core
+---
+
+<Lesson>
+
+<Step title="The clockwork that broke" kind="explain">
+
+For two centuries after Newton, physicists held a confident dream: the universe is a clockwork. If you knew the exact position and velocity of everything, the laws of motion would let you compute the future forever. Perfect prediction seemed, in principle, possible.
+
+The twentieth century shattered that dream — not with quantum weirdness, but with ordinary, deterministic systems behaving in ways nobody could predict. This is **chaos**: lawful, yet unforecastable. And it hides in things as simple as a dripping tap or a swinging pendulum.
+
+</Step>
+
+<Step title="A tiny nudge, a wild difference" kind="interactive">
+
+Here are two double pendulums. They obey identical, perfectly deterministic equations. The only difference: one starts a *hundredth of a radian* off from the other. Watch.
+
+<DoublePendulum />
+
+For a moment they move as one — then they diverge utterly, swinging into completely different dances. This is the signature of chaos: **extreme sensitivity to initial conditions**. A difference too small to measure today becomes a total difference tomorrow.
+
+</Step>
+
+<Step title="The butterfly effect" kind="explain">
+
+The meteorologist **Edward Lorenz** stumbled on this in 1961. Re-running a weather simulation, he rounded one input from 0.506127 to 0.506 — a change of one part in a thousand. The forecast that emerged was entirely different.
+
+He captured it in an unforgettable image: a butterfly flapping its wings in Brazil might set off a tornado in Texas weeks later. Not because the butterfly is powerful, but because in a chaotic system the **tiniest** disturbance is amplified, again and again, until it dominates. That's the **butterfly effect**.
+
+</Step>
+
+<Step title="Deterministic, yet unpredictable" kind="explain">
+
+Here's the subtle part. Chaos is **not** randomness. The double pendulum has no dice rolling inside it; every instant follows rigidly from the last. In principle the future *is* determined.
+
+But to predict it, you'd need the starting conditions to **infinite** precision — and that's impossible. Every measurement has uncertainty (as you saw in the foundations unit), and in a chaotic system that sliver of uncertainty grows exponentially until your forecast is worthless. Determinism and predictability, long assumed to be the same thing, turn out to be **completely different**.
+
+<Callout type="info" title="Why weather, not climate">
+This is exactly why we can't forecast weather beyond about two weeks, no matter how good our computers get — the atmosphere is chaotic. Yet we can still predict *climate* (long-run averages and trends), because statistical patterns survive even when the day-to-day detail is unforecastable.
+</Callout>
+
+</Step>
+
+<Step title="Order hiding in the chaos" kind="explain">
+
+Chaos isn't formless. Plot a chaotic system's behaviour in the right way and astonishing structure appears: **strange attractors**, intricate shapes the system traces forever without ever exactly repeating.
+
+Chaos is also tied to **fractals** — patterns that look the same at every scale, like coastlines, snowflakes, branching trees, and blood vessels. Simple rules, repeated, generate endless complexity. This is the wider field of **complexity**: how rich, organised behaviour — turbulence, ecosystems, heartbeats, galaxies — emerges from a few simple laws interacting. The universe is lawful *and* inexhaustibly surprising.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A system is described as 'chaotic.' What does that most precisely mean?"
+  options={[
+    "Its behaviour is random, governed by no laws",
+    "It follows deterministic laws but is extremely sensitive to its initial conditions",
+    "It always settles into a steady, repeating cycle",
+    "It can only be described by quantum mechanics",
+  ]}
+  correctIndex={1}
+  explanation="Chaos is deterministic, not random — the laws fix the future exactly. But a vanishingly small change in the starting point grows exponentially, so any real (finite-precision) measurement makes long-term prediction impossible. That sensitivity is the defining feature."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Chaos** is **deterministic** behaviour that is nonetheless **unpredictable** long-term.
+- Its hallmark is **sensitivity to initial conditions**: a tiny difference grows exponentially — the **butterfly effect**.
+- Determinism ≠ predictability, because no measurement has infinite precision (and chaos magnifies the gap).
+- It's why **weather** is unforecastable beyond ~2 weeks, though **climate** trends still are.
+- Chaos and **fractals** reveal **complexity** — endless rich structure emerging from simple, repeated rules.
+
+</Step>
+
+</Lesson>

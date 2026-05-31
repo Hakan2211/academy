@@ -1,0 +1,87 @@
+---
+title: Isotopes & Atomic Mass
+subject: physics
+contentSlug: physics/isotopes
+order: 2
+estimatedMinutes: 6
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="Same element, different weight" kind="explain">
+
+You just saw that the **proton** count fixes which element an atom is. But the **neutron** count is free to vary — and atoms of the same element with different neutron counts are called **isotopes**.
+
+Because they have the same number of protons (and therefore electrons), isotopes are chemically *identical*: they bond the same way, burn the same way, taste the same way. The only real difference is their **mass**, and — as you'll see — whether the nucleus is stable.
+
+</Step>
+
+<Step title="How we name them" kind="explain">
+
+Every isotope is pinned down by two numbers:
+
+- the **atomic number** Z = number of protons (fixes the element),
+- the **mass number** A = protons + neutrons (the count of nucleons).
+
+We write an isotope as the element symbol with the mass number attached, like **carbon-12** or **carbon-14**. Since the element already tells you the protons, the neutrons are just the leftover:
+
+<Formula tex="N = A - Z" block />
+
+So carbon (Z = 6) with mass number 14 has 14 − 6 = **8 neutrons**.
+
+</Step>
+
+<Step title="Meet the carbon family" kind="interactive">
+
+Carbon always has 6 protons. Slide the neutron count and watch the same element take on different masses — and different fates.
+
+<IsotopeLab />
+
+- **Carbon-12** (6 neutrons) and **carbon-13** (7) are perfectly **stable** — they make up essentially all the carbon on Earth.
+- **Carbon-14** (8) is **radioactive**: its nucleus slowly falls apart, which turns out to be enormously useful for dating ancient things.
+- Push the neutrons further from that sweet spot and the nucleus becomes so lopsided it can't survive at all.
+
+</Step>
+
+<Step title="Why atomic masses aren't whole numbers" kind="explain">
+
+Glance at a periodic table and you'll see carbon listed as **12.011**, not a tidy 12. Why the messy decimal?
+
+Because the value is a **weighted average** over all the isotopes as they actually occur in nature. Carbon is 98.9% carbon-12 and 1.1% carbon-13, so the average sits just a hair above 12:
+
+<Formula tex="(0.989 \times 12) + (0.011 \times 13) \approx 12.011" block />
+
+<Callout type="info" title="Relative atomic mass">
+The figure on the periodic table — the **relative atomic mass** — is this natural average. An element with two common isotopes of very different abundance, like chlorine (mostly Cl-35 with some Cl-37), lands at about 35.5: a value no single atom ever actually has.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Carbon-12 and carbon-14 are isotopes of the same element. How do they differ?"
+  options={[
+    "Carbon-14 has more protons",
+    "Carbon-14 has more neutrons, making it heavier",
+    "Carbon-14 has more electrons and reacts differently",
+    "They are completely different elements",
+  ]}
+  correctIndex={1}
+  explanation="Both have 6 protons (that's what makes them carbon), so they're chemically identical. Carbon-14 simply has two more neutrons than carbon-12, making it heavier — and, in this case, unstable."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Isotopes** are atoms of the same element (same protons) with **different neutron counts** — and so different masses.
+- An isotope is labelled by its **mass number** A = Z + N; neutrons are N = A − Z.
+- Isotopes are **chemically identical**, but some are stable and others **radioactive**.
+- The periodic table's decimal masses are **weighted averages** over an element's natural isotope mix.
+
+</Step>
+
+</Lesson>

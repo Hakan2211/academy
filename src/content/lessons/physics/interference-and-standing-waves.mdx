@@ -1,0 +1,128 @@
+---
+title: Interference & Standing Waves
+subject: physics
+contentSlug: physics/interference-and-standing-waves
+order: 7
+estimatedMinutes: 12
+level: advanced
+format: deepdive
+---
+
+<Lesson>
+
+<Step title="When waves meet" kind="explain">
+
+What happens when two waves arrive at the same place at the same time? They don't bounce off each other or merge into one — they simply **add up**, point by point. Where both push up, the result pushes up *more*; where one pushes up and the other down, they partly or fully cancel.
+
+This is the **principle of superposition**, and it leads to some of the most beautiful — and useful — effects in physics.
+
+</Step>
+
+<Step title="Add two waves" kind="interactive">
+
+The top panel shows two waves; the bottom shows their **sum**. Slide the **phase** of wave 2 and watch the sum transform.
+
+<Superposition />
+
+At a phase shift of **0°** the crests line up and the sum grows tall. At **180°** every crest meets a trough and the sum flattens to almost nothing.
+
+</Step>
+
+<Step title="Constructive and destructive" kind="explain">
+
+Those two extremes have names:
+
+- **Constructive interference** — waves in step reinforce; the combined amplitude is the *sum* of the parts.
+- **Destructive interference** — waves exactly out of step cancel; the combined amplitude can drop to **zero**.
+
+Remarkably, wave + wave can equal *nothing*. Energy isn't destroyed — it's redistributed, piling up where waves reinforce and vanishing where they cancel.
+
+</Step>
+
+<Step title="Interference all around you" kind="explain">
+
+This isn't a lab curiosity — it's everywhere:
+
+- **Noise-cancelling headphones** generate a sound wave exactly out of phase with the noise, cancelling it destructively.
+- The **shimmering colours** of a soap bubble or oil film come from light reflecting off two surfaces and interfering.
+- The famous **double-slit experiment** sends light through two gaps and lands a striped pattern of bright (constructive) and dark (destructive) bands on a screen.
+
+</Step>
+
+<Step title="Beats: a slow throb" kind="interactive">
+
+Now nudge wave 2 to a slightly **different frequency**. The two drift in and out of step, and the sum **swells and fades** in a slow pulse.
+
+<Superposition />
+
+That throbbing is called **beats** — and the closer the two frequencies, the slower the throb.
+
+</Step>
+
+<Step title="Tuning by ear" kind="explain">
+
+Beats are a musician's secret weapon. Play a note against a reference and you'll hear a *wah–wah–wah* pulsing if they're slightly off. The beat frequency is just the difference of the two:
+
+<Formula tex="f_{\text{beat}} = |f_1 - f_2|" block />
+
+Tune the string until the throbbing slows to a stop — when the beats vanish, the frequencies match perfectly. Your ear becomes a precision instrument.
+
+</Step>
+
+<Step title="Waves that don't travel" kind="explain">
+
+Send two **identical** waves in **opposite** directions — say, a wave on a string and its own reflection bouncing back. Their superposition produces something strange: a **standing wave**.
+
+The pattern no longer moves along the string. Instead, certain points called **nodes** stay perfectly still, while points between them — **antinodes** — swing with maximum amplitude.
+
+</Step>
+
+<Step title="Nodes, antinodes, harmonics" kind="interactive">
+
+Pin both ends of a string and only certain patterns fit — those with a whole number of half-wavelengths. Step through them with the **harmonic** slider.
+
+<StandingWave />
+
+The dots mark **nodes** (always still); the bulges between are **antinodes**. **n = 1** is the simplest pattern; higher n packs in more.
+
+</Step>
+
+<Step title="This is why instruments sing" kind="explain">
+
+A guitar string, an organ pipe, a wine glass — each can only support standing waves that "fit" its boundaries. The lowest is the **fundamental** (the note you hear); the higher ones are **harmonics** or **overtones**.
+
+<Callout type="info" title="Why a violin ≠ a flute">
+Two instruments playing the same note sound different because they mix the harmonics in different proportions. That recipe of overtones is what we call **timbre** — the fingerprint of a sound.
+</Callout>
+
+The length of the string or pipe sets which frequencies fit, which is exactly how you play different notes.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Two loudspeakers play the same steady tone. At certain spots in the room the sound is much louder; at others it nearly disappears. What's going on?"
+  options={[
+    "The speakers are taking turns",
+    "Interference — waves reinforce at some points and cancel at others",
+    "The quiet spots have run out of energy",
+    "Sound can't do that; it must be an echo",
+  ]}
+  correctIndex={1}
+  explanation="The two sound waves overlap and interfere. Where crests meet crests you get loud spots (constructive); where crests meet troughs the sound cancels (destructive). The total energy is just redistributed across the room."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Superposition**: overlapping waves add point by point.
+- **Constructive** interference reinforces; **destructive** interference cancels (even to zero).
+- Slightly mismatched frequencies produce **beats**: <Formula tex="f_{\text{beat}} = |f_1 - f_2|" />.
+- Opposite waves form **standing waves** with fixed **nodes** and swinging **antinodes**.
+- Boundaries select which standing waves fit — the **fundamental** plus **harmonics** — giving every instrument its voice.
+
+</Step>
+
+</Lesson>

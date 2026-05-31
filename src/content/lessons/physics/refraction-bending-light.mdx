@@ -1,0 +1,78 @@
+---
+title: Refraction — Bending Light
+subject: physics
+contentSlug: physics/refraction-bending-light
+order: 3
+estimatedMinutes: 7
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="Light changes speed" kind="explain">
+
+Light rips through a vacuum at **c**, but it slows down inside transparent materials — a bit in water, more in glass, even more in diamond. And whenever a ray crosses into a new material **at an angle**, that change of speed makes it **bend**.
+
+This bending is **refraction**. It's why a straw looks broken in a glass of water and why a pool looks shallower than it is.
+
+</Step>
+
+<Step title="Watch it bend" kind="interactive">
+
+A ray crosses from a fast medium into a slow one. Drag the speed ratio and watch it swing **toward the normal** as its wavefronts bunch closer.
+
+<Refraction />
+
+Going from fast to slow always bends the ray *toward* the normal; slow to fast bends it *away*.
+
+</Step>
+
+<Step title="The refractive index" kind="explain">
+
+We rate each material by how much it slows light — its **refractive index**:
+
+<Formula tex="n = \dfrac{c}{v}" block />
+
+A vacuum is n = 1; water ≈ 1.33; glass ≈ 1.5; diamond ≈ 2.4. The bigger the index, the slower the light and the **harder it bends**. Diamond's huge index is exactly why cut diamonds sparkle so intensely.
+
+</Step>
+
+<Step title="Trapping light: total internal reflection" kind="explain">
+
+Going from slow to fast (say glass to air), the ray bends away from the normal. Push the angle far enough and it bends so much it can't escape at all — it **reflects entirely back inside**. This is **total internal reflection**.
+
+<Callout type="tip" title="Where it shows up">
+**Optical fibres** trap light by this effect, bouncing it down thousands of kilometres to carry the internet. It's also behind a **diamond's** fire and the shimmering **mirage** on a hot road.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A light ray passes from air into a glass block (where it travels more slowly), striking the surface at an angle. How does it bend?"
+  options={[
+    "Toward the normal",
+    "Away from the normal",
+    "It doesn't bend at all",
+    "It bounces straight back",
+  ]}
+  correctIndex={0}
+  explanation="Entering a slower medium (higher refractive index), light bends toward the normal. Leaving into a faster medium, it would bend away."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Refraction** = bending caused by a change of **speed** at a boundary.
+- **Refractive index n = c/v**; higher n means slower light and more bending.
+- Fast → slow bends **toward** the normal; slow → fast bends **away**.
+- Past a critical angle you get **total internal reflection** — the trick behind optical fibres.
+
+<Formula tex="n = \dfrac{c}{v}" block />
+
+</Step>
+
+</Lesson>

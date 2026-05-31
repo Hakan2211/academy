@@ -1,0 +1,81 @@
+---
+title: Generators
+subject: physics
+contentSlug: physics/generators
+order: 6
+estimatedMinutes: 7
+level: advanced
+format: core
+---
+
+<Lesson>
+
+<Step title="Turning motion into electricity" kind="explain">
+
+Induction needs a *changing* field through a coil. Moving a magnet by hand works, but it's clumsy. There's a far better way to keep the flux changing continuously: **spin a coil inside a magnetic field** (or spin a magnet inside a coil).
+
+As the coil rotates, the amount of field passing through it rises and falls over and over — so a voltage is induced continuously. That spinning machine is a **generator**, and it's where nearly all the world's electricity comes from. A motor run backwards, in effect: motion in, electricity out.
+
+</Step>
+
+<Step title="Why the output alternates" kind="interactive">
+
+Watch the coil turn and the output voltage trace itself out.
+
+<Generator />
+
+As the coil sweeps through the field, the induced voltage rises to a peak, falls back to zero, then reverses as the coil's sides swap places — producing a smooth back-and-forth wave. This is **alternating current (AC)**: the voltage cycles positive and negative, once per rotation. Spin faster and the cycles come quicker *and* climb higher.
+
+</Step>
+
+<Step title="AC versus DC" kind="explain">
+
+This naturally-produced alternating current is different from a battery's steady **direct current (DC)**, which always flows one way.
+
+- A plain generator produces **AC** — and as you'll see next lesson, AC turns out to be a huge advantage for delivering power.
+- Add a **commutator** (the same half-turn switch from the motor) and you can flip every other half-cycle to get bumpy **DC** instead — a **dynamo**, like an old bicycle light.
+
+So the same spinning machine can give you AC or DC depending on how you tap it.
+
+</Step>
+
+<Step title="Where your power really comes from" kind="explain">
+
+Here's the secret behind the entire power grid: almost every power station, whatever its fuel, does the **same final thing** — spin a generator.
+
+<Callout type="info" title="It's all spinning magnets">
+- **Coal, gas, nuclear**: heat water into steam, and the steam spins a turbine.
+- **Hydro and wind**: falling water or moving air spins the turbine directly.
+- The turbine turns the generator, and induction does the rest.
+</Callout>
+
+The fuel just provides the *rotation*. Whether it's a hydroelectric dam or a wind farm, the electricity itself is made by Faraday's induction — a coil turning in a magnetic field.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why does a simple generator naturally produce alternating current (AC)?"
+  options={[
+    "Because the magnets keep switching off",
+    "Because as the coil rotates, the induced voltage rises, falls, and reverses each half-turn",
+    "Because AC is stored in the coil",
+    "Because the current runs out and comes back",
+  ]}
+  correctIndex={1}
+  explanation="As the coil spins, the flux through it changes direction every half rotation, so the induced voltage smoothly rises, drops to zero, and reverses — tracing out an alternating (sine) wave. One rotation gives one full AC cycle."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **generator** spins a coil in a magnetic field, continuously changing the flux to induce a voltage — motion in, electricity out.
+- The output naturally **alternates (AC)**, cycling once per rotation; faster spin gives higher frequency and voltage.
+- A **commutator** can convert it to **DC** (a dynamo).
+- Nearly all power stations work by **spinning a generator** — only the source of rotation differs.
+
+</Step>
+
+</Lesson>

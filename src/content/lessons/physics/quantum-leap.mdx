@@ -1,0 +1,90 @@
+---
+title: "The Quantum Leap: Light as Particles"
+subject: physics
+contentSlug: physics/quantum-leap
+order: 6
+estimatedMinutes: 8
+level: advanced
+format: core
+---
+
+<Lesson>
+
+<Step title="A crack in classical physics" kind="explain">
+
+By 1900, light was settled science: it was a **wave**, as the double slit and the whole of optics had proved. Waves carry energy *continuously*, in any amount you like — or so everyone assumed.
+
+Then a few stubborn experiments refused to fit. To explain the glow of hot objects, **Max Planck** was forced into a desperate guess: what if energy comes only in tiny indivisible **packets**, never smooth flows? He called each packet a **quantum**, and its energy depends only on the wave's frequency:
+
+<Formula tex="E = hf" block />
+
+Here *h* is **Planck's constant**, a fantastically small number that sets the size of the packets. Planck thought it a mathematical trick. It was the first crack in classical physics — and the birth of the quantum age.
+
+</Step>
+
+<Step title="The photoelectric puzzle" kind="explain">
+
+The crack split wide open with a simple experiment: shine light on a metal and, if the light has enough energy, electrons pop out. Classical wave theory made clear predictions about this **photoelectric effect** — and every one of them was wrong.
+
+- Waves should deliver energy steadily, so **dim light should still eject electrons** after a wait. It never did.
+- **Brighter light should give electrons more energy**. It didn't — it just ejected *more* of them, each with the same energy.
+- Below a certain **threshold frequency**, no electrons came out **at all**, no matter how blindingly bright the light.
+
+A continuous wave simply cannot explain a hard frequency cut-off. Something was deeply wrong with the wave picture.
+
+</Step>
+
+<Step title="Einstein's photons" kind="interactive">
+
+In 1905, **Einstein** took Planck's packets literally: light isn't just *delivered* in quanta, it *is* quanta — particles we now call **photons**, each carrying energy E = hf.
+
+Now the experiment makes perfect sense. Play with it:
+
+<PhotoelectricLab />
+
+- One electron is knocked out by **one photon**. If that single photon's energy (set by **frequency**) is too low, *nothing* happens — brightness can't help, because adding more weak photons never makes one strong enough.
+- Above the threshold, **higher frequency** means each photon hits harder, so electrons leave **faster**.
+- **Brighter light** means *more* photons, so *more* electrons fly off — but never with more energy each.
+
+</Step>
+
+<Step title="The energy budget" kind="explain">
+
+Every metal needs a minimum energy — the **work function** W — to free one of its electrons. A photon spends its energy first on paying that toll; whatever's left becomes the electron's kinetic energy:
+
+<Formula tex="KE_{max} = hf - W" block />
+
+If hf is less than W, the electron can't escape at all — that's the threshold. The equation matches experiment exactly, and it won Einstein the **Nobel Prize** (not relativity!).
+
+<Callout type="info" title="Light is two things at once">
+We're left with something profound: light **diffracts and interferes like a wave**, yet **delivers energy in particle-like lumps**. Neither picture alone is complete. Light is both — a duality that the next lesson extends to *matter itself*.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A dim violet light ejects electrons from a metal, but an intensely bright red light ejects none. Why?"
+  options={[
+    "Red light moves too slowly to reach the metal",
+    "Each red photon has too little energy (low frequency); brightness only adds more of these too-weak photons",
+    "Bright light reflects off the metal instead of being absorbed",
+    "Violet light is a wave but red light is not",
+  ]}
+  correctIndex={1}
+  explanation="One electron is freed by one photon. A red photon's energy (E = hf) is below the metal's threshold, so it can't eject an electron — and piling on more red photons by brightening the light never helps. A violet photon has a higher frequency, hence enough energy, even when the light is dim."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Energy comes in discrete **quanta** of size **E = hf** (Planck); light is made of particle-like **photons** (Einstein).
+- The **photoelectric effect** can't be explained by waves: there's a **threshold frequency**, energy depends on **frequency not brightness**, and ejection is instant.
+- An electron is freed by a **single photon**; leftover energy is its kinetic energy: **KEₘₐₓ = hf − W**.
+- Light is both **wave and particle** — a duality that opens the quantum world.
+
+</Step>
+
+</Lesson>

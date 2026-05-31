@@ -1,0 +1,77 @@
+---
+title: Circular Motion
+subject: physics
+contentSlug: physics/circular-motion
+order: 13
+estimatedMinutes: 7
+level: advanced
+format: core
+---
+
+<Lesson>
+
+<Step title="Turning is accelerating" kind="explain">
+
+Swing a ball on a string in a steady circle. Its **speed** is constant — but its **velocity** isn't, because velocity includes direction, and the direction is changing every instant.
+
+Changing velocity means **acceleration**, and acceleration needs a **force**. So even at constant speed, going in a circle requires a continuous net force.
+
+</Step>
+
+<Step title="Which way does it point?" kind="interactive">
+
+Watch the two arrows. The **velocity** always points *along* the circle (tangent). The **force** always points *inward*, toward the center.
+
+<CircularMotion />
+
+<Callout type="tip" title="Notice">
+The inward force never speeds the ball up or slows it down — it only bends its path, constantly redirecting the velocity.
+</Callout>
+
+</Step>
+
+<Step title="Centripetal force" kind="explain">
+
+That center-pointing force is the **centripetal force** ("center-seeking"). Its size grows with speed and shrinks with the radius:
+
+<Formula tex="a = \dfrac{v^2}{r}" block />
+
+Something real always provides it: the **tension** in a string, **gravity** for an orbiting moon, **friction** for a car rounding a bend, the track pushing on a looping roller-coaster.
+
+</Step>
+
+<Step title="There is no outward force" kind="explain">
+
+When a car turns and you're "thrown against the door," it feels like a force flings you outward. There isn't one. Your body's **inertia** wants to keep going straight; it's the **car that turns into you**, and the door then pushes you inward along the curve.
+
+That phantom outward "centrifugal force" is just inertia seen from inside the spinning frame.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A ball whirls in a horizontal circle on a string. Which way does the net force on it point?"
+  options={[
+    "Outward, away from the center",
+    "Toward the center",
+    "Forward, along its motion",
+    "There is no net force",
+  ]}
+  correctIndex={1}
+  explanation="Circular motion requires a centripetal (center-pointing) net force — here, the string's tension. It bends the path without changing the speed."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Moving in a circle is **accelerating**, because direction (and so velocity) constantly changes.
+- The required force is **centripetal** — always toward the center: **a = v²/r**.
+- The "outward" feeling is **inertia**, not a real outward force.
+
+<Formula tex="a = \dfrac{v^2}{r}" block />
+
+</Step>
+
+</Lesson>

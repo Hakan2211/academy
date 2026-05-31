@@ -1,0 +1,83 @@
+---
+title: Transformers & the Grid
+subject: physics
+contentSlug: physics/transformers
+order: 7
+estimatedMinutes: 7
+level: advanced
+format: core
+---
+
+<Lesson>
+
+<Step title="Changing the voltage" kind="explain">
+
+A generator gives you AC at some voltage — but the grid needs to *change* that voltage many times between the power station and your phone charger. The device that does it is the **transformer**, and it runs entirely on induction.
+
+It's beautifully simple: two coils wound on a shared iron core. AC in the **primary** coil makes the core's magnetic field rise and fall, and that changing field induces a voltage in the **secondary** coil. No moving parts, no electrical connection between the two sides — just a shared, changing magnetic field.
+
+</Step>
+
+<Step title="The turns ratio" kind="interactive">
+
+The trick is in the number of turns on each coil. The output voltage scales with the **ratio of turns**.
+
+<Transformer />
+
+<Formula tex="\dfrac{V_{\text{out}}}{V_{\text{in}}} = \dfrac{N_{\text{out}}}{N_{\text{in}}}" block />
+
+- **More** turns on the secondary than the primary → voltage goes **up** (a *step-up* transformer).
+- **Fewer** turns → voltage goes **down** (*step-down*).
+
+Drag the secondary turns and watch the output voltage track the ratio exactly.
+
+</Step>
+
+<Step title="Why AC won the day" kind="explain">
+
+Here's the crucial limitation: a transformer **only works on AC**. It needs a *changing* magnetic field to induce anything — and steady DC produces no change once it's flowing, so a DC transformer does nothing.
+
+This was the heart of the 19th-century **"war of the currents."** DC couldn't easily change voltage, but AC could — cheaply and efficiently — using transformers. That single advantage is why the world's grid runs on **alternating current** to this day.
+
+</Step>
+
+<Step title="Sending power across a country" kind="explain">
+
+Why bother changing the voltage at all? Because it's the key to moving power long distances without wasting it.
+
+<Callout type="info" title="High voltage = low loss">
+Power lost heating the cables is <Formula tex="P_{\text{loss}} = I^2 R" />. Since power delivered is `P = V × I`, sending it at very **high voltage** means very **low current** — and because the loss depends on current *squared*, cutting the current slashes the waste dramatically.
+</Callout>
+
+So the grid **steps up** to hundreds of thousands of volts for transmission across pylons, then a chain of substation transformers **steps it back down** to the safe ~230 V at your wall socket. Generators, transformers, and the grid are induction, working at national scale.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why does the power grid step voltage UP to very high values for long-distance transmission?"
+  options={[
+    "High voltage travels faster",
+    "Higher voltage means lower current, and energy lost in the cables (I²R) falls sharply with less current",
+    "It makes the electricity stronger",
+    "Transformers only work at high voltage",
+  ]}
+  correctIndex={1}
+  explanation="For a given power, raising the voltage lowers the current. Since cable losses go as I²R, reducing the current sharply reduces wasted energy. The grid transmits at very high voltage, then steps it down near homes for safety."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **transformer** uses two coils on one core: changing flux from the primary induces a voltage in the secondary.
+- Output follows the **turns ratio**: `V_out/V_in = N_out/N_in` — step **up** (more turns) or **down** (fewer).
+- Transformers work **only on AC** (they need a changing field) — the reason the grid is AC.
+- The grid steps voltage **up for transmission** (low current → low `I²R` loss) and **down for homes**.
+
+<Formula tex="\dfrac{V_{\text{out}}}{V_{\text{in}}} = \dfrac{N_{\text{out}}}{N_{\text{in}}}" block />
+
+</Step>
+
+</Lesson>

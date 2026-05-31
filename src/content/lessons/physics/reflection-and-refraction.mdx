@@ -1,0 +1,92 @@
+---
+title: Reflection & Refraction
+subject: physics
+contentSlug: physics/reflection-and-refraction
+order: 6
+estimatedMinutes: 8
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="What happens at a boundary?" kind="explain">
+
+A wave travelling along happily eventually meets an **edge** — the end of a rope, the surface of a pond, a pane of glass. There, it can do three things: **bounce back** (reflect), **bend through** (refract), or some of both.
+
+These two behaviours — reflection and refraction — explain echoes, mirrors, lenses, rainbows, and why a straw looks broken in a glass of water.
+
+</Step>
+
+<Step title="Reflection: bouncing back" kind="interactive">
+
+Send a pulse down a string toward a wall and it returns. But *how* it returns depends on the boundary. Toggle between a **fixed** end and a **free** end:
+
+<PulseReflect />
+
+At a **fixed** end the pulse flips upside-down; at a **free** end it comes back the right way up. The wave reflects either way — inversion is the boundary's signature.
+
+</Step>
+
+<Step title="The law of reflection" kind="explain">
+
+For a wave striking a flat surface at an angle, the rule is beautifully simple:
+
+> The **angle of incidence** equals the **angle of reflection** (both measured from the normal — the line perpendicular to the surface).
+
+That single law is why a mirror gives a clean image, why a billiard ball banks predictably off a cushion, and why an echo returns from a distant cliff.
+
+</Step>
+
+<Step title="Refraction: bending through" kind="explain">
+
+When a wave crosses into a new medium where it travels at a **different speed**, it changes direction. This bending is **refraction**.
+
+The frequency stays the same (the source hasn't changed), so from **v = f λ**, a change in speed forces a change in **wavelength**. That mismatch at the boundary is what swings the wave's direction.
+
+</Step>
+
+<Step title="Watch it bend" kind="interactive">
+
+Here a wave passes from a fast medium into a slow one. Drag the **speed ratio** and watch the ray swing toward the normal as the wavefronts bunch closer together.
+
+<Refraction />
+
+Faster-to-slower always bends **toward** the normal; slower-to-faster bends away.
+
+</Step>
+
+<Step title="Why the straw looks broken" kind="explain">
+
+Light slows down entering water, so rays from the submerged part of a straw bend as they leave the surface. Your eye traces them straight back and sees the straw **displaced** — it looks snapped at the waterline.
+
+The same bending, done deliberately with curved glass, is how **lenses** focus light in your eyes, cameras, and telescopes. Refraction is the workhorse of optics.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A light wave passes from air into glass, where it travels more slowly. Its frequency stays the same. What happens to its wavelength?"
+  options={[
+    "It gets longer",
+    "It gets shorter",
+    "It stays exactly the same",
+    "It drops to zero",
+  ]}
+  correctIndex={1}
+  explanation="With frequency fixed and v = fλ, a lower speed means a shorter wavelength. The wavefronts bunch closer together, which is what bends the wave toward the normal."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- At a boundary a wave can **reflect**, **refract**, or both.
+- **Reflection**: angle in = angle out; a fixed end inverts the pulse, a free end doesn't.
+- **Refraction**: a change in **speed** bends the wave and rescales its **wavelength** (frequency stays put).
+- Faster → slower bends **toward** the normal; this is how lenses and the "broken straw" work.
+
+</Step>
+
+</Lesson>

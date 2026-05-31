@@ -1,0 +1,134 @@
+---
+title: From Data to Laws
+subject: physics
+contentSlug: physics/from-data-to-laws
+order: 7
+estimatedMinutes: 12
+level: advanced
+format: deepdive
+---
+
+<Lesson>
+
+<Step title="How do we know anything?" kind="explain">
+
+Physics makes breathtaking claims. The universe is 13.8 billion years old. Light always travels at 299,792,458 m/s. An electron has a charge of 1.6 × 10⁻¹⁹ coulombs. Nobody was there at the Big Bang; nobody has held an electron in their hand. So how can anyone *know* these things?
+
+This lesson is about that machinery — how a science gets from raw observations to confident, universal laws. You've met the pieces: the method, units, scale, uncertainty, graphs. Now watch them work **together** as a single engine for turning the world into knowledge.
+
+</Step>
+
+<Step title="Measurement is the bridge" kind="explain">
+
+Ideas are cheap; nature is the judge. The thing that connects a human idea to physical reality is **measurement** — a number, in agreed units, that the universe hands back when you ask it a question carefully.
+
+This is why so much of foundational physics is *about measuring well*. A theory only earns the name "scientific" when it makes claims you can check with an instrument. Every law in this course, however grand, ultimately rests on someone, somewhere, reading a dial and writing down a number.
+
+</Step>
+
+<Step title="Every number wears an error bar" kind="interactive">
+
+But that number is never exact. Real data are scattered by random noise and can be skewed by hidden bias.
+
+<AccuracyPrecision />
+
+So a scientist never reports a bare value — they report a value **and its uncertainty**, and they fight to separate honest scatter (random error, beaten by repeating) from sneaky bias (systematic error, beaten only by calibration). Knowing *how well* you know something is itself part of the knowledge.
+
+</Step>
+
+<Step title="From scatter to signal" kind="interactive">
+
+A single measurement proves little. The magic happens when you vary one thing, measure another, and **look for a pattern** across many points.
+
+<ProportionGraph />
+
+Here the points scatter — yet a clean straight line hides inside them. Drawing the best fit pulls that signal out of the noise. The line says something no single point could: *this* effect is **proportional** to *that* cause. We've found a relationship.
+
+</Step>
+
+<Step title="From a pattern to a law" kind="explain">
+
+That straight line, *y = kx*, is a baby **law**. In the example, extension is proportional to force — which is exactly **Hooke's law** for a spring, with the slope *k* being its stiffness.
+
+The leap from "this spring, today, in my lab" to "*all* springs obey this" is the boldest move in science: **generalisation**. We assume nature is uniform — that the rule found here and now holds everywhere and always. It's an assumption, but a spectacularly successful one, and every fresh confirmation strengthens it.
+
+<Callout type="info" title="A law is a compression of data">
+Hooke's law replaces an endless table of (force, extension) pairs with a single equation and one number, k. A good law is data *compressed* — it captures infinitely many possible measurements in a form that fits on a line. That compression is understanding.
+</Callout>
+
+</Step>
+
+<Step title="The power of a rough estimate" kind="interactive">
+
+Before precise measurement, there's a humbler but vital skill: the **order-of-magnitude estimate**. Often you don't need the exact answer — just the right power of ten.
+
+<CosmicScale />
+
+Thinking in powers of ten lets a physicist sanity-check anything in seconds. *Could* this radio signal have crossed the galaxy? *Should* this energy be a million times bigger? An estimate that lands in the right tier tells you whether your detailed calculation — or your whole idea — is even plausible. Get the exponent right and the rest is detail.
+
+</Step>
+
+<Step title="Models: useful fictions" kind="explain">
+
+To apply a law to a messy reality, you build a **model** — a stripped-down stand-in. A planet becomes a point mass. Air resistance is switched off. A gas becomes tiny perfect billiard balls.
+
+Every model is, strictly, false. None of those simplifications is literally true. Yet a good model is false in ways that *don't matter* and true in the ways that *do* — and that makes it powerful. The art is choosing what to ignore. As the saying goes: **all models are wrong, but some are useful.**
+
+</Step>
+
+<Step title="The real test: prediction" kind="explain">
+
+Fitting a line to data you already have is easy. The real trial of a law is **prediction**: it must tell you, in advance, the result of an experiment you haven't done yet — and stick its neck out enough to be *wrong*.
+
+When Einstein's relativity predicted starlight would bend by a precise angle near the Sun, that was a gamble: a 1919 eclipse expedition could have refuted it outright. It didn't. A theory that risks falsification and survives is worth a thousand that merely explain the past. Bold, testable predictions are how a law proves it's more than a curve-fit.
+
+</Step>
+
+<Step title="Theory and experiment, hand in hand" kind="explain">
+
+Science isn't theorists *or* experimenters — it's a two-way conversation between them.
+
+- **Experiment leads:** a surprising measurement (the photoelectric effect, the orbit of Mercury) demands a new theory.
+- **Theory leads:** an equation predicts something nobody's seen (the Higgs boson, gravitational waves), and experimenters go hunting decades later.
+
+Each side keeps the other honest. Theory without data is just elegant guessing; data without theory is a heap of disconnected numbers. Knowledge grows where they meet.
+
+</Step>
+
+<Step title="Why science corrects itself" kind="explain">
+
+Here's the quiet genius of the whole enterprise: it's built to **catch its own mistakes**. Results must be reproducible, so others repeat them. Claims must be falsifiable, so they can be overturned. Bias hides in any one lab, so findings are pooled and cross-checked.
+
+No single scientist is especially trustworthy — people are biased, instruments drift, egos intrude. But the *process*, run by a community over time, grinds errors down. That's why Newton's gravity could be superseded by Einstein's without scandal: being proven incomplete isn't failure, it's the method working exactly as intended.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A new theory perfectly fits every measurement ever made, but forbids nothing and predicts no new result that could disprove it. From a scientific standpoint, what's its key weakness?"
+  options={[
+    "It uses too much mathematics",
+    "It isn't falsifiable, so it can't really be tested",
+    "It agrees with the data too well",
+    "It was proposed by only one person",
+  ]}
+  correctIndex={1}
+  explanation="A theory that can't be proven wrong by any conceivable experiment makes no risky predictions — and so tells us nothing we can check. Fitting old data is easy; the scientific value lies in bold, falsifiable predictions about results not yet seen."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Measurement** is the bridge from ideas to reality — and every measurement carries **uncertainty**.
+- A **graph** reveals the pattern hidden in scattered data; its **slope** and shape encode the law.
+- Generalising a pattern gives a **law** — a compression of endless data into one rule, assumed universal.
+- **Order-of-magnitude estimates** sanity-check ideas before any precise work.
+- **Models** are deliberately-false simplifications that keep what matters.
+- A law earns trust through **bold, falsifiable predictions**, in a constant dialogue between **theory and experiment**.
+- Science **self-corrects** because it's reproducible, falsifiable, and communal — being overturned is the method succeeding, not failing.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,130 @@
+---
+title: Projectile Motion
+subject: physics
+contentSlug: physics/projectile-motion
+order: 11
+estimatedMinutes: 12
+level: intermediate
+format: deepdive
+---
+
+<Lesson>
+
+<Step title="Two motions in one" kind="explain">
+
+Throw a ball and it traces a graceful arc. That curve looks complicated — but it hides a beautiful secret: it's really **two simple motions happening at once**.
+
+<Video
+  src="/lessons/physics/projectile-motion/throw.mp4"
+  poster="/lessons/physics/projectile-motion/throw-poster.svg"
+  caption="A thrown ball: steady sideways drift, gravity-driven rise and fall."
+/>
+
+Sideways, the ball just drifts at a steady pace. Up and down, gravity is busy slowing it, stopping it, and pulling it back. Treat those two directions **separately** and the whole arc falls into place.
+
+</Step>
+
+<Step title="Split the velocity" kind="explain">
+
+The trick is to break the launch velocity into a **horizontal** part and a **vertical** part:
+
+<Formula tex="v_x = v\cos\theta \qquad v_y = v\sin\theta" block />
+
+<Figure
+  src="/lessons/physics/projectile-motion/decomposition.svg"
+  alt="The launch velocity decomposed into a constant horizontal component and a vertical component"
+  caption="One arrow, two jobs: vₓ carries it forward, v_y fights gravity."
+/>
+
+From here on, we can solve each direction on its own and recombine at the end.
+
+</Step>
+
+<Step title="Launch it" kind="interactive">
+
+Play with the **angle** and the **speed**. Watch the teal arrow (horizontal velocity) stay the same length while the blue arrow (vertical velocity) shrinks, flips, and grows back.
+
+<Scene3D component="projectile" />
+
+<Callout type="tip" title="Notice">
+The teal arrow never changes — nothing pushes the ball sideways. Only the blue arrow does, because only gravity acts.
+</Callout>
+
+</Step>
+
+<Step title="Horizontal: nobody's pushing" kind="explain">
+
+Once the ball leaves your hand, **no force acts sideways** (ignoring air). By Newton's first law, the horizontal velocity is simply constant:
+
+<Formula tex="x = v_x\, t" block />
+
+So in the horizontal direction the ball is boringly steady — it covers equal distances in equal times.
+
+</Step>
+
+<Step title="Vertical: gravity takes over" kind="explain">
+
+Up and down is a different story. Gravity pulls with a steady acceleration **g ≈ 9.8 m/s²**, so the vertical velocity changes every instant:
+
+<Formula tex="v_y(t) = v\sin\theta - g\,t" block />
+
+The height follows the familiar falling-body equation:
+
+<Formula tex="y(t) = v\sin\theta\, t - \tfrac{1}{2} g t^2" block />
+
+At the top of the arc, **v_y = 0** for a single instant — the ball is momentarily neither rising nor falling.
+
+</Step>
+
+<Step title="Hit the target" kind="interactive">
+
+Here's the payoff: with the two motions combined you can *aim*. Try to land the ball as far away as possible.
+
+<Scene3D component="projectile" />
+
+<Callout type="tip" title="Challenge">
+Hunt for the angle that gives the biggest **range**. Is it steep, shallow, or right in the middle?
+</Callout>
+
+</Step>
+
+<Step title="Which lands first?" kind="quiz">
+
+<Quiz
+  prompt="From the same height, you drop one ball and throw another horizontally at the very same instant. Which hits the ground first?"
+  options={[
+    "The dropped ball",
+    "The thrown ball",
+    "They land at the same time",
+    "It depends how hard you throw",
+  ]}
+  correctIndex={2}
+  explanation="Vertical and horizontal motion are independent. Both balls start with zero vertical velocity and fall under the same gravity, so they hit the ground together — the throw only changes where, not when."
+/>
+
+</Step>
+
+<Step title="Range and the magic 45°" kind="explain">
+
+Combine both directions and the distance the ball travels — its **range** — works out to:
+
+<Formula tex="R = \dfrac{v^2 \sin(2\theta)}{g}" block />
+
+Because **sin(2θ)** is biggest when **2θ = 90°**, the maximum range (on flat ground, no air) comes from a launch angle of exactly **45°**. Steeper sends it high but not far; shallower keeps it low and short.
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+Projectile motion is two independent stories told at once:
+
+- **Horizontal** — constant velocity, because nothing pushes sideways.
+- **Vertical** — constant acceleration **g**, exactly like a dropped object.
+- They share only one thing: **time**.
+- On flat ground, **45°** gives the greatest range.
+
+<Formula tex="R = \dfrac{v^2 \sin(2\theta)}{g}" block />
+
+</Step>
+
+</Lesson>

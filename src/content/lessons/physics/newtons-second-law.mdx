@@ -1,0 +1,82 @@
+---
+title: Newton's Second Law (F = ma)
+subject: physics
+contentSlug: physics/newtons-second-law
+order: 7
+estimatedMinutes: 6
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="The big idea" kind="explain">
+
+Push a shopping cart gently and it creeps forward. Shove it hard and it leaps. Load it with bricks and the same shove barely moves it. **Newton's second law** captures all of that in one line:
+
+<Formula tex="F = ma" block />
+
+Force equals mass times acceleration. The harder you push (**F**), the more something accelerates (**a**) — but the heavier it is (**m**), the less it responds to the same push.
+
+</Step>
+
+<Step title="It's the *net* force that counts" kind="explain">
+
+Real objects feel several forces at once. Gravity pulls a block down; the floor pushes it up. Those cancel. What's left over — the **net force** — is what actually accelerates it.
+
+<Figure
+  src="/lessons/physics/newtons-second-law/free-body.svg"
+  alt="A block with weight and normal force cancelling vertically, leaving the applied force to drive acceleration"
+  caption="The up/down forces balance, so the leftover horizontal force sets the acceleration."
+/>
+
+So a better way to read the law is: **net force = mass × acceleration**.
+
+</Step>
+
+<Step title="Push the block" kind="interactive">
+
+Time to feel it. Change the **force** and the **mass** and watch the acceleration — and the block's pickup — respond instantly.
+
+<Scene3D component="force-block" />
+
+<Callout type="tip" title="Try this">
+Set a force, then **double the mass**. What happens to the acceleration? Now keep the mass fixed and double the force instead.
+</Callout>
+
+</Step>
+
+<Step title="What exactly is a Newton?" kind="explain">
+
+A **newton (N)** is just the force needed to accelerate **1 kilogram** at **1 metre per second squared**:
+
+<Formula tex="1\ \text{N} = 1\ \text{kg} \cdot \text{m/s}^2" block />
+
+That's why the law is so useful: plug in kilograms and metres-per-second-squared, and the force comes out in newtons — no fudge factors.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A 2 kg cart feels a net force of 6 N. What is its acceleration?"
+  options={["3 m/s²", "12 m/s²", "6 m/s²", "2 m/s²"]}
+  correctIndex={0}
+  explanation="Rearrange F = ma to a = F/m = 6 N ÷ 2 kg = 3 m/s²."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+Newton's second law ties force, mass, and acceleration together:
+
+- More **net force** → more acceleration.
+- More **mass** → less acceleration for the same force.
+- It's always the **net** (leftover) force that matters.
+
+<Formula tex="a = \dfrac{F}{m}" block />
+
+</Step>
+
+</Lesson>

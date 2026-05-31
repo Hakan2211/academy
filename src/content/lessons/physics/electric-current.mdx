@@ -1,0 +1,78 @@
+---
+title: Electric Current
+subject: physics
+contentSlug: physics/electric-current
+order: 2
+estimatedMinutes: 6
+level: beginner
+format: core
+---
+
+<Lesson>
+
+<Step title="Charge on the move" kind="explain">
+
+Static electricity is charge that's *sitting still*. Make that charge **flow** and you get something far more useful: an **electric current** — the thing that lights your room and runs your phone.
+
+In a metal wire, the movers are **free electrons**. Metals are special: their outer electrons aren't tied to any one atom but drift through the whole material like a kind of electron "sea." Give them a push and they all start flowing in step — that organised flow is current.
+
+</Step>
+
+<Step title="Measuring the flow" kind="interactive">
+
+Current measures **how much charge flows past a point each second**. Its unit is the **ampere** (amp, A).
+
+<CurrentFlow />
+
+Turn up the current and the charges sweep past faster — because more charge per second *is* more current. One amp is a coulomb of charge every second, which is about **6 × 10¹⁸ electrons** streaming past each second. We measure it with an **ammeter**, connected so the current flows straight through it.
+
+<Formula tex="I = \dfrac{Q}{t}" block />
+
+</Step>
+
+<Step title="Two directions, one history" kind="explain">
+
+Here's a quirk worth knowing. Long before electrons were discovered, scientists guessed current flowed from **positive to negative** and built all their conventions around it. We now know the electrons in a wire actually drift the *other* way, from negative to positive.
+
+Rather than rewrite everything, we kept the original convention. So **conventional current** points from + to −, while the **electrons** physically move from − to +. Both describe the same flow — just don't be surprised when they point opposite ways.
+
+</Step>
+
+<Step title="You need a complete loop" kind="explain">
+
+Charge can only flow if it has an unbroken path to flow *around*. A current needs a **complete circuit** — a continuous loop from one terminal of the source, through the wires and components, and back to the other terminal.
+
+<Callout type="tip" title="Why a switch works">
+A switch is just a deliberate **break** in the loop. Open it and the path is cut, so no charge can flow and the current stops instantly. Close it and the loop is whole again. Every on/off switch you've ever flicked is opening and closing a circuit.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="An ammeter reads 2 A in a wire. What does that actually tell you?"
+  options={[
+    "2 volts of charge are stored in the wire",
+    "2 coulombs of charge flow past each second",
+    "The wire has 2 ohms of resistance",
+    "2 electrons pass per second",
+  ]}
+  correctIndex={1}
+  explanation="Current is the rate of charge flow: 1 amp = 1 coulomb per second, so 2 A means 2 coulombs of charge stream past each second (around 1.2 × 10¹⁹ electrons every second)."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Current** is the flow of electric charge — in metals, a flow of free **electrons**.
+- It's measured in **amperes**: `I = Q / t`, the charge passing each second.
+- **Conventional current** runs + to −; electrons actually drift − to + (a historical convention).
+- Current needs a **complete circuit**; a **switch** stops it by breaking the loop.
+
+<Formula tex="I = \dfrac{Q}{t}" block />
+
+</Step>
+
+</Lesson>

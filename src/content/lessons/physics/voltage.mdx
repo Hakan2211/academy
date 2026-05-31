@@ -1,0 +1,83 @@
+---
+title: Voltage
+subject: physics
+contentSlug: physics/voltage
+order: 3
+estimatedMinutes: 6
+level: beginner
+format: core
+---
+
+<Lesson>
+
+<Step title="The push behind the flow" kind="explain">
+
+Current is charge flowing — but what *makes* it flow? Charges don't move on their own; something has to push them. That push is **voltage**.
+
+A handy picture: think of a water circuit. Current is like the flow rate of water; voltage is like the **pressure** from a pump driving it round. No pressure, no flow. The bigger the voltage, the harder the charges are pushed through the circuit.
+
+Voltage is also called **potential difference**, because it measures a *difference* between two points — the drop in energy a charge experiences as it moves between them.
+
+</Step>
+
+<Step title="More push, more current" kind="interactive">
+
+Let's see the push in action. Raise the voltage and watch the charges speed up and the bulb glow brighter.
+
+<CircuitLab />
+
+For a fixed resistance, **more voltage means more current**. The battery's voltage is the energy it gives each unit of charge to drive it around the loop — and with more energy behind them, the charges flow faster.
+
+</Step>
+
+<Step title="Where voltage comes from" kind="explain">
+
+Anything that maintains a voltage is a kind of charge "pump":
+
+- A **battery** uses chemical reactions to push electrons to one terminal, building up a potential difference between + and −.
+- A **generator** uses motion and magnetism to do the same (you'll meet this in the magnetism unit).
+
+The voltage a source can provide on its own is its **electromotive force (EMF)** — a slightly misleading name, since it's an energy-per-charge, not a force. A typical AA battery offers 1.5 V; a car battery 12 V; a wall socket around 230 V.
+
+</Step>
+
+<Step title="Energy per charge" kind="explain">
+
+Precisely defined, voltage is the **energy given to each unit of charge**:
+
+<Callout type="info" title="What one volt means">
+<Formula tex="V = \dfrac{E}{Q}" /> — one **volt** is one **joule of energy per coulomb of charge**. A 12 V battery hands 12 joules to every coulomb that passes through it.
+</Callout>
+
+This is the key to understanding why circuits *do* anything: the source loads each charge up with energy, and the charge carries that energy off to be spent in the bulbs, motors, and heaters around the loop.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In the water-circuit analogy, voltage is most like which quantity?"
+  options={[
+    "The amount of water in the pipes",
+    "The pressure from the pump that drives the water around",
+    "The width of the pipe",
+    "The temperature of the water",
+  ]}
+  correctIndex={1}
+  explanation="Voltage is the 'push' that drives charge around a circuit, just as pump pressure drives water through pipes. Current corresponds to the flow rate, and resistance to how narrow the pipe is."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Voltage** (potential difference) is the **push** that drives charge around a circuit.
+- For a fixed resistance, **more voltage → more current**.
+- Sources like **batteries** and **generators** maintain voltage; their on-their-own value is the **EMF**.
+- Precisely, voltage is **energy per unit charge**: `V = E / Q`, measured in volts (joules per coulomb).
+
+<Formula tex="V = \dfrac{E}{Q}" block />
+
+</Step>
+
+</Lesson>

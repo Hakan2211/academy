@@ -1,0 +1,97 @@
+---
+title: "Nuclear Energy: Fission & Fusion"
+subject: physics
+contentSlug: physics/nuclear-energy
+order: 5
+estimatedMinutes: 8
+level: advanced
+format: core
+---
+
+<Lesson>
+
+<Step title="Where the energy hides" kind="explain">
+
+The energy locked inside a nucleus dwarfs anything chemical. Burning, exploding, digesting — all of these just rearrange the *electrons* on the outside of atoms. Nuclear energy reaches into the **nucleus itself**, where the strong force binds with millions of times more energy per particle.
+
+The key to unlocking it is the most famous equation in physics:
+
+<Formula tex="E = mc^2" block />
+
+It says mass and energy are the same thing in different clothes, exchangeable at a rate set by **c²** — the speed of light, squared. Because c² is an enormous number, even a whisker of vanished mass releases a colossal amount of energy.
+
+</Step>
+
+<Step title="The binding-energy valley" kind="explain">
+
+Here's the surprising key fact: a bound nucleus weighs *less* than its loose protons and neutrons added up separately. That missing mass — the **mass defect** — was converted into the **binding energy** that holds the nucleus together.
+
+How tightly each nucleus is bound depends on its size, and the pattern has a clear bottom.
+
+<Callout type="info" title="Everything rolls toward iron">
+Plot binding-energy-per-nucleon against size and you get a valley with **iron** at its lowest point — the most tightly bound, most stable nucleus there is. **Heavy** nuclei release energy by **splitting** toward iron. **Light** nuclei release energy by **joining** toward iron. Either move toward iron sheds mass as energy. Iron itself is the dead end where no more can be extracted.
+</Callout>
+
+So there are two roads to nuclear energy, starting from opposite ends.
+
+</Step>
+
+<Step title="Fission: splitting the giants" kind="interactive">
+
+A **heavy** nucleus like uranium-235 is barely held together. Nudge it with a stray neutron and it splits into two lighter fragments — releasing energy *and* a few more neutrons.
+
+Toggle to **fission** and watch.
+
+<FissionFusion />
+
+Those freed neutrons can strike *other* uranium nuclei, splitting them too, freeing yet more neutrons: a self-amplifying **chain reaction**. Let it run wild and you have a bomb. Control it — soaking up just enough neutrons to keep the rate steady — and you have a **nuclear reactor**, boiling water to spin a turbine. This is the nuclear power running on the grid today.
+
+</Step>
+
+<Step title="Fusion: joining the lightweights" kind="interactive">
+
+Now run it the other way. Take the lightest nuclei — isotopes of **hydrogen** — and force them together hard enough to fuse into helium. The product again weighs slightly less than the ingredients, and that lost mass blazes out as energy.
+
+Toggle the visual above to **fusion**. Two hydrogen nuclei merge, spit out a neutron, and release a burst of energy — even more per kilogram than fission.
+
+This is the power source of **every star**, including our Sun: in its crushing core, hydrogen fuses to helium, and the energy released streams out as the sunlight that warms the Earth.
+
+</Step>
+
+<Step title="The promise and the problem" kind="explain">
+
+The two processes pull in opposite directions, not just physically but practically.
+
+- **Fission** works today, but it leaves behind long-lived **radioactive waste** and carries the risk of runaway accidents.
+- **Fusion** would be cleaner — its main product is harmless helium, and there's no chain reaction to run away — but it demands temperatures of *millions* of degrees to force the nuclei together. Stars manage it with sheer gravity; on Earth we're still learning to bottle a piece of the Sun.
+
+Decades of research are aimed at making fusion produce more energy than it consumes — a goal that, if reached, would change the world's energy future.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Both fission and fusion release energy. What do they have in common?"
+  options={[
+    "Both split heavy nuclei into lighter ones",
+    "Both convert a small amount of mass into energy (E = mc²)",
+    "Both join light nuclei into heavier ones",
+    "Both require a chain reaction to release energy",
+  ]}
+  correctIndex={1}
+  explanation="Fission splits heavy nuclei and fusion joins light ones — opposite processes — but both move toward the tightly-bound 'iron valley' and release the lost mass as energy via E = mc². Only fission relies on a chain reaction."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Nuclear energy comes from converting tiny amounts of **mass into energy**, governed by **E = mc²**.
+- A nucleus is bound by its **mass defect**; binding-energy-per-nucleon peaks at **iron**, the most stable nucleus.
+- **Fission** splits heavy nuclei (uranium) and can sustain a **chain reaction** — the basis of reactors and bombs.
+- **Fusion** joins light nuclei (hydrogen → helium), powers the **stars**, and releases even more energy — but is extraordinarily hard to achieve on Earth.
+
+</Step>
+
+</Lesson>

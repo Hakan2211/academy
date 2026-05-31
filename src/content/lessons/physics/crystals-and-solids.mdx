@@ -1,0 +1,87 @@
+---
+title: The Crystalline World
+subject: physics
+contentSlug: physics/crystals-and-solids
+order: 1
+estimatedMinutes: 7
+level: advanced
+format: core
+---
+
+<Lesson>
+
+<Step title="The hidden order in solids" kind="explain">
+
+A grain of salt, a snowflake, a diamond, a flake of mica — split them carefully and they break along clean, flat faces at sharp angles. That's no accident. It's the outward sign of a hidden inner order: the atoms inside are stacked in a perfectly repeating three-dimensional pattern called a **crystal lattice**.
+
+Most solids around you — metals, rocks, ice, sugar, silicon chips — are crystalline. Understanding *why* atoms line up, and what that ordering does, is the gateway to modern materials science and the physics of the chip.
+
+</Step>
+
+<Step title="What makes a crystal a crystal" kind="interactive">
+
+The defining feature of a crystal isn't hardness or sparkle — it's **long-range order**: one arrangement of atoms, repeated faithfully across billions of rows. Switch the packing below and watch atoms march into a new lattice. Then look at the glass: a solid with *no* repeating pattern at all.
+
+<CrystalLattice />
+
+A **glass** (or any *amorphous* solid) is frozen mid-jumble — rigid, but disordered. So "solid" and "crystal" aren't the same thing: every crystal is a solid, but not every solid is a crystal.
+
+</Step>
+
+<Step title="Why atoms line up" kind="explain">
+
+Left to settle, atoms seek the arrangement with the **lowest energy** — and for most materials that's a neat, repeating lattice, the way oranges stack most snugly in a crate. Each atom nestles into the gaps of its neighbours, every bond at its happiest length and angle.
+
+The *shape* of the lattice depends on the atoms and their bonds: carbon in a tetrahedral net becomes diamond; the same carbon in flat sheets becomes graphite — soft, grey pencil lead. **Same atoms, different lattice, utterly different material.** The arrangement is as important as the ingredient.
+
+</Step>
+
+<Step title="When the order breaks" kind="explain">
+
+Real crystals are never flawless, and their **defects** are often the whole point.
+
+- A missing atom (a *vacancy*) or an extra one lets atoms shuffle, allowing crystals to slowly deform.
+- A misaligned plane (a *dislocation*) is why metals can be bent and hammered rather than shattering — and why working a metal can harden it.
+- A few foreign atoms slipped into the lattice (*doping*) can transform a material's behaviour completely — the trick at the heart of every semiconductor.
+
+<Callout type="info" title="Glass: a liquid that forgot to crystallise">
+Cool most liquids slowly and they crystallise. Cool them fast enough and the atoms get stuck before they can line up — locked into a disordered, glassy solid. Window glass is silica caught exactly this way: rigid, yet with the random structure of a liquid.
+</Callout>
+
+</Step>
+
+<Step title="Reading a lattice with X-rays" kind="explain">
+
+How do we *know* atoms sit on a lattice? We can't see them — but we can bounce **X-rays** off them. X-rays have wavelengths about the size of the atomic spacing, so a crystal acts like a diffraction grating, scattering them into a pattern of sharp spots.
+
+From the geometry of those spots, physicists reconstruct the exact arrangement of the atoms. This technique, **X-ray crystallography**, mapped the lattice of countless materials — and famously revealed the double-helix structure of DNA. The orderly spots are diffraction (a wave effect you met in optics) reading out the orderly lattice.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Diamond and graphite are both made of pure carbon, yet one is the hardest natural material and the other is soft enough to write with. Why?"
+  options={[
+    "They contain different isotopes of carbon",
+    "The carbon atoms are arranged in different crystal lattices",
+    "Graphite is actually a glass with no structure",
+    "Diamond has more carbon atoms per atom",
+  ]}
+  correctIndex={1}
+  explanation="Identical atoms, different lattice. Diamond bonds carbon into a rigid 3-D tetrahedral network; graphite stacks it in flat sheets that slide over each other. The arrangement, not the ingredient, sets the properties."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **crystal** is defined by **long-range order** — a single atomic arrangement repeated throughout.
+- Atoms settle into a lattice because it's the **lowest-energy** packing; the lattice shape sets the material's properties (diamond vs graphite).
+- **Amorphous** solids like glass are rigid but disordered — solid without being crystalline.
+- **Defects** (vacancies, dislocations, dopants) control how materials bend, harden, and conduct.
+- **X-ray diffraction** reveals the lattice, turning a wave effect into an atomic-scale microscope.
+
+</Step>
+
+</Lesson>

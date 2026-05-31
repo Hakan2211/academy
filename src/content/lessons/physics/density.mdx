@@ -1,0 +1,82 @@
+---
+title: Density
+subject: physics
+contentSlug: physics/density
+order: 2
+estimatedMinutes: 7
+level: beginner
+format: core
+---
+
+<Lesson>
+
+<Step title="Heavy for its size" kind="explain">
+
+Which is heavier: a kilogram of feathers or a kilogram of lead? Neither — a kilogram is a kilogram. The real difference is that the feathers take up a whole room while the lead fits in your palm.
+
+That "how much stuff is packed into how much space" is **density**: mass divided by volume.
+
+<Formula tex="\rho = \dfrac{m}{V}" block />
+
+Lead is dense (lots of mass crammed into little volume). Feathers, foam, and air are not. Density is a property of the *material*, not the size of the lump — a gold coin and a gold bar have exactly the same density.
+
+</Step>
+
+<Step title="Float or sink" kind="interactive">
+
+Density decides whether something floats. The rule is beautifully simple: **compare it to the fluid**. Less dense than water → it floats. Denser → it sinks. Water's density is the benchmark, **1.0 g/cm³**.
+
+<BuoyancyTank />
+
+Notice *how much* of a floating object sits underwater: an object 60% as dense as water floats with 60% of itself submerged. Ice is about 92% as dense as water — which is exactly why an iceberg hides most of its bulk below the surface.
+
+</Step>
+
+<Step title="So how does a steel ship float?" kind="explain">
+
+Steel is nearly **8 times** denser than water. A solid block of it sinks instantly. Yet ships are made of steel and float just fine.
+
+The trick is **shape**. A ship is mostly hollow — full of air. What matters is the *average* density of the whole vessel, steel plus all that empty space inside. Spread the steel into a giant air-filled hull and the average density drops below water's. Crush that same ship into a solid cube and it would plummet.
+
+</Step>
+
+<Step title="Archimedes' principle" kind="explain">
+
+Over 2,000 years ago, Archimedes worked out *why* things float. When you lower an object into water, it shoves some water aside. The water pushes back with an upward **buoyant force** equal to the weight of the water displaced.
+
+<Callout type="info" title="The floating rule">
+**Buoyant force = the weight of the fluid pushed out of the way.** If an object can displace its own weight in water before it's fully submerged, it floats. If it can't, it sinks.
+</Callout>
+
+A ship floats because its broad hull displaces a huge weight of water — enough to match the ship's entire weight — long before it goes under.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A solid steel ball sinks, but a steel ship floats. What's the key difference?"
+  options={[
+    "The ship is made of lighter steel",
+    "The ship's hollow, air-filled shape lowers its average density below water's",
+    "Ships are pushed up by the wind",
+    "Steel changes density when shaped into a ship",
+  ]}
+  correctIndex={1}
+  explanation="The material is identical. By enclosing a large volume of air, the ship's average density drops below that of water, so it displaces enough water to float. A solid ball has nowhere near enough volume to do that."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Density = mass ÷ volume** — how tightly matter is packed, independent of size.
+- An object **floats if it's less dense than the fluid**, and the submerged fraction equals the density ratio.
+- **Average density** is what counts: hollow shapes (like ships) float even when made of dense material.
+- **Archimedes' principle**: the upward buoyant force equals the weight of displaced fluid.
+
+<Formula tex="\rho = \dfrac{m}{V}" block />
+
+</Step>
+
+</Lesson>

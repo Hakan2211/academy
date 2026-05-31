@@ -1,0 +1,84 @@
+---
+title: Conservation of Energy
+subject: physics
+contentSlug: physics/conservation-of-energy
+order: 3
+estimatedMinutes: 7
+level: beginner
+format: core
+---
+
+<Lesson>
+
+<Step title="The great accounting rule" kind="explain">
+
+Here's one of the deepest laws in all of physics, and it's wonderfully simple:
+
+> **Energy can't be created or destroyed — only changed from one form to another.**
+
+Add up every kind of energy in a closed system and the total never changes. It's the universe's unbreakable accounting rule, and no experiment has ever caught it being violated.
+
+</Step>
+
+<Step title="Follow the energy" kind="interactive">
+
+With friction set to zero, the ball swings forever — because its **total** energy (the dashed line) never drops. Kinetic and potential just pass the same fixed amount back and forth.
+
+<EnergySkater />
+
+Try to find a moment where the dashed total dips. You can't: every joule that leaves the green bar arrives in the blue one.
+
+</Step>
+
+<Step title="A worked example" kind="explain">
+
+Drop a 2 kg rock from a height of 5 m. At the top it's all potential:
+
+<Formula tex="E_p = m g h = 2 \times 9.8 \times 5 \approx 98\ \text{J}" block />
+
+Just before it lands, height is zero, so all 98 J has become kinetic. Set them equal and solve for the speed:
+
+<Formula tex="\tfrac{1}{2} m v^2 = 98 \implies v \approx 9.9\ \text{m/s}" block />
+
+We never tracked the messy details of the fall — conservation let us jump straight from start to finish.
+
+</Step>
+
+<Step title="So why do things stop?" kind="explain">
+
+If energy is conserved, why does a real pendulum eventually halt?
+
+It doesn't lose energy — it **transfers** it. Friction and air resistance quietly convert the motion into **heat** and a little **sound**. Count those too and the books still balance perfectly. The energy didn't vanish; it just scattered into forms we don't usually notice.
+
+<Callout type="tip" title="Key distinction">
+*Mechanical* energy (kinetic + potential) can shrink. *Total* energy — including heat and sound — never does.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A bouncing ball returns to a lower height after each bounce. Where did the 'missing' energy go?"
+  options={[
+    "It was destroyed on impact",
+    "It turned into heat and sound during each bounce",
+    "Energy conservation simply fails for bouncing",
+    "It was never there to begin with",
+  ]}
+  correctIndex={1}
+  explanation="Each bounce converts some mechanical energy into heat (the ball and floor warm slightly) and sound. Total energy is still conserved — it's just spread into harder-to-see forms."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Energy is conserved**: the total in a closed system is constant.
+- In a frictionless swap, **mechanical energy (KE + PE)** stays fixed.
+- When things slow down, energy isn't lost — it's **transferred** into heat and sound.
+- Conservation is a shortcut: compare the start and end without tracking every step in between.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,80 @@
+---
+title: Changes of State & Latent Heat
+subject: physics
+contentSlug: physics/changes-of-state
+order: 7
+estimatedMinutes: 7
+level: intermediate
+format: core
+---
+
+<Lesson>
+
+<Step title="Crossing the line" kind="explain">
+
+Heat ice and it melts; keep heating and it boils. Each crossing between solid, liquid, and gas is a **change of state**, and every one is driven by adding or removing energy:
+
+- Add energy to climb up: **melting** (solid → liquid), then **boiling** (liquid → gas).
+- Remove energy to come back down: **condensing** (gas → liquid), then **freezing** (liquid → solid).
+
+These changes happen at fixed temperatures for a given substance — water melts at 0 °C and boils at 100 °C — which is what makes them so reliable.
+
+</Step>
+
+<Step title="The flat steps" kind="interactive">
+
+Here's something surprising. Heat a block of ice at a steady rate and plot its temperature. You'd expect a straight climb — but watch what happens at the state changes.
+
+<PhaseChange />
+
+The temperature **pauses** during melting and again during boiling. For those stretches you're pouring in heat, yet the thermometer doesn't budge. So where is all that energy going?
+
+</Step>
+
+<Step title="Latent heat: the hidden energy" kind="explain">
+
+During a change of state, the incoming energy isn't speeding the particles up (which is what temperature measures) — it's being spent **breaking the bonds** that held the state together. This "hidden" energy is called **latent heat**.
+
+<Formula tex="Q = m \, L" block />
+
+It takes a lot of it. Turning 100 °C water into 100 °C steam needs over *five times* more energy than heating that water all the way from freezing to boiling. That stored energy is exactly why **steam burns far worse than boiling water**: when steam hits your skin and condenses, it dumps all that latent heat back out.
+
+</Step>
+
+<Step title="Evaporation cools" kind="explain">
+
+A liquid doesn't have to boil to lose particles — the fastest ones can escape from the surface at any temperature. That's **evaporation**, and it has a neat consequence.
+
+<Callout type="tip" title="Why sweating works">
+When the most energetic particles leave, the ones left behind are slower on average — so the liquid **cools down**. Sweat evaporating from your skin carries away heat and keeps you from overheating. The same effect makes you shiver when you step out of a pool.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="While ice is melting, you keep adding heat but the temperature stays at 0 °C. Where is the energy going?"
+  options={[
+    "It's being destroyed",
+    "Into breaking the bonds of the solid structure — the latent heat of melting",
+    "Into making the ice colder",
+    "Nowhere; the heat stops flowing",
+  ]}
+  correctIndex={1}
+  explanation="During a change of state the added energy goes into breaking the bonds holding particles in place (latent heat), not into raising their speed. Temperature — the measure of particle speed — therefore stays constant until the change is complete."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Changes of state — **melting, freezing, boiling, condensing** — are driven by adding or removing energy at fixed temperatures.
+- Temperature **pauses** during a change: the energy goes into **latent heat**, breaking or forming bonds rather than changing speed.
+- That's why **steam scalds** worse than boiling water and why **evaporation cools** (sweating).
+
+<Formula tex="Q = m \, L" block />
+
+</Step>
+
+</Lesson>
