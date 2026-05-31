@@ -1,16 +1,14 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 import { convexQuery } from '@convex-dev/react-query'
 import { useSuspenseQuery, useQuery } from '@tanstack/react-query'
 import { api } from '../../convex/_generated/api'
 import { useDeviceId } from '#/lib/deviceId.context'
-import { TrailMap } from '#/components/ui/TrailMap'
-import { CategoryCompleteCard } from '#/components/ui/CategoryCompleteCard'
+import { LessonTrail } from '#/components/ui/LessonTrail'
 import type {
   LessonLevel,
   LessonNodeData,
   LessonNodeState,
 } from '#/components/ui/LessonNode'
-import { Icon } from '#/components/ui/Icon'
 
 export const Route = createFileRoute('/subjects/$subjectSlug/$unitSlug')({
   component: CategoryPage,
@@ -96,56 +94,30 @@ function CategoryPage() {
   ).length
   const allComplete = published.length > 0 && doneCount === published.length
 
+  if (nodes.length === 0) {
+    return (
+      <div className="mx-auto max-w-2xl px-4 py-16 text-center text-muted">
+        Lessons are coming soon.
+      </div>
+    )
+  }
+
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10">
-      <Link
-        to="/subjects/$subjectSlug"
-        params={{ subjectSlug }}
-        className="mb-6 inline-flex items-center gap-1 text-sm text-muted hover:text-ink"
-      >
-        <Icon name="ArrowLeft" size={16} /> {subject.name}
-      </Link>
-
-      <header className="mb-8 flex items-start gap-4">
-        <div
-          className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl"
-          style={{ background: `${accent}22`, color: accent }}
-        >
-          <Icon name={unit.icon ?? 'Folder'} size={28} />
-        </div>
-        <div>
-          <h1 className="text-3xl font-bold" style={{ color: accent }}>
-            {unit.name}
-          </h1>
-          {unit.description && (
-            <p className="mt-1 text-muted">{unit.description}</p>
-          )}
-          {unit.levelRange && (
-            <span className="mt-2 inline-block rounded-full border border-border px-2 py-0.5 text-xs font-medium text-muted">
-              {unit.levelRange}
-            </span>
-          )}
-        </div>
-      </header>
-
-      {allComplete && (
-        <CategoryCompleteCard
-          subjectSlug={subjectSlug}
-          unitSlug={unitSlug}
-          unitName={unit.name}
-          done={doneCount}
-          total={published.length}
-          accent={accent}
-          nextUnitSlug={data.nextUnitSlug}
-          nextUnitName={data.nextUnitName}
-        />
-      )}
-
-      {nodes.length > 0 ? (
-        <TrailMap lessons={nodes} accent={accent} />
-      ) : (
-        <p className="text-muted">Lessons are coming soon.</p>
-      )}
-    </div>
+    <LessonTrail
+      subjectSlug={subjectSlug}
+      subjectName={subject.name}
+      unitSlug={unitSlug}
+      unitName={unit.name}
+      unitDescription={unit.description ?? undefined}
+      unitIcon={unit.icon ?? undefined}
+      unitLevelRange={unit.levelRange ?? undefined}
+      accent={accent}
+      lessons={nodes}
+      done={doneCount}
+      total={published.length}
+      complete={allComplete}
+      nextUnitSlug={data.nextUnitSlug}
+      nextUnitName={data.nextUnitName}
+    />
   )
 }

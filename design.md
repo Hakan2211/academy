@@ -75,16 +75,22 @@ on a path drawn in code (not one baked path image).
   computer-science, psychology.
 - 12 **category emblem-orbs** (physics units) — already specced in
   `journey-ux-design.md` §7a + the prompts file §3.3.
-- 12 **badge medals** — prompts file §3.2 (1 sample done: *Method Master*).
+- 12 **category emblem-orbs (station planets)** — **DONE** (owner-generated, 2026-05-31):
+  luminous accent planet-spheres (some with Saturn rings), 500–1024px transparent, at
+  `public/orbs/physics/<slug>.png`. These are the overworld **orb art** (wired into
+  `OrbStation` via `ORB_IMAGE`).
+- 12 **badge medals** — **DONE** (owner-generated, 2026-05-31): glossy chrome-rimmed
+  accent coins, 500×500 transparent, at `public/badges/physics/<slug>.png`. The *reward*
+  medals for the future `/badges` collection (NOT the overworld orbs).
 - 1–2 **cosmos backdrops** (wide + portrait) — prompts file §3.1 (`3.1` render done).
 
 ## 5. Routes → screens → assets
 
 | Route | Screen | Metaphor | Base art | Status |
 |---|---|---|---|---|
-| `/` | Subjects hub | Islands | 6 subject islands on a cosmos backdrop | **POC now** (using `1.5B` as stand-in) |
-| `/subjects/$subject` | Category overworld | Path | cosmos + 12 emblem-orbs | mockup `1A` |
-| `/subjects/$subject/$unit` | Category trail (lessons) | Path | cosmos + lesson orbs | mockup `Category Trail` |
+| `/` | Subjects hub | Islands | 6 subject islands on a cosmos backdrop | **BUILT** (modular islands + WebGL nebula) |
+| `/subjects/$subject` | Category overworld | Path | cosmos + 12 emblem-orbs | **BUILT** (`CategoryOverworld`, real medal orbs + shine; mockup `1A`) |
+| `/subjects/$subject/$unit` | Category trail (lessons) | Path | cosmos + lesson orbs | **BUILT** (`LessonTrail` + `LessonOrb`, mockup `Category Trail`) |
 | `/learn/$` | Lesson player | — | per-lesson 3D viz + glass panel | mockup `2.3` |
 | (lesson end) | Lesson complete | — | glass card + confetti + medal | mockup `2.4` |
 | `/badges` | Badge collection | constellation | cosmos + medals | mockup `2.5` |
@@ -130,10 +136,29 @@ Folder: `C:\Users\User\OneDrive\Desktop\Academy Design`
    using `1.5B` as a stand-in base (parallax + particle FX + glowing DOM island hotspots +
    glass HUD, wired to Convex). Validates the architecture before mass-generating assets.
 2. Generate **clean-plate assets** (per-island specimens + backdrop), per the prompts file.
-3. Rebuild the hub on real modular islands + add R3F bloom/shader polish.
-4. Build the **category overworld** (path + emblem-orbs) on the same stack.
-5. Category trail, lesson player, complete, badges, HUD — re-skin to the mockups.
+3. Rebuild the hub on real modular islands + add R3F bloom/shader polish. ✅
+4. ✅ **Build the category overworld** (path + emblem-orbs) on the same stack —
+   `src/components/ui/CategoryOverworld.tsx` + `OrbStation.tsx`, wired into
+   `subjects.$subjectSlug.index.tsx` (replaced the boxed old `Overworld`). Reuses
+   `CosmosCanvas` (nebula tinted by category accents) + a 2D-canvas winding path
+   (golden completed prefix w/ flow + pulses, dim locked remainder) + procedural
+   lit planet-orbs (stand-in for §3.3 orb plates) with strict gating + parallax.
+   Typecheck + build clean. **Not yet run in-browser** (needs Convex login QA).
+5. Re-skin the remaining screens to the mockups:
+   - ✅ **Category trail** (lessons within a category) — `src/components/ui/LessonTrail.tsx`
+     + `LessonOrb.tsx`, wired into `subjects.$subjectSlug.$unitSlug.tsx` (replaced the
+     boxed `TrailMap`). Same lit-illustration stack as the overworld, one level down:
+     fixed `CosmosCanvas` nebula (accent-tinted) + a 2D-canvas winding S-path (accent
+     "completed" prefix w/ flow + pulses, dim remainder, orb bloom) + DOM glass lesson
+     orbs (procedural; state-driven; deep-dive = centred capstone w/ crown + godray) +
+     glass label cards + glass hero header + persistent back pill. Scrollable for any
+     lesson count. Reuses `CategoryCompleteCard` (shown centred when 100%). Typecheck +
+     build clean. **Not yet run in-browser** (needs Convex login QA). `TrailMap`/
+     `TrailNode` now orphaned (kept as list-view fallback).
+   - ← NEXT: lesson player (`2.3`), lesson complete (`2.4`, glass-ify the reused card),
+     badges (`2.5`), HUD/StatBar (`2.6`).
 6. Polish: transitions ("zoom into island"), reduced-motion, responsive/portrait, perf.
+   (Overworld + trail mobile/portrait still desktop-first; orb clean-plate swap-in pending.)
 
 ## 9. Decisions log
 - 2026-05-31 — Direction: **Cosmic Glass system** + islands(subjects)/path(categories) hybrid,
