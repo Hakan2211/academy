@@ -93,8 +93,8 @@ on a path drawn in code (not one baked path image).
 | `/subjects/$subject/$unit` | Category trail (lessons) | Path | cosmos + lesson orbs | **BUILT** (`LessonTrail` + `LessonOrb`, mockup `Category Trail`) |
 | `/learn/$` | Lesson player | — | per-lesson 3D viz + glass panel | **BUILT** (`LessonShell` adaptive two-pane/single-column, mockup `2.3`) |
 | (lesson end) | Lesson complete | — | glass card + confetti + medal | **BUILT** (`LessonCompleteCard`, mockup `2.4`) |
-| `/badges` | Badge collection | constellation | cosmos + medals | mockup `2.5` |
-| global | Stat bar / HUD | — | glass bar | mockup `2.6` |
+| `/badges` | Badge collection | constellation | cosmos + medals | **BUILT** (`BadgeConstellation`, mockup `2.5`) |
+| global | Stat bar / HUD | — | glass bar | **BUILT** (glass HUD pill, mockup `2.6`) |
 
 ## 6. Gotchas (and how we handle them)
 
@@ -167,13 +167,23 @@ Folder: `C:\Users\User\OneDrive\Desktop\Academy Design`
      `NextBackBar` orphaned. Accent defaults to violet→cyan (per-category accent threading
      is a follow-up — needs `getLessonMeta` to also return the unit accent + a Convex
      push). Typecheck + build clean. **Not yet run in-browser** (needs Convex login QA).
+   - ✅ **Badges** (`2.5`) — `src/components/ui/BadgeConstellation.tsx`: full-bleed cosmos
+     (`CosmosCanvas`) + a constellation of medal coins (real PNG for `unit-*`, procedural
+     otherwise) joined by nearest-neighbour lines (SVG, `preserveAspectRatio=none`),
+     earned=lit / locked=desaturated+lock, header (`n of N earned`) + earned/locked legend;
+     dropped the mockup's left nav rail (our IA = top HUD). Wired into `routes/badges.tsx`
+     (full-bleed; replaced the boxed grid). `BadgeMedal` now orphaned.
+   - ✅ **HUD / StatBar** (`2.6`) — `StatBar.tsx` re-skinned to a floating glass pill
+     (glowing azure rim, section dividers, glowing atom/flame/medal icons, Lv chip, XP bar);
+     keeps the 52px reserved height so the full-bleed pages' `calc(100vh-52px)` stays aligned.
+   - **§8 step 5 COMPLETE** — every signature screen now re-skinned to the mockups.
    - ✅ **Lesson complete** (`2.4`) — `LessonCompleteCard.tsx` rewritten as a frosted
      Cosmic Glass celebration: floating emblem, big gold **+XP**, level bar (accent→green→
      gold) with a **LEVEL UP!** pill, the new badge as a glowing coin (real medal PNG for
      `unit-*` keys, else a procedural accent coin) over a rotating burst, and a **streak
      row** of flames; glows in the lesson's category accent; confetti (reduced-motion
      aware). Adaptive: two-column when a badge is earned, single centred column otherwise.
-   - ← NEXT: badges (`2.5`), HUD/StatBar (`2.6`).
+   - ✅ all of step 5 done — see the per-screen entries above. ← NEXT is step 6 (polish).
 6. Polish: transitions ("zoom into island"), reduced-motion, responsive/portrait, perf.
    (Overworld + trail mobile/portrait still desktop-first; orb clean-plate swap-in pending.)
 
