@@ -23,7 +23,7 @@ export function LessonCompleteCard({
         particleCount: 130,
         spread: 75,
         origin: { y: 0.3 },
-        colors: ['#6c5ce7', '#00d2d3', '#2ecc71', '#ffb020'],
+        colors: ['#4F8CFF', '#00d2d3', '#2ecc71', '#ffb020'],
       })
     })
     return () => {
@@ -38,7 +38,7 @@ export function LessonCompleteCard({
       transition={{ type: 'spring', stiffness: 200, damping: 18 }}
       className="rounded-2xl border border-border bg-surface p-8 text-center"
     >
-      <div className="mb-2 text-5xl">🎉</div>
+      <div className="mb-2 text-5xl">ðŸŽ‰</div>
       <h2 className="text-2xl font-bold">Lesson complete!</h2>
 
       <motion.div

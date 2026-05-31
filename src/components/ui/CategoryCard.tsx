@@ -21,7 +21,7 @@ export function CategoryCard({
   subjectSlug: string
   category: CategoryCardData
 }) {
-  const accent = category.accentColor ?? '#6C5CE7'
+  const accent = category.accentColor ?? '#4F8CFF'
   const live = category.total > 0
   const pct = live ? Math.round((category.done / category.total) * 100) : 0
 

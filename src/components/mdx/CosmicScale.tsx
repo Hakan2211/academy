@@ -4,16 +4,16 @@ import { SceneSlider } from '#/components/three/SceneSlider'
 type Tier = { max: number; name: string; desc: string; color: string; dots: number }
 // `max` = upper bound of log10(size in metres) for this tier
 const TIERS: Array<Tier> = [
-  { max: 2, name: 'You', desc: 'A human being — about a metre tall.', color: '#fab1a0', dots: 1 },
+  { max: 2, name: 'You', desc: 'A human being â€” about a metre tall.', color: '#fab1a0', dots: 1 },
   { max: 5, name: 'Cities & Mountains', desc: 'The scale of landscapes, from streets to peaks.', color: '#55efc4', dots: 3 },
   { max: 7, name: 'Planet Earth', desc: 'Our whole world, ~12,700 km across.', color: '#0984e3', dots: 1 },
-  { max: 9, name: 'The Earth–Moon System', desc: 'The Moon orbits ~384,000 km away.', color: '#74b9ff', dots: 2 },
+  { max: 9, name: 'The Earthâ€“Moon System', desc: 'The Moon orbits ~384,000 km away.', color: '#74b9ff', dots: 2 },
   { max: 13, name: 'The Solar System', desc: 'The Sun and its planets, measured in AU.', color: '#fdcb6e', dots: 6 },
   { max: 17, name: 'The Nearest Stars', desc: 'Neighbouring suns, a few light-years off.', color: '#ffeaa7', dots: 5 },
-  { max: 21, name: 'The Milky Way', desc: 'Our galaxy — ~100,000 light-years of stars.', color: '#a29bfe', dots: 40 },
-  { max: 23, name: 'The Local Group', desc: 'The Milky Way, Andromeda & dozens of galaxies.', color: '#6c5ce7', dots: 8 },
+  { max: 21, name: 'The Milky Way', desc: 'Our galaxy â€” ~100,000 light-years of stars.', color: '#a29bfe', dots: 40 },
+  { max: 23, name: 'The Local Group', desc: 'The Milky Way, Andromeda & dozens of galaxies.', color: '#4F8CFF', dots: 8 },
   { max: 25, name: 'The Cosmic Web', desc: 'Superclusters strung along vast filaments.', color: '#e056fd', dots: 60 },
-  { max: 28, name: 'The Observable Universe', desc: 'Everything we can see — ~93 billion ly across.', color: '#636e72', dots: 90 },
+  { max: 28, name: 'The Observable Universe', desc: 'Everything we can see â€” ~93 billion ly across.', color: '#636e72', dots: 90 },
 ]
 
 function fmt(exp: number) {
@@ -39,7 +39,7 @@ function scatter(n: number, seed: number) {
 }
 
 // The universe spans an almost unthinkable range of sizes. Slide from the scale of
-// your own body out to the entire observable cosmos — each step a factor of ten —
+// your own body out to the entire observable cosmos â€” each step a factor of ten â€”
 // and watch what dominates: people, planets, stars, galaxies, the cosmic web.
 export function CosmicScale() {
   const [exp, setExp] = useState(7)
@@ -63,7 +63,7 @@ export function CosmicScale() {
 
       <div className="px-4 pt-1">
         <div className="mb-1 text-center text-sm text-muted">{tier.desc}</div>
-        <SceneSlider label={`Scale ≈ ${fmt(exp)}`} value={exp} min={0} max={27} step={1} unit="" onChange={setExp} />
+        <SceneSlider label={`Scale â‰ˆ ${fmt(exp)}`} value={exp} min={0} max={27} step={1} unit="" onChange={setExp} />
         <p className="mt-2 pb-4 text-center text-xs text-muted">
           Each notch multiplies the size by ten. It takes only ~27 of those steps to go from a person to the edge of the observable universe.
         </p>

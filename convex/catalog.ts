@@ -249,9 +249,19 @@ export const getResumePoint = query({
 export const getLessonMeta = query({
   args: { contentSlug: v.string() },
   handler: async (ctx, { contentSlug }) => {
-    return await ctx.db
+    const lesson = await ctx.db
       .query('lessons')
       .withIndex('by_contentSlug', (q) => q.eq('contentSlug', contentSlug))
       .unique()
+    if (!lesson) return null
+    // Join the unit + subject so the lesson player can glow in its category's
+    // accent (the unit accent, falling back to the subject colour).
+    const unit = await ctx.db.get(lesson.unitId)
+    const subject = await ctx.db.get(lesson.subjectId)
+    return {
+      ...lesson,
+      unitAccentColor: unit?.accentColor ?? null,
+      subjectColor: subject?.color ?? null,
+    }
   },
 })

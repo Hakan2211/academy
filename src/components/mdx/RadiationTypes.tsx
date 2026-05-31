@@ -7,13 +7,13 @@ const START = 54
 const N = 7
 
 const META: Record<Mode, { color: string; label: string; stopX: number; speed: number; stopName: string }> = {
-  alpha: { color: '#e17055', label: 'α  helium nucleus · charge +2', stopX: 150, speed: 0.08, stopName: 'a sheet of paper' },
-  beta: { color: '#0984e3', label: 'β  electron · charge −1', stopX: 250, speed: 0.17, stopName: 'a few mm of aluminium' },
-  gamma: { color: '#6c5ce7', label: 'γ  photon · no charge', stopX: 344, speed: 0.27, stopName: 'thick lead (and even then only weakened)' },
+  alpha: { color: '#e17055', label: 'Î±  helium nucleus Â· charge +2', stopX: 150, speed: 0.08, stopName: 'a sheet of paper' },
+  beta: { color: '#0984e3', label: 'Î²  electron Â· charge âˆ’1', stopX: 250, speed: 0.17, stopName: 'a few mm of aluminium' },
+  gamma: { color: '#4F8CFF', label: 'Î³  photon Â· no charge', stopX: 344, speed: 0.27, stopName: 'thick lead (and even then only weakened)' },
 }
 
 // The three radiations a nucleus throws out, ranked by how far they punch through
-// matter. Alpha is big and slow — paper stops it. Beta slips through paper but
+// matter. Alpha is big and slow â€” paper stops it. Beta slips through paper but
 // not aluminium. Gamma is pure energy and needs dense lead to soak it up.
 export function RadiationTypes() {
   const [mode, setMode] = useState<Mode>('alpha')
@@ -59,7 +59,7 @@ export function RadiationTypes() {
               mode === k ? 'border-accent bg-accent/15 text-accent' : 'border-border text-muted hover:text-ink',
             )}
           >
-            {k === 'alpha' ? 'α alpha' : k === 'beta' ? 'β beta' : 'γ gamma'}
+            {k === 'alpha' ? 'Î± alpha' : k === 'beta' ? 'Î² beta' : 'Î³ gamma'}
           </button>
         ))}
       </div>
@@ -95,10 +95,10 @@ export function RadiationTypes() {
       </p>
       <p className="px-4 pb-4 text-center text-xs text-muted">
         {mode === 'alpha'
-          ? 'Alpha is the heaviest and least penetrating — stopped by '
+          ? 'Alpha is the heaviest and least penetrating â€” stopped by '
           : mode === 'beta'
             ? 'Beta punches through paper but is stopped by '
-            : 'Gamma is the most penetrating — it needs '}
+            : 'Gamma is the most penetrating â€” it needs '}
         {m.stopName}.
       </p>
     </div>

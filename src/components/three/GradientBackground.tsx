@@ -16,7 +16,7 @@ const GradientMaterial = shaderMaterial(
   {
     uTime: 0,
     uColorA: new THREE.Color('#10182f'),
-    uColorB: new THREE.Color('#6c5ce7'),
+    uColorB: new THREE.Color('#4F8CFF'),
   },
   vertexShader,
   fragmentShader,
@@ -38,7 +38,6 @@ function GradientPlane() {
   return (
     <mesh scale={[12, 8, 1]}>
       <planeGeometry args={[1, 1]} />
-      {/* @ts-expect-error custom shaderMaterial element */}
       <gradientMaterial ref={matRef} />
     </mesh>
   )

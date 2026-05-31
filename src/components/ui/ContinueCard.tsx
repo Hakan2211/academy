@@ -11,7 +11,7 @@ import { Icon } from './Icon'
 // "continue" card pointing at the next lesson, or a "done" celebration once
 // every published Physics lesson is complete.
 const SUBJECT = 'physics'
-const DEFAULT_ACCENT = '#6C5CE7'
+const DEFAULT_ACCENT = '#4F8CFF'
 
 export function ContinueCard() {
   const deviceId = useDeviceId()
@@ -32,7 +32,7 @@ export function ContinueCard() {
         <div className="min-w-0">
           <Eyebrow accent={DEFAULT_ACCENT}>Physics complete</Eyebrow>
           <h3 className="mt-1 text-lg font-semibold">
-            You&rsquo;ve finished every Physics lesson 🎉
+            You&rsquo;ve finished every Physics lesson ðŸŽ‰
           </h3>
         </div>
         <Link
@@ -50,7 +50,7 @@ export function ContinueCard() {
     )
   }
 
-  // 'start' | 'continue' — the resume fields are populated together.
+  // 'start' | 'continue' â€” the resume fields are populated together.
   const contentSlug = resume.contentSlug
   if (!contentSlug) return null
   const accent: string = resume.accentColor ?? DEFAULT_ACCENT
@@ -63,7 +63,7 @@ export function ContinueCard() {
           {isStart ? 'Start your journey' : 'Continue your path'}
         </Eyebrow>
         <p className="mt-1 text-sm text-muted">
-          {resume.unitName} · Lesson {resume.lessonNumber}
+          {resume.unitName} Â· Lesson {resume.lessonNumber}
         </p>
         <h3 className="mt-0.5 truncate text-lg font-semibold">{resume.title}</h3>
       </div>

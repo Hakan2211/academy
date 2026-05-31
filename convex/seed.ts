@@ -14,7 +14,7 @@ export const run = internalMutation({
         slug: 'physics',
         name: 'Physics',
         description: 'See the rules of the universe in motion.',
-        color: '#6C5CE7',
+        color: '#4F8CFF',
         icon: 'Atom',
         order: 1,
         isPublished: true,
@@ -106,7 +106,7 @@ export const run = internalMutation({
         order: 3,
         description: "From everyday pushes to Newton's laws and orbits.",
         icon: 'Move',
-        accentColor: '#6C5CE7',
+        accentColor: '#FF8A4C',
         levelRange: 'Beginner → Advanced',
       },
       {

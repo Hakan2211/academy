@@ -21,7 +21,7 @@ export const BADGES: Record<string, BadgeMeta> = {
   'unit-forces-and-motion': {
     label: 'Force Adept',
     icon: 'Move',
-    color: '#6C5CE7',
+    color: '#FF8A4C',
   },
   'unit-oscillations': {
     label: 'Wave Rider',

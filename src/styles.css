@@ -6,7 +6,7 @@
   --color-surface: #131a2e;
   --color-surface-2: #1b2440;
   --color-border: #2a3556;
-  --color-accent: #6c5ce7;
+  --color-accent: #4f8cff;
   --color-accent-2: #00d2d3;
   --color-success: #2ecc71;
   --color-warn: #ffb020;
@@ -38,7 +38,7 @@ body {
   margin: 0;
   background: radial-gradient(
       1200px 800px at 70% -10%,
-      rgba(108, 92, 231, 0.18),
+      rgba(79, 140, 255, 0.18),
       transparent 60%
     ),
     radial-gradient(

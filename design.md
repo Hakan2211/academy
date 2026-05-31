@@ -91,7 +91,7 @@ on a path drawn in code (not one baked path image).
 | `/` | Subjects hub | Islands | 6 subject islands on a cosmos backdrop | **BUILT** (modular islands + WebGL nebula) |
 | `/subjects/$subject` | Category overworld | Path | cosmos + 12 emblem-orbs | **BUILT** (`CategoryOverworld`, real medal orbs + shine; mockup `1A`) |
 | `/subjects/$subject/$unit` | Category trail (lessons) | Path | cosmos + lesson orbs | **BUILT** (`LessonTrail` + `LessonOrb`, mockup `Category Trail`) |
-| `/learn/$` | Lesson player | — | per-lesson 3D viz + glass panel | mockup `2.3` |
+| `/learn/$` | Lesson player | — | per-lesson 3D viz + glass panel | **BUILT** (`LessonShell` adaptive two-pane/single-column, mockup `2.3`) |
 | (lesson end) | Lesson complete | — | glass card + confetti + medal | mockup `2.4` |
 | `/badges` | Badge collection | constellation | cosmos + medals | mockup `2.5` |
 | global | Stat bar / HUD | — | glass bar | mockup `2.6` |
@@ -155,8 +155,20 @@ Folder: `C:\Users\User\OneDrive\Desktop\Academy Design`
      lesson count. Reuses `CategoryCompleteCard` (shown centred when 100%). Typecheck +
      build clean. **Not yet run in-browser** (needs Convex login QA). `TrailMap`/
      `TrailNode` now orphaned (kept as list-view fallback).
-   - ← NEXT: lesson player (`2.3`), lesson complete (`2.4`, glass-ify the reused card),
-     badges (`2.5`), HUD/StatBar (`2.6`).
+   - ✅ **Lesson player** (`2.3`) — `src/components/lesson/LessonShell.tsx` (immersive
+     Cosmic Glass chrome: exit pill, frosted-glass step panel, gradient Continue, bottom
+     step-dots) + `LessonBackdrop.tsx` (calm CSS cosmos) + `heroTypes.ts` (lazy hero
+     allowlist from the MDX registry). `Lesson.tsx` rewritten as the controller: it
+     splits each step into one hero visual + the rest and the shell lays it out
+     **adaptively** — one hero → two-pane (visual left, glass text panel right, the
+     mockup); zero or several → single centred glass column. Generic across all 98
+     lessons; validated on the pendulum. Route `learn.$.tsx` now full-bleed (dropped the
+     boxed `max-w-3xl` + exit button → moved into the shell). `StepShell`/`ProgressDots`/
+     `NextBackBar` orphaned. Accent defaults to violet→cyan (per-category accent threading
+     is a follow-up — needs `getLessonMeta` to also return the unit accent + a Convex
+     push). Typecheck + build clean. **Not yet run in-browser** (needs Convex login QA).
+   - ← NEXT: lesson complete (`2.4`, glass-ify the reused card), badges (`2.5`),
+     HUD/StatBar (`2.6`).
 6. Polish: transitions ("zoom into island"), reduced-motion, responsive/portrait, perf.
    (Overworld + trail mobile/portrait still desktop-first; orb clean-plate swap-in pending.)
 

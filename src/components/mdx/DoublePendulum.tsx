@@ -11,7 +11,7 @@ const TRAIL = 70
 function deriv(s: Array<number>) {
   const [th1, th2, w1, w2] = s
   const d = th1 - th2
-  const den = 2 - Math.cos(2 * th1 - 2 * th2) // 2m1+m2 - m2cos(2Δ) with m1=m2=1
+  const den = 2 - Math.cos(2 * th1 - 2 * th2) // 2m1+m2 - m2cos(2Î”) with m1=m2=1
   const a1 =
     (-G * 3 * Math.sin(th1) - G * Math.sin(th1 - 2 * th2) - 2 * Math.sin(d) * (w2 * w2 + w1 * w1 * Math.cos(d))) / den
   const a2 =
@@ -39,7 +39,7 @@ type Refs = {
 }
 
 // The double pendulum is the poster child of *chaos*. These two start almost identically
-// — one is nudged by a thousandth of a degree. For a moment they move as one… then they
+// â€” one is nudged by a thousandth of a degree. For a moment they move as oneâ€¦ then they
 // diverge completely. The laws are perfectly deterministic, yet the tiniest difference in
 // the start explodes. That sensitivity is why we can't forecast weather weeks ahead.
 export function DoublePendulum() {
@@ -99,11 +99,11 @@ export function DoublePendulum() {
         <circle ref={(el) => { b.current.bob2 = el }} r="9" fill="#e84393" />
 
         {/* pendulum A */}
-        <path ref={(el) => { a.current.trail = el }} fill="none" stroke="#6c5ce7" strokeWidth="1.5" opacity="0.4" />
+        <path ref={(el) => { a.current.trail = el }} fill="none" stroke="#4F8CFF" strokeWidth="1.5" opacity="0.4" />
         <line ref={(el) => { a.current.rod1 = el }} x1={PIV.x} y1={PIV.y} stroke="#a29bfe" strokeWidth="2" />
         <line ref={(el) => { a.current.rod2 = el }} stroke="#a29bfe" strokeWidth="2" />
-        <circle ref={(el) => { a.current.bob1 = el }} r="7" fill="#6c5ce7" />
-        <circle ref={(el) => { a.current.bob2 = el }} r="9" fill="#6c5ce7" />
+        <circle ref={(el) => { a.current.bob1 = el }} r="7" fill="#4F8CFF" />
+        <circle ref={(el) => { a.current.bob2 = el }} r="9" fill="#4F8CFF" />
       </svg>
 
       <div className="flex items-center justify-between gap-3 px-4 pb-4 pt-1">
@@ -115,7 +115,7 @@ export function DoublePendulum() {
           onClick={() => setResetKey((k) => k + 1)}
           className="shrink-0 rounded-full border border-border px-4 py-1 text-sm text-muted transition-colors hover:text-ink"
         >
-          ↺ Reset
+          â†º Reset
         </button>
       </div>
     </div>

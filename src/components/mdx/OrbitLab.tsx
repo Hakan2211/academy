@@ -3,7 +3,7 @@ import { SceneSlider } from '#/components/three/SceneSlider'
 
 // A live two-body gravity sim. Pick the planet's launch speed as a multiple of
 // the circular-orbit speed: too slow and it falls in, just right gives a
-// circle, faster gives an ellipse, and ~1.41× (√2) is escape velocity.
+// circle, faster gives an ellipse, and ~1.41Ã— (âˆš2) is escape velocity.
 const CX = 180
 const CY = 160
 const R0 = 110
@@ -71,7 +71,7 @@ export function OrbitLab() {
           <circle cx={CX} cy={CY} r="16" fill="#fdcb6e" opacity="0.25" />
           <circle cx={CX} cy={CY} r="9" fill="#fdcb6e" />
           {/* orbit trail */}
-          <polyline ref={trailRef} points="" fill="none" stroke="#6c5ce7" strokeWidth="2" />
+          <polyline ref={trailRef} points="" fill="none" stroke="#4F8CFF" strokeWidth="2" />
           {/* planet */}
           <circle ref={planetRef} cx={CX + R0} cy={CY} r="7" fill="#74b9ff" />
         </svg>
@@ -79,18 +79,18 @@ export function OrbitLab() {
 
       <div className="p-4">
         <SceneSlider
-          label="Launch speed (× circular)"
+          label="Launch speed (Ã— circular)"
           value={factor}
           min={0.5}
           max={1.6}
           step={0.05}
-          unit="×"
+          unit="Ã—"
           onChange={setFactor}
         />
       </div>
 
       <p className="border-t border-border bg-surface-2 px-4 py-3 text-center text-sm text-muted">
-        Too slow → falls in · ~1.0× → circle · between → ellipse · ~1.41× → escapes
+        Too slow â†’ falls in Â· ~1.0Ã— â†’ circle Â· between â†’ ellipse Â· ~1.41Ã— â†’ escapes
       </p>
     </div>
   )

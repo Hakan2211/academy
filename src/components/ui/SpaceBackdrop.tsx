@@ -1,4 +1,4 @@
-// Code-rendered "deep space" backdrop for the Physics overworld — a low-contrast
+// Code-rendered "deep space" backdrop for the Physics overworld â€” a low-contrast
 // star field, a couple of constellation lines, and a soft nebula wash. Fully
 // deterministic (a sin-hash, never Math.random) so SSR and client render the
 // same nodes (no hydration mismatch). Art drop-in can replace this later; for
@@ -7,7 +7,7 @@
 const VB_W = 1000
 const VB_H = 1600
 
-// Hash → [0,1). Deterministic, stable across SSR/CSR.
+// Hash â†’ [0,1). Deterministic, stable across SSR/CSR.
 function rnd(seed: number): number {
   const s = Math.sin(seed * 127.1 + 311.7) * 43758.5453
   return s - Math.floor(s)
@@ -35,7 +35,7 @@ function buildLayer(
   return out
 }
 
-// Computed once at module load (deterministic) — same on server and client.
+// Computed once at module load (deterministic) â€” same on server and client.
 const FAR = buildLayer(70, 11, 0.6, 1.5, 0.1, 0.32)
 const MID = buildLayer(34, 53, 1.0, 2.2, 0.25, 0.55)
 const NEAR = buildLayer(14, 97, 1.6, 3.0, 0.45, 0.85)
@@ -73,8 +73,8 @@ export function SpaceBackdrop() {
       >
         <defs>
           <radialGradient id="neb-a" cx="20%" cy="12%" r="55%">
-            <stop offset="0%" stopColor="#6C5CE7" stopOpacity="0.16" />
-            <stop offset="100%" stopColor="#6C5CE7" stopOpacity="0" />
+            <stop offset="0%" stopColor="#4F8CFF" stopOpacity="0.16" />
+            <stop offset="100%" stopColor="#4F8CFF" stopOpacity="0" />
           </radialGradient>
           <radialGradient id="neb-b" cx="82%" cy="88%" r="55%">
             <stop offset="0%" stopColor="#74B9FF" stopOpacity="0.13" />
@@ -100,7 +100,7 @@ export function SpaceBackdrop() {
           ))}
         </g>
 
-        {/* star layers, far → near */}
+        {/* star layers, far â†’ near */}
         <g fill="#c7d2fe">
           {FAR.map((s, i) => (
             <circle key={i} cx={s.x} cy={s.y} r={s.r} fillOpacity={s.o} />

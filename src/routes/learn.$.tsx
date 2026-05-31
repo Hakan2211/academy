@@ -8,8 +8,7 @@ import { getLessonModule } from '#/lib/lessonModules'
 import { useDeviceId } from '#/lib/deviceId.context'
 import { LessonRuntimeProvider } from '#/components/lesson/context'
 import type { LessonRuntime } from '#/components/lesson/context'
-import { GradientBackground } from '#/components/three/GradientBackground'
-import { Icon } from '#/components/ui/Icon'
+import { LessonBackdrop } from '#/components/lesson/LessonBackdrop'
 
 // Client-only: the lesson player renders WebGL canvases and reads device-local
 // progress, neither of which should run during SSR.
@@ -80,11 +79,22 @@ function LessonPlayer() {
   const mine = (progressQ.data ?? []).find((p) => p.lessonId === lessonId)
   const initialStep = mine && !mine.completed ? mine.currentStep : 0
 
+  // The lesson glows in its category accent (unit accent → subject colour →
+  // azure default). The cast keeps this typechecking before a Convex codegen
+  // push adds the new fields to getLessonMeta's inferred return type; at runtime
+  // it gracefully falls back until the updated query is deployed.
+  const themed = lesson as typeof lesson & {
+    unitAccentColor?: string | null
+    subjectColor?: string | null
+  }
+  const accent = themed.unitAccentColor ?? themed.subjectColor ?? '#4F8CFF'
+
   const exit = () =>
     navigate({ to: '/subjects/$subjectSlug', params: { subjectSlug } })
 
   const runtime: LessonRuntime = {
     initialStep,
+    accent,
     onStepAdvance: (nextStepIndex, totalSteps) => {
       if (!deviceId) return
       void recordStep({
@@ -112,22 +122,13 @@ function LessonPlayer() {
   }
 
   return (
-    <div className="relative min-h-screen px-4 py-10">
-      <GradientBackground />
-      <div className="mx-auto max-w-3xl">
-        <button
-          type="button"
-          onClick={exit}
-          className="mb-6 inline-flex items-center gap-1 text-sm text-muted hover:text-ink"
-        >
-          <Icon name="X" size={16} /> Exit lesson
-        </button>
-        <LessonRuntimeProvider value={runtime}>
-          <Suspense fallback={<CenteredLoader />}>
-            <LazyLesson key={contentSlug} />
-          </Suspense>
-        </LessonRuntimeProvider>
-      </div>
+    <div className="relative min-h-screen w-full">
+      <LessonBackdrop accent={accent} />
+      <LessonRuntimeProvider value={runtime}>
+        <Suspense fallback={<CenteredLoader />}>
+          <LazyLesson key={contentSlug} />
+        </Suspense>
+      </LessonRuntimeProvider>
     </div>
   )
 }

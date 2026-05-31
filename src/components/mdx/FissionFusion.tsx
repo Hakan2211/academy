@@ -9,7 +9,7 @@ const GRAY = '#95a5a6'
 const FLASH = '#fdcb6e'
 
 // Both nuclear powers come from the same trade: rearrange a nucleus into a more
-// tightly-bound form and the leftover mass is released as energy (E = mc²).
+// tightly-bound form and the leftover mass is released as energy (E = mcÂ²).
 // Fission splits a heavy nucleus; fusion joins light ones. Splitting uranium runs
 // reactors; fusing hydrogen lights the stars.
 export function FissionFusion() {
@@ -109,7 +109,7 @@ export function FissionFusion() {
             <circle ref={nInRef} cx="24" cy={CY} r="6" fill={GRAY} />
             {/* heavy nucleus U-235 */}
             <g ref={bigRef}>
-              <circle cx={CX} cy={CY} r="28" fill="#6c5ce7" />
+              <circle cx={CX} cy={CY} r="28" fill="#4F8CFF" />
               <text x={CX} y={CY + 4} fill="#fff" fontSize="13" fontWeight="700" textAnchor="middle">U-235</text>
             </g>
             {/* two fragments */}
@@ -131,17 +131,17 @@ export function FissionFusion() {
             {/* deuterium */}
             <g ref={aRef}>
               <circle cx="36" cy={CY} r="15" fill="#0984e3" />
-              <text x="36" y={CY + 4} fill="#fff" fontSize="11" fontWeight="700" textAnchor="middle">²H</text>
+              <text x="36" y={CY + 4} fill="#fff" fontSize="11" fontWeight="700" textAnchor="middle">Â²H</text>
             </g>
             {/* tritium */}
             <g ref={bRef}>
               <circle cx="354" cy={CY} r="17" fill="#e17055" />
-              <text x="354" y={CY + 4} fill="#fff" fontSize="11" fontWeight="700" textAnchor="middle">³H</text>
+              <text x="354" y={CY + 4} fill="#fff" fontSize="11" fontWeight="700" textAnchor="middle">Â³H</text>
             </g>
             {/* helium product */}
             <g ref={heRef} opacity="0">
               <circle cx={CX} cy={CY} r="22" fill="#a29bfe" />
-              <text x={CX} y={CY + 4} fill="#fff" fontSize="12" fontWeight="700" textAnchor="middle">⁴He</text>
+              <text x={CX} y={CY + 4} fill="#fff" fontSize="12" fontWeight="700" textAnchor="middle">â´He</text>
             </g>
             {/* spat-out neutron */}
             <circle ref={nOutRef} cx={CX} cy={CY} r="5" fill={GRAY} opacity="0" />
@@ -151,8 +151,8 @@ export function FissionFusion() {
 
       <p className="px-4 pb-4 pt-1 text-center text-xs text-muted">
         {mode === 'fission'
-          ? 'A stray neutron splits a uranium nucleus into two fragments and 2–3 fresh neutrons — which can split more nuclei: a chain reaction. Each split releases energy.'
-          : 'Two light hydrogen nuclei slam together to make helium, spitting out a neutron and a burst of energy. This is what powers the Sun — and far more energy per kilogram than fission.'}
+          ? 'A stray neutron splits a uranium nucleus into two fragments and 2â€“3 fresh neutrons â€” which can split more nuclei: a chain reaction. Each split releases energy.'
+          : 'Two light hydrogen nuclei slam together to make helium, spitting out a neutron and a burst of energy. This is what powers the Sun â€” and far more energy per kilogram than fission.'}
       </p>
     </div>
   )

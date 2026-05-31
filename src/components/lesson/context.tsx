@@ -25,6 +25,8 @@ export type LessonRuntime = {
   onComplete: (totalSteps: number) => Promise<CompleteResult>
   /** Leave the lesson (e.g. back to the path). Optional — card hides if absent. */
   onExit?: () => void
+  /** The lesson's category accent (hex) so the player glows in its unit colour. */
+  accent?: string
 }
 
 const STUB_RESULT: CompleteResult = {

@@ -2,9 +2,9 @@ import { Children, isValidElement, useEffect, useMemo, useState } from 'react'
 import type { ReactElement, ReactNode } from 'react'
 import { Step } from './Step'
 import type { StepProps } from './Step'
-import { StepShell } from '#/components/lesson/StepShell'
-import { NextBackBar } from '#/components/lesson/NextBackBar'
+import { LessonShell } from '#/components/lesson/LessonShell'
 import { LessonCompleteCard } from '#/components/lesson/LessonCompleteCard'
+import { getHeroTypes } from '#/components/lesson/heroTypes'
 import { StepGateProvider, useLessonRuntime } from '#/components/lesson/context'
 import type { CompleteResult } from '#/components/lesson/context'
 
@@ -12,10 +12,28 @@ function isStep(node: ReactNode): node is ReactElement<StepProps> {
   return isValidElement(node) && node.type === Step
 }
 
+// Partition a step's children into a single hero visual + the rest (prose,
+// quiz, callouts…). Exactly one hero → the shell renders two-pane; zero or
+// several → single centred column (the heroes, if any, just flow inline).
+function splitStep(children: ReactNode): {
+  hero: ReactNode | null
+  body: Array<ReactNode>
+} {
+  const arr = Children.toArray(children)
+  const heroTypes = getHeroTypes()
+  const heroes = arr.filter((c) => isValidElement(c) && heroTypes.has(c.type))
+  if (heroes.length === 1) {
+    const hero = heroes[0]
+    return { hero, body: arr.filter((c) => c !== hero) }
+  }
+  return { hero: null, body: arr }
+}
+
 /**
  * Paginates the <Step> children of an authored MDX lesson into a Brilliant-style
  * flow. Stays backend-agnostic: navigation and completion go through the
  * LessonRuntime context, which the route fills with Convex-backed callbacks.
+ * The per-step layout (two-pane vs single column) is decided by `splitStep`.
  */
 export function Lesson({ children }: { children: ReactNode }) {
   const runtime = useLessonRuntime()
@@ -38,9 +56,21 @@ export function Lesson({ children }: { children: ReactNode }) {
     setCanAdvance(kind !== 'quiz')
   }, [current, kind])
 
+  const { hero, body } = useMemo(
+    () => (stepEl ? splitStep(stepEl.props.children) : { hero: null, body: [] }),
+    [stepEl],
+  )
+
   if (total === 0) return null
-  if (result)
-    return <LessonCompleteCard result={result} onExit={runtime.onExit} />
+  if (result) {
+    return (
+      <div className="flex min-h-screen items-center justify-center px-4 py-20">
+        <div className="w-full max-w-md">
+          <LessonCompleteCard result={result} onExit={runtime.onExit} />
+        </div>
+      </div>
+    )
+  }
 
   const goBack = () => setCurrent((c) => Math.max(0, c - 1))
   const goNext = async () => {
@@ -60,24 +90,21 @@ export function Lesson({ children }: { children: ReactNode }) {
 
   return (
     <StepGateProvider value={{ canAdvance, setCanAdvance }}>
-      <StepShell
+      <LessonShell
         title={title}
         kind={kind}
         current={current}
         total={total}
-        footer={
-          <NextBackBar
-            current={current}
-            total={total}
-            busy={busy}
-            canAdvance={canAdvance}
-            onBack={goBack}
-            onNext={goNext}
-          />
-        }
+        hero={hero}
+        busy={busy}
+        canAdvance={canAdvance}
+        onBack={goBack}
+        onNext={goNext}
+        onExit={runtime.onExit}
+        accent={runtime.accent}
       >
-        {stepEl}
-      </StepShell>
+        {body}
+      </LessonShell>
     </StepGateProvider>
   )
 }
