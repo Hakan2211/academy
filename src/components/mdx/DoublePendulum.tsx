@@ -11,7 +11,7 @@ const TRAIL = 70
 function deriv(s: Array<number>) {
   const [th1, th2, w1, w2] = s
   const d = th1 - th2
-  const den = 2 - Math.cos(2 * th1 - 2 * th2) // 2m1+m2 - m2cos(2Î”) with m1=m2=1
+  const den = 2 - Math.cos(2 * th1 - 2 * th2) // 2m1+m2 - m2cos(2Δ) with m1=m2=1
   const a1 =
     (-G * 3 * Math.sin(th1) - G * Math.sin(th1 - 2 * th2) - 2 * Math.sin(d) * (w2 * w2 + w1 * w1 * Math.cos(d))) / den
   const a2 =
@@ -39,7 +39,7 @@ type Refs = {
 }
 
 // The double pendulum is the poster child of *chaos*. These two start almost identically
-// â€” one is nudged by a thousandth of a degree. For a moment they move as oneâ€¦ then they
+// — one is nudged by a thousandth of a degree. For a moment they move as one… then they
 // diverge completely. The laws are perfectly deterministic, yet the tiniest difference in
 // the start explodes. That sensitivity is why we can't forecast weather weeks ahead.
 export function DoublePendulum() {
@@ -115,7 +115,7 @@ export function DoublePendulum() {
           onClick={() => setResetKey((k) => k + 1)}
           className="shrink-0 rounded-full border border-border px-4 py-1 text-sm text-muted transition-colors hover:text-ink"
         >
-          â†º Reset
+          ↺ Reset
         </button>
       </div>
     </div>

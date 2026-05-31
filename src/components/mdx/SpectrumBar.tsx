@@ -6,10 +6,10 @@ const BAR_X = 20
 const BAR_W = 420
 const BAR_Y = 74
 const BAR_H = 40
-const E_HI = 3 // log10(Î») at the left edge  (1 km, radio)
-const E_LO = -12 // log10(Î») at the right edge (1 pm, gamma)
+const E_HI = 3 // log10(λ) at the left edge  (1 km, radio)
+const E_LO = -12 // log10(λ) at the right edge (1 pm, gamma)
 
-// The whole electromagnetic spectrum is one family of waves â€” only the
+// The whole electromagnetic spectrum is one family of waves — only the
 // wavelength differs. Visible light is a razor-thin slice in the middle. Drag
 // the marker and watch the band, wavelength, and frequency change together.
 const SEGMENTS: Array<{ name: string; hi: number; lo: number; fill: string }> = [
@@ -33,7 +33,7 @@ function fmtWavelength(lambda: number): string {
   if (lambda >= 1e3) return `${(lambda / 1e3).toPrecision(2)} km`
   if (lambda >= 1) return `${lambda.toPrecision(2)} m`
   if (lambda >= 1e-3) return `${(lambda * 1e3).toPrecision(2)} mm`
-  if (lambda >= 1e-6) return `${(lambda * 1e6).toPrecision(2)} Âµm`
+  if (lambda >= 1e-6) return `${(lambda * 1e6).toPrecision(2)} µm`
   if (lambda >= 1e-9) return `${(lambda * 1e9).toPrecision(2)} nm`
   return `${(lambda * 1e12).toPrecision(2)} pm`
 }
@@ -87,8 +87,8 @@ export function SpectrumBar() {
         <text x={xFromE(-6.27)} y={BAR_Y - 20} fill="var(--color-muted)" fontSize="10" textAnchor="middle">visible</text>
 
         {/* long / short wavelength ends */}
-        <text x={BAR_X} y={BAR_Y - 6} fill="var(--color-muted)" fontSize="10">â† long Î»</text>
-        <text x={BAR_X + BAR_W} y={BAR_Y - 6} fill="var(--color-muted)" fontSize="10" textAnchor="end">short Î» â†’</text>
+        <text x={BAR_X} y={BAR_Y - 6} fill="var(--color-muted)" fontSize="10">← long λ</text>
+        <text x={BAR_X + BAR_W} y={BAR_Y - 6} fill="var(--color-muted)" fontSize="10" textAnchor="end">short λ →</text>
 
         {/* marker */}
         <line x1={markerX} y1={BAR_Y - 4} x2={markerX} y2={BAR_Y + BAR_H + 4} stroke="var(--color-ink)" strokeWidth="2" />
@@ -102,7 +102,7 @@ export function SpectrumBar() {
         <SceneSlider label="Tune across the spectrum" value={pos} min={0} max={100} step={1} unit="%" onChange={setPos} />
         <p className="mt-2 pb-4 text-center text-sm">
           <span className="font-semibold text-accent-2">{band}</span>
-          <span className="text-muted">  Â·  Î» â‰ˆ {fmtWavelength(lambda)}  Â·  f â‰ˆ {fmtFreq(freq)}</span>
+          <span className="text-muted">  ·  λ ≈ {fmtWavelength(lambda)}  ·  f ≈ {fmtFreq(freq)}</span>
         </p>
       </div>
     </div>

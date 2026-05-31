@@ -33,14 +33,14 @@ function fate(m: number) {
     death: 'Supernova',
     remnant: 'Black Hole',
     rColor: '#0b0b16',
-    note: 'The most massive stars collapse so hard after their supernova that nothing â€” not even light â€” can escape: a black hole.',
+    note: 'The most massive stars collapse so hard after their supernova that nothing — not even light — can escape: a black hole.',
   }
 }
 
 // A star's entire life and death are decided at birth by one number: its mass.
 // Lightweights like the Sun live long and fade to a white dwarf; heavyweights
 // burn bright and brief, then explode and leave a neutron star or black hole.
-// (The core fuses hydrogen the whole time â€” the same fusion from the atoms unit.)
+// (The core fuses hydrogen the whole time — the same fusion from the atoms unit.)
 export function StarLifeCycle() {
   const [mass, setMass] = useState(1)
   const look = starLook(mass)
@@ -83,7 +83,7 @@ export function StarLifeCycle() {
       </svg>
 
       <div className="px-4 pt-1">
-        <SceneSlider label="Star mass" value={mass} min={0.3} max={30} step={0.1} unit="â˜‰" onChange={setMass} />
+        <SceneSlider label="Star mass" value={mass} min={0.3} max={30} step={0.1} unit="☉" onChange={setMass} />
         <p className="mt-2 pb-4 text-center text-xs text-muted">{f.note}</p>
       </div>
     </div>

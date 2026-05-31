@@ -36,7 +36,7 @@ export function CategoryCompleteCard({
       if (sessionStorage.getItem(key)) return
       sessionStorage.setItem(key, '1')
     } catch {
-      // sessionStorage unavailable (private mode / SSR) â€” just celebrate.
+      // sessionStorage unavailable (private mode / SSR) — just celebrate.
     }
     let cancelled = false
     void import('canvas-confetti').then(({ default: confetti }) => {
@@ -80,7 +80,7 @@ export function CategoryCompleteCard({
         className="text-xs font-bold uppercase tracking-[0.2em]"
         style={{ color: accent }}
       >
-        âœ¦ Category complete âœ¦
+        ✦ Category complete ✦
       </p>
       <h2 className="mt-1 text-2xl font-bold">{unitName}</h2>
       <p className="mt-1 text-muted">

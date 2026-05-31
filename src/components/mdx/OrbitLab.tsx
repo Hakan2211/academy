@@ -3,7 +3,7 @@ import { SceneSlider } from '#/components/three/SceneSlider'
 
 // A live two-body gravity sim. Pick the planet's launch speed as a multiple of
 // the circular-orbit speed: too slow and it falls in, just right gives a
-// circle, faster gives an ellipse, and ~1.41Ã— (âˆš2) is escape velocity.
+// circle, faster gives an ellipse, and ~1.41× (√2) is escape velocity.
 const CX = 180
 const CY = 160
 const R0 = 110
@@ -79,18 +79,18 @@ export function OrbitLab() {
 
       <div className="p-4">
         <SceneSlider
-          label="Launch speed (Ã— circular)"
+          label="Launch speed (× circular)"
           value={factor}
           min={0.5}
           max={1.6}
           step={0.05}
-          unit="Ã—"
+          unit="×"
           onChange={setFactor}
         />
       </div>
 
       <p className="border-t border-border bg-surface-2 px-4 py-3 text-center text-sm text-muted">
-        Too slow â†’ falls in Â· ~1.0Ã— â†’ circle Â· between â†’ ellipse Â· ~1.41Ã— â†’ escapes
+        Too slow → falls in · ~1.0× → circle · between → ellipse · ~1.41× → escapes
       </p>
     </div>
   )

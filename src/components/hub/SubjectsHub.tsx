@@ -5,7 +5,7 @@ import { Icon } from '#/components/ui/Icon'
 import { CosmosCanvas } from '#/components/hub/CosmosCanvas'
 import { cn } from '#/lib/cn'
 
-// Modular "lit illustration" hub (design.md Â§2/Â§4): an animated WebGL nebula
+// Modular "lit illustration" hub (design.md §2/§4): an animated WebGL nebula
 // backdrop (CosmosCanvas) + one transparent island PNG per subject, composed in
 // code so the world is expandable (add a subject = one PNG + one LAYOUT row).
 // Three parallax tiers give depth; a 2D canvas layer renders the glowing energy
@@ -44,7 +44,7 @@ const LAYOUT: Array<IslandCfg> = [
 
 // Glowing energy spans between adjacent islands (slug pairs). Physics is the
 // hub; the rim islands also wire to their neighbours so the cluster reads as a
-// single lit network. Drawn center-to-center â€” the islands occlude the ends, so
+// single lit network. Drawn center-to-center — the islands occlude the ends, so
 // only the span between two silhouettes shows (reads as edge-to-edge docks).
 // Island positions + accent colours that tint the WebGL nebula (stable ref).
 const HUB_ISLANDS = LAYOUT.map((c) => ({ x: c.x, y: c.y, accent: c.accent }))
@@ -74,7 +74,7 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
 
   const bySlug = new Map(subjects.map((s) => [s.slug, s]))
 
-  // Pointer parallax â€” backdrop drifts least, near islands most.
+  // Pointer parallax — backdrop drifts least, near islands most.
   useEffect(() => {
     const wrap = wrapRef.current
     if (!wrap) return
@@ -112,7 +112,7 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Atmosphere: additive (screen-blend) bloom â€” nebula glows, drifting star
+  // Atmosphere: additive (screen-blend) bloom — nebula glows, drifting star
   // particles, and the glowing energy bridges with flowing light + pulses.
   useEffect(() => {
     const canvas = canvasRef.current
@@ -162,7 +162,7 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
         ctx.moveTo(ax, ay)
         ctx.quadraticCurveTo(cx, cy, bx, by)
       }
-      // halo â†’ core (additive build-up = bloom)
+      // halo → core (additive build-up = bloom)
       path(); ctx.strokeStyle = 'rgba(120,200,255,0.14)'; ctx.lineWidth = 22; ctx.stroke()
       path(); ctx.strokeStyle = 'rgba(165,225,255,0.22)'; ctx.lineWidth = 10; ctx.stroke()
       path(); ctx.strokeStyle = 'rgba(210,240,255,0.5)'; ctx.lineWidth = 5; ctx.stroke()
@@ -194,7 +194,7 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
       ctx.clearRect(0, 0, w, h)
       ctx.globalCompositeOperation = 'lighter'
 
-      // bridges â€” dock each end near the island's edge so the whole glowing
+      // bridges — dock each end near the island's edge so the whole glowing
       // span sits in the visible gap between two islands (not buried under them).
       BRIDGES.forEach(([sa, sb], i) => {
         const a = LAYOUT.find((c) => c.slug === sa)
@@ -234,7 +234,7 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
       className="relative w-full overflow-hidden"
       style={{ height: 'calc(100vh - 52px)', minHeight: 600, background: '#070a16' }}
     >
-      {/* cosmos backdrop â€” animated WebGL nebula tinted by the islands */}
+      {/* cosmos backdrop — animated WebGL nebula tinted by the islands */}
       <CosmosCanvas mouseRef={mouseRef} reduce={Boolean(reduce)} islands={HUB_ISLANDS} />
       <div
         className="pointer-events-none absolute inset-0"
@@ -252,7 +252,7 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
         </div>
       </div>
 
-      {/* island tiers (far â†’ near) */}
+      {/* island tiers (far → near) */}
       {tiers.map((tier) => (
         <div
           key={tier}
@@ -310,7 +310,7 @@ function Island({
   const inner = (
     <div className="group relative">
       <div className="relative transition-transform duration-300 ease-out group-hover:scale-[1.06]">
-        {/* accent bloom â€” pulses softly for the available (live) island */}
+        {/* accent bloom — pulses softly for the available (live) island */}
         <motion.div
           aria-hidden
           className="pointer-events-none absolute inset-[6%] rounded-full blur-3xl"
@@ -329,7 +329,7 @@ function Island({
           }
         />
 
-        {/* float-bob wrapper â€” art + masked energy FX move as one so the
+        {/* float-bob wrapper — art + masked energy FX move as one so the
             shimmer stays locked to the island silhouette */}
         <motion.div
           className="relative"
@@ -357,7 +357,7 @@ function Island({
             }}
           />
 
-          {/* energy shimmer â€” a bright accent streak sweeps the silhouette */}
+          {/* energy shimmer — a bright accent streak sweeps the silhouette */}
           <motion.div
             aria-hidden
             className="pointer-events-none absolute inset-0"
@@ -382,7 +382,7 @@ function Island({
             }
           />
 
-          {/* breathing accent core â€” the island pulses with energy (live only) */}
+          {/* breathing accent core — the island pulses with energy (live only) */}
           {live && (
             <motion.div
               aria-hidden
@@ -450,7 +450,7 @@ function Island({
             className={cn('text-xs font-semibold', !live && 'text-muted')}
             style={{ color: live ? cfg.accent : undefined }}
           >
-            {live ? 'Enter â†’' : 'Coming soon'}
+            {live ? 'Enter →' : 'Coming soon'}
           </p>
         </div>
       </div>

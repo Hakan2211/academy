@@ -5,7 +5,7 @@ import { ClientOnly } from '#/components/ClientOnly'
 import { SceneSlider } from './SceneSlider'
 
 // A block pushed by a constant force F across a frictionless surface. It starts
-// from rest and accelerates at a = F/m: x = Â½ a tÂ². When it slides off the
+// from rest and accelerates at a = F/m: x = ½ a t². When it slides off the
 // right, the run resets so the loop reads as "stronger force / lighter block =
 // quicker pickup."
 function BlockModel({ a }: { a: number }) {
@@ -13,7 +13,7 @@ function BlockModel({ a }: { a: number }) {
   const tRef = useRef(0)
   const startX = -2.3
   const maxX = 2.3
-  const SCALE = 0.12 // visual metres-per-(m/sÂ²Â·sÂ²) so the motion reads well
+  const SCALE = 0.12 // visual metres-per-(m/s²·s²) so the motion reads well
 
   useFrame((_state, delta) => {
     tRef.current += delta
@@ -69,7 +69,7 @@ export function ForceBlockScene() {
         <ClientOnly
           fallback={
             <div className="flex h-full items-center justify-center text-muted">
-              Loading 3D sceneâ€¦
+              Loading 3D scene…
             </div>
           }
         >
@@ -107,7 +107,7 @@ export function ForceBlockScene() {
       <div className="border-t border-border bg-surface-2 px-4 py-3 text-center text-sm">
         Acceleration&nbsp; a = F/m ={' '}
         <span className="font-mono text-base font-semibold text-accent-2">
-          {a.toFixed(2)} m/sÂ²
+          {a.toFixed(2)} m/s²
         </span>
       </div>
     </div>

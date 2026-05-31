@@ -4,9 +4,9 @@ import { SceneSlider } from '#/components/three/SceneSlider'
 const N = 12
 const START = 48
 const PLATE = 300
-const F0 = 4 // threshold frequency (arbitrary units, Ã—10Â¹â´ Hz)
+const F0 = 4 // threshold frequency (arbitrary units, ×10¹⁴ Hz)
 
-// frequency â†’ colour (red at low f, violet at high f)
+// frequency → colour (red at low f, violet at high f)
 const STOPS = ['#e74c3c', '#e67e22', '#f1c40f', '#27ae60', '#0984e3', '#4F8CFF']
 function hex(c: string) {
   return [parseInt(c.slice(1, 3), 16), parseInt(c.slice(3, 5), 16), parseInt(c.slice(5, 7), 16)]
@@ -25,7 +25,7 @@ type Electron = { x: number; y: number; vx: number; vy: number; active: boolean 
 
 // Einstein's photoelectric effect: light is a stream of photons, each carrying
 // energy E = hf. Below a threshold frequency no electron is ever knocked out, no
-// matter how bright the light â€” because a single weak photon just can't do it.
+// matter how bright the light — because a single weak photon just can't do it.
 // Above it, brighter light ejects MORE electrons; higher frequency makes each one
 // FASTER. This is the experiment that forced physics to call light a particle.
 export function PhotoelectricLab() {
@@ -122,11 +122,11 @@ export function PhotoelectricLab() {
         <rect x="350" y={120 - barH} width="12" height={barH} rx="2" fill={freqColor(freq)} />
         {/* threshold marker */}
         <line x1="344" y1={120 - 70 * (F0 / 9)} x2="368" y2={120 - 70 * (F0 / 9)} stroke="var(--color-ink)" strokeWidth="1.5" strokeDasharray="3 2" />
-        <text x="356" y="134" fill="var(--color-muted)" fontSize="8" textAnchor="middle">fâ‚€</text>
+        <text x="356" y="134" fill="var(--color-muted)" fontSize="8" textAnchor="middle">f₀</text>
 
         {below && (
           <text x="170" y="115" fill="#e17055" fontSize="13" fontWeight="700" textAnchor="middle">
-            below threshold â€” no electrons
+            below threshold — no electrons
           </text>
         )}
       </svg>
@@ -136,7 +136,7 @@ export function PhotoelectricLab() {
         <SceneSlider label="Intensity (brightness)" value={intensity} min={0} max={100} step={5} unit="%" onChange={setIntensity} />
       </div>
       <p className="px-4 pb-4 pt-3 text-center text-xs text-muted">
-        Brightness sets how many photons arrive â€” and so how many electrons fly off. Frequency sets each photon's energy â€” and so how fast each electron leaves. Below fâ‚€, brightness does nothing.
+        Brightness sets how many photons arrive — and so how many electrons fly off. Frequency sets each photon's energy — and so how fast each electron leaves. Below f₀, brightness does nothing.
       </p>
     </div>
   )

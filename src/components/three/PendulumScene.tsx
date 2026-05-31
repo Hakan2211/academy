@@ -6,7 +6,7 @@ import { ClientOnly } from '#/components/ClientOnly'
 function PendulumModel({ L, g }: { L: number; g: number }) {
   const armRef = useRef<THREE.Group>(null)
   const tRef = useRef(0)
-  const theta0 = 0.5 // ~28Â° amplitude (small-angle regime)
+  const theta0 = 0.5 // ~28° amplitude (small-angle regime)
 
   useFrame((_state, delta) => {
     tRef.current += delta
@@ -92,7 +92,7 @@ export function PendulumScene() {
         <ClientOnly
           fallback={
             <div className="flex h-full items-center justify-center text-muted">
-              Loading 3D sceneâ€¦
+              Loading 3D scene…
             </div>
           }
         >
@@ -122,13 +122,13 @@ export function PendulumScene() {
           min={1}
           max={20}
           step={0.1}
-          unit="m/sÂ²"
+          unit="m/s²"
           onChange={setG}
         />
       </div>
 
       <div className="border-t border-border bg-surface-2 px-4 py-3 text-center text-sm">
-        Period&nbsp; T = 2Ï€âˆš(L/g) ={' '}
+        Period&nbsp; T = 2π√(L/g) ={' '}
         <span className="font-mono text-base font-semibold text-accent-2">
           {period.toFixed(2)} s
         </span>
