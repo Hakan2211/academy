@@ -92,7 +92,7 @@ on a path drawn in code (not one baked path image).
 | `/subjects/$subject` | Category overworld | Path | cosmos + 12 emblem-orbs | **BUILT** (`CategoryOverworld`, real medal orbs + shine; mockup `1A`) |
 | `/subjects/$subject/$unit` | Category trail (lessons) | Path | cosmos + lesson orbs | **BUILT** (`LessonTrail` + `LessonOrb`, mockup `Category Trail`) |
 | `/learn/$` | Lesson player | — | per-lesson 3D viz + glass panel | **BUILT** (`LessonShell` adaptive two-pane/single-column, mockup `2.3`) |
-| (lesson end) | Lesson complete | — | glass card + confetti + medal | mockup `2.4` |
+| (lesson end) | Lesson complete | — | glass card + confetti + medal | **BUILT** (`LessonCompleteCard`, mockup `2.4`) |
 | `/badges` | Badge collection | constellation | cosmos + medals | mockup `2.5` |
 | global | Stat bar / HUD | — | glass bar | mockup `2.6` |
 
@@ -167,8 +167,13 @@ Folder: `C:\Users\User\OneDrive\Desktop\Academy Design`
      `NextBackBar` orphaned. Accent defaults to violet→cyan (per-category accent threading
      is a follow-up — needs `getLessonMeta` to also return the unit accent + a Convex
      push). Typecheck + build clean. **Not yet run in-browser** (needs Convex login QA).
-   - ← NEXT: lesson complete (`2.4`, glass-ify the reused card), badges (`2.5`),
-     HUD/StatBar (`2.6`).
+   - ✅ **Lesson complete** (`2.4`) — `LessonCompleteCard.tsx` rewritten as a frosted
+     Cosmic Glass celebration: floating emblem, big gold **+XP**, level bar (accent→green→
+     gold) with a **LEVEL UP!** pill, the new badge as a glowing coin (real medal PNG for
+     `unit-*` keys, else a procedural accent coin) over a rotating burst, and a **streak
+     row** of flames; glows in the lesson's category accent; confetti (reduced-motion
+     aware). Adaptive: two-column when a badge is earned, single centred column otherwise.
+   - ← NEXT: badges (`2.5`), HUD/StatBar (`2.6`).
 6. Polish: transitions ("zoom into island"), reduced-motion, responsive/portrait, perf.
    (Overworld + trail mobile/portrait still desktop-first; orb clean-plate swap-in pending.)
 

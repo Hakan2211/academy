@@ -65,9 +65,11 @@ export function Lesson({ children }: { children: ReactNode }) {
   if (result) {
     return (
       <div className="flex min-h-screen items-center justify-center px-4 py-20">
-        <div className="w-full max-w-md">
-          <LessonCompleteCard result={result} onExit={runtime.onExit} />
-        </div>
+        <LessonCompleteCard
+          result={result}
+          onExit={runtime.onExit}
+          accent={runtime.accent}
+        />
       </div>
     )
   }
