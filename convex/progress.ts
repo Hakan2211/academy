@@ -186,9 +186,6 @@ export const completeLesson = mutation({
       }
     }
     award('first-lesson')
-    if (lesson.contentSlug === 'physics/simple-harmonic-motion') {
-      award('oscillation-novice')
-    }
 
     // Per-category badge (`unit-<unitSlug>`): awarded when every published
     // lesson in this lesson's unit is now complete. Reads-after-writes are

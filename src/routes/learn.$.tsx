@@ -86,11 +86,22 @@ function LessonPlayer() {
   const themed = lesson as typeof lesson & {
     unitAccentColor?: string | null
     subjectColor?: string | null
+    unitSlug?: string | null
   }
   const accent = themed.unitAccentColor ?? themed.subjectColor ?? '#4F8CFF'
+  const unitSlug = themed.unitSlug ?? null
 
+  // Finishing or leaving a lesson returns to its own category trail (one level
+  // back), not the subject overworld (two levels back). Falls back to the
+  // overworld if the unit slug isn't available yet (e.g. before the updated
+  // getLessonMeta is pushed to Convex).
   const exit = () =>
-    navigate({ to: '/subjects/$subjectSlug', params: { subjectSlug } })
+    unitSlug
+      ? navigate({
+          to: '/subjects/$subjectSlug/$unitSlug',
+          params: { subjectSlug, unitSlug },
+        })
+      : navigate({ to: '/subjects/$subjectSlug', params: { subjectSlug } })
 
   const runtime: LessonRuntime = {
     initialStep,

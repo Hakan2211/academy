@@ -15,6 +15,8 @@ import { api } from '../../convex/_generated/api'
 import { DeviceIdProvider, useDeviceId } from '#/lib/deviceId.context'
 import { mdxComponents } from '#/components/mdx/MdxComponents'
 import { StatBar } from '#/components/ui/StatBar'
+import { SideRail } from '#/components/ui/SideRail'
+import { CosmosBackdrop } from '#/components/ui/CosmosBackdrop'
 import appCss from '../styles.css?url'
 
 export const Route = createRootRouteWithContext<{
@@ -51,7 +53,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body>
         <DeviceIdProvider>
           <EnsureUser />
+          <CosmosBackdrop />
           <StatBar />
+          <SideRail />
           <MDXProvider components={mdxComponents}>{children}</MDXProvider>
         </DeviceIdProvider>
         <TanStackDevtools

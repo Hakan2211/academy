@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { motion, useReducedMotion } from 'motion/react'
 import { Icon } from '#/components/ui/Icon'
-import { CosmosCanvas } from '#/components/hub/CosmosCanvas'
 import { cn } from '#/lib/cn'
 
 // Modular "lit illustration" hub (design.md §2/§4): an animated WebGL nebula
@@ -46,9 +45,6 @@ const LAYOUT: Array<IslandCfg> = [
 // hub; the rim islands also wire to their neighbours so the cluster reads as a
 // single lit network. Drawn center-to-center — the islands occlude the ends, so
 // only the span between two silhouettes shows (reads as edge-to-edge docks).
-// Island positions + accent colours that tint the WebGL nebula (stable ref).
-const HUB_ISLANDS = LAYOUT.map((c) => ({ x: c.x, y: c.y, accent: c.accent }))
-
 const BRIDGES: Array<[string, string]> = [
   ['physics', 'chemistry'],
   ['physics', 'computer-science'],
@@ -65,7 +61,6 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
   const reduce = useReducedMotion()
   const navigate = useNavigate()
   const wrapRef = useRef<HTMLDivElement>(null)
-  const mouseRef = useRef({ x: 0, y: 0 })
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const tierRefs = {
     far: useRef<HTMLDivElement>(null),
@@ -109,9 +104,6 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
     const tick = () => {
       cx += (tx - cx) * 0.06
       cy += (ty - cy) * 0.06
-      // feed the smoothed pointer to the WebGL nebula (uMouse parallax)
-      mouseRef.current.x = cx
-      mouseRef.current.y = cy
       set(tierRefs.far.current, TIER_PARALLAX.far)
       set(tierRefs.mid.current, TIER_PARALLAX.mid)
       set(tierRefs.near.current, TIER_PARALLAX.near)
@@ -246,17 +238,10 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
     <div
       ref={wrapRef}
       className="relative w-full overflow-hidden"
-      style={{ height: 'calc(100vh - 52px)', minHeight: 600, background: '#070a16' }}
+      style={{ height: 'calc(100vh - 64px)', minHeight: 600 }}
     >
-      {/* cosmos backdrop — animated WebGL nebula tinted by the islands */}
-      <CosmosCanvas mouseRef={mouseRef} reduce={Boolean(reduce)} islands={HUB_ISLANDS} />
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(130% 90% at 50% 45%, transparent 62%, rgba(7,10,22,0.55) 100%)',
-        }}
-      />
+      {/* the shared universe (CosmosBackdrop) shows through; this layer adds the
+          glowing energy bridges + foreground motes over it */}
       <canvas ref={canvasRef} className="pointer-events-none absolute inset-0" />
 
       {/* title */}

@@ -255,13 +255,15 @@ export const getLessonMeta = query({
       .unique()
     if (!lesson) return null
     // Join the unit + subject so the lesson player can glow in its category's
-    // accent (the unit accent, falling back to the subject colour).
+    // accent (the unit accent, falling back to the subject colour) and so exit
+    // can return to the lesson's own category trail (the unit slug).
     const unit = await ctx.db.get(lesson.unitId)
     const subject = await ctx.db.get(lesson.subjectId)
     return {
       ...lesson,
       unitAccentColor: unit?.accentColor ?? null,
       subjectColor: subject?.color ?? null,
+      unitSlug: unit?.slug ?? null,
     }
   },
 })

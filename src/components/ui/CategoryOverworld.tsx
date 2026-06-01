@@ -1,8 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { Link } from '@tanstack/react-router'
 import { motion, useReducedMotion } from 'motion/react'
-import { CosmosCanvas } from '#/components/hub/CosmosCanvas'
-import type { HubIsland } from '#/components/hub/CosmosCanvas'
 import { OrbStation } from './OrbStation'
 import type { OrbState } from './OrbStation'
 import { Icon } from './Icon'
@@ -149,7 +147,6 @@ export function CategoryOverworld({
   const reduce = useReducedMotion()
   const wrapRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const mouseRef = useRef({ x: 0, y: 0 })
   const orbRefs = useRef<Array<HTMLDivElement | null>>([])
 
   const n = units.length
@@ -178,22 +175,6 @@ export function CategoryOverworld({
     if (s === 'complete') lastComplete = i
   })
   const fillUpTo = currentIdx >= 0 ? currentIdx : lastComplete
-
-  // Sample ≤8 accents along the path to tint the WebGL nebula (CosmosCanvas cap).
-  const islands = useMemo<Array<HubIsland>>(() => {
-    const max = 8
-    const step = n > max ? n / max : 1
-    const out: Array<HubIsland> = []
-    for (let k = 0; k < Math.min(n, max); k++) {
-      const i = Math.floor(k * step)
-      out.push({
-        x: layout[i].x,
-        y: layout[i].y,
-        accent: units[i].accentColor ?? subjectColor,
-      })
-    }
-    return out
-  }, [n, layout, units, subjectColor])
 
   // Per-orb bloom spec for the canvas (lit coins radiate accent light).
   const orbGlow = useMemo(
@@ -232,8 +213,6 @@ export function CategoryOverworld({
     const tick = () => {
       cx += (tx - cx) * 0.06
       cy += (ty - cy) * 0.06
-      mouseRef.current.x = cx
-      mouseRef.current.y = cy
       orbRefs.current.forEach((el, i) => {
         if (!el) return
         const f = 6 + depthOf(layout[i].scale) * 26
@@ -389,16 +368,14 @@ export function CategoryOverworld({
     // rather than letting the fixed-position orbs overlap (portrait redesign TBD).
     <div
       className="w-full overflow-x-auto overflow-y-hidden"
-      style={{ height: 'calc(100vh - 52px)', minHeight: 620, background: '#070a16' }}
+      style={{ height: 'calc(100vh - 64px)', minHeight: 620 }}
     >
       <div
         ref={wrapRef}
         className="relative h-full w-full overflow-hidden"
-        style={{ minWidth: 920, background: '#070a16' }}
+        style={{ minWidth: 920 }}
       >
-      {/* layer 1 — animated WebGL nebula, tinted by the category accents */}
-      <CosmosCanvas mouseRef={mouseRef} reduce={Boolean(reduce)} islands={islands} />
-      {/* depth vignette */}
+      {/* the shared universe (CosmosBackdrop) shows through; depth vignette over it */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{

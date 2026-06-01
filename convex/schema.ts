@@ -68,7 +68,7 @@ export default defineSchema({
     currentStreak: v.number(),
     longestStreak: v.number(),
     lastActivityDate: v.optional(v.string()), // "YYYY-MM-DD" in the user's local tz
-    badges: v.array(v.string()), // badge keys, e.g. ["first-lesson","oscillation-novice"]
+    badges: v.array(v.string()), // badge keys, e.g. ["first-lesson","unit-oscillations"]
   })
     .index('by_device', ['deviceId'])
     .index('by_auth', ['authId']),

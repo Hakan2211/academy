@@ -1,8 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from '@tanstack/react-router'
 import { useReducedMotion } from 'motion/react'
-import { CosmosCanvas } from '#/components/hub/CosmosCanvas'
-import type { HubIsland } from '#/components/hub/CosmosCanvas'
 import { LessonOrb } from './LessonOrb'
 import { CategoryCompleteCard } from './CategoryCompleteCard'
 import { Icon } from './Icon'
@@ -111,7 +109,6 @@ export function LessonTrail({
   const reduce = useReducedMotion()
   const wrapRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const mouseRef = useRef({ x: 0, y: 0 })
 
   const n = lessons.length
 
@@ -158,46 +155,7 @@ export function LessonTrail({
   })
   const fillUpTo = currentIdx >= 0 ? currentIdx : lastComplete
 
-  // Tint the fixed nebula with the category accent (a few seed points).
-  const islands = useMemo<Array<HubIsland>>(
-    () => [
-      { x: 24, y: 30, accent },
-      { x: 72, y: 52, accent },
-      { x: 40, y: 78, accent },
-    ],
-    [accent],
-  )
-
   const [ar, ag, ab] = useMemo(() => hexToRgb(accent), [accent])
-
-  // Pointer parallax for the nebula only (orbs stay planted on the path so the
-  // ribbon always connects them). Driven off the whole window since the cosmos
-  // is fixed full-viewport behind the scrolling trail.
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    let raf = 0
-    let tx = 0
-    let ty = 0
-    let cx = 0
-    let cy = 0
-    const onMove = (e: PointerEvent) => {
-      tx = (e.clientX / window.innerWidth - 0.5) * 2
-      ty = (e.clientY / window.innerHeight - 0.5) * 2
-    }
-    const tick = () => {
-      cx += (tx - cx) * 0.06
-      cy += (ty - cy) * 0.06
-      mouseRef.current.x = cx
-      mouseRef.current.y = cy
-      raf = requestAnimationFrame(tick)
-    }
-    window.addEventListener('pointermove', onMove)
-    raf = requestAnimationFrame(tick)
-    return () => {
-      window.removeEventListener('pointermove', onMove)
-      cancelAnimationFrame(raf)
-    }
-  }, [])
 
   // The luminous winding path — pixel-space 2D canvas sized to the full
   // (scrolling) trail height, aligned with the DOM orbs.
@@ -337,18 +295,9 @@ export function LessonTrail({
   }, [layout, n, fillUpTo, contentH, lessons, ar, ag, ab])
 
   return (
-    <div className="relative w-full" style={{ background: '#070a16' }}>
-      {/* layer 1 — fixed WebGL nebula (stays put while the trail scrolls) */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <CosmosCanvas mouseRef={mouseRef} reduce={Boolean(reduce)} islands={islands} />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(125% 80% at 50% 18%, transparent 55%, rgba(7,10,22,0.72) 100%)',
-          }}
-        />
-      </div>
+    <div className="relative w-full">
+      {/* the shared universe (CosmosBackdrop) is fixed behind everything and
+          stays put while the trail scrolls — a window into space */}
 
       {/* persistent back pill (always reachable while scrolling) */}
       <Link

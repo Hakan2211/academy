@@ -1,7 +1,6 @@
-import { useEffect, useMemo, useRef } from 'react'
-import { motion, useReducedMotion } from 'motion/react'
-import { CosmosCanvas } from '#/components/hub/CosmosCanvas'
-import type { HubIsland } from '#/components/hub/CosmosCanvas'
+import { useMemo, useState } from 'react'
+import { Link, useRouter } from '@tanstack/react-router'
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { BADGES, badgeMeta } from '#/lib/badges'
 import { Icon } from './Icon'
 
@@ -9,11 +8,21 @@ import { Icon } from './Icon'
 // of medal coins on the cosmos, joined by faint lines. Earned = lit + glowing;
 // locked = desaturated + lock. Same lit-illustration stack as the overworld
 // (CosmosCanvas nebula + DOM coins) one level over. We drop the mockup's left
-// nav rail — our IA uses the top HUD, not a sidebar.
+// nav rail — our IA uses the top HUD, not a sidebar. Tapping a coin reveals how
+// to earn it; a back pill returns wherever you came from.
 
 type Pt = { x: number; y: number }
 
-// Hand-laid 14-badge constellation (4/5/4/1 rows; frontiers anchors the base).
+// Hand-laid 13-badge constellation (4/5/4): one onboarding badge + 12 category
+// badges. Slight y-jitter keeps it organic rather than gridded.
+const HAND13: Array<Pt> = [
+  { x: 22, y: 23 }, { x: 41, y: 21 }, { x: 60, y: 22 }, { x: 79, y: 24 },
+  { x: 13, y: 43 }, { x: 32, y: 45 }, { x: 50, y: 41 }, { x: 68, y: 44 }, { x: 87, y: 43 },
+  { x: 24, y: 64 }, { x: 43, y: 66 }, { x: 62, y: 63 }, { x: 81, y: 65 },
+]
+
+// Hand-laid 14-badge fallback (4/5/4/1; a base anchor) kept in case a badge is
+// re-added later.
 const HAND14: Array<Pt> = [
   { x: 24, y: 23 }, { x: 43, y: 21 }, { x: 63, y: 23 }, { x: 81, y: 25 },
   { x: 15, y: 42 }, { x: 34, y: 44 }, { x: 54, y: 40 }, { x: 73, y: 43 }, { x: 90, y: 42 },
@@ -22,6 +31,7 @@ const HAND14: Array<Pt> = [
 ]
 
 function layoutFor(n: number): Array<Pt> {
+  if (n === HAND13.length) return HAND13
   if (n === HAND14.length) return HAND14
   const out: Array<Pt> = []
   const perRow = 4
@@ -70,67 +80,36 @@ export function BadgeConstellation({
   earned: ReadonlySet<string>
 }) {
   const reduce = useReducedMotion()
-  const mouseRef = useRef({ x: 0, y: 0 })
+  const router = useRouter()
   const keys = useMemo(() => Object.keys(BADGES), [])
   const n = keys.length
   const earnedCount = keys.filter((k) => earned.has(k)).length
+  const isEmpty = earnedCount === 0
+  const [selected, setSelected] = useState<string | null>(null)
 
   const positions = useMemo(() => layoutFor(n), [n])
   const edges = useMemo(() => nearestEdges(positions), [positions])
 
-  // Tint the nebula with a few accents (earned badges first).
-  const islands = useMemo<Array<HubIsland>>(() => {
-    const ordered = keys
-      .map((k, i) => ({ k, i }))
-      .sort((a, b) => Number(earned.has(b.k)) - Number(earned.has(a.k)))
-      .slice(0, 8)
-    return ordered.map(({ k, i }) => ({
-      x: positions[i].x,
-      y: positions[i].y,
-      accent: badgeMeta(k).color,
-    }))
-  }, [keys, positions, earned])
-
-  // Pointer parallax for the nebula only (coins stay on their lines).
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    let raf = 0
-    let tx = 0
-    let ty = 0
-    let cx = 0
-    let cy = 0
-    const onMove = (e: PointerEvent) => {
-      tx = (e.clientX / window.innerWidth - 0.5) * 2
-      ty = (e.clientY / window.innerHeight - 0.5) * 2
+  const goBack = () => {
+    if (typeof window !== 'undefined' && window.history.length > 1) {
+      router.history.back()
+    } else {
+      void router.navigate({ to: '/' })
     }
-    const tick = () => {
-      cx += (tx - cx) * 0.06
-      cy += (ty - cy) * 0.06
-      mouseRef.current.x = cx
-      mouseRef.current.y = cy
-      raf = requestAnimationFrame(tick)
-    }
-    window.addEventListener('pointermove', onMove)
-    raf = requestAnimationFrame(tick)
-    return () => {
-      window.removeEventListener('pointermove', onMove)
-      cancelAnimationFrame(raf)
-    }
-  }, [])
+  }
 
   return (
     // Narrow screens: keep a usable min width and pan horizontally rather than
     // letting the fixed-position coins overlap (portrait redesign TBD).
     <div
       className="w-full overflow-x-auto overflow-y-hidden"
-      style={{ height: 'calc(100vh - 52px)', minHeight: 640, background: '#070a16' }}
+      style={{ height: 'calc(100vh - 64px)', minHeight: 640 }}
     >
       <div
         className="relative h-full w-full overflow-hidden"
-        style={{ minWidth: 900, background: '#070a16' }}
+        style={{ minWidth: 900 }}
       >
-      {/* layer 1 — animated nebula tinted by badge accents */}
-      <CosmosCanvas mouseRef={mouseRef} reduce={Boolean(reduce)} islands={islands} />
+      {/* the shared universe (CosmosBackdrop) shows through; depth vignette over it */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -163,8 +142,15 @@ export function BadgeConstellation({
         })}
       </svg>
 
-      {/* header (top-left) */}
-      <div className="absolute left-5 top-4 z-20 max-w-[60%]">
+      {/* header + back (top-left) */}
+      <div className="absolute left-5 top-4 z-20 max-w-[64%]">
+        <button
+          type="button"
+          onClick={goBack}
+          className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-black/40 px-3 py-1.5 text-sm font-semibold text-ink backdrop-blur-md transition-colors hover:bg-black/60"
+        >
+          <Icon name="ArrowLeft" size={15} /> Back
+        </button>
         <h1 className="text-2xl font-extrabold uppercase tracking-[0.16em] sm:text-3xl">
           Badge Collection
         </h1>
@@ -172,9 +158,28 @@ export function BadgeConstellation({
           <span className="text-accent">{earnedCount}</span>
           <span className="text-muted"> of {n} earned</span>
         </p>
-        <p className="mt-1 hidden text-sm text-muted sm:block">
-          Every badge is a milestone in your science journey.
-        </p>
+        {isEmpty ? (
+          <div className="mt-2">
+            <p className="text-sm text-muted">
+              Complete lessons to start lighting up your constellation.
+            </p>
+            <Link
+              to="/"
+              className="mt-2.5 inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110"
+              style={{
+                background:
+                  'linear-gradient(105deg, #4F8CFF, color-mix(in srgb, #4F8CFF 48%, white))',
+                boxShadow: '0 12px 30px -12px #4F8CFF',
+              }}
+            >
+              Start learning <Icon name="ArrowRight" size={15} />
+            </Link>
+          </div>
+        ) : (
+          <p className="mt-1 hidden text-sm text-muted sm:block">
+            Every badge is a milestone in your science journey.
+          </p>
+        )}
       </div>
 
       {/* legend (bottom-right) */}
@@ -202,12 +207,125 @@ export function BadgeConstellation({
               earned={earned.has(k)}
               reduce={Boolean(reduce)}
               index={i}
+              selected={selected === k}
+              onSelect={() => setSelected((s) => (s === k ? null : k))}
             />
           </div>
         </div>
       ))}
+
+      {/* detail card (bottom-center) — how to earn the selected badge */}
+      <div className="pointer-events-none absolute bottom-4 left-1/2 z-30 -translate-x-1/2">
+        <AnimatePresence>
+          {selected && (
+            <BadgeDetail
+              key={selected}
+              badgeKey={selected}
+              earned={earned.has(selected)}
+              reduce={Boolean(reduce)}
+              onClose={() => setSelected(null)}
+            />
+          )}
+        </AnimatePresence>
+      </div>
       </div>
     </div>
+  )
+}
+
+function BadgeDetail({
+  badgeKey,
+  earned,
+  reduce,
+  onClose,
+}: {
+  badgeKey: string
+  earned: boolean
+  reduce: boolean
+  onClose: () => void
+}) {
+  const meta = badgeMeta(badgeKey)
+  const unitSlug = badgeKey.startsWith('unit-')
+    ? badgeKey.slice('unit-'.length)
+    : null
+  const img = unitSlug ? `/badges/physics/${unitSlug}.png` : null
+
+  return (
+    <motion.div
+      initial={reduce ? false : { opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={reduce ? { opacity: 0 } : { opacity: 0, y: 14 }}
+      transition={{ type: 'spring', stiffness: 320, damping: 26 }}
+      className="pointer-events-auto flex w-[min(90vw,440px)] items-center gap-3.5 rounded-2xl border bg-black/55 px-4 py-3 backdrop-blur-xl"
+      style={{
+        borderColor: `${meta.color}55`,
+        boxShadow: `0 0 34px -10px ${meta.color}, inset 0 1px 0 rgba(255,255,255,0.06)`,
+      }}
+    >
+      <div className="grid h-14 w-14 shrink-0 place-items-center">
+        {img ? (
+          <img
+            src={img}
+            alt=""
+            draggable={false}
+            decoding="async"
+            className="h-full w-full select-none"
+            style={{
+              filter: earned
+                ? `drop-shadow(0 0 12px ${meta.color})`
+                : 'grayscale(0.7) brightness(0.7)',
+            }}
+          />
+        ) : (
+          <div
+            className="grid h-12 w-12 place-items-center rounded-full border-2"
+            style={{
+              color: earned ? meta.color : 'rgba(150,165,200,0.7)',
+              borderColor: earned ? meta.color : 'rgba(120,135,170,0.4)',
+              background: earned ? `${meta.color}1f` : 'rgba(20,26,43,0.7)',
+            }}
+          >
+            <Icon name={meta.icon} size={22} />
+          </div>
+        )}
+      </div>
+
+      <div className="min-w-0 flex-1">
+        <div className="flex items-center gap-2">
+          <p className="truncate text-sm font-bold uppercase tracking-wide text-ink">
+            {meta.label}
+          </p>
+          <span
+            className="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide"
+            style={
+              earned
+                ? {
+                    color: meta.color,
+                    background: `${meta.color}1f`,
+                    border: `1px solid ${meta.color}66`,
+                  }
+                : {
+                    color: 'var(--color-muted)',
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(255,255,255,0.12)',
+                  }
+            }
+          >
+            {earned ? 'Earned' : 'Locked'}
+          </span>
+        </div>
+        <p className="mt-0.5 text-xs text-muted">{meta.hint}</p>
+      </div>
+
+      <button
+        type="button"
+        onClick={onClose}
+        aria-label="Close"
+        className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-muted transition-colors hover:bg-white/10 hover:text-ink"
+      >
+        <Icon name="X" size={16} />
+      </button>
+    </motion.div>
   )
 }
 
@@ -216,11 +334,15 @@ function ConstellationBadge({
   earned,
   reduce,
   index,
+  selected,
+  onSelect,
 }: {
   badgeKey: string
   earned: boolean
   reduce: boolean
   index: number
+  selected: boolean
+  onSelect: () => void
 }) {
   const meta = badgeMeta(badgeKey)
   const unitSlug = badgeKey.startsWith('unit-')
@@ -262,8 +384,10 @@ function ConstellationBadge({
   )
 
   return (
-    <div
-      className="group relative grid cursor-default place-items-center"
+    <button
+      type="button"
+      onClick={onSelect}
+      className="group relative grid cursor-pointer place-items-center"
       style={{ width: RING, height: RING }}
       title={`${meta.label} — ${earned ? 'earned' : 'locked'}`}
     >
@@ -279,14 +403,21 @@ function ConstellationBadge({
           mixBlendMode: 'screen',
         }}
       />
-      {/* thin outer ring */}
+      {/* thin outer ring (brightens when selected) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute rounded-full"
+        className="pointer-events-none absolute rounded-full transition-all"
         style={{
           width: RING,
           height: RING,
-          border: `1px solid ${earned ? `${meta.color}66` : 'rgba(120,135,170,0.18)'}`,
+          border: `${selected ? 2 : 1}px solid ${
+            selected
+              ? meta.color
+              : earned
+                ? `${meta.color}66`
+                : 'rgba(120,135,170,0.18)'
+          }`,
+          boxShadow: selected ? `0 0 22px -4px ${meta.color}` : undefined,
         }}
       />
 
@@ -329,6 +460,6 @@ function ConstellationBadge({
       >
         {meta.label}
       </span>
-    </div>
+    </button>
   )
 }
