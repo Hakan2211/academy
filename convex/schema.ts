@@ -85,4 +85,21 @@ export default defineSchema({
   })
     .index('by_user', ['userId'])
     .index('by_user_lesson', ['userId', 'lessonId']),
+
+  // Spaced-retrieval schedule for the Practice route. One row per (user, item),
+  // where itemId is a practice-bank id (= a lesson's contentSlug for now). The
+  // item *content* is static (src/content/practice/bank.generated.ts); only the
+  // per-user schedule lives here. SM-2-lite: ease/interval/dueDate.
+  reviewState: defineTable({
+    userId: v.id('users'),
+    itemId: v.string(),
+    ease: v.number(), // SM-2 ease factor (starts 2.5, floor 1.3)
+    intervalDays: v.number(),
+    dueDate: v.string(), // "YYYY-MM-DD" (local)
+    reps: v.number(), // consecutive correct reps
+    lapses: v.number(),
+    lastReviewed: v.optional(v.string()),
+  })
+    .index('by_user', ['userId'])
+    .index('by_user_item', ['userId', 'itemId']),
 })

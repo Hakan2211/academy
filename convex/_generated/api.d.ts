@@ -10,6 +10,7 @@
 
 import type * as catalog from "../catalog.js";
 import type * as gamification from "../gamification.js";
+import type * as practice from "../practice.js";
 import type * as progress from "../progress.js";
 import type * as seed from "../seed.js";
 import type * as users from "../users.js";
@@ -23,6 +24,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   catalog: typeof catalog;
   gamification: typeof gamification;
+  practice: typeof practice;
   progress: typeof progress;
   seed: typeof seed;
   users: typeof users;

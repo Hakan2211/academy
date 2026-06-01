@@ -9,6 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PracticeRouteImport } from './routes/practice'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as BadgesRouteImport } from './routes/badges'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SubjectsSubjectSlugRouteImport } from './routes/subjects.$subjectSlug'
@@ -16,6 +18,16 @@ import { Route as LearnSplatRouteImport } from './routes/learn.$'
 import { Route as SubjectsSubjectSlugIndexRouteImport } from './routes/subjects.$subjectSlug.index'
 import { Route as SubjectsSubjectSlugUnitSlugRouteImport } from './routes/subjects.$subjectSlug.$unitSlug'
 
+const PracticeRoute = PracticeRouteImport.update({
+  id: '/practice',
+  path: '/practice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BadgesRoute = BadgesRouteImport.update({
   id: '/badges',
   path: '/badges',
@@ -52,6 +64,8 @@ const SubjectsSubjectSlugUnitSlugRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/badges': typeof BadgesRoute
+  '/dashboard': typeof DashboardRoute
+  '/practice': typeof PracticeRoute
   '/learn/$': typeof LearnSplatRoute
   '/subjects/$subjectSlug': typeof SubjectsSubjectSlugRouteWithChildren
   '/subjects/$subjectSlug/$unitSlug': typeof SubjectsSubjectSlugUnitSlugRoute
@@ -60,6 +74,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/badges': typeof BadgesRoute
+  '/dashboard': typeof DashboardRoute
+  '/practice': typeof PracticeRoute
   '/learn/$': typeof LearnSplatRoute
   '/subjects/$subjectSlug/$unitSlug': typeof SubjectsSubjectSlugUnitSlugRoute
   '/subjects/$subjectSlug': typeof SubjectsSubjectSlugIndexRoute
@@ -68,6 +84,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/badges': typeof BadgesRoute
+  '/dashboard': typeof DashboardRoute
+  '/practice': typeof PracticeRoute
   '/learn/$': typeof LearnSplatRoute
   '/subjects/$subjectSlug': typeof SubjectsSubjectSlugRouteWithChildren
   '/subjects/$subjectSlug/$unitSlug': typeof SubjectsSubjectSlugUnitSlugRoute
@@ -78,6 +96,8 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/badges'
+    | '/dashboard'
+    | '/practice'
     | '/learn/$'
     | '/subjects/$subjectSlug'
     | '/subjects/$subjectSlug/$unitSlug'
@@ -86,6 +106,8 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/badges'
+    | '/dashboard'
+    | '/practice'
     | '/learn/$'
     | '/subjects/$subjectSlug/$unitSlug'
     | '/subjects/$subjectSlug'
@@ -93,6 +115,8 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/badges'
+    | '/dashboard'
+    | '/practice'
     | '/learn/$'
     | '/subjects/$subjectSlug'
     | '/subjects/$subjectSlug/$unitSlug'
@@ -102,12 +126,28 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BadgesRoute: typeof BadgesRoute
+  DashboardRoute: typeof DashboardRoute
+  PracticeRoute: typeof PracticeRoute
   LearnSplatRoute: typeof LearnSplatRoute
   SubjectsSubjectSlugRoute: typeof SubjectsSubjectSlugRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/practice': {
+      id: '/practice'
+      path: '/practice'
+      fullPath: '/practice'
+      preLoaderRoute: typeof PracticeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/badges': {
       id: '/badges'
       path: '/badges'
@@ -169,6 +209,8 @@ const SubjectsSubjectSlugRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BadgesRoute: BadgesRoute,
+  DashboardRoute: DashboardRoute,
+  PracticeRoute: PracticeRoute,
   LearnSplatRoute: LearnSplatRoute,
   SubjectsSubjectSlugRoute: SubjectsSubjectSlugRouteWithChildren,
 }

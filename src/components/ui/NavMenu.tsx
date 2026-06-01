@@ -11,9 +11,7 @@ import { Icon } from './Icon'
 
 // Planned destinations (not built yet) — surfaced as the roadmap.
 const SOON: Array<{ label: string; icon: string; desc: string }> = [
-  { label: 'Dashboard', icon: 'LayoutDashboard', desc: 'Your progress at a glance' },
   { label: 'Discover', icon: 'Compass', desc: 'Browse every subject & lesson' },
-  { label: 'Practice', icon: 'FlaskConical', desc: 'Standalone experiments & labs' },
   { label: 'Leaderboard', icon: 'Trophy', desc: 'See how you stack up' },
   { label: 'Profile', icon: 'User', desc: 'You, streaks & preferences' },
   { label: 'Settings', icon: 'Settings', desc: 'Theme, motion & account' },
@@ -116,6 +114,16 @@ export function NavMenu({ open, onClose }: { open: boolean; onClose: () => void 
                   </Link>
                 </li>
                 <li>
+                  <Link to="/dashboard" onClick={onClose} className={linkClass}>
+                    <NavRowBody
+                      icon="LayoutDashboard"
+                      label="Dashboard"
+                      desc="Your progress at a glance"
+                      active={pathname.startsWith('/dashboard')}
+                    />
+                  </Link>
+                </li>
+                <li>
                   <Link
                     to="/subjects/$subjectSlug"
                     params={{ subjectSlug: 'physics' }}
@@ -127,6 +135,16 @@ export function NavMenu({ open, onClose }: { open: boolean; onClose: () => void 
                       label="Physics"
                       desc="The flagship path"
                       active={pathname.startsWith('/subjects/physics')}
+                    />
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/practice" onClick={onClose} className={linkClass}>
+                    <NavRowBody
+                      icon="Brain"
+                      label="Practice"
+                      desc="Review & remember what you've learned"
+                      active={pathname.startsWith('/practice')}
                     />
                   </Link>
                 </li>

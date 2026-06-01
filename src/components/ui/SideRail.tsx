@@ -33,6 +33,13 @@ export function SideRail() {
       <Link to="/" className="block">
         <RailBody icon="Orbit" label="Home" active={pathname === '/'} />
       </Link>
+      <Link to="/dashboard" className="block">
+        <RailBody
+          icon="LayoutDashboard"
+          label="Stats"
+          active={pathname.startsWith('/dashboard')}
+        />
+      </Link>
       <Link
         to="/subjects/$subjectSlug"
         params={{ subjectSlug: 'physics' }}
@@ -44,6 +51,13 @@ export function SideRail() {
           active={pathname.startsWith('/subjects/physics')}
         />
       </Link>
+      <Link to="/practice" className="block">
+        <RailBody
+          icon="Brain"
+          label="Practice"
+          active={pathname.startsWith('/practice')}
+        />
+      </Link>
       <Link to="/badges" className="block">
         <RailBody icon="Medal" label="Badges" active={pathname.startsWith('/badges')} />
       </Link>
@@ -51,7 +65,6 @@ export function SideRail() {
       <div className="my-1 h-px w-8 self-center bg-white/10" />
 
       <RailSoon icon="Compass" label="Discover" />
-      <RailSoon icon="FlaskConical" label="Practice" />
       <RailSoon icon="User" label="Profile" />
     </nav>
   )
