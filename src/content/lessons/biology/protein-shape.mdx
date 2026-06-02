@@ -1,0 +1,97 @@
+---
+title: Protein Shape Is Everything
+subject: biology
+contentSlug: biology/protein-shape
+order: 7
+estimatedMinutes: 12
+---
+
+<Lesson>
+
+<Step title="Why shape is the whole story" kind="explain">
+
+A protein is a chain of amino acids — but a chain alone does nothing. The magic happens when that chain **folds** into a precise three-dimensional shape. The shape is what lets a protein grip a specific molecule, catalyse one exact reaction, or carry oxygen.
+
+Get the shape right and the protein works. Lose the shape and it's useless — no matter that every atom is still there. This deep-dive is about how shape is built, and how easily it's destroyed.
+
+</Step>
+
+<Step title="From sequence to structure" kind="interactive">
+
+It starts with the **sequence** — the order of amino acids in the chain.
+
+<BiomoleculeViewer focus="protein" />
+
+That order isn't random: it's dictated by a gene. And remarkably, the sequence alone usually determines how the chain will fold — the protein folds itself into the one shape its sequence specifies.
+
+</Step>
+
+<Step title="Levels of folding" kind="explain">
+
+Biologists describe protein structure in levels:
+
+- **Primary** — the sequence of amino acids (the order in the chain).
+- **Secondary** — the chain coils into **helices** or folds into **sheets**, held by weak bonds.
+- **Tertiary** — the whole thing folds into a unique 3-D blob, the working shape.
+- **Quaternary** — several folded chains join (haemoglobin is four chains together).
+
+Each level is held together by **weak bonds** between parts of the chain. That's the protein's strength — and its weakness.
+
+</Step>
+
+<Step title="The active site" kind="explain">
+
+For an enzyme, folding creates a specially shaped pocket called the **active site**. Only the right molecule fits into it, like a key into a lock. That precise fit is why enzymes are so specific — each one catalyses just one reaction.
+
+And it's entirely a product of shape. The active site exists only because the chain folded exactly the way it did. Disturb the fold, and the pocket is gone.
+
+</Step>
+
+<Step title="Denaturation: losing the shape" kind="interactive">
+
+Because the fold is held by *weak* bonds, it's fragile. Too much **heat** or the wrong **pH** breaks those bonds, and the protein unravels — it **denatures**. Drag the temperature and watch it happen.
+
+<ProteinFold />
+
+Once denatured, the active site is destroyed and the protein stops working. This is usually **permanent**: a cooked egg white never turns clear and runny again. It's also why a high fever is dangerous, and why every enzyme has a temperature and pH at which it works best.
+
+</Step>
+
+<Step title="When folding goes wrong" kind="explain">
+
+Folding matters so much that errors cause disease:
+
+- **Sickle-cell anaemia** comes from a *single* wrong amino acid in haemoglobin, which makes it clump and deform red blood cells.
+- **Prion diseases** (like CJD) are caused by a protein folded into the wrong shape, which forces others to misfold too.
+
+The lesson runs through all of biology: in proteins, **structure is function**. The sequence sets the shape, the shape does the job, and a tiny change to either can change everything.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Boiling an enzyme destroys its ability to work, even though all its atoms are still present. Why?"
+  options={[
+    "Heat removes the enzyme's amino acids",
+    "Heat breaks the weak bonds holding its 3-D shape, denaturing it and destroying the active site",
+    "Heat turns the enzyme into a carbohydrate",
+    "Enzymes work better when boiled"
+  ]}
+  correctIndex={1}
+  explanation="An enzyme's function depends on its precise folded shape and active site, held by weak bonds. Heat breaks those bonds so the protein denatures — the atoms remain, but the working shape is gone."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A protein's **shape**, not just its atoms, determines what it does — **structure is function**.
+- The amino-acid **sequence** dictates folding through levels (primary → quaternary), held by **weak bonds**.
+- Folding creates the **active site** that makes enzymes specific.
+- Heat or wrong pH breaks those bonds: the protein **denatures** (usually permanently) and stops working.
+- Tiny folding errors cause diseases like sickle-cell anaemia and prion disease.
+
+</Step>
+
+</Lesson>

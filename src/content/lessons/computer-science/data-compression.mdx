@@ -1,0 +1,74 @@
+---
+title: Data Compression
+subject: computer-science
+contentSlug: computer-science/data-compression
+order: 7
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Why squeeze data?" kind="explain">
+
+Storage and bandwidth cost money and time. A film at full quality would be hundreds of gigabytes; an uncompressed photo, tens of megabytes. **Compression** makes data smaller so it's cheaper to store and faster to send — the reason streaming, video calls and the modern web are even possible.
+
+The key insight: most real data is **predictable**. It has repetition and patterns. Compression finds that redundancy and describes the data more briefly, without (necessarily) losing anything.
+
+</Step>
+
+<Step title="Run-length encoding" kind="interactive">
+
+The simplest method is **run-length encoding (RLE)**: replace a run of identical values with one copy plus a count. "■■■■■□□□" becomes "5 of ■, 3 of □". Edit the pattern and watch the compressed size respond.
+
+<CompressionLab />
+
+Notice the catch: RLE shrinks *smooth, repetitive* data dramatically, but on *noisy* data it can actually make things **bigger** (you store counts of 1 everywhere). No compression method wins on every input.
+
+</Step>
+
+<Step title="Smarter: encode common things shortly" kind="explain">
+
+Better schemes exploit *frequency* rather than just runs. **Huffman coding** gives the most common symbols the **shortest** bit codes and rare symbols longer ones — like Morse code, where the frequent letter "E" is a single dot.
+
+The everyday ZIP file combines this idea with a **dictionary** method (LZ): when a sequence repeats, store a short reference back to where it appeared before instead of the whole thing again. Together these power ZIP, PNG, and the gzip that compresses most web pages you load.
+
+<Callout type="tip" title="Lossless = perfectly reversible">
+RLE, Huffman and ZIP are all **lossless**: the decompressor rebuilds the original bit-for-bit. Essential for text, code and data, where a single changed character could break everything.
+</Callout>
+
+</Step>
+
+<Step title="The limits of compression" kind="explain">
+
+Can you compress forever? No. **Truly random data cannot be compressed at all** — there's no pattern to exploit, and any scheme that shrinks some inputs must *enlarge* others (a neat counting argument). The amount of "real" information in data has a hard floor, a quantity called its **entropy**.
+
+That's why a ZIP of a ZIP doesn't keep shrinking, and why a photo of TV static stays huge. Compression isn't magic — it's the art of removing redundancy, and once the redundancy is gone, you've hit the wall.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Run-length encoding turns a noisy, non-repetitive pattern into a LARGER file than the original. Why can this happen?"
+  options={[
+    "RLE is broken",
+    "With no repeated runs, RLE stores a count of '1' alongside almost every symbol — adding overhead instead of saving it",
+    "Noisy data contains more colours",
+    "The computer ran out of memory"
+  ]}
+  correctIndex={1}
+  explanation="RLE only helps when values repeat. On data with no runs, it pairs a useless count of 1 with each symbol, so the output grows. Any lossless scheme that shrinks some inputs must enlarge others."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Compression** removes redundancy to make data smaller, cheaper to store and faster to send.
+- **Run-length encoding** replaces repeated runs with a value + count — great for smooth data, bad for noisy data.
+- **Huffman** (short codes for common symbols) and **dictionary/LZ** methods power ZIP, PNG and gzip — all **lossless**.
+- **Random data can't be compressed**; the irreducible information content is its **entropy**.
+
+</Step>
+
+</Lesson>

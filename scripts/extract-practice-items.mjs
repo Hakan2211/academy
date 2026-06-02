@@ -7,11 +7,11 @@
 // UTF-8 safe by construction (Node fs read/write utf8) — never edit the bank by
 // hand, and never run this through PowerShell Get-Content (mojibake trap).
 
-import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'node:fs'
+import { readFileSync, writeFileSync, readdirSync, mkdirSync, statSync } from 'node:fs'
 import { join, dirname, basename } from 'node:path'
 
 const ROOT = process.cwd()
-const LESSONS_DIR = join(ROOT, 'src/content/lessons/physics')
+const LESSONS_ROOT = join(ROOT, 'src/content/lessons')
 const OUT = join(ROOT, 'src/content/practice/bank.generated.ts')
 
 function parseFrontmatter(src) {
@@ -100,37 +100,44 @@ function extractQuiz(src) {
   return attrs
 }
 
-const files = readdirSync(LESSONS_DIR)
-  .filter((f) => f.endsWith('.mdx'))
-  .sort()
+// Every subject folder under src/content/lessons/<subject>/*.mdx
+const subjects = readdirSync(LESSONS_ROOT).filter((d) =>
+  statSync(join(LESSONS_ROOT, d)).isDirectory(),
+)
 
 const items = []
 const failures = []
 
-for (const f of files) {
-  const src = readFileSync(join(LESSONS_DIR, f), 'utf8')
-  const fm = parseFrontmatter(src)
-  const contentSlug = fm.contentSlug || `physics/${basename(f, '.mdx')}`
-  const quiz = extractQuiz(src)
-  if (
-    !quiz ||
-    typeof quiz.prompt !== 'string' ||
-    !Array.isArray(quiz.options) ||
-    typeof quiz.correctIndex !== 'number'
-  ) {
-    failures.push(f)
-    continue
+for (const subject of subjects) {
+  const dir = join(LESSONS_ROOT, subject)
+  const files = readdirSync(dir)
+    .filter((f) => f.endsWith('.mdx'))
+    .sort()
+  for (const f of files) {
+    const src = readFileSync(join(dir, f), 'utf8')
+    const fm = parseFrontmatter(src)
+    const contentSlug = fm.contentSlug || `${subject}/${basename(f, '.mdx')}`
+    const quiz = extractQuiz(src)
+    if (
+      !quiz ||
+      typeof quiz.prompt !== 'string' ||
+      !Array.isArray(quiz.options) ||
+      typeof quiz.correctIndex !== 'number'
+    ) {
+      failures.push(`${subject}/${f}`)
+      continue
+    }
+    items.push({
+      id: contentSlug,
+      contentSlug,
+      subject: contentSlug.split('/')[0],
+      lessonTitle: fm.title || '',
+      prompt: quiz.prompt,
+      options: quiz.options,
+      correctIndex: quiz.correctIndex,
+      explanation: typeof quiz.explanation === 'string' ? quiz.explanation : '',
+    })
   }
-  items.push({
-    id: contentSlug,
-    contentSlug,
-    subject: contentSlug.split('/')[0],
-    lessonTitle: fm.title || '',
-    prompt: quiz.prompt,
-    options: quiz.options,
-    correctIndex: quiz.correctIndex,
-    explanation: typeof quiz.explanation === 'string' ? quiz.explanation : '',
-  })
 }
 
 items.sort((a, b) => a.contentSlug.localeCompare(b.contentSlug))

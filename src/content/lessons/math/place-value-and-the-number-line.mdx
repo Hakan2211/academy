@@ -1,0 +1,84 @@
+---
+title: Place Value & the Number Line
+subject: math
+contentSlug: math/place-value-and-the-number-line
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Every number has a place" kind="explain">
+
+Mathematics begins with a single, powerful idea: a straight line where every number has its own spot. Smaller numbers sit to the **left**, larger ones to the **right**, and the gaps between them are perfectly even.
+
+This is the **number line** — the stage on which all of arithmetic plays out. Counting up means stepping right; counting down means stepping left.
+
+</Step>
+
+<Step title="Find a number's place" kind="interactive">
+
+Drag the marker and watch where each number lives. Notice the spacing never changes — the step from 3 to 4 is exactly the step from 7 to 8.
+
+<NumberLine min={0} max={10} />
+
+</Step>
+
+<Step title="The value of a digit depends on where it sits" kind="explain">
+
+Here is the trick that lets ten symbols (0–9) write *any* number: **place value**. The digit 3 means something different in 3, 30, and 300 — each column to the left is worth **ten times** the one on its right.
+
+So 3204 isn't four random digits. It's:
+
+<Formula tex="3000 + 200 + 0 + 4" block />
+
+The 0 is doing real work — it holds the tens column empty so the 2 stays in the hundreds.
+
+</Step>
+
+<Step title="Build a number" kind="interactive">
+
+Change each column and watch the total — and its expanded form — update. Then try the **× 10** button: every digit slides one place to the left.
+
+<PlaceValue />
+
+</Step>
+
+<Step title="Decimals carry on to the right" kind="explain">
+
+The columns don't stop at the ones. Past the decimal point they keep dividing by ten: **tenths**, then **hundredths**, then thousandths.
+
+So 4.56 means four ones, five tenths, and six hundredths. The decimal point is just the marker that says "the ones column ends here." Place value runs in both directions, forever.
+
+<Callout type="tip" title="Reading decimals">
+0.5 and 0.50 are the *same number* — adding zeros on the far right of a decimal changes nothing, because those columns are simply empty.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In the number 7,082, what is the value of the digit 8?"
+  options={[
+    "8",
+    "80",
+    "800",
+    "8,000"
+  ]}
+  correctIndex={1}
+  explanation="Reading the columns: 7 thousands, 0 hundreds, 8 tens, 2 ones. The 8 sits in the tens column, so it is worth 8 × 10 = 80."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **number line** orders every number: left = smaller, right = larger, even spacing throughout.
+- **Place value** gives each digit a worth ten times the column to its right.
+- A **0** is a placeholder that keeps the other digits in their proper columns.
+- Decimals extend place value rightward into **tenths, hundredths, …**.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,74 @@
+---
+title: Truth Tables
+subject: computer-science
+contentSlug: computer-science/truth-tables
+order: 2
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Writing down every case" kind="explain">
+
+How do you define a logic operation *completely*, leaving no room for doubt? You list every possible input and its output. That list is a **truth table** — the full specification of a logical function.
+
+The beauty is that logic has only two values, so the table is always *finite and small*. With two inputs there are just 2 × 2 = **four** possible combinations. You can capture the entire behaviour in four rows.
+
+</Step>
+
+<Step title="The tables for each gate" kind="interactive">
+
+Here are the truth tables for the common operations. Switch between them and watch which input combinations produce a 1.
+
+<TruthTable />
+
+Read them as rules: AND has a single 1 (both inputs on); OR has a single 0 (both off); XOR is 1 exactly when the inputs differ. **NAND** and **NOR** are simply AND and OR with the output inverted.
+
+</Step>
+
+<Step title="A table IS the definition" kind="explain">
+
+This is a deep idea: for logic, the truth table isn't a *description* of the operation — it *is* the operation. Two circuits with the same truth table are interchangeable, however differently they're built inside.
+
+That gives engineers enormous freedom. As long as a component produces the right output for every input row, the internal design can be whatever is cheapest or fastest. The truth table is the **contract**; the implementation is free to vary — abstraction again.
+
+<Callout type="info" title="One gate to rule them all">
+**NAND** is called *universal*: using only NAND gates, you can build AND, OR, NOT — and therefore every other logical function. Some entire chips are made from nothing but NAND gates. (NOR works the same way.)
+</Callout>
+
+</Step>
+
+<Step title="More inputs, bigger tables" kind="explain">
+
+Add inputs and the table grows fast: 3 inputs give 2³ = 8 rows, 4 inputs give 16, and *N* inputs give **2ᴺ** rows. The number of cases explodes exactly the way bit-patterns did.
+
+This is both a blessing and a warning. A blessing, because any rule — however complex — can still be pinned down in a table. A warning, because checking *every* case by hand quickly becomes impossible, which is why we design logic from small, well-understood pieces rather than giant tables. Next, we make these tables physical: logic gates.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Two engineers build a component in completely different ways, but both produce identical truth tables. What can we conclude?"
+  options={[
+    "One of them must be wrong",
+    "They are logically interchangeable — the truth table fully defines the behaviour, so the internal design doesn't matter",
+    "They will give different results for some inputs",
+    "Truth tables can't be compared"
+  ]}
+  correctIndex={1}
+  explanation="A truth table is the complete specification of a logical function. If two components share the same table, they produce the same output for every input and are interchangeable — only cost, speed or size differ."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **truth table** lists every input combination and its output — the complete definition of a logic function.
+- Two inputs → 4 rows; *N* inputs → **2ᴺ** rows.
+- The table **is** the operation: same table means interchangeable, regardless of internal design.
+- **NAND** (and NOR) are *universal* — every other function can be built from them alone.
+
+</Step>
+
+</Lesson>

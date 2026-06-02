@@ -1,0 +1,82 @@
+---
+title: Memory & Storage
+subject: computer-science
+contentSlug: computer-science/memory-and-storage
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The impossible wish" kind="explain">
+
+If you could design memory, you would want it to be all three things at once: **fast**, **huge**, and **cheap**. Sadly, physics will not let you. The fastest memory is tiny and expensive; the biggest, cheapest memory is slow.
+
+Computer designers gave up trying to win this fight and did something cleverer instead: they use *several* kinds of memory at once, arranged in a pyramid, and shuffle data so the stuff the CPU needs most is kept near the fast top.
+
+</Step>
+
+<Step title="The memory hierarchy" kind="explain">
+
+From fastest-and-smallest down to slowest-and-biggest:
+
+- **Registers** — inside the CPU, a few bytes, reachable in a single clock tick.
+- **Cache** — a small fast buffer on the CPU chip (kilobytes to a few megabytes).
+- **RAM** — main memory, gigabytes, where the running program lives.
+- **SSD / hard disk** — permanent storage, hundreds of gigabytes to terabytes.
+
+Each step down is **bigger and cheaper per byte, but slower**. The trade-off is remarkably steep: reaching disk can be a *million* times slower than reaching a register.
+
+</Step>
+
+<Step title="The pyramid of trade-offs" kind="interactive">
+
+Click each level. Watch how, as you go down, the size grows but the speed drops — the inverse relationship is the whole point.
+
+<MemoryHierarchy />
+
+The genius of the pyramid is that programs are **predictable**: they tend to reuse the same data over and over (this is called *locality*). So the computer quietly copies hot data upward into cache and registers, and most requests are satisfied at the fast top — even though the bulk of your data sits at the slow bottom.
+
+</Step>
+
+<Step title="Volatile vs non-volatile" kind="explain">
+
+There is a second, separate distinction that often gets confused with speed: whether memory **survives a power cut**.
+
+- **Volatile** memory (registers, cache, RAM) needs constant power. Switch off, and it forgets everything.
+- **Non-volatile** memory (SSD, hard disk) keeps its contents with no power at all.
+
+That is why work has to be **saved**: until you save, your document exists only in volatile RAM. Saving copies it down to non-volatile storage, where it will still be there tomorrow.
+
+<Callout type="warn" title="Speed and permanence are different things">
+It is tempting to think "fast = temporary, slow = permanent," but they are independent properties. RAM is fast *and* volatile; an SSD is slow*er* *and* permanent. A computer juggles both axes at once.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="As you move DOWN the memory hierarchy (registers → cache → RAM → disk), what happens?"
+  options={[
+    "Everything gets faster and smaller",
+    "Capacity grows and cost per byte falls, but access gets slower",
+    "Speed and size both increase together",
+    "Nothing changes except the name"
+  ]}
+  correctIndex={1}
+  explanation="Lower levels are bigger and cheaper per byte but slower to access — the inverse relationship at the heart of the hierarchy. Computers exploit it by keeping frequently used data near the fast top."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- No memory is fast, big and cheap at once, so computers use a **hierarchy**: registers → cache → RAM → SSD/disk.
+- Going **down**: bigger and cheaper per byte, but **slower** — by up to a million times from top to bottom.
+- Programs reuse data (**locality**), so hot data is copied upward and most requests hit the fast levels.
+- A separate axis is **volatile** (RAM — needs power) vs **non-volatile** (storage — survives power off); this is why work must be **saved**.
+
+</Step>
+
+</Lesson>

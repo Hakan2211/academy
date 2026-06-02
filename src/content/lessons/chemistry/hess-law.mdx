@@ -1,0 +1,75 @@
+---
+title: Hess's Law
+subject: chemistry
+contentSlug: chemistry/hess-law
+order: 5
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="The route doesn't matter" kind="explain">
+
+Some reactions are hard to measure directly — they're too slow, too violent, or make side products. **Hess's Law** is the clever workaround:
+
+> The total enthalpy change of a reaction is the same no matter what path it takes — one step or many.
+
+Because enthalpy depends only on the **start and end states**, you can add up the ΔH values of easy-to-measure steps to find the ΔH of a hard one.
+
+</Step>
+
+<Step title="One path or two — same total" kind="interactive">
+
+Compare making CO₂ from carbon directly, versus going through carbon monoxide first. The two-step ΔH values add up to exactly the direct ΔH.
+
+<HessLaw />
+
+</Step>
+
+<Step title="Adding reactions" kind="explain">
+
+The method: arrange known reactions (reversing or scaling them as needed) so they add up to your target equation, then add their ΔH values:
+
+- **Reverse** a reaction → flip the sign of its ΔH.
+- **Multiply** a reaction by a number → multiply its ΔH by the same number.
+
+Add the adjusted equations (cancelling anything appearing on both sides) and the adjusted ΔH values give your answer.
+
+</Step>
+
+<Step title="Why it works" kind="explain">
+
+Enthalpy is a **state function** — it cares only about where you start and finish, not the journey. Like altitude on a mountain: the height difference between base and summit is fixed, whether you take the steep direct trail or a long winding one.
+
+<Callout type="info" title="Energy can't be created by a detour">
+If different paths gave different total energy, you could loop around and make free energy from nothing — impossible. Hess's Law is really energy conservation in disguise, applied to chemical routes.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Forming CO₂ directly has ΔH = −393 kJ. Forming it in two steps (C → CO, then CO → CO₂) gives ΔH₁ = −110 and ΔH₂ = ? . What must ΔH₂ be?"
+  options={[
+    "−110 kJ",
+    "−283 kJ",
+    "−393 kJ",
+    "+283 kJ"
+  ]}
+  correctIndex={1}
+  explanation="By Hess's Law the steps must sum to the direct value: ΔH₁ + ΔH₂ = −393. So ΔH₂ = −393 − (−110) = −283 kJ. The path doesn't change the total enthalpy."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Hess's Law**: total ΔH is the same by any path — so add step ΔH values to find a hard-to-measure one.
+- **Reverse** a step → flip ΔH's sign; **scale** a step → scale ΔH.
+- It works because enthalpy is a **state function** (depends only on start and end).
+- It's energy conservation applied to reaction routes.
+
+</Step>
+
+</Lesson>

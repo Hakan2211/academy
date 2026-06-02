@@ -1,0 +1,78 @@
+---
+title: Stoichiometry
+subject: chemistry
+contentSlug: chemistry/stoichiometry
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The recipe ratios" kind="explain">
+
+A balanced equation is a recipe. Just as "2 eggs make 1 omelette" lets you scale a meal, the coefficients in **2H₂ + O₂ → 2H₂O** tell you that 2 moles of hydrogen react with 1 of oxygen to make 2 of water.
+
+**Stoichiometry** is using these **mole ratios** to calculate how much reactant you need or how much product you'll get. The coefficients are the conversion factors.
+
+</Step>
+
+<Step title="Scale the reaction" kind="interactive">
+
+Fix the amount of one substance and every other amount follows from the ratios. Slide the input and watch the whole reaction scale together.
+
+<StoichRatio />
+
+</Step>
+
+<Step title="The mole-ratio bridge" kind="explain">
+
+The heart of every stoichiometry problem is the mole ratio from the equation. For N₂ + 3H₂ → 2NH₃, going from hydrogen to ammonia:
+
+<Formula tex="\text{mol NH}_3 = \text{mol H}_2 \times \dfrac{2}{3}" block />
+
+The fraction comes straight from the coefficients (2 NH₃ for every 3 H₂). Multiply by it and you've crossed from one substance to another.
+
+</Step>
+
+<Step title="Mass to mass" kind="explain">
+
+Most real problems start and end in **grams**, because that's what we weigh. The full path strings together everything from this world:
+
+1. **mass of A → moles of A** (divide by molar mass)
+2. **moles of A → moles of B** (multiply by the mole ratio)
+3. **moles of B → mass of B** (multiply by molar mass)
+
+Grams → moles → *mole ratio* → moles → grams. The mole is always the middle step.
+
+<Callout type="tip" title="You can't skip the ratio">
+It's tempting to compare masses directly, but reactions count *particles*, not grams. Always convert to moles, apply the coefficient ratio, then convert back. The mole ratio is non-negotiable.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="For N₂ + 3H₂ → 2NH₃, how many moles of ammonia (NH₃) form from 6 moles of hydrogen (with plenty of nitrogen)?"
+  options={[
+    "6 mol",
+    "2 mol",
+    "4 mol",
+    "9 mol"
+  ]}
+  correctIndex={2}
+  explanation="The mole ratio is 2 NH₃ : 3 H₂. So mol NH₃ = 6 × (2/3) = 4 mol. The coefficients are the conversion factor between substances."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Stoichiometry** uses the balanced equation's **mole ratios** to relate amounts of reactants and products.
+- The **mole ratio** (from the coefficients) converts moles of one substance to moles of another.
+- Mass-to-mass path: **grams → moles → mole ratio → moles → grams**.
+- Always work through **moles** — reactions count particles, not grams.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,70 @@
+---
+title: The Idea of a Limit
+subject: math
+contentSlug: math/the-idea-of-a-limit
+order: 1
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The gateway to calculus" kind="explain">
+
+You've reached the summit's approach. **Calculus** is the mathematics of *change* and *the infinitely small* — and everything in it rests on one idea: the **limit**. A limit is the value a quantity **approaches** as you get closer and closer to some point, even if you never quite arrive (or even if the function breaks down right there).
+
+</Step>
+
+<Step title="Heading toward a value" kind="interactive">
+
+This function is undefined at x = 1 (it gives 0/0). Yet as x approaches 1, the output homes in unmistakably on 2.
+
+<LimitViz />
+
+</Step>
+
+<Step title="Arbitrarily close" kind="explain">
+
+We write a limit like this:
+
+<Formula tex="\lim_{x \to 1} \frac{x^2 - 1}{x - 1} = 2" block />
+
+It says: *as x approaches 1, the expression approaches 2.* It doesn't matter that plugging in x = 1 gives 0/0 — the limit is about the **journey**, not the destination point itself. From the left (0.9, 0.99, …) and the right (1.1, 1.01, …), the values squeeze toward 2.
+
+</Step>
+
+<Step title="Why limits unlock everything" kind="explain">
+
+Limits let mathematics handle the **infinitely small** rigorously — something that troubled thinkers for two thousand years (remember Zeno's paradox from the Sequences world?). With limits you can finally ask: what is the slope of a curve *at a single point*? What is the area under a curve with *infinitely many* infinitely-thin slices? Both questions — the two halves of calculus — are limits in disguise.
+
+<Callout type="info" title="Newton and Leibniz">
+Isaac Newton and Gottfried Leibniz invented calculus independently in the 1660s–70s, unleashing modern physics and engineering. But it took another 150 years for mathematicians to put it on the firm footing of limits — turning brilliant intuition into airtight logic.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What does the notation lim(x→3) of (x² ) equal, and what does it mean?"
+  options={[
+    "9 — the value x² approaches as x gets arbitrarily close to 3",
+    "0 — because you can't reach 3",
+    "Undefined — limits never have values",
+    "3 — the value x approaches"
+  ]}
+  correctIndex={0}
+  explanation="As x approaches 3, x² approaches 3² = 9. For a well-behaved function the limit is just the value you'd plug in — limits get interesting when direct substitution fails (like 0/0)."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Calculus** studies change and the infinitely small; its foundation is the **limit**.
+- A limit is the value a function **approaches** near a point — the journey, not the endpoint.
+- Limits make "0/0" situations and the infinitely small **rigorous**.
+- They power the two big questions: the **slope at a point** and the **area under a curve**.
+
+</Step>
+
+</Lesson>

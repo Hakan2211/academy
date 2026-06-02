@@ -1,0 +1,79 @@
+---
+title: Binary Addition
+subject: computer-science
+contentSlug: computer-science/binary-addition
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="From logic to arithmetic" kind="explain">
+
+Here's where it all comes together. We have gates that compute logic; now we'll wire them so the electricity performs **addition** — real arithmetic, done by nothing but AND, OR and XOR.
+
+Recall binary addition's one carry rule: `0+0=0`, `0+1=1`, `1+1=10` (write 0, carry 1). Look closely at a single column and you'll spot two familiar patterns hiding inside.
+
+</Step>
+
+<Step title="The half adder" kind="explain">
+
+Add two single bits, A and B. The result has a **sum** bit and a **carry** bit:
+
+- The **sum** is 1 when the bits differ → that's exactly **XOR**.
+- The **carry** is 1 only when both are 1 → that's exactly **AND**.
+
+So adding two bits is just one XOR gate and one AND gate, side by side. That's a **half adder**. It's almost an adder — but it can't accept a carry coming *in* from the column to its right, which real multi-digit addition needs.
+
+</Step>
+
+<Step title="The full adder" kind="interactive">
+
+A **full adder** fixes that: it takes three inputs — A, B, and a **carry-in** — and produces a sum and a carry-out. Chain four full adders, passing each carry-out into the next column's carry-in, and you can add 4-bit numbers. Toggle the bits and watch the carry ripple.
+
+<BinaryAdder />
+
+This is genuinely how computers add. Widen it to 32 or 64 bits and you have the adder inside a real processor — built, ultimately, from a handful of gate types repeated.
+
+</Step>
+
+<Step title="Subtraction, multiplication, and beyond" kind="explain">
+
+Once you can add, the rest of arithmetic falls into place:
+
+- **Subtraction** is addition in disguise — add the two's-complement negative (that's why two's complement was such a clever choice for storing negatives).
+- **Multiplication** is repeated, shifted addition.
+- **Division** builds on subtraction.
+
+<Callout type="info" title="The ALU">
+Bundle an adder with a few logic operations and a way to choose between them, and you get the **Arithmetic Logic Unit (ALU)** — the calculating heart of every CPU. You've just seen, gate by gate, what's really inside it. We meet the ALU in its full context in the next world.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In a half adder for two bits A and B, which gates produce the sum bit and the carry bit?"
+  options={[
+    "Sum = AND, Carry = OR",
+    "Sum = XOR (1 when bits differ), Carry = AND (1 only when both are 1)",
+    "Sum = OR, Carry = NOT",
+    "Both come from a single NOT gate"
+  ]}
+  correctIndex={1}
+  explanation="The sum of two bits is 1 exactly when they differ — that's XOR. A carry is generated only when both bits are 1 — that's AND. A half adder is just those two gates working in parallel."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Binary addition's carry rule maps directly onto gates: **sum = XOR**, **carry = AND** (a **half adder**).
+- A **full adder** adds a carry-in too; chaining them (ripple carry) adds multi-bit numbers.
+- **Subtraction** (via two's complement), **multiplication** and **division** all build on addition.
+- An adder plus selectable logic forms the **ALU**, the calculating core of a CPU.
+
+</Step>
+
+</Lesson>

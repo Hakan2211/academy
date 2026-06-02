@@ -1,0 +1,78 @@
+---
+title: Percent Composition & Formulas
+subject: chemistry
+contentSlug: chemistry/percent-composition
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="What fraction is each element?" kind="explain">
+
+The **percent composition** tells you what fraction of a compound's mass comes from each element. For any element:
+
+<Formula tex="\%\text{ mass} = \dfrac{\text{mass of that element in 1 mol}}{\text{molar mass}} \times 100" block />
+
+It's how you'd answer "what percentage of this fertiliser is actually nitrogen?" — a genuinely practical question.
+
+</Step>
+
+<Step title="See the breakdown" kind="interactive">
+
+The same molar-mass table gives percent composition directly: each element's subtotal divided by the whole. The bar shows the split by mass.
+
+<MolarMass />
+
+</Step>
+
+<Step title="From percentages back to a formula" kind="explain">
+
+Run it in reverse and you can *discover* a compound's formula from lab data. Given the percent (or mass) of each element:
+
+1. Assume 100 g, so percentages become grams.
+2. Convert each mass to **moles** (divide by atomic mass).
+3. Divide all by the **smallest** mole value to get the simplest whole-number ratio.
+
+That ratio is the **empirical formula** — the simplest whole-number ratio of atoms.
+
+</Step>
+
+<Step title="Empirical vs molecular formula" kind="explain">
+
+The **empirical formula** is the simplest ratio; the **molecular formula** is the actual number of atoms in a molecule — always a whole-number multiple of the empirical one.
+
+Glucose is C₆H₁₂O₆ (molecular), but its simplest ratio is CH₂O (empirical). To find the molecular formula, compare the real molar mass to the empirical formula's mass and multiply.
+
+<Callout type="info" title="Same empirical, different molecule">
+Formaldehyde (CH₂O), acetic acid (C₂H₄O₂), and glucose (C₆H₁₂O₆) all share the empirical formula CH₂O — same ratio, wildly different molecules. The molecular formula is what pins down the real substance.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A compound is found to be 40% carbon, 6.7% hydrogen, and 53.3% oxygen by mass (atomic masses C 12, H 1, O 16). What is its empirical formula?"
+  options={[
+    "C₂H₃O",
+    "CH₂O",
+    "CHO",
+    "C₆H₁₂O₆"
+  ]}
+  correctIndex={1}
+  explanation="In 100 g: C = 40/12 ≈ 3.33 mol, H = 6.7/1 = 6.7 mol, O = 53.3/16 ≈ 3.33 mol. Divide by the smallest (3.33): C 1, H 2, O 1 → CH₂O."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Percent composition** = each element's mass ÷ molar mass × 100.
+- Reverse it (mass → moles → simplest ratio) to find the **empirical formula** from lab data.
+- The **molecular formula** is a whole-number multiple of the empirical one, found using the real molar mass.
+- Different molecules can share an empirical formula (CH₂O), so the molecular formula identifies the actual substance.
+
+</Step>
+
+</Lesson>

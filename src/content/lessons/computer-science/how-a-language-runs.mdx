@@ -1,0 +1,98 @@
+---
+title: How a Language Runs
+subject: computer-science
+contentSlug: computer-science/how-a-language-runs
+order: 8
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="The full journey, end to end" kind="explain">
+
+This is the capstone of the world. We've met the pieces — variables, control flow, functions, paradigms, translation. Now let's trace the **entire journey** of a program: from text you type, all the way to a living **process** running on the CPU, and see how every idea in this world fits into one continuous story.
+
+The thesis is simple and a little wonderful: **no matter how high-level or abstract your code, it all becomes the same machine instructions in the end.** A clever object model, a functional pipeline, a declarative query — strip away the style, and underneath it is the fetch–execute cycle from World 4, doing one tiny thing at a time.
+
+</Step>
+
+<Step title="Stage 1 — source to instructions" kind="interactive">
+
+It begins as **source code**: text obeying a language's grammar. As you saw last lesson, a translator marches it through stages — **lexer → tokens**, **parser → syntax tree**, **code generation** — until it becomes instructions the machine can run.
+
+<CompilerPipeline />
+
+Whether those instructions are produced **ahead of time** (compiled) or **on the fly** (interpreted), or as portable **bytecode** for a virtual machine, the destination is identical: a stream of simple operations like `LOAD`, `ADD`, `STORE`. Your `x = 2 + 3` has become arithmetic the CPU can perform.
+
+</Step>
+
+<Step title="Stage 2 — a program becomes a process" kind="explain">
+
+To actually *run*, the program is loaded into memory and becomes a **process**: a live instance with its own slice of RAM. That memory is famously divided into two regions that work very differently:
+
+- **The stack** — fast, orderly, automatic. It holds the **call stack** of function frames (parameters, local variables, return spots), growing and shrinking as functions are called and return. Last in, first out.
+- **The heap** — a larger, flexible pool for data whose size or lifetime isn't known in advance: the **objects** you create, growing lists, anything that must outlive a single function call.
+
+A local number lives on the stack and vanishes when its function returns; a `new Dog(...)` object lives on the heap, referenced from the stack. Both are just addressed memory cells from World 4 — organised by these two disciplines.
+
+</Step>
+
+<Step title="Stage 3 — execution on the stack" kind="interactive">
+
+With the process running, the CPU does what it always does: **fetch, decode, execute**, instruction after instruction. Function calls drive the **call stack** you met earlier — pushing a frame on every call, popping it on every return.
+
+<CallStack />
+
+Step through it again, now seeing the bigger picture: this stack lives in the process's memory, the instructions came out of the translation pipeline, and each push/pop is the CPU executing those instructions one at a time. Variables you assign sit in these frames (stack) or out in the **heap** (objects); control flow — the `if`s and loops — is just the CPU jumping between instruction addresses.
+
+</Step>
+
+<Step title="Every paradigm, one destination" kind="explain">
+
+Now the unifying punchline. We met several paradigms in this world, and they *feel* completely different to write — yet they all funnel down to the same machine:
+
+- An **object**'s method call? A function call — a frame pushed on the stack — operating on heap data.
+- A **functional** `map` over a list? Loops and function calls the translator generated for you.
+- A **declarative** SQL query or HTML page? Some engine, itself a compiled program, turns your *description* into ordinary imperative steps and runs them.
+
+<Callout type="info" title="Abstraction, top to bottom">
+This is World 1's abstraction ladder made concrete. Each layer — paradigm, language, bytecode, machine code, gates — offers a clean interface and hides the layer below. You can think in objects precisely *because* you don't have to think about registers. But the registers are still there, faithfully doing the work.
+</Callout>
+
+</Step>
+
+<Step title="Why this matters" kind="explain">
+
+Understanding this journey changes how you program. When code is slow, you can reason about *why* — too many heap allocations, a deep call stack, an interpreter doing work at run time. When it crashes with a **stack overflow** or runs out of **heap** memory, the message finally makes sense. And you gain the quiet confidence that there is **no magic**: a computer is gates and memory marching to a clock, and a programming language is a humane way to choreograph that march.
+
+You've now climbed the whole ladder for *software*, just as World 4 climbed it for hardware: from a line of readable code, down through tokens and trees and instructions, into a process with a stack and a heap, executed by the fetch–execute cycle — every rung visible.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A running program's memory splits into a stack and a heap. What is each mainly used for?"
+  options={[
+    "The stack stores the program file; the heap stores the CPU",
+    "The stack holds function call frames (parameters, locals, return spots) in last-in-first-out order; the heap is a flexible pool for data like objects that must outlive a single call",
+    "The stack is for compiled code and the heap is for interpreted code",
+    "They are two names for the same region of memory"
+  ]}
+  correctIndex={1}
+  explanation="The stack manages the call stack — a frame per function call, pushed and popped LIFO, holding parameters and locals. The heap is a larger, flexible region for dynamically created data such as objects, whose size or lifetime isn't tied to one function call. Both are just organised regions of the process's RAM."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A program's full journey: **source → tokens → syntax tree → machine code (or bytecode) → a running process → execution**.
+- Translation (compiled, interpreted, or via a **virtual machine**) always ends in simple instructions for the **fetch–execute cycle**.
+- A running **process** divides memory into the **stack** (call frames: parameters, locals, returns — LIFO) and the **heap** (flexible storage for objects and growing data).
+- **All paradigms** — object-oriented, functional, declarative — ultimately become the **same machine instructions** operating on stack and heap.
+- This is the **abstraction ladder** in full: each layer hides the one below, but underneath it is always **gates and memory marching to a clock** — no magic.
+
+</Step>
+
+</Lesson>

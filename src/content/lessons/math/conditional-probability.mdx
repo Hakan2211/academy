@@ -1,0 +1,73 @@
+---
+title: Conditional Probability
+subject: math
+contentSlug: math/conditional-probability
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="When the first event changes the second" kind="explain">
+
+Sometimes one event **affects** the next. Draw a ball from a bag and *keep it* — now there's one fewer ball, so the second draw's probabilities have changed. This is **conditional probability**: the chance of B *given that* A has happened, written P(B | A).
+
+</Step>
+
+<Step title="With and without replacement" kind="interactive">
+
+Toggle replacement and watch the second-stage branches change.
+
+<ProbabilityTree />
+
+</Step>
+
+<Step title="Dependent events" kind="explain">
+
+- **With replacement** (you put the ball back): the bag resets, the draws are **independent**, and the second probabilities are unchanged.
+- **Without replacement** (you keep it): the total drops and the counts shift, so the events are **dependent** — the second branch depends on the first.
+
+From a bag of 3 red, 2 blue, P(red then red) **without** replacement is 3/5 × 2/4 = 3/10 — the second 2/4, not 3/5, because a red is already gone.
+
+</Step>
+
+<Step title="Conditional probability everywhere" kind="explain">
+
+This idea is one of the most important — and most misunderstood — in all of mathematics. P(disease | positive test) is *not* the same as P(positive test | disease); confusing the two leads doctors, juries, and journalists astray. The general rule:
+
+<Formula tex="P(A \text{ and } B) = P(A) \times P(B \mid A)" block />
+
+Tree diagrams handle it naturally: the second-stage branches already *are* the conditional probabilities.
+
+<Callout type="info" title="The base-rate trap">
+A test that's "99% accurate" for a rare disease can still mean most positives are false alarms — because the disease is rare to begin with. Conditional reasoning (Bayes' theorem) untangles it, and it's why this topic matters far beyond exams.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A bag has 5 sweets: 2 red, 3 yellow. You eat one, then take another (no replacement). What is P(both red)?"
+  options={[
+    "2/5 × 1/4 = 1/10",
+    "2/5 × 2/5 = 4/25",
+    "2/5 + 1/4 = 13/20",
+    "1/2"
+  ]}
+  correctIndex={0}
+  explanation="First red: 2/5. After eating it, 1 red remains of 4 sweets, so the second is 1/4. Multiply: 2/5 × 1/4 = 2/20 = 1/10. The second probability is conditional on the first."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Conditional probability** P(B | A) is the chance of B **given** A happened.
+- **With replacement** → independent (unchanged); **without** → dependent (counts shift).
+- **P(A and B) = P(A) × P(B | A)** — trees show this automatically.
+- Confusing P(A|B) with P(B|A) is a famous, consequential error (the base-rate trap).
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,75 @@
+---
+title: Forming Equations
+subject: math
+contentSlug: math/forming-equations
+order: 4
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="The real skill: writing the equation" kind="explain">
+
+In the real world, nobody hands you "2x + 3 = 11." You're given a *situation*, and the hard part — the genuinely mathematical part — is **translating it into an equation**. Once it's written, the solving is mechanical.
+
+</Step>
+
+<Step title="From words to algebra" kind="explain">
+
+The recipe:
+
+1. Let a letter stand for the unknown ("let the number be n").
+2. Translate each phrase into algebra.
+3. Find the two things that are **equal** and join them with =.
+4. Solve, then answer in context.
+
+"I think of a number, multiply by 4, and add 5 to get 29." → 4n + 5 = 29 → 4n = 24 → **n = 6**.
+
+</Step>
+
+<Step title="A geometry example" kind="explain">
+
+A rectangle is 3 cm longer than it is wide, and its perimeter is 26 cm. Find its width.
+
+Let the width be w, so the length is w + 3. Perimeter = 2(width + length):
+
+<Formula tex="2(w + (w + 3)) = 26 \;\to\; 2(2w + 3) = 26 \;\to\; 4w + 6 = 26 \;\to\; w = 5" block />
+
+So the width is 5 cm (and the length 8 cm). Always translate the relationship into the equals sign.
+
+</Step>
+
+<Step title="Solve the equation you formed" kind="interactive">
+
+Once the equation is written, it's the same balanced unwrapping as before.
+
+<EquationSolver />
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Three consecutive whole numbers add up to 72. If the smallest is n, which equation is correct — and what is n?"
+  options={[
+    "n + (n+1) + (n+2) = 72, giving n = 23",
+    "3n = 72, giving n = 24",
+    "n + 2n + 3n = 72, giving n = 12",
+    "n + (n+1) + (n+2) = 72, giving n = 24"
+  ]}
+  correctIndex={0}
+  explanation="Consecutive numbers are n, n+1, n+2. Their sum: 3n + 3 = 72, so 3n = 69 and n = 23. (The numbers are 23, 24, 25.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The mathematical work is **forming** the equation; solving is then routine.
+- Define a letter, translate each phrase, set the two equal quantities with **=**.
+- Watch for "consecutive", "longer than", "twice as many" — each becomes algebra.
+- **Answer in context** (with units) after solving.
+
+</Step>
+
+</Lesson>

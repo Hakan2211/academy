@@ -1,0 +1,72 @@
+---
+title: Number Sequences
+subject: math
+contentSlug: math/number-sequences
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Patterns in a line" kind="explain">
+
+A **sequence** is an ordered list of numbers — its **terms** — that follow a rule: 2, 5, 8, 11, … or 1, 2, 4, 8, … Spotting the rule lets you continue the list forever and predict any term. Pattern-finding is one of the most fundamental acts in mathematics.
+
+</Step>
+
+<Step title="Find the rule" kind="interactive">
+
+The simplest rules are **term-to-term**: what you do to get from one term to the next. Toggle between adding and multiplying.
+
+<SequenceExplorer />
+
+</Step>
+
+<Step title="Term-to-term rules" kind="explain">
+
+To find a term-to-term rule, look at how consecutive terms relate:
+
+- **Constant difference** (add the same each time) → an **arithmetic** sequence: 3, 7, 11, 15 (+4).
+- **Constant ratio** (multiply by the same each time) → a **geometric** sequence: 2, 6, 18, 54 (×3).
+
+If neither is constant, look deeper — perhaps the *differences themselves* form a pattern.
+
+</Step>
+
+<Step title="Beyond the obvious" kind="explain">
+
+Not all sequences are arithmetic or geometric. Some famous ones follow other rules entirely:
+
+- **Square numbers:** 1, 4, 9, 16, 25 (differences grow: +3, +5, +7…).
+- **Fibonacci:** 1, 1, 2, 3, 5, 8 (each term is the sum of the previous two).
+
+The limitation of term-to-term rules: to find the 100th term you'd have to compute all 99 before it. The next lesson fixes that with a **position-to-term** formula.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What are the next two terms of 4, 7, 10, 13, … ?"
+  options={[
+    "16, 19",
+    "15, 17",
+    "17, 22",
+    "16, 20"
+  ]}
+  correctIndex={0}
+  explanation="The term-to-term rule is +3 each time (arithmetic). So 13 + 3 = 16, then 16 + 3 = 19."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **sequence** is an ordered list of **terms** following a rule.
+- **Term-to-term** rules: constant difference (**arithmetic**) or constant ratio (**geometric**).
+- If neither is constant, look at the **pattern of differences**.
+- Term-to-term rules are slow for far-off terms — motivating a position formula next.
+
+</Step>
+
+</Lesson>

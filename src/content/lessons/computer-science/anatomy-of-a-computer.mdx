@@ -1,0 +1,82 @@
+---
+title: Anatomy of a Computer
+subject: computer-science
+contentSlug: computer-science/anatomy-of-a-computer
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="From gates to a whole machine" kind="explain">
+
+In the last world we built a computer from the bottom up — bits, gates, an adder, an ALU, memory. Now we zoom out and look at the finished machine from the top. What are its main parts, and how do they fit together?
+
+The surprise is how few parts there are. Whether it is a phone, a laptop or a giant server, almost every computer is the same small set of cooperating pieces: something to **compute**, something to **remember while running**, something to **keep things permanently**, and ways to **talk to the world**.
+
+</Step>
+
+<Step title="The five main parts" kind="explain">
+
+Here is the cast of characters:
+
+- The **CPU** (processor) — the part that actually computes. It is the ALU and control logic from the last world, packed onto one chip.
+- **RAM** (main memory) — fast, temporary memory that holds the program and data the CPU is using *right now*.
+- **Storage** (an SSD or hard disk) — slow but permanent memory that keeps your files and apps even when the power is off.
+- **Input devices** — keyboard, mouse, camera, microphone — how data gets *in*.
+- **Output devices** — screen, speakers, printer — how results come *out*.
+
+</Step>
+
+<Step title="Wiring them together: the bus" kind="interactive">
+
+These parts do not touch each other directly. They all plug into a shared set of wires called the **bus** — the highway that carries data, addresses and control signals between them. When the CPU wants a number from memory, it puts the address on the bus and the data travels back along it.
+
+Click each block to see what it does and how it connects.
+
+<ComputerAnatomy />
+
+Notice the shape of it: the CPU does the thinking, but it constantly shuttles data to and from memory and devices over the bus. A computer is teamwork.
+
+</Step>
+
+<Step title="Why two kinds of memory?" kind="explain">
+
+It seems wasteful to have both RAM *and* storage. Why not just one?
+
+Because no single memory is both fast and permanent and cheap. **RAM** is fast — the CPU can read it in a flash — but it is **volatile**: cut the power and it forgets everything. **Storage** is permanent and huge and cheap, but far too slow for the CPU to work from directly.
+
+So computers use both. When you open an app, it is **copied from storage into RAM**, where the CPU can run it quickly. Save your work and it is written back to storage to keep it safe. We will explore this trade-off in detail soon.
+
+<Callout type="tip" title="A useful analogy">
+Think of a desk. **Storage** is the filing cabinet — huge, holds everything, but slow to dig through. **RAM** is the desktop — you spread out only what you are working on right now, where it is fast to reach. The **CPU** is you, doing the work.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You turn your computer off, then back on. Why does your saved document survive but the app you had open is gone?"
+  options={[
+    "The document was in the CPU and the app was in storage",
+    "The document was saved to permanent storage; the app was only in volatile RAM, which is wiped when power is lost",
+    "Documents are special files that never disappear, but apps always do",
+    "Both were in RAM, so neither should have survived"
+  ]}
+  correctIndex={1}
+  explanation="RAM is volatile: losing power wipes it, so the running app (which lived in RAM) is gone. Saving writes the document to storage, which keeps its contents without power, so the file survives."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A computer is a small set of cooperating parts: **CPU**, **RAM**, **storage**, **input** and **output** devices.
+- The **CPU** computes; it is the ALU and control logic from the gates world, on one chip.
+- **RAM** holds the running program and data, but is **volatile** (forgotten when off); **storage** keeps things **permanently** but is slower.
+- All the parts share a highway called the **bus**, which carries data between them.
+
+</Step>
+
+</Lesson>

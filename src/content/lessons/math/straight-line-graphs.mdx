@@ -1,0 +1,72 @@
+---
+title: Straight-Line Graphs
+subject: math
+contentSlug: math/straight-line-graphs
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The equation of a line" kind="explain">
+
+Every straight line (except a vertical one) can be written in one beautifully compact form:
+
+<Formula tex="y = mx + c" block />
+
+Two numbers say everything: **m** is the **gradient** (how steep, and which way it tilts) and **c** is the **y-intercept** (where it crosses the vertical axis). Change them and you can draw any line in the plane.
+
+</Step>
+
+<Step title="Tilt and shift" kind="interactive">
+
+Slide m to tilt the line and c to slide it up or down.
+
+<LinearGraph />
+
+</Step>
+
+<Step title="Gradient = rise over run" kind="explain">
+
+The gradient measures steepness as the **rise** (change in y) divided by the **run** (change in x):
+
+<Formula tex="m = \frac{\text{rise}}{\text{run}} = \frac{\Delta y}{\Delta x}" block />
+
+A positive m climbs left-to-right; a negative m descends; m = 0 is flat. Bigger |m| is steeper. To find m from two points, divide the change in y by the change in x.
+
+</Step>
+
+<Step title="Reading and building lines" kind="explain">
+
+Given y = 2x + 1: the line crosses the y-axis at **1** and rises **2** for every **1** across. To plot it, mark (0, 1), step one right and two up, and join.
+
+Going the other way — from a graph to its equation — read off c where it cuts the y-axis, then measure the rise-over-run for m. The equation and the picture are two views of the same line.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A line passes through (0, −3) and has gradient 2. What is its equation?"
+  options={[
+    "y = 2x − 3",
+    "y = −3x + 2",
+    "y = 2x + 3",
+    "y = −2x − 3"
+  ]}
+  correctIndex={0}
+  explanation="The y-intercept is c = −3 (it passes through (0, −3)), and the gradient is m = 2. So y = mx + c = 2x − 3."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A straight line is **y = mx + c**: gradient m, y-intercept c.
+- **Gradient = rise ÷ run** (Δy/Δx); positive climbs, negative descends, 0 is flat.
+- Plot from the intercept, then step by the gradient.
+- Read c and the rise/run off a graph to recover its equation.
+
+</Step>
+
+</Lesson>

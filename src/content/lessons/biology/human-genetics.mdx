@@ -1,0 +1,95 @@
+---
+title: Human Genetics
+subject: biology
+contentSlug: biology/human-genetics
+order: 8
+estimatedMinutes: 12
+---
+
+<Lesson>
+
+<Step title="Genetics, applied to us" kind="explain">
+
+The rules you've learned — alleles, dominance, Punnett squares — aren't just about pea plants. They explain how **traits and conditions run through human families**, and they're the foundation of modern medicine and genetic counselling.
+
+This deep-dive applies inheritance to people: how to read a family tree, why some conditions hide for generations, and what genetic testing can and can't tell us.
+
+</Step>
+
+<Step title="Reading a pedigree" kind="interactive">
+
+To track a trait through a family, geneticists draw a **pedigree**. Click each person to see their genotype.
+
+<Pedigree />
+
+Squares are male, circles female, and a filled shape means affected. The tell-tale sign here: two **unaffected** parents have an **affected** child — which immediately reveals the condition is **recessive**, and both parents are hidden **carriers**.
+
+</Step>
+
+<Step title="Carriers and recessive conditions" kind="explain">
+
+Many genetic conditions are **recessive**, which is exactly why they're sneaky. A **carrier** (genotype **Bb**) has one faulty allele but the working one masks it — so they're perfectly healthy and often unaware.
+
+Trouble only appears when two carriers have children. Each child then has a **1-in-4** chance of inheriting two faulty alleles (**bb**) and being affected — even though neither parent shows the condition. Cystic fibrosis and sickle-cell anaemia follow exactly this pattern.
+
+</Step>
+
+<Step title="Predicting risk" kind="interactive">
+
+This is where Punnett squares become genuinely useful — to medicine. If genetic testing shows both parents are carriers (**Bb**), we can predict the odds for their children.
+
+<PunnettSquare dom="B" rec="b" trait="a recessive condition" domPheno="unaffected" recPheno="affected" parent1={["B","b"]} parent2={["B","b"]} />
+
+The square shows the **1-in-4** risk of an affected child and a **1-in-2** chance each child is itself a carrier. This is the heart of **genetic counselling** — turning inheritance rules into real risk estimates for families.
+
+</Step>
+
+<Step title="Sex, and conditions that favour one" kind="explain">
+
+Your sex is itself decided by genetics — the **sex chromosomes**. Eggs always carry an **X**; sperm carry either an **X** or a **Y**. An X-bearing sperm gives a girl (XX); a Y-bearing sperm gives a boy (XY). It's essentially a 50:50 coin flip, decided by the father's sperm.
+
+And because some genes sit on the X chromosome, certain conditions — **haemophilia, red-green colour blindness, Duchenne muscular dystrophy** — strike males far more often, since their single X has no backup copy.
+
+</Step>
+
+<Step title="Reading the whole genome" kind="explain">
+
+Modern genetics has gone far beyond single traits. We can now **sequence** a person's entire genome — all 3 billion base pairs — and read the alleles they carry.
+
+This brings real power and real questions:
+
+- **Diagnosis** — identifying genetic diseases, sometimes before symptoms appear.
+- **Personalised medicine** — choosing drugs that suit a person's genes.
+- **Hard choices** — what to do with knowledge of a risk you can't change, and who should have access to your genetic information.
+
+Genetics has become not just a science of peas and fruit flies, but a deeply personal part of human health and ethics.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Two healthy parents have a child with a recessive genetic condition. What can you conclude about the parents?"
+  options={[
+    "One parent must be affected",
+    "Both parents are carriers (each has one copy of the recessive allele)",
+    "The condition must be dominant",
+    "It was caused by something in the child's environment"
+  ]}
+  correctIndex={1}
+  explanation="For a recessive condition to appear, the child must inherit a faulty allele from EACH parent. Since the parents are healthy, they must each be carriers (Bb) — masking one faulty allele with a working one."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Mendel's rules explain **human inheritance**, read through **pedigrees**.
+- Many conditions are **recessive**: healthy **carriers** (Bb) can have affected (bb) children — a 1-in-4 risk per child.
+- **Punnett squares** turn carrier status into real risk estimates (**genetic counselling**).
+- **Sex** is set by X/Y chromosomes; **X-linked** conditions affect males more.
+- **Genome sequencing** now makes genetics personal — powerful, but raising real ethical questions.
+
+</Step>
+
+</Lesson>

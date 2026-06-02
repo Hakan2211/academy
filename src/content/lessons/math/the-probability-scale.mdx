@@ -1,0 +1,68 @@
+---
+title: The Probability Scale
+subject: math
+contentSlug: math/the-probability-scale
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Measuring chance" kind="explain">
+
+**Probability** measures how likely something is, on a scale from **0** to **1**. Zero means impossible; one means certain; one-half means an even chance. Every probability — for any event in the universe — lands somewhere on this single line.
+
+</Step>
+
+<Step title="Slide along the scale" kind="interactive">
+
+<ProbabilityScale />
+
+</Step>
+
+<Step title="Three ways to write it" kind="explain">
+
+A probability can be a fraction, a decimal, or a percentage — all the same number:
+
+<Formula tex="P = \tfrac{1}{2} = 0.5 = 50\%" block />
+
+"Unlikely" sits below ½, "likely" above. A weather forecast of "70% chance of rain" is just P = 0.7 on this scale.
+
+</Step>
+
+<Step title="The complement" kind="explain">
+
+Because something either happens or it doesn't, the probability of an event and the probability of it **not** happening must add to 1:
+
+<Formula tex="P(\text{not } A) = 1 - P(A)" block />
+
+If the chance of rain is 0.7, the chance of no rain is 1 − 0.7 = 0.3. This "complement" trick is often the easiest route — sometimes it's far simpler to work out the opposite and subtract.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="The probability a bus is late is 0.15. What is the probability it is NOT late?"
+  options={[
+    "0.85",
+    "0.15",
+    "1.15",
+    "0.5"
+  ]}
+  correctIndex={0}
+  explanation="The complement: P(not late) = 1 − P(late) = 1 − 0.15 = 0.85. An event and its complement always sum to 1."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Probability** runs from **0** (impossible) to **1** (certain); ½ is even chance.
+- It can be written as a **fraction, decimal, or percentage**.
+- The **complement**: P(not A) = **1 − P(A)**.
+- Nothing has probability below 0 or above 1.
+
+</Step>
+
+</Lesson>

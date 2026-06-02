@@ -1,0 +1,75 @@
+---
+title: Naming & Routing
+subject: computer-science
+contentSlug: computer-science/naming-and-routing
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Names for humans, numbers for machines" kind="explain">
+
+You type `example.com`, not `93.184.216.34`. Yet routers only forward packets by **IP address** — those friendly names mean nothing to them. There's a translation gap between how humans want to address the internet and how machines actually do.
+
+Bridging that gap is the **Domain Name System (DNS)**: the internet's phone book. Just as you look up a person's name to find their number, your computer looks up a **domain name** to find its **IP address** before it can connect to anything.
+
+</Step>
+
+<Step title="Looking up a name with DNS" kind="interactive">
+
+Step through what really happens the instant you hit Enter on a web address.
+
+<DnsLookup />
+
+The first lookup is a small expedition. Your computer asks a **DNS resolver**; if it doesn't already know the answer, the resolver walks the hierarchy — a **root** server points it toward the **.com** servers, which point it to the **authoritative** server that finally hands back the IP. It sounds slow, but it happens in a few hundredths of a second.
+
+<Callout type="info" title="Caching makes it instant">
+That whole journey happens once. The answer is then **cached** — remembered for a while — by your computer and the resolver. The next time you visit, the IP is right there, and the lookup is skipped entirely. Caching is why the web feels instant even though names must be resolved to numbers every single time.
+</Callout>
+
+</Step>
+
+<Step title="Routing: forwarding packets hop by hop" kind="explain">
+
+Now your computer has the destination IP. But the destination might be thousands of kilometres away, across dozens of separate networks. How does a packet actually get there? Through **routing** — and no single device knows the whole path.
+
+Each **router** knows just one useful thing: for a given destination, which neighbour is the next sensible step closer. So a packet is passed from router to router, each one making a local decision and handing it on. Every such handoff is a **hop**. A packet might cross fifteen or twenty hops to reach its destination, with no one router ever seeing the full route — yet collectively they deliver it.
+
+</Step>
+
+<Step title="The two halves working together" kind="explain">
+
+Step back and the system is elegant. **Naming** (DNS) answers *where* — turning a memorable name into a destination address. **Routing** answers *how to get there* — a relay of routers each nudging the packet one hop nearer that address.
+
+Neither needs a master map. DNS is a distributed hierarchy of name servers; routing is a swarm of routers each making local choices. Together they let you type a handful of human-friendly characters and have your data find a machine on the far side of the world, without anyone, anywhere, holding the whole picture in one place. Both are **abstraction** at planetary scale: each piece knows only its small job.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You type 'example.com' and press Enter. What must happen before your computer can send a request to the right machine?"
+  options={[
+    "Nothing — routers understand domain names directly",
+    "DNS resolves the domain name into an IP address; then routers forward packets hop by hop toward that address",
+    "Your computer guesses the IP address at random",
+    "The domain name is sent unchanged across every router"
+  ]}
+  correctIndex={1}
+  explanation="Routers only forward by IP address, so the human-friendly name must first be translated by DNS into an IP. With that address in hand, routers each pick the next hop, relaying the packet step by step until it reaches the destination."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Humans use **domain names**; machines route by **IP addresses** — DNS bridges the gap.
+- **DNS** is the internet's phone book: resolver → root → TLD → authoritative server returns the IP.
+- **Caching** stores recent lookups so repeat visits skip the journey and feel instant.
+- **Routing** delivers packets via routers, each choosing the next **hop** toward the destination.
+- No device holds the whole map — naming and routing are both **distributed**.
+
+</Step>
+
+</Lesson>

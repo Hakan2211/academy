@@ -1,0 +1,74 @@
+---
+title: The Difference of Two Squares
+subject: math
+contentSlug: math/difference-of-two-squares
+order: 3
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="A pattern worth memorising" kind="explain">
+
+One factorisation appears so often it deserves to be instant recognition — the **difference of two squares**:
+
+<Formula tex="a^2 - b^2 = (a + b)(a - b)" block />
+
+Any "something squared minus something squared" splits into a sum times a difference. There's no middle term because the cross terms cancel: (a+b)(a−b) = a² − ab + ab − b² = a² − b².
+
+</Step>
+
+<Step title="See why, with area" kind="interactive">
+
+Cut a small square from the corner of a big one; the leftover L-shape rearranges exactly into a rectangle of sides (a + b) and (a − b).
+
+<DiffOfSquares />
+
+</Step>
+
+<Step title="Spotting it" kind="explain">
+
+It works whenever both terms are perfect squares and there's a minus between them:
+
+<Formula tex="x^2 - 25 = (x + 5)(x - 5), \qquad 9x^2 - 16 = (3x + 4)(3x - 4)" block />
+
+A **sum** of squares (x² + 25) does **not** factorise like this — the pattern needs the subtraction.
+
+</Step>
+
+<Step title="A calculator trick it gives you" kind="explain">
+
+The identity makes some arithmetic effortless:
+
+<Formula tex="49 \times 51 = (50 - 1)(50 + 1) = 50^2 - 1 = 2499" block />
+
+Recognising 49 × 51 as a difference of squares turns an awkward multiplication into "2500 minus 1." Patterns aren't just for algebra class — they're shortcuts.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Factorise 4x² − 49."
+  options={[
+    "(2x + 7)(2x − 7)",
+    "(2x − 7)²",
+    "(4x + 7)(x − 7)",
+    "It does not factorise"
+  ]}
+  correctIndex={0}
+  explanation="Both are perfect squares: 4x² = (2x)² and 49 = 7², with a minus between. So it's (2x + 7)(2x − 7)."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **a² − b² = (a + b)(a − b)** — a sum times a difference, no middle term.
+- It needs **two perfect squares** with a **minus** between (a sum of squares won't factorise).
+- Geometrically, a corner-cut square becomes an (a+b)×(a−b) rectangle.
+- It speeds up arithmetic like 49 × 51 = 50² − 1.
+
+</Step>
+
+</Lesson>

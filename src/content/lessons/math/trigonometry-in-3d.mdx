@@ -1,0 +1,73 @@
+---
+title: Trigonometry in 3-D
+subject: math
+contentSlug: math/trigonometry-in-3d
+order: 7
+estimatedMinutes: 10
+---
+
+<Lesson>
+
+<Step title="From flat to solid" kind="explain">
+
+Everything so far lived on a flat page. The real world is **three-dimensional** — and the beautiful news is that 3-D trigonometry uses no new rules. The trick is always the same: **find a right triangle inside the solid**, then apply Pythagoras or SOH-CAH-TOA to it.
+
+</Step>
+
+<Step title="The right triangle is still your tool" kind="interactive">
+
+Master the 2-D right triangle and you can attack any 3-D problem by spotting one.
+
+<PythagorasViz />
+
+</Step>
+
+<Step title="The space diagonal of a box" kind="explain">
+
+How long is the diagonal through the inside of a box, l × w × h? Use Pythagoras **twice**. First the diagonal across the base: d² = l² + w². Then the space diagonal rises h above that base diagonal:
+
+<Formula tex="D = \sqrt{d^2 + h^2} = \sqrt{l^2 + w^2 + h^2}" block />
+
+Two right triangles, stacked — and a tidy 3-D version of Pythagoras drops out.
+
+</Step>
+
+<Step title="Angles of elevation and bearings" kind="explain">
+
+3-D trig shines in navigation and surveying:
+
+- The **angle of elevation** (looking up) or **depression** (looking down) sets up a right triangle between you, the object, and the horizontal — so tan(angle) = height / distance.
+- **Bearings** give directions as three-figure angles clockwise from North (e.g. 070°), and combine with the sine and cosine rules to find distances between points.
+
+<Callout type="info" title="Why this matters">
+This is the maths that lets a surveyor find a mountain's height from the ground, a ship fix its position, and a phone's GPS triangulate you from satellites. Find the right triangle, and three dimensions become as easy as two.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the length of the space diagonal of a 2 × 3 × 6 cuboid?"
+  options={[
+    "7",
+    "11",
+    "√41 ≈ 6.4",
+    "√11 ≈ 3.3"
+  ]}
+  correctIndex={0}
+  explanation="The 3-D Pythagoras: D = √(2² + 3² + 6²) = √(4 + 9 + 36) = √49 = 7. (Found by applying Pythagoras twice.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- 3-D trig adds **no new rules** — find a **right triangle** inside the solid.
+- **Space diagonal** of a box: D = √(l² + w² + h²) — Pythagoras applied twice.
+- **Elevation/depression** angles and **bearings** turn navigation into right-triangle trig.
+- This powers surveying, navigation, and GPS.
+
+</Step>
+
+</Lesson>

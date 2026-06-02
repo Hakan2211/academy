@@ -1,0 +1,70 @@
+---
+title: Parallel & Perpendicular Lines
+subject: math
+contentSlug: math/parallel-and-perpendicular-lines
+order: 3
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Gradient tells you the relationship" kind="explain">
+
+Two lines' gradients reveal how they relate. **Parallel** lines never meet — and that's exactly because they have the **same gradient** (same steepness, just shifted). **Perpendicular** lines cross at a right angle, and their gradients follow a more surprising rule.
+
+</Step>
+
+<Step title="See the right angle hold" kind="interactive">
+
+Change line 1's gradient; line 2 adjusts to stay perpendicular. Watch their gradients' product.
+
+<PerpendicularLines />
+
+</Step>
+
+<Step title="Parallel: equal gradients" kind="explain">
+
+y = 3x + 1 and y = 3x − 4 are parallel — both climb at gradient 3, so they keep a constant gap and never cross:
+
+<Formula tex="\text{parallel} \iff m_1 = m_2" block />
+
+The intercepts differ; only the gradient must match.
+
+</Step>
+
+<Step title="Perpendicular: negative reciprocals" kind="explain">
+
+For a right angle, the gradients must be **negative reciprocals** — flip the fraction and change the sign:
+
+<Formula tex="m_1 \times m_2 = -1, \qquad \text{so } m_2 = -\frac{1}{m_1}" block />
+
+If one line has gradient 2, a perpendicular one has gradient −½. (A horizontal line, m = 0, is perpendicular to a vertical line, whose gradient is undefined — the one special case.)
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A line has gradient ⅔. What is the gradient of any line perpendicular to it?"
+  options={[
+    "−3/2",
+    "2/3",
+    "3/2",
+    "−2/3"
+  ]}
+  correctIndex={0}
+  explanation="Perpendicular gradients are negative reciprocals: flip ⅔ to 3/2 and change the sign → −3/2. Check: ⅔ × (−3/2) = −1 ✓."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Parallel** lines have **equal gradients** (m₁ = m₂); only intercepts differ.
+- **Perpendicular** lines have **negative-reciprocal** gradients (m₁ × m₂ = −1).
+- Flip the fraction, change the sign, to get a perpendicular gradient.
+- Horizontal ⟂ vertical is the lone special case.
+
+</Step>
+
+</Lesson>

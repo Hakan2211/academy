@@ -1,0 +1,78 @@
+---
+title: 2D Graphics & Transformations
+subject: computer-science
+contentSlug: computer-science/2d-graphics-and-transformations
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Shapes are lists of coordinates" kind="explain">
+
+A vector shape is stored as a handful of **points** — its corners — each a pair of numbers `(x, y)` saying where it sits on the canvas. A triangle is three points; a letter is a few dozen. Join the points with lines and you have the outline.
+
+This is the key idea of computer graphics: **a picture is data, and drawing is arithmetic on that data.** Once a shape is just numbers, moving, spinning or resizing it isn't an art project — it's a calculation the computer can do millions of times a second.
+
+</Step>
+
+<Step title="Translate, rotate, scale" kind="interactive">
+
+Three operations cover almost everything you do to a 2D shape:
+
+- **Translate** — slide it, by *adding* an offset to every point.
+- **Scale** — resize it, by *multiplying* every coordinate.
+- **Rotate** — spin it, by mixing `x` and `y` together using sine and cosine.
+
+<Transform2D />
+
+Notice the original outline stays ghosted in place while the live shape transforms. Drag the sliders and watch a single rule applied to every corner reshape the whole letter at once.
+
+</Step>
+
+<Step title="The maths of rotation" kind="explain">
+
+Translate and scale are obvious — add, multiply. Rotation is the clever one. To turn a point by angle θ around the origin, the new coordinates are:
+
+<Formula tex="x' = x\cos\theta - y\sin\theta" block />
+
+<Formula tex="y' = x\sin\theta + y\cos\theta" block />
+
+Every transformation here is really a **matrix** — a little grid of numbers — and applying it is a **matrix multiplication**. The real magic is that you can *combine* several matrices into one by multiplying them together, so "scale, then rotate, then move" becomes a **single** operation applied to every point. Graphics hardware is built to do exactly this multiply, astonishingly fast.
+
+</Step>
+
+<Step title="Why vectors scale cleanly" kind="explain">
+
+Because a vector shape is stored as coordinates and a transformation is just math on those numbers, you can scale it up a thousandfold and the edges stay perfectly sharp — the computer simply recomputes where each point lands and redraws crisp lines.
+
+That's the opposite of a raster image, which has its pixels baked in and turns blocky when enlarged. It's why **fonts and logos are vectors**: the same letter "A" renders flawlessly on a tiny phone label and a giant billboard, from one set of coordinates plus a scale transform.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A graphics program rotates a triangle by 30 degrees. What is it actually doing to the triangle's data?"
+  options={[
+    "Re-drawing the triangle by hand, pixel by pixel",
+    "Applying a rotation formula (a matrix multiply) to each corner's (x, y) coordinates to get new coordinates",
+    "Storing the word 'rotated' alongside the image",
+    "Increasing the file's resolution"
+  ]}
+  correctIndex={1}
+  explanation="The triangle is stored as corner coordinates. Rotating it means computing new coordinates for each corner with the rotation formula x' = x·cosθ − y·sinθ, y' = x·sinθ + y·cosθ — a matrix multiplication. The same rule applies to every point."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A vector shape is a **list of coordinates**; transforming it is **arithmetic on those numbers**.
+- **Translate** adds an offset, **scale** multiplies, and **rotate** mixes x and y with sin and cos.
+- Each transform is a **matrix**; several can be **combined into one** matrix multiply applied to every point.
+- Because shapes are stored as math, **vector graphics scale to any size without blurring** — which is why fonts and logos are vectors.
+
+</Step>
+
+</Lesson>

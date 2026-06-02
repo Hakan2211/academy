@@ -1,0 +1,74 @@
+---
+title: Representing Numbers
+subject: computer-science
+contentSlug: computer-science/representing-numbers
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Positive whole numbers are easy" kind="explain">
+
+You already know how to store a positive whole number: write it in binary. With 8 bits you can hold 0 to 255; with 32 bits, over 4 billion. These are called **unsigned** integers — no sign, just magnitude.
+
+But real life needs negatives (temperatures, bank balances) and fractions. With only 1s and 0s, how do you write a minus sign or a decimal point? You don't — you agree on a clever *interpretation* of the bits.
+
+</Step>
+
+<Step title="Negatives with two's complement" kind="interactive">
+
+The standard trick for negatives is **two's complement**: make the **leftmost bit's place value negative**. In an 8-bit number, the top bit is worth −128 instead of +128. Toggle between unsigned and signed below and watch the same bits change meaning.
+
+<IntegerStore />
+
+This looks like a hack, but it's beautiful: ordinary binary addition *just works* across positive and negative numbers, with no special cases. The hardware adder you'll build later doesn't even need to know about signs.
+
+</Step>
+
+<Step title="Fractions and the floating point" kind="explain">
+
+What about 3.14 or 0.001? Computers use **floating point**, which stores a number like scientific notation: a set of significant digits (the *mantissa*) plus an exponent that says where the "binary point" goes. It's the same idea as writing 3,140,000 as 3.14 × 10⁶ — but in base two.
+
+This lets a fixed number of bits represent values that are tiny or astronomically large. The price is that most fractions can't be stored *exactly*.
+
+<Callout type="warn" title="Why 0.1 + 0.2 ≠ 0.3">
+In binary, 0.1 is a never-ending fraction (like 1/3 is in decimal), so it gets rounded. Add a few rounded values and a tiny error appears: famously, `0.1 + 0.2` gives `0.30000000000000004`. This isn't a bug — it's the unavoidable cost of squeezing infinite real numbers into finite bits.
+</Callout>
+
+</Step>
+
+<Step title="Overflow: running out of room" kind="explain">
+
+Every number format has a fixed size, so it has a maximum. Add 1 to the largest unsigned byte (255) and it "wraps around" to 0 — like a car odometer rolling over. This is called **overflow**.
+
+It sounds harmless, but overflow has crashed rockets and broken games (the famous "kill screen" in old arcade titles). It's a constant reminder that a computer's numbers are *approximations within limits*, not the infinite numbers of mathematics — something a careful programmer always keeps in mind.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In an 8-bit two's complement number, what makes the representation of negative numbers work so neatly?"
+  options={[
+    "A separate bit elsewhere stores the minus sign as text",
+    "The leftmost bit's place value is negative (−128), so normal binary addition works for both positive and negative numbers",
+    "Negative numbers are stored in a different memory chip",
+    "The computer simply refuses to store negatives"
+  ]}
+  correctIndex={1}
+  explanation="Two's complement makes the top bit worth −128. With that single change, the same addition circuit handles positive and negative numbers identically — no special cases needed."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Unsigned** integers store positive whole numbers directly in binary.
+- **Two's complement** stores negatives by making the top bit's place value negative, so one adder handles all signs.
+- **Floating point** stores fractions like binary scientific notation — flexible range, but most fractions are only approximate.
+- Fixed-size numbers can **overflow** (wrap around); computer numbers are bounded approximations, not infinite maths.
+
+</Step>
+
+</Lesson>

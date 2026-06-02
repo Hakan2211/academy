@@ -1,0 +1,82 @@
+---
+title: Patterns to Infinity
+subject: math
+contentSlug: math/patterns-to-infinity
+order: 7
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="When a pattern never ends" kind="explain">
+
+Sequences raise a startling question: what happens at **infinity**? Some sequences grow without limit; others, astonishingly, **add up infinitely many terms to a finite total**. And one number — the golden ratio — keeps appearing wherever growth meets beauty. This is where patterns reach toward the infinite.
+
+</Step>
+
+<Step title="The golden ratio φ" kind="interactive">
+
+Watch the Fibonacci ratios converge — they're closing in on φ ≈ 1.618.
+
+<FibonacciSpiral />
+
+</Step>
+
+<Step title="What makes φ special" kind="explain">
+
+The golden ratio is the unique number where the whole relates to the larger part exactly as the larger part relates to the smaller:
+
+<Formula tex="\varphi = \frac{1+\sqrt 5}{2} \approx 1.618, \qquad \varphi^2 = \varphi + 1" block />
+
+It's the "most irrational" number — the hardest of all to approximate with fractions — which is precisely *why* plants use the golden angle (137.5°) to space leaves: no two ever line up and shadow each other. It threads through the Parthenon, Renaissance art, and the proportions we tend to find pleasing.
+
+</Step>
+
+<Step title="An infinite sum that's finite" kind="interactive">
+
+A geometric series with ratio between 0 and 1 shrinks fast enough that its endless total is finite.
+
+<GeometricSequence />
+
+</Step>
+
+<Step title="Zeno's paradox, resolved" kind="explain">
+
+To cross a room you first cross half, then half of what's left, then half again — infinitely many steps. Zeno argued you could therefore *never* arrive. But the distances form a geometric series with r = ½:
+
+<Formula tex="\tfrac12 + \tfrac14 + \tfrac18 + \tfrac{1}{16} + \cdots = 1" block />
+
+Infinitely many gaps, adding to exactly **1** whole room. A geometric series with |r| &lt; 1 **converges** to the finite sum a/(1 − r). Infinity, tamed: you arrive after all. (This idea — summing infinitely many shrinking pieces — is the very heart of the calculus waiting in the next worlds.)
+
+<Callout type="info" title="The bridge to calculus">
+Adding up infinitely many infinitely small pieces is exactly how calculus finds the area under a curve. Convergent series are your first taste of that infinite, and it's one of the most powerful ideas humanity has ever had.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What does the infinite sum ½ + ¼ + ⅛ + 1/16 + … add up to?"
+  options={[
+    "Exactly 1",
+    "Infinity — it never stops growing",
+    "About 0.99, never quite 1",
+    "2"
+  ]}
+  correctIndex={0}
+  explanation="It's geometric with a = ½ and r = ½, so the sum is a/(1 − r) = ½ / (½) = 1. Infinitely many shrinking terms converge to exactly 1 — Zeno's paradox dissolved."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **golden ratio φ ≈ 1.618** emerges from Fibonacci and pervades nature and art (it's the "most irrational" number).
+- A geometric series with **|r| &lt; 1 converges** to the finite sum **a/(1 − r)**.
+- **Zeno's paradox** dissolves: ½ + ¼ + ⅛ + … = 1.
+- Summing infinitely many tiny pieces is the doorway to **calculus**.
+
+</Step>
+
+</Lesson>

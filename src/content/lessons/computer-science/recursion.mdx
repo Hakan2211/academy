@@ -1,0 +1,82 @@
+---
+title: Recursion
+subject: computer-science
+contentSlug: computer-science/recursion
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="A function that calls itself" kind="explain">
+
+**Recursion** is one of the most beautiful ideas in computing: a function that solves a problem by calling *itself* on a smaller version of the same problem.
+
+It sounds circular and impossible — like looking up a word in a dictionary and finding the definition uses the same word. The trick that saves it from going forever is that each call works on something *smaller*, marching steadily toward a case so simple it needs no further call at all.
+
+</Step>
+
+<Step title="Base case + recursive case" kind="explain">
+
+Every correct recursion has exactly two parts:
+
+- **Base case** — the simplest version, answered directly with no further call. This is the floor that stops the descent.
+- **Recursive case** — the function expresses the answer in terms of a *smaller* call to itself.
+
+Take **factorial**: `n!` means `n × (n−1) × … × 1`. Recursively:
+
+<Formula tex="\text{factorial}(n) = n \times \text{factorial}(n-1)" block />
+
+with the base case `factorial(1) = 1`. Miss the base case and the recursion never stops — the recursive twin of an infinite loop.
+
+</Step>
+
+<Step title="The stack: going down, then coming back up" kind="interactive">
+
+When a function calls itself, each call gets its own frame on the **call stack**, paused, waiting for the answer from the call below it. Step through `factorial(n)`: watch the stack grow *downward* as calls are made, hit the base case, then *unwind upward* as each waiting call multiplies and returns.
+
+<RecursionTree />
+
+That growing-then-shrinking stack *is* recursion. Going down, the problem gets smaller; coming back up, the answers combine into the final result.
+
+</Step>
+
+<Step title="Divide and conquer" kind="explain">
+
+Recursion isn't just for tidy math like factorial. Its real power shows in **divide and conquer**: split a problem into smaller subproblems, solve each recursively, then combine the results.
+
+You've already seen it — **merge sort** splits the list in half, sorts each half recursively, and merges. **Binary search** is recursion too: check the middle, then search the relevant half. Many of the fastest algorithms are recursive at heart.
+
+<Callout type="info" title="Two views of repetition">
+Loops and recursion can often solve the same problem. A loop repeats by *iterating*; recursion repeats by *self-reference*. Some problems are far more natural one way than the other — tree-shaped problems love recursion.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What happens if a recursive function has a recursive case but no reachable base case?"
+  options={[
+    "It returns the wrong number but still stops",
+    "It runs forever, calling itself until it crashes the call stack",
+    "It automatically becomes a loop",
+    "It refuses to compile"
+  ]}
+  correctIndex={1}
+  explanation="The base case is what stops the descent. Without a reachable one, each call makes another call, the stack keeps growing, and the program eventually runs out of stack space and crashes — the recursive equivalent of an infinite loop."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Recursion** is a function that calls itself on a *smaller* version of the same problem.
+- It needs a **base case** (stops the descent) and a **recursive case** (shrinks the problem).
+- Each call waits on the **call stack**; the stack grows going down, then unwinds coming back up.
+- **Divide and conquer** — used by merge sort and binary search — is recursion's superpower.
+- A missing base case causes runaway recursion, like an infinite loop.
+
+</Step>
+
+</Lesson>

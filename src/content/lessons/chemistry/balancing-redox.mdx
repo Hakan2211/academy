@@ -1,0 +1,81 @@
+---
+title: Balancing Redox Reactions
+subject: chemistry
+contentSlug: chemistry/balancing-redox
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Balance charge as well as atoms" kind="explain">
+
+Redox equations must balance **two** things: the atoms (as always) *and* the electrons transferred. Every electron lost in oxidation must be gained in reduction — none can vanish.
+
+The neatest way to handle this is to split the reaction into two **half-reactions** — one for oxidation, one for reduction — balance each, then recombine.
+
+</Step>
+
+<Step title="The electrons must match" kind="interactive">
+
+Recall the core idea: electrons released by the oxidised species are exactly the electrons taken up by the reduced one.
+
+<RedoxLab />
+
+The number lost must equal the number gained — that's the rule that makes balancing work.
+
+</Step>
+
+<Step title="The half-reaction method" kind="explain">
+
+1. **Split** into oxidation and reduction half-reactions.
+2. **Balance** the atoms in each half.
+3. **Add electrons** to balance the charge in each half.
+4. **Multiply** the halves so the electrons lost = electrons gained.
+5. **Add** them back together; the electrons cancel.
+
+For Zn + Cu²⁺:
+
+<Formula tex="\text{Zn} \rightarrow \text{Zn}^{2+} + 2e^- \quad\text{(oxidation)}" block />
+<Formula tex="\text{Cu}^{2+} + 2e^- \rightarrow \text{Cu} \quad\text{(reduction)}" block />
+
+Both involve 2 electrons, so they add directly: Zn + Cu²⁺ → Zn²⁺ + Cu.
+
+</Step>
+
+<Step title="When the electrons don't match" kind="explain">
+
+Often the two halves involve different electron counts. Then you **scale** each half-reaction to a common multiple so the electrons cancel exactly — just like finding a common denominator.
+
+<Callout type="tip" title="In acidic solution">
+For reactions in water, you also balance oxygen by adding H₂O and hydrogen by adding H⁺ (and OH⁻ in basic solution). But the heart of it is always the same: make the electrons lost equal the electrons gained.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In the half-reaction method, why must you sometimes multiply the half-reactions by different numbers before adding them?"
+  options={[
+    "To balance the temperature",
+    "So the number of electrons lost in oxidation equals the number gained in reduction, letting them cancel",
+    "To make both halves exothermic",
+    "To change the oxidation numbers"
+  ]}
+  correctIndex={1}
+  explanation="Electrons can't be created or destroyed, so the electrons lost in the oxidation half must exactly equal those gained in the reduction half. If the halves have different electron counts, you scale them to a common multiple so the electrons cancel when added."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Redox equations balance **atoms and electrons** (charge).
+- Use the **half-reaction method**: split, balance atoms, add electrons, scale so electrons match, recombine.
+- Electrons **lost = gained**, so they cancel in the final equation.
+- In solution, also balance O with H₂O and H with H⁺ — but matching electrons is the core.
+
+</Step>
+
+</Lesson>

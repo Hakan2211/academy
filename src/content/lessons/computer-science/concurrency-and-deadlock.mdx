@@ -1,0 +1,83 @@
+---
+title: Concurrency & Deadlock
+subject: computer-science
+contentSlug: computer-science/concurrency-and-deadlock
+order: 5
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Doing things 'at the same time'" kind="explain">
+
+We've seen the OS keep many processes and threads making progress together — sometimes interleaved on one core, sometimes truly in parallel on several cores. This is **concurrency**: multiple strands of execution alive at once. It's what makes a computer responsive and fast.
+
+But concurrency has a dark side. The moment two strands **share** something — a chunk of memory, a file, a printer — their actions can tangle in ways that are subtle, intermittent, and maddening to debug. The OS, and the programs running on it, need careful rules to keep shared resources from descending into chaos.
+
+</Step>
+
+<Step title="Race conditions: when timing decides the answer" kind="explain">
+
+Imagine two threads sharing one counter that holds the value 10, and each wants to add 1. The hidden steps are: **read** the value, **add** one, **write** it back. The correct result is 12.
+
+But suppose both threads *read* 10 before either has written. Both compute 11. Both write 11. One increment vanished — the final value is 11, not 12. Nothing was "wrong" with either thread; the bug lives entirely in the **timing of how their steps interleaved**. This is a **race condition**: the outcome depends on who happens to win the race, so the program is correct *most* of the time and silently wrong *some* of the time.
+
+</Step>
+
+<Step title="Locks: taking turns on purpose" kind="explain">
+
+The fix is to make the dangerous section **mutually exclusive** — only one strand inside it at a time. The tool is a **lock** (or **mutex**). Before touching the shared counter, a thread must *acquire* the lock; when done, it *releases* it. While one holds the lock, any other that wants it must wait.
+
+The protected region is called a **critical section**. Locks turn an uncontrolled scramble into an orderly queue: read-add-write now happens atomically, start to finish, before anyone else gets in. Concurrency made safe — but, as we're about to see, locks introduce a brand-new danger of their own.
+
+</Step>
+
+<Step title="Deadlock: everyone waiting forever" kind="interactive">
+
+Locks make threads *wait*. And waiting can curdle into a permanent stalemate. Picture two processes and two resources: P1 grabs R1 and then reaches for R2; P2 grabs R2 and then reaches for R1. Each holds what the other needs, and neither will let go. Both wait — forever.
+
+<DeadlockViz />
+
+Trigger the deadlock and watch the **wait-for graph** form a **cycle**: P1 → R2 → P2 → R1 → P1. That circle is the signature of deadlock. Then resolve it: the OS **preempts** a resource — forcibly taking it back — to break the loop so one process can finish and free everything up.
+
+</Step>
+
+<Step title="The four conditions, and the dining philosophers" kind="explain">
+
+Deadlock can only happen when **four conditions hold at once**: **mutual exclusion** (a resource can't be shared), **hold-and-wait** (you keep what you have while reaching for more), **no preemption** (resources can't be forcibly taken), and **circular wait** (the loop you just saw). Break any single one and deadlock becomes impossible — which is exactly how systems prevent it.
+
+The classic story is the **dining philosophers**: five thinkers around a table, one fork between each pair, and each needs *both* neighbouring forks to eat. If all grab their left fork at once, every fork is held, everyone waits for a right fork that never comes, and all five starve. The cure breaks a condition — e.g. make one philosopher reach right-first, so no perfect circle can form.
+
+<Callout type="info" title="Detect, avoid, or prevent">
+Real systems take one of three stances: **prevent** deadlock by designing so a condition can't hold; **avoid** it by refusing requests that might lead to a cycle; or **detect** it after the fact and recover (by preempting or killing a process). Each trades safety against flexibility and overhead.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Two processes are deadlocked: P1 holds resource R1 and waits for R2, while P2 holds R2 and waits for R1. What single feature must this situation have?"
+  options={[
+    "Both processes are running on separate CPU cores",
+    "A circular wait — a cycle in which each process is waiting for a resource held by the next",
+    "One process has higher priority than the other",
+    "The two processes share no resources at all"
+  ]}
+  correctIndex={1}
+  explanation="Deadlock requires a circular wait: P1 waits for R2 (held by P2) and P2 waits for R1 (held by P1), forming a closed loop. With every process holding what the next one needs and none willing to release, the cycle never breaks on its own. Breaking the circular wait (e.g. by preemption) resolves it."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Concurrency** lets many strands of execution be alive at once — fast and responsive, but risky when they **share** resources.
+- A **race condition** is a bug where the result depends on the *timing* of interleaved steps, so a program is intermittently and silently wrong.
+- A **lock** (mutex) enforces **mutual exclusion** over a **critical section**, turning a scramble into safe turns.
+- Locks can cause **deadlock**: a **circular wait** where each process holds what another needs and all wait forever.
+- Deadlock needs **four conditions** at once (mutual exclusion, hold-and-wait, no preemption, circular wait); breaking any one — as the **dining philosophers** shows — prevents it.
+
+</Step>
+
+</Lesson>

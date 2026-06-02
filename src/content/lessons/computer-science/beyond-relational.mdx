@@ -1,0 +1,83 @@
+---
+title: Beyond Relational
+subject: computer-science
+contentSlug: computer-science/beyond-relational
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="When tables aren't the best fit" kind="explain">
+
+The relational model is brilliant, but it isn't the only way. Some data doesn't fit neatly into fixed rows and columns, and some workloads are so huge that the careful guarantees of a relational database become a bottleneck. For these, a family of alternatives grew up under the banner **NoSQL** — "not only SQL".
+
+NoSQL databases trade some of the relational model's strictness for **flexibility** or **scale**. They aren't a replacement so much as a different set of tools for different jobs. The key skill is knowing which to reach for.
+
+</Step>
+
+<Step title="The main NoSQL flavours" kind="explain">
+
+There are a few broad families:
+
+- **Key-value stores** (Redis, DynamoDB) — the simplest possible database: a giant dictionary mapping a key straight to a value. Blazingly fast lookups, perfect for caches and sessions.
+- **Document stores** (MongoDB) — each record is a flexible document (think JSON) that can nest data and vary in shape from row to row. Great when your data is hierarchical or evolving.
+- **Graph databases** (Neo4j) — store data as **nodes and edges**, making relationships first-class. Ideal for social networks, recommendations, and "who is connected to whom" questions.
+
+```text
+key-value:  "user:1001" -> "Ada Okafor"
+document:   { "name": "Ada", "courses": ["CS", "Maths"] }
+graph:      (Ada) -[:FRIEND]-> (Bao) -[:FRIEND]-> (Esi)
+```
+
+</Step>
+
+<Step title="Still rows, records, and keys" kind="interactive">
+
+Even when the storage model changes, the core ideas you've learned carry over. A key-value store is, at heart, a lookup by a unique key — exactly the role a primary key plays in this familiar table.
+
+<DatabaseTable />
+
+Whether the data sits in tidy rows, nested documents, or a graph of nodes, you're still **storing records, identifying them by keys, and querying them back**. NoSQL changes the shape, not the goal.
+
+</Step>
+
+<Step title="Scale, big data, and choosing well" kind="explain">
+
+The other force behind NoSQL is **scale**. When data outgrows a single machine, it must be **sharded** — split across many servers. Relational guarantees like ACID are harder to maintain across a cluster, so many NoSQL systems relax them (offering "eventual consistency") in exchange for handling **big data**: volumes too large or fast-moving for one server to manage.
+
+So how do you choose? Need strict consistency, rich queries, and related data — like money or orders? Reach for **relational + SQL**. Need a flexible shape, a simple cache, a relationship-heavy graph, or planet-scale throughput? A matching **NoSQL** store may fit better.
+
+<Callout type="tip" title="Right tool, right job">
+Big systems often use several at once: a relational database for orders, a key-value cache for speed, a document store for content, a graph for recommendations. "Polyglot persistence" — many databases, each where it shines.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You're building a social network and constantly ask 'who is a friend of a friend?' Which database family fits most naturally?"
+  options={[
+    "A key-value store, because friendships are simple values",
+    "A graph database, because it stores data as nodes and edges, making relationships first-class and fast to traverse",
+    "A relational database is the only option that can store friendships",
+    "No database can model friendships"
+  ]}
+  correctIndex={1}
+  explanation="Graph databases store entities as nodes and relationships as edges, so traversing connections (friends of friends) is direct and efficient. Relational databases can model this with join tables, but a graph store is purpose-built for relationship-heavy queries."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **NoSQL** ("not only SQL") databases trade relational strictness for **flexibility** or **scale**.
+- Families: **key-value** (fast lookups/caches), **document** (flexible, nested records), and **graph** (relationships as nodes and edges).
+- The core ideas persist — **records identified by keys, stored and queried** — only the shape changes.
+- At huge **scale**, data is **sharded** across servers and consistency is often relaxed (eventual consistency) to handle **big data**.
+- Choose by need: relational + SQL for consistency and rich queries; NoSQL for flexibility, simple caching, graphs, or extreme scale — often several together.
+
+</Step>
+
+</Lesson>

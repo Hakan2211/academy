@@ -1,0 +1,93 @@
+---
+title: The Journey of a Packet
+subject: computer-science
+contentSlug: computer-science/the-journey-of-a-packet
+order: 7
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="One click, the whole machine" kind="explain">
+
+Let's tie this entire world together by following a single ordinary act: you type a web address and press Enter. In the blink before the page appears, almost every idea from this world fires in sequence — naming, protocols, layers, packet switching, routing, client–server. We'll trace that one click **end to end**, slowly, so you can see the machinery you've been building snap into place.
+
+It feels instantaneous. It is, in fact, a tiny epic involving a phone-book lookup, a careful handshake, a message shredded into envelopes, a relay race across the planet, a reassembly, and a rendered page — all in well under a second.
+
+</Step>
+
+<Step title="Step 1 — Find the address (DNS)" kind="explain">
+
+You type `example.com`. Your computer can't send anything yet, because routers steer by **IP address**, not by name. So first comes the **DNS lookup** from the *Naming & Routing* lesson: your machine asks a resolver, which (if the answer isn't cached) walks the hierarchy — root, then the `.com` servers, then the authoritative server — and gets back an IP like `93.184.216.34`.
+
+Now your computer knows *where* to send things. The name has become a number. Often this is the slowest part of the whole journey — and thanks to **caching**, the second time you visit it's already done.
+
+</Step>
+
+<Step title="Step 2 — Open a reliable connection (TCP)" kind="explain">
+
+Before sending the request, your computer establishes a **TCP** connection to the server's IP on port 443. TCP performs a quick **handshake** — a brief back-and-forth that agrees both sides are ready and sets up the sequence numbering that will keep everything in order.
+
+This is the **Transport layer** doing its job: promising reliable, ordered delivery on top of an unreliable network. With the connection open, your browser — the **client** — is ready to make its request to the **server**.
+
+</Step>
+
+<Step title="Step 3 — Wrap it and split it" kind="interactive">
+
+Your browser forms an **HTTP request** ("GET /") at the Application layer. Now it travels **down** the TCP/IP stack, each layer wrapping it in a header — **encapsulation**. Step through it once more and watch the envelopes nest.
+
+<ProtocolStack />
+
+Transport (TCP) splits the request into numbered **segments** and adds port numbers. Internet (IP) stamps each with source and destination addresses. Link turns them into signals. The single request is now a set of **packets**, each a self-contained envelope ready to travel independently.
+
+</Step>
+
+<Step title="Step 4 — The relay race (routing)" kind="interactive">
+
+The packets pour into the internet and begin **packet switching**: each is forwarded **hop by hop** by routers, each router choosing the next step toward the destination IP. Press Send and watch them scatter and race.
+
+<PacketJourney />
+
+Different packets may take **different routes**; some arrive ahead of others. At the server, **TCP reassembles** them in order using their sequence numbers — exactly the out-of-order-then-reassembled trick from *The Internet* — and hands the complete, correct HTTP request up the stack to the web server.
+
+</Step>
+
+<Step title="Step 5 — Answer, and render" kind="explain">
+
+The server reads the request, finds the page, and sends back an **HTTP response**: the **HTML**, with a status code like **200 OK**. That response makes the identical journey in reverse — split into packets, routed back hop by hop, reassembled by your computer's TCP layer, and decapsulated up the stack until your **browser** holds the raw HTML.
+
+The browser then **renders** it: parsing the HTML, fetching any extra resources (each a fresh request/response), and painting pixels on your screen. The page appears. Total elapsed time: a fraction of a second.
+
+<Callout type="info" title="The whole world in one click">
+DNS turned a **name into a number**. TCP gave **reliability** over an unreliable net. Layers handled **encapsulation**. IP and routers did **packet switching** with **no central control**. Client–server framed the **request and response**. Six lessons, one keystroke — and not a single part of it needed anyone to be in charge of the whole.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Put the core stages of loading a web page in the correct order."
+  options={[
+    "Route packets → DNS lookup → render page → open TCP connection",
+    "DNS lookup → open TCP connection → request split into packets and routed hop by hop → reassembled → response rendered",
+    "Render page → DNS lookup → open TCP connection → route packets",
+    "Open TCP connection → DNS lookup → render page → route packets"
+  ]}
+  correctIndex={1}
+  explanation="First DNS turns the name into an IP. Then TCP opens a reliable connection. The HTTP request is encapsulated, split into packets, and routed hop by hop; packets are reassembled in order at the server, which sends a response that travels back and is finally rendered by the browser."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **DNS** first turns the domain **name into an IP address** (cached for next time).
+- **TCP** opens a reliable, ordered **connection** to the server (Transport layer).
+- The **HTTP request** is **encapsulated** down the stack and **split into packets**.
+- Packets are **routed hop by hop** via **packet switching**, may take different paths, and are **reassembled** in order.
+- The server's **response** retraces the journey and the browser **renders** the page — the whole world, in one click, with no one in charge.
+
+</Step>
+
+</Lesson>

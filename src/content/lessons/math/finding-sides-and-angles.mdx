@@ -1,0 +1,68 @@
+---
+title: Finding Sides & Angles
+subject: math
+contentSlug: math/finding-sides-and-angles
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Putting the ratios to work" kind="explain">
+
+The real power of SOH-CAH-TOA is solving triangles: given an angle and a side, find a missing side; given two sides, find a missing angle. The whole skill is **picking the right ratio** for the sides you have.
+
+</Step>
+
+<Step title="Try different angles" kind="interactive">
+
+<TrigRatios />
+
+</Step>
+
+<Step title="Finding a missing side" kind="explain">
+
+Label the sides relative to the known angle, then choose the ratio that uses your known and unknown sides. To find the opposite side from the hypotenuse:
+
+<Formula tex="\sin\theta = \frac{O}{H} \;\Rightarrow\; O = H \sin\theta" block />
+
+A 10 m ladder at 70° to the ground reaches 10 × sin 70° ≈ 9.4 m up the wall. Pick the ratio, rearrange, compute.
+
+</Step>
+
+<Step title="Finding a missing angle" kind="explain">
+
+Know two sides? Use the **inverse** trig functions (sin⁻¹, cos⁻¹, tan⁻¹) to recover the angle:
+
+<Formula tex="\tan\theta = \frac{O}{A} \;\Rightarrow\; \theta = \tan^{-1}\!\left(\frac{O}{A}\right)" block />
+
+A ramp rising 2 m over 5 m horizontal: θ = tan⁻¹(2/5) ≈ 21.8°. The inverse function answers "which angle has this ratio?"
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A right triangle has the side opposite angle θ = 7 and the adjacent side = 7. What is θ?"
+  options={[
+    "45°",
+    "30°",
+    "60°",
+    "90°"
+  ]}
+  correctIndex={0}
+  explanation="tan θ = O/A = 7/7 = 1, so θ = tan⁻¹(1) = 45°. Equal opposite and adjacent sides always mean a 45° angle."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Side:** pick the ratio with your known + unknown sides, rearrange (e.g. O = H sin θ).
+- **Angle:** use **inverse** trig — θ = sin⁻¹/cos⁻¹/tan⁻¹ of the ratio.
+- Always label O, A, H relative to the known angle first.
+- Solves ladders, ramps, heights — any right-angled situation.
+
+</Step>
+
+</Lesson>

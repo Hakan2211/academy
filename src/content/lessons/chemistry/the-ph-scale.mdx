@@ -1,0 +1,80 @@
+---
+title: The pH Scale
+subject: chemistry
+contentSlug: chemistry/the-ph-scale
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Measuring acidity" kind="explain">
+
+The **pH scale** puts a number on how acidic or basic a solution is, from **0 to 14**:
+
+- **0–6** → acidic (lower = stronger acid)
+- **7** → neutral (pure water)
+- **8–14** → basic / alkaline (higher = stronger base)
+
+pH is really a measure of the **hydrogen-ion concentration [H⁺]**. More H⁺ means lower pH (more acidic).
+
+</Step>
+
+<Step title="Slide across the scale" kind="interactive">
+
+Move along the scale to see the colour an indicator shows and an everyday substance at each pH.
+
+<PHScale />
+
+</Step>
+
+<Step title="It's logarithmic" kind="explain">
+
+The crucial subtlety: pH is a **logarithmic** scale. Each step of 1 is a **tenfold** change in [H⁺]:
+
+<Formula tex="\text{pH} = -\log_{10}[\text{H}^+]" block />
+
+So pH 3 is **ten times** more acidic than pH 4, and **a hundred times** more acidic than pH 5. Small pH differences mean big changes in acidity — which is why your blood is defended so tightly around pH 7.4.
+
+</Step>
+
+<Step title="H⁺ and OH⁻ are linked" kind="explain">
+
+In any water solution, [H⁺] and [OH⁻] are tied together — as one rises, the other falls, and their product is constant. That's why a single number (pH) captures the whole story:
+
+- Acidic: lots of H⁺, little OH⁻.
+- Neutral: equal amounts.
+- Basic: little H⁺, lots of OH⁻.
+
+<Callout type="info" title="Beyond the ends">
+Very concentrated strong acids and bases can actually go below 0 or above 14 — the 0–14 range is just where everyday solutions sit, not a hard wall.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="How much more acidic is a solution of pH 2 compared with one of pH 5?"
+  options={[
+    "3 times more acidic",
+    "30 times more acidic",
+    "1000 times more acidic",
+    "Equally acidic"
+  ]}
+  correctIndex={2}
+  explanation="pH is logarithmic — each unit is a 10× change in [H⁺]. From pH 5 to pH 2 is 3 steps: 10 × 10 × 10 = 1000 times more acidic."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **pH** runs 0–14: below 7 acidic, 7 neutral, above 7 basic — it measures **[H⁺]**.
+- It is **logarithmic**: pH = −log[H⁺], so each unit is a **10×** change in acidity.
+- [H⁺] and [OH⁻] are linked — one number captures both.
+- Small pH shifts mean large changes, which is why biological pH is tightly controlled.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,76 @@
+---
+title: Galvanic Cells
+subject: chemistry
+contentSlug: chemistry/galvanic-cells
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Turning a reaction into electricity" kind="explain">
+
+If electrons flow during a redox reaction, why not route them through a wire and do useful work? That's exactly what a **galvanic cell** (or voltaic cell) does — it harnesses a **spontaneous** redox reaction to generate **electricity**. Every battery is a galvanic cell.
+
+The trick is to *separate* the two half-reactions so the electrons are forced to travel through an external wire to get from one to the other.
+
+</Step>
+
+<Step title="Inside the cell" kind="interactive">
+
+Two half-cells, a connecting wire, and a salt bridge. Watch the electrons flow.
+
+<GalvanicCell />
+
+</Step>
+
+<Step title="Anode, cathode, and the salt bridge" kind="explain">
+
+Three parts do the work:
+
+- The **anode** is where **oxidation** happens — it releases electrons (the negative terminal in a galvanic cell).
+- The **cathode** is where **reduction** happens — it accepts electrons (the positive terminal).
+- The **salt bridge** lets ions flow between the half-cells to keep each side electrically neutral, so the reaction can keep going.
+
+Electrons travel **anode → cathode** through the wire; that current is the electricity you use.
+
+<Callout type="tip" title="A mnemonic">
+**An Ox** and a **Red Cat**: **An**ode = **Ox**idation; **Red**uction = **Cat**hode. It holds for every electrochemical cell.
+</Callout>
+
+</Step>
+
+<Step title="Cell voltage" kind="explain">
+
+The cell produces a **voltage** — the "push" on the electrons — set by the difference in how strongly each half-reaction pulls electrons. A bigger difference in reactivity between the two metals means a higher voltage. The zinc–copper cell delivers about **1.10 V**.
+
+Stack cells in series and the voltages add — which is how a 1.5 V cell becomes a 9 V battery.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In a galvanic cell, where does oxidation occur and which way do electrons flow through the external wire?"
+  options={[
+    "Oxidation at the cathode; electrons flow cathode → anode",
+    "Oxidation at the anode; electrons flow anode → cathode",
+    "Oxidation at both electrodes; no electron flow",
+    "Reduction at the anode; electrons flow randomly"
+  ]}
+  correctIndex={1}
+  explanation="Oxidation always happens at the anode (An Ox), releasing electrons. They flow through the wire to the cathode, where reduction occurs (Red Cat). That electron flow is the electric current the cell delivers."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **galvanic (voltaic) cell** harnesses a **spontaneous** redox reaction to make electricity — every battery is one.
+- **Anode** = oxidation (− terminal); **cathode** = reduction (+ terminal): *An Ox, Red Cat*.
+- The **salt bridge** keeps the half-cells neutral so current keeps flowing.
+- The **cell voltage** depends on the reactivity difference; cells in series add their voltages.
+
+</Step>
+
+</Lesson>

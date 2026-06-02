@@ -1,0 +1,78 @@
+---
+title: The Fetch–Execute Cycle
+subject: computer-science
+contentSlug: computer-science/the-fetch-execute-cycle
+order: 5
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="The heartbeat of the machine" kind="explain">
+
+We now have all the pieces: a CPU with an ALU, registers, a program counter and a control unit; memory holding a program written as numbered instructions. The only question left is the most important one — **how does it actually run?**
+
+The answer is a loop so simple it almost feels like a let-down, yet it powers everything. A CPU does the same three steps, over and over, billions of times a second: **fetch**, **decode**, **execute**. This is the **fetch–execute cycle**, the heartbeat of every computer.
+
+</Step>
+
+<Step title="The three steps" kind="explain">
+
+Each turn of the cycle:
+
+1. **Fetch** — the control unit reads the **program counter** to get an address, then copies the instruction stored there into the **instruction register**.
+2. **Decode** — it works out what that instruction means: which opcode, which operand.
+3. **Execute** — it carries the instruction out, usually by having the **ALU** update a register, then advances the program counter to point at the next instruction.
+
+Then it loops. A **clock** ticks the whole thing forward in lockstep, so each step happens in order and nothing gets ahead of itself.
+
+</Step>
+
+<Step title="Watch it run" kind="interactive">
+
+Here is a tiny CPU running a real little program: load 6, add 3, subtract 2, store the result, halt. Press **Step** to move one phase at a time, or **Run** to let the clock drive it. Watch the program counter point into memory, the instruction get fetched into the IR, and the ALU update the accumulator.
+
+<FetchExecute />
+
+Follow the accumulator: it starts empty, becomes 6, then 9, then 7, and 7 gets written to memory. The CPU never "understood" the program as a whole — it just did the next instruction, again and again, until it hit HALT.
+
+</Step>
+
+<Step title="How a program makes decisions" kind="explain">
+
+If the cycle only ever marched forward, programs could never repeat or choose. The trick is the **program counter**. Normally it just ticks up by one. But a **JUMP** instruction *sets* it to a different address — sending the CPU back to repeat a section (a loop) or skip ahead (a decision).
+
+That single ability — letting an instruction change where the program counter points — is what turns a fixed list of steps into something that can loop, branch and react. Everything from a game's main loop to an `if` statement is built on it.
+
+<Callout type="tip" title="It really is this simple — and this fast">
+A modern CPU runs this cycle billions of times per second. The astonishing behaviour of computers does not come from any single clever step, but from an utterly simple loop repeated at an unimaginable speed.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What are the three repeating steps of the cycle a CPU performs to run a program?"
+  options={[
+    "Save, load, print",
+    "Fetch the next instruction, decode what it means, then execute it",
+    "Input, output, store",
+    "Compile, link, run"
+  ]}
+  correctIndex={1}
+  explanation="The fetch–execute cycle: fetch the instruction the program counter points to, decode it, then execute it (often using the ALU) and advance the program counter. The CPU repeats this loop billions of times a second."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A CPU runs every program by repeating one loop: **fetch → decode → execute**, driven by the **clock**.
+- **Fetch** uses the program counter to read the next instruction into the instruction register; **decode** interprets it; **execute** carries it out (usually via the ALU) and advances the PC.
+- A **JUMP** instruction changes the program counter, enabling **loops** and **decisions**.
+- Nothing about a single cycle is clever — the power comes from repeating this simple loop billions of times per second.
+
+</Step>
+
+</Lesson>

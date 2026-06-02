@@ -1,0 +1,82 @@
+---
+title: Staying Safe Online
+subject: computer-science
+contentSlug: computer-science/staying-safe-online
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="From theory to your own front door" kind="explain">
+
+You now understand the machinery — ciphers, key exchange, hashes. This lesson turns it into habits. The reassuring truth is that you do **not** need to be a security expert to be genuinely hard to attack. A handful of simple practices stops the overwhelming majority of real-world threats, because most attacks chase easy targets and move on when they hit friction.
+
+Think of it as personal **defence in depth**: each habit is a layer, and together they make you a far less appealing target than the person next to you who took no precautions.
+
+</Step>
+
+<Step title="The strength of a single password" kind="interactive">
+
+Your password is often the only thing between an attacker and your account. Recall from the last lesson that attackers who steal a database *guess* and hash candidate passwords. So the question is: how many guesses would yours survive? Try a few below.
+
+<PasswordStrength />
+
+Watch what moves the meter. Adding a symbol helps a little; adding **length** helps enormously, because every extra character multiplies the number of guesses required. This is why a long, memorable passphrase beats a short scramble of symbols — it is both stronger *and* easier to remember.
+
+</Step>
+
+<Step title="Password managers & not reusing" kind="explain">
+
+There is one habit more dangerous than a weak password: **reusing** the same password everywhere. One breached site then hands attackers the keys to all your accounts — an attack called credential stuffing. But nobody can remember a hundred unique strong passwords, so what gives?
+
+A **password manager** does. It generates and stores a long, random, unique password for every site, locked behind one strong master password (or your fingerprint). You remember one secret; it remembers the rest. This single tool resolves the impossible tension between *strong*, *unique*, and *memorable*.
+
+<Callout type="tip" title="Turn on two-factor authentication">
+**2FA** adds a second proof beyond your password — a code from an app or a tap on your phone. Even if an attacker learns your password, they are stopped without that second factor. Enable it everywhere that offers it, especially email and banking.
+</Callout>
+
+</Step>
+
+<Step title="Look for the padlock, beware the bait" kind="explain">
+
+When you browse, check for **HTTPS** — the padlock means the connection is encrypted (the public-key handshake you learned about), so eavesdroppers on the network see only scrambled traffic. On public Wi‑Fi especially, never send sensitive data over a plain `http://` site.
+
+But the padlock only secures the *pipe*, not the *people*. **Phishing** still works by getting you to *willingly* type secrets into a convincing fake. The defence is a pause: check the real sender, distrust urgency ("act now or your account closes!"), never log in through a link in an email, and when in doubt, navigate to the site yourself.
+
+</Step>
+
+<Step title="Keep the doors patched" kind="explain">
+
+Finally, the least glamorous and most effective habit: **install updates**. Software has flaws; when one is discovered, the fix arrives as an update. An out-of-date system is a door with a lock everyone knows how to pick — many large breaches exploited holes that had been patched *months* earlier on systems that simply never updated.
+
+None of this is exotic. Long unique passwords in a manager, 2FA on, HTTPS habits, a healthy suspicion of unexpected messages, and prompt updates. Layered together, these ordinary defaults make you a remarkably hard target.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You use the same fairly strong password on twenty sites. One of those sites suffers a data breach. Why is this dangerous, and what single tool best fixes the underlying problem?"
+  options={[
+    "It is not dangerous as long as the password was strong",
+    "Attackers will try the leaked password on your other accounts (credential stuffing); a password manager fixes the root cause by giving every site a unique, long, random password you do not have to remember",
+    "You should make the one shared password longer and keep reusing it",
+    "Two-factor authentication makes password reuse completely safe"
+  ]}
+  correctIndex={1}
+  explanation="Reuse turns one breach into many: attackers replay the leaked password across your other accounts. Strength does not help once the exact password is known. A password manager removes the temptation to reuse by storing a unique strong password per site, while 2FA adds a valuable second layer on top."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Personal security is **defence in depth** with simple habits; most attacks chase easy targets and give up at friction.
+- **Length beats complexity** in passwords; never **reuse** a password — a **password manager** makes unique, strong passwords practical, and **2FA** adds a second proof.
+- Look for **HTTPS** (encrypted connection), avoid sensitive logins on plain sites and open Wi‑Fi, and treat urgent unexpected messages as likely **phishing**.
+- **Keep software updated** — many breaches exploit holes that were already patched on systems that never updated.
+
+</Step>
+
+</Lesson>

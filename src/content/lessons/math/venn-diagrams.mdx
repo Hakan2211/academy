@@ -1,0 +1,75 @@
+---
+title: Venn Diagrams & Set Notation
+subject: math
+contentSlug: math/venn-diagrams
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Sorting into overlapping groups" kind="explain">
+
+A **Venn diagram** sorts things into overlapping circles, so you can see how groups relate. Where circles overlap are the items in **both** groups. They make "and / or / not" questions visual — and they come with a compact **set notation**.
+
+</Step>
+
+<Step title="Explore the regions" kind="interactive">
+
+Tap a region to see its members and its symbol.
+
+<VennDiagram />
+
+</Step>
+
+<Step title="The set symbols" kind="explain">
+
+- **A ∩ B** — the **intersection**: in A **and** B (the overlap).
+- **A ∪ B** — the **union**: in A **or** B (everything in either circle).
+- **A′** — the **complement**: **not** in A (everything outside it).
+- **n(A)** — the **number** of items in A.
+
+The diagram and the notation say the same thing two ways — the picture builds intuition, the symbols make it precise.
+
+</Step>
+
+<Step title="Venn diagrams find probabilities" kind="explain">
+
+Fill a Venn with counts and probability falls right out. With 25 people, if 20 like tea or coffee, then:
+
+<Formula tex="P(\text{tea or coffee}) = \frac{n(A \cup B)}{\text{total}} = \frac{20}{25} = 0.8" block />
+
+A key fact the diagram makes obvious — the overlap is counted once, not twice:
+
+<Formula tex="n(A \cup B) = n(A) + n(B) - n(A \cap B)" block />
+
+(adding both circles double-counts the middle, so subtract it back).
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In a class, 18 study French, 12 study Spanish, and 5 study both. How many study at least one language?"
+  options={[
+    "25",
+    "30",
+    "35",
+    "23"
+  ]}
+  correctIndex={0}
+  explanation="n(A ∪ B) = n(A) + n(B) − n(A ∩ B) = 18 + 12 − 5 = 25. Subtracting the 5 'both' avoids counting them twice."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **Venn diagram** shows overlapping groups; the overlap is "in both."
+- **∩** = and (intersection), **∪** = or (union), **A′** = not A (complement).
+- **n(A ∪ B) = n(A) + n(B) − n(A ∩ B)** (don't double-count the overlap).
+- Counts in a Venn give probabilities directly.
+
+</Step>
+
+</Lesson>

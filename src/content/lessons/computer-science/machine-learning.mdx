@@ -1,0 +1,85 @@
+---
+title: Machine Learning
+subject: computer-science
+contentSlug: computer-science/machine-learning
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Teaching instead of programming" kind="explain">
+
+Imagine writing a program to recognise a cat in a photo. You'd start listing rules: pointy ears, whiskers, fur… and immediately drown. What about a cat curled up? A black cat in shadow? A kitten? For every rule you write, reality offers a thousand exceptions. The hand-coded approach simply *cannot* keep up with the messy richness of the real world.
+
+**Machine learning** flips the problem on its head. Instead of writing the rules, you collect thousands of labelled examples — "this is a cat, this is not" — and let an algorithm *adjust itself* until it gets them right. The rules are never written by a human; they're **discovered** by the machine from the data. This is the engine beneath almost all modern AI.
+
+</Step>
+
+<Step title="Finding the boundary" kind="interactive">
+
+The simplest learning task is **classification**: sort examples into categories. Geometrically, the model is searching for a **boundary** that separates one class from another. Drag the line below to separate the two clouds of points, and watch the accuracy climb.
+
+<MlClassifier />
+
+Training a real model is exactly this, automated: it starts with a random boundary, measures how many examples it gets wrong, and nudges the boundary to reduce the error — over and over. There's no insight, no understanding of "blueness" — just relentless adjustment toward higher accuracy. Geometrically, learning *is* finding the right boundary.
+
+</Step>
+
+<Step title="Three flavours of learning" kind="explain">
+
+Machine learning comes in three broad styles.
+
+**Supervised learning** uses *labelled* data — examples paired with the right answer (the cat photos above). The model learns to map inputs to outputs. Most everyday AI — spam filters, medical image readers, price predictors — is supervised.
+
+**Unsupervised learning** gets data with *no labels* and hunts for hidden structure on its own — clustering customers into groups, or compressing data to its essence. It discovers patterns nobody told it to look for.
+
+**Reinforcement learning** has no fixed answers at all. An agent acts in an environment and receives **rewards** or penalties, learning by trial and error which behaviours pay off — how a program learns to play a game or a robot learns to walk.
+
+</Step>
+
+<Step title="The danger of memorising" kind="explain">
+
+There's a trap. A model that's *too* flexible can ace its training examples by essentially **memorising** them — bending its boundary into knots to capture every quirk and stray point. It looks perfect on data it has already seen, then fails miserably on anything new. This is **overfitting**.
+
+To catch it, we split our data: **train** the model on one portion, then judge it on a held-out **test** set it has never seen. True learning means **generalising** — performing well on the unseen. A model that scores 100% on training but 60% on the test set hasn't learned the concept; it has memorised the answer key.
+
+<Callout type="warn" title="Garbage in, garbage out">
+A model is only as good as its data. If your examples are biased, incomplete, or mislabelled, the model faithfully learns those flaws — a theme we'll return to when we weigh AI's risks.
+</Callout>
+
+</Step>
+
+<Step title="Why now?" kind="explain">
+
+The ideas behind machine learning are decades old. So why did it suddenly explode? Three forces converged: an **avalanche of data** (the internet, sensors, digitised everything), **cheap massive computation** (especially GPUs that crunch many numbers in parallel), and refined **algorithms**. Together they turned a quiet academic field into the most consequential technology of our era — and set the stage for the neural networks we explore next.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A model scores 99% on its training data but only 62% on a held-out test set. What has gone wrong, and why do we test on unseen data?"
+  options={[
+    "The model is underpowered; we test on training data instead",
+    "The model has overfit — it memorised the training examples rather than learning a general pattern, which only shows up on unseen test data",
+    "The test set is simply too hard and should be removed",
+    "Nothing is wrong; high training accuracy is the only goal"
+  ]}
+  correctIndex={1}
+  explanation="A big gap between training and test accuracy is the signature of overfitting: the model memorised quirks of the training set instead of the underlying pattern. We hold out a test set precisely to measure whether it generalises to data it has never seen."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Machine learning** discovers rules *from data* instead of having them hand-coded — essential for messy, real-world tasks.
+- **Classification** is geometrically a search for a **boundary** that separates classes; training nudges it to maximise accuracy.
+- Three styles: **supervised** (labelled examples), **unsupervised** (find hidden structure), **reinforcement** (learn from rewards).
+- **Overfitting** is memorising the training set; we hold out a **test set** to check the model **generalises**.
+- ML exploded thanks to **data + compute + better algorithms** converging.
+
+</Step>
+
+</Lesson>

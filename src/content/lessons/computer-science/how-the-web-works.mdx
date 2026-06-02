@@ -1,0 +1,90 @@
+---
+title: How the Web Works
+subject: computer-science
+contentSlug: computer-science/how-the-web-works
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="You can build for the whole world" kind="explain">
+
+Here's the thrilling part of this world: with nothing more than a text editor and the ideas in these six lessons, you can build something a person on the other side of the planet can open and use. That's what the **web** offers — a way to publish pages and apps that anyone, anywhere, can reach.
+
+We met the web once before, from the *networking* side: the internet is the global network of cables and routers, and the **World Wide Web** is one **service running on top of it** — hyperlinked pages, fetched with **HTTP**, named by **URLs**. This world picks up where that left off and asks the builder's question: *what is a web page actually made of, and how do I make one?*
+
+</Step>
+
+<Step title="The address: a URL" kind="explain">
+
+Every page has an address — a **URL** (Uniform Resource Locator). It looks busy but each part has a job:
+
+```text
+https://shop.io/socks
+└─┬─┘   └──┬──┘ └─┬─┘
+scheme    host   path
+```
+
+- The **scheme** (`https`) is the *protocol* — the language the browser will speak. `https` is HTTP with encryption.
+- The **host** (`shop.io`) names the **server** to talk to. (Earlier you saw how this name gets turned into an IP address by DNS.)
+- The **path** (`/socks`) says *which* resource on that server you want.
+
+Type a URL, and you've told the browser exactly who to ask and what to ask for.
+
+</Step>
+
+<Step title="The round trip: request and response" kind="interactive">
+
+Now the satisfying mechanism. Your **browser** is a *client*. When you give it a URL it opens a connection to that server and sends an **HTTP request** — essentially "GET me this page." The server finds the page and sends back an **HTTP response**: a chunk of **HTML**, which is just *text*.
+
+Watch one full trip — the request goes out, the HTML comes back, and only then does the browser draw the page:
+
+<WebRequest />
+
+The reveal worth pausing on: a web page is **not** a picture the server paints for you. It's *text* (HTML) sent over the network, which your browser then **renders** into the page you see. The drawing happens on your device, every single time.
+
+</Step>
+
+<Step title="The browser does the work" kind="explain">
+
+So a **browser** is far more than a window. It is a small machine that, for every page, does four things in order:
+
+1. **Resolves** the URL's host to a server (via DNS) and connects to it.
+2. **Sends** an HTTP request for the resource.
+3. **Receives** the response — the HTML text, plus a status code like `200 OK` or `404 Not Found`.
+4. **Renders** that text into the visible page, and runs any code it contains.
+
+<Callout type="tip" title="It's a conversation, repeated">
+Click a link and the whole loop runs again for the next URL. The entire web — billions of pages — is this one request/response conversation, happening over and over on top of the internet.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="When you visit a web page, what does the server actually send back to your browser?"
+  options={[
+    "A finished picture of the page that the server has already drawn",
+    "Text (HTML, and code) which the browser then renders into the visible page on your device",
+    "A direct copy of the server's screen",
+    "Nothing — the page is stored permanently inside the browser"
+  ]}
+  correctIndex={1}
+  explanation="The server sends text — HTML (often with CSS and JavaScript). Your browser receives that text and renders it into the page you see. The drawing happens locally, on your device, not on the server."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **web** is a service on the internet; this world is about *building* for it.
+- A **URL** is a page's address: **scheme** (protocol) + **host** (which server) + **path** (which resource).
+- Your **browser** is a client: it sends an **HTTP request** and gets back an **HTTP response**.
+- The response is **HTML — just text**; the browser **renders** it into the page, on your device, every visit.
+- Click a link and the request/response loop simply runs again.
+
+</Step>
+
+</Lesson>

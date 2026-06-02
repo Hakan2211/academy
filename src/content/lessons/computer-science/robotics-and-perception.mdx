@@ -1,0 +1,83 @@
+---
+title: Robotics & Perception
+subject: computer-science
+contentSlug: computer-science/robotics-and-perception
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Intelligence with a body" kind="explain">
+
+So far our AI has lived in a tidy world of text and data. A **robot** has to act in the *physical* world — and the physical world is gloriously uncooperative. Light flickers, surfaces are slippery, sensors lie, and there's no undo button. **Embodied AI** is intelligence that must perceive and act in real time, with real consequences.
+
+Every such agent runs a loop, repeated many times a second: **sense** the environment, **think** about what the readings mean and what to do, then **act** — and the action changes the world, producing new readings. This **sense–think–act** cycle is the heartbeat of robotics, self-driving cars, drones, and warehouse machines alike.
+
+</Step>
+
+<Step title="The world is noisy" kind="interactive">
+
+The hardest part is the *sense* step. A sensor never hands you the truth — it hands you a noisy estimate. A camera gets glare, a distance sensor jitters, GPS drifts by metres. The robot must reason about *what's probably out there* given imperfect, contradictory signals.
+
+<RobotPerception />
+
+Turn up the noise and watch the rover's readings dance — and its confidence collapse. A single bad reading could trigger a dangerous action. This is why perception is fundamentally about **uncertainty**: not "where is the wall?" but "where is the wall *probably*, and how sure am I?"
+
+</Step>
+
+<Step title="Computer vision: from pixels to meaning" kind="explain">
+
+For a robot to act, it must first *understand* what it sees. **Computer vision** turns a grid of raw pixel values into meaning: that blob is a pedestrian, that line is the edge of the road, that red disc is a stop sign.
+
+This is exactly the job of the deep networks from earlier lessons. A vision model trained on millions of labelled images learns the hierarchy — edges, then shapes, then objects — and outputs not just a label but a **confidence score**: *87% pedestrian, 9% cyclist, 4% pole*. Those confidences feed directly into decisions. A self-driving car that's only 60% sure something is a child in the road had better brake anyway.
+
+</Step>
+
+<Step title="Coping with uncertainty" kind="explain">
+
+How does a robot stay safe when every sensor is unreliable? The key strategy is **sensor fusion**: combine many imperfect sources — camera, radar, lidar, wheel odometry — so their independent errors cancel out. Where one sensor is fooled, another keeps watch.
+
+On top of that, robots track belief *over time*. Rather than trusting a single instant's reading, they maintain a running estimate that blends the new measurement with what they already expected — a technique at the heart of methods like the **Kalman filter** and modern probabilistic localisation. Smooth, confident behaviour emerges from a constant, humble updating of beliefs in the face of doubt.
+
+<Callout type="warn" title="The long tail">
+Self-driving has proven so hard not because the common cases are tricky, but because of the **long tail** of rare events — a couch on the motorway, a person in a dinosaur costume, sun glare at a strange angle. Handling the 99% is achievable; the last 1% of weird reality is where embodied AI still struggles.
+</Callout>
+
+</Step>
+
+<Step title="Where embodied AI lives" kind="explain">
+
+The sense–think–act loop, fed by learned perception, now powers a quiet revolution: warehouse robots that navigate shifting aisles, surgical arms that filter out a surgeon's hand tremor, drones that map disaster zones, vacuum robots that build a map of your living room. Each fuses noisy senses into a model of its surroundings and acts on it under uncertainty.
+
+The frontier is fusing this with the language models of the previous lesson — robots you can *talk to*, that translate "tidy the kitchen" into a sequence of perceptions and actions. Bringing AI out of the screen and into the physical world is one of the field's great unfinished projects.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why is perception the hardest part of robotics, and how do robots cope?"
+  options={[
+    "Sensors are perfectly accurate, so the only challenge is acting fast enough",
+    "Sensors give noisy, uncertain readings, so robots fuse many sensors and track beliefs over time rather than trusting any single reading",
+    "Robots avoid sensors entirely and rely on pre-programmed maps",
+    "Perception is easy; the hard part is manufacturing the motors"
+  ]}
+  correctIndex={1}
+  explanation="Real sensors return noisy, sometimes contradictory estimates, so a robot can never be certain about the world. It copes through sensor fusion — combining many imperfect sources so errors cancel — and by tracking a belief over time that blends new readings with prior expectations, acting on probabilities rather than single readings."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Embodied AI** must perceive and act in the real, messy physical world via a constant **sense–think–act** loop.
+- Sensors deliver **noisy** estimates, so perception is really about **uncertainty** — where things *probably* are and how confident we should be.
+- **Computer vision** uses deep networks to turn raw pixels into labelled objects with **confidence scores** that drive decisions.
+- Robots cope through **sensor fusion** and tracking **beliefs over time** (e.g. Kalman filters), so errors cancel and behaviour stays smooth.
+- The hard part is the **long tail** of rare events; the frontier is robots guided by language models.
+
+</Step>
+
+</Lesson>

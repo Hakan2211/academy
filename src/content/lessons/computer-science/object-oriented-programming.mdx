@@ -1,0 +1,90 @@
+---
+title: Object-Oriented Programming
+subject: computer-science
+contentSlug: computer-science/object-oriented-programming
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Bundling data with behaviour" kind="explain">
+
+So far our data (variables) and our behaviour (functions) have been separate things. But the real world isn't like that. A *dog* isn't just a name and a breed sitting in some boxes — it's a thing that **has** properties **and can do** stuff (bark, fetch, sleep).
+
+**Object-oriented programming (OOP)** mirrors that. It lets you bundle related data and the functions that act on it into a single unit called an **object**. Instead of "data over here, code over there," you model your program as a collection of objects, each responsible for its own little world.
+
+</Step>
+
+<Step title="Classes are blueprints" kind="explain">
+
+You don't describe each dog from scratch. You write **one class** — a **blueprint** that says what *every* dog will have and do:
+
+- **Fields** (attributes): the data each dog stores — `name`, `breed`.
+- **Methods**: the functions each dog can perform — `bark()`.
+
+```
+class Dog:
+    fields:  name, breed
+    method bark():
+        print name + " says Woof!"
+```
+
+A class is not a dog. It's the *plan* for making dogs — like an architect's drawing, not the house.
+
+</Step>
+
+<Step title="Objects are instances" kind="explain">
+
+From one blueprint you stamp out many **objects**, also called **instances**. Each object is a real, individual thing built to the class's plan:
+
+```
+rex  = new Dog("Rex", "Husky")
+bella = new Dog("Bella", "Poodle")
+```
+
+`rex` and `bella` each carry **their own** field values — Rex's name doesn't affect Bella's. But they **share** the class's methods: calling `rex.bark()` runs the same `bark()` code, just using Rex's data. One definition of behaviour, many independent objects.
+
+</Step>
+
+<Step title="Build some dogs" kind="interactive">
+
+Create objects from the `Dog` blueprint and call a method on each. Notice how every dog keeps its own `name` and `breed`, yet they all use the single shared `bark()` defined once in the class.
+
+<OopViz />
+
+That packaging of data **and** the behaviour that uses it into one tidy unit is called **encapsulation** — the central idea of OOP. The object guards its own data and exposes a clean set of methods to the outside world.
+
+<Callout type="tip" title="Modelling the world">
+OOP shines when your problem is full of "things": users, orders, enemies, bank accounts. Each becomes a class, and your program reads like a description of those things interacting — which is why so much large software is built this way.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In object-oriented programming, what is the relationship between a class and an object?"
+  options={[
+    "They are two words for exactly the same thing",
+    "A class is a blueprint defining fields and methods; an object is a concrete instance built from that blueprint, with its own data but shared methods",
+    "An object is the blueprint and a class is one specific instance of it",
+    "A class stores data while an object stores only code"
+  ]}
+  correctIndex={1}
+  explanation="A class is the plan: it lists the fields and methods. An object (instance) is a real thing created from that plan. Many objects can come from one class — each holds its own field values but shares the class's methods."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **OOP** bundles related **data and behaviour** into units called **objects**.
+- A **class** is a **blueprint** listing **fields** (data) and **methods** (behaviour).
+- An **object** is an **instance** built from a class — each has its **own** field values but **shares** the class's methods.
+- Wrapping data together with the methods that use it is **encapsulation**, OOP's core idea.
+- OOP lets you **model the world as objects**, which scales well to large programs.
+
+</Step>
+
+</Lesson>

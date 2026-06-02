@@ -33,6 +33,36 @@ const ORB_IMAGE: Record<string, string> = {
   relativity: '/orbs/physics/relativity.png',
   astronomy: '/orbs/physics/astronomy.png',
   frontiers: '/orbs/physics/frontiers.png',
+  // Biology (14 worlds) — slugs are distinct from physics, so one flat map is safe.
+  'study-of-life': '/orbs/biology/study-of-life.png',
+  'the-cell': '/orbs/biology/the-cell.png',
+  'membranes-and-transport': '/orbs/biology/membranes-and-transport.png',
+  'molecules-of-life': '/orbs/biology/molecules-of-life.png',
+  'energy-and-enzymes': '/orbs/biology/energy-and-enzymes.png',
+  'dna-and-the-code': '/orbs/biology/dna-and-the-code.png',
+  'division-and-inheritance': '/orbs/biology/division-and-inheritance.png',
+  evolution: '/orbs/biology/evolution.png',
+  'body-fuel-and-transport': '/orbs/biology/body-fuel-and-transport.png',
+  'body-control': '/orbs/biology/body-control.png',
+  'reproduction-and-development': '/orbs/biology/reproduction-and-development.png',
+  plants: '/orbs/biology/plants.png',
+  'microbes-and-immunity': '/orbs/biology/microbes-and-immunity.png',
+  ecology: '/orbs/biology/ecology.png',
+  // Chemistry (14 worlds) — slugs are distinct from physics/biology.
+  'matter-basics': '/orbs/chemistry/matter-basics.png',
+  atoms: '/orbs/chemistry/atoms.png',
+  'periodic-table': '/orbs/chemistry/periodic-table.png',
+  bonding: '/orbs/chemistry/bonding.png',
+  mole: '/orbs/chemistry/mole.png',
+  reactions: '/orbs/chemistry/reactions.png',
+  gases: '/orbs/chemistry/gases.png',
+  solutions: '/orbs/chemistry/solutions.png',
+  'acids-and-bases': '/orbs/chemistry/acids-and-bases.png',
+  thermochemistry: '/orbs/chemistry/thermochemistry.png',
+  equilibrium: '/orbs/chemistry/equilibrium.png',
+  electrochemistry: '/orbs/chemistry/electrochemistry.png',
+  organic: '/orbs/chemistry/organic.png',
+  biochemistry: '/orbs/chemistry/biochemistry.png',
 }
 
 function hexToRgb(hex: string): [number, number, number] {
@@ -42,11 +72,11 @@ function hexToRgb(hex: string): [number, number, number] {
   return [(n >> 16) & 255, (n >> 8) & 255, n & 255]
 }
 
-// Hand-tuned receding meander for the 12-category Physics path (mockup 1A):
+// Hand-tuned receding meander for a 12-world path (mockup 1A, tuned for Physics):
 // foreground worlds are large/low, the path winds with shrinking amplitude as it
-// climbs into the distance, settling on the summit (Frontiers) at top-centre.
-// x/y are % of the stage; scale shrinks with distance (atmospheric perspective).
-const PHYSICS_LAYOUT: Array<Pt> = [
+// climbs into the distance, settling on the summit at top-centre. x/y are % of the
+// stage; scale shrinks with distance (atmospheric perspective).
+const LAYOUT_12: Array<Pt> = [
   { x: 15, y: 89, scale: 1.28 },
   { x: 37, y: 84, scale: 1.16 },
   { x: 60, y: 80, scale: 1.06 },
@@ -60,6 +90,84 @@ const PHYSICS_LAYOUT: Array<Pt> = [
   { x: 56, y: 23, scale: 0.55 },
   { x: 49, y: 13, scale: 0.64 }, // summit
 ]
+
+// Hand-tuned winding path for a 14-world trail (shared by Biology and Chemistry —
+// both have 14 worlds). Smaller orbs and a wider, more even meander than genLayout
+// — the procedural version packed the nodes too tightly (high sine frequency) and
+// ran them oversized, so the lower worlds overlapped. x/y are % of the stage;
+// scale recedes with distance.
+const LAYOUT_14: Array<Pt> = [
+  { x: 72, y: 88, scale: 1.0 },
+  { x: 50, y: 82.5, scale: 0.95 },
+  { x: 26, y: 77, scale: 0.9 },
+  { x: 40, y: 71.5, scale: 0.85 },
+  { x: 64, y: 66, scale: 0.8 },
+  { x: 78, y: 60.5, scale: 0.75 },
+  { x: 56, y: 55, scale: 0.71 },
+  { x: 33, y: 49.5, scale: 0.67 },
+  { x: 48, y: 44, scale: 0.63 },
+  { x: 68, y: 38.5, scale: 0.6 },
+  { x: 57, y: 33, scale: 0.57 },
+  { x: 38, y: 27, scale: 0.55 },
+  { x: 50, y: 20, scale: 0.54 },
+  { x: 49, y: 13, scale: 0.6 }, // summit
+]
+
+// Hand-tuned winding path for a 16-world trail (Computer Science). Same even,
+// wide meander as LAYOUT_14, just one extra slalom: foreground worlds swing the
+// full width (x ~26→78) and the amplitude recedes toward the summit. Slightly
+// smaller orbs than the 14-trail so the denser column doesn't overlap.
+const LAYOUT_16: Array<Pt> = [
+  { x: 72, y: 88, scale: 0.96 },
+  { x: 49, y: 83, scale: 0.91 },
+  { x: 26, y: 78, scale: 0.86 },
+  { x: 41, y: 73, scale: 0.82 },
+  { x: 65, y: 68, scale: 0.78 },
+  { x: 78, y: 63, scale: 0.74 },
+  { x: 58, y: 58, scale: 0.7 },
+  { x: 34, y: 53, scale: 0.67 },
+  { x: 46, y: 48, scale: 0.64 },
+  { x: 67, y: 43, scale: 0.61 },
+  { x: 60, y: 38, scale: 0.59 },
+  { x: 40, y: 33, scale: 0.57 },
+  { x: 33, y: 28, scale: 0.55 },
+  { x: 47, y: 22.5, scale: 0.54 },
+  { x: 57, y: 17, scale: 0.54 },
+  { x: 49, y: 11, scale: 0.6 }, // summit
+]
+
+// Hand-tuned winding path for an 18-world trail (Math). Two more slaloms than
+// LAYOUT_14 over the same vertical span, so the step is tighter (~4.5%) and the
+// orbs start smaller — the wide meander keeps neighbours apart horizontally.
+const LAYOUT_18: Array<Pt> = [
+  { x: 72, y: 88, scale: 0.92 },
+  { x: 49, y: 83.5, scale: 0.88 },
+  { x: 27, y: 79, scale: 0.84 },
+  { x: 41, y: 74.5, scale: 0.8 },
+  { x: 64, y: 70, scale: 0.77 },
+  { x: 77, y: 65.5, scale: 0.74 },
+  { x: 59, y: 61, scale: 0.71 },
+  { x: 36, y: 56.5, scale: 0.68 },
+  { x: 46, y: 52, scale: 0.65 },
+  { x: 67, y: 47.5, scale: 0.63 },
+  { x: 56, y: 43, scale: 0.61 },
+  { x: 38, y: 38.5, scale: 0.59 },
+  { x: 47, y: 34, scale: 0.57 },
+  { x: 61, y: 29.5, scale: 0.56 },
+  { x: 52, y: 25, scale: 0.55 },
+  { x: 39, y: 20.5, scale: 0.54 },
+  { x: 47, y: 16, scale: 0.54 },
+  { x: 49, y: 10, scale: 0.59 }, // summit
+]
+
+// Hand-tuned trails keyed by world count; subjects matching a count share the
+// even, wide meander. Anything else falls back to the procedural genLayout.
+const HAND_LAYOUTS: Record<number, Array<Pt>> = {
+  12: LAYOUT_12,
+  14: LAYOUT_14,
+  16: LAYOUT_16,
+  18: LAYOUT_18,
+}
 
 const ORB_BASE = 120 // must match OrbStation BASE (orb px diameter at scale 1)
 
@@ -152,10 +260,7 @@ export function CategoryOverworld({
   const n = units.length
   const states = useMemo(() => computeStates(units), [units])
 
-  const layout = useMemo<Array<Pt>>(
-    () => (n === PHYSICS_LAYOUT.length ? PHYSICS_LAYOUT : genLayout(n)),
-    [n],
-  )
+  const layout = useMemo<Array<Pt>>(() => HAND_LAYOUTS[n] ?? genLayout(n), [n])
   const scales = layout.map((p) => p.scale)
   const sMax = Math.max(...scales, 1)
   const sMin = Math.min(...scales, 0.5)

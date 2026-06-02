@@ -1,0 +1,82 @@
+---
+title: Stacks & Queues
+subject: computer-science
+contentSlug: computer-science/stacks-and-queues
+order: 2
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Adding a rule changes everything" kind="explain">
+
+An array lets you poke at any slot you like. But sometimes the *discipline* of restricting **where** you can add and remove is exactly what makes a structure useful. Two such structures show up everywhere in computing: the **stack** and the **queue**.
+
+Both hold a sequence of items. The only difference is **which end** you're allowed to touch — and that single rule completely changes their behaviour.
+
+</Step>
+
+<Step title="Stack: last in, first out" kind="explain">
+
+A **stack** works like a pile of plates: you add to the **top** and take from the **top**. The last thing you put on is the first thing you take off. We call this **LIFO** — **L**ast **I**n, **F**irst **O**ut.
+
+Its two operations have classic names:
+
+- **push** — put an item on top.
+- **pop** — take the top item off.
+
+You can't reach into the middle of the pile, and that limitation is the point — it keeps things simple and fast.
+
+</Step>
+
+<Step title="Queue: first in, first out" kind="interactive">
+
+A **queue** works like a line at a shop: you join at the **back** and you're served from the **front**. The first to arrive is the first to leave — **FIFO**, **F**irst **I**n, **F**irst **O**ut. Its operations are **enqueue** (add at the back) and **dequeue** (remove from the front).
+
+Flip between the two below. Add several items, then remove them and watch *which* item leaves.
+
+<StackQueue />
+
+Same items, opposite order out. With the **stack** the newest leaves first; with the **queue** the oldest leaves first.
+
+</Step>
+
+<Step title="Where they show up" kind="explain">
+
+These two patterns are quietly everywhere:
+
+- **Stacks** — the **undo** history in your editor (undo the most recent change first); the **call stack** that tracks which function called which; the back button in a browser.
+- **Queues** — a **print queue** (documents print in the order sent); tasks waiting for a server; and the heart of **breadth-first search**, the graph traversal we'll meet soon.
+
+<Callout type="info" title="Recursion runs on a stack">
+Every time a function calls another, the computer **pushes** a frame onto the call stack; when the function returns, it **pops** back off. That LIFO discipline is exactly why recursion unwinds in reverse order — the most recent call finishes first.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You push 1, then 2, then 3 onto a stack, and separately enqueue 1, then 2, then 3 into a queue. What comes out first from each?"
+  options={[
+    "Stack gives 1, queue gives 1",
+    "Stack gives 3 (LIFO), queue gives 1 (FIFO)",
+    "Stack gives 1 (LIFO), queue gives 3 (FIFO)",
+    "Both give 3 first"
+  ]}
+  correctIndex={1}
+  explanation="A stack is LIFO, so the last item pushed (3) pops off first. A queue is FIFO, so the first item enqueued (1) is dequeued first. Same inputs, opposite output order — that's the whole distinction."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **stack** is **LIFO**: **push** and **pop** only at the **top** — newest out first.
+- A **queue** is **FIFO**: **enqueue** at the back, **dequeue** at the front — oldest out first.
+- The restriction on *where* you add/remove is the feature, not a limitation.
+- Stacks power **undo**, the **call stack**, and back buttons; queues power **print spools**, task lists, and **BFS**.
+
+</Step>
+
+</Lesson>

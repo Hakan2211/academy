@@ -1,0 +1,111 @@
+---
+title: From Data to Insight
+subject: computer-science
+contentSlug: computer-science/from-data-to-insight
+order: 6
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Storing data was never the real goal" kind="explain">
+
+Step back and take in the whole world. We learned to **store** data in tables, **relate** it with keys, **query** it with SQL, **design** it cleanly, and **scale** it beyond the relational model. But storage was never the point. The point is **insight** — turning raw records into understanding that drives decisions.
+
+A pile of a billion sales rows is worthless until someone asks the right question: *Which products sell best in winter? Which customers are about to leave? Where is fraud hiding?* This capstone is about that journey — from data, to summary, to insight, to its profound power and its real dangers.
+
+</Step>
+
+<Step title="Aggregation: from rows to summaries" kind="explain">
+
+Most insight starts by **summarising** many rows into a few numbers. SQL does this with **aggregate functions** — `COUNT`, `SUM`, `AVG`, `MIN`, `MAX` — paired with `GROUP BY`, which buckets rows together before summarising each bucket.
+
+```sql
+SELECT genre, COUNT(*) AS films, AVG(rating) AS avg_rating
+FROM movies
+GROUP BY genre
+ORDER BY avg_rating DESC;
+```
+
+Read it as: *group the rows by genre, then for each group count the films and average their ratings.* One query collapses thousands of individual rows into a tidy table of per-genre summaries. `GROUP BY` is the single most important step from raw data to a report.
+
+</Step>
+
+<Step title="The query, revisited" kind="interactive">
+
+Before we aggregate, recall the plain query that picks the rows we care about. Build one again and watch how filtering and sorting shape the raw set that a `GROUP BY` would then summarise.
+
+<SqlQuery />
+
+In a real report you'd wrap this in aggregates — *average rating per genre*, *number of films per year* — but it all rests on the same `SELECT … FROM … WHERE` foundation. Filtering decides which rows enter the summary; aggregation condenses them.
+
+</Step>
+
+<Step title="Joining to enrich the answer" kind="interactive">
+
+Real insight usually needs data from several tables stitched together. To analyse *sales by customer city*, you join orders to customers, then group by city. The join supplies the context; the aggregation supplies the summary.
+
+<JoinViz />
+
+```sql
+SELECT customers.city, COUNT(*) AS orders
+FROM orders
+JOIN customers ON orders.customer_id = customers.customer_id
+GROUP BY customers.city;
+```
+
+Join first to pull in the customer's city, then group to count orders per city. **Join to enrich, group to summarise** — that two-step pattern answers a huge fraction of all business questions.
+
+</Step>
+
+<Step title="Warehouses, OLAP, and data mining" kind="explain">
+
+The database that runs your live app is tuned for fast small writes — one order at a time. Analysing *everything at once* is a different job, so organisations copy their data into a **data warehouse**: a separate store optimised for big read-heavy analytical queries (**OLAP**, online analytical processing) rather than day-to-day transactions (**OLTP**).
+
+On top of warehouses sits **data mining** and **machine learning**: hunting for patterns no one explicitly queried for — customers who tend to churn, items often bought together, transactions that look fraudulent. The database stops being mere memory and becomes a microscope on behaviour.
+
+<Callout type="info" title="The pipeline">
+Raw events → a transactional database → copied into a warehouse → aggregated and mined → dashboards, predictions, and decisions. Each stage turns lower-level data into higher-level meaning — the same abstraction ladder that runs through all of computing.
+</Callout>
+
+</Step>
+
+<Step title="The power — and the ethics" kind="explain">
+
+Here is the part that matters beyond the syntax. Once you can join, group, and mine data at scale, you can learn things about people they never deliberately told you. Combine enough harmless-looking tables — purchases, locations, clicks, friends — and you can **profile** someone with startling accuracy.
+
+That power demands responsibility. **Privacy** is the right to control data about yourself; large-scale joining can quietly erode it by *re-identifying* "anonymous" records. **Profiling** can entrench bias if a model trained on skewed history makes decisions about loans, jobs, or policing. And data collected for one purpose gets reused for another the person never agreed to.
+
+<Callout type="warn" title="Just because you can query it…">
+…doesn't mean you should. Laws like the GDPR exist because aggregated data is so revealing. A responsible engineer collects only what's needed, secures it, anonymises carefully (knowing how easily it can be undone), and asks not just "is this query possible?" but "is it fair to the people in these rows?"
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You want a report of the number of orders per city. Which two SQL ideas, combined, produce it?"
+  options={[
+    "DELETE and DROP, to remove unwanted rows",
+    "A JOIN to bring each order's city in from the customers table, then GROUP BY city with COUNT(*) to summarise",
+    "Only a WHERE clause, since filtering alone counts rows per city",
+    "A foreign-key constraint, which automatically generates the report"
+  ]}
+  correctIndex={1}
+  explanation="First JOIN orders to customers so each order carries its customer's city, then GROUP BY city and COUNT(*) to collapse the joined rows into one count per city. Join to enrich, group to summarise — the core analytics pattern."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The goal of storing data is **insight** — turning raw records into understanding.
+- **Aggregate functions** (COUNT, SUM, AVG…) with **GROUP BY** collapse many rows into summaries.
+- **Join to enrich, group to summarise**: the two-step pattern behind most analytics.
+- A **data warehouse** holds copied data optimised for analytical (**OLAP**) queries, separate from the live transactional (**OLTP**) database; **data mining** then finds patterns no one explicitly asked for.
+- At scale this power raises real **ethics**: privacy, re-identification, profiling and bias — collect only what's needed and ask whether a query is *fair*, not just *possible*.
+
+</Step>
+
+</Lesson>

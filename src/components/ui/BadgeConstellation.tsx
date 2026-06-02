@@ -1,78 +1,15 @@
 import { useMemo, useState } from 'react'
 import { Link, useRouter } from '@tanstack/react-router'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
-import { BADGES, badgeMeta } from '#/lib/badges'
+import { badgeGroups, badgeImage, badgeMeta } from '#/lib/badges'
+import type { BadgeGroup } from '#/lib/badges'
 import { Icon } from './Icon'
 
-// The badge "trophy room" (design.md §8 step 5, mockup `2.5`): a constellation
-// of medal coins on the cosmos, joined by faint lines. Earned = lit + glowing;
-// locked = desaturated + lock. Same lit-illustration stack as the overworld
-// (CosmosCanvas nebula + DOM coins) one level over. We drop the mockup's left
-// nav rail — our IA uses the top HUD, not a sidebar. Tapping a coin reveals how
-// to earn it; a back pill returns wherever you came from.
-
-type Pt = { x: number; y: number }
-
-// Hand-laid 13-badge constellation (4/5/4): one onboarding badge + 12 category
-// badges. Slight y-jitter keeps it organic rather than gridded.
-const HAND13: Array<Pt> = [
-  { x: 22, y: 23 }, { x: 41, y: 21 }, { x: 60, y: 22 }, { x: 79, y: 24 },
-  { x: 13, y: 43 }, { x: 32, y: 45 }, { x: 50, y: 41 }, { x: 68, y: 44 }, { x: 87, y: 43 },
-  { x: 24, y: 64 }, { x: 43, y: 66 }, { x: 62, y: 63 }, { x: 81, y: 65 },
-]
-
-// Hand-laid 14-badge fallback (4/5/4/1; a base anchor) kept in case a badge is
-// re-added later.
-const HAND14: Array<Pt> = [
-  { x: 24, y: 23 }, { x: 43, y: 21 }, { x: 63, y: 23 }, { x: 81, y: 25 },
-  { x: 15, y: 42 }, { x: 34, y: 44 }, { x: 54, y: 40 }, { x: 73, y: 43 }, { x: 90, y: 42 },
-  { x: 26, y: 61 }, { x: 45, y: 63 }, { x: 64, y: 60 }, { x: 83, y: 62 },
-  { x: 54, y: 80 },
-]
-
-function layoutFor(n: number): Array<Pt> {
-  if (n === HAND13.length) return HAND13
-  if (n === HAND14.length) return HAND14
-  const out: Array<Pt> = []
-  const perRow = 4
-  const rows = Math.ceil(n / perRow)
-  for (let i = 0; i < n; i++) {
-    const row = Math.floor(i / perRow)
-    const inRow = Math.min(perRow, n - row * perRow)
-    const col = i % perRow
-    const y = rows > 1 ? 20 + (row * 62) / (rows - 1) : 50
-    const x = 14 + ((col + 0.5) * 72) / inRow
-    out.push({ x, y })
-  }
-  return out
-}
-
-// Connect each node to its ~2 nearest neighbours (x weighted for the wide stage)
-// → an organic, lightly-linked web rather than a full mesh.
-function nearestEdges(pts: Array<Pt>): Array<[number, number]> {
-  const set = new Set<string>()
-  const edges: Array<[number, number]> = []
-  const dist = (a: Pt, b: Pt) => {
-    const dx = (a.x - b.x) * 1.6
-    const dy = a.y - b.y
-    return dx * dx + dy * dy
-  }
-  for (let i = 0; i < pts.length; i++) {
-    const order = pts
-      .map((p, j) => ({ j, d: dist(pts[i], p) }))
-      .filter((o) => o.j !== i)
-      .sort((a, b) => a.d - b.d)
-      .slice(0, 2)
-    for (const o of order) {
-      const key = i < o.j ? `${i}-${o.j}` : `${o.j}-${i}`
-      if (!set.has(key)) {
-        set.add(key)
-        edges.push([Math.min(i, o.j), Math.max(i, o.j)])
-      }
-    }
-  }
-  return edges
-}
+// The badge "trophy room" (design.md §8 step 5, mockup `2.5`): glowing medal
+// coins on the shared cosmos. Earned = lit + glowing; locked = desaturated +
+// lock. Grouped into one section per subject (+ a leading Milestones row) and
+// vertically scrollable, so it scales as subjects land instead of cramming a
+// fixed-height constellation. Tapping a coin reveals how to earn it.
 
 export function BadgeConstellation({
   earned,
@@ -81,14 +18,13 @@ export function BadgeConstellation({
 }) {
   const reduce = useReducedMotion()
   const router = useRouter()
-  const keys = useMemo(() => Object.keys(BADGES), [])
-  const n = keys.length
-  const earnedCount = keys.filter((k) => earned.has(k)).length
+  const groups = useMemo(() => badgeGroups(), [])
+  const allKeys = useMemo(() => groups.flatMap((g) => g.keys), [groups])
+  const total = allKeys.length
+  const earnedCount = allKeys.filter((k) => earned.has(k)).length
   const isEmpty = earnedCount === 0
+  const pct = total > 0 ? Math.round((earnedCount / total) * 100) : 0
   const [selected, setSelected] = useState<string | null>(null)
-
-  const positions = useMemo(() => layoutFor(n), [n])
-  const edges = useMemo(() => nearestEdges(positions), [positions])
 
   const goBack = () => {
     if (typeof window !== 'undefined' && window.history.length > 1) {
@@ -99,73 +35,63 @@ export function BadgeConstellation({
   }
 
   return (
-    // Narrow screens: keep a usable min width and pan horizontally rather than
-    // letting the fixed-position coins overlap (portrait redesign TBD).
-    <div
-      className="w-full overflow-x-auto overflow-y-hidden"
-      style={{ height: 'calc(100vh - 64px)', minHeight: 640 }}
-    >
-      <div
-        className="relative h-full w-full overflow-hidden"
-        style={{ minWidth: 900 }}
-      >
-      {/* the shared universe (CosmosBackdrop) shows through; depth vignette over it */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(125% 90% at 50% 42%, transparent 56%, rgba(7,10,22,0.62) 100%)',
-        }}
-      />
-
-      {/* layer 2 — constellation lines (viewBox %, distortion-tolerant connectors) */}
-      <svg
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        aria-hidden
-      >
-        {edges.map(([a, b]) => {
-          const lit = earned.has(keys[a]) && earned.has(keys[b])
-          return (
-            <line
-              key={`${a}-${b}`}
-              x1={positions[a].x}
-              y1={positions[a].y}
-              x2={positions[b].x}
-              y2={positions[b].y}
-              stroke={lit ? 'rgba(120,170,255,0.4)' : 'rgba(150,165,210,0.14)'}
-              strokeWidth={lit ? 1.4 : 1}
-              vectorEffect="non-scaling-stroke"
-            />
-          )
-        })}
-      </svg>
-
-      {/* header + back (top-left) */}
-      <div className="absolute left-5 top-4 z-20 max-w-[64%]">
+    <div className="h-[calc(100vh-64px)] overflow-y-auto overflow-x-hidden">
+      <div className="relative mx-auto max-w-[1180px] px-5 pb-28 pt-5 sm:px-8">
+        {/* header */}
         <button
           type="button"
           onClick={goBack}
-          className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-black/40 px-3 py-1.5 text-sm font-semibold text-ink backdrop-blur-md transition-colors hover:bg-black/60"
+          className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-black/40 px-3 py-1.5 text-sm font-semibold text-ink backdrop-blur-md transition-colors hover:bg-black/60"
         >
           <Icon name="ArrowLeft" size={15} /> Back
         </button>
-        <h1 className="text-2xl font-extrabold uppercase tracking-[0.16em] sm:text-3xl">
-          Badge Collection
-        </h1>
-        <p className="mt-0.5 text-sm font-bold tracking-wide">
-          <span className="text-accent">{earnedCount}</span>
-          <span className="text-muted"> of {n} earned</span>
-        </p>
-        {isEmpty ? (
-          <div className="mt-2">
+
+        <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
+          <div>
+            <h1 className="text-2xl font-extrabold uppercase tracking-[0.16em] sm:text-3xl">
+              Badge Collection
+            </h1>
+            <p className="mt-1 text-sm font-bold tracking-wide">
+              <span className="text-accent">{earnedCount}</span>
+              <span className="text-muted"> of {total} earned</span>
+            </p>
+          </div>
+
+          {/* legend */}
+          <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/35 px-4 py-2 text-xs font-semibold uppercase tracking-wide backdrop-blur-md">
+            <span className="flex items-center gap-1.5 text-ink">
+              <span
+                className="h-2.5 w-2.5 rounded-full bg-accent"
+                style={{ boxShadow: '0 0 8px var(--color-accent)' }}
+              />
+              Earned
+            </span>
+            <span className="flex items-center gap-1.5 text-muted">
+              <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+              Locked
+            </span>
+          </div>
+        </div>
+
+        {/* overall progress bar */}
+        <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-white/8">
+          <motion.div
+            className="h-full rounded-full bg-accent"
+            style={{ boxShadow: '0 0 12px rgba(79,140,255,0.8)' }}
+            initial={false}
+            animate={{ width: `${pct}%` }}
+            transition={reduce ? { duration: 0 } : { duration: 0.7, ease: 'easeOut' }}
+          />
+        </div>
+
+        {isEmpty && (
+          <div className="mt-5 flex flex-col items-start gap-2.5 rounded-2xl border border-white/10 bg-black/30 p-5 backdrop-blur-md">
             <p className="text-sm text-muted">
-              Complete lessons to start lighting up your constellation.
+              Complete lessons to start lighting up your collection.
             </p>
             <Link
               to="/"
-              className="mt-2.5 inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110"
+              className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:brightness-110"
               style={{
                 background:
                   'linear-gradient(105deg, #4F8CFF, color-mix(in srgb, #4F8CFF 48%, white))',
@@ -175,47 +101,25 @@ export function BadgeConstellation({
               Start learning <Icon name="ArrowRight" size={15} />
             </Link>
           </div>
-        ) : (
-          <p className="mt-1 hidden text-sm text-muted sm:block">
-            Every badge is a milestone in your science journey.
-          </p>
         )}
-      </div>
 
-      {/* legend (bottom-right) */}
-      <div className="absolute bottom-4 right-5 z-20 flex items-center gap-4 rounded-2xl border border-white/10 bg-black/35 px-4 py-2 text-xs font-semibold uppercase tracking-wide backdrop-blur-md">
-        <span className="flex items-center gap-1.5 text-ink">
-          <span className="h-2.5 w-2.5 rounded-full bg-accent" style={{ boxShadow: '0 0 8px var(--color-accent)' }} />
-          Earned
-        </span>
-        <span className="flex items-center gap-1.5 text-muted">
-          <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-          Locked
-        </span>
-      </div>
-
-      {/* layer 3 — the badge coins */}
-      {keys.map((k, i) => (
-        <div
-          key={k}
-          className="absolute z-10"
-          style={{ left: `${positions[i].x}%`, top: `${positions[i].y}%` }}
-        >
-          <div className="-translate-x-1/2 -translate-y-1/2">
-            <ConstellationBadge
-              badgeKey={k}
-              earned={earned.has(k)}
+        {/* subject sections */}
+        <div className="mt-9 space-y-11">
+          {groups.map((g) => (
+            <BadgeSection
+              key={g.label}
+              group={g}
+              earned={earned}
               reduce={Boolean(reduce)}
-              index={i}
-              selected={selected === k}
-              onSelect={() => setSelected((s) => (s === k ? null : k))}
+              selected={selected}
+              onSelect={(k) => setSelected((s) => (s === k ? null : k))}
             />
-          </div>
+          ))}
         </div>
-      ))}
+      </div>
 
-      {/* detail card (bottom-center) — how to earn the selected badge */}
-      <div className="pointer-events-none absolute bottom-4 left-1/2 z-30 -translate-x-1/2">
+      {/* detail card (fixed bottom-center) — how to earn the selected badge */}
+      <div className="pointer-events-none fixed bottom-5 left-1/2 z-40 -translate-x-1/2">
         <AnimatePresence>
           {selected && (
             <BadgeDetail
@@ -228,8 +132,203 @@ export function BadgeConstellation({
           )}
         </AnimatePresence>
       </div>
-      </div>
     </div>
+  )
+}
+
+function BadgeSection({
+  group,
+  earned,
+  reduce,
+  selected,
+  onSelect,
+}: {
+  group: BadgeGroup
+  earned: ReadonlySet<string>
+  reduce: boolean
+  selected: string | null
+  onSelect: (k: string) => void
+}) {
+  const earnedIn = group.keys.filter((k) => earned.has(k)).length
+  const complete = earnedIn === group.keys.length
+
+  return (
+    <section>
+      {/* section header */}
+      <div className="mb-5 flex items-center gap-3">
+        <span
+          className="grid h-8 w-8 shrink-0 place-items-center rounded-xl border"
+          style={{
+            color: group.color,
+            borderColor: `${group.color}55`,
+            background: `${group.color}1a`,
+            boxShadow: `0 0 16px -6px ${group.color}`,
+          }}
+        >
+          <Icon name={group.icon} size={17} />
+        </span>
+        <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-ink">
+          {group.label}
+        </h2>
+        <span
+          className="shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold tabular-nums"
+          style={{
+            color: complete ? group.color : 'var(--color-muted)',
+            background: complete ? `${group.color}1f` : 'rgba(255,255,255,0.06)',
+            border: `1px solid ${complete ? `${group.color}66` : 'rgba(255,255,255,0.12)'}`,
+          }}
+        >
+          {earnedIn}/{group.keys.length}
+        </span>
+        <div
+          className="h-px flex-1"
+          style={{
+            background: `linear-gradient(90deg, ${group.color}40, transparent)`,
+          }}
+        />
+      </div>
+
+      {/* responsive medal grid — labels live in-flow under each coin */}
+      <div className="grid grid-cols-3 gap-x-3 gap-y-7 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7">
+        {group.keys.map((k) => (
+          <BadgeCoin
+            key={k}
+            badgeKey={k}
+            accent={group.color}
+            earned={earned.has(k)}
+            reduce={reduce}
+            selected={selected === k}
+            onSelect={() => onSelect(k)}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function BadgeCoin({
+  badgeKey,
+  accent,
+  earned,
+  reduce,
+  selected,
+  onSelect,
+}: {
+  badgeKey: string
+  accent: string
+  earned: boolean
+  reduce: boolean
+  selected: boolean
+  onSelect: () => void
+}) {
+  const meta = badgeMeta(badgeKey)
+  const img = badgeImage(badgeKey)
+  const color = meta.color || accent
+  const D = 74
+  const RING = D + 14
+
+  const coin = img ? (
+    <img
+      src={img}
+      alt=""
+      draggable={false}
+      loading="lazy"
+      decoding="async"
+      className="h-full w-full select-none"
+      style={{
+        filter: earned
+          ? `drop-shadow(0 0 13px ${color}) drop-shadow(0 6px 14px rgba(0,0,0,0.5))`
+          : 'grayscale(0.85) brightness(0.55)',
+      }}
+    />
+  ) : (
+    <div
+      className="grid h-full w-full place-items-center rounded-full border-2"
+      style={{
+        color: earned ? color : 'rgba(150,165,200,0.6)',
+        borderColor: earned ? color : 'rgba(120,135,170,0.35)',
+        background: earned ? `${color}1f` : 'rgba(20,26,43,0.7)',
+        boxShadow: earned
+          ? `0 0 0 4px ${color}22, 0 0 26px -6px ${color}`
+          : undefined,
+        filter: earned ? undefined : 'grayscale(0.4)',
+      }}
+    >
+      <Icon name={meta.icon} size={30} />
+    </div>
+  )
+
+  return (
+    <button
+      type="button"
+      onClick={onSelect}
+      aria-pressed={selected}
+      className="group flex cursor-pointer flex-col items-center gap-2 rounded-2xl px-1 py-1.5 outline-none transition-colors focus-visible:bg-white/5"
+      title={`${meta.label} — ${earned ? 'earned' : 'locked'}`}
+    >
+      <div
+        className="relative grid place-items-center"
+        style={{ width: RING, height: RING }}
+      >
+        {/* bloom halo */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute rounded-full blur-2xl"
+          style={{
+            width: RING * 1.4,
+            height: RING * 1.4,
+            background: color,
+            opacity: earned ? 0.28 : 0.04,
+            mixBlendMode: 'screen',
+          }}
+        />
+        {/* thin outer ring (brightens when selected) */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute rounded-full transition-all"
+          style={{
+            width: RING,
+            height: RING,
+            border: `${selected ? 2 : 1}px solid ${
+              selected ? color : earned ? `${color}66` : 'rgba(120,135,170,0.18)'
+            }`,
+            boxShadow: selected ? `0 0 22px -4px ${color}` : undefined,
+          }}
+        />
+
+        {/* the coin */}
+        <motion.div
+          className="relative"
+          style={{ width: D, height: D }}
+          whileHover={reduce ? undefined : { scale: 1.09, y: -3 }}
+          transition={{ type: 'spring', stiffness: 320, damping: 20 }}
+        >
+          {coin}
+          {!earned && (
+            <span
+              className="absolute -bottom-1 -right-1 grid h-6 w-6 place-items-center rounded-full text-muted"
+              style={{
+                background: 'rgba(15,20,34,0.95)',
+                border: '2px solid #070a16',
+              }}
+            >
+              <Icon name="Lock" size={12} />
+            </span>
+          )}
+        </motion.div>
+      </div>
+
+      {/* label — in normal flow, so it never overlaps a neighbouring coin */}
+      <span
+        className="line-clamp-2 max-w-[12ch] text-center text-[11px] font-bold uppercase leading-tight tracking-wider"
+        style={{
+          color: earned ? 'var(--color-ink)' : 'var(--color-muted)',
+          textShadow: '0 2px 8px rgba(0,0,0,0.9)',
+        }}
+      >
+        {meta.label}
+      </span>
+    </button>
   )
 }
 
@@ -245,10 +344,7 @@ function BadgeDetail({
   onClose: () => void
 }) {
   const meta = badgeMeta(badgeKey)
-  const unitSlug = badgeKey.startsWith('unit-')
-    ? badgeKey.slice('unit-'.length)
-    : null
-  const img = unitSlug ? `/badges/physics/${unitSlug}.png` : null
+  const img = badgeImage(badgeKey)
 
   return (
     <motion.div
@@ -256,7 +352,7 @@ function BadgeDetail({
       animate={{ opacity: 1, y: 0 }}
       exit={reduce ? { opacity: 0 } : { opacity: 0, y: 14 }}
       transition={{ type: 'spring', stiffness: 320, damping: 26 }}
-      className="pointer-events-auto flex w-[min(90vw,440px)] items-center gap-3.5 rounded-2xl border bg-black/55 px-4 py-3 backdrop-blur-xl"
+      className="pointer-events-auto flex w-[min(92vw,440px)] items-center gap-3.5 rounded-2xl border bg-black/65 px-4 py-3 backdrop-blur-xl"
       style={{
         borderColor: `${meta.color}55`,
         boxShadow: `0 0 34px -10px ${meta.color}, inset 0 1px 0 rgba(255,255,255,0.06)`,
@@ -326,140 +422,5 @@ function BadgeDetail({
         <Icon name="X" size={16} />
       </button>
     </motion.div>
-  )
-}
-
-function ConstellationBadge({
-  badgeKey,
-  earned,
-  reduce,
-  index,
-  selected,
-  onSelect,
-}: {
-  badgeKey: string
-  earned: boolean
-  reduce: boolean
-  index: number
-  selected: boolean
-  onSelect: () => void
-}) {
-  const meta = badgeMeta(badgeKey)
-  const unitSlug = badgeKey.startsWith('unit-')
-    ? badgeKey.slice('unit-'.length)
-    : null
-  const img = unitSlug ? `/badges/physics/${unitSlug}.png` : null
-  const D = 76
-  const RING = D + 16
-
-  const coin = img ? (
-    <img
-      src={img}
-      alt=""
-      draggable={false}
-      loading="lazy"
-      decoding="async"
-      className="h-full w-full select-none"
-      style={{
-        filter: earned
-          ? `drop-shadow(0 0 14px ${meta.color}) drop-shadow(0 6px 14px rgba(0,0,0,0.5))`
-          : 'grayscale(0.85) brightness(0.55)',
-      }}
-    />
-  ) : (
-    <div
-      className="grid h-full w-full place-items-center rounded-full border-2"
-      style={{
-        color: earned ? meta.color : 'rgba(150,165,200,0.6)',
-        borderColor: earned ? meta.color : 'rgba(120,135,170,0.35)',
-        background: earned ? `${meta.color}1f` : 'rgba(20,26,43,0.7)',
-        boxShadow: earned
-          ? `0 0 0 4px ${meta.color}22, 0 0 26px -6px ${meta.color}`
-          : undefined,
-        filter: earned ? undefined : 'grayscale(0.4)',
-      }}
-    >
-      <Icon name={meta.icon} size={32} />
-    </div>
-  )
-
-  return (
-    <button
-      type="button"
-      onClick={onSelect}
-      className="group relative grid cursor-pointer place-items-center"
-      style={{ width: RING, height: RING }}
-      title={`${meta.label} — ${earned ? 'earned' : 'locked'}`}
-    >
-      {/* bloom halo */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute rounded-full blur-2xl"
-        style={{
-          width: RING * 1.5,
-          height: RING * 1.5,
-          background: meta.color,
-          opacity: earned ? 0.3 : 0.05,
-          mixBlendMode: 'screen',
-        }}
-      />
-      {/* thin outer ring (brightens when selected) */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute rounded-full transition-all"
-        style={{
-          width: RING,
-          height: RING,
-          border: `${selected ? 2 : 1}px solid ${
-            selected
-              ? meta.color
-              : earned
-                ? `${meta.color}66`
-                : 'rgba(120,135,170,0.18)'
-          }`,
-          boxShadow: selected ? `0 0 22px -4px ${meta.color}` : undefined,
-        }}
-      />
-
-      {/* the coin */}
-      <motion.div
-        className="relative"
-        style={{ width: D, height: D }}
-        animate={reduce ? undefined : { y: [0, -6, 0] }}
-        transition={
-          reduce
-            ? undefined
-            : {
-                duration: 5 + (index % 4) * 0.6,
-                repeat: Infinity,
-                ease: 'easeInOut',
-                delay: index * 0.2,
-              }
-        }
-        whileHover={{ scale: 1.08 }}
-      >
-        {coin}
-        {!earned && (
-          <span
-            className="absolute -bottom-1 -right-1 grid h-6 w-6 place-items-center rounded-full text-muted"
-            style={{ background: 'rgba(15,20,34,0.95)', border: '2px solid #070a16' }}
-          >
-            <Icon name="Lock" size={12} />
-          </span>
-        )}
-      </motion.div>
-
-      {/* label */}
-      <span
-        className="pointer-events-none absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-center text-[10px] font-bold uppercase tracking-wider"
-        style={{
-          top: RING + 2,
-          color: earned ? 'var(--color-ink)' : 'var(--color-muted)',
-          textShadow: '0 2px 8px rgba(0,0,0,0.9)',
-        }}
-      >
-        {meta.label}
-      </span>
-    </button>
   )
 }

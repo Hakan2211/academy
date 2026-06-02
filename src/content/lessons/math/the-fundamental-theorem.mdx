@@ -1,0 +1,80 @@
+---
+title: The Fundamental Theorem of Calculus
+subject: math
+contentSlug: math/the-fundamental-theorem
+order: 6
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Two problems, one secret" kind="explain">
+
+We've met calculus's two great problems separately: **differentiation** (the slope of a curve) and **integration** (the area under a curve). They look completely unrelated — one is about steepness, the other about area. The **Fundamental Theorem of Calculus** reveals the staggering truth: they are **exact inverses of each other**. This is one of the deepest results in all of mathematics.
+
+</Step>
+
+<Step title="Slopes, recalled" kind="interactive">
+
+<DerivativeExplorer />
+
+</Step>
+
+<Step title="Areas, recalled" kind="interactive">
+
+<AreaUnderCurve />
+
+</Step>
+
+<Step title="The theorem" kind="explain">
+
+Differentiation and integration **undo each other**, just as ÷ undoes ×:
+
+<Formula tex="\frac{d}{dx}\int_a^x f(t)\,dt = f(x)" block />
+
+In words: if you integrate a function (accumulate its area) and then differentiate the result, you get back exactly what you started with. The practical payoff is enormous — to find an area, you don't need infinitely many rectangles, you just need an **antiderivative**:
+
+<Formula tex="\int_a^b f(x)\,dx = F(b) - F(a), \quad \text{where } F'(x) = f(x)" block />
+
+The brutal infinite sum collapses into "find the antiderivative, plug in the two ends, subtract."
+
+</Step>
+
+<Step title="Why it's so profound" kind="explain">
+
+Think about what this links: the **local** (a slope, defined at a single instant) and the **global** (an area, accumulated across a whole interval) are two faces of the same coin. It's why a speedometer (rate) and a trip-meter (total) carry the same information; why knowing acceleration lets you recover position; why a rate of change always has an accumulation, and vice versa.
+
+This theorem is the hinge on which modern science turns. Newton's laws, electromagnetism, fluid flow, economics, the spread of disease — all are written as equations relating rates (derivatives) and totals (integrals), solvable only because the fundamental theorem ties them together.
+
+<Callout type="info" title="The summit of the calculus world">
+From the humble limit you reached the slope of any curve, the area under any curve, and the breathtaking fact that these are inverse operations. That single insight, more than almost any other, built the modern world — and there is far more mathematics beyond, awaiting at the true summit of this island.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What does the Fundamental Theorem of Calculus establish?"
+  options={[
+    "Differentiation and integration are inverse operations — each undoes the other",
+    "All curves have the same area",
+    "The derivative of every function is zero",
+    "Limits do not exist"
+  ]}
+  correctIndex={0}
+  explanation="The Fundamental Theorem links the two halves of calculus: integrating then differentiating (or vice versa) returns the original function. This makes areas computable via antiderivatives — F(b) − F(a) — instead of infinite sums."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **Fundamental Theorem of Calculus**: differentiation and integration are **inverse operations**.
+- Therefore ∫ₐᵇ f dx = **F(b) − F(a)**, where F is an antiderivative — no infinite sums needed.
+- It unites the **local** (slope) with the **global** (area) — rate and total are two faces of one thing.
+- This link underlies the equations of physics, engineering, and modern science.
+
+</Step>
+
+</Lesson>

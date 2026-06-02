@@ -1,0 +1,80 @@
+---
+title: Why the Formulas Work
+subject: math
+contentSlug: math/why-the-formulas-work
+order: 7
+estimatedMinutes: 10
+---
+
+<Lesson>
+
+<Step title="Behind every formula is a picture" kind="explain">
+
+Mensuration formulas can feel like things to memorise. They're not — each one comes from a vivid idea you can *see*. Understand the pictures and you'll never need to recall a formula again, because you can rebuild it. Here are the most beautiful derivations on the island.
+
+</Step>
+
+<Step title="Where πr² comes from" kind="interactive">
+
+Slide the radius and keep the area πr² in mind for the derivation that follows.
+
+<CircleArea />
+
+</Step>
+
+<Step title="Unrolling a circle into a triangle" kind="explain">
+
+Slice a circle into many thin wedges and lay them out alternately up and down: they form a near-perfect **parallelogram** (a rectangle in the limit). Its height is the radius **r**, and its base is **half the circumference**, πr. So:
+
+<Formula tex="A = \text{base} \times \text{height} = \pi r \times r = \pi r^2" block />
+
+The circle's area formula is just a rectangle's area in disguise — the finer the slices, the better the fit, an idea that becomes **calculus** in the frontier worlds.
+
+</Step>
+
+<Step title="The recurring one-third" kind="interactive">
+
+<VolumeSolids />
+
+</Step>
+
+<Step title="Scaling: the square–cube law" kind="explain">
+
+The most powerful idea in this whole world: when you scale a shape by a factor **k**, its measurements scale differently by dimension:
+
+<Formula tex="\text{lengths} \times k, \qquad \text{areas} \times k^2, \qquad \text{volumes} \times k^3" block />
+
+Double a model's size and its surface area quadruples while its volume grows **eight-fold**. This isn't just maths — it's *why* there are no giant insects (volume/weight outgrows leg strength), why ice cubes melt faster when crushed (more surface per volume), and why small animals lose heat quickly. The square–cube law shapes the living world.
+
+<Callout type="info" title="Geometry reaching into calculus">
+"Slice into infinitely many infinitely thin pieces and add them up" is the thread running through the circle, the cone, and the sphere. Formalised, it becomes integration — the calculus you'll meet at the summit of this island.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A balloon is inflated so its radius triples. By what factor does its volume increase?"
+  options={[
+    "27 times",
+    "3 times",
+    "9 times",
+    "6 times"
+  ]}
+  correctIndex={0}
+  explanation="Volume scales by the cube of the length factor: 3³ = 27. (Its surface area would grow by 3² = 9.) This is the square–cube law."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Every formula has a **picture**: a circle unrolls into a triangle → A = πr².
+- Cones/pyramids are **⅓** of their prism; the sphere is **⅔** of its cylinder.
+- The **square–cube law**: scale by k → lengths ×k, areas ×k², volumes ×k³.
+- "Slice and add" is geometry reaching toward **calculus**.
+
+</Step>
+
+</Lesson>

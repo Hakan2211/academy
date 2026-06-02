@@ -1,0 +1,72 @@
+---
+title: Images & Colour
+subject: computer-science
+contentSlug: computer-science/images-and-color
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="A picture is a grid of numbers" kind="explain">
+
+Zoom far enough into any digital image and it dissolves into a grid of tiny squares: **pixels** (short for "picture elements"). Each pixel is a single solid colour, and that colour is — you guessed it — stored as a number.
+
+So an image is really just a big rectangle of numbers, read left-to-right, top-to-bottom. The computer doesn't "see" a cat; it sees a few million colour values arranged in a grid.
+
+</Step>
+
+<Step title="From pixels to storage" kind="interactive">
+
+How many bits a picture needs depends on how many colours each pixel can be. One bit per pixel gives only black and white; more bits per pixel allow richer palettes — and a bigger file. Paint the grid and watch the size change.
+
+<PixelGrid />
+
+Multiply it up: a modest 1000×1000 photo has a *million* pixels. At 24 bits each that's 3 million bytes — which is exactly why images are so much bigger than text, and why compression matters.
+
+</Step>
+
+<Step title="Mixing colour with light" kind="interactive">
+
+Screens build every colour from three coloured lights — **red, green and blue** — at different brightnesses. Each channel gets one byte (0–255), so a pixel's colour is just three numbers. Mix them below.
+
+<ColorMixer />
+
+All three at full blast make white; all off makes black; equal amounts make grey. This is **additive** colour (adding light), which is why it differs from mixing paint. Three bytes per pixel give over 16 million colours — more than the eye can distinguish.
+
+</Step>
+
+<Step title="Resolution and the limits of detail" kind="explain">
+
+An image's **resolution** is how many pixels it has. More pixels mean finer detail — but also more numbers to store and move. Blow up a low-resolution image and you see the squares; this "pixelation" is the grid showing through.
+
+The same grid-of-numbers idea powers everything visual: camera sensors capture it, screens display it, and the graphics world later in this island manipulates it. Video is just this trick repeated — many images per second, each a grid of numbers, flickering past faster than the eye can follow.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A screen displays the colour yellow. How is a single yellow pixel actually represented?"
+  options={[
+    "A special 'yellow' symbol stored once",
+    "Three numbers — the red, green and blue light levels — that together mix to yellow (high red + high green, low blue)",
+    "A mixture of yellow paint values",
+    "The word 'yellow' encoded in ASCII"
+  ]}
+  correctIndex={1}
+  explanation="Screens use additive RGB colour: each pixel is three numbers giving the brightness of red, green and blue light. High red + high green + low blue mixes to yellow. There's no single 'yellow' value."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A digital image is a **grid of pixels**, each pixel a colour stored as a number.
+- **Bits per pixel** sets how many colours are possible — and the file size.
+- Screens use **additive RGB**: three bytes (red, green, blue) per pixel, ~16.7 million colours.
+- **Resolution** (pixel count) trades detail against storage; video is just many such grids per second.
+
+</Step>
+
+</Lesson>

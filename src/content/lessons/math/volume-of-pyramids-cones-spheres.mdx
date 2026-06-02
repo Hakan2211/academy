@@ -1,0 +1,67 @@
+---
+title: Volume of Pyramids, Cones & Spheres
+subject: math
+contentSlug: math/volume-of-pyramids-cones-spheres
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The pointed and the round" kind="explain">
+
+Prisms keep the same cross-section throughout. **Pyramids** and **cones** taper to a point, and **spheres** curve in every direction. Their volume formulas all carry a telltale fraction — and there's a beautiful reason why.
+
+</Step>
+
+<Step title="Choose a solid" kind="interactive">
+
+<VolumeSolids />
+
+</Step>
+
+<Step title="The one-third family" kind="explain">
+
+A cone or pyramid that *just fits* inside a cylinder or prism holds exactly **one third** of it:
+
+<Formula tex="\text{cone} = \tfrac13 \pi r^2 h, \qquad \text{pyramid} = \tfrac13 \times \text{base area} \times h" block />
+
+You can verify it by pouring: it takes exactly **three** cone-fulls of water to fill the matching cylinder. The taper costs you two-thirds of the space.
+
+</Step>
+
+<Step title="The sphere" kind="explain">
+
+The sphere has its own elegant formula:
+
+<Formula tex="V = \tfrac{4}{3}\pi r^3" block />
+
+Archimedes was so proud of discovering that a sphere is exactly **two-thirds** of its enclosing cylinder that he had the diagram carved on his tombstone. Note the **r³** — volume always involves three lengths, so doubling the radius makes a ball **eight times** bigger.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A cone and a cylinder have the same radius and the same height. The cylinder holds 600 cm³. What does the cone hold?"
+  options={[
+    "200 cm³",
+    "600 cm³",
+    "300 cm³",
+    "1800 cm³"
+  ]}
+  correctIndex={0}
+  explanation="A cone is exactly one third of its enclosing cylinder: 600 ÷ 3 = 200 cm³. Three cone-fulls fill the cylinder."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Cone** ⅓πr²h and **pyramid** ⅓ × base × h — exactly **one third** of the enclosing prism/cylinder.
+- **Sphere** = **4⁄3 πr³** — two thirds of its enclosing cylinder (Archimedes).
+- Volume scales with **r³**: double the radius → eight times the volume.
+
+</Step>
+
+</Lesson>

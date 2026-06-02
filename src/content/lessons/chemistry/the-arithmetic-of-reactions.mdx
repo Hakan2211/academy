@@ -1,0 +1,88 @@
+---
+title: The Arithmetic of Reactions
+subject: chemistry
+contentSlug: chemistry/the-arithmetic-of-reactions
+order: 8
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Putting the toolkit together" kind="explain">
+
+You've built every tool needed to answer chemistry's most practical question: *how much?* This capstone assembles them into one workflow.
+
+The full chain of a real problem is:
+
+**balance the equation → convert grams to moles → apply the mole ratio → handle the limiting reactant → convert back to grams → compare to actual yield.**
+
+Master this and you can predict the outcome of any reaction quantitatively.
+
+</Step>
+
+<Step title="Step 1 — balance first, always" kind="interactive">
+
+Every calculation rides on a correctly balanced equation, because the coefficients *are* the mole ratios. Get this wrong and everything downstream is wrong.
+
+<EquationBalancer />
+
+</Step>
+
+<Step title="Step 2 — let the ratios scale it" kind="interactive">
+
+With the equation balanced, the coefficients drive everything. Once you fix one amount, the rest is locked in.
+
+<StoichRatio />
+
+</Step>
+
+<Step title="A worked example" kind="explain">
+
+*How much ammonia forms from 28 g of nitrogen (N₂) with excess hydrogen?* (N₂ + 3H₂ → 2NH₃; molar masses N₂ = 28, NH₃ = 17.)
+
+1. **Balance:** done — coefficients 1, 3, 2.
+2. **Grams → moles of N₂:** 28 g ÷ 28 g/mol = **1 mol N₂**.
+3. **Mole ratio N₂ → NH₃:** 1 mol × (2/1) = **2 mol NH₃**.
+4. **Moles → grams:** 2 mol × 17 g/mol = **34 g NH₃** (theoretical yield).
+5. If you actually collected 27.2 g, the **percent yield** = 27.2 ÷ 34 × 100 = **80%**.
+
+Grams in, grams out — with moles and the mole ratio as the bridge.
+
+</Step>
+
+<Step title="Why this is the heart of chemistry" kind="explain">
+
+This arithmetic is what turns chemistry from description into **prediction and control**. It tells a pharmacist how much drug a batch yields, a rocket engineer the exact fuel-to-oxidiser mix, and a steelmaker how much ore to charge.
+
+<Callout type="info" title="From counting to changing">
+You can now quantify *how much* reacts. Next we turn to *what kinds* of reactions happen and how to predict their products — and later, how fast they go and how much energy they release. The mole stays with you through all of it.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Using N₂ + 3H₂ → 2NH₃ (N₂ = 28 g/mol, NH₃ = 17 g/mol), what mass of NH₃ is the theoretical yield from 56 g of N₂ with excess H₂?"
+  options={[
+    "17 g",
+    "34 g",
+    "68 g",
+    "56 g"
+  ]}
+  correctIndex={2}
+  explanation="56 g N₂ ÷ 28 g/mol = 2 mol N₂. Ratio 2 NH₃ : 1 N₂ → 4 mol NH₃. 4 mol × 17 g/mol = 68 g NH₃. Grams → moles → ratio → moles → grams."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The full workflow: **balance → grams to moles → mole ratio → limiting reactant → moles to grams → % yield.**
+- The balanced equation's **coefficients are the mole ratios** — everything depends on them.
+- The **mole** is always the middle step between measurable grams.
+- This arithmetic turns chemistry into **prediction and control** — the foundation for every quantitative result.
+
+</Step>
+
+</Lesson>

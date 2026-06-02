@@ -1,0 +1,105 @@
+---
+title: The Edge of Computability
+subject: computer-science
+contentSlug: computer-science/the-edge-of-computability
+order: 6
+estimatedMinutes: 12
+---
+
+<Lesson>
+
+<Step title="Standing at the summit" kind="explain">
+
+You have reached the top of the island. From here, look back at the whole climb: a single **bit**, two states on a wire; **gates** computing logic on bits; gates wired into an adder, a CPU, a whole **computer**; then **algorithms**, **data structures**, **languages**, **operating systems**, **networks**, the **web**, **databases**, **security**, **graphics**, **AI**. Layer upon layer, each built honestly from the one below.
+
+This final world asked the deepest question of all — not *how* to compute, but *what computation is*, and where its **absolute edges** lie. Let's draw the complete map.
+
+</Step>
+
+<Step title="The map of all problems" kind="interactive">
+
+Every problem you could ever pose to a computer falls somewhere on this map. The first, hardest line divides **decidable** (an algorithm exists) from **undecidable** (none can, ever). Inside decidable, a second line splits **tractable** (efficient) from **intractable** (correct but exponential). Click each zone.
+
+<DecidabilityMap />
+
+Three tiers, in widening circles of difficulty:
+
+- **Tractable** — adding numbers, sorting, routing. The bright, comfortable home of everyday software.
+- **Intractable** — optimal n×n chess, exact travelling salesman. Solvable in principle, hopeless at scale.
+- **Undecidable** — does this program halt? No algorithm, on any machine, forever.
+
+Most of computing — and almost all of what feels magical about it — happens in that thin, bright tractable band.
+
+</Step>
+
+<Step title="One thesis ties it together" kind="explain">
+
+What lets us speak of "all computers at once" is the **Church–Turing thesis**: every reasonable model of computation — Turing machines, lambda calculus, your laptop, every programming language — has **exactly the same computational power**. They differ in speed and elegance, never in what is *possible*.
+
+So the map isn't a map of one machine's limits. It is the map for **every** machine, because they are all the same machine in disguise. When we proved the halting problem undecidable for a Turing machine, we proved it for your phone, the largest supercomputer, and every computer not yet invented.
+
+<Callout type="info" title="The boundaries are made of logic, not silicon">
+These edges were charted by **pure reason** — Turing in 1936, before a single electronic computer ran. They are theorems, not engineering limits. No future technology relocates them, any more than a faster engine lets you reach the end of the number line.
+</Callout>
+
+</Step>
+
+<Step title="Back to the gates we built" kind="explain">
+
+Remember the gates-to-a-computer world? A real computer, you saw, is **logic and memory marching to a clock** — gates wired into an ALU, latches wired into RAM, a fetch–decode–execute loop. That machine is, in the precise sense of this world, a **Turing machine** with finite memory: a head (the CPU) reading and writing cells (RAM) by a rule table (its instructions).
+
+So the abstract tape from this world and the silicon you built earlier are the **same idea**, seen from two ends. Turing imagined the machine in 1936; engineers built it from transistors a decade later. The theory came *first*, and it told us — exactly — what the hardware could and could not ever do.
+
+</Step>
+
+<Step title="The open frontiers" kind="interactive">
+
+The map is mostly drawn, but two great regions remain unsettled — and they keep this the most alive field in computing.
+
+The first is the boundary *within* the decidable: **P =? NP**. Are problems that are easy to check also easy to solve? Revisit the contradiction at the heart of undecidability, then sit with the fact that the P-vs-NP line is still, after fifty years, undrawn.
+
+<HaltingProblem />
+
+The second frontier is **quantum computing**. Quantum machines exploit superposition to speed up *certain* problems — most famously factoring, which threatens some of today's cryptography. But be precise: quantum computers are **not** believed to solve NP-complete problems efficiently, and they compute exactly the same *set* of functions as Turing machines. They may shift the **tractable/intractable** line for special problems — they do **not** cross the **decidable/undecidable** line. The undecidable stays undecidable.
+
+</Step>
+
+<Step title="A closing reflection" kind="explain">
+
+So here is the whole island in one breath. **Bits** become **logic**; logic becomes a **machine**; the machine runs **algorithms** on **data**, spoken in **languages**, organised by **operating systems**, connected through **networks** into a **web**, remembered in **databases**, defended by **security**, painted by **graphics**, and lately, learning through **AI**. And all of it — every layer — is the patient repetition of one humble act: a switch flipping, a symbol read, a rule obeyed.
+
+The summit's gift is **perspective**: this boundless tower of capability rests on a foundation we fully understand, *and* it has edges we have proved it can never cross. Computing is neither magic nor limitless. It is the art of doing the **possible** beautifully — while knowing, with mathematical certainty, exactly where the possible ends.
+
+<Callout type="tip" title="The end of the climb">
+You began with one bit and two states. You end knowing what *every* computer can do, what none can do quickly, and what none can ever do at all. That is the beautiful, hard edge of computation — and you can see all the way to it now.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A friend says: 'Quantum computers will eventually solve the halting problem and all NP-complete problems efficiently.' Why is this wrong?"
+  options={[
+    "Quantum computers are slower than ordinary computers",
+    "Quantum computers compute the same functions as Turing machines (so undecidable problems stay undecidable) and are not believed to solve NP-complete problems efficiently",
+    "Quantum computers can only add and subtract",
+    "The halting problem was already solved by ordinary computers"
+  ]}
+  correctIndex={1}
+  explanation="Quantum computers obey the Church–Turing thesis: they compute exactly the same set of functions as Turing machines, so undecidable problems like halting remain undecidable. They speed up certain problems (e.g. factoring) but are not believed to crack NP-complete problems efficiently. They may move the tractable/intractable line for special cases — never the decidable/undecidable one."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- All problems split into **decidable vs undecidable**, and decidable into **tractable vs intractable** — the complete map of computability.
+- The **Church–Turing thesis** makes that map universal: every computer has the same computational power, so the limits hold for all of them.
+- A real computer is a **Turing machine** in silicon — the gates-to-a-computer build and Turing's tape are the same idea from two ends.
+- Open frontiers remain: **P =? NP**, and **quantum computing** (which shifts *tractability* for some problems but never crosses into the undecidable).
+- The island in one line: **bits → gates → machine → algorithms → … → AI** — boundless capability on understood foundations, with edges proven by **pure reason**.
+
+</Step>
+
+</Lesson>

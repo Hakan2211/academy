@@ -1,0 +1,105 @@
+---
+title: Making Virtual Worlds
+subject: computer-science
+contentSlug: computer-science/making-virtual-worlds
+order: 6
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Assembling the whole pipeline" kind="explain">
+
+You now hold every piece of computer graphics. This deep dive bolts them together into the machine that builds entire virtual worlds — the worlds of games, films, simulations and VR.
+
+Recall the data-representation island, where an image was a **grid of numbers**. Everything since has been one long answer to a single question: *how do you turn numbers and maths into believable images and motion?* Pixels gave us a canvas; transforms let us move shapes; meshes gave us 3D form; lighting made it look solid; animation made it move. The **rendering pipeline** is the assembly line that runs all of it, dozens of times a second.
+
+</Step>
+
+<Step title="The rendering pipeline, stage by stage" kind="explain">
+
+To draw a single frame, the computer marches every model through a fixed sequence of stages:
+
+- **Model** — start with a mesh: vertices, edges and faces in their own local space.
+- **Transform** — translate, rotate and scale each model into the shared **world**, then into the camera's view (the matrix maths from the 2D lesson, now in 3D).
+- **Project** — flatten the 3D scene onto the 2D screen with perspective, so distant things shrink toward a vanishing point.
+- **Rasterize / shade** — work out which pixels each triangle covers and compute each pixel's colour from the lighting (the `N · L` dot product), resolving which surfaces are in front with a depth buffer.
+- **Frame** — the finished grid of pixels is shown, then the whole pipeline runs again for the next frame.
+
+Model, transform, project, shade, repeat — that loop, running fast enough, *is* a virtual world.
+
+</Step>
+
+<Step title="The mesh and its shading" kind="interactive">
+
+Here are the two halves of the pipeline side by side. The wireframe is the **geometry** — pure vertices and edges being transformed and projected every frame:
+
+<WireframeMesh />
+
+And shading is what the **rasterize/shade** stage adds on top — turning that bare geometry into something that looks solid, by computing brightness from the surface normals and the light:
+
+<ShadingLab />
+
+A real renderer does both at once, for millions of triangles, and lands a finished frame on your screen — all before you notice any delay.
+
+</Step>
+
+<Step title="The GPU: doing it a million times at once" kind="explain">
+
+Here's the catch that shapes everything: a single frame might need the *same* calculation — transform this vertex, shade this pixel — run for **millions** of points. A normal CPU, with a few powerful cores, would crawl.
+
+So graphics runs on a **GPU** (graphics processing unit): a chip with **thousands** of small cores built to do the same simple operation on heaps of data simultaneously. This is **parallelism**. Because every vertex transform and every pixel's `N · L` is independent, they can all be computed at the same time. The GPU is why your phone can render a 3D world sixty times a second — and, as it happens, why the very same chips now power machine learning, which is also drowning in identical parallel maths.
+
+<Callout type="tip" title="Why graphics drove parallel hardware">
+Computer graphics is *embarrassingly parallel* — a sea of identical, independent calculations. That demand is exactly what pushed the industry to build massively parallel GPUs, hardware that has since transformed far more than games.
+</Callout>
+
+</Step>
+
+<Step title="Real-time vs offline: games and films" kind="explain">
+
+The same pipeline runs under two very different deadlines.
+
+**Real-time rendering** powers games and VR: each frame must be finished in a few **milliseconds**, live, in response to your input. It leans on fast **rasterization** and clever shortcuts — pre-baked shadows, approximate reflections — to stay smooth. The goal is *fast enough to fool you in motion*.
+
+**Offline rendering** powers feature films: there's no rush, so each frame can take **hours**, computed long before you watch. It uses **ray tracing**, following light rays as they bounce, refract and scatter through a scene to produce reflections and shadows of near-photographic accuracy. The goal is *perfect, whatever it costs*.
+
+The two are converging fast. Modern GPUs now do **real-time ray tracing** — bringing film-grade lighting into live games — and trained neural networks **upscale and denoise** frames so the hardware can render less and still look superb.
+
+</Step>
+
+<Step title="Where graphics is going" kind="explain">
+
+Three currents are pulling the field forward. **Real-time ray tracing** is erasing the old gap between game and film quality. **Virtual and augmented reality** demand two high-resolution frames at very high fps with near-zero lag — graphics' most punishing challenge yet. And **AI-assisted rendering** uses neural networks to generate, upscale and even invent frames, blurring the line between *computing* an image and *learning* one.
+
+The constant through all of it is the idea you've carried since the first island: **everything is numbers, and clever maths turns those numbers into worlds.** A glowing planet, a rushing river, a character's smile — each is, underneath, vertices transformed, points projected, and dot products of light against surface, computed millions of times a second.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why is graphics work run on a GPU with thousands of small cores rather than a CPU with a few large ones?"
+  options={[
+    "GPUs store more colours than CPUs can",
+    "A frame requires the same simple calculation (transform a vertex, shade a pixel) on millions of independent points, so it parallelises across thousands of cores at once",
+    "CPUs cannot do multiplication, only addition",
+    "GPUs render in vector format while CPUs only do raster"
+  ]}
+  correctIndex={1}
+  explanation="Rendering is 'embarrassingly parallel': the same operation must run on millions of independent vertices and pixels per frame. A GPU's thousands of small cores do them all at once, which a few large CPU cores cannot match — the reason GPUs (and now AI) rely on massive parallelism."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **rendering pipeline** runs every model through **model → transform → project → rasterize/shade → frame**, repeated each frame.
+- Each stage is the maths from earlier lessons: transforms, perspective projection, and `N · L` shading with a depth buffer.
+- A **GPU** finishes frames fast by **parallelism** — thousands of cores doing the same independent calculation at once.
+- **Real-time** rendering (games/VR, milliseconds, rasterization) trades accuracy for speed; **offline** rendering (films, hours, ray tracing) trades speed for photorealism.
+- The frontier is **real-time ray tracing, VR/AR, and AI-assisted rendering** — but it all stays *numbers turned into worlds by maths*.
+
+</Step>
+
+</Lesson>

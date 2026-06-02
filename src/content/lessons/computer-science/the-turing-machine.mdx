@@ -1,0 +1,80 @@
+---
+title: The Turing Machine
+subject: computer-science
+contentSlug: computer-science/the-turing-machine
+order: 3
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Turing's 1936 idea" kind="explain">
+
+In **1936**, before any electronic computer existed, a 24-year-old named **Alan Turing** asked what it means to *compute* something. His answer was a machine so simple it sounds like a toy — yet it would define the limits of computation forever.
+
+Picture a person with an endless strip of paper, reading and rewriting one symbol at a time, following a small rulebook, their attention on a single square. Strip the human away and you have a **Turing machine**: an idealised model of "following a procedure" with pencil and unlimited paper.
+
+</Step>
+
+<Step title="Tape, head, state, and rules" kind="explain">
+
+A Turing machine has exactly four parts:
+
+- An infinite **tape** of cells, each holding one symbol.
+- A **head** that sits over one cell and can read or write it, then move left or right.
+- A current **state**, from a finite set.
+- A **transition table** of rules: given *(state, symbol read)*, it says what to **write**, which way to **move**, and which state to enter next.
+
+That's the entire machine. The finite-state machine of the last lesson is just a Turing machine that may only move right and never writes — so the tape becomes unlimited, rewritable memory, and *that* is the leap in power.
+
+</Step>
+
+<Step title="Run one yourself" kind="interactive">
+
+This machine **adds 1 to a binary number**. It walks right to the end of the number, then carries leftward: flip a `1` to `0` and keep carrying, or flip a `0` to `1` and stop. Step through it, or hit Run, and watch the tape, head, and state change by the rules alone.
+
+<TuringMachine />
+
+No cleverness lives in the machine — only blind rule-following. Yet by reading, writing, and moving, it performs real arithmetic. Chain enough such rules and you can compute *anything* a programming language can.
+
+</Step>
+
+<Step title="The Church–Turing thesis" kind="explain">
+
+Here is the staggering claim. **Anything that can be computed at all can be computed by a Turing machine.** Different researchers invented totally different models — Church's lambda calculus, recursive functions, register machines — and every one turned out to have *exactly the same power* as Turing's. This convergence is the **Church–Turing thesis**: the Turing machine *is* the definition of computation.
+
+<Callout type="info" title="The universal machine">
+Turing went further. He described a **universal Turing machine**: one machine that reads a *description* of any other Turing machine from its tape and then simulates it. That is the deep idea behind every real computer — a single piece of hardware that runs any program you feed it. Your phone is a universal machine.
+</Callout>
+
+So your laptop, a supercomputer, and Python are all **Turing-complete** — equivalent in raw computational power to this little tape-and-head device. They differ in speed and convenience, never in what is *possible*.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What does the Church–Turing thesis claim about the Turing machine?"
+  options={[
+    "It is the fastest possible computer",
+    "Anything that can be computed by any method can be computed by a Turing machine — it defines computation itself",
+    "It can solve any problem given enough memory",
+    "It was the first physical computer ever built"
+  ]}
+  correctIndex={1}
+  explanation="The Church–Turing thesis says the Turing machine captures the full notion of 'computable.' Every independently invented model of computation proved equally powerful, so anything computable by any means is computable by a Turing machine. It says nothing about speed, and — crucially — not everything CAN be computed, as the next lesson shows."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Alan Turing (1936)** modelled computation as a **tape, head, state, and rule table** — unlimited rewritable memory.
+- Stepping by simple rules, it performs real computation (here, adding 1 in binary).
+- The **Church–Turing thesis**: anything computable by *any* method is computable by a Turing machine.
+- A **universal Turing machine** simulates any other from a description — the idea behind every real computer.
+- All powerful languages and machines are **Turing-complete**: equal in what is *possible*, differing only in speed.
+
+</Step>
+
+</Lesson>

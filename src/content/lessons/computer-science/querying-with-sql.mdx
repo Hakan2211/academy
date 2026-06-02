@@ -1,0 +1,85 @@
+---
+title: Querying with SQL
+subject: computer-science
+contentSlug: computer-science/querying-with-sql
+order: 3
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Asking the database questions" kind="explain">
+
+We have tables full of data linked by keys. Now the payoff: getting answers back out. You do that with **SQL** — Structured Query Language — the language almost every relational database speaks.
+
+The beautiful thing about SQL is that it's **declarative**. You describe **what** data you want, and the DBMS figures out **how** to fetch it — which rows to scan, which index to use, what order to do things in. You state the question; the engine plans the work.
+
+</Step>
+
+<Step title="SELECT, FROM, WHERE, ORDER BY" kind="explain">
+
+The workhorse of SQL is the `SELECT` statement. A simple query reads almost like English:
+
+```sql
+SELECT title, year, rating
+FROM movies
+WHERE genre = 'Sci-Fi'
+ORDER BY rating DESC;
+```
+
+Read it as: *choose these **columns**, **from** this table, keeping only **rows where** the condition holds, sorted by rating, highest first.* Four little clauses — `SELECT` (which columns), `FROM` (which table), `WHERE` (which rows), `ORDER BY` (what order) — cover an enormous amount of everyday querying.
+
+</Step>
+
+<Step title="Build a query and watch it run" kind="interactive">
+
+Try it live. Pick the columns to `SELECT`, choose a `WHERE` condition, and flip the sort order. The generated SQL appears above, and the result table updates instantly.
+
+<SqlQuery />
+
+Change the condition and notice you never told the database *how* to filter — you only said *what* you wanted. That's the declarative style at work: the same query would run over six rows or six billion.
+
+</Step>
+
+<Step title="Joins: recombining linked tables" kind="interactive">
+
+Remember normalised data is split across tables. To answer "which customer placed each order?" you must put two tables back together. That's a **JOIN**: it matches rows from two tables on a **shared key**.
+
+<JoinViz />
+
+```sql
+SELECT *
+FROM orders
+JOIN customers ON orders.customer_id = customers.customer_id;
+```
+
+Each order's `customer_id` is matched against the `customer_id` primary key in Customers, gluing the customer's name onto their orders. Joins are how relational databases stay tidy (data stored once) yet still answer rich questions on demand.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why is SQL described as a 'declarative' language?"
+  options={[
+    "Because you must declare every variable before using it",
+    "Because you describe what data you want, and the database engine works out how to retrieve it",
+    "Because it can only declare new tables, not read them",
+    "Because queries run in the exact step-by-step order you type them"
+  ]}
+  correctIndex={1}
+  explanation="In a declarative language you specify the desired result, not the procedure. A SQL query states which columns, rows and order you want; the DBMS's query planner decides how to actually fetch and filter the data. You say what, it figures out how."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **SQL** is the standard language for querying relational databases, and it is **declarative**: you state *what* you want, the engine decides *how*.
+- A `SELECT` query uses **SELECT** (columns), **FROM** (table), **WHERE** (row condition), and **ORDER BY** (sort).
+- A **JOIN** matches rows from two tables on a **shared key**, recombining normalised data.
+- The same query scales from a handful of rows to billions — you never rewrite the "how".
+
+</Step>
+
+</Lesson>

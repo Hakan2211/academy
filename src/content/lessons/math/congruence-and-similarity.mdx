@@ -1,0 +1,76 @@
+---
+title: Congruence & Similarity
+subject: math
+contentSlug: math/congruence-and-similarity
+order: 4
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Identical versus same-shape" kind="explain">
+
+Two words with precise meanings:
+
+- **Congruent** — exactly the same shape *and* size. You could pick one up and place it perfectly on the other (allowing flips and turns).
+- **Similar** — the same shape but possibly a different size: one is a scaled copy of the other.
+
+Every congruent pair is also similar (scale factor 1), but not vice versa.
+
+</Step>
+
+<Step title="Compare them" kind="interactive">
+
+<CongruenceSimilarity />
+
+</Step>
+
+<Step title="When are triangles congruent?" kind="explain">
+
+You don't need to check all six measurements (3 sides, 3 angles). Any **one** of these conditions guarantees two triangles are congruent:
+
+- **SSS** — three sides match.
+- **SAS** — two sides and the angle between them.
+- **ASA** — two angles and the side between them.
+- **RHS** — right angle, hypotenuse, and one side.
+
+These are the proof tools of geometry — establish one and the triangles are identical.
+
+</Step>
+
+<Step title="Similar triangles and proportions" kind="explain">
+
+**Similar** triangles have equal angles and sides in the same ratio. That single fact is enormously useful: it lets you find unknown lengths by **proportion**.
+
+<Formula tex="\frac{\text{side in big}}{\text{matching side in small}} = \text{scale factor (same for all sides)}" block />
+
+It's how you measure a tree's height from its shadow, or a building from a photo — set up similar triangles and solve a proportion. (Areas scale by the factor², as always.)
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Two similar triangles: the small one has sides 3, 4, 5; the large one's shortest side is 9. What is the large one's longest side?"
+  options={[
+    "15",
+    "12",
+    "11",
+    "45"
+  ]}
+  correctIndex={0}
+  explanation="The scale factor is 9 ÷ 3 = 3 (matching the shortest sides). The longest side scales the same way: 5 × 3 = 15."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Congruent** = same shape and size; **similar** = same shape, scaled.
+- Triangle congruence: **SSS, SAS, ASA, RHS** — one is enough.
+- **Similar** triangles: equal angles, sides in a fixed ratio — solve unknowns by **proportion**.
+- Areas of similar shapes scale by the factor **squared**.
+
+</Step>
+
+</Lesson>

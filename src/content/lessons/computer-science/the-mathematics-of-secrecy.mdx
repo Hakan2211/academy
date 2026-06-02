@@ -1,0 +1,114 @@
+---
+title: The Mathematics of Secrecy
+subject: computer-science
+contentSlug: computer-science/the-mathematics-of-secrecy
+order: 7
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Secrecy you can prove" kind="explain">
+
+We have used a lovely picture — mixing paint — to explain public-key cryptography. But paint is just an analogy. The real thing rests on **mathematics**, and that is what makes it trustworthy. Modern encryption is not secure because the method is hidden; it is secure because breaking it would require solving a maths problem so hard that all the computers on Earth, running until the sun dies, could not finish.
+
+This is the deepest idea in the whole subject: we build perfect-seeming secrecy on untrusted networks out of nothing but **numbers and the limits of computation**. Let us see how.
+
+</Step>
+
+<Step title="One-way functions: the asymmetry of effort" kind="explain">
+
+Everything hinges on **one-way functions** — calculations that are easy to perform but extraordinarily hard to undo. We met the idea as un-mixable paint. In mathematics, the classic example is **multiplying primes**.
+
+Multiplying two large prime numbers together is fast and easy, even by hand for small ones:
+
+<Formula tex="61 \times 53 = 3233" block />
+
+But run it backwards — given only **3233**, find which two primes were multiplied — and you must *search*. For tiny numbers that is quick. For numbers hundreds of digits long, **factoring** is believed to take longer than the age of the universe, even though multiplying those same numbers takes a fraction of a second. Easy forwards, infeasible backwards: the perfect lock.
+
+</Step>
+
+<Step title="Clock arithmetic" kind="explain">
+
+Real cryptography adds a second ingredient that makes numbers "wrap around" and lose their tracks: **modular arithmetic**, or clock arithmetic. On a 12-hour clock, 5 hours after 9 o'clock is not 14 — it is 2. We wrote `9 + 5 = 2 (mod 12)`: take the remainder after dividing by the modulus.
+
+Raising numbers to powers under a modulus is another one-way street. Computing the power is easy:
+
+<Formula tex="c = m^e \bmod n" block />
+
+But going the other way — recovering the exponent that produced a given result (the **discrete logarithm**) — has no known fast method. This wrap-around is exactly what hides the "private colours" in Diffie–Hellman: the public values are powers taken mod a huge prime, and un-doing them means solving a problem nobody can solve quickly.
+
+</Step>
+
+<Step title="RSA: a lock built from primes" kind="explain">
+
+The famous **RSA** algorithm assembles these pieces into a public/private key pair. You pick two enormous secret primes and multiply them to get a public number `n`. Encrypting a message `m` is one modular exponentiation:
+
+<Formula tex="c = m^e \bmod n" block />
+
+and decrypting is another, using a private exponent `d` derived from those secret primes:
+
+<Formula tex="m = c^d \bmod n" block />
+
+Anyone can encrypt with the public `e` and `n`. But computing the private `d` requires knowing the two original primes — and recovering them from `n` means **factoring** a number hundreds of digits long. The public key is safe to publish precisely because the factoring problem stands between an attacker and the private key.
+
+<Callout type="info" title="The same idea, two costumes">
+RSA leans on the hardness of **factoring**; Diffie–Hellman leans on the **discrete logarithm**. Different problems, same shape: a one-way function whose forward direction is trivial and whose reverse direction is, as far as anyone knows, computationally hopeless.
+</Callout>
+
+</Step>
+
+<Step title="Watching the asymmetry, one more time" kind="interactive">
+
+Step back to the colour exchange — but now read it as mathematics. The public base is a shared number; each private colour is a secret exponent; each public mixture is that base raised to the secret power, mod a prime. The shared secret is the base raised to *both* secrets.
+
+<PublicKeyExchange />
+
+The eavesdropper has the base and both public mixtures, yet cannot find either secret exponent — that is the discrete logarithm problem, and it is hard. "Un-mixing paint" was never just a metaphor; it is what the maths actually refuses to let an attacker do.
+
+</Step>
+
+<Step title="Hashing rests on hardness too" kind="interactive">
+
+The same philosophy powers hashing. A cryptographic hash is one-way not because of a secret, but because *finding an input that produces a chosen digest* would require an astronomically large search. And the avalanche effect ensures no clever shortcut links small input changes to small output changes.
+
+<HashViz />
+
+So the two great tools — encryption and hashing — are both monuments to the same insight: certain computations are easy one way and practically impossible the other. Security is the art of standing the entire internet's trust on that gap.
+
+</Step>
+
+<Step title="The quantum cloud on the horizon" kind="explain">
+
+There is a catch on the horizon. Today's hardness assumptions hold for ordinary computers. But a sufficiently large **quantum computer** could run an algorithm (Shor's algorithm) that factors big numbers and cracks discrete logarithms *efficiently* — which would break RSA and Diffie–Hellman as we know them.
+
+Such machines do not yet exist at the needed scale, but the threat is taken seriously enough that researchers are already standardising **post-quantum cryptography**: new one-way problems (based on mathematical lattices and other structures) that even quantum computers are not known to solve quickly. The deep pattern endures — find a hard problem, build trust on its hardness — only the problems change. Hashing, notably, is far less affected, and simply using longer keys keeps it safe.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="RSA publishes the number n (the product of two secret primes) as part of the public key, yet remains secure. Why does revealing n NOT let an attacker decrypt messages — and what future technology threatens this?"
+  options={[
+    "n is encrypted, so the attacker cannot read it; nothing threatens RSA",
+    "Recovering the private key from n requires factoring n into its primes, which is infeasible for huge numbers on ordinary computers — but a large quantum computer running Shor's algorithm could factor efficiently, breaking it",
+    "n is chosen randomly each time, so it carries no useful information at all",
+    "The attacker would need the message's hash, which is also one-way"
+  ]}
+  correctIndex={1}
+  explanation="The private key can only be derived by factoring n back into its two primes, and factoring hundreds-of-digit numbers is believed infeasible for classical computers — so publishing n is safe today. A large-scale quantum computer running Shor's algorithm could factor quickly, which is why post-quantum cryptography is being developed now."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Modern encryption is secure not through secrecy of method but through **computational hardness**: breaking it would require solving an infeasible maths problem.
+- **One-way functions** — easy forwards, infeasible backwards — are the core; multiplying primes is easy, **factoring** the product is not, and **modular arithmetic** hides numbers further (the **discrete logarithm** problem).
+- **RSA** builds a key pair from two secret primes (security rests on factoring); **Diffie–Hellman** rests on discrete logs; **hashing** rests on the infeasibility of reversing a digest.
+- A large **quantum computer** could break factoring- and discrete-log-based schemes (Shor's algorithm), motivating **post-quantum cryptography** — same deep pattern, harder problems.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,80 @@
+---
+title: The Power of the Unknown
+subject: math
+contentSlug: math/the-power-of-the-unknown
+order: 7
+estimatedMinutes: 10
+---
+
+<Lesson>
+
+<Step title="Why a letter changes everything" kind="explain">
+
+Arithmetic answers one question at a time: 7 + 3 = 10. Algebra answers *infinitely many at once*. The moment you write a letter, you stop talking about a single number and start talking about **every** number. That leap — from the specific to the general — is what makes algebra the engine of all higher mathematics.
+
+</Step>
+
+<Step title="The think-of-a-number trick, explained" kind="explain">
+
+"Think of a number. Double it. Add 10. Halve it. Subtract your original number." The answer is always **5** — and algebra shows exactly why. Let the number be n:
+
+<Formula tex="n \to 2n \to 2n + 10 \to \frac{2n+10}{2} = n + 5 \to (n+5) - n = 5" block />
+
+The n vanishes. The trick *can't* fail, for any starting number, and algebra **proves** it — no amount of testing examples could.
+
+</Step>
+
+<Step title="Proof versus evidence" kind="explain">
+
+Check that "the sum of two odd numbers is even" for 3 + 5, 7 + 11, 21 + 9 … and you have **evidence**, not proof — maybe the millionth case fails. Algebra settles it forever. Write any odd numbers as 2a + 1 and 2b + 1:
+
+<Formula tex="(2a + 1) + (2b + 1) = 2a + 2b + 2 = 2(a + b + 1)" block />
+
+That's 2 × (a whole number) — even, guaranteed, for **all** odd numbers at once. This is the difference between science and mathematics: a single algebraic argument outranks a billion examples.
+
+</Step>
+
+<Step title="Structure you can hold in your hand" kind="interactive">
+
+Algebra tiles make the abstract physical — an expression becomes a shape you can rearrange, and rearranging without changing the total *is* a proof of equivalence.
+
+<AlgebraTiles />
+
+</Step>
+
+<Step title="A glimpse of its reach" kind="explain">
+
+This one idea — a symbol standing for any quantity — unlocks everything ahead: equations that find unknowns, functions that describe how quantities depend on each other, the graphs that draw them, and ultimately the calculus that captures change itself. Every later world on this island is built on the unknown letter you just met.
+
+<Callout type="info" title="From al-jabr to everything">
+The word *algebra* comes from al-Khwārizmī's 9th-century book *al-jabr* — "the reunion of broken parts," his name for balancing an equation. A method for restoring balance became the language of the universe.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A student checks that n² + n is even for n = 1, 2, 3, 4 and concludes it's always even. What's the status of this claim?"
+  options={[
+    "It's true, but the checks are only evidence — a proof factorises n² + n = n(n+1), the product of consecutive integers, one of which must be even",
+    "It's proven, because four examples is enough",
+    "It's false, since n² + n is sometimes odd",
+    "It can never be proven either way"
+  ]}
+  correctIndex={0}
+  explanation="Examples only suggest. The proof: n² + n = n(n + 1) is a product of two consecutive integers, and one of any two consecutive integers is even — so the product is always even. Algebra turns a pattern into a certainty."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A letter lets you reason about **every** number at once — the specific becomes the general.
+- Algebra **proves** results (think-of-a-number, odd + odd = even) that examples can only hint at.
+- A **proof** beats any number of examples — the line between mathematics and mere evidence.
+- The unknown is the foundation of every world ahead: equations, functions, graphs, calculus.
+
+</Step>
+
+</Lesson>

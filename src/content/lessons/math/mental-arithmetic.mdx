@@ -1,0 +1,78 @@
+---
+title: Mental Arithmetic
+subject: math
+contentSlug: math/mental-arithmetic
+order: 4
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Calculate like a mathematician, not a machine" kind="explain">
+
+Strong mental arithmetic isn't about being a human calculator. It's about **choosing the easy path** — rearranging a sum so the numbers become friendly. A few reliable strategies cover almost everything.
+
+</Step>
+
+<Step title="Multiplying and dividing by 10, 100, 1000" kind="explain">
+
+This is the single most useful shortcut, and place value explains it. Multiplying by 10 slides every digit one column to the **left**; dividing by 10 slides them **right**.
+
+<Formula tex="46 \times 100 = 4600 \qquad 4600 \div 10 = 460" block />
+
+"Adding a zero" is just a side effect of the digits moving — which is why it fails for decimals: 4.6 × 10 = 46, no zero in sight.
+
+</Step>
+
+<Step title="Watch the digits slide" kind="interactive">
+
+Press **× 10** and **÷ 10** and keep your eye on the columns, not the decimal point.
+
+<PlaceValue />
+
+</Step>
+
+<Step title="Partition, compensate, double and halve" kind="explain">
+
+Three more strategies that turn hard sums into easy ones:
+
+- **Partition** — break a number into parts: 34 + 28 = (30 + 20) + (4 + 8) = 50 + 12 = 62.
+- **Compensate** — round, then fix it: 47 + 9 = 47 + 10 − 1 = 56.
+- **Double & halve** — for multiplication: 16 × 5 = 8 × 10 = 80.
+
+</Step>
+
+<Step title="Round and adjust on the line" kind="interactive">
+
+Compensation is just a friendly jump and a small correction. Set the start, then make the change a round number — you can always nudge afterwards.
+
+<NumberLine min={0} max={20} jumps />
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the quickest mental route to 25 × 16?"
+  options={[
+    "Multiply 25 × 16 digit by digit on paper",
+    "Double-and-halve: 25 × 16 = 50 × 8 = 100 × 4 = 400",
+    "25 × 16 = 25 + 16 = 41",
+    "25 × 16 = 25 × 10 = 250"
+  ]}
+  correctIndex={1}
+  explanation="Doubling one factor and halving the other keeps the product the same: 25 × 16 → 50 × 8 → 100 × 4 = 400. Friendly numbers, no paper needed."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **× / ÷ by 10, 100, 1000**: slide the digits left or right (don't just 'add a zero').
+- **Partition** a number into easy parts and add the parts.
+- **Compensate**: round to something friendly, then correct.
+- **Double and halve** to simplify a multiplication.
+
+</Step>
+
+</Lesson>

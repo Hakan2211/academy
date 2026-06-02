@@ -1,0 +1,75 @@
+---
+title: The Sine Rule
+subject: math
+contentSlug: math/the-sine-rule
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Trig without a right angle" kind="explain">
+
+SOH-CAH-TOA only works in right triangles. For *any* triangle, the **sine rule** links each side to the angle opposite it:
+
+<Formula tex="\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}" block />
+
+Each side divided by the sine of its opposite angle gives the **same** value, every time.
+
+</Step>
+
+<Step title="The ratio stays constant" kind="interactive">
+
+Adjust the triangle and watch all three ratios stay equal.
+
+<SineRule />
+
+</Step>
+
+<Step title="When to use it" kind="explain">
+
+The sine rule needs a matched **side–opposite-angle pair**, plus one more piece. Use it when you know:
+
+- two angles and any side (find the others), or
+- two sides and an angle opposite one of them.
+
+For example, with A = 40°, B = 60°, and side a = 8: then C = 80°, and b = a · sin B / sin A = 8 × sin 60° / sin 40° ≈ 10.8. Set up the rule, cross-multiply, solve.
+
+</Step>
+
+<Step title="The labelling convention" kind="explain">
+
+Lower-case letters are **sides**, capitals are **angles**, and each side sits **opposite** its same-letter angle: side a faces angle A. Getting this pairing right is the whole game — the side and its opposite angle always travel together in the formula.
+
+<Callout type="tip" title="Side up or angle up?">
+To find a **side**, write the rule with sides on top (a/sin A = b/sin B). To find an **angle**, flip it (sin A / a = sin B / b) so the unknown sine is on top.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In a triangle, A = 30°, a = 5, and B = 90°. Find side b (opposite the 90° angle)."
+  options={[
+    "10",
+    "5",
+    "2.5",
+    "8.66"
+  ]}
+  correctIndex={0}
+  explanation="a/sin A = b/sin B → 5/sin 30° = b/sin 90°. Since sin 30° = 0.5 and sin 90° = 1: b = 5 × 1 / 0.5 = 10."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **sine rule** works in any triangle: a/sin A = b/sin B = c/sin C.
+- Sides (lower-case) sit **opposite** their same-letter **angles** (capitals).
+- Use it with a side–opposite-angle pair plus one more fact.
+- Sides on top to find a side; sines on top to find an angle.
+
+</Step>
+
+</Lesson>

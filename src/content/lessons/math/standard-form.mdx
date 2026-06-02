@@ -1,0 +1,73 @@
+---
+title: Standard Form
+subject: math
+contentSlug: math/standard-form
+order: 6
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Writing the huge and the tiny" kind="explain">
+
+The Sun's mass is about 1 990 000 000 000 000 000 000 000 000 000 kg. A hydrogen atom is 0.000 000 000 1 m across. Writing these out is error-prone and unreadable. **Standard form** (scientific notation) fixes that with powers of ten:
+
+<Formula tex="a \times 10^{n}, \qquad 1 \le a < 10" block />
+
+A single digit before the point, times a power of ten that records the scale.
+
+</Step>
+
+<Step title="Slide the scale" kind="interactive">
+
+<StandardForm />
+
+</Step>
+
+<Step title="Converting both ways" kind="explain">
+
+The exponent counts how far the decimal point moves:
+
+- **Big numbers** → positive power. 6 200 000 = 6.2 × 10⁶ (point moved 6 places left).
+- **Tiny numbers** → negative power. 0.00043 = 4.3 × 10⁻⁴ (point moved 4 places right).
+
+The rule for *a*: exactly one non-zero digit before the decimal point. 62 × 10⁵ is the right value but **not** standard form — fix it to 6.2 × 10⁶.
+
+</Step>
+
+<Step title="Why scientists live in standard form" kind="explain">
+
+Beyond saving ink, standard form makes the **size** of a number obvious at a glance — the exponent *is* the scale. And it makes multiplying and dividing easy, because you just use the index laws on the powers of ten:
+
+<Formula tex="(3 \times 10^{4}) \times (2 \times 10^{5}) = 6 \times 10^{9}" block />
+
+Multiply the fronts, add the powers. That's the engine you'll run in the deep dive.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Write 0.00076 in standard form."
+  options={[
+    "7.6 × 10⁻⁴",
+    "7.6 × 10⁴",
+    "76 × 10⁻⁵",
+    "0.76 × 10⁻³"
+  ]}
+  correctIndex={0}
+  explanation="Move the point to just after the first non-zero digit (7), which is 4 places right, so the power is −4: 7.6 × 10⁻⁴. The others aren't in valid standard form (a must be between 1 and 10)."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Standard form** is a × 10ⁿ with **1 ≤ a &lt; 10**.
+- Positive power = big number; negative power = tiny number; the power counts decimal-point moves.
+- Exactly **one** non-zero digit before the point.
+- Multiply/divide by combining the fronts and **adding/subtracting** the powers.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,74 @@
+---
+title: Completing the Square
+subject: math
+contentSlug: math/completing-the-square
+order: 5
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="When factorising won't help" kind="explain">
+
+Most quadratics don't factorise into tidy whole numbers. **Completing the square** is a universal method that rewrites *any* quadratic as a perfect square plus a constant:
+
+<Formula tex="x^2 + bx + c = \left(x + \tfrac{b}{2}\right)^2 - \left(\tfrac{b}{2}\right)^2 + c" block />
+
+Once it's a squared bracket, you can solve it directly by square-rooting — no factor-hunting needed.
+
+</Step>
+
+<Step title="Why half of b?" kind="interactive">
+
+Geometrically, x² + bx is a square plus a strip. Split the strip in two, wrap it round, and you've *almost* built a bigger square of side (x + b/2) — missing only the corner (b/2)².
+
+<CompleteSquare />
+
+</Step>
+
+<Step title="Solving with it" kind="explain">
+
+Take x² + 6x + 1 = 0. Half of 6 is 3, and 3² = 9:
+
+<Formula tex="(x+3)^2 - 9 + 1 = 0 \;\to\; (x+3)^2 = 8 \;\to\; x + 3 = \pm\sqrt{8}" block />
+
+So x = −3 ± 2√2 — exact answers a factorisation could never have given. The **± from the square root** is where the two roots come from.
+
+</Step>
+
+<Step title="A bonus: the vertex for free" kind="explain">
+
+Completed-square form also reveals the parabola's **lowest (or highest) point** instantly. Since a square is never negative, (x + 3)² − 9 is smallest when the bracket is 0:
+
+<Formula tex="y = (x+3)^2 - 9 \;\Rightarrow\; \text{vertex at } (-3, -9)" block />
+
+The turning point sits at x = −b/2 — the very number you halved. That's why this form is prized in the next world, Functions & Graphs.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Write x² + 8x + 3 in completed-square form."
+  options={[
+    "(x + 4)² − 13",
+    "(x + 4)² + 3",
+    "(x + 8)² − 61",
+    "(x + 4)² − 16"
+  ]}
+  correctIndex={0}
+  explanation="Half of 8 is 4, and 4² = 16. So x² + 8x + 3 = (x + 4)² − 16 + 3 = (x + 4)² − 13."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Completing the square** rewrites any quadratic as (x + b/2)² − (b/2)² + c.
+- Use **half the x-coefficient**; subtract its square to compensate.
+- Solve by **square-rooting** — the ± gives both roots, even irrational ones.
+- The form also hands you the **vertex** (−b/2, …) directly.
+
+</Step>
+
+</Lesson>

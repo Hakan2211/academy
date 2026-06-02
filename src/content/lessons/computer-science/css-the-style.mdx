@@ -1,0 +1,92 @@
+---
+title: "CSS: The Style"
+subject: computer-science
+contentSlug: computer-science/css-the-style
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Separating looks from meaning" kind="explain">
+
+HTML gives a page its structure, but on its own it's plain and grey. **CSS** — Cascading Style Sheets — is the language that decides how that structure *looks*: colours, fonts, sizes, spacing, and layout.
+
+The deep idea is **separation of concerns**: the content lives in HTML, the presentation lives in CSS, and they stay apart. Re-skin an entire site — light to dark, formal to playful — by swapping the CSS, without touching a single tag. One structure, infinitely many looks.
+
+</Step>
+
+<Step title="Selectors and properties" kind="explain">
+
+A CSS **rule** has two halves: a **selector** that picks which elements to affect, and a block of **property: value** pairs that say what to change.
+
+```css
+h1 {
+  color: tomato;
+  font-size: 32px;
+}
+```
+
+This reads: "find every `<h1>`, make it tomato-coloured and 32 pixels tall." Selectors can target tag names (`h1`), classes you invent (`.card`), or a single element by id (`#logo`). The browser walks the DOM, matches each rule to the elements it selects, and paints them accordingly.
+
+</Step>
+
+<Step title="Everything is a box" kind="interactive">
+
+To lay a page out, CSS treats **every element as a rectangular box**, and each box has the same four layers — the **box model**. From the inside out: the **content**, then **padding** (space inside the border), then the **border**, then **margin** (space pushing other boxes away).
+
+Drag the sliders and watch each coloured layer grow:
+
+<BoxModel />
+
+Master this one model and most "why is there a gap there?" mysteries dissolve. Padding pushes the border away from the content; margin pushes neighbouring boxes away from this one. Layout, at heart, is arranging these boxes.
+
+</Step>
+
+<Step title="From boxes to layouts" kind="explain">
+
+Real pages stack and align hundreds of these boxes. Modern CSS gives you powerful tools to arrange them — **Flexbox** lays boxes out in a row or column with control over spacing and alignment, and **Grid** places them into rows and columns like a spreadsheet.
+
+```css
+.row {
+  display: flex;
+  gap: 16px;           /* space between boxes */
+  justify-content: center;
+}
+```
+
+The same toolkit makes pages **responsive**: rules can change based on screen size, so one set of HTML can look right on a phone *and* a wide monitor. You describe intent ("center these, with gaps"), and the browser computes the exact pixels.
+
+<Callout type="tip" title="The cascade">
+The "C" in CSS is **cascade**: when several rules touch the same element, CSS has clear tie-breaking rules (how specific the selector is, and which rule came last) to decide who wins. That's how a general rule can set a baseline and a more specific one can override it.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In the CSS box model, what is the difference between padding and margin?"
+  options={[
+    "They are two names for the same thing",
+    "Padding is space inside the border (around the content); margin is space outside the border (pushing other elements away)",
+    "Padding sets the text colour; margin sets the font",
+    "Margin is inside the element and padding is outside it"
+  ]}
+  correctIndex={1}
+  explanation="Padding sits between the content and the border — it pads the inside. Margin sits outside the border and creates space between this box and its neighbours. Both add to how much room an element takes up."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **CSS** controls presentation — colour, font, size, spacing, layout — kept separate from HTML's structure.
+- A rule is a **selector** (which elements) plus **property: value** pairs (what to change).
+- Every element is a **box** with four layers: **content, padding, border, margin** — the box model.
+- **Flexbox** and **Grid** arrange boxes; **responsive** rules adapt to screen size.
+- The **cascade** decides which rule wins when several apply to the same element.
+
+</Step>
+
+</Lesson>

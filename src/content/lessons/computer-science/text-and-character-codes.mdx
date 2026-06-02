@@ -1,0 +1,74 @@
+---
+title: Text & Character Codes
+subject: computer-science
+contentSlug: computer-science/text-and-character-codes
+order: 3
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Letters are numbers in disguise" kind="explain">
+
+A computer only stores numbers, so how does it hold the word "Hello"? Simple: everyone agrees on a **code** that assigns a number to every character. Store the numbers, and you've stored the text.
+
+The classic agreement is **ASCII** (American Standard Code for Information Interchange). In ASCII, capital `A` is 65, `B` is 66, lowercase `a` is 97, the digit `0` is 48, and a space is 32. There's nothing magic about the numbers — they're just a shared lookup table.
+
+</Step>
+
+<Step title="From character to bits" kind="interactive">
+
+Once a character is a number, it's stored in bits like any other number. Type a message and watch each character become a code, a hex value, and 8 bits.
+
+<AsciiExplorer />
+
+Notice the patterns: the alphabet is consecutive, and lowercase is exactly 32 more than uppercase. Those tidy gaps were chosen deliberately, so converting case or sorting is just arithmetic.
+
+</Step>
+
+<Step title="Why a code has to be agreed" kind="explain">
+
+A code only works if the writer and the reader use the **same** table. If you saved text as ASCII but I read it with a different code, you'd get gibberish — the same bits, interpreted differently.
+
+This is a recurring theme: **bits have no meaning on their own.** The pattern `01000001` is the number 65, the letter `A`, part of a colour, or a pixel — entirely depending on the agreed interpretation. Context is everything.
+
+<Callout type="info" title="ASCII's limit">
+ASCII uses 7 bits, so it can only encode 128 characters — fine for English, useless for the world's thousands of letters, scripts and symbols. It was never going to be enough.
+</Callout>
+
+</Step>
+
+<Step title="Unicode: text for everyone" kind="explain">
+
+The modern answer is **Unicode**, a giant table that gives a unique number (a "code point") to *every* character in *every* language — plus maths symbols, and emoji. 😀 is just code point 128512.
+
+Because those numbers get large, Unicode is usually stored with an encoding called **UTF-8**, which cleverly uses a single byte for ordinary ASCII characters but stretches to two, three or four bytes for the rest. That's why an emoji "costs" more bytes than a letter — and why text from anywhere in the world can now share one universal code.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="The same 8 bits 01000001 can be the number 65, the letter 'A', or part of a colour. What does this tell us?"
+  options={[
+    "The computer is malfunctioning",
+    "Bits have no inherent meaning — their meaning comes entirely from the agreed interpretation (the code) being used",
+    "Letters and numbers are stored in different places",
+    "Only one of those interpretations is ever correct"
+  ]}
+  correctIndex={1}
+  explanation="A bit pattern means nothing by itself. The same bits are a number, a letter, or a colour depending on the code we agree to read them with. Shared conventions are what make data meaningful."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Text is stored by mapping each character to a number with an agreed **code**.
+- **ASCII** gives English letters tidy, consecutive codes (A=65, a=97) but only covers 128 characters.
+- **Bits have no meaning alone** — the code/context decides what a pattern represents.
+- **Unicode** (often stored as **UTF-8**) gives every character in every language — and emoji — a universal number.
+
+</Step>
+
+</Lesson>

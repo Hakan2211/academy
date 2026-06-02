@@ -1,0 +1,83 @@
+---
+title: Search & Problem-Solving
+subject: computer-science
+contentSlug: computer-science/search-and-problem-solving
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Before learning, there was search" kind="explain">
+
+Long before neural networks, AI had a powerful weapon: **search**. The insight is that an enormous range of problems — solving a maze, planning a delivery route, winning at chess, scheduling exams — can be rephrased as *finding a path through a space of possibilities*.
+
+You define a **state** (where things stand now), the **actions** that move you to new states, and a **goal** you're trying to reach. Then intelligence becomes a question of exploration: which of the countless possible sequences of actions actually gets you there? Done naively, the number of possibilities explodes. The art of search is exploring **cleverly**.
+
+</Step>
+
+<Step title="Exploring the state space" kind="interactive">
+
+Picture every situation as a node and every move as an edge. The collection of all reachable situations is the **state space**. To find a goal we grow a **frontier** — the set of states we've discovered but not yet examined — and keep expanding it. *How* we choose what to expand next defines the strategy.
+
+<AiSearch />
+
+**Breadth-first search (BFS)** expands the frontier evenly, layer by layer, so it always finds the shortest path — but it explores a lot of dead ground. **Depth-first search (DFS)** plunges down one path before backtracking, using little memory but risking long detours. Watch how differently they fill the maze.
+
+</Step>
+
+<Step title="Heuristics: a hunch about which way to go" kind="explain">
+
+Pure BFS and DFS are **uninformed** — they explore blindly. The leap forward was the **heuristic**: a cheap, rough estimate of how close a state is to the goal. In a maze, "straight-line distance to the exit" is a fine heuristic.
+
+The famous **A\*** algorithm combines two things for each candidate: the cost to reach it *so far*, plus the heuristic estimate of the cost *remaining*. It always expands the most promising option first, so it heads almost straight for the goal while still guaranteeing the shortest path (when the heuristic never overestimates). A good heuristic is the difference between searching a city block and searching the whole city.
+
+<Callout type="tip" title="Why this still matters">
+GPS routing, robot motion planning, puzzle solvers, and the pathfinding in your favourite video game are all flavours of A\* and its relatives. Search is the quiet workhorse of practical AI.
+</Callout>
+
+</Step>
+
+<Step title="Searching against an opponent" kind="explain">
+
+Games like chess add a twist: an adversary who is *trying to beat you*. Here the state space becomes a **game tree** — your moves branch into their replies, which branch into your counter-replies, and so on.
+
+The classic technique is **minimax**: assume your opponent always picks the move that's worst for you, and you pick the move that's best for you *given* their best response. You look ahead as many moves as you can, score the resulting positions, and back the values up the tree. Deep Blue beat Kasparov in 1997 essentially by doing this — searching millions of positions per second with clever pruning to skip hopeless branches.
+
+</Step>
+
+<Step title="The limits of pure search" kind="explain">
+
+Search is dazzling but it has a wall: the **combinatorial explosion**. The game of Go has more board positions than there are atoms in the universe — no machine can search them all. For decades, Go resisted brute force entirely.
+
+The breakthrough came when search was *married to learning*: AlphaGo used a neural network to **guess** which moves were worth searching, slashing the tree to a manageable size. That marriage — a learned intuition guiding a deliberate search — is exactly where this world is heading next.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What does the A* algorithm add to plain breadth-first search to find the goal far more efficiently?"
+  options={[
+    "It searches at random instead of systematically",
+    "It uses a heuristic estimate of the remaining distance to the goal, expanding the most promising states first",
+    "It memorises the answer in advance",
+    "It only ever moves in a straight line, ignoring walls"
+  ]}
+  correctIndex={1}
+  explanation="A* combines the cost already paid to reach a state with a heuristic estimate of the cost remaining, always expanding the most promising candidate. That informed guidance lets it head almost straight for the goal while still finding the shortest path."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Vast classes of problems become **search**: explore a **state space** from a start toward a **goal**.
+- The **frontier** is what we've discovered but not yet expanded; **BFS** fans out evenly (shortest path), **DFS** dives deep (low memory).
+- A **heuristic** estimates remaining distance; **A\*** uses it to search efficiently while still guaranteeing the shortest path.
+- Games add an adversary; **minimax** looks ahead assuming the opponent plays their best.
+- Pure search hits a **combinatorial explosion** — solved for Go by letting a **learned** network guide the search.
+
+</Step>
+
+</Lesson>

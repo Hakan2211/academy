@@ -1,0 +1,81 @@
+---
+title: Functions & Procedures
+subject: computer-science
+contentSlug: computer-science/functions-and-procedures
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Naming a block of work" kind="explain">
+
+As programs grow, the same little jobs come up again and again: greet a user, validate an email, draw a button. Copy-pasting those steps everywhere is a nightmare to fix when something changes. The solution is the **function** — a named, reusable block of code.
+
+Define it once; **call** it by name as many times as you like. A function is a unit of **abstraction in code**: once you trust that `area(width, height)` works, you can use it without thinking about *how* it works — the same hiding-of-detail you saw with abstraction layers in World 1.
+
+</Step>
+
+<Step title="Parameters and return values" kind="explain">
+
+Functions communicate through two channels:
+
+- **Parameters** (or arguments) — the inputs you hand in when you call it. `greet("Ada")` passes the string `"Ada"` in.
+- **Return value** — the single result it hands back out. `area(3, 4)` returns `12`, which you can store or use.
+
+```
+function area(width, height):
+    return width × height
+
+a = area(3, 4)    →  a is 12
+```
+
+A function is a tiny machine: data in through the parameters, a result out through the return. (A function with no return — used only for its effect, like printing — is sometimes called a **procedure**.)
+
+</Step>
+
+<Step title="The call stack" kind="explain">
+
+When a function calls another function, the computer must remember **where it was** so it can come back. It uses a **call stack** — the very stack structure from World 6 (last in, first out).
+
+Each call **pushes** a *frame* onto the stack: a little workspace holding that call's parameters and the spot to return to. When the function returns, its frame is **popped** off, handing back the return value, and the call beneath resumes. The frame on top is always the function running *right now*.
+
+</Step>
+
+<Step title="Push and pop, step by step" kind="interactive">
+
+Watch the stack in action. Here `main` calls `greet("Ada")`, which in turn calls `format("Ada")`. Step through it: each call pushes a frame on top; each `return` pops one off and hands back a value, revealing the caller waiting underneath.
+
+<CallStack />
+
+This is exactly how a running program tracks "where am I?" across nested calls — and why a function that calls itself too deeply causes the famous **stack overflow**: too many frames, no room left.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="When one function calls another, what does the call stack do, and in what order do frames leave it?"
+  options={[
+    "It pushes a frame for each call and pops them in the same order they were pushed (first in, first out)",
+    "It pushes a frame for each call; the most recently called function returns first, so frames pop in last-in, first-out order",
+    "It stores all variables permanently and never removes them",
+    "It runs all functions at the same time with no ordering"
+  ]}
+  correctIndex={1}
+  explanation="The call stack is LIFO. Each call pushes a frame on top; when a function returns, its frame (the top one) is popped first, handing a value back to the caller beneath. The innermost call finishes first, then unwinds outward."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **function** is a named, reusable block of code — define once, **call** many times.
+- It takes **parameters** (inputs) and hands back a **return value** (output); a function used only for its side effect is a **procedure**.
+- Functions provide **abstraction**: use them by name without worrying about their internals.
+- The **call stack** tracks nested calls — each call **pushes** a frame (parameters + return spot), each return **pops** one — in **last-in, first-out** order.
+- Too many stacked frames (e.g. runaway recursion) causes a **stack overflow**.
+
+</Step>
+
+</Lesson>

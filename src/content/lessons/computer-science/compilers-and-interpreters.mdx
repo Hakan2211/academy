@@ -1,0 +1,81 @@
+---
+title: Compilers & Interpreters
+subject: computer-science
+contentSlug: computer-science/compilers-and-interpreters
+order: 7
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="The translation problem" kind="explain">
+
+We keep returning to one stubborn fact: the CPU runs only **machine code**. Yet we write in friendly high-level languages. Something must stand in the middle and **translate** — turning `x = 2 + 3` into the binary `LOAD`/`ADD`/`STORE` instructions the processor actually fetches and executes (World 4).
+
+That translator is either a **compiler** or an **interpreter**. They solve the same problem in two very different ways, and the choice shapes how a language feels to use.
+
+</Step>
+
+<Step title="Inside a compiler" kind="explain">
+
+A **compiler** doesn't translate in one magic leap. It works in **stages**, each refining the program a little more toward the machine:
+
+- **Lexer** — chop the source text into **tokens**: the smallest meaningful pieces (`x`, `=`, `2`, `+`, `3`).
+- **Parser** — check the grammar and arrange the tokens into a **syntax tree** that captures structure (what's added to what).
+- **Code generation** — walk the tree and emit simple CPU instructions.
+- The result is **machine code**, ready to run.
+
+This is a pipeline: text flows in one end, machine code comes out the other. If the grammar is broken, the parser stops you with a **syntax error** before anything runs.
+
+</Step>
+
+<Step title="Walk the pipeline" kind="interactive">
+
+Step through the stages and watch `x = 2 + 3` transform from text, to tokens, to a tree, to instructions, to binary. Then flip the toggle to contrast the two big strategies.
+
+<CompilerPipeline />
+
+- **Compiled** (C, Rust, Go): run the whole pipeline **once, ahead of time**, producing a machine-code file. Running it later is fast — the translation is already done — but you must compile before you can run, and the file is built for one kind of CPU.
+- **Interpreted** (Python, JavaScript): an **interpreter** reads the source and runs it **line-by-line as it goes**, translating each piece on the fly. It starts instantly and is flexible, but doing the translation *during* execution makes it generally slower per line.
+
+</Step>
+
+<Step title="Write once, run anywhere" kind="explain">
+
+Here's the payoff that makes high-level languages so powerful. Recall that different CPU families speak **different machine codes** (World 4) — a binary built for one chip won't run on another.
+
+Translation breaks that chain. The **same source code** can be compiled for many different CPUs, or run by an interpreter that already exists on each machine. Some languages (like Java) split the difference: they compile to a portable **bytecode** that a small program — a **virtual machine** — interprets on any device. Either way, *you* write the program once; the translator bridges it to whatever hardware is underneath.
+
+<Callout type="info" title="Compiled vs interpreted isn't black and white">
+Many modern systems blur the line. Just-in-time (**JIT**) compilers — used by JavaScript engines and Java's VM — start by interpreting, then compile the hot, frequently-run parts to fast machine code while the program runs. Best of both: quick start *and* speed.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the key difference between a compiler and an interpreter?"
+  options={[
+    "A compiler translates the whole program to machine code ahead of time; an interpreter translates and runs it line-by-line as the program executes",
+    "A compiler needs a CPU but an interpreter does not",
+    "An interpreter produces faster programs in every case",
+    "Only compilers can report syntax errors"
+  ]}
+  correctIndex={0}
+  explanation="A compiler does all the translation up front, producing a machine-code file that runs fast afterward. An interpreter translates and executes the source line-by-line at run time — slower per line but starting instantly and easy to run anywhere the interpreter exists. Both ultimately produce CPU-runnable instructions."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The CPU runs only **machine code**, so high-level source must be **translated** by a **compiler** or **interpreter**.
+- A **compiler** works in **stages** — lexer → **tokens**, parser → **syntax tree**, **code generation** → machine code — all **ahead of time**, then runs fast.
+- An **interpreter** translates and runs the source **line-by-line** as it executes: instant start, generally slower per line.
+- Because translation bridges source to hardware, the **same program** can run on **different machines** (via recompiling, an interpreter, or portable **bytecode** on a virtual machine).
+- **JIT** compilers blend both: interpret first, then compile the hot paths.
+
+</Step>
+
+</Lesson>

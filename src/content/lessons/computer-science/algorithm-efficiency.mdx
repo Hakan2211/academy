@@ -1,0 +1,85 @@
+---
+title: Algorithm Efficiency & Big-O
+subject: computer-science
+contentSlug: computer-science/algorithm-efficiency
+order: 7
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="How do we measure 'fast'?" kind="explain">
+
+We keep saying one algorithm is *faster* than another — but faster measured how? Not in seconds: that depends on the computer, the language, even how busy the machine is. We need a measure that captures the algorithm *itself*.
+
+The answer: count the **steps** an algorithm takes, and study how that count **grows as the input gets bigger**. A method that's fine on 10 items but hopeless on 10 million has a growth problem, and growth is exactly what we measure.
+
+</Step>
+
+<Step title="Big-O notation" kind="explain">
+
+**Big-O notation** describes the *growth rate* of an algorithm's work as the input size **n** grows, ignoring constant factors and small details. It captures the shape of the curve, not the exact number.
+
+The common classes, from best to worst:
+
+- **O(1)** — constant: the same work no matter how big n is.
+- **O(log n)** — logarithmic: barely grows (binary search).
+- **O(n)** — linear: work grows in step with n (linear search).
+- **O(n log n)** — the best practical sorting speed (merge sort).
+- **O(n²)** — quadratic: work explodes (the simple sorts).
+- **O(2ⁿ)** — exponential: hopeless beyond tiny n.
+
+</Step>
+
+<Step title="Feel the divergence" kind="interactive">
+
+Numbers on a page don't convey how *violent* the gap becomes. Slide n and watch the curves and operation counts pull apart. Highlight a class to follow it.
+
+<BigOChart />
+
+At small n the curves huddle together — efficiency hardly matters. Push n higher and they fan out catastrophically. At n = 40, O(log n) needs about 5 operations while O(2ⁿ) needs over a *trillion*. Same input, unimaginably different cost.
+
+</Step>
+
+<Step title="Why O(n log n) beats O(n²)" kind="explain">
+
+This is the headline result of the whole world. Consider sorting a list of one million items:
+
+- **O(n²)** ≈ 1,000,000 × 1,000,000 = **one trillion** operations.
+- **O(n log n)** ≈ 1,000,000 × 20 = **twenty million** operations.
+
+The clever algorithm does roughly **fifty thousand times** less work. On a real machine that's the difference between an instant result and a wait of *days*.
+
+<Callout type="tip" title="Worst, best, average">
+Big-O usually describes the **worst case** — the guarantee that work won't grow faster than this. Algorithms also have best- and average-case behaviour; for example, binary search is O(log n) in the worst case but O(1) if you get lucky and hit the target first.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="An algorithm runs in O(n²). You double the input size n. Roughly how does the amount of work change?"
+  options={[
+    "It stays about the same",
+    "It roughly doubles",
+    "It roughly quadruples (×4)",
+    "It increases by just one step"
+  ]}
+  correctIndex={2}
+  explanation="In O(n²), work grows with the square of n. Doubling n multiplies the work by 2² = 4. That quadrupling-on-doubling is exactly why quadratic algorithms become unusable as inputs grow — and why we hunt for O(n log n) or better."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- We measure efficiency by **how the step count grows** with input size n — not in seconds.
+- **Big-O** captures that growth rate, ignoring constants: O(1), O(log n), O(n), O(n log n), O(n²), O(2ⁿ).
+- The curves huddle at small n but **diverge explosively** as n grows.
+- **O(n log n)** does vastly less work than **O(n²)** at scale — the difference can be days versus an instant.
+- Big-O usually describes the **worst case**, the guaranteed upper bound on growth.
+
+</Step>
+
+</Lesson>

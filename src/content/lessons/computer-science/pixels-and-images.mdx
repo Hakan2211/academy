@@ -1,0 +1,68 @@
+---
+title: Pixels & Raster Graphics
+subject: computer-science
+contentSlug: computer-science/pixels-and-images
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="The screen is a grid of squares" kind="explain">
+
+Back in the data-representation world you saw that an image is a **grid of pixels**, each a number naming a colour. Computer graphics starts from that same fact and asks a harder question: how do you *draw* onto such a grid?
+
+The trouble is that the things we want to draw — circles, curves, smooth diagonal lines — are continuous and infinitely detailed. The screen is not. It's a fixed mesh of little square tiles, and each tile can only be one solid colour. This kind of image, built from a grid of coloured cells, is called **raster graphics** (from the Latin for "rake", because the screen is scanned row by row).
+
+So drawing a shape really means **deciding, for every square, what colour it should be** to best approximate the smooth ideal.
+
+</Step>
+
+<Step title="Where the jaggies come from" kind="interactive">
+
+Try to draw a circle on a coarse grid and the all-or-nothing choice — "is this square inside the circle or not?" — produces a staircase of blocky steps along the edges. These steps are called **aliasing**, and the jagged result is affectionately known as the **jaggies**.
+
+<RasterCanvas />
+
+Two things fight the jaggies. **Resolution** — packing in more, smaller pixels — shrinks each step until your eye can't see it. And **anti-aliasing** cheats: instead of every edge pixel being fully on or off, it greys them in proportion to how much of the square the shape actually covers. A partly-covered pixel becomes a soft in-between shade, and the staircase melts into a smooth-looking edge.
+
+</Step>
+
+<Step title="Raster vs vector" kind="explain">
+
+A raster image is a fixed grid of pixels, so it has a built-in **resolution**. Blow it up beyond that and there's no extra detail to show — you just see the squares get bigger. Photos, screenshots and camera output are all raster.
+
+The alternative is **vector graphics**: instead of storing pixels, store the *shapes* themselves as math — "a circle of radius 5 centred here", "a line from A to B". Because it's a recipe rather than a picture, the computer can re-draw it crisply at any size. Logos, fonts and icons are usually vectors. The catch: vectors can't easily capture the messy detail of a photograph. The next lesson dives into how those shapes are stored and transformed.
+
+<Callout type="tip" title="Two jobs, two formats">
+Use **raster** (PNG, JPEG) for photos and rich, detailed images. Use **vector** (SVG) for logos and diagrams that must stay sharp at every size. Picking the right one is half of looking professional.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why does a diagonal line look jagged ('the jaggies') on a low-resolution screen?"
+  options={[
+    "The screen is broken or the colour is wrong",
+    "Each square pixel must be fully one colour, so a smooth diagonal is approximated by a staircase of whole squares",
+    "Diagonal lines are stored less accurately than horizontal ones",
+    "The computer runs out of memory while drawing"
+  ]}
+  correctIndex={1}
+  explanation="A raster screen is a fixed grid of square pixels, each a single solid colour. A smooth diagonal can only be approximated by turning whole squares on or off, producing a staircase — aliasing. More pixels or anti-aliasing hides the steps."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Raster graphics** represent an image as a fixed **grid of square pixels**, each one solid colour.
+- Smooth shapes must be **approximated** square-by-square, producing jagged **aliasing** ("jaggies").
+- **Higher resolution** (more, smaller pixels) and **anti-aliasing** (greyed edge pixels) both hide the steps.
+- **Vector graphics** instead store shapes as math, so they stay crisp at any size — great for logos and type, poor for photos.
+
+</Step>
+
+</Lesson>

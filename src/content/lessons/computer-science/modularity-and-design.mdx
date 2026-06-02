@@ -1,0 +1,82 @@
+---
+title: Modularity & Design
+subject: computer-science
+contentSlug: computer-science/modularity-and-design
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="No one can hold it all in their head" kind="explain">
+
+A serious piece of software has millions of lines of code — far more than any human can keep in mind at once. So how does anyone build, or even understand, something that big?
+
+The same way we tamed the complexity of a computer itself, back in the abstraction world: by **breaking the whole into parts**, where each part hides its messy insides behind a simple promise. In software we call those parts **modules**, and the art of dividing the system well is **design**.
+
+</Step>
+
+<Step title="Monolith vs modular" kind="interactive">
+
+Picture the same app built two ways. Toggle between them, then "break" a component and watch how far the damage spreads.
+
+<ModularityViz />
+
+In the **monolith**, every part reaches into every other part. There's no boundary, so one failure cascades everywhere and every change is risky. In the **modular** version, each box talks only through a defined **interface** — so a broken component is contained, and you can rework one box without disturbing the rest.
+
+</Step>
+
+<Step title="Coupling and cohesion" kind="explain">
+
+Two words capture good design.
+
+**Coupling** is how tightly modules depend on each other. The monolith was *tightly coupled* — everything tangled together. We want **loose coupling**: modules connected only through narrow, well-defined interfaces, so each can change independently.
+
+**Cohesion** is how focused a single module is. A module with *high cohesion* does one clear job (handle payments, and only payments). A *low-cohesion* module is a junk drawer of unrelated tasks. The mantra:
+
+```
+Good design = loose coupling + high cohesion.
+```
+
+Each module is a little abstraction: it offers a simple interface and hides how it works inside — exactly the idea from World 1, now applied to your own code.
+
+</Step>
+
+<Step title="Interfaces and reusable patterns" kind="explain">
+
+The **interface** is the contract between modules: *call me this way, and I promise this result* — without revealing how I do it. As long as the promise holds, you can completely rewrite a module's insides and nothing else needs to change. That's what makes large teams possible: each person owns a module and trusts the interfaces around it.
+
+Over decades, engineers noticed the *same shapes* of problems coming up again and again, and named reusable solutions for them — **design patterns**. You don't need them yet, but the instinct behind them is everything: spot the recurring structure, and reuse a proven design instead of reinventing a tangled one.
+
+<Callout type="tip" title="Decomposition, again">
+Breaking a problem into well-chosen modules is just **decomposition** — one of the four pillars of computational thinking — applied to building software. The big ideas keep coming back.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Your payment code is split into its own module that the rest of the app uses only through a small, clearly defined interface. Which pair of qualities does this describe?"
+  options={[
+    "High coupling and low cohesion",
+    "Loose coupling and high cohesion",
+    "Tight coupling and high cohesion",
+    "Loose coupling and low cohesion"
+  ]}
+  correctIndex={1}
+  explanation="The module does one focused job (high cohesion) and connects to the rest only through a narrow interface (loose coupling). That combination is the hallmark of good modular design — easy to change, hard to break the rest."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Big systems are tamed by splitting them into **modules**, each hiding its internals behind an **interface**.
+- A **monolith** tangles everything together; modular design **contains** failures and changes.
+- Aim for **loose coupling** (modules barely depend on each other) and **high cohesion** (each does one clear job).
+- Modularity is **abstraction and decomposition** applied to your own code — and **design patterns** are reusable solutions to recurring shapes of problems.
+
+</Step>
+
+</Lesson>

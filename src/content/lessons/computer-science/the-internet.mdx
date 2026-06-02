@@ -1,0 +1,75 @@
+---
+title: The Internet
+subject: computer-science
+contentSlug: computer-science/the-internet
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="One impossible-sounding goal" kind="explain">
+
+Imagine the brief the internet's designers were given: build a network spanning the whole planet, with no central control, owned by no one, that keeps working even when large chunks of it are destroyed. It sounds impossible. The solution is one of the great ideas in computing, and it starts by *refusing* to reserve a private line for each conversation.
+
+In an old telephone call, a continuous circuit was held open from end to end for as long as you talked — a **dedicated line**. Tie up that wire and no one else can use it; cut it anywhere and the call drops dead. The internet throws this model away.
+
+</Step>
+
+<Step title="Chop the message into packets" kind="explain">
+
+Instead of one unbroken stream, your data is sliced into small chunks called **packets**. Each packet is a little envelope carrying a piece of the message plus a header: where it's going, where it came from, and **which numbered piece of the whole** it is.
+
+Those packets are then poured into the shared network and left to find their own way. Because they're small and independent, thousands of different conversations can interleave their packets over the same cables at the same time. Nothing is reserved; everything is shared.
+
+</Step>
+
+<Step title="Watch packet switching" kind="interactive">
+
+Press **Send** and watch one message break into numbered packets that scatter across a web of **routers**, each packet taking whatever path is free.
+
+<PacketJourney />
+
+Notice the two surprises. First, packets take **different routes** — there's no single fixed path. Second, they **arrive out of order**, because some routes are quicker than others. The destination doesn't panic: it reads the sequence numbers and **reassembles** the original message. This is **packet switching**.
+
+<Callout type="info" title="IP addresses: who is who">
+For routers to forward a packet, every device needs an address. That's the **IP address** — a number like `93.184.216.34` that uniquely identifies a machine on the network. Each packet's header carries the source and destination IP, and that's all a router needs to nudge it one hop closer.
+</Callout>
+
+</Step>
+
+<Step title="Why this design is unkillable" kind="explain">
+
+Now the impossible brief makes sense. Because packets route themselves hop by hop, there's **no central control** to attack — no master computer deciding everything. And because any packet can take any available path, knocking out a router or a cable just makes packets flow **around** the damage. The network heals itself in milliseconds.
+
+This **resilience** is not an accident; it's the whole point. Packet switching trades the comfortable guarantee of a private line for something far more valuable at planetary scale: a system with no single point of failure that anyone, anywhere, can join just by agreeing to forward packets.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You send a 4-packet message. Packet 3 takes a fast route and arrives before packet 2. How does the system cope?"
+  options={[
+    "It fails — packets must always arrive in order",
+    "Each packet carries a sequence number, so the destination reassembles them in the correct order regardless of arrival order",
+    "Packet 3 is thrown away and resent later",
+    "A dedicated line is opened to force them in order"
+  ]}
+  correctIndex={1}
+  explanation="Packet switching expects out-of-order arrival. Every packet's header includes a sequence number, so the receiver can hold them, sort them, and reassemble the original message — no dedicated line required. This is exactly what makes the network flexible and resilient."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The internet rejects the **dedicated line**; it shares cables among everyone at once.
+- A message is split into **packets**, each with a header (source, destination, sequence number).
+- **Packet switching**: packets route independently, may take different paths, and arrive out of order — then are **reassembled**.
+- Every device has an **IP address** so routers know where to send packets.
+- With **no central control** and many possible paths, the network is remarkably **resilient**.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,67 @@
+---
+title: Rates of Change
+subject: math
+contentSlug: math/rates-of-change
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="How fast is it changing?" kind="explain">
+
+A car's speed, a population's growth, a hillside's steepness — all are **rates of change**. On a graph, a rate of change is a **gradient**. The new question calculus asks is subtle: not the *average* rate over an interval, but the **instantaneous** rate at a single instant.
+
+</Step>
+
+<Step title="Average becomes instantaneous" kind="interactive">
+
+The dashed secant gives the average rate between two points. Shrink the gap and it becomes the solid tangent — the instantaneous rate.
+
+<DerivativeExplorer />
+
+</Step>
+
+<Step title="Secant versus tangent" kind="explain">
+
+- The **average rate of change** between two points is the slope of the **secant** line joining them: (change in y) ÷ (change in x) — exactly the gradient from the graphs world.
+- The **instantaneous rate** at a single point is the slope of the **tangent** line that just grazes the curve there.
+
+The tangent's slope is the *limit* of the secant's slope as the two points slide together (the gap h → 0). This is where the limit earns its keep.
+
+</Step>
+
+<Step title="Speed: the classic example" kind="explain">
+
+Drive 120 km in 2 hours and your **average** speed is 60 km/h — the secant slope on a distance-time graph. But your **speedometer** shows your *instantaneous* speed: the tangent slope at that exact moment. Calculus is what lets a speedometer exist — turning a whole graph of distance-vs-time into a graph of speed-vs-time.
+
+<Formula tex="\text{instantaneous rate} = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}" block />
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="On a distance–time graph, what does the gradient of the tangent at a point represent?"
+  options={[
+    "The instantaneous speed at that moment",
+    "The total distance travelled",
+    "The average speed for the whole journey",
+    "The acceleration"
+  ]}
+  correctIndex={0}
+  explanation="Gradient on a distance–time graph is speed. The tangent's gradient at a point is the instantaneous speed there — what a speedometer reads — whereas a secant's gradient gives the average speed over an interval."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **rate of change** is a **gradient** on a graph.
+- **Average** rate = slope of the **secant**; **instantaneous** rate = slope of the **tangent**.
+- The tangent slope is the **limit** of the secant slope as the gap → 0.
+- Distance-time gradients give speed: average (secant) vs instantaneous (speedometer/tangent).
+
+</Step>
+
+</Lesson>

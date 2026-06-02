@@ -1,0 +1,87 @@
+---
+title: Describing Algorithms
+subject: computer-science
+contentSlug: computer-science/describing-algorithms
+order: 2
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Three ways to write down the same steps" kind="explain">
+
+An algorithm is an *idea* — the steps themselves. But to share it, store it, or hand it to a machine, you have to **describe** it. There are three common ways, each with a different trade-off between readability and precision:
+
+- **Natural language** — plain English. Easy to read, dangerously easy to be vague.
+- **Pseudocode** — code-like shorthand that ignores the rules of any one programming language.
+- **Flowcharts** — boxes and arrows showing the flow of control visually.
+
+</Step>
+
+<Step title="Natural language and its trap" kind="explain">
+
+In English, "find the largest number" might be written: *look through the list and report the biggest one.* A person understands instantly. But a machine has questions: Look in what order? What if two are tied? What if the list is empty?
+
+**Ambiguity is the enemy.** Every gap a human glosses over is a gap a computer will either reject or fill with a wrong guess. The more precise the description, the less room for misunderstanding.
+
+<Callout type="warn" title="The cost of vagueness">
+Famous software disasters have traced back to one ambiguous line in a specification. When a description can be read two ways, sooner or later it *will* be — by a programmer, a compiler, or a user.
+</Callout>
+
+</Step>
+
+<Step title="Pseudocode: precise but human-friendly" kind="explain">
+
+**Pseudocode** strikes a balance. It's structured and unambiguous like code, but free of fiddly syntax so you can focus on the logic:
+
+<Formula tex="\textbf{best} \leftarrow \text{list}[0]" block />
+
+```
+best ← list[0]
+for each item in list:
+    if item > best:
+        best ← item
+return best
+```
+
+Anyone can read it; any programmer can turn it into real code in any language. Pseudocode is how computer scientists think and communicate before committing to a particular tool.
+
+</Step>
+
+<Step title="Flowcharts: the same logic, drawn" kind="interactive">
+
+A **flowchart** shows the same algorithm as shapes and arrows: rounded boxes for start/stop, rectangles for actions, diamonds for yes/no decisions. The arrows make the *flow of control* — including loops and branches — visible at a glance.
+
+<AlgorithmFlow />
+
+This is the very same "find the largest" algorithm as the pseudocode above, just drawn. Three descriptions, one underlying algorithm — and all three are unambiguous, which is the whole point.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why is natural language often a poor way to describe an algorithm for a computer?"
+  options={[
+    "Computers cannot read English at all",
+    "It tends to be ambiguous, leaving gaps a machine cannot resolve correctly",
+    "It is always longer than pseudocode",
+    "Flowcharts run faster than English"
+  ]}
+  correctIndex={1}
+  explanation="The problem isn't length or readability — it's ambiguity. Natural language lets writers leave gaps that humans fill from common sense but machines cannot. Pseudocode and flowcharts force the precision a computer needs."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- An algorithm is the *idea*; we **describe** it in natural language, **pseudocode**, or a **flowchart**.
+- **Natural language** is readable but risks **ambiguity** — the enemy of correct code.
+- **Pseudocode** is precise yet language-independent — how computer scientists communicate logic.
+- **Flowcharts** show the flow of control visually with start/stop, process and decision shapes.
+- All three can describe the *same* algorithm; the goal is always to remove ambiguity.
+
+</Step>
+
+</Lesson>

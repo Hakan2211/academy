@@ -1,0 +1,85 @@
+---
+title: Deep Learning & LLMs
+subject: computer-science
+contentSlug: computer-science/deep-learning-and-llms
+order: 5
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Going deep" kind="explain">
+
+The networks of the previous lesson had a layer or two. **Deep learning** is what happens when you stack *many* layers — dozens, even hundreds — into a **deep neural network**. Each layer builds on the one before, so the network learns a **hierarchy of features**.
+
+Feed a deep vision network raw pixels and something beautiful happens: the first layers learn to spot edges and blobs, the middle layers assemble those into textures and shapes — an eye, a wheel — and the deepest layers recognise whole objects. Nobody programmed "eye" or "wheel." The network *discovered* that this layered hierarchy is the most useful way to see. Depth is what lets AI handle raw, unstructured reality.
+
+</Step>
+
+<Step title="The same machine, scaled up" kind="interactive">
+
+It's worth pausing on how little the underlying idea changed. The deep networks behind self-driving cars and chatbots are made of the *exact same* weighted-sum-and-activation neurons you've already met — just vastly more of them, in many more layers.
+
+<NeuralNet />
+
+This little network is a toy version of the same forward pass that runs, billions of neurons wide, inside the largest AI systems. The leap to "deep learning" wasn't a new kind of neuron; it was **scale** plus the engineering and data to train it.
+
+</Step>
+
+<Step title="Why deep learning finally worked" kind="explain">
+
+Deep networks were known for decades but stubbornly refused to train well — too slow, too data-hungry, prone to getting stuck. Around 2012, three things aligned and the dam broke.
+
+First, **data**: the internet provided labelled images and text at unimaginable scale. Second, **compute**: graphics chips (GPUs), built to do millions of multiply-add operations in parallel, turned out to be perfect for neural networks. Third, **algorithmic tricks** that made deep networks trainable at last. Suddenly deep learning shattered records in image recognition, then speech, then translation — and the modern AI boom began.
+
+</Step>
+
+<Step title="Transformers and attention" kind="explain">
+
+The architecture that unlocked language was the **transformer**, introduced in 2017. Its key trick is **attention**: as the model processes each word, it learns to *look back* at the other words that matter most for understanding it. In "the trophy didn't fit in the suitcase because **it** was too big," attention is what lets the model figure out that *it* refers to the trophy, not the suitcase.
+
+Attention let networks weigh relationships across an entire passage at once, rather than creeping word by word. Crucially, transformers also train **in parallel**, so they scale to staggering sizes. Every major language model today — and most image and code models too — is a transformer.
+
+</Step>
+
+<Step title="The large language model" kind="interactive">
+
+Take a giant transformer, train it on a huge fraction of the text humanity has ever written, with one simple objective — **predict the next token** — and you get a **large language model (LLM)**.
+
+<TokenPredictor />
+
+That's genuinely the whole task: given everything so far, output a probability for every possible next token, pick one, append it, repeat. The **temperature** dial controls how adventurously it strays from the safest choice. What's startling is what *emerges* from this humble goal at scale: to predict text really well, the model is forced to absorb grammar, facts, reasoning patterns, even a rough model of the world — because all of that helps predict the next word. Intelligence as a side effect of really good autocomplete.
+
+<Callout type="tip" title="It's prediction, not retrieval">
+An LLM isn't looking up answers in a database. It has compressed patterns from its training into billions of weights and *generates* each response token by token. This is why it can write something never written before — and also why it can fluently state things that are simply false.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the core training objective of a large language model, and why does such a simple goal produce such capable behaviour?"
+  options={[
+    "It memorises a database of answers and retrieves the closest match",
+    "It is trained to predict the next token from the text so far; at huge scale, predicting well forces it to absorb grammar, facts, and reasoning patterns",
+    "It is given explicit grammar rules and a dictionary by its programmers",
+    "It searches the live internet for each answer in real time"
+  ]}
+  correctIndex={1}
+  explanation="An LLM's only objective is next-token prediction. At enormous scale, getting that prediction right requires implicitly learning grammar, facts, and reasoning — those capabilities emerge as a side effect of mastering 'autocomplete' over a vast slice of human text, compressed into its weights rather than looked up."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Deep learning** stacks many layers so the network learns a **hierarchy of features** — edges → shapes → objects — straight from raw data.
+- The neurons are unchanged; the leap was **scale**, enabled by **data + GPUs + algorithmic tricks** around 2012.
+- The **transformer** (2017) uses **attention** to weigh relationships across a whole passage and trains in parallel, so it scales massively.
+- An **LLM** is a giant transformer trained to **predict the next token**; broad capability *emerges* from that single objective at scale.
+- LLMs **generate** from compressed patterns in their weights — they don't retrieve facts — which is why they can be both creative and confidently wrong.
+
+</Step>
+
+</Lesson>

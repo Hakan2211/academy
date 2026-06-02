@@ -1,0 +1,74 @@
+---
+title: Threats & Attacks
+subject: computer-science
+contentSlug: computer-science/threats-and-attacks
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="A world of untrusted networks" kind="explain">
+
+Every lesson before this one built something worth protecting: text and numbers, programs, databases, the web. The moment any of it leaves your device, it travels across networks owned by strangers, through cables and routers you will never see. **Security** is the discipline of keeping data and systems trustworthy in a world where you cannot trust the wires.
+
+The mindset that makes this hard is simple: somewhere, someone *wants in*. Not always a hooded genius — far more often an automated script probing millions of machines, or a con artist sending a convincing email. To defend a system, you first have to understand how it gets attacked.
+
+</Step>
+
+<Step title="The threat landscape" kind="interactive">
+
+Attacks come in families, each exploiting a different weakness. Click through the gallery: read what each attack really is, then — the important half — how defenders stop it.
+
+<ThreatGallery />
+
+Notice the pattern. Some attacks target **software** (malware, injection), some target the **network** (man-in-the-middle, DDoS), and some target **people** (phishing). A real defence has to cover all three.
+
+</Step>
+
+<Step title="Motives and the attack surface" kind="explain">
+
+Attackers are not random. Most are after **money** (ransomware, stolen card numbers), some want **data** (identities, secrets), a few want **disruption** or simple notoriety. Knowing the motive helps you predict where they will strike.
+
+Where they strike is called the **attack surface** — the sum of every way in: every login page, open port, file upload, and email inbox. A core defensive principle follows immediately: the smaller the attack surface, the less there is to defend. Turn off what you do not need; expose only what you must.
+
+<Callout type="warn" title="The weakest link">
+A system is only as strong as its weakest point. You can spend a fortune on encryption, and one employee clicking a phishing link hands the attacker the keys anyway. People are part of the attack surface too.
+</Callout>
+
+</Step>
+
+<Step title="Thinking like a defender" kind="explain">
+
+The goal of this whole world is not to make you paranoid — it is to make you **prepared**. Defenders assume breaches will be attempted and design so that a single failure does not become a catastrophe: layered protections, sensible defaults, and the humility to know no system is perfect.
+
+This is **defensive** knowledge. Understanding *how* an attack works — conceptually — is exactly what lets you recognise it and shut it down. A locksmith studies locks to build better ones, not to burgle houses.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="An organisation has world-class encryption and firewalls, yet gets breached when a staff member types their password into a fake login page from an email. What principle does this illustrate?"
+  options={[
+    "Encryption was the problem and should be removed",
+    "A system is only as strong as its weakest link — and people are part of the attack surface, so technical defences alone are not enough",
+    "Phishing is impossible to defend against, so there is no point trying",
+    "Firewalls cause breaches"
+  ]}
+  correctIndex={1}
+  explanation="The strongest technical controls are bypassed entirely if a human is tricked into handing over credentials. Security must cover software, networks AND people; the weakest link sets the real strength of the whole system."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Security** keeps data and systems trustworthy across networks you do not control.
+- Attacks fall into families targeting **software**, the **network**, or **people** — and a real defence covers all three.
+- Attackers have **motives** (money, data, disruption); the **attack surface** is every possible way in, and shrinking it is a first-line defence.
+- Security is only as strong as its **weakest link**, and humans are part of it — so this knowledge is fundamentally **defensive**: understand the attack to stop it.
+
+</Step>
+
+</Lesson>

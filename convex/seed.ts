@@ -26,7 +26,7 @@ export const run = internalMutation({
         color: '#00D2D3',
         icon: 'FlaskConical',
         order: 2,
-        isPublished: false,
+        isPublished: true,
       },
       {
         slug: 'biology',
@@ -35,7 +35,7 @@ export const run = internalMutation({
         color: '#2ECC71',
         icon: 'Dna',
         order: 3,
-        isPublished: false,
+        isPublished: true,
       },
       {
         slug: 'math',
@@ -44,7 +44,7 @@ export const run = internalMutation({
         color: '#FFB020',
         icon: 'Sigma',
         order: 4,
-        isPublished: false,
+        isPublished: true,
       },
       {
         slug: 'computer-science',
@@ -53,7 +53,7 @@ export const run = internalMutation({
         color: '#FF6B6B',
         icon: 'Binary',
         order: 5,
-        isPublished: false,
+        isPublished: true,
       },
       {
         slug: 'psychology',
@@ -1426,6 +1426,892 @@ export const run = internalMutation({
       await ctx.db.insert('lessons', {
         subjectId: subjectIds['physics'],
         unitId: unitIds[l.unitSlug],
+        contentSlug: l.contentSlug,
+        title: l.title,
+        summary: l.summary,
+        order: l.order,
+        estimatedMinutes: l.estimatedMinutes,
+        xpReward: l.xpReward,
+        isPublished: l.isPublished,
+        level: l.level,
+        format: l.format,
+      })
+    }
+
+    // =====================================================================
+    // BIOLOGY — 14 floating "worlds" (categories), order 1 (foundational)
+    // → 14 (capstone), each blending Beginner → Advanced internally. Mapped
+    // from a school biology curriculum (the foundational spine: cells,
+    // transport, metabolism, genetics, the body, plants, ecology) + the
+    // advanced "Biologie für Mediziner" source (cell biology, signal
+    // transduction, human genetics, immunobiology, developmental biology,
+    // microbiology). Same two-template shape as Physics: `core` lessons end
+    // each world in a longer `deepdive` capstone.
+    // =====================================================================
+    const bioUnitsData: typeof unitsData = [
+      {
+        slug: 'study-of-life',
+        name: 'The Study of Life',
+        order: 1,
+        description: 'What life is, how we classify it, and how biologists work.',
+        icon: 'Microscope',
+        accentColor: '#2ECC71',
+        levelRange: 'Beginner',
+      },
+      {
+        slug: 'the-cell',
+        name: 'The Cell',
+        order: 2,
+        description: 'The smallest unit of life and the machines inside it.',
+        icon: 'CircleDot',
+        accentColor: '#1ABC9C',
+        levelRange: 'Beginner → Advanced',
+      },
+      {
+        slug: 'membranes-and-transport',
+        name: 'Membranes & Transport',
+        order: 3,
+        description: 'How a cell controls what crosses its border.',
+        icon: 'ArrowRightLeft',
+        accentColor: '#00CEC9',
+        levelRange: 'Beginner → Intermediate',
+      },
+      {
+        slug: 'molecules-of-life',
+        name: 'The Molecules of Life',
+        order: 4,
+        description: 'Water, carbs, lipids, proteins, and nucleic acids.',
+        icon: 'TestTube',
+        accentColor: '#FDCB6E',
+        levelRange: 'Beginner → Advanced',
+      },
+      {
+        slug: 'energy-and-enzymes',
+        name: 'Energy & Enzymes',
+        order: 5,
+        description: 'ATP, enzymes, photosynthesis, and respiration.',
+        icon: 'Zap',
+        accentColor: '#A3CB38',
+        levelRange: 'Beginner → Advanced',
+      },
+      {
+        slug: 'dna-and-the-code',
+        name: 'DNA & the Code of Life',
+        order: 6,
+        description: 'The double helix and how genes become proteins.',
+        icon: 'Dna',
+        accentColor: '#A29BFE',
+        levelRange: 'Intermediate → Advanced',
+      },
+      {
+        slug: 'division-and-inheritance',
+        name: 'Cell Division & Inheritance',
+        order: 7,
+        description: 'Mitosis, meiosis, and the rules of heredity.',
+        icon: 'GitBranch',
+        accentColor: '#FD79A8',
+        levelRange: 'Beginner → Advanced',
+      },
+      {
+        slug: 'evolution',
+        name: 'Evolution',
+        order: 8,
+        description: 'Natural selection and the unity of all life.',
+        icon: 'Bird',
+        accentColor: '#E67E22',
+        levelRange: 'Beginner → Advanced',
+      },
+      {
+        slug: 'body-fuel-and-transport',
+        name: 'The Human Body I — Fuel & Transport',
+        order: 9,
+        description: 'Digestion, the heart, blood, and the lungs.',
+        icon: 'Heart',
+        accentColor: '#E74C3C',
+        levelRange: 'Beginner → Intermediate',
+      },
+      {
+        slug: 'body-control',
+        name: 'The Human Body II — Control',
+        order: 10,
+        description: 'Nerves, the brain, hormones, and homeostasis.',
+        icon: 'Brain',
+        accentColor: '#0984E3',
+        levelRange: 'Beginner → Advanced',
+      },
+      {
+        slug: 'reproduction-and-development',
+        name: 'Reproduction & Development',
+        order: 11,
+        description: 'From gametes to a fully formed body.',
+        icon: 'Baby',
+        accentColor: '#FF6B9D',
+        levelRange: 'Beginner → Advanced',
+      },
+      {
+        slug: 'plants',
+        name: 'Plants',
+        order: 12,
+        description: 'Leaves, transport, reproduction, and plant behaviour.',
+        icon: 'Sprout',
+        accentColor: '#6AB04C',
+        levelRange: 'Beginner → Intermediate',
+      },
+      {
+        slug: 'microbes-and-immunity',
+        name: 'Microbes, Immunity & Disease',
+        order: 13,
+        description: 'Bacteria, viruses, fungi, and the body that fights them.',
+        icon: 'Bug',
+        accentColor: '#9B59B6',
+        levelRange: 'Intermediate → Advanced',
+      },
+      {
+        slug: 'ecology',
+        name: 'Ecology & the Biosphere',
+        order: 14,
+        description: 'Ecosystems, cycles, populations, and our planet.',
+        icon: 'Trees',
+        accentColor: '#16A085',
+        levelRange: 'Beginner → Advanced',
+      },
+    ]
+
+    const bioUnitIds: Record<string, any> = {}
+    for (const u of bioUnitsData) {
+      bioUnitIds[u.slug] = await ctx.db.insert('units', {
+        subjectId: subjectIds['biology'],
+        slug: u.slug,
+        name: u.name,
+        order: u.order,
+        description: u.description,
+        icon: u.icon,
+        accentColor: u.accentColor,
+        levelRange: u.levelRange,
+      })
+    }
+
+    const bioLessonsData: typeof lessonsData = [
+      // --- World 1: The Study of Life ---
+      { unitSlug: 'study-of-life', contentSlug: 'biology/what-is-life', title: 'What Is Life?', summary: 'The seven things every living thing does — and why the line is blurrier than you think.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'study-of-life', contentSlug: 'biology/diversity-of-life', title: 'The Diversity of Life', summary: 'Three domains and the great kingdoms — how we sort millions of species.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'study-of-life', contentSlug: 'biology/the-microscope', title: 'The Microscope', summary: 'Magnification, resolution, and the instrument that revealed the cell.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'study-of-life', contentSlug: 'biology/the-scale-of-life', title: 'The Scale of Life', summary: 'From molecules to the biosphere — life across twelve orders of magnitude.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'study-of-life', contentSlug: 'biology/how-biologists-work', title: 'How Biologists Work', summary: 'Observation, hypotheses, and the controlled experiment that pins down a cause.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'study-of-life', contentSlug: 'biology/naming-and-sorting-life', title: 'Naming & Sorting Life', summary: 'Binomial names and the keys biologists use to identify any organism.', order: 6, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'study-of-life', contentSlug: 'biology/the-tree-of-life', title: 'The Tree of Life', summary: 'One family tree for all life — from a single ancestor to every species today.', order: 7, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 2: The Cell ---
+      { unitSlug: 'the-cell', contentSlug: 'biology/cell-theory', title: 'Cell Theory', summary: 'The big idea that all life is built from cells — and where it came from.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'the-cell', contentSlug: 'biology/prokaryotes-vs-eukaryotes', title: 'Prokaryotes vs Eukaryotes', summary: 'Two fundamentally different cell designs — and the nucleus that divides them.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'the-cell', contentSlug: 'biology/animal-cell', title: 'Inside an Animal Cell', summary: 'A guided tour of the organelles that keep a cell alive.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'the-cell', contentSlug: 'biology/plant-cell', title: 'Inside a Plant Cell', summary: 'The wall, the vacuole, and the chloroplast that make a plant cell different.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'the-cell', contentSlug: 'biology/the-nucleus', title: 'The Nucleus & Control Centre', summary: 'Where the DNA lives and how instructions leave it.', order: 5, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'the-cell', contentSlug: 'biology/mitochondria-and-chloroplasts', title: 'Mitochondria & Chloroplasts', summary: 'The two organelles that power the living world.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'the-cell', contentSlug: 'biology/cytoskeleton', title: 'The Cytoskeleton & Cell Shape', summary: 'The internal scaffolding that gives a cell its shape and moves things around.', order: 7, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'the-cell', contentSlug: 'biology/cell-as-a-city', title: 'The Cell as a City', summary: 'How the parts work as one — and the ancient merger that built complex cells.', order: 8, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 3: Membranes & Transport ---
+      { unitSlug: 'membranes-and-transport', contentSlug: 'biology/cell-membrane', title: 'The Cell Membrane', summary: 'A flexible, self-sealing oil film — the fluid-mosaic model.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'membranes-and-transport', contentSlug: 'biology/diffusion', title: 'Diffusion', summary: 'Why molecules spread from crowded to empty — no energy required.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'membranes-and-transport', contentSlug: 'biology/osmosis', title: 'Osmosis', summary: 'The diffusion of water — and why cells swell, shrink, or burst.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'membranes-and-transport', contentSlug: 'biology/facilitated-diffusion', title: 'Facilitated Diffusion', summary: 'Channels and carriers that let picky molecules slip through.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'membranes-and-transport', contentSlug: 'biology/active-transport', title: 'Active Transport', summary: 'Pumping molecules uphill — against the gradient, at an energy cost.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'membranes-and-transport', contentSlug: 'biology/bulk-transport', title: 'Bulk Transport', summary: 'When a cell swallows or spits out whole packages — endo- and exocytosis.', order: 6, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'membranes-and-transport', contentSlug: 'biology/surface-area-and-volume', title: 'Surface Area & Volume', summary: 'The geometry that forces cells to stay small — and shapes guts, lungs, and roots.', order: 7, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'membranes-and-transport', contentSlug: 'biology/controlling-the-borders', title: 'Controlling the Borders', summary: 'How the membrane and its pumps keep a cell precisely out of balance — on purpose.', order: 8, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 4: The Molecules of Life ---
+      { unitSlug: 'molecules-of-life', contentSlug: 'biology/chemistry-of-life', title: 'The Chemistry of Life', summary: 'Atoms, bonds, and why carbon is the backbone of everything alive.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'molecules-of-life', contentSlug: 'biology/water', title: 'Water: The Solvent of Life', summary: 'A lopsided little molecule whose quirks make life possible.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'molecules-of-life', contentSlug: 'biology/carbohydrates', title: 'Carbohydrates', summary: 'Sugars and starches — fast fuel and the way life stores it.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'molecules-of-life', contentSlug: 'biology/lipids', title: 'Lipids', summary: 'Fats, oils, and the two-faced molecules that build every membrane.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'molecules-of-life', contentSlug: 'biology/proteins', title: 'Proteins', summary: 'Twenty amino acids, folded into the workhorses of the cell.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'molecules-of-life', contentSlug: 'biology/nucleic-acids', title: 'Nucleic Acids', summary: 'DNA and RNA — the molecules that carry the instructions for life.', order: 6, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'molecules-of-life', contentSlug: 'biology/protein-shape', title: 'Protein Shape Is Everything', summary: 'How a chain folds into a machine — and what happens when it unfolds.', order: 7, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 5: Energy & Enzymes ---
+      { unitSlug: 'energy-and-enzymes', contentSlug: 'biology/energy-and-atp', title: 'Energy & ATP', summary: 'The rechargeable battery every cell spends to stay alive.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'energy-and-enzymes', contentSlug: 'biology/enzymes', title: 'Enzymes', summary: 'Biological catalysts that make life’s reactions millions of times faster.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'energy-and-enzymes', contentSlug: 'biology/enzyme-rate-factors', title: 'What Changes an Enzyme’s Rate', summary: 'Temperature, pH, concentration, and the inhibitors that switch enzymes off.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'energy-and-enzymes', contentSlug: 'biology/photosynthesis', title: 'Photosynthesis', summary: 'How plants turn light, water, and air into sugar — and the oxygen you breathe.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'energy-and-enzymes', contentSlug: 'biology/cellular-respiration', title: 'Cellular Respiration', summary: 'How every cell unlocks the energy in glucose to recharge its ATP.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'energy-and-enzymes', contentSlug: 'biology/fermentation', title: 'Anaerobic Respiration & Fermentation', summary: 'Making energy without oxygen — bread, beer, and the burn in your muscles.', order: 6, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'energy-and-enzymes', contentSlug: 'biology/energy-economy', title: 'The Energy Economy of the Cell', summary: 'Light to sugar to ATP — how photosynthesis and respiration close a global loop.', order: 7, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 6: DNA & the Code of Life ---
+      { unitSlug: 'dna-and-the-code', contentSlug: 'biology/the-double-helix', title: 'The Double Helix', summary: 'The elegant structure of DNA — and how it instantly suggested how genes copy.', order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'dna-and-the-code', contentSlug: 'biology/dna-replication', title: 'DNA Replication', summary: 'Unzip, match, and copy — how one helix becomes two identical ones.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'dna-and-the-code', contentSlug: 'biology/the-genetic-code', title: 'The Genetic Code', summary: 'Three-letter codons and the dictionary that turns DNA into proteins.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'dna-and-the-code', contentSlug: 'biology/transcription', title: 'Transcription', summary: 'Copying a gene into RNA — the first step from code to protein.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'dna-and-the-code', contentSlug: 'biology/translation', title: 'Translation', summary: 'How the ribosome reads RNA and builds a protein, one amino acid at a time.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'dna-and-the-code', contentSlug: 'biology/gene-regulation', title: 'Gene Regulation', summary: 'Why a skin cell and a neuron share DNA but look nothing alike.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'dna-and-the-code', contentSlug: 'biology/from-gene-to-protein', title: 'From Gene to Protein', summary: 'The central dogma, end to end — and what a single typo can do.', order: 7, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 7: Cell Division & Inheritance ---
+      { unitSlug: 'division-and-inheritance', contentSlug: 'biology/the-cell-cycle', title: 'The Cell Cycle', summary: 'Grow, copy, divide — the repeating life of a cell, and its checkpoints.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'division-and-inheritance', contentSlug: 'biology/mitosis', title: 'Mitosis', summary: 'One cell into two identical copies — the basis of growth and repair.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'division-and-inheritance', contentSlug: 'biology/meiosis', title: 'Meiosis & Variation', summary: 'Halving the chromosomes — and shuffling them to make every gamete unique.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'division-and-inheritance', contentSlug: 'biology/mendel', title: 'Mendel & the Rules of Inheritance', summary: 'How a monk with pea plants cracked the logic of heredity.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'division-and-inheritance', contentSlug: 'biology/punnett-squares', title: 'Punnett Squares & Probability', summary: 'Predicting the odds of inheritance with a simple grid.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'division-and-inheritance', contentSlug: 'biology/beyond-mendel', title: 'Beyond Mendel', summary: 'Codominance, sex linkage, and the traits controlled by many genes.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'division-and-inheritance', contentSlug: 'biology/mutations-and-chromosomes', title: 'Mutations & Chromosomes', summary: 'Changes to the code — from single letters to whole extra chromosomes.', order: 7, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'division-and-inheritance', contentSlug: 'biology/human-genetics', title: 'Human Genetics', summary: 'Pedigrees, genetic disorders, and how traits run through families.', order: 8, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 8: Evolution ---
+      { unitSlug: 'evolution', contentSlug: 'biology/variation-and-adaptation', title: 'Variation & Adaptation', summary: 'No two individuals are alike — and why that difference is the raw material of evolution.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'evolution', contentSlug: 'biology/natural-selection', title: 'Natural Selection', summary: 'Darwin’s simple, powerful idea for how life changes over time.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'evolution', contentSlug: 'biology/evidence-for-evolution', title: 'Evidence for Evolution', summary: 'Fossils, shared anatomy, embryos, and DNA — four windows onto deep time.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'evolution', contentSlug: 'biology/speciation', title: 'How New Species Form', summary: 'Split a population, wait, and watch one species become two.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'evolution', contentSlug: 'biology/phylogeny', title: 'The Tree of Life & Phylogeny', summary: 'Reading relatedness — how we reconstruct the branches of life’s family tree.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'evolution', contentSlug: 'biology/origin-of-life', title: 'The Origin of Life', summary: 'From chemistry to the first cell — how life may have begun.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'evolution', contentSlug: 'biology/evolution-in-action', title: 'Evolution in Action', summary: 'Antibiotic resistance and other evolution we can watch happen — and the myths to drop.', order: 7, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 9: The Human Body I — Fuel & Transport ---
+      { unitSlug: 'body-fuel-and-transport', contentSlug: 'biology/nutrition', title: 'Nutrition & a Balanced Diet', summary: 'The nutrients your body needs and what each one does.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'body-fuel-and-transport', contentSlug: 'biology/digestion', title: 'Digestion', summary: 'The journey of a meal — and how enzymes break food into fuel.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'body-fuel-and-transport', contentSlug: 'biology/heart-and-circulation', title: 'The Heart & Circulation', summary: 'A double pump that pushes blood around your body 100,000 times a day.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'body-fuel-and-transport', contentSlug: 'biology/blood-and-vessels', title: 'Blood & Blood Vessels', summary: 'What blood carries, and the arteries, veins, and capillaries that route it.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'body-fuel-and-transport', contentSlug: 'biology/lungs-and-gas-exchange', title: 'The Lungs & Gas Exchange', summary: 'How oxygen gets in and carbon dioxide gets out — across a surface the size of a court.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'body-fuel-and-transport', contentSlug: 'biology/excretion-and-kidney', title: 'Excretion & the Kidney', summary: 'Filtering the blood and balancing your water — the body’s waste-management plant.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'body-fuel-and-transport', contentSlug: 'biology/cardiovascular-in-depth', title: 'The Cardiovascular System in Depth', summary: 'Double circulation and the cardiac cycle — the heartbeat, valve by valve.', order: 7, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 10: The Human Body II — Control ---
+      { unitSlug: 'body-control', contentSlug: 'biology/the-nervous-system', title: 'The Nervous System', summary: 'The body’s high-speed wiring — central and peripheral.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'body-control', contentSlug: 'biology/neurons', title: 'Neurons & the Nerve Impulse', summary: 'The cell that carries a signal — and how that signal travels.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'body-control', contentSlug: 'biology/reflexes', title: 'Reflexes & the Reflex Arc', summary: 'The shortcut that pulls your hand from a flame before you feel it.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'body-control', contentSlug: 'biology/brain-and-senses', title: 'The Brain & the Senses', summary: 'How the brain is organised and how your senses feed it the world.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'body-control', contentSlug: 'biology/hormones', title: 'Hormones & the Endocrine System', summary: 'Chemical messages in the blood — slower than nerves, but far-reaching.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'body-control', contentSlug: 'biology/homeostasis', title: 'Homeostasis', summary: 'Keeping the inside steady — blood sugar, temperature, and negative feedback.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'body-control', contentSlug: 'biology/how-a-neuron-fires', title: 'How a Neuron Fires', summary: 'The action potential — the electrical spike behind every thought and move.', order: 7, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 11: Reproduction & Development ---
+      { unitSlug: 'reproduction-and-development', contentSlug: 'biology/asexual-vs-sexual', title: 'Asexual vs Sexual Reproduction', summary: 'Copies versus combinations — two strategies for making the next generation.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'reproduction-and-development', contentSlug: 'biology/reproductive-systems', title: 'The Human Reproductive Systems', summary: 'The organs that make and deliver gametes.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'reproduction-and-development', contentSlug: 'biology/gametes-and-fertilization', title: 'Gametes & Fertilization', summary: 'Egg meets sperm — how two half-sets of DNA become one new individual.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'reproduction-and-development', contentSlug: 'biology/menstrual-cycle', title: 'The Menstrual Cycle & Hormones', summary: 'A monthly hormonal rhythm that prepares the body for pregnancy.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'reproduction-and-development', contentSlug: 'biology/pregnancy-and-birth', title: 'Pregnancy & Birth', summary: 'From a fertilised egg to a newborn — nine months of development.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'reproduction-and-development', contentSlug: 'biology/from-one-cell-to-a-body', title: 'From One Cell to a Body', summary: 'How a single cell builds a whole organism — differentiation and stem cells.', order: 6, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 12: Plants ---
+      { unitSlug: 'plants', contentSlug: 'biology/leaf-and-photosynthesis', title: 'The Leaf & Photosynthesis', summary: 'A solar panel built from cells — how a leaf is designed to capture light.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'plants', contentSlug: 'biology/water-transport', title: 'Water Transport & Transpiration', summary: 'How water climbs from root to leaf and evaporates away.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'plants', contentSlug: 'biology/sugar-transport', title: 'Sugar Transport', summary: 'How a plant ships the sugar it makes to where it’s needed — the phloem.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'plants', contentSlug: 'biology/plant-nutrition', title: 'Plant Nutrition & Minerals', summary: 'Beyond sunlight — the minerals a plant pulls from the soil, and what they do.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'plants', contentSlug: 'biology/plant-reproduction', title: 'Plant Reproduction', summary: 'Flowers, pollination, and seeds — how plants make the next generation.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'plants', contentSlug: 'biology/plant-responses', title: 'Plant Responses', summary: 'Plants do move — bending to light and gravity through hormones.', order: 6, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'plants', contentSlug: 'biology/lifting-water', title: 'How a Tree Lifts Water 100 Metres', summary: 'No pump, no power — the cohesion-tension trick that defies gravity.', order: 7, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 13: Microbes, Immunity & Disease ---
+      { unitSlug: 'microbes-and-immunity', contentSlug: 'biology/the-microbial-world', title: 'The Microbial World', summary: 'Bacteria and archaea — the invisible majority of life on Earth.', order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'microbes-and-immunity', contentSlug: 'biology/viruses', title: 'Viruses', summary: 'Are they even alive? The hijackers that sit at the edge of biology.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'microbes-and-immunity', contentSlug: 'biology/fungi-and-protists', title: 'Fungi & Protists', summary: 'The other microbes — decomposers, parasites, and surprising allies.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'microbes-and-immunity', contentSlug: 'biology/infectious-disease', title: 'Infectious Disease & How It Spreads', summary: 'Pathogens, transmission, and what it takes to stop an outbreak.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'microbes-and-immunity', contentSlug: 'biology/the-immune-system', title: 'The Immune System', summary: 'Your built-in defence — barriers, patrols, and targeted strikes.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'microbes-and-immunity', contentSlug: 'biology/vaccines', title: 'Vaccines & Immunity', summary: 'Training the immune system before the real threat ever arrives.', order: 6, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'microbes-and-immunity', contentSlug: 'biology/antibiotics-and-resistance', title: 'Antibiotics & Resistance', summary: 'Wonder drugs — and the evolution that’s blunting them.', order: 7, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'microbes-and-immunity', contentSlug: 'biology/the-immune-response', title: 'The Immune Response in Depth', summary: 'Innate and adaptive immunity, antibodies, and the memory that protects you for life.', order: 8, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 14: Ecology & the Biosphere ---
+      { unitSlug: 'ecology', contentSlug: 'biology/ecosystems-and-energy', title: 'Ecosystems & Energy Flow', summary: 'How sunlight powers a whole community — and why energy runs out at the top.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'ecology', contentSlug: 'biology/food-webs', title: 'Food Chains & Food Webs', summary: 'Who eats whom — trophic levels and the tangled web that connects them.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'ecology', contentSlug: 'biology/nutrient-cycles', title: 'Nutrient Cycles', summary: 'Carbon, nitrogen, and water on endless loops through the living world.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'ecology', contentSlug: 'biology/populations', title: 'Populations & Competition', summary: 'What makes a population grow, crash, or hold steady.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'ecology', contentSlug: 'biology/biodiversity', title: 'Biodiversity & Conservation', summary: 'Why variety makes ecosystems strong — and what we lose when it falls.', order: 5, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'ecology', contentSlug: 'biology/humans-and-the-biosphere', title: 'Humans & the Biosphere', summary: 'Our footprint on the planet — pollution, land, and a changing climate.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'ecology', contentSlug: 'biology/carbon-and-climate', title: 'The Carbon Cycle & Climate Change', summary: 'How one element ties life, the oceans, and the climate together.', order: 7, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+    ]
+
+    for (const l of bioLessonsData) {
+      await ctx.db.insert('lessons', {
+        subjectId: subjectIds['biology'],
+        unitId: bioUnitIds[l.unitSlug],
+        contentSlug: l.contentSlug,
+        title: l.title,
+        summary: l.summary,
+        order: l.order,
+        estimatedMinutes: l.estimatedMinutes,
+        xpReward: l.xpReward,
+        isPublished: l.isPublished,
+        level: l.level,
+        format: l.format,
+      })
+    }
+
+    // =====================================================================
+    // CHEMISTRY — 14 floating "worlds" (categories), order 1 (foundational
+    // matter) → 14 (biochemistry capstone), each blending Beginner → Advanced
+    // and ending in a `deepdive`. Mapped from a school chemistry curriculum
+    // (matter, atoms, periodic table, bonding, the mole, reactions, gases,
+    // solutions, acids/bases, energetics, kinetics/equilibrium, electrochem)
+    // plus an academic organic + biochemistry source (the organic & molecules-
+    // of-life worlds). Same two-template shape as Physics/Biology.
+    // =====================================================================
+    const chemUnitsData: typeof unitsData = [
+      { slug: 'matter-basics', name: 'The World of Matter', order: 1, description: 'States, changes, mixtures, and how we measure matter.', icon: 'Boxes', accentColor: '#00D2D3', levelRange: 'Beginner' },
+      { slug: 'atoms', name: 'Atoms', order: 2, description: 'Inside the atom — particles, isotopes, ions, and electrons.', icon: 'Atom', accentColor: '#5DADE2', levelRange: 'Beginner → Intermediate' },
+      { slug: 'periodic-table', name: 'The Periodic Table', order: 3, description: 'The chart that organises every element — and why it works.', icon: 'Grid3x3', accentColor: '#48C9B0', levelRange: 'Beginner → Advanced' },
+      { slug: 'bonding', name: 'Chemical Bonding', order: 4, description: 'How atoms join — ionic, covalent, metallic — into shaped molecules.', icon: 'Link2', accentColor: '#16A085', levelRange: 'Intermediate → Advanced' },
+      { slug: 'mole', name: 'The Mole & Stoichiometry', order: 5, description: 'Counting atoms by weighing, and the arithmetic of reactions.', icon: 'Scale', accentColor: '#F39C12', levelRange: 'Intermediate' },
+      { slug: 'reactions', name: 'Chemical Reactions', order: 6, description: 'Reaction types, precipitation, and predicting products.', icon: 'FlaskConical', accentColor: '#E67E22', levelRange: 'Beginner → Intermediate' },
+      { slug: 'gases', name: 'Gases & States', order: 7, description: 'The gas laws, kinetic theory, and changes of state.', icon: 'Wind', accentColor: '#3498DB', levelRange: 'Intermediate → Advanced' },
+      { slug: 'solutions', name: 'Solutions & Mixtures', order: 8, description: 'Dissolving, solubility, concentration, and colligative properties.', icon: 'Droplets', accentColor: '#1ABC9C', levelRange: 'Beginner → Intermediate' },
+      { slug: 'acids-and-bases', name: 'Acids & Bases', order: 9, description: 'pH, strong vs weak, titration, neutralization, and buffers.', icon: 'TestTube', accentColor: '#E74C3C', levelRange: 'Beginner → Advanced' },
+      { slug: 'thermochemistry', name: 'Energy & Thermochemistry', order: 10, description: 'Heat in reactions — enthalpy, calorimetry, and free energy.', icon: 'Flame', accentColor: '#E84393', levelRange: 'Intermediate → Advanced' },
+      { slug: 'equilibrium', name: 'Reaction Rates & Equilibrium', order: 11, description: 'How fast and how far — kinetics, catalysts, and Le Chatelier.', icon: 'Gauge', accentColor: '#9B59B6', levelRange: 'Intermediate → Advanced' },
+      { slug: 'electrochemistry', name: 'Redox & Electrochemistry', order: 12, description: 'Electron transfer, batteries, electrolysis, and corrosion.', icon: 'Battery', accentColor: '#2ECC71', levelRange: 'Intermediate → Advanced' },
+      { slug: 'organic', name: 'Organic Chemistry', order: 13, description: 'The chemistry of carbon — hydrocarbons, groups, and polymers.', icon: 'Hexagon', accentColor: '#D35400', levelRange: 'Beginner → Advanced' },
+      { slug: 'biochemistry', name: 'Biochemistry', order: 14, description: 'The four molecules of life and the chemistry that runs a cell.', icon: 'Dna', accentColor: '#27AE60', levelRange: 'Intermediate → Advanced' },
+    ]
+
+    const chemUnitIds: Record<string, any> = {}
+    for (const u of chemUnitsData) {
+      chemUnitIds[u.slug] = await ctx.db.insert('units', {
+        subjectId: subjectIds['chemistry'],
+        slug: u.slug,
+        name: u.name,
+        order: u.order,
+        description: u.description,
+        icon: u.icon,
+        accentColor: u.accentColor,
+        levelRange: u.levelRange,
+      })
+    }
+
+    const chemLessonsData: typeof lessonsData = [
+      // --- World 1: The World of Matter ---
+      { unitSlug: 'matter-basics', contentSlug: 'chemistry/what-is-chemistry', title: 'What Is Chemistry?', summary: 'The science of matter — what it is, how it behaves, and how it changes.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'matter-basics', contentSlug: 'chemistry/states-of-matter', title: 'The States of Matter', summary: 'Solid, liquid, gas (and plasma) — particle arrangement and energy.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'matter-basics', contentSlug: 'chemistry/physical-and-chemical-changes', title: 'Physical & Chemical Changes', summary: 'Rearranging molecules versus making brand-new substances.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'matter-basics', contentSlug: 'chemistry/pure-substances-and-mixtures', title: 'Pure Substances & Mixtures', summary: 'Elements, compounds, and the homogeneous/heterogeneous mixtures.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'matter-basics', contentSlug: 'chemistry/separating-mixtures', title: 'Separating Mixtures', summary: 'Filtration, evaporation, distillation, and chromatography.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'matter-basics', contentSlug: 'chemistry/measuring-matter', title: 'Measuring Matter', summary: 'Mass, volume, density, units, and significant figures.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'matter-basics', contentSlug: 'chemistry/classifying-matter', title: 'The Map of Matter', summary: 'One decision tree for every kind of matter — and the particles beneath it.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 2: Atoms ---
+      { unitSlug: 'atoms', contentSlug: 'chemistry/atomic-theory', title: 'The Idea of the Atom', summary: 'From Democritus to Bohr — how the atomic model was rebuilt four times.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'atoms', contentSlug: 'chemistry/inside-the-atom', title: 'Inside the Atom', summary: 'Protons, neutrons, electrons — and an atom that is mostly empty space.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'atoms', contentSlug: 'chemistry/atomic-number-and-mass', title: 'Atomic Number & Mass', summary: 'How Z and A define an atom — and where neutrons come in.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'atoms', contentSlug: 'chemistry/isotopes', title: 'Isotopes', summary: 'Same element, different neutrons — and the weighted average mass.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'atoms', contentSlug: 'chemistry/electron-arrangement', title: 'How Electrons Are Arranged', summary: 'Shells, the 2-8-8 pattern, and all-important valence electrons.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'atoms', contentSlug: 'chemistry/ions', title: 'Ions', summary: 'Atoms that gained or lost electrons — cations and anions.', order: 6, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'atoms', contentSlug: 'chemistry/the-quantum-atom', title: 'The Quantum Atom', summary: 'Orbitals, sub-shells, and the electron configurations behind the table.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 3: The Periodic Table ---
+      { unitSlug: 'periodic-table', contentSlug: 'chemistry/organizing-the-elements', title: 'Organizing the Elements', summary: "Mendeleev's bold pattern and the periodic law.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'periodic-table', contentSlug: 'chemistry/reading-the-table', title: 'Reading the Table', summary: 'Periods, groups, and what every square tells you.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'periodic-table', contentSlug: 'chemistry/metals-nonmetals-metalloids', title: 'Metals, Non-metals & Metalloids', summary: 'The staircase divide and the elements along it.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'periodic-table', contentSlug: 'chemistry/groups-and-families', title: 'Groups & Families', summary: 'Alkali metals, halogens, and noble gases — chemical families.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'periodic-table', contentSlug: 'chemistry/periodic-trends', title: 'Periodic Trends', summary: 'Atomic radius, ionization energy, and electronegativity across the table.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'periodic-table', contentSlug: 'chemistry/why-the-table-works', title: 'Why the Table Works', summary: 'Electron configuration is the shape of the periodic table.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 4: Chemical Bonding ---
+      { unitSlug: 'bonding', contentSlug: 'chemistry/why-atoms-bond', title: 'Why Atoms Bond', summary: 'The octet rule and three strategies for a full outer shell.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'bonding', contentSlug: 'chemistry/ionic-bonding', title: 'Ionic Bonding', summary: 'Electron transfer, ions, and the giant lattice of a salt.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'bonding', contentSlug: 'chemistry/covalent-bonding', title: 'Covalent Bonding', summary: 'Sharing electrons in single, double, and triple bonds.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'bonding', contentSlug: 'chemistry/metallic-bonding', title: 'Metallic Bonding', summary: 'A sea of electrons — why metals conduct and bend.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'bonding', contentSlug: 'chemistry/lewis-structures', title: 'Lewis Structures', summary: 'Mapping every valence electron — bonds and lone pairs.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'bonding', contentSlug: 'chemistry/molecular-shapes', title: 'Molecular Shapes', summary: 'VSEPR — how electron pairs set a molecule in 3D.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'bonding', contentSlug: 'chemistry/polarity-and-intermolecular-forces', title: 'Polarity & Intermolecular Forces', summary: 'Polar bonds, dipoles, and the forces between molecules.', order: 7, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'bonding', contentSlug: 'chemistry/the-shape-of-molecules', title: 'The Shape of Molecules', summary: 'From electrons to properties — the full chain of bonding.', order: 8, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 5: The Mole & Stoichiometry ---
+      { unitSlug: 'mole', contentSlug: 'chemistry/chemical-formulas', title: 'Chemical Formulas', summary: 'Reading subscripts and parentheses as a recipe of atoms.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'mole', contentSlug: 'chemistry/the-mole', title: 'The Mole', summary: "Avogadro's number and counting atoms by weighing them.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'mole', contentSlug: 'chemistry/molar-mass', title: 'Molar Mass', summary: 'Adding atomic masses to bridge grams and moles.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'mole', contentSlug: 'chemistry/percent-composition', title: 'Percent Composition & Formulas', summary: 'Mass percentages, empirical and molecular formulas.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'mole', contentSlug: 'chemistry/balancing-equations', title: 'Balancing Equations', summary: 'Conservation of mass and the coefficients that honour it.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'mole', contentSlug: 'chemistry/stoichiometry', title: 'Stoichiometry', summary: 'Mole ratios — the recipe arithmetic of reactions.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'mole', contentSlug: 'chemistry/limiting-reactant-and-yield', title: 'Limiting Reactant & Yield', summary: 'What runs out first, and how much product you really get.', order: 7, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'mole', contentSlug: 'chemistry/the-arithmetic-of-reactions', title: 'The Arithmetic of Reactions', summary: 'The full workflow from grams in to grams out.', order: 8, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 6: Chemical Reactions ---
+      { unitSlug: 'reactions', contentSlug: 'chemistry/what-is-a-reaction', title: 'What Is a Reaction?', summary: 'Reactants, products, and the signs that bonds have rearranged.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'reactions', contentSlug: 'chemistry/reaction-types', title: 'Types of Reaction', summary: 'Synthesis, decomposition, replacement — the master patterns.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'reactions', contentSlug: 'chemistry/combustion', title: 'Combustion', summary: 'Fuels burning in oxygen — complete versus incomplete.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'reactions', contentSlug: 'chemistry/precipitation-reactions', title: 'Precipitation Reactions', summary: 'A solid from two solutions, predicted by solubility rules.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'reactions', contentSlug: 'chemistry/the-activity-series', title: 'The Activity Series', summary: 'Ranking metals by reactivity to predict displacement.', order: 5, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'reactions', contentSlug: 'chemistry/net-ionic-equations', title: 'Net Ionic Equations', summary: 'Stripping out spectator ions to show the real reaction.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'reactions', contentSlug: 'chemistry/predicting-reactions', title: 'Predicting Reactions', summary: 'Type, driving force, and products — reasoning like a chemist.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 7: Gases & States ---
+      { unitSlug: 'gases', contentSlug: 'chemistry/the-gas-phase', title: 'The Gas Phase', summary: 'Why gases fill space, compress, and exert pressure.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'gases', contentSlug: 'chemistry/kinetic-molecular-theory', title: 'Kinetic Molecular Theory', summary: 'Gas as tiny fast particles — and temperature as their energy.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'gases', contentSlug: 'chemistry/the-gas-laws', title: 'The Gas Laws', summary: "Boyle's, Charles's, and Gay-Lussac's relationships.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'gases', contentSlug: 'chemistry/the-ideal-gas-law', title: 'The Ideal Gas Law', summary: 'PV = nRT — one equation linking all the gas quantities.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'gases', contentSlug: 'chemistry/phase-changes', title: 'Phase Changes', summary: 'Heating curves, latent heat, and why temperature pauses.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'gases', contentSlug: 'chemistry/intermolecular-forces-and-states', title: 'Forces & States of Matter', summary: 'Why a substance is solid, liquid, or gas at room temperature.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 8: Solutions & Mixtures ---
+      { unitSlug: 'solutions', contentSlug: 'chemistry/what-is-a-solution', title: 'What Is a Solution?', summary: 'Solute, solvent, and dissolving as a physical change.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'solutions', contentSlug: 'chemistry/how-things-dissolve', title: 'How Things Dissolve', summary: '"Like dissolves like" — and how water pulls ions apart.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'solutions', contentSlug: 'chemistry/solubility', title: 'Solubility', summary: 'Saturation, solubility curves, and temperature effects.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'solutions', contentSlug: 'chemistry/concentration-and-molarity', title: 'Concentration & Molarity', summary: 'Molarity, making solutions, and dilution.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'solutions', contentSlug: 'chemistry/colligative-properties', title: 'Colligative Properties', summary: 'Why dissolved particles raise boiling and lower freezing points.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'solutions', contentSlug: 'chemistry/electrolytes-and-water', title: 'Electrolytes & the Water of Life', summary: 'The universal solvent and the ions that carry current.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 9: Acids & Bases ---
+      { unitSlug: 'acids-and-bases', contentSlug: 'chemistry/what-are-acids-and-bases', title: 'What Are Acids & Bases?', summary: 'Two opposite families, their properties, and indicators.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'acids-and-bases', contentSlug: 'chemistry/the-ph-scale', title: 'The pH Scale', summary: 'Measuring acidity on a logarithmic 0–14 scale.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'acids-and-bases', contentSlug: 'chemistry/acid-base-theories', title: 'Acid–Base Theories', summary: 'Arrhenius, Brønsted–Lowry, and conjugate pairs.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'acids-and-bases', contentSlug: 'chemistry/strong-and-weak', title: 'Strong & Weak', summary: 'Degree of ionisation — and why it is not concentration.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'acids-and-bases', contentSlug: 'chemistry/neutralization-and-salts', title: 'Neutralization & Salts', summary: 'Acid + base → salt + water, and naming the salt.', order: 5, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'acids-and-bases', contentSlug: 'chemistry/titration', title: 'Titration', summary: 'Finding an unknown concentration at the equivalence point.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'acids-and-bases', contentSlug: 'chemistry/buffers-and-equilibrium', title: 'Buffers & the Balance of pH', summary: 'How weak acid pairs resist pH change — and preview equilibrium.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 10: Energy & Thermochemistry ---
+      { unitSlug: 'thermochemistry', contentSlug: 'chemistry/energy-in-reactions', title: 'Energy in Reactions', summary: 'System, surroundings, and energy stored in bonds.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'thermochemistry', contentSlug: 'chemistry/exothermic-and-endothermic', title: 'Exothermic & Endothermic', summary: 'Releasing or absorbing energy — and the sign of ΔH.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'thermochemistry', contentSlug: 'chemistry/enthalpy-and-bond-energy', title: 'Enthalpy & Bond Energy', summary: 'ΔH as the balance of breaking and forming bonds.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'thermochemistry', contentSlug: 'chemistry/calorimetry', title: 'Calorimetry', summary: 'Measuring heat with q = mcΔT.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'thermochemistry', contentSlug: 'chemistry/hess-law', title: "Hess's Law", summary: 'Adding step enthalpies — the route does not matter.', order: 5, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'thermochemistry', contentSlug: 'chemistry/entropy-and-free-energy', title: 'Entropy & Spontaneity', summary: 'Entropy, Gibbs free energy, and what makes a reaction go.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 11: Reaction Rates & Equilibrium ---
+      { unitSlug: 'equilibrium', contentSlug: 'chemistry/reaction-rates', title: 'Reaction Rates', summary: 'How fast a reaction goes — and reading it off a graph.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'equilibrium', contentSlug: 'chemistry/collision-theory', title: 'Collision Theory', summary: 'Energy, orientation, and the activation-energy barrier.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'equilibrium', contentSlug: 'chemistry/factors-affecting-rate', title: 'Factors Affecting Rate', summary: 'Temperature, concentration, surface area, and catalysts.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'equilibrium', contentSlug: 'chemistry/catalysts', title: 'Catalysts', summary: 'Lowering activation energy without being used up.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'equilibrium', contentSlug: 'chemistry/dynamic-equilibrium', title: 'Dynamic Equilibrium', summary: 'Forward and reverse rates equal — but still running.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'equilibrium', contentSlug: 'chemistry/le-chatelier', title: "Le Chatelier's Principle", summary: 'How equilibrium shifts to oppose a stress.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'equilibrium', contentSlug: 'chemistry/the-equilibrium-constant', title: 'The Equilibrium Constant', summary: 'K and Q — putting a number on where equilibrium lies.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 12: Redox & Electrochemistry ---
+      { unitSlug: 'electrochemistry', contentSlug: 'chemistry/oxidation-and-reduction', title: 'Oxidation & Reduction', summary: 'Electron transfer — OIL RIG — and redox agents.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'electrochemistry', contentSlug: 'chemistry/oxidation-numbers', title: 'Oxidation Numbers', summary: 'Bookkeeping charges that reveal redox anywhere.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'electrochemistry', contentSlug: 'chemistry/balancing-redox', title: 'Balancing Redox Reactions', summary: 'Half-reactions and matching the electrons transferred.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'electrochemistry', contentSlug: 'chemistry/galvanic-cells', title: 'Galvanic Cells', summary: 'Turning a spontaneous redox reaction into electricity.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'electrochemistry', contentSlug: 'chemistry/electrolysis', title: 'Electrolysis', summary: 'Using electricity to force a non-spontaneous reaction.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'electrochemistry', contentSlug: 'chemistry/batteries-and-corrosion', title: 'Batteries & Corrosion', summary: 'Redox we want, and redox we fight — plus how to stop it.', order: 6, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'electrochemistry', contentSlug: 'chemistry/the-electrochemical-series', title: 'The Electrochemical Series', summary: 'Electrode potentials, cell voltage, and the reactivity thread.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 13: Organic Chemistry ---
+      { unitSlug: 'organic', contentSlug: 'chemistry/the-chemistry-of-carbon', title: 'The Chemistry of Carbon', summary: "Carbon's four bonds and catenation — the basis of millions of compounds.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'organic', contentSlug: 'chemistry/hydrocarbons-alkanes', title: 'Hydrocarbons & Alkanes', summary: 'Saturated chains, the CₙH₂ₙ₊₂ series, and fuels.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'organic', contentSlug: 'chemistry/alkenes-and-alkynes', title: 'Alkenes & Alkynes', summary: 'Double and triple bonds, unsaturation, and addition.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'organic', contentSlug: 'chemistry/isomers', title: 'Isomers', summary: 'Same formula, different structure — and different properties.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'organic', contentSlug: 'chemistry/functional-groups', title: 'Functional Groups', summary: 'The reactive clusters that define organic families.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'organic', contentSlug: 'chemistry/alcohols-and-carboxylic-acids', title: 'Alcohols & Carboxylic Acids', summary: 'Two everyday families — and the esters they form.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'organic', contentSlug: 'chemistry/polymers', title: 'Polymers', summary: 'Linking monomers into giant molecules — addition and condensation.', order: 7, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'organic', contentSlug: 'chemistry/organic-reactions', title: 'The Logic of Organic Reactions', summary: 'Substitution, addition, elimination — predicted by the group.', order: 8, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 14: Biochemistry ---
+      { unitSlug: 'biochemistry', contentSlug: 'chemistry/the-molecules-of-life', title: 'The Molecules of Life', summary: 'The four families and the polymers of life.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'biochemistry', contentSlug: 'chemistry/carbohydrates', title: 'Carbohydrates', summary: 'Sugars and starches — from one ring to long chains.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'biochemistry', contentSlug: 'chemistry/lipids', title: 'Lipids', summary: 'Fats, oils, and the phospholipid membrane.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'biochemistry', contentSlug: 'chemistry/proteins-and-amino-acids', title: 'Proteins & Amino Acids', summary: 'Amino acids, peptide bonds, and folding into function.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'biochemistry', contentSlug: 'chemistry/nucleic-acids', title: 'Nucleic Acids', summary: 'DNA, base pairing, and the code for proteins.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'biochemistry', contentSlug: 'chemistry/enzymes-and-metabolism', title: 'Enzymes & Metabolism', summary: 'Biological catalysts and the network of reactions in a cell.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'biochemistry', contentSlug: 'chemistry/the-chemistry-of-life', title: 'The Chemistry of Life', summary: 'How every world of this island converges in a living cell.', order: 7, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+    ]
+
+    for (const l of chemLessonsData) {
+      await ctx.db.insert('lessons', {
+        subjectId: subjectIds['chemistry'],
+        unitId: chemUnitIds[l.unitSlug],
+        contentSlug: l.contentSlug,
+        title: l.title,
+        summary: l.summary,
+        order: l.order,
+        estimatedMinutes: l.estimatedMinutes,
+        xpReward: l.xpReward,
+        isPublished: l.isPublished,
+        level: l.level,
+        format: l.format,
+      })
+    }
+
+    // ===== MATH (4th subject — 18 worlds, number → statistics + Calculus + Infinity) =====
+    const mathUnitsData: typeof unitsData = [
+      { slug: 'number-sense', name: 'The World of Numbers', order: 1, description: 'Place value, negatives, order of operations, and the number line.', icon: 'Hash', accentColor: '#FFB020', levelRange: 'Beginner' },
+      { slug: 'factors-and-primes', name: 'Factors & Primes', order: 2, description: 'Multiples, factors, primes, HCF/LCM, powers and roots.', icon: 'Grid3x3', accentColor: '#F39C12', levelRange: 'Beginner → Intermediate' },
+      { slug: 'fractions', name: 'Fractions, Decimals & Percents', order: 3, description: 'Fractions, the four operations, and the FDP triangle.', icon: 'PieChart', accentColor: '#E67E22', levelRange: 'Beginner → Intermediate' },
+      { slug: 'ratio-proportion', name: 'Ratio & Proportion', order: 4, description: 'Sharing in ratios, direct and inverse proportion, and scale.', icon: 'Scale', accentColor: '#E17055', levelRange: 'Beginner → Intermediate' },
+      { slug: 'powers-and-roots', name: 'Powers, Roots & Standard Form', order: 5, description: 'Index laws, surds, and writing the very large and very small.', icon: 'Superscript', accentColor: '#D63031', levelRange: 'Intermediate' },
+      { slug: 'algebra-basics', name: 'Into Algebra', order: 6, description: 'Letters for numbers — expanding, factorising, and formulae.', icon: 'Variable', accentColor: '#E84393', levelRange: 'Beginner → Intermediate' },
+      { slug: 'equations', name: 'Equations', order: 7, description: 'Solving linear, simultaneous, and inequality problems.', icon: 'Equal', accentColor: '#FD79A8', levelRange: 'Intermediate' },
+      { slug: 'quadratics', name: 'Quadratics', order: 8, description: 'Factorising, completing the square, and the quadratic formula.', icon: 'Spline', accentColor: '#9B59B6', levelRange: 'Intermediate → Advanced' },
+      { slug: 'functions-and-graphs', name: 'Functions & Graphs', order: 9, description: 'The coordinate plane, lines, curves, and the function gallery.', icon: 'LineChart', accentColor: '#A29BFE', levelRange: 'Intermediate → Advanced' },
+      { slug: 'sequences', name: 'Sequences & Patterns', order: 10, description: 'nth terms, arithmetic and geometric series, and Fibonacci.', icon: 'ListOrdered', accentColor: '#E056FD', levelRange: 'Intermediate' },
+      { slug: 'angles-and-shapes', name: 'Angles & Shapes', order: 11, description: 'Angles, triangles, polygons, circles, and symmetry.', icon: 'Triangle', accentColor: '#1ABC9C', levelRange: 'Beginner → Intermediate' },
+      { slug: 'measurement', name: 'Measurement & Mensuration', order: 12, description: 'Area, surface area, and volume — and why the formulas work.', icon: 'Ruler', accentColor: '#16A085', levelRange: 'Beginner → Intermediate' },
+      { slug: 'geometry', name: 'Transformations & Vectors', order: 13, description: 'Transformations, congruence, vectors, loci, and circle theorems.', icon: 'Shapes', accentColor: '#00D2D3', levelRange: 'Intermediate → Advanced' },
+      { slug: 'trigonometry', name: 'Trigonometry', order: 14, description: 'Pythagoras, SOHCAHTOA, the unit circle, and the sine/cosine rules.', icon: 'Compass', accentColor: '#3498DB', levelRange: 'Intermediate → Advanced' },
+      { slug: 'probability', name: 'Probability', order: 15, description: 'Chance, tree diagrams, conditional probability, and Venn diagrams.', icon: 'Dices', accentColor: '#5DADE2', levelRange: 'Beginner → Intermediate' },
+      { slug: 'statistics', name: 'Statistics & Data', order: 16, description: 'Averages, spread, histograms, scatter graphs, and honest charts.', icon: 'BarChart3', accentColor: '#0984E3', levelRange: 'Beginner → Advanced' },
+      { slug: 'calculus', name: 'Calculus: The Mathematics of Change', order: 17, description: 'Limits, derivatives, integrals, and the Fundamental Theorem.', icon: 'TrendingUp', accentColor: '#4834D4', levelRange: 'Advanced' },
+      { slug: 'the-infinite', name: 'Infinity & Beautiful Mathematics', order: 18, description: 'Proof, infinity, the golden ratio, fractals, and the open frontier.', icon: 'Infinity', accentColor: '#FDCB6E', levelRange: 'Advanced' },
+    ]
+
+    const mathUnitIds: Record<string, any> = {}
+    for (const u of mathUnitsData) {
+      mathUnitIds[u.slug] = await ctx.db.insert('units', {
+        subjectId: subjectIds['math'],
+        slug: u.slug,
+        name: u.name,
+        order: u.order,
+        description: u.description,
+        icon: u.icon,
+        accentColor: u.accentColor,
+        levelRange: u.levelRange,
+      })
+    }
+
+    const mathLessonsData: typeof lessonsData = [
+      // --- World 1: The World of Numbers ---
+      { unitSlug: 'number-sense', contentSlug: 'math/place-value-and-the-number-line', title: 'Place Value & the Number Line', summary: 'The number line, place value, and how ten digits write any number.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'number-sense', contentSlug: 'math/integers-and-negative-numbers', title: 'Integers & Negative Numbers', summary: 'Below zero — negatives, and adding and subtracting on the line.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'number-sense', contentSlug: 'math/order-of-operations', title: 'Order of Operations', summary: 'BODMAS / PEMDAS — one fixed order that removes all ambiguity.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'number-sense', contentSlug: 'math/mental-arithmetic', title: 'Mental Arithmetic', summary: 'Smart strategies: place-value shifts, partitioning, and compensating.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'number-sense', contentSlug: 'math/rounding-and-estimation', title: 'Rounding & Estimation', summary: 'Snap to the nearest marker, and estimate to sanity-check answers.', order: 5, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'number-sense', contentSlug: 'math/kinds-of-number', title: 'Kinds of Number', summary: 'How numbers were built in layers: naturals to integers to reals.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 2: Factors & Primes ---
+      { unitSlug: 'factors-and-primes', contentSlug: 'math/multiples-and-factors', title: 'Multiples & Factors', summary: 'Two sides of one coin — and the rectangles a number can make.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'factors-and-primes', contentSlug: 'math/prime-numbers', title: 'Prime Numbers', summary: 'The indivisible numbers, found with the Sieve of Eratosthenes.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'factors-and-primes', contentSlug: 'math/prime-factorisation', title: 'Prime Factorisation', summary: "Every number's unique prime fingerprint, via factor trees.", order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'factors-and-primes', contentSlug: 'math/hcf-and-lcm', title: 'HCF & LCM', summary: 'Highest common factor and lowest common multiple from shared primes.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'factors-and-primes', contentSlug: 'math/powers-and-square-roots', title: 'Powers & Square Roots', summary: 'Repeated multiplication, square numbers, and the roots that undo them.', order: 5, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'factors-and-primes', contentSlug: 'math/the-atoms-of-arithmetic', title: 'The Atoms of Arithmetic', summary: 'Unique factorisation, infinitely many primes, and encryption.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 3: Fractions, Decimals & Percents ---
+      { unitSlug: 'fractions', contentSlug: 'math/understanding-fractions', title: 'Understanding Fractions', summary: 'Numerator, denominator, equivalence, and simplest form.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'fractions', contentSlug: 'math/comparing-and-ordering-fractions', title: 'Comparing & Ordering Fractions', summary: 'Common denominators make any two fractions comparable.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'fractions', contentSlug: 'math/adding-and-subtracting-fractions', title: 'Adding & Subtracting Fractions', summary: 'Same-size pieces first — then combine the numerators.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'fractions', contentSlug: 'math/multiplying-and-dividing-fractions', title: 'Multiplying & Dividing Fractions', summary: 'Multiply across; divide by flipping and multiplying.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'fractions', contentSlug: 'math/decimals', title: 'Decimals, Fractions & Percents', summary: 'Three notations for one number, and how to convert between them.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'fractions', contentSlug: 'math/percentages', title: 'Percentages', summary: 'Per cent means per hundred — the universal language of comparison.', order: 6, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'fractions', contentSlug: 'math/percentage-change', title: 'Percentage Change', summary: 'The multiplier method, and compound growth and decay.', order: 7, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'fractions', contentSlug: 'math/recurring-decimals', title: 'Recurring Decimals', summary: 'Why fractions stop or repeat — and the proof that 0.999… = 1.', order: 8, estimatedMinutes: 10, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 4: Ratio & Proportion ---
+      { unitSlug: 'ratio-proportion', contentSlug: 'math/what-is-a-ratio', title: 'What Is a Ratio?', summary: 'Comparing quantities part-to-part, in order and the same units.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'ratio-proportion', contentSlug: 'math/simplifying-and-sharing-ratios', title: 'Simplifying & Sharing Ratios', summary: 'Simplify like fractions, and share a total in a given ratio.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'ratio-proportion', contentSlug: 'math/direct-proportion', title: 'Direct Proportion', summary: 'Quantities that scale together — the straight line through the origin.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'ratio-proportion', contentSlug: 'math/inverse-proportion', title: 'Inverse Proportion', summary: 'One up, the other down, with a constant product — a reciprocal curve.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'ratio-proportion', contentSlug: 'math/scale-and-maps', title: 'Scale & Maps', summary: 'Shrinking the world to a page — and why areas scale by the square.', order: 5, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'ratio-proportion', contentSlug: 'math/proportional-reasoning', title: 'Proportional Reasoning Everywhere', summary: 'The unitary method, best buys, recipes — and when proportion fails.', order: 6, estimatedMinutes: 10, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 5: Powers, Roots & Standard Form ---
+      { unitSlug: 'powers-and-roots', contentSlug: 'math/index-notation', title: 'Index Notation', summary: 'Base and index — the compact language of repeated multiplication.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'powers-and-roots', contentSlug: 'math/laws-of-indices', title: 'The Laws of Indices', summary: 'Multiply→add, divide→subtract, power→multiply — just counting copies.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'powers-and-roots', contentSlug: 'math/negative-and-zero-indices', title: 'Zero & Negative Indices', summary: 'Why anything to the power 0 is 1, and negatives are reciprocals.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'powers-and-roots', contentSlug: 'math/fractional-indices-and-roots', title: 'Fractional Indices & Roots', summary: 'A power of one-nth is an nth root — one unified system.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'powers-and-roots', contentSlug: 'math/surds', title: 'Surds', summary: 'Roots kept exact — simplifying, adding, and rationalising them.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'powers-and-roots', contentSlug: 'math/standard-form', title: 'Standard Form', summary: 'Writing huge and tiny numbers as a × 10ⁿ.', order: 6, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'powers-and-roots', contentSlug: 'math/the-very-large-and-very-small', title: 'The Very Large & the Very Small', summary: 'Orders of magnitude and calculating across forty powers of ten.', order: 7, estimatedMinutes: 10, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 6: Into Algebra ---
+      { unitSlug: 'algebra-basics', contentSlug: 'math/letters-for-numbers', title: 'Letters for Numbers', summary: 'A letter stands for any number — writing rules that hold for all.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'algebra-basics', contentSlug: 'math/simplifying-expressions', title: 'Simplifying Expressions', summary: 'Collecting like terms — and why x and x² never combine.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'algebra-basics', contentSlug: 'math/expanding-brackets', title: 'Expanding Brackets', summary: 'The distributive law, seen as the area of a rectangle.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'algebra-basics', contentSlug: 'math/factorising', title: 'Factorising', summary: 'Expanding in reverse — taking out the highest common factor.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'algebra-basics', contentSlug: 'math/substitution-and-formulae', title: 'Substitution & Formulae', summary: 'Formulae as machines — feed in numbers, follow BODMAS, read the output.', order: 5, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'algebra-basics', contentSlug: 'math/rearranging-formulae', title: 'Rearranging Formulae', summary: 'Changing the subject with inverse operations on both sides.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'algebra-basics', contentSlug: 'math/the-power-of-the-unknown', title: 'The Power of the Unknown', summary: 'Algebraic proof — why a letter beats a billion examples.', order: 7, estimatedMinutes: 10, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 7: Equations ---
+      { unitSlug: 'equations', contentSlug: 'math/the-idea-of-an-equation', title: 'The Idea of an Equation', summary: 'An equation as a balance — and the golden rule of solving.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'equations', contentSlug: 'math/solving-linear-equations', title: 'Solving Linear Equations', summary: 'Undo the operations in reverse to isolate the unknown.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'equations', contentSlug: 'math/equations-with-brackets-and-fractions', title: 'Equations with Brackets & Fractions', summary: 'Clear the clutter first — expand brackets and remove fractions.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'equations', contentSlug: 'math/forming-equations', title: 'Forming Equations', summary: 'The real skill — translating a situation into an equation.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'equations', contentSlug: 'math/simultaneous-equations', title: 'Simultaneous Equations', summary: 'Two unknowns, two equations — elimination, substitution, intersection.', order: 5, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'equations', contentSlug: 'math/inequalities', title: 'Inequalities', summary: 'Solving for a range of values — and the flip on a negative.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'equations', contentSlug: 'math/the-art-of-solving', title: 'The Art of Solving', summary: 'One principle behind it all, and when there are 0, 1, or ∞ solutions.', order: 7, estimatedMinutes: 10, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 8: Quadratics ---
+      { unitSlug: 'quadratics', contentSlug: 'math/expanding-double-brackets', title: 'Expanding Double Brackets', summary: 'FOIL as four area products — and the quadratic it builds.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'quadratics', contentSlug: 'math/factorising-quadratics', title: 'Factorising Quadratics', summary: 'Find two numbers that add to b and multiply to c.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'quadratics', contentSlug: 'math/difference-of-two-squares', title: 'The Difference of Two Squares', summary: 'a² − b² = (a + b)(a − b), seen geometrically.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'quadratics', contentSlug: 'math/solving-by-factorising', title: 'Solving by Factorising', summary: 'The zero-product rule — and roots as x-axis crossings.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'quadratics', contentSlug: 'math/completing-the-square', title: 'Completing the Square', summary: 'Rewrite any quadratic as a square plus a constant — and find the vertex.', order: 5, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'quadratics', contentSlug: 'math/the-quadratic-formula', title: 'The Quadratic Formula', summary: 'One formula for every quadratic — and the discriminant.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'quadratics', contentSlug: 'math/the-parabola', title: 'The Parabola', summary: 'The curve of projectiles and dishes — anatomy and why it appears.', order: 7, estimatedMinutes: 10, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 9: Functions & Graphs ---
+      { unitSlug: 'functions-and-graphs', contentSlug: 'math/the-coordinate-plane', title: 'The Coordinate Plane', summary: 'Pinning down any point with two numbers — geometry meets algebra.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'functions-and-graphs', contentSlug: 'math/straight-line-graphs', title: 'Straight-Line Graphs', summary: 'y = mx + c — gradient and intercept.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'functions-and-graphs', contentSlug: 'math/parallel-and-perpendicular-lines', title: 'Parallel & Perpendicular Lines', summary: 'Equal gradients, and negative reciprocals for a right angle.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'functions-and-graphs', contentSlug: 'math/midpoint-and-distance', title: 'Midpoint & Distance', summary: 'Averaging coordinates, and Pythagoras for the distance.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'functions-and-graphs', contentSlug: 'math/quadratic-graphs', title: 'Quadratic Graphs', summary: 'Reading a parabola — direction, intercepts, vertex, symmetry.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'functions-and-graphs', contentSlug: 'math/solving-graphically', title: 'Solving Equations Graphically', summary: 'A solution is where graphs cross — even when algebra fails.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'functions-and-graphs', contentSlug: 'math/the-gallery-of-functions', title: 'The Gallery of Functions', summary: 'Signature shapes — cubic, reciprocal, exponential, sine — and transformations.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 10: Sequences & Patterns ---
+      { unitSlug: 'sequences', contentSlug: 'math/number-sequences', title: 'Number Sequences', summary: 'Term-to-term rules: arithmetic, geometric, and beyond.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'sequences', contentSlug: 'math/the-nth-term', title: 'The nth Term', summary: 'A position-to-term formula that jumps straight to any term.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'sequences', contentSlug: 'math/arithmetic-sequences', title: 'Arithmetic Sequences & Series', summary: 'Equal steps, and Gauss’s pairing trick for the sum.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'sequences', contentSlug: 'math/geometric-sequences', title: 'Geometric Sequences', summary: 'Equal multipliers — exponential growth and the chessboard legend.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'sequences', contentSlug: 'math/special-number-patterns', title: 'Special Number Patterns', summary: 'Triangular, square, and cube numbers — sequences you can draw.', order: 5, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'sequences', contentSlug: 'math/the-fibonacci-sequence', title: 'The Fibonacci Sequence', summary: 'Each term the sum of the two before — and where it hides in nature.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'sequences', contentSlug: 'math/patterns-to-infinity', title: 'Patterns to Infinity', summary: 'The golden ratio, convergent series, and Zeno’s paradox resolved.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 11: Angles & Shapes ---
+      { unitSlug: 'angles-and-shapes', contentSlug: 'math/lines-and-angles', title: 'Lines & Angles', summary: 'Measuring turn, classifying angles, and angle facts on lines.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'angles-and-shapes', contentSlug: 'math/angles-with-parallel-lines', title: 'Angles with Parallel Lines', summary: 'Corresponding, alternate, and co-interior angle pairs.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'angles-and-shapes', contentSlug: 'math/triangles', title: 'Triangles', summary: 'The 180° rule, why it holds, and naming triangles.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'angles-and-shapes', contentSlug: 'math/quadrilaterals', title: 'Quadrilaterals', summary: 'The 360° rule and the family of four-sided shapes.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'angles-and-shapes', contentSlug: 'math/polygons', title: 'Polygons', summary: 'Interior and exterior angle rules for any many-sided shape.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'angles-and-shapes', contentSlug: 'math/circles-and-their-parts', title: 'Circles & Their Parts', summary: 'Radius, chord, arc, sector, tangent — and the constant π.', order: 6, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'angles-and-shapes', contentSlug: 'math/symmetry-and-shape', title: 'Symmetry & the Language of Shape', summary: 'Reflection, rotation, tessellation — symmetry as a unifying idea.', order: 7, estimatedMinutes: 10, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 12: Measurement & Mensuration ---
+      { unitSlug: 'measurement', contentSlug: 'math/units-and-conversions', title: 'Units & Conversions', summary: 'The metric staircase — and squaring/cubing for area and volume.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'measurement', contentSlug: 'math/perimeter-and-area', title: 'Perimeter & Area', summary: 'Distance around vs space inside — and compound shapes.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'measurement', contentSlug: 'math/area-of-circles', title: 'Circumference & Area of Circles', summary: 'C = 2πr and A = πr² — both running on π.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'measurement', contentSlug: 'math/surface-area', title: 'Surface Area', summary: 'Unfold a solid into its net and add the faces.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'measurement', contentSlug: 'math/volume-of-prisms', title: 'Volume of Prisms & Cylinders', summary: 'Volume = cross-section area × length.', order: 5, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'measurement', contentSlug: 'math/volume-of-pyramids-cones-spheres', title: 'Volume of Pyramids, Cones & Spheres', summary: 'The recurring one-third, and the sphere formula.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'measurement', contentSlug: 'math/why-the-formulas-work', title: 'Why the Formulas Work', summary: 'Unrolling a circle, the one-third family, and the square–cube law.', order: 7, estimatedMinutes: 10, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 13: Transformations & Vectors ---
+      { unitSlug: 'geometry', contentSlug: 'math/translations', title: 'Translations', summary: 'Sliding a shape by a column vector — congruent and unchanged.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'geometry', contentSlug: 'math/reflections-and-rotations', title: 'Reflections & Rotations', summary: 'Flipping across a mirror line and turning about a centre.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'geometry', contentSlug: 'math/enlargements', title: 'Enlargements & Scale Factor', summary: 'Resizing from a centre — the transformation that changes size.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'geometry', contentSlug: 'math/congruence-and-similarity', title: 'Congruence & Similarity', summary: 'Identical vs scaled — and solving by proportion.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'geometry', contentSlug: 'math/vectors', title: 'Vectors', summary: 'Quantities with direction — adding tip-to-tail and scaling.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'geometry', contentSlug: 'math/constructions-and-loci', title: 'Constructions & Loci', summary: 'Compass-and-straight-edge constructions and sets of points.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'geometry', contentSlug: 'math/circle-theorems', title: 'The Circle Theorems', summary: 'Thales, the angle at the centre, and the spirit of proof.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 14: Trigonometry ---
+      { unitSlug: 'trigonometry', contentSlug: 'math/pythagoras', title: "Pythagoras' Theorem", summary: 'a² + b² = c² — the most famous theorem, seen as areas.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'trigonometry', contentSlug: 'math/sine-cosine-tangent', title: 'Sine, Cosine & Tangent', summary: 'SOHCAHTOA — linking an angle to side ratios.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'trigonometry', contentSlug: 'math/finding-sides-and-angles', title: 'Finding Sides & Angles', summary: 'Choosing the ratio, and inverse trig for angles.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'trigonometry', contentSlug: 'math/exact-values', title: 'Special Angles & the Unit Circle', summary: 'Exact values and trig for any angle on the unit circle.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'trigonometry', contentSlug: 'math/the-sine-rule', title: 'The Sine Rule', summary: 'Trig for any triangle: a/sinA = b/sinB = c/sinC.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'trigonometry', contentSlug: 'math/the-cosine-rule', title: 'The Cosine Rule & Area', summary: 'Pythagoras generalised, plus area = ½ab sinC.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'trigonometry', contentSlug: 'math/trigonometry-in-3d', title: 'Trigonometry in 3-D', summary: 'Find the right triangle inside a solid — space diagonals and bearings.', order: 7, estimatedMinutes: 10, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 15: Probability ---
+      { unitSlug: 'probability', contentSlug: 'math/the-probability-scale', title: 'The Probability Scale', summary: 'From 0 to 1, three notations, and the complement.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'probability', contentSlug: 'math/calculating-probability', title: 'Calculating Probability', summary: 'Favourable over total, theoretical vs experimental, expected frequency.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'probability', contentSlug: 'math/combined-events', title: 'Combined Events', summary: 'Sample spaces, and the AND (×) / OR (+) rules.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'probability', contentSlug: 'math/tree-diagrams', title: 'Tree Diagrams', summary: 'Map staged events — multiply along, add between.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'probability', contentSlug: 'math/conditional-probability', title: 'Conditional Probability', summary: 'When one event changes the next — with and without replacement.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'probability', contentSlug: 'math/venn-diagrams', title: 'Venn Diagrams & Set Notation', summary: 'Intersection, union, complement — and probabilities from counts.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'probability', contentSlug: 'math/chance-in-the-real-world', title: 'Chance in the Real World', summary: 'Expected value, the gambler’s fallacy, and why intuition fails.', order: 7, estimatedMinutes: 10, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 16: Statistics & Data ---
+      { unitSlug: 'statistics', contentSlug: 'math/types-of-data-and-sampling', title: 'Types of Data & Sampling', summary: 'Qualitative vs quantitative, and fair sampling.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'statistics', contentSlug: 'math/displaying-data', title: 'Displaying Data', summary: 'Bar, pie, line and pictogram — choosing the right chart.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'statistics', contentSlug: 'math/averages-and-range', title: 'Averages & Range', summary: 'Mean, median, mode and range — and which to use.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'statistics', contentSlug: 'math/frequency-and-grouped-data', title: 'Frequency & Grouped Data', summary: 'Frequency tables, the Σfx mean, and estimating from groups.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'statistics', contentSlug: 'math/spread-and-standard-deviation', title: 'Spread & Standard Deviation', summary: 'Consistency, the SD, and the bell curve.', order: 5, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'statistics', contentSlug: 'math/cumulative-frequency-and-quartiles', title: 'Cumulative Frequency & Quartiles', summary: 'Quartiles, the IQR, box plots, and comparing distributions.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'statistics', contentSlug: 'math/histograms', title: 'Histograms', summary: 'Continuous data, frequency density, and reading the shape.', order: 7, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'statistics', contentSlug: 'math/scatter-graphs-and-correlation', title: 'Scatter Graphs & Correlation', summary: 'Correlation, line of best fit — and why it isn’t causation.', order: 8, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'statistics', contentSlug: 'math/telling-the-truth-with-data', title: 'Telling the Truth with Data', summary: 'How statistics deceive — and how to read them critically.', order: 9, estimatedMinutes: 10, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 17: Calculus ---
+      { unitSlug: 'calculus', contentSlug: 'math/the-idea-of-a-limit', title: 'The Idea of a Limit', summary: 'The value a function heads toward — the foundation of calculus.', order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'calculus', contentSlug: 'math/rates-of-change', title: 'Rates of Change', summary: 'Average vs instantaneous rate — secant becomes tangent.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'calculus', contentSlug: 'math/the-derivative', title: 'The Derivative', summary: 'A function giving the slope everywhere — defined by a limit.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'calculus', contentSlug: 'math/differentiation-rules', title: 'Differentiation Rules & Turning Points', summary: 'The power rule and finding maxima and minima.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'calculus', contentSlug: 'math/the-area-under-a-curve', title: 'The Area Under a Curve', summary: 'Integration as a Riemann sum — accumulating change.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'calculus', contentSlug: 'math/the-fundamental-theorem', title: 'The Fundamental Theorem of Calculus', summary: 'Differentiation and integration are inverse operations.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 18: Infinity & Beautiful Mathematics ---
+      { unitSlug: 'the-infinite', contentSlug: 'math/what-is-a-proof', title: 'What Is a Proof?', summary: 'Airtight logic from axioms — why examples are never enough.', order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'the-infinite', contentSlug: 'math/counting-the-infinite', title: 'Counting the Infinite', summary: 'Cantor’s sizes of infinity and the diagonal argument.', order: 2, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'the-infinite', contentSlug: 'math/the-golden-ratio', title: 'The Golden Ratio', summary: 'φ ≈ 1.618 — from Fibonacci to sunflowers, with healthy skepticism.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'the-infinite', contentSlug: 'math/fractals', title: 'Fractals & Self-Similarity', summary: 'Infinite detail from a simple rule — and nature’s geometry.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'the-infinite', contentSlug: 'math/famous-unsolved-problems', title: 'Famous Unsolved Problems', summary: 'Goldbach, Collatz, Riemann, P vs NP — the living frontier.', order: 5, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'the-infinite', contentSlug: 'math/the-unreasonable-effectiveness-of-math', title: 'The Unreasonable Effectiveness of Mathematics', summary: 'Why maths describes the universe — and the way of thinking it gives you.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+    ]
+
+    for (const l of mathLessonsData) {
+      await ctx.db.insert('lessons', {
+        subjectId: subjectIds['math'],
+        unitId: mathUnitIds[l.unitSlug],
+        contentSlug: l.contentSlug,
+        title: l.title,
+        summary: l.summary,
+        order: l.order,
+        estimatedMinutes: l.estimatedMinutes,
+        xpReward: l.xpReward,
+        isPublished: l.isPublished,
+        level: l.level,
+        format: l.format,
+      })
+    }
+
+    const csUnitsData: typeof unitsData = [
+      { slug: 'foundations', name: 'What Is Computer Science?', order: 1, description: 'The big questions, history, and ways of thinking behind computing.', icon: 'Lightbulb', accentColor: '#FF6B6B', levelRange: 'Beginner' },
+      { slug: 'data-representation', name: 'Bits & Bytes', order: 2, description: 'How every kind of information becomes patterns of 1s and 0s.', icon: 'Binary', accentColor: '#FF8C42', levelRange: 'Beginner → Intermediate' },
+      { slug: 'boolean-logic', name: 'Logic & Gates', order: 3, description: 'True, false, and the gates that compute with them.', icon: 'ToggleRight', accentColor: '#FFC83D', levelRange: 'Beginner → Intermediate' },
+      { slug: 'computer-architecture', name: 'Inside the Machine', order: 4, description: 'How a CPU, memory and instructions make a working computer.', icon: 'Cpu', accentColor: '#9BDE3C', levelRange: 'Beginner → Advanced' },
+      { slug: 'algorithms', name: 'Algorithms', order: 5, description: 'Step-by-step methods to solve problems — and how fast they run.', icon: 'Workflow', accentColor: '#2ECC71', levelRange: 'Beginner → Advanced' },
+      { slug: 'data-structures', name: 'Data Structures', order: 6, description: 'Organising data so the right algorithm is fast.', icon: 'ListTree', accentColor: '#1ABC9C', levelRange: 'Intermediate → Advanced' },
+      { slug: 'programming', name: 'Programming Languages', order: 7, description: 'From variables and loops to objects, paradigms and compilers.', icon: 'Code2', accentColor: '#00CEC9', levelRange: 'Beginner → Advanced' },
+      { slug: 'software-engineering', name: 'Building Software', order: 8, description: 'Designing, testing and shipping software that lasts.', icon: 'Wrench', accentColor: '#22A6F2', levelRange: 'Intermediate' },
+      { slug: 'operating-systems', name: 'Operating Systems', order: 9, description: 'The master program that shares the hardware safely.', icon: 'Layers', accentColor: '#4F8CFF', levelRange: 'Intermediate → Advanced' },
+      { slug: 'networking', name: 'Networks & the Internet', order: 10, description: 'How packets, protocols and routers connect the world.', icon: 'Network', accentColor: '#5B6CFF', levelRange: 'Beginner → Advanced' },
+      { slug: 'the-web', name: 'The World Wide Web', order: 11, description: 'HTML, CSS, JavaScript and the front-end/back-end stack.', icon: 'Globe', accentColor: '#9B59B6', levelRange: 'Beginner → Intermediate' },
+      { slug: 'databases', name: 'Databases', order: 12, description: 'Storing, relating and querying information at scale.', icon: 'Database', accentColor: '#E056FD', levelRange: 'Beginner → Advanced' },
+      { slug: 'cybersecurity', name: 'Cybersecurity & Cryptography', order: 13, description: 'Threats, defence, and the maths of keeping secrets.', icon: 'ShieldCheck', accentColor: '#E84393', levelRange: 'Beginner → Advanced' },
+      { slug: 'computer-graphics', name: 'Computer Graphics', order: 14, description: 'Turning numbers and maths into images, 3D and motion.', icon: 'Shapes', accentColor: '#FD79A8', levelRange: 'Intermediate' },
+      { slug: 'artificial-intelligence', name: 'Artificial Intelligence', order: 15, description: 'Search, machine learning, neural networks and LLMs.', icon: 'BrainCircuit', accentColor: '#A29BFE', levelRange: 'Beginner → Advanced' },
+      { slug: 'theory-of-computation', name: 'The Limits of Computation', order: 16, description: 'Automata, Turing machines, and what computers can never do.', icon: 'Infinity', accentColor: '#FFD54A', levelRange: 'Advanced' },
+    ]
+
+    const csUnitIds: Record<string, any> = {}
+    for (const u of csUnitsData) {
+      csUnitIds[u.slug] = await ctx.db.insert('units', {
+        subjectId: subjectIds['computer-science'],
+        slug: u.slug,
+        name: u.name,
+        order: u.order,
+        description: u.description,
+        icon: u.icon,
+        accentColor: u.accentColor,
+        levelRange: u.levelRange,
+      })
+    }
+
+    const csLessonsData: typeof lessonsData = [
+      // --- World 1: What Is Computer Science? ---
+      { unitSlug: 'foundations', contentSlug: 'computer-science/what-is-computer-science', title: 'What Is Computer Science?', summary: 'Computing is problem-solving, not just coding: information plus procedure.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'foundations', contentSlug: 'computer-science/the-history-of-computing', title: 'The History of Computing', summary: 'From the abacus to AI: the people and machines that built computing.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'foundations', contentSlug: 'computer-science/computational-thinking', title: 'Computational Thinking', summary: 'Decompose, find patterns, abstract, and write the algorithm.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'foundations', contentSlug: 'computer-science/abstraction-and-layers', title: 'Abstraction & Layers', summary: 'Hiding complexity behind simple interfaces — the key idea of CS.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'foundations', contentSlug: 'computer-science/the-big-ideas-of-cs', title: 'The Big Ideas of Computer Science', summary: 'The threads that tie the whole island together.', order: 5, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 2: Bits & Bytes ---
+      { unitSlug: 'data-representation', contentSlug: 'computer-science/bits-and-binary', title: 'Bits & Binary', summary: 'The bit: one switch, two states, and why computers use binary.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'data-representation', contentSlug: 'computer-science/counting-in-binary', title: 'Counting in Binary', summary: 'Reading and writing numbers in base two, plus hex shorthand.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'data-representation', contentSlug: 'computer-science/text-and-character-codes', title: 'Text & Character Codes', summary: 'ASCII and Unicode: turning letters and emoji into numbers.', order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'data-representation', contentSlug: 'computer-science/representing-numbers', title: 'Representing Numbers', summary: "Negatives with two's complement and fractions with floating point.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'data-representation', contentSlug: 'computer-science/images-and-color', title: 'Images & Colour', summary: 'Pixels, RGB colour, and why images are grids of numbers.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'data-representation', contentSlug: 'computer-science/sound-and-media', title: 'Sound & Media', summary: 'Sampling and bit depth turn smooth sound into digital data.', order: 6, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'data-representation', contentSlug: 'computer-science/data-compression', title: 'Data Compression', summary: 'Run-length, Huffman and ZIP: shrinking data by removing redundancy.', order: 7, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'data-representation', contentSlug: 'computer-science/error-detection-and-correction', title: 'Error Detection & Correction', summary: 'Parity, checksums and codes that detect and repair flipped bits.', order: 8, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 3: Logic & Gates ---
+      { unitSlug: 'boolean-logic', contentSlug: 'computer-science/boolean-logic', title: 'Boolean Logic', summary: 'AND, OR, NOT: the algebra of true and false.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'boolean-logic', contentSlug: 'computer-science/truth-tables', title: 'Truth Tables', summary: 'Listing every input case to define a logic operation exactly.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'boolean-logic', contentSlug: 'computer-science/logic-gates', title: 'Logic Gates', summary: 'Tiny circuits that compute logic — built from transistors.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'boolean-logic', contentSlug: 'computer-science/combining-gates', title: 'Combining Gates', summary: 'Wiring gates together to build richer behaviour like XOR.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'boolean-logic', contentSlug: 'computer-science/binary-addition', title: 'Binary Addition', summary: 'Half and full adders: arithmetic from XOR and AND gates.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'boolean-logic', contentSlug: 'computer-science/from-gates-to-a-computer', title: 'From Gates to a Computer', summary: 'ALU, latches and a clock: how gates become a whole computer.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 4: Inside the Machine ---
+      { unitSlug: 'computer-architecture', contentSlug: 'computer-science/anatomy-of-a-computer', title: 'Anatomy of a Computer', summary: 'CPU, memory, storage, I/O and the buses that connect them.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'computer-architecture', contentSlug: 'computer-science/the-cpu', title: 'The CPU', summary: 'Inside the processor: ALU, registers, control unit and counter.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'computer-architecture', contentSlug: 'computer-science/memory-and-storage', title: 'Memory & Storage', summary: 'The hierarchy from registers to disk — speed versus size.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'computer-architecture', contentSlug: 'computer-science/machine-language', title: 'Machine Language', summary: 'The numeric instructions a CPU actually runs.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'computer-architecture', contentSlug: 'computer-science/the-fetch-execute-cycle', title: 'The Fetch–Execute Cycle', summary: 'Fetch, decode, execute, repeat — billions of times a second.', order: 5, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'computer-architecture', contentSlug: 'computer-science/talking-to-devices', title: 'Talking to Devices', summary: 'Buses, controllers, polling and interrupts.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'computer-architecture', contentSlug: 'computer-science/how-a-program-runs', title: 'How a Program Runs', summary: 'The stored-program idea: code is just data in memory.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 5: Algorithms ---
+      { unitSlug: 'algorithms', contentSlug: 'computer-science/what-is-an-algorithm', title: 'What Is an Algorithm?', summary: 'A finite, precise, repeatable recipe for solving a problem.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'algorithms', contentSlug: 'computer-science/describing-algorithms', title: 'Describing Algorithms', summary: 'Pseudocode and flowcharts: removing all ambiguity.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'algorithms', contentSlug: 'computer-science/step-by-step-and-loops', title: 'Loops & Iteration', summary: 'Sequence, selection and iteration — the building blocks.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'algorithms', contentSlug: 'computer-science/searching', title: 'Searching', summary: 'Linear versus binary search, and why halving wins.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'algorithms', contentSlug: 'computer-science/sorting', title: 'Sorting', summary: 'Bubble, insertion, selection and merge sort compared.', order: 5, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'algorithms', contentSlug: 'computer-science/recursion', title: 'Recursion', summary: 'Functions that call themselves: base case plus divide and conquer.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'algorithms', contentSlug: 'computer-science/algorithm-efficiency', title: 'Algorithm Efficiency & Big-O', summary: 'Big-O: how the work grows as the input grows.', order: 7, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'algorithms', contentSlug: 'computer-science/correctness-and-the-limits', title: 'Correctness & the Limits', summary: 'Knowing an algorithm is right — and when problems are too hard.', order: 8, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 6: Data Structures ---
+      { unitSlug: 'data-structures', contentSlug: 'computer-science/arrays-and-lists', title: 'Arrays & Lists', summary: 'Indexed contiguous storage: instant access, costly insertion.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'data-structures', contentSlug: 'computer-science/stacks-and-queues', title: 'Stacks & Queues', summary: 'LIFO and FIFO: undo stacks, call stacks and print queues.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'data-structures', contentSlug: 'computer-science/linked-lists', title: 'Linked Lists', summary: 'Nodes joined by pointers: flexible insert and delete.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'data-structures', contentSlug: 'computer-science/trees', title: 'Trees', summary: 'Hierarchies and binary search trees with log-depth lookup.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'data-structures', contentSlug: 'computer-science/graphs', title: 'Graphs', summary: 'Nodes and edges that model networks, maps and links.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'data-structures', contentSlug: 'computer-science/hash-tables', title: 'Hash Tables', summary: 'Hashing keys to buckets for average constant-time lookup.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'data-structures', contentSlug: 'computer-science/choosing-the-right-structure', title: 'Choosing the Right Structure', summary: 'Abstract data types and picking by the operations you need.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 7: Programming Languages ---
+      { unitSlug: 'programming', contentSlug: 'computer-science/speaking-to-computers', title: 'Speaking to Computers', summary: 'What a programming language is, and high versus low level.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'programming', contentSlug: 'computer-science/variables-and-data-types', title: 'Variables & Data Types', summary: 'Named boxes for values, and the types they hold.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'programming', contentSlug: 'computer-science/control-flow', title: 'Control Flow', summary: 'if/else and loops: deciding and repeating.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'programming', contentSlug: 'computer-science/functions-and-procedures', title: 'Functions & Procedures', summary: 'Reusable named blocks, parameters and the call stack.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'programming', contentSlug: 'computer-science/object-oriented-programming', title: 'Object-Oriented Programming', summary: 'Classes as blueprints and objects as instances.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'programming', contentSlug: 'computer-science/functional-and-declarative', title: 'Other Paradigms', summary: 'Imperative versus declarative, and the functional style.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'programming', contentSlug: 'computer-science/compilers-and-interpreters', title: 'Compilers & Interpreters', summary: 'Translating human code into machine code.', order: 7, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'programming', contentSlug: 'computer-science/how-a-language-runs', title: 'How a Language Runs', summary: 'From source text to a running process with a stack and heap.', order: 8, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 8: Building Software ---
+      { unitSlug: 'software-engineering', contentSlug: 'computer-science/the-software-life-cycle', title: 'The Software Life Cycle', summary: 'Requirements to maintenance — software as a process.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'software-engineering', contentSlug: 'computer-science/modularity-and-design', title: 'Modularity & Design', summary: 'Modules, interfaces, coupling and cohesion.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'software-engineering', contentSlug: 'computer-science/testing-and-debugging', title: 'Testing & Debugging', summary: 'Tests catch bugs; debugging is detective work.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'software-engineering', contentSlug: 'computer-science/quality-and-documentation', title: 'Quality & Documentation', summary: 'Code review, docs and taming technical debt.', order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'software-engineering', contentSlug: 'computer-science/version-control', title: 'Version Control', summary: 'Commits, branches and merges with git.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'software-engineering', contentSlug: 'computer-science/engineering-at-scale', title: 'Engineering at Scale', summary: 'Building software in big teams over years.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 9: Operating Systems ---
+      { unitSlug: 'operating-systems', contentSlug: 'computer-science/what-an-operating-system-does', title: 'What an Operating System Does', summary: 'The master program that shares hardware among apps.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'operating-systems', contentSlug: 'computer-science/processes-and-threads', title: 'Processes & Threads', summary: 'A running program, its states, and context switching.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'operating-systems', contentSlug: 'computer-science/scheduling', title: 'Scheduling', summary: 'Time-slicing one CPU to fake doing many things at once.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'operating-systems', contentSlug: 'computer-science/memory-management', title: 'Memory Management', summary: 'Virtual memory: each program its own private space.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'operating-systems', contentSlug: 'computer-science/concurrency-and-deadlock', title: 'Concurrency & Deadlock', summary: 'Shared resources, race conditions and deadlock.', order: 5, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'operating-systems', contentSlug: 'computer-science/the-os-as-referee', title: 'The OS as Referee', summary: 'The OS as impartial manager and protector.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 10: Networks & the Internet ---
+      { unitSlug: 'networking', contentSlug: 'computer-science/how-networks-work', title: 'How Networks Work', summary: 'Connecting devices: LANs, WANs and topologies.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'networking', contentSlug: 'computer-science/the-internet', title: 'The Internet', summary: 'Packet switching and IP — a network of networks.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'networking', contentSlug: 'computer-science/protocols-and-layers', title: 'Protocols & Layers', summary: 'TCP/IP layers and how messages get wrapped in headers.', order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'networking', contentSlug: 'computer-science/naming-and-routing', title: 'Naming & Routing', summary: 'DNS turns names into addresses; routers forward packets.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'networking', contentSlug: 'computer-science/the-client-server-model', title: 'The Client–Server Model', summary: 'Clients request, servers respond.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'networking', contentSlug: 'computer-science/the-world-wide-web', title: 'The World Wide Web', summary: 'The web is a service running on the internet.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'networking', contentSlug: 'computer-science/the-journey-of-a-packet', title: 'The Journey of a Packet', summary: 'One click, traced end to end across the internet.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 11: The World Wide Web ---
+      { unitSlug: 'the-web', contentSlug: 'computer-science/how-the-web-works', title: 'How the Web Works', summary: 'URLs, HTTP and the request that returns a page.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'the-web', contentSlug: 'computer-science/html-the-structure', title: 'HTML: The Structure', summary: 'Tags and the DOM tree that give a page structure.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'the-web', contentSlug: 'computer-science/css-the-style', title: 'CSS: The Style', summary: 'Selectors, the box model and visual styling.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'the-web', contentSlug: 'computer-science/javascript-the-behavior', title: 'JavaScript: The Behavior', summary: 'The language that makes web pages interactive.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'the-web', contentSlug: 'computer-science/front-end-and-back-end', title: 'Front-End & Back-End', summary: 'Browser code, server code, APIs and databases.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'the-web', contentSlug: 'computer-science/building-a-web-app', title: 'Building a Web App', summary: 'HTML, CSS, JS and a back-end combine into a real app.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 12: Databases ---
+      { unitSlug: 'databases', contentSlug: 'computer-science/what-is-a-database', title: 'What Is a Database?', summary: 'Tables, records and keys — beyond the spreadsheet.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'databases', contentSlug: 'computer-science/the-relational-model', title: 'The Relational Model', summary: 'Relations linked by primary and foreign keys.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'databases', contentSlug: 'computer-science/querying-with-sql', title: 'Querying with SQL', summary: 'SELECT, WHERE and joins to ask questions of data.', order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'databases', contentSlug: 'computer-science/designing-a-database', title: 'Designing a Database', summary: 'Normalization to avoid redundancy and anomalies.', order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'databases', contentSlug: 'computer-science/beyond-relational', title: 'Beyond Relational', summary: 'NoSQL, document and key-value stores at big-data scale.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'databases', contentSlug: 'computer-science/from-data-to-insight', title: 'From Data to Insight', summary: 'Aggregation, data mining and the ethics of data.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 13: Cybersecurity & Cryptography ---
+      { unitSlug: 'cybersecurity', contentSlug: 'computer-science/threats-and-attacks', title: 'Threats & Attacks', summary: 'Malware, phishing and the modern threat landscape.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'cybersecurity', contentSlug: 'computer-science/thinking-like-a-defender', title: 'Thinking Like a Defender', summary: 'The CIA triad and defence in depth.', order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'cybersecurity', contentSlug: 'computer-science/secret-codes', title: 'Secret Codes', summary: 'Ciphers, symmetric encryption and the key problem.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'cybersecurity', contentSlug: 'computer-science/public-key-cryptography', title: 'Public-Key Cryptography', summary: 'Public and private keys solve key distribution.', order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'cybersecurity', contentSlug: 'computer-science/hashing-and-passwords', title: 'Hashing & Passwords', summary: 'One-way hashes protect passwords and check integrity.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'cybersecurity', contentSlug: 'computer-science/staying-safe-online', title: 'Staying Safe Online', summary: 'HTTPS, two-factor and practical personal security.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'cybersecurity', contentSlug: 'computer-science/the-mathematics-of-secrecy', title: 'The Mathematics of Secrecy', summary: 'One-way functions and why factoring is hard.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 14: Computer Graphics ---
+      { unitSlug: 'computer-graphics', contentSlug: 'computer-science/pixels-and-images', title: 'Pixels & Raster Graphics', summary: 'Raster grids, resolution and the jaggies.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'computer-graphics', contentSlug: 'computer-science/2d-graphics-and-transformations', title: '2D Graphics & Transformations', summary: 'Translate, rotate and scale shapes with maths.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'computer-graphics', contentSlug: 'computer-science/3d-modeling', title: '3D Modelling', summary: 'Meshes of vertices and edges projected to 2D.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'computer-graphics', contentSlug: 'computer-science/rendering-and-lighting', title: 'Rendering & Lighting', summary: 'Light and shading turn geometry into solid form.', order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'computer-graphics', contentSlug: 'computer-science/animation', title: 'Animation', summary: 'Keyframes and tweening, many frames a second.', order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'computer-graphics', contentSlug: 'computer-science/making-virtual-worlds', title: 'Making Virtual Worlds', summary: 'The full rendering pipeline, GPUs and ray tracing.', order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 15: Artificial Intelligence ---
+      { unitSlug: 'artificial-intelligence', contentSlug: 'computer-science/what-is-ai', title: 'What Is AI?', summary: 'Defining intelligence, narrow versus general AI.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'artificial-intelligence', contentSlug: 'computer-science/search-and-problem-solving', title: 'Search & Problem-Solving', summary: 'Classic AI as searching through possibilities.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'artificial-intelligence', contentSlug: 'computer-science/machine-learning', title: 'Machine Learning', summary: 'Learning patterns from data instead of explicit rules.', order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'artificial-intelligence', contentSlug: 'computer-science/neural-networks', title: 'Neural Networks', summary: 'Neurons, weights and layers that learn.', order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'artificial-intelligence', contentSlug: 'computer-science/deep-learning-and-llms', title: 'Deep Learning & LLMs', summary: 'Deep networks, transformers and large language models.', order: 5, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'artificial-intelligence', contentSlug: 'computer-science/robotics-and-perception', title: 'Robotics & Perception', summary: 'Sense, think, act — handling a noisy real world.', order: 6, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'artificial-intelligence', contentSlug: 'computer-science/the-promise-and-peril-of-ai', title: 'The Promise & Peril of AI', summary: 'Capabilities, bias, safety and using AI well.', order: 7, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+
+      // --- World 16: The Limits of Computation ---
+      { unitSlug: 'theory-of-computation', contentSlug: 'computer-science/models-of-computation', title: 'Models of Computation', summary: 'Abstract machines and finite automata.', order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'theory-of-computation', contentSlug: 'computer-science/finite-state-machines', title: 'Finite-State Machines', summary: 'What state machines can and cannot recognise.', order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: 'beginner', format: 'core' },
+      { unitSlug: 'theory-of-computation', contentSlug: 'computer-science/the-turing-machine', title: 'The Turing Machine', summary: 'A tape, a head, and the definition of computation.', order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'intermediate', format: 'core' },
+      { unitSlug: 'theory-of-computation', contentSlug: 'computer-science/what-computers-cannot-do', title: 'What Computers Cannot Do', summary: 'The halting problem and undecidable questions.', order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'theory-of-computation', contentSlug: 'computer-science/how-hard-is-hard', title: 'How Hard Is Hard?', summary: 'P, NP and the biggest open question in CS.', order: 5, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: 'advanced', format: 'core' },
+      { unitSlug: 'theory-of-computation', contentSlug: 'computer-science/the-edge-of-computability', title: 'The Edge of Computability', summary: 'The grand map of what computation can and cannot do.', order: 6, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: 'advanced', format: 'deepdive' },
+    ]
+
+    for (const l of csLessonsData) {
+      await ctx.db.insert('lessons', {
+        subjectId: subjectIds['computer-science'],
+        unitId: csUnitIds[l.unitSlug],
         contentSlug: l.contentSlug,
         title: l.title,
         summary: l.summary,

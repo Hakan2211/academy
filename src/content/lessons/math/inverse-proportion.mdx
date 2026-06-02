@@ -1,0 +1,71 @@
+---
+title: Inverse Proportion
+subject: math
+contentSlug: math/inverse-proportion
+order: 4
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="More of one, less of the other" kind="explain">
+
+Sometimes quantities pull in **opposite** directions. Twice as many builders finish a wall in **half** the time. Travel twice as fast and the journey takes **half** as long. This is **inverse proportion**: as one goes up, the other comes down — but their **product** stays fixed.
+
+</Step>
+
+<Step title="The constant product" kind="interactive">
+
+Slide x and watch y fall to keep the rectangle's area — their product — constant.
+
+<InverseProportion />
+
+</Step>
+
+<Step title="The rule" kind="explain">
+
+If y is inversely proportional to x (written y ∝ 1/x), then
+
+<Formula tex="y = \frac{k}{x}, \qquad xy = k \text{ (constant)}" block />
+
+Find k by multiplying any known pair. If 6 workers take 10 days, then k = 6 × 10 = 60 "worker-days." So 4 workers take 60 ÷ 4 = 15 days.
+
+</Step>
+
+<Step title="Line versus curve" kind="explain">
+
+This is the visual giveaway:
+
+- **Direct** proportion (y = kx) → a **straight line** through the origin.
+- **Inverse** proportion (y = k/x) → a **curve** that swoops down, never touching either axis (you can't finish the job with zero workers, or in zero time).
+
+Recognising which one you're facing is half the battle.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A trip takes 3 hours at 60 km/h. Speed and time are inversely proportional. How long at 90 km/h?"
+  options={[
+    "2 hours",
+    "4.5 hours",
+    "1.5 hours",
+    "2.5 hours"
+  ]}
+  correctIndex={0}
+  explanation="The constant is distance: 60 × 3 = 180 km. At 90 km/h, time = 180 ÷ 90 = 2 hours. Faster speed, shorter time — the product (distance) is fixed."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Inverse proportion**: one up, the other down, with a **constant product**.
+- **y = k/x**, so **xy = k**; find k by multiplying a known pair.
+- Graph is a **curve** (a reciprocal), never touching the axes.
+- Direct = line through origin; inverse = downward curve.
+
+</Step>
+
+</Lesson>

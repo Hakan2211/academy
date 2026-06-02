@@ -1,0 +1,77 @@
+---
+title: Combining Gates
+subject: computer-science
+contentSlug: computer-science/combining-gates
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The output of one is the input of the next" kind="explain">
+
+A single gate is limited. The power comes from **wiring gates together**: feed the output of one gate into the input of another, and you can build circuits that compute far more than any basic operation alone.
+
+This is just the **composition** of Boolean logic made physical. Where the logician writes `(A OR B) AND NOT(A AND B)`, the engineer wires an OR, an AND and a NOT together so the electricity computes the same thing.
+
+</Step>
+
+<Step title="Building XOR from the basics" kind="interactive">
+
+Let's build something useful: an XOR ("differ") behaviour, using only AND, OR and NOT. The recipe is `(A OR B) AND NOT(A AND B)` — "at least one is on, but not both." Flip A and B and trace each green signal through the circuit.
+
+<GateCircuit />
+
+The whole tangle behaves as a *single* XOR gate. We can now draw a box labelled "XOR" and forget the wiring inside — a new, higher-level building block. That's abstraction, growing right before your eyes.
+
+</Step>
+
+<Step title="Layers of building blocks" kind="explain">
+
+This is how all digital hardware is designed. You never reason about billions of gates at once. Instead:
+
+- Wire a few gates into a small block (an adder, a comparator, a selector).
+- Treat that block as a single component with its own "truth table."
+- Wire those blocks into bigger blocks (an arithmetic unit, a memory).
+- Repeat, until you've built a processor.
+
+<Callout type="tip" title="Hide the wiring, keep the promise">
+Each block hides its internal gates behind a clean interface, exactly like the abstraction layers from the foundations world. A chip designer thinks in adders and registers, not individual transistors — the same way a programmer thinks in functions, not machine code.
+</Callout>
+
+</Step>
+
+<Step title="Combinational logic, recapped" kind="explain">
+
+Everything in this lesson is still **combinational**: the outputs depend only on the current inputs, with no memory of the past. But that's already enough to build the entire *calculating* part of a computer — anything that transforms inputs into outputs.
+
+Adders, multipliers, comparators, the circuit that decodes an instruction, the unit that picks one of many inputs (a multiplexer) — all are just clever arrangements of gates. In the next lesson we wire gates into the most important block of all: one that adds.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="After wiring AND, OR and NOT gates into a circuit that behaves exactly like XOR, why can engineers then treat it as a single 'XOR block'?"
+  options={[
+    "Because the smaller gates stop existing",
+    "Because it has a well-defined input/output behaviour (truth table), so it can be reused as one component while hiding the internal wiring",
+    "Because XOR is faster than its parts",
+    "They can't — every gate must always be drawn individually"
+  ]}
+  correctIndex={1}
+  explanation="Once a circuit has a fixed, well-defined behaviour, it can be packaged as a single block with a clean interface. Designers reuse it without re-examining the internal gates — the same layered abstraction used throughout computing."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Gates **compose**: one gate's output feeds another's input, building richer circuits.
+- Example: **XOR** can be built from `(A OR B) AND NOT(A AND B)`.
+- Designers wire gates into **blocks**, treat each as one component, and stack blocks into a processor.
+- This is all **combinational** logic (no memory), yet enough to build a computer's entire calculating core.
+
+</Step>
+
+</Lesson>

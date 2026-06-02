@@ -1,0 +1,78 @@
+---
+title: Linked Lists
+subject: computer-science
+contentSlug: computer-science/linked-lists
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="What if the data wasn't in a row?" kind="explain">
+
+The array's weakness was the **shift**: insert in the middle and everything after it has to budge over. What if the values *didn't* have to sit next to each other in memory at all?
+
+That's the idea behind a **linked list**. Its nodes can live **anywhere** in memory, scattered about. Each node carries two things: its **value**, and a **pointer** — the memory address of the **next** node. Follow the pointers and you walk the whole list in order. The final node points at **null**, meaning "the end."
+
+</Step>
+
+<Step title="Insert and delete without shifting" kind="interactive">
+
+Because the order lives in the **pointers**, not in physical position, changing the list is cheap. To **insert**, create a node and **repoint** a couple of arrows. To **delete**, make the previous node's arrow skip over the doomed node. No other node moves an inch.
+
+Try it. Insert after the head, delete the second node, and notice that the neighbours never shuffle.
+
+<LinkedList />
+
+Contrast that with the array, where inserting forced a cascade of shifts. Here, an insert or delete *at a known spot* is <Formula tex="O(1)" block /> — just pointer surgery.
+
+</Step>
+
+<Step title="The catch: no jumping" kind="explain">
+
+There's no free lunch. The array could leap to index 500 by arithmetic. A linked list **can't** — the nodes are scattered, so to reach the 6th node you must start at the head and **follow five pointers**, one hop at a time. Press **Find last (traverse)** above and watch the chain light up node by node.
+
+So accessing position *i* is <Formula tex="O(n)" block /> in a linked list, versus <Formula tex="O(1)" block /> in an array. You traded **fast random access** for **cheap insertion and deletion**.
+
+</Step>
+
+<Step title="Array vs linked list" kind="explain">
+
+This is the first big "it depends" of data structures:
+
+- **Array** — fast index access <Formula tex="O(1)" block />, slow middle insert/delete <Formula tex="O(n)" block />, values packed together.
+- **Linked list** — slow access <Formula tex="O(n)" block />, fast insert/delete *at a known node* <Formula tex="O(1)" block />, values scattered with pointers.
+
+<Callout type="tip" title="Pointers cost memory too">
+Each node stores an extra pointer alongside its value, so a linked list uses more memory than a tight array of the same data. And because the nodes are scattered, they're less cache-friendly — modern CPUs love contiguous data. Arrays often win in practice even when the theory favours linked lists.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Compared with an array, what is the linked list's key trade-off?"
+  options={[
+    "It is faster at everything",
+    "Insertion/deletion at a known node is cheap (no shifting), but reaching an element by position is slow because you must follow pointers from the start",
+    "It can only store numbers",
+    "It offers O(1) access to any index"
+  ]}
+  correctIndex={1}
+  explanation="A linked list keeps order in its pointers, so inserting or deleting a node only repoints a few arrows — no shifting. But it has no direct indexing: to reach position i you must hop through the chain from the head, which is O(n)."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **linked list** is made of **nodes**, each holding a **value** plus a **pointer** to the next node; the last points to **null**.
+- Order lives in the **pointers**, so nodes can be scattered anywhere in memory.
+- **Insert/delete at a known node** is <Formula tex="O(1)" block /> — just repoint arrows, no shifting.
+- **No random access**: reaching position *i* means following the chain, <Formula tex="O(n)" block />.
+- **Array vs linked list** is a trade-off: fast indexing vs fast structural edits.
+
+</Step>
+
+</Lesson>

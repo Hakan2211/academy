@@ -1,0 +1,72 @@
+---
+title: Telling the Truth with Data
+subject: math
+contentSlug: math/telling-the-truth-with-data
+order: 9
+estimatedMinutes: 10
+---
+
+<Lesson>
+
+<Step title="Statistics can illuminate or deceive" kind="explain">
+
+"There are lies, damned lies, and statistics." The same data can be made to tell opposite stories depending on how it's collected, summarised and drawn. The final lesson of this island is a defensive skill: how to **read statistics critically** and not be fooled — by accident or on purpose.
+
+</Step>
+
+<Step title="The truncated axis" kind="interactive">
+
+The classic trick: cut the y-axis so tiny differences look enormous. Toggle between the honest and misleading versions of identical data.
+
+<MisleadingGraph />
+
+</Step>
+
+<Step title="A field guide to statistical deception" kind="explain">
+
+- **Truncated axes** — starting a bar chart's y-axis above zero exaggerates differences.
+- **Cherry-picked averages** — quoting the mean when an outlier inflates it, or vice versa.
+- **Misleading samples** — a biased or tiny sample dressed up as representative.
+- **Confusing correlation with causation** — implying cause from a mere association.
+- **Missing context** — "crime doubled!" (from 1 case to 2), or no comparison baseline.
+
+Each abuses a real concept from this world. Knowing the concept is what lets you spot the abuse.
+
+</Step>
+
+<Step title="Comparing fairly" kind="explain">
+
+To compare two datasets honestly, look at **both centre and spread**: medians (or means) side by side, *and* IQRs or standard deviations. A higher average with a huge spread may be worse than a slightly lower, consistent one. Box plots on a shared scale are the fairest quick comparison. Always ask: same scale? same sample method? what's *not* being shown?
+
+<Callout type="info" title="Why this is the capstone">
+Data now drives medicine, policy, business and the algorithms shaping daily life. The ability to question a statistic — How was it measured? What's the spread? Is the axis honest? Could a third factor explain it? — is one of the most valuable things mathematics gives a citizen.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="An ad shows a bar chart where Brand X's bar is twice the height of Brand Y's, suggesting it's 'twice as good'. The y-axis starts at 90 (X = 96, Y = 93). What's the deception?"
+  options={[
+    "The truncated axis exaggerates a tiny 3-point difference into a doubled bar",
+    "Bar charts can't compare brands",
+    "96 really is twice 93",
+    "There is no deception"
+  ]}
+  correctIndex={0}
+  explanation="Starting the axis at 90 means the bars show only the part above 90 (6 vs 3), making X's bar twice Y's — even though 96 is barely 3% more than 93. From zero, the bars would look almost identical."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The same data can mislead through **truncated axes, cherry-picked averages, biased samples, false causation, missing context**.
+- Each trick abuses a real statistical idea — understanding the idea reveals the trick.
+- Compare datasets fairly using **both centre and spread** (box plots on one scale).
+- **Reading statistics critically** is the capstone skill of this island.
+
+</Step>
+
+</Lesson>

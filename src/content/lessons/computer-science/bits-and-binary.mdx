@@ -1,0 +1,74 @@
+---
+title: Bits & Binary
+subject: computer-science
+contentSlug: computer-science/bits-and-binary
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="The atom of information" kind="explain">
+
+Everything inside a computer — this text, your photos, every song and game — is built from one tiny ingredient: the **bit**. A bit is a single piece of information with exactly **two possible states**.
+
+We usually write those states as **1** and **0**, but they could be anything with two values: on/off, yes/no, true/false, high/low voltage. The labels don't matter; what matters is that there are only two.
+
+</Step>
+
+<Step title="Why only two states?" kind="explain">
+
+You might wonder why computers don't use ten digits like we do. The answer is **reliability**.
+
+Inside a chip, a bit is stored as a voltage. If you tried to use ten different voltage levels, tiny fluctuations, heat and interference would constantly blur one level into the next. But telling apart just **two** states — "clearly high" vs "clearly low" — is easy and robust, even at billions of operations per second.
+
+<Callout type="tip" title="Two is the sweet spot">
+Binary trades a *little* convenience (numbers look longer) for *enormous* reliability and simplicity. Every electronic switch, gate and memory cell only has to do one job: be on or off.
+</Callout>
+
+</Step>
+
+<Step title="One bit isn't much — until you combine them" kind="interactive">
+
+A single bit can only say one of two things. The magic appears when you line several up. Each extra bit **doubles** the number of patterns you can make: 1 bit → 2 patterns, 2 bits → 4, 3 bits → 8, and so on. With *N* bits you get **2ᴺ** patterns.
+
+<BitSwitch />
+
+That doubling is explosive. Just 8 bits already give 256 patterns; 32 bits give over 4 billion. This is how a handful of on/off switches can represent anything at all.
+
+</Step>
+
+<Step title="Bits, bytes, and beyond" kind="explain">
+
+Because a single bit is so small, we group them. Eight bits make one **byte** — the standard chunk computers work with, enough for 256 different values (one text character, say).
+
+From there the units climb in powers of 1024: a **kilobyte** (KB) is about a thousand bytes, a **megabyte** (MB) about a million, a **gigabyte** (GB) about a billion. When you hear a photo is "3 MB," that's 3 million bytes — roughly 24 million individual bits, each just on or off.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why do computers represent information in binary (just two states) rather than using ten digits like humans?"
+  options={[
+    "Binary numbers are shorter to write than decimal ones",
+    "Two clearly-separated states (high/low voltage) are far more reliable for electronics to store and tell apart at high speed",
+    "Computers can't count past one",
+    "It was a legal requirement when computers were invented"
+  ]}
+  correctIndex={1}
+  explanation="Distinguishing just two well-separated states is robust against noise, heat and interference, even at billions of operations per second. That reliability is worth the minor inconvenience of longer-looking numbers."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **bit** is the smallest unit of information: one of two states (1/0, on/off).
+- Computers use **binary** because two states are extremely **reliable** to store and read electronically.
+- Each added bit **doubles** the patterns: *N* bits give **2ᴺ** possibilities.
+- **8 bits = 1 byte**; larger units (KB, MB, GB) climb in powers of 1024.
+
+</Step>
+
+</Lesson>

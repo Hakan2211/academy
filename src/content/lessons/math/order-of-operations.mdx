@@ -1,0 +1,79 @@
+---
+title: Order of Operations
+subject: math
+contentSlug: math/order-of-operations
+order: 3
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="A calculation can mean two things" kind="explain">
+
+Quick — what is **2 + 3 × 4**?
+
+If you add first you get 5 × 4 = 20. If you multiply first you get 2 + 12 = 14. The symbols are identical, yet the answers differ. Mathematics can't tolerate that kind of ambiguity, so everyone agrees on **one fixed order** of operations.
+
+</Step>
+
+<Step title="The order, by rank" kind="explain">
+
+Work from the top of this list down. Two common memory aids spell the same rule: **BODMAS** and **PEMDAS**.
+
+1. **B**rackets / **P**arentheses
+2. **O**rders / **E**xponents (powers and roots)
+3. **D**ivision and **M**ultiplication — together, left to right
+4. **A**ddition and **S**ubtraction — together, left to right
+
+So in 2 + 3 × 4, multiplication outranks addition: 2 + 12 = **14**.
+
+<Callout type="warn" title="× and ÷ share a rank">
+Don't always do multiplication before division. They're equal — just work left to right. In 12 ÷ 3 × 2, divide first (it's leftmost): 4 × 2 = 8, not 12 ÷ 6 = 2.
+</Callout>
+
+</Step>
+
+<Step title="Watch it collapse" kind="interactive">
+
+Step through each expression one operation at a time, always taking the highest-ranked one next.
+
+<OperationOrder />
+
+</Step>
+
+<Step title="Brackets are your override switch" kind="explain">
+
+Whatever order you actually want, **brackets force it**. They're evaluated first, so you can bend a calculation to your will:
+
+<Formula tex="(2 + 3) \times 4 = 5 \times 4 = 20" block />
+
+That's why the same digits gave us both 14 and 20 — the brackets changed which operation went first.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Evaluate 20 − 2 × 3² following the order of operations."
+  options={[
+    "2",
+    "162",
+    "324",
+    "8"
+  ]}
+  correctIndex={0}
+  explanation="Orders first: 3² = 9. Then multiply: 2 × 9 = 18. Then subtract: 20 − 18 = 2. (Doing it left to right would wrongly give 162.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- One agreed order removes all ambiguity: **BODMAS / PEMDAS**.
+- Rank: **Brackets → Orders → ×/÷ → +/−**.
+- ×/÷ share a rank, and +/− share a rank — work those **left to right**.
+- **Brackets** let you override the default order whenever you need to.
+
+</Step>
+
+</Lesson>

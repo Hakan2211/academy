@@ -1,0 +1,82 @@
+---
+title: Boolean Logic
+subject: computer-science
+contentSlug: computer-science/boolean-logic
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Logic with only two values" kind="explain">
+
+In the 1850s, long before computers, mathematician **George Boole** asked: what if we treat logic like algebra, using just two values — **true** and **false**? It seemed abstract at the time. A century later it became the foundation of every computer ever built.
+
+The link is irresistible: a bit is also two values (1 and 0). So if we let **1 mean true and 0 mean false**, then *reasoning* and *computing with bits* become the very same thing.
+
+</Step>
+
+<Step title="The three core operations" kind="interactive">
+
+Boolean logic combines true/false values with three basic operations:
+
+- **AND** — true only when *both* inputs are true.
+- **OR** — true when *at least one* input is true.
+- **NOT** — flips a value: true becomes false.
+
+Toggle the inputs and switch operations to build a feel for each.
+
+<BooleanLogicLab />
+
+You already use these words this way: "I'll go if it's sunny **AND** warm" needs both; "...sunny **OR** warm" needs only one. Boole's insight was that this everyday logic obeys exact, algebra-like rules.
+
+</Step>
+
+<Step title="Logic is everywhere in computing" kind="explain">
+
+Once logic is just maths on 1s and 0s, it shows up at every level:
+
+- **Hardware:** gates (next lesson) physically compute AND, OR and NOT with electricity.
+- **Programs:** every `if` statement asks a true/false question — `if (loggedIn AND isAdmin)`.
+- **Search:** "cats AND NOT dogs" filters results using exactly these operations.
+
+<Callout type="tip" title="XOR: the useful fourth">
+A handy combination is **XOR** ("exclusive or"): true when the inputs *differ*. It answers "one or the other, but not both" — perfect for detecting change, and (as you'll see) for doing arithmetic.
+</Callout>
+
+</Step>
+
+<Step title="Combining into anything" kind="explain">
+
+The real power is that these few operations **compose**. Chain ANDs, ORs and NOTs together and you can express *any* true/false rule, no matter how complicated — "open the door if it's a weekday and working hours and the badge is valid and the alarm is off."
+
+In fact, a remarkable result says **every** possible logical function can be built from just these basic operations. That completeness is exactly why a computer, built entirely from logic, can compute anything at all. Next, we'll write these rules down precisely with truth tables.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A security door should open only when: a valid badge is present AND it is NOT outside working hours. The badge is valid, and it IS outside working hours. Does the door open?"
+  options={[
+    "Yes — the badge is valid",
+    "No — 'NOT outside working hours' is false, and AND needs both sides true",
+    "Yes — OR makes it open",
+    "It depends on the weather"
+  ]}
+  correctIndex={1}
+  explanation="The rule is (validBadge AND (NOT outsideHours)). It's outside hours, so 'NOT outside hours' is false. AND requires BOTH inputs true, so the result is false — the door stays shut."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Boolean logic** works with just two values — true/false — mapping perfectly onto bits (1/0).
+- The core operations are **AND** (both), **OR** (either), **NOT** (flip), with **XOR** (differ) a useful extra.
+- Logic underlies hardware gates, program `if` statements, and search filters alike.
+- These operations **compose** to express any logical rule — which is why logic can build a whole computer.
+
+</Step>
+
+</Lesson>

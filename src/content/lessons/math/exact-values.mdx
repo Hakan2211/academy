@@ -1,0 +1,66 @@
+---
+title: Special Angles & the Unit Circle
+subject: math
+contentSlug: math/exact-values
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Beyond the right triangle" kind="explain">
+
+Right-triangle trig only handles angles between 0° and 90°. The **unit circle** — a circle of radius 1 — frees trig to work for *any* angle. A radius drawn at angle θ has its tip at exactly **(cos θ, sin θ)**. Trig becomes a circle's geometry.
+
+</Step>
+
+<Step title="Walk around the circle" kind="interactive">
+
+The horizontal coordinate of the tip is cos θ; the vertical is sin θ.
+
+<UnitCircle />
+
+</Step>
+
+<Step title="Exact values worth knowing" kind="explain">
+
+A few special angles give clean, exact values (no decimals) that come up constantly:
+
+<Formula tex="\sin 30° = \tfrac12, \quad \cos 60° = \tfrac12, \quad \sin 45° = \cos 45° = \tfrac{\sqrt2}{2}, \quad \tan 60° = \sqrt3" block />
+
+These come from two special triangles: half an equilateral triangle (giving 30° and 60°) and half a square (giving 45°). Worth memorising — they appear in exam questions and elegant results everywhere.
+
+</Step>
+
+<Step title="Why the circle matters" kind="explain">
+
+On the unit circle you can see *why* sin and cos **repeat every 360°** (you're back where you started) and why they swing between −1 and +1. Angles past 90° get negative coordinates, extending sin and cos smoothly into a **wave** — exactly the sine curve from the function gallery. This is the bridge from triangles to the trigonometry of waves, oscillations, and circular motion.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="On the unit circle, what are the coordinates of the point at 90°?"
+  options={[
+    "(0, 1)",
+    "(1, 0)",
+    "(0, −1)",
+    "(½, ½)"
+  ]}
+  correctIndex={0}
+  explanation="The point is (cos 90°, sin 90°) = (0, 1) — straight up. cos 90° = 0 and sin 90° = 1."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **unit circle** extends trig to **any** angle: tip = (cos θ, sin θ).
+- **Exact values** (30°, 45°, 60°) come from half-equilateral and half-square triangles.
+- sin and cos **repeat every 360°** and stay between −1 and 1.
+- The circle turns trig ratios into the **sine wave** — the link to oscillations.
+
+</Step>
+
+</Lesson>

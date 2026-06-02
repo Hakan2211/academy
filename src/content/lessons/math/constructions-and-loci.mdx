@@ -1,0 +1,70 @@
+---
+title: Constructions & Loci
+subject: math
+contentSlug: math/constructions-and-loci
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Geometry with compass and straight-edge" kind="explain">
+
+Long before rulers had millimetre marks, geometers built exact figures with just a **compass** and a **straight-edge**. These **constructions** produce perfect bisectors and perpendiculars — and they reveal a deeper idea: a **locus**, the set of *all* points obeying a rule.
+
+</Step>
+
+<Step title="Three classic loci" kind="interactive">
+
+Each rule about "where points can be" traces out a familiar shape.
+
+<LociViewer />
+
+</Step>
+
+<Step title="The key loci" kind="explain">
+
+- **Fixed distance from a point** → a **circle** (radius = that distance).
+- **Equidistant from two points A and B** → the **perpendicular bisector** of AB.
+- **Equidistant from two lines** → the **angle bisector** between them.
+
+Each is constructed with compass arcs: equal arcs from A and B cross on the perpendicular bisector; equal arcs from a vertex give the angle bisector.
+
+</Step>
+
+<Step title="Loci solve real problems" kind="explain">
+
+Combine loci to pin down a region. "Where can a goat tied to a 5 m rope at a corner graze?" → inside a circle (locus of fixed distance) bounded by the walls. "Where is a point both within 3 km of town A and nearer to road X than road Y?" → the overlap of a circle and a half-plane.
+
+<Callout type="info" title="A locus is a graph in disguise">
+"All points equidistant from the origin" is a circle — which is exactly the equation x² + y² = r². Loci are the geometric face of equations; the coordinate plane united them. Construction is doing geometry by hand; algebra does the same job with symbols.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the locus of all points exactly 4 cm from a fixed point P?"
+  options={[
+    "A circle of radius 4 cm centred on P",
+    "The perpendicular bisector of P",
+    "A straight line 4 cm from P",
+    "A square of side 4 cm around P"
+  ]}
+  correctIndex={0}
+  explanation="Every point at a fixed distance from one point forms a circle of that radius — here radius 4 cm, centred on P."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Constructions** use compass and straight-edge for exact bisectors/perpendiculars.
+- A **locus** is the set of all points obeying a rule.
+- Fixed distance from a point → **circle**; equidistant from two points → **perpendicular bisector**; from two lines → **angle bisector**.
+- Loci are the geometric form of **equations** (a circle is x² + y² = r²).
+
+</Step>
+
+</Lesson>

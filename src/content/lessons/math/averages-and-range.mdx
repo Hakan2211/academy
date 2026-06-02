@@ -1,0 +1,74 @@
+---
+title: Averages & Range
+subject: math
+contentSlug: math/averages-and-range
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="One number to summarise many" kind="explain">
+
+An **average** captures a whole dataset in a single typical value. There are three, and they can disagree — so knowing *which* to use is as important as the arithmetic.
+
+- **Mean** — add them all, divide by how many.
+- **Median** — the middle value when sorted.
+- **Mode** — the most common value.
+
+</Step>
+
+<Step title="See them shift" kind="interactive">
+
+Watch how an outlier pulls the mean but barely moves the median.
+
+<AveragesViz />
+
+</Step>
+
+<Step title="Which average, when?" kind="explain">
+
+<Formula tex="\text{mean} = \frac{\text{sum of values}}{\text{number of values}}" block />
+
+- **Mean** uses every value — but a single outlier distorts it (one billionaire raises a town's *mean* income, not its *median*).
+- **Median** is robust to outliers — best for skewed data like incomes or house prices.
+- **Mode** is the only average for categorical data (the most common shoe size, favourite colour).
+
+</Step>
+
+<Step title="Spread: the range" kind="explain">
+
+Averages don't tell the whole story — you also need **spread**. The simplest measure is the **range**:
+
+<Formula tex="\text{range} = \text{largest} - \text{smallest}" block />
+
+Two classes can have the same mean score but very different ranges — one consistent, one wildly mixed. Average tells you the centre; spread tells you how reliable that centre is. (The range is easily skewed by one extreme value — the next lesson gives a sturdier measure.)
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Find the mean and median of: 2, 3, 3, 6, 16."
+  options={[
+    "Mean 6, median 3",
+    "Mean 3, median 6",
+    "Mean 6, median 6",
+    "Mean 5, median 3"
+  ]}
+  correctIndex={0}
+  explanation="Mean = (2+3+3+6+16)/5 = 30/5 = 6. Median = the middle value of the sorted list = 3. The outlier 16 pulls the mean above the median."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Three averages: **mean** (add ÷ count), **median** (middle), **mode** (most common).
+- **Mean** uses all data but is **outlier-sensitive**; **median** resists outliers; **mode** works for categories.
+- **Range = max − min** measures spread.
+- Centre (average) + spread together describe a dataset.
+
+</Step>
+
+</Lesson>

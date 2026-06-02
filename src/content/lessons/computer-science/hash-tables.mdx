@@ -1,0 +1,78 @@
+---
+title: Hash Tables
+subject: computer-science
+contentSlug: computer-science/hash-tables
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Skipping the search entirely" kind="explain">
+
+To find a name in an array you scan — <Formula tex="O(n)" block />. A sorted tree does better — <Formula tex="O(\log n)" block />. But what if you could go straight to the answer in **one step**, no scanning, no comparisons, almost regardless of how much data you have?
+
+That's the promise of the **hash table**, the structure behind the dictionaries, maps and sets you reach for constantly. Its trick is to **compute** where a value lives instead of searching for it.
+
+</Step>
+
+<Step title="The hash function" kind="explain">
+
+The heart of it is a **hash function**: a quick calculation that takes a **key** (a word, a name, an ID) and spits out a number — a **bucket index** telling us which slot to use.
+
+A toy example: add up the character codes of the key, then take the remainder when divided by the number of buckets. The same key always hashes to the same bucket, so to store *or* find it, you run the hash and jump straight there. No looking around.
+
+> store("cat") → hash → bucket 3 → drop it in bucket 3
+> find("cat")  → hash → bucket 3 → it's right there
+
+</Step>
+
+<Step title="Add keys and watch them land" kind="interactive">
+
+Add a few keys below. Each one is hashed live — you'll see the sum, the mod, and the bucket it drops into. Then **look one up** and watch it jump to its bucket in a single hop.
+
+<HashTable />
+
+Because finding the bucket is just arithmetic, both inserting and looking up are, on average, <Formula tex="O(1)" block /> — **constant time**. The table can hold ten items or ten million; a lookup is still essentially one hop.
+
+</Step>
+
+<Step title="Collisions and chaining" kind="explain">
+
+There's a wrinkle. Different keys can hash to the **same** bucket — a **collision** (you may have triggered one above, shown in orange). With more keys than buckets, collisions are unavoidable.
+
+The common fix is **chaining**: each bucket holds a tiny **linked list**, and colliding keys queue up inside it. To find a key you jump to its bucket, then scan its short chain. As long as collisions stay rare — which a good hash function and enough buckets ensure — those chains stay tiny and lookups stay near <Formula tex="O(1)" block />.
+
+<Callout type="warn" title="When O(1) breaks down">
+"Average O(1)" assumes the keys spread **evenly** across buckets. A poor hash function that dumps everything into one bucket turns the table into a single long chain — back to <Formula tex="O(n)" block />. Real hash tables also **resize** (grow the bucket count and re-hash everything) when they get crowded, to keep chains short.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What makes a hash-table lookup average O(1), and how are collisions handled?"
+  options={[
+    "It sorts the keys first; collisions are ignored",
+    "A hash function computes a bucket index directly so you jump straight there (no scanning); when two keys collide, they're chained in a small list inside that bucket",
+    "It scans every bucket until it finds the key",
+    "It stores keys in a balanced binary search tree"
+  ]}
+  correctIndex={1}
+  explanation="The hash function turns a key into a bucket index by calculation, so storing and finding a key is a direct jump — average O(1), no scan. When two keys hash to the same bucket (a collision), chaining keeps a short list in that bucket, and you scan just those few entries."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **hash table** maps **keys** to **buckets** using a **hash function** — it *computes* the location instead of searching.
+- The same key always hashes to the same bucket, giving average <Formula tex="O(1)" block /> insert and lookup.
+- **Collisions** (two keys, one bucket) are handled by **chaining** a small list in the bucket.
+- Performance relies on an even spread; tables **resize** to keep chains short, or speed degrades toward <Formula tex="O(n)" block />.
+- Hash tables power **dictionaries, sets, caches and database indexes** — the workhorses of fast lookup.
+
+</Step>
+
+</Lesson>

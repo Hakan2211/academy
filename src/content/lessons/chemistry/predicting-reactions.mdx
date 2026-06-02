@@ -1,0 +1,99 @@
+---
+title: Predicting Reactions
+subject: chemistry
+contentSlug: chemistry/predicting-reactions
+order: 7
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="From watching to forecasting" kind="explain">
+
+You've met the reaction types, the activity series, and solubility rules. Together they let you do something genuinely powerful: look at a set of reactants and **predict the products before mixing anything**.
+
+The strategy is always the same three questions:
+
+1. **What type** of reaction is this?
+2. **Will it happen at all?** (Is there a driving force?)
+3. **What are the products?**
+
+</Step>
+
+<Step title="Step 1 — classify the type" kind="interactive">
+
+Match the reactants to a pattern. The pattern tells you the *shape* of the products.
+
+<ReactionTypes />
+
+An element + a compound points to single replacement; two ionic compounds point to double replacement; a fuel + O₂ is combustion.
+
+</Step>
+
+<Step title="Step 2 — check the driving force" kind="explain">
+
+A reaction only proceeds if something *drives* it forward — a reason for the products to be more stable than the reactants. The classic driving forces:
+
+- A **precipitate** forms (an insoluble solid leaves the solution).
+- A **gas** is released.
+- **Water** (or another weak electrolyte) forms.
+- A **more reactive element** displaces a less reactive one.
+
+No driving force? No reaction — the ions just stay as they are.
+
+</Step>
+
+<Step title="Step 3 — apply your tools" kind="interactive">
+
+For single replacement, the **activity series** decides whether the swap happens at all.
+
+<ActivitySeries />
+
+For double replacement, the **solubility rules** tell you whether a precipitate forms.
+
+<PrecipitationLab />
+
+</Step>
+
+<Step title="A worked prediction" kind="explain">
+
+*Will zinc metal react with copper(II) sulfate solution? If so, what forms?*
+
+1. **Type:** element (Zn) + compound (CuSO₄) → single replacement.
+2. **Driving force:** zinc is *above* copper in the activity series, so it can displace it. Yes, it reacts.
+3. **Products:** zinc takes copper's place → ZnSO₄ + Cu.
+
+<Formula tex="\text{Zn} + \text{CuSO}_4 \rightarrow \text{ZnSO}_4 + \text{Cu}" block />
+
+<Callout type="info" title="The thread through this world">
+Notice how every tool fed into one prediction. Classification narrowed the possibilities; the activity series and solubility rules confirmed the driving force and the products. This is how a chemist reasons. Next we'll look at the *conditions* reactions happen under — gases, solutions, energy, and speed.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Will copper metal react with zinc sulfate solution (ZnSO₄)?"
+  options={[
+    "Yes — copper displaces zinc, forming CuSO₄ and zinc metal",
+    "No — copper is less reactive than zinc, so there's no driving force for displacement",
+    "Yes — all metals react with all salt solutions",
+    "No — because copper is a non-metal"
+  ]}
+  correctIndex={1}
+  explanation="This would be single replacement, but copper sits BELOW zinc in the activity series. A less reactive metal can't displace a more reactive one, so there's no driving force — no reaction occurs."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Predict reactions with three questions: **what type? will it happen? what products?**
+- The **type** sets the product shape; a **driving force** (precipitate, gas, water, displacement) decides if it proceeds.
+- Use the **activity series** for single replacement and **solubility rules** for double replacement.
+- Combining these tools turns chemistry from observation into **prediction**.
+
+</Step>
+
+</Lesson>

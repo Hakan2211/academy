@@ -1,0 +1,74 @@
+---
+title: Beyond Mendel
+subject: biology
+contentSlug: biology/beyond-mendel
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="When traits break the simple rules" kind="explain">
+
+Mendel's neat dominant-recessive rules explain a lot — but real inheritance is often richer. Many traits don't sort into two tidy categories. This lesson covers the most important "exceptions" that go **beyond Mendel**.
+
+</Step>
+
+<Step title="Codominance & incomplete dominance" kind="explain">
+
+Sometimes neither allele fully masks the other:
+
+- **Incomplete dominance** — the two blend. A red flower (RR) crossed with white (WW) can give **pink** offspring (RW), a mix of both.
+- **Codominance** — both alleles show fully, side by side. In human **blood groups**, the A and B alleles are codominant, so someone with both is blood type **AB** — expressing A *and* B, not a blend.
+
+So a heterozygote isn't always identical to a dominant homozygote — sometimes it's visibly different.
+
+</Step>
+
+<Step title="Sex linkage" kind="interactive">
+
+Some genes sit on the **sex chromosomes** (X and Y), which makes their inheritance depend on sex. Because males have only one X (XY), a single recessive allele on it shows up — they have no second X to mask it.
+
+<PunnettSquare dom="X" rec="x" trait="X-linked condition" domPheno="unaffected" recPheno="affected" parent1={["X","x"]} parent2={["X","x"]} />
+
+This is why conditions like **red-green colour blindness** and **haemophilia** are far more common in males: a carrier mother can pass an affected X to her sons.
+
+</Step>
+
+<Step title="Polygenic traits" kind="explain">
+
+Finally, many traits aren't controlled by one gene at all. **Height, skin colour,** and **eye colour** are **polygenic** — shaped by *many* genes adding up, plus the environment.
+
+That's why these traits form a smooth **range** across a population (lots of medium-height people, few very tall or very short) rather than a few distinct categories. Mendel's peas were unusually simple; most of *you* is polygenic.
+
+<Callout type="info" title="The bigger picture">
+Mendel's rules are the foundation, not the whole story. Codominance, sex linkage, and polygenic inheritance show how a few simple principles combine into the rich variety of real traits.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Red-green colour blindness is much more common in men than women. Why?"
+  options={[
+    "Men have weaker eyes",
+    "The gene is on the X chromosome, and males (XY) have only one X — so a single recessive allele isn't masked",
+    "It's a dominant trait in men only",
+    "Women can't inherit the allele"
+  ]}
+  correctIndex={1}
+  explanation="The colour-vision gene is X-linked and recessive. Females (XX) usually have a second X to mask it, but males (XY) have only one X, so one recessive allele is enough to cause it."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Incomplete dominance** blends alleles (red + white → pink); **codominance** shows both (blood type AB).
+- **Sex-linked** genes (on X/Y) affect males more — males have only one X, so recessive X alleles aren't masked (colour blindness, haemophilia).
+- **Polygenic** traits (height, skin colour) come from many genes + environment, giving a continuous range.
+
+</Step>
+
+</Lesson>

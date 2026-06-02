@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import type { CompleteResult } from './context'
-import { badgeMeta } from '#/lib/badges'
+import { badgeImage, badgeMeta } from '#/lib/badges'
 import { xpToNextLevel } from '#/lib/xp'
 import { Icon } from '#/components/ui/Icon'
 import { cn } from '#/lib/cn'
@@ -231,10 +231,7 @@ export function LessonCompleteCard({
 // procedural accent coin with the lucide emblem) over a radial burst.
 function BadgeReward({ badgeKey, reduce }: { badgeKey: string; reduce: boolean }) {
   const meta = badgeMeta(badgeKey)
-  const unitSlug = badgeKey.startsWith('unit-')
-    ? badgeKey.slice('unit-'.length)
-    : null
-  const img = unitSlug ? `/badges/physics/${unitSlug}.png` : null
+  const img = badgeImage(badgeKey)
 
   return (
     <motion.div

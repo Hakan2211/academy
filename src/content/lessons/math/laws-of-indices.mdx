@@ -1,0 +1,78 @@
+---
+title: The Laws of Indices
+subject: math
+contentSlug: math/laws-of-indices
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Three rules, one idea" kind="explain">
+
+The laws of indices look like rules to memorise, but they're all the same idea: **counting copies of the base**. Once you see that, you'll never forget them.
+
+</Step>
+
+<Step title="Play with the laws" kind="interactive">
+
+Switch between the three laws and change the indices. Watch the copies pool, cancel, or repeat.
+
+<IndexLaws />
+
+</Step>
+
+<Step title="Multiply → add, divide → subtract" kind="explain">
+
+Multiplying powers of the **same base** pools their copies, so you **add** indices:
+
+<Formula tex="a^m \times a^n = a^{m+n}" block />
+
+Dividing cancels copies top against bottom, so you **subtract**:
+
+<Formula tex="a^m \div a^n = a^{m-n}" block />
+
+For example a⁵ ÷ a² = (a·a·a·a·a)/(a·a) = a³. Five copies, two cancel, three remain.
+
+</Step>
+
+<Step title="A power of a power → multiply" kind="explain">
+
+Raising a power to another power repeats the copies in blocks:
+
+<Formula tex="(a^m)^n = a^{m \times n}" block />
+
+So (a³)² = a³ × a³ = a⁶. And a product inside a power distributes: (ab)ⁿ = aⁿbⁿ.
+
+<Callout type="warn" title="Same base only">
+The add/subtract laws need the **same base**. 2³ × 5² has nothing to combine — it's just 8 × 25 = 200. You can only pool copies of the *same* thing.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Simplify (x⁵ × x³) ÷ x².  "
+  options={[
+    "x⁶",
+    "x¹⁰",
+    "x⁰",
+    "x⁷"
+  ]}
+  correctIndex={0}
+  explanation="Multiply first: x⁵ × x³ = x⁸ (add 5+3). Then divide by x²: x⁸ ÷ x² = x⁶ (subtract 8−2). "
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Multiply** same-base powers → **add** indices: aᵐ × aⁿ = aᵐ⁺ⁿ.
+- **Divide** → **subtract**: aᵐ ÷ aⁿ = aᵐ⁻ⁿ.
+- **Power of a power** → **multiply**: (aᵐ)ⁿ = aᵐⁿ.
+- The laws need the **same base** — they're just bookkeeping for copies.
+
+</Step>
+
+</Lesson>

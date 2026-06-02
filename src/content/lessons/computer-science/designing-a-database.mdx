@@ -1,0 +1,79 @@
+---
+title: Designing a Database
+subject: computer-science
+contentSlug: computer-science/designing-a-database
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="A bad design quietly rots" kind="explain">
+
+You can store the same data many ways, and the design matters enormously. A careless layout works fine on day one, then slowly corrupts itself as people update it. Good database design is mostly about one goal: **store each fact exactly once**.
+
+When the same fact is duplicated across many rows, the copies drift out of sync. Fix the layout up front and a whole class of bugs simply cannot happen. The technique for getting there is called **normalisation**.
+
+</Step>
+
+<Step title="Redundancy and anomalies" kind="interactive">
+
+Suppose every order row also stores the customer's name and city. A frequent customer's details then get copied into every order they place. Toggle "Before" and "After" to see the problem and the fix.
+
+<NormalizationViz />
+
+Duplication causes **anomalies**:
+
+- **Update anomaly** — change a customer's city and you must edit every copy; miss one and the data contradicts itself.
+- **Insertion anomaly** — you can't record a new customer until they place an order.
+- **Deletion anomaly** — delete their last order and you accidentally erase the customer entirely.
+
+</Step>
+
+<Step title="Normalisation: split into related tables" kind="explain">
+
+**Normalisation** is the process of splitting data into multiple related tables so that each piece of information lives in exactly one place. Customer details go in a Customers table (stored once); orders reference the customer by a **foreign key**.
+
+Now updating a city touches a single row, and every order instantly sees the change because it only *links* to the customer rather than copying their data. The relationships you learned in the relational model are precisely the tool that lets you remove redundancy without losing any information.
+
+</Step>
+
+<Step title="Integrity, transactions, and ACID" kind="explain">
+
+Good design also means setting rules the database will enforce — **integrity constraints**. A `NOT NULL` rule forbids blanks; a **foreign-key constraint** forbids an order that points to a customer who doesn't exist. The DBMS rejects any change that would break a rule, so bad data never gets in.
+
+Some operations must happen all-or-nothing. Transferring money is two steps — subtract here, add there — that must both succeed or both fail. A **transaction** groups steps into one unit, and databases guarantee transactions are **ACID**: **A**tomic (all or nothing), **C**onsistent (rules stay satisfied), **I**solated (concurrent transactions don't interfere), and **D**urable (once committed, it survives a crash).
+
+<Callout type="warn" title="Don't over-normalise blindly">
+Splitting everything to the extreme means more joins and slower reads. Real design balances clean, redundancy-free storage against the cost of reassembling it. Most apps land at a sensible, mostly-normalised middle.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A table repeats each customer's address on every one of their orders. What is the main risk, and what fixes it?"
+  options={[
+    "No real risk; repeating data makes queries faster, so leave it",
+    "Update anomalies — change the address once and copies disagree; normalising into a separate Customers table linked by a foreign key fixes it",
+    "The table will run out of primary keys; add more keys",
+    "Nothing can fix duplicated data in a relational database"
+  ]}
+  correctIndex={1}
+  explanation="Duplicated facts cause update anomalies: editing one copy leaves the others stale and contradictory. Normalisation moves the address into its own Customers table stored once, with orders referencing it by foreign key, so a single edit updates it everywhere."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Good design aims to store **each fact exactly once**; duplication causes **update, insertion, and deletion anomalies**.
+- **Normalisation** splits data into related tables linked by **foreign keys** to remove redundancy.
+- **Integrity constraints** (NOT NULL, foreign keys) let the DBMS reject invalid data automatically.
+- A **transaction** groups steps into an all-or-nothing unit; databases guarantee them to be **ACID** (Atomic, Consistent, Isolated, Durable).
+- Design is a **balance** — fully normalised storage versus the join cost of reassembling it.
+
+</Step>
+
+</Lesson>

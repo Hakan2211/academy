@@ -1,0 +1,74 @@
+---
+title: Vectors
+subject: math
+contentSlug: math/vectors
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Quantities with direction" kind="explain">
+
+A **vector** has both a **size** (magnitude) and a **direction** — like a displacement, a velocity, or a force. We write it as a column of components saying how far across and how far up:
+
+<Formula tex="\mathbf{a} = \begin{pmatrix} 3 \\ 2 \end{pmatrix} \;=\; 3 \text{ across, } 2 \text{ up}" block />
+
+Unlike a plain number (a **scalar**), a vector points somewhere.
+
+</Step>
+
+<Step title="Add them tip to tail" kind="interactive">
+
+Walk along the first vector, then the second; the resultant runs straight from start to finish.
+
+<VectorAdd />
+
+</Step>
+
+<Step title="Adding and scaling" kind="explain">
+
+To **add** vectors, add their components separately:
+
+<Formula tex="\begin{pmatrix} 3 \\ 2 \end{pmatrix} + \begin{pmatrix} 1 \\ 4 \end{pmatrix} = \begin{pmatrix} 4 \\ 6 \end{pmatrix}" block />
+
+Geometrically that's the "tip-to-tail" rule. To **multiply by a scalar**, multiply each component: 2**a** is twice as long, same direction. The negative −**a** points the opposite way.
+
+</Step>
+
+<Step title="Magnitude and uses" kind="explain">
+
+A vector's **magnitude** (length) comes from Pythagoras on its components:
+
+<Formula tex="|\mathbf{a}| = \sqrt{x^2 + y^2}" block />
+
+So (3, 4) has length 5. Vectors are the language of physics (forces, velocities), computer graphics (every position and motion), and navigation. Adding a "drift" velocity to a "heading" velocity to find the true course is just vector addition.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="If a = (2, 5) and b = (3, −1), what is a + 2b?"
+  options={[
+    "(8, 3)",
+    "(5, 4)",
+    "(7, 3)",
+    "(8, 9)"
+  ]}
+  correctIndex={0}
+  explanation="2b = (6, −2). Then a + 2b = (2 + 6, 5 + (−2)) = (8, 3). Add and scale components separately."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **vector** has **magnitude and direction**, written as components (across, up).
+- **Add** by adding components (tip-to-tail); **scale** by multiplying each component.
+- **Magnitude** = √(x² + y²) (Pythagoras).
+- Vectors model forces, velocities, motion and navigation.
+
+</Step>
+
+</Lesson>

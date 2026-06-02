@@ -1,0 +1,88 @@
+---
+title: "JavaScript: The Behavior"
+subject: computer-science
+contentSlug: computer-science/javascript-the-behavior
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The third pillar" kind="explain">
+
+HTML gives a page **structure**. CSS gives it **style**. But both are static — they describe a page that just sits there. **JavaScript** adds the missing third thing: **behaviour**. It's a real programming language, with the variables, loops, and functions you've already met, and it runs *inside the browser* on every page that includes it.
+
+> **HTML = structure · CSS = style · JavaScript = behaviour.**
+
+That trio is the whole front-end of the web. The first two describe what's *there*; JavaScript decides what *happens* when someone interacts with it.
+
+</Step>
+
+<Step title="Events: code that waits for you" kind="explain">
+
+JavaScript on a page is mostly **event-driven**. It doesn't run top to bottom and stop; it sets up **handlers** that wait for things to happen — a click, a keypress, a form submission, the page finishing loading — and runs the matching code when they do.
+
+```js
+button.addEventListener('click', () => {
+  // this runs every time the button is clicked
+})
+```
+
+You're registering a promise: "when *this* happens, run *that*." The browser sits in a loop watching for events and dispatching them. Until you click, the handler patiently waits.
+
+</Step>
+
+<Step title="It really runs — try it" kind="interactive">
+
+Time to prove behaviour is real. The demo below isn't a recording or a picture — it's actual JavaScript running in your browser *right now*. Press the buttons; flip the theme. The page reacts because code is listening:
+
+<JsInteractive />
+
+That instant reaction — click, and the number changes; toggle, and the colours swap — is exactly what JavaScript adds. Notice the trio working together: HTML laid out the buttons, CSS styled them, and JavaScript made them *do something*.
+
+</Step>
+
+<Step title="Manipulating the DOM" kind="explain">
+
+How does the code change the page? Remember the **DOM** — the live tree of the page the browser holds in memory. JavaScript can *reach into that tree* and edit it: change an element's text, add or remove nodes, swap a CSS class to restyle something on the fly.
+
+```js
+const display = document.querySelector('#count')
+display.textContent = count   // change what's on screen
+```
+
+When JavaScript edits the DOM, the browser instantly re-renders the affected part. That's the engine behind everything interactive: a like button, a dropdown menu, a live search box, a game — all of it is JavaScript responding to events by updating the DOM.
+
+<Callout type="info" title="One language, everywhere">
+JavaScript started purely in the browser, but it now runs on servers too (via runtimes like Node.js), so the *same* language can power both the front-end and the back-end — a big reason it became the language of the web.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="If HTML is structure and CSS is style, what does JavaScript contribute to a web page?"
+  options={[
+    "It sets the colours and fonts",
+    "It defines which tags are headings and paragraphs",
+    "Behaviour — it responds to events and changes the DOM, making the page interactive",
+    "It stores the page on the server"
+  ]}
+  correctIndex={2}
+  explanation="JavaScript is the behaviour layer. It registers event handlers (for clicks, keypresses, etc.) and manipulates the DOM in response, so the page can react and change — turning a static document into an interactive app."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **JavaScript** is the **behaviour** layer: a real programming language running inside the browser.
+- The front-end trio: **HTML = structure, CSS = style, JS = behaviour.**
+- JS is **event-driven** — handlers wait for clicks, keypresses, and other events, then run.
+- It works by **manipulating the DOM**: editing the live page tree, which the browser re-renders.
+- The same language now runs on **servers** too, so it can power both ends of an app.
+
+</Step>
+
+</Lesson>

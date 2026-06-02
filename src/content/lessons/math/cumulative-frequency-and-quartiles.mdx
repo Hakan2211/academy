@@ -1,0 +1,70 @@
+---
+title: Cumulative Frequency & Quartiles
+subject: math
+contentSlug: math/cumulative-frequency-and-quartiles
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Slicing data into quarters" kind="explain">
+
+The median splits sorted data in half. The **quartiles** split it into quarters:
+
+- **Lower quartile (Q1)** — a quarter of the way through.
+- **Median (Q2)** — the middle.
+- **Upper quartile (Q3)** — three-quarters through.
+
+The middle 50% sits between Q1 and Q3 — its width, the **interquartile range (IQR = Q3 − Q1)**, is a spread measure that ignores extremes.
+
+</Step>
+
+<Step title="The box plot" kind="interactive">
+
+The five-number summary — min, Q1, median, Q3, max — drawn as a box and whiskers.
+
+<BoxPlot />
+
+</Step>
+
+<Step title="Cumulative frequency" kind="explain">
+
+To find quartiles from grouped data, build a **cumulative frequency** — a running total of how many values fall *below* each point. Plotting it gives an S-shaped curve, and reading across from the ¼, ½ and ¾ heights gives Q1, the median and Q3.
+
+The IQR is prized because, unlike the range, **one freak value can't distort it** — it describes the solid middle of the data.
+
+</Step>
+
+<Step title="Comparing distributions" kind="explain">
+
+Box plots shine for **comparison**. Draw two on the same scale and you instantly see which dataset is higher (median), which is more spread (box width / IQR), and whether either is **skewed** (median off-centre in its box). It's the statistician's quick visual verdict.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A dataset has Q1 = 12, median = 18, Q3 = 27. What is the interquartile range?"
+  options={[
+    "15",
+    "9",
+    "18",
+    "39"
+  ]}
+  correctIndex={0}
+  explanation="IQR = Q3 − Q1 = 27 − 12 = 15. It measures the spread of the middle 50% of the data, unaffected by extreme values."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Quartiles** Q1, median, Q3 split sorted data into quarters.
+- **IQR = Q3 − Q1** — spread of the middle 50%, resistant to outliers.
+- **Cumulative frequency** (running totals) locates quartiles from grouped data.
+- **Box plots** make distributions easy to compare (centre, spread, skew).
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,80 @@
+---
+title: Quality & Documentation
+subject: computer-science
+contentSlug: computer-science/quality-and-documentation
+order: 4
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Code is read far more than it is written" kind="explain">
+
+You write a line of code once. Then it gets read — by teammates, by future maintainers, by *you* six months from now having completely forgotten how it worked — dozens or hundreds of times over its life. So the famous rule of quality software is:
+
+```
+Code is read far more often than it is written.
+```
+
+That single sentence reorders your priorities. Clever, compressed, hard-to-follow code might feel impressive, but if no one can read it, no one can safely *change* it — and we already learned that changing code is where most of the cost and life of software lives. **Readable beats clever.**
+
+</Step>
+
+<Step title="What makes code readable" kind="interactive">
+
+Quality lives in small, boring habits: clear names, short focused functions, consistent style, and code that does the obvious thing. Look again at the test suite — the *tests themselves* document what the function is supposed to do.
+
+<TestSuite />
+
+Each test reads like a sentence: "applying 20% off to 100 should give 80." A newcomer can learn the rules of the code just by reading its tests. Good tests are **executable documentation** — and unlike a comment, they can't quietly drift out of date, because a stale test fails.
+
+</Step>
+
+<Step title="Documentation and code review" kind="explain">
+
+Beyond readable code, two practices keep quality high.
+
+**Documentation** explains what code alone can't: *why* a decision was made, how to use a module's interface, what the gotchas are. The best comments explain intent — *why this odd-looking line exists* — not the obvious *what*. A short, accurate README can save the next person days.
+
+**Code review** is the human safety net: before code joins the shared project, another engineer reads it. Reviews catch bugs early, spread knowledge across the team, and gently enforce a shared standard — so the codebase reads as if one careful mind wrote it, not twenty rushed ones.
+
+<Callout type="tip" title="Reviews are about the code, not the coder">
+A healthy review culture critiques the work, never the person. The goal is a better system and a team that learns together — not blame.
+</Callout>
+
+</Step>
+
+<Step title="Technical debt" kind="explain">
+
+Sometimes you cut a corner on purpose to ship fast — a quick hack, a skipped test, a tangled bit of design you'll "clean up later." That's **technical debt**, and the metaphor is exact: like financial debt, a little can be smart, but it charges *interest*. Every future change in that messy area takes longer and risks more bugs.
+
+Debt isn't evil — it's a tool. The danger is *ignoring* it until the interest payments (slow, buggy development) swallow the team. Mature engineering means borrowing deliberately and paying it down before it compounds. Quality, in the end, is what keeps software cheap to change for years.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A team rushes a messy, untested feature to hit a deadline, planning to clean it up 'later.' Six months on, every change near that feature is slow and bug-prone. What's the best name for this?"
+  options={[
+    "A regression caught by the test suite",
+    "Technical debt — a deliberate shortcut that now charges interest in slower, riskier changes",
+    "Loose coupling between modules",
+    "Successful test-driven development"
+  ]}
+  correctIndex={1}
+  explanation="Cutting corners to ship fast creates technical debt. Like financial debt it accrues interest: future work in that area becomes slower and more error-prone until the shortcut is paid down."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Code is read far more than written**, so readability matters more than cleverness.
+- Quality comes from clear names, small functions, and **tests that act as executable documentation**.
+- **Documentation** captures the *why*; **code review** catches bugs, shares knowledge, and enforces a shared standard.
+- **Technical debt** is a deliberate shortcut that charges interest — manage it on purpose, or it slows the whole team.
+
+</Step>
+
+</Lesson>

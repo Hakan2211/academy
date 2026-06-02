@@ -1,0 +1,72 @@
+---
+title: Prime Numbers
+subject: math
+contentSlug: math/prime-numbers
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The indivisible numbers" kind="explain">
+
+A **prime** is a whole number greater than 1 whose only factors are 1 and itself. It cannot be split into a rectangle other than a single line.
+
+2, 3, 5, 7, 11, 13, 17, 19, … Everything else above 1 is **composite** — it can be broken into smaller factors. Primes are the numbers that refuse to break.
+
+</Step>
+
+<Step title="Sieve out the primes" kind="interactive">
+
+Eratosthenes found the primes 2,200 years ago with a beautifully simple idea: cross out every multiple of each prime, and whatever survives is prime. Try it.
+
+<PrimeSieve />
+
+</Step>
+
+<Step title="Why stopping at 7 is enough" kind="explain">
+
+Notice you only had to sieve 2, 3, 5 and 7 to clear all of 1–100. Here's why: if a number up to 100 is composite, it must have a factor no larger than √100 = 10. The only primes up to 10 are 2, 3, 5, 7 — so sieving those catches every composite.
+
+<Formula tex="\text{to test if } n \text{ is prime, only check primes up to } \sqrt{n}" block />
+
+</Step>
+
+<Step title="Spotting primes quickly" kind="explain">
+
+A few divisibility checks rule out most candidates instantly:
+
+- even (ends in 0,2,4,6,8) → divisible by 2
+- digits sum to a multiple of 3 → divisible by 3
+- ends in 0 or 5 → divisible by 5
+
+So 51 *looks* prime, but 5 + 1 = 6 is a multiple of 3, so 51 = 3 × 17. Not prime.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="How many of these are prime: 1, 2, 9, 17, 21, 23?"
+  options={[
+    "Three: 2, 17, 23",
+    "Four: 1, 2, 17, 23",
+    "Two: 17, 23",
+    "Five: 2, 9, 17, 21, 23"
+  ]}
+  correctIndex={0}
+  explanation="2, 17 and 23 are prime. 1 is not prime (only one factor); 9 = 3×3; 21 = 3×7. So exactly three are prime."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **prime** has exactly two factors; a **composite** has more.
+- The **Sieve of Eratosthenes** finds primes by crossing out multiples.
+- To test n for primality, only check prime divisors up to **√n**.
+- Quick divisibility rules (2, 3, 5) eliminate most candidates fast.
+
+</Step>
+
+</Lesson>

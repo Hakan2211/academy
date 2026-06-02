@@ -1,0 +1,80 @@
+---
+title: The Circle Theorems
+subject: math
+contentSlug: math/circle-theorems
+order: 7
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Hidden order in the circle" kind="explain">
+
+The circle hides a set of surprising, exact angle relationships — the **circle theorems**. They look like coincidences until you prove them, and they're a perfect showcase of how geometry builds certainty from a few starting facts. This is the summit of the geometry world.
+
+</Step>
+
+<Step title="Watch the theorems hold" kind="interactive">
+
+Drag the point and see each relationship stay true no matter where it sits.
+
+<CircleTheorems />
+
+</Step>
+
+<Step title="Thales' theorem: 90° in a semicircle" kind="explain">
+
+Pick any point on a circle and join it to the two ends of a **diameter**. The angle there is **always 90°** — a right angle — wherever the point sits.
+
+<Formula tex="\text{angle in a semicircle} = 90°" block />
+
+The ancient Greek Thales is said to have proved it 2,600 years ago. It means you can draw a right angle with nothing but a circle and a diameter.
+
+</Step>
+
+<Step title="The angle at the centre is double" kind="explain">
+
+For the same arc, the angle at the **centre** is exactly **twice** the angle at the **circumference**:
+
+<Formula tex="\angle\text{(centre)} = 2 \times \angle\text{(circumference)}" block />
+
+Thales' theorem is actually a special case: when the arc is a semicircle, the centre angle is 180°, so the circumference angle is 90°. And every angle drawn on the **same arc** is equal (they're all half the same central angle). Other gems follow: a **cyclic quadrilateral** (corners on a circle) has opposite angles summing to 180°.
+
+</Step>
+
+<Step title="Why proof is the point" kind="explain">
+
+You could measure a hundred circles and *believe* these facts — but geometry **proves** them, so they hold for every circle that could ever exist. The angle-at-the-centre theorem follows in a few lines from the isosceles triangles formed by radii and the exterior-angle rule from the triangles world. This is the spirit of Euclid: from a handful of self-evident axioms, an entire universe of certain truths unfolds by pure logic.
+
+<Callout type="info" title="From Euclid to today">
+Euclid's *Elements* (≈300 BC) built all of geometry from five axioms and was the model of rigorous reasoning for two thousand years. The circle theorems are a small, beautiful corner of that edifice — and proof, not measurement, is what makes mathematics eternal.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A and B are ends of a chord. The angle at the centre subtended by AB is 100°. What is the angle at the circumference on the major arc?"
+  options={[
+    "50°",
+    "100°",
+    "200°",
+    "80°"
+  ]}
+  correctIndex={0}
+  explanation="The angle at the centre is twice the angle at the circumference on the same arc, so the circumference angle is 100 ÷ 2 = 50°."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Thales:** the angle in a semicircle is always **90°**.
+- **Angle at centre = 2 × angle at circumference** (same arc); same-arc angles are equal.
+- **Cyclic quadrilateral:** opposite angles sum to **180°**.
+- Geometry **proves** these for every circle — proof, not measurement, is what endures.
+
+</Step>
+
+</Lesson>

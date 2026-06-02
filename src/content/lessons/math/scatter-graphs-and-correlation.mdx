@@ -1,0 +1,72 @@
+---
+title: Scatter Graphs & Correlation
+subject: math
+contentSlug: math/scatter-graphs-and-correlation
+order: 8
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Do two things move together?" kind="explain">
+
+A **scatter graph** plots pairs of values — like hours studied and exam score — one point per subject. Its shape reveals **correlation**: whether the two variables tend to rise and fall together, move oppositely, or have no link at all.
+
+</Step>
+
+<Step title="From negative to positive" kind="interactive">
+
+Slide through the correlations and watch the cloud of points and the trend line.
+
+<ScatterPlot />
+
+</Step>
+
+<Step title="Kinds of correlation" kind="explain">
+
+- **Positive** — as one rises, so does the other (study time and grades); points trend up-right.
+- **Negative** — as one rises, the other falls (price and demand); points trend down-right.
+- **None** — no pattern; a shapeless scatter.
+
+The tighter the points hug a line, the **stronger** the correlation. A **line of best fit** summarises the trend and lets you predict in-between values (interpolation).
+
+</Step>
+
+<Step title="Correlation is not causation" kind="explain">
+
+The most important warning in all of statistics: two variables moving together does **not** prove one *causes* the other.
+
+Ice-cream sales and drowning deaths correlate strongly — but ice cream doesn't drown anyone. A hidden third factor, **hot weather**, drives both. Always ask whether a lurking variable, coincidence, or reverse causation could explain a correlation before claiming cause.
+
+<Callout type="warn" title="The mantra">
+Correlation is not causation. Establishing cause needs a controlled experiment, not just a suggestive scatter graph.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A study finds towns with more firefighters have more fire damage. Does more firefighters cause more damage?"
+  options={[
+    "No — bigger fires (a third factor) cause both more firefighters and more damage",
+    "Yes — firefighters clearly cause the damage",
+    "Yes, because the correlation is positive",
+    "There is no correlation here"
+  ]}
+  correctIndex={0}
+  explanation="It's a lurking variable: larger fires demand more firefighters AND cause more damage. The correlation is real, but the causation runs through fire size — correlation is not causation."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **scatter graph** plots paired data to reveal **correlation**.
+- **Positive** (up together), **negative** (opposite), or **none**; tighter points = stronger.
+- A **line of best fit** summarises the trend and enables prediction.
+- **Correlation is not causation** — beware lurking variables.
+
+</Step>
+
+</Lesson>

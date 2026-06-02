@@ -1,0 +1,104 @@
+---
+title: The Promise & Peril of AI
+subject: computer-science
+contentSlug: computer-science/the-promise-and-peril-of-ai
+order: 7
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="A tool of extraordinary reach" kind="explain">
+
+Step back and take in what you've built across this world: search that explores vast spaces, models that learn patterns from data, neural networks that approximate almost any function, language models that write and reason, robots that perceive a noisy world. Together they form the most powerful, general-purpose technology since electricity.
+
+The promise is genuine and already arriving. AI systems detect tumours in scans earlier than radiologists, predicted the 3D structure of nearly every known protein, tutor students one-to-one, draft and debug code, translate between languages in real time, and accelerate scientific discovery from materials to medicine. Used well, this is a tool that amplifies human capability on a historic scale.
+
+But a technology this powerful demands clear eyes. The same systems have sharp limits and real dangers, and the goal of this final lesson is neither hype nor doom — it's **understanding well enough to use them wisely**.
+
+</Step>
+
+<Step title="What AI is — and isn't — good at" kind="explain">
+
+It helps to be precise about the strengths. Modern AI excels at **pattern recognition** in huge datasets, at fluent **generation** of text, images and code, at tireless **scale and speed**, and at finding signals in noise that humans miss. Within a domain it has trained on, it can be superhuman.
+
+Yet the limits are just as real. An AI has no genuine **understanding** of meaning — it manipulates patterns, not concepts. It has no **common sense** beyond what statistics imply, struggles with truly **novel** situations outside its training, and cannot explain *why* it reached an answer (the **black-box** problem). It does not know what it doesn't know. Treating a brilliant pattern-matcher as if it were a reasoning, accountable mind is the source of most AI mishaps.
+
+</Step>
+
+<Step title="Bias: the model learns our flaws" kind="interactive">
+
+Recall the central lesson of machine learning: a model learns whatever patterns are in its **data**. That cuts both ways. If the data reflects historical bias, the model absorbs and can *amplify* it — a hiring AI trained on past hires may quietly penalise groups who were underrepresented; a facial system trained mostly on one skin tone performs worse on others.
+
+<MlClassifier />
+
+Notice how the boundary you draw depends entirely on the points you're given. Feed it a skewed sample and it confidently learns a skewed rule — then applies that rule at scale, to millions of people, with the false authority of a machine. **Bias in, bias out**, but faster and harder to question. Fairness isn't an afterthought; it's a property of the data and the choices behind it.
+
+</Step>
+
+<Step title="Hallucination: confidently wrong" kind="interactive">
+
+Because a language model **generates** the next likely token rather than retrieving a fact, it can produce statements that are fluent, plausible, and completely false — invented citations, fake quotes, confident wrong answers. This is called **hallucination**, and it's not a bug to be fully patched away; it's a direct consequence of how the model works.
+
+<TokenPredictor />
+
+The model picks whatever continuation is statistically likely — and "likely-sounding" is not the same as "true." Raise the temperature and it strays further from safe ground. This is why the golden rule of using AI is to **verify**: treat its output as a fast, fallible draft from a confident assistant who sometimes makes things up, never as a final authority. The fluency is exactly what makes the errors dangerous.
+
+</Step>
+
+<Step title="Jobs, society, and concentration" kind="explain">
+
+Every major automation wave has reshaped work, and AI is no exception. It won't simply "replace humans"; more often it shifts *which* tasks people do — automating the routine parts of a job while raising the value of judgement, creativity, and oversight. Some roles shrink, new ones appear, and the transition can be painful and uneven. The honest answer is that the *net* effect is genuinely uncertain and depends heavily on the choices societies make.
+
+There are quieter concerns too: the enormous **energy and compute** that training takes; the **concentration of power** in the few organisations that can afford it; the flood of cheap synthetic text, images and **deepfakes** that erode our shared sense of what's real. None of these are reasons to abandon the technology — they're reasons to govern it thoughtfully.
+
+</Step>
+
+<Step title="Alignment: making powerful systems do what we mean" kind="explain">
+
+As systems grow more capable, a deeper question moves to centre stage: the **alignment** problem. How do we ensure an AI pursues what we actually *intend*, not a literal or distorted version of it? A system optimising hard for the wrong objective — engagement, clicks, a misread goal — can cause real harm precisely *because* it's effective.
+
+This is why **AI safety** has become a serious field: not the cinematic fear of conscious robots, but the down-to-earth challenge of building systems that are reliable, honest, controllable, and steered toward human values even as they grow more powerful. The harder problem isn't making AI smart; it's making powerful AI *trustworthy*.
+
+<Callout type="info" title="Neither hype nor doom">
+The most useful stance is sober optimism. AI is a transformative tool, not a magic oracle and not an impending apocalypse. Its impact — for good or ill — will be decided less by the technology itself than by the wisdom, care, and intentions of the people who build and wield it.
+</Callout>
+
+</Step>
+
+<Step title="Using AI well" kind="explain">
+
+So how should *you* engage with all this? A few principles fall out of everything you've learned. **Verify** what AI tells you, especially facts and figures — it is fluent, not infallible. Understand it as a **pattern-matcher**, powerful within its training and unreliable beyond it. Stay alert to **bias** and ask what data shaped a system's behaviour. Keep a **human in the loop** for decisions that carry real weight — medical, legal, financial, moral.
+
+Most of all, treat AI as an **amplifier of human intent**. It will make a careful, knowledgeable person dramatically more capable — and a careless one dramatically more dangerous. The intelligence in the loop is still, and for the foreseeable future, *yours*.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A language model gives you a confident, fluent, well-cited answer to a factual question. Based on how these systems work, what is the wisest response?"
+  options={[
+    "Trust it completely — fluency and citations prove the answer is correct",
+    "Verify the key claims independently, because the model generates likely-sounding text and can hallucinate convincing but false facts and citations",
+    "Assume it is always wrong and ignore it entirely",
+    "Raise the temperature setting to make the answer more accurate"
+  ]}
+  correctIndex={1}
+  explanation="An LLM generates the most likely continuation, and 'likely-sounding' is not the same as 'true' — it can hallucinate convincing facts and even fake citations. Fluency makes errors more dangerous, not less, so the wise move is to treat the output as a fast, fallible draft and verify anything that matters."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- AI is a **general-purpose amplifier** with real, arriving benefits — from medicine and science to coding and education.
+- It excels at **pattern recognition and generation** but lacks true understanding, common sense, and explainability (the **black-box** problem).
+- **Bias in, bias out**: a model learns the flaws in its data and applies them at scale with false authority.
+- **Hallucination** is intrinsic to next-token generation — fluent output can be confidently false, so always **verify**.
+- AI reshapes **jobs** unevenly and raises concerns about energy, power concentration, and deepfakes; the net effect depends on human choices.
+- The deep challenge is **alignment and safety** — making powerful systems trustworthy — and the wise stance is **sober optimism**: AI amplifies the intent of whoever wields it.
+
+</Step>
+
+</Lesson>

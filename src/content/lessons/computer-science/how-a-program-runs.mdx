@@ -1,0 +1,100 @@
+---
+title: How a Program Runs
+subject: computer-science
+contentSlug: computer-science/how-a-program-runs
+order: 7
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Bringing the machine to life" kind="explain">
+
+We have met every part of a computer separately: the CPU and its ALU, registers and control unit; the memory hierarchy; machine code; the fetch–execute cycle; devices and interrupts. In this final lesson we tie them all together and answer the whole world's question: **what actually happens, start to finish, when a program runs?**
+
+The answer rests on one breathtaking idea — an idea so good that essentially every computer ever built is based on it. It is called the **stored-program concept**, and it deserves a careful look.
+
+</Step>
+
+<Step title="The stored-program idea" kind="explain">
+
+Before this idea, early machines were "programmed" by physically rewiring them — a new task meant hours of plugging cables. The leap, set out in the 1940s in what we now call the **von Neumann architecture**, was deceptively simple:
+
+> Store the **program** in the **same memory** as the **data**, both as ordinary numbers.
+
+That is it. Instructions are not special, hard-wired things; they are just numbers sitting in memory, exactly like the data they operate on. To run a different program, you do not rewire the machine — you simply put **different numbers in memory**. The hardware never changes; only the contents of memory do.
+
+</Step>
+
+<Step title="A program is just data in memory" kind="interactive">
+
+Remember that machine code is only numbers. Below, each instruction is one number split into an opcode and an operand — indistinguishable, as bits, from any other number in memory.
+
+<MachineCode />
+
+This is the heart of the stored-program idea: the line `ADD 3` and the value `51` are *the same kind of thing* in memory. What makes a number an "instruction" is not the number itself — it is the fact that the program counter is pointing at it when the CPU fetches. Position and timing, not substance, decide what counts as code.
+
+</Step>
+
+<Step title="The whole story, in motion" kind="interactive">
+
+Now watch the full machine come alive. Memory holds a program (numbers). The **program counter** points at the next one. The **clock** ticks, and the CPU runs its **fetch–decode–execute** cycle: read the instruction the PC points to, decode it in the control unit, execute it on the **ALU**, update a **register**, advance the PC — then again.
+
+<FetchExecute />
+
+Step through it slowly and name each part as it acts. That single loop, repeated, *is* a running program. Every app, game and website on Earth is ultimately this picture, scaled up and sped up.
+
+</Step>
+
+<Step title="Climbing back up the layers" kind="explain">
+
+So how does *your* program — written in Python or JavaScript, full of friendly words — become numbers in memory? Through the tower of abstraction from the start of the island:
+
+1. You write **high-level code** in a language designed for humans.
+2. A **compiler** or interpreter translates it down to **machine code** — opcodes and operands.
+3. The operating system **loads** those numbers from storage into **RAM** and sets the **program counter** to the first one.
+4. The **clock** starts ticking and the **fetch–execute cycle** runs the numbers, using the ALU, registers and memory, signalled by **interrupts** when devices need attention.
+
+Every layer is honest: nothing is added that is not, at bottom, gates switching to a clock.
+
+</Step>
+
+<Step title="The clock and the limits" kind="explain">
+
+One quiet hero ties it together: the **clock**. It is a signal that ticks billions of times a second, marching the fetch–execute cycle forward in perfect lockstep so every part acts in the right order. "Gigahertz" is just how many ticks per second — how fast the heartbeat beats.
+
+And this completes the climb that began with a single bit. A computer is gates wired into an ALU and memory, fed a program that is just numbers in that same memory, stepped forward by a clock. There is no other ingredient.
+
+<Callout type="info" title="The deepest question, set up">
+If a computer is *only* this — logic and memory marching to a clock, running numbers that are themselves stored as data — then what can such a machine ultimately compute, and what can it never compute? That question, answered by Turing before the first computer existed, is exactly where the next world begins.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the core insight of the stored-program (von Neumann) concept?"
+  options={[
+    "Programs must be physically wired into the hardware before use",
+    "Instructions and data are both stored as ordinary numbers in the same memory, so running a new program just means loading different numbers",
+    "Each program needs its own separate, special kind of memory",
+    "The CPU can only run one fixed program built into it"
+  ]}
+  correctIndex={1}
+  explanation="The stored-program idea keeps instructions and data together in the same memory, both as numbers. The hardware stays fixed; to run a different program you simply load different numbers into memory and point the program counter at them."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **stored-program (von Neumann) concept**: instructions and data live in the **same memory**, both as ordinary **numbers**.
+- A "program" is just data in memory; what makes a number an instruction is that the **program counter** points at it when fetched.
+- Running a program = the **clock** driving the **fetch–decode–execute** cycle over those numbers, using the ALU, registers and memory, with **interrupts** for devices.
+- Your high-level code is **translated** to machine code, **loaded** into RAM, and run by this loop — every layer resting honestly on gates and a clock.
+- This sets up the next world's deepest question: what can — and cannot — such a machine compute?
+
+</Step>
+
+</Lesson>

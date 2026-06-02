@@ -1,0 +1,70 @@
+---
+title: Zero & Negative Indices
+subject: math
+contentSlug: math/negative-and-zero-indices
+order: 3
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="What could a⁰ possibly mean?" kind="explain">
+
+"Multiply a by itself **zero** times" sounds like nonsense. The answer comes not from the words but from the **pattern**: each step down the ladder divides by the base. Keep going past a¹ and you're forced to a⁰ — and there's only one value it can be.
+
+</Step>
+
+<Step title="Follow the pattern down" kind="interactive">
+
+Step the exponent below 1 and watch the dividing continue.
+
+<PowerExplorer />
+
+</Step>
+
+<Step title="Zero index = 1" kind="explain">
+
+The divide law makes it airtight. Anything divided by itself is 1:
+
+<Formula tex="\frac{a^m}{a^m} = a^{m-m} = a^0, \quad \text{but also } \frac{a^m}{a^m} = 1 \;\Rightarrow\; a^0 = 1" block />
+
+So **any non-zero number to the power 0 is 1** — 7⁰, 1000⁰, even (−3)⁰ all equal 1.
+
+</Step>
+
+<Step title="Negative index = reciprocal" kind="explain">
+
+Keep dividing below a⁰ and you cross into fractions:
+
+<Formula tex="a^{-n} = \frac{1}{a^{n}}" block />
+
+A negative index means "one over." So 2⁻³ = 1/2³ = 1/8, and 10⁻² = 0.01. The minus sign doesn't make the number negative — it flips it to a reciprocal. This is exactly how tiny numbers get written in standard form.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the value of 5⁻²?"
+  options={[
+    "1/25",
+    "−25",
+    "−10",
+    "25"
+  ]}
+  correctIndex={0}
+  explanation="A negative index means reciprocal: 5⁻² = 1/5² = 1/25 = 0.04. It is positive — the sign flips the power to a fraction, not below zero."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The pattern "divide by the base each step down" forces the meanings.
+- **a⁰ = 1** for any non-zero a (from aᵐ ÷ aᵐ).
+- **a⁻ⁿ = 1/aⁿ** — a negative index is a **reciprocal**, not a negative number.
+- These extend the index laws smoothly to all integers.
+
+</Step>
+
+</Lesson>

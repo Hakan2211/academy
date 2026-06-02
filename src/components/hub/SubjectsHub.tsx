@@ -256,7 +256,7 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
         <div
           key={tier}
           ref={tierRefs[tier]}
-          className="absolute inset-0 will-change-transform"
+          className="pointer-events-none absolute inset-0 will-change-transform"
         >
           {LAYOUT.filter((c) => c.tier === tier).map((cfg, i) => {
             const subject = bySlug.get(cfg.slug)
@@ -494,7 +494,7 @@ function Island({
       <Link
         to="/subjects/$subjectSlug"
         params={{ subjectSlug: subject.slug }}
-        className={cn(cls, 'cursor-pointer')}
+        className={cn(cls, 'pointer-events-auto cursor-pointer')}
         style={style}
         onClick={(e) => {
           // Play the dive transition, then navigate ourselves. Modified clicks
@@ -510,7 +510,7 @@ function Island({
     )
   }
   return (
-    <div className={cn(cls, 'cursor-not-allowed')} style={style} title="Coming soon">
+    <div className={cn(cls, 'pointer-events-auto cursor-not-allowed')} style={style} title="Coming soon">
       {inner}
     </div>
   )

@@ -1,0 +1,77 @@
+---
+title: Machine Language
+subject: computer-science
+contentSlug: computer-science/machine-language
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="What does a CPU actually understand?" kind="explain">
+
+The CPU is powerful, but its vocabulary is tiny. It does not understand "open my email" or even a line of Python. It understands only a small, fixed list of extremely simple commands: load a number, add two numbers, store a result, jump somewhere else, stop.
+
+This list is called the **instruction set**, and the commands written in it are **machine code**. Every program you have ever run — every game, every website — is, at the very bottom, a long stream of these tiny instructions.
+
+</Step>
+
+<Step title="An instruction is just a number" kind="explain">
+
+Here is the key idea: to the CPU, each instruction is simply a **binary number**. That number is split into two fields:
+
+- The **opcode** — which operation to do (ADD? LOAD? JUMP?).
+- The **operand** — the value or memory address it acts on.
+
+For example, in a tiny made-up machine we might use 4 bits for the opcode and 4 bits for the operand. The instruction "ADD 3" becomes one 8-bit number: the opcode for ADD, followed by the bits for 3. The control unit reads those two halves and knows exactly what to do.
+
+</Step>
+
+<Step title="Reading machine code" kind="interactive">
+
+Below is a small pretend instruction set. Click any row to see that instruction encoded: its opcode bits, its operand bits, and the single plain number the CPU actually sees.
+
+<MachineCode />
+
+This is the truth behind all software. A running program in memory is not text or pictures — it is rows of numbers like these, and the CPU marches through them one at a time.
+
+</Step>
+
+<Step title="Assembly: a human nickname" kind="explain">
+
+Staring at `00110011` to mean "add 3" is no way to live. So we give each opcode a short name — `ADD`, `LOAD`, `JUMP` — and write `ADD 3` instead. This readable form is **assembly language**.
+
+Assembly and machine code are the *same instructions*; assembly is just the version a human can read. A small program called an **assembler** translates the names back into the binary numbers the CPU runs. (Higher-level languages like Python go through even more translation, but it all ends as machine code in the end.)
+
+<Callout type="info" title="One CPU, one language">
+Different CPU families understand different instruction sets — an instruction number that means "ADD" on one chip might mean something else on another. That is why an app built for one kind of processor often will not run on a completely different one without being translated or rebuilt.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A machine-code instruction is split into an opcode and an operand. What does each part mean?"
+  options={[
+    "The opcode is the answer; the operand is the question",
+    "The opcode says WHICH operation to perform; the operand is the value or address it acts on",
+    "The opcode is for input; the operand is for output",
+    "They are two unrelated programs stored together"
+  ]}
+  correctIndex={1}
+  explanation="An instruction is one number in two fields: the opcode selects the operation (ADD, LOAD, JUMP…), and the operand supplies the data or address it works on. The control unit reads both halves to act."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A CPU understands only a small fixed list of simple commands: its **instruction set** (**machine code**).
+- Each instruction is just a **binary number** split into an **opcode** (which operation) and an **operand** (the value/address).
+- **Assembly language** gives each opcode a readable name (ADD, LOAD…); it is the same instructions, translated by an **assembler**.
+- All software, however high-level, ends up as machine code that the CPU executes one instruction at a time.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,78 @@
+---
+title: HCF & LCM
+subject: math
+contentSlug: math/hcf-and-lcm
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The biggest shared, the smallest common" kind="explain">
+
+Two numbers, two classic questions:
+
+- The **Highest Common Factor (HCF)** — the largest number that divides *both*. The most you can share equally.
+- The **Lowest Common Multiple (LCM)** — the smallest number that's a multiple of *both*. The first time their cycles line up again.
+
+Prime factorisation answers both in one move.
+
+</Step>
+
+<Step title="Share the prime factors" kind="interactive">
+
+Lay out both numbers' prime factors. The factors they **share** build the HCF; **all** the factors together build the LCM.
+
+<HcfLcm />
+
+</Step>
+
+<Step title="The rule, in primes" kind="explain">
+
+Write each number in prime powers, then:
+
+- **HCF** — multiply the shared primes, each to its **lowest** power.
+- **LCM** — multiply every prime that appears, each to its **highest** power.
+
+For 12 = 2² × 3 and 18 = 2 × 3²:
+
+<Formula tex="\text{HCF} = 2^1 \times 3^1 = 6 \qquad \text{LCM} = 2^2 \times 3^2 = 36" block />
+
+</Step>
+
+<Step title="A handy shortcut" kind="explain">
+
+The shared factors get counted in *both* the HCF and the LCM, which leads to a neat identity:
+
+<Formula tex="\text{HCF}(a,b) \times \text{LCM}(a,b) = a \times b" block />
+
+So if you know one, you can find the other: LCM(12, 18) = (12 × 18) ÷ 6 = 216 ÷ 6 = 36. LCMs show up whenever two repeating events must coincide — buses leaving every 12 and 18 minutes next meet after 36.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Given 24 = 2³ × 3 and 36 = 2² × 3², what are the HCF and LCM?"
+  options={[
+    "HCF = 12, LCM = 72",
+    "HCF = 6, LCM = 72",
+    "HCF = 12, LCM = 864",
+    "HCF = 72, LCM = 12"
+  ]}
+  correctIndex={0}
+  explanation="HCF = lowest powers = 2² × 3 = 12. LCM = highest powers = 2³ × 3² = 72. Check: 12 × 72 = 864 = 24 × 36. ✓"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **HCF** = product of shared primes to their **lowest** powers (largest shared divisor).
+- **LCM** = product of all primes to their **highest** powers (first common multiple).
+- Identity: **HCF × LCM = a × b**.
+- LCM solves "when do two cycles next align?"; HCF solves "what's the biggest equal share?".
+
+</Step>
+
+</Lesson>

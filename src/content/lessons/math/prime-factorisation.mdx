@@ -1,0 +1,74 @@
+---
+title: Prime Factorisation
+subject: math
+contentSlug: math/prime-factorisation
+order: 3
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Every number's prime fingerprint" kind="explain">
+
+Primes are the building blocks of all whole numbers. **Prime factorisation** breaks a number down into the primes that multiply to make it:
+
+<Formula tex="60 = 2 \times 2 \times 3 \times 5 = 2^2 \times 3 \times 5" block />
+
+This list of primes is like a fingerprint — and remarkably, **every** number above 1 has exactly one.
+
+</Step>
+
+<Step title="Build a factor tree" kind="interactive">
+
+Split a number into any two factors, then keep splitting the composite parts until only primes remain at the leaves.
+
+<FactorTree />
+
+</Step>
+
+<Step title="It doesn't matter how you split" kind="explain">
+
+Start 60 as 6 × 10 or as 4 × 15 — the branches look different, but the **leaves are always the same**: two 2s, a 3 and a 5. This is the **Fundamental Theorem of Arithmetic**: every whole number above 1 has a *unique* prime factorisation (ignoring order).
+
+We collect repeats using **powers**: 2 × 2 × 2 becomes 2³. So 360 = 2³ × 3² × 5.
+
+</Step>
+
+<Step title="Why it's so useful" kind="explain">
+
+Once you know a number's primes, a lot becomes easy:
+
+- the number of factors,
+- the highest common factor and lowest common multiple of two numbers (next lesson),
+- whether a number is a perfect square (every prime power is even).
+
+Prime factorisation turns hard questions about a number into easy questions about its building blocks.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the prime factorisation of 72?"
+  options={[
+    "2³ × 3²",
+    "8 × 9",
+    "2² × 3³",
+    "2 × 36"
+  ]}
+  correctIndex={0}
+  explanation="72 = 8 × 9 = (2×2×2) × (3×3) = 2³ × 3². The others either aren't all prime (8×9, 2×36) or have the wrong powers (2²×3³ = 108)."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Prime factorisation** writes a number as a product of primes.
+- The **Fundamental Theorem of Arithmetic**: that factorisation is **unique**.
+- Repeated primes are gathered into **powers** (2×2×2 = 2³).
+- Knowing the primes makes factors, HCF, LCM and square-checks easy.
+
+</Step>
+
+</Lesson>

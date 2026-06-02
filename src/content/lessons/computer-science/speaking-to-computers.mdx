@@ -1,0 +1,80 @@
+---
+title: Speaking to Computers
+subject: computer-science
+contentSlug: computer-science/speaking-to-computers
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="A machine that only speaks numbers" kind="explain">
+
+Back in World 4 you met the truth about a CPU: it understands only **machine code** — tiny binary instructions like `LOAD`, `ADD`, `JUMP`, each just a number. That is the *entire* vocabulary of the most powerful chip on Earth.
+
+So how does anyone build a game, a browser, or a spreadsheet out of `0001 0010`? Nobody does — not directly. We invented **programming languages**: ways of writing instructions that humans can actually read and reason about, which are then translated down to the numbers the machine runs.
+
+</Step>
+
+<Step title="What a programming language is" kind="explain">
+
+A **programming language** is a precise, written notation for telling a computer exactly what to do. "Precise" is the key word. Human languages are full of hints, mood, and "you know what I mean." A program leaves **no room for guessing** — every step is spelled out so a literal-minded machine can follow it without ever improvising.
+
+A language gives you a small set of building blocks — values, names for them, decisions, repetition, reusable blocks — and strict rules (the **syntax**) for combining them. Master those few pieces and you can describe almost any computation.
+
+</Step>
+
+<Step title="High-level vs low-level" kind="explain">
+
+Languages sit on a ladder from "close to the machine" to "close to human thought":
+
+- **Low-level** (machine code, assembly): one line ≈ one CPU instruction. Blazing fast and exact, but tedious and tied to one kind of chip.
+- **High-level** (Python, JavaScript, Java…): one line might stand for *hundreds* of machine instructions. You write `print(total)` instead of juggling registers and addresses.
+
+Higher up the ladder you trade a little control for a lot of clarity. This is the **abstraction** idea from World 1 again: each level hides the messy detail of the one below so you can think bigger.
+
+<Callout type="tip" title="Why not just write 1s and 0s?">
+You *could* — early programmers did, flipping switches by hand. But it is painfully slow, almost impossible to read back, and a program written for one CPU won't run on another. High-level languages are readable, reusable, and let one program run on many machines after translation.
+</Callout>
+
+</Step>
+
+<Step title="From text to behaviour" kind="interactive">
+
+A program is just **text** until something runs it. The magic moment is when those lines turn into **behaviour** — values changing, decisions being made, results appearing.
+
+Step through this tiny program one line at a time and watch the variables come alive. The pseudocode is language-neutral on purpose: every real language has its own spelling, but the underlying *idea* is the same everywhere.
+
+<CodeStepper />
+
+Notice the machine does just **one small thing per line**, in order. That relentless, literal, step-by-step execution is the heartbeat of every program ever written.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the main difference between a high-level and a low-level programming language?"
+  options={[
+    "High-level languages run without a CPU; low-level ones need one",
+    "A high-level line is closer to human thought and stands for many machine instructions, while a low-level line maps almost one-to-one onto CPU instructions",
+    "Low-level languages are newer and faster to write",
+    "High-level languages cannot be translated into machine code"
+  ]}
+  correctIndex={1}
+  explanation="High-level languages (Python, JavaScript) read like human intentions and one line may expand into many machine instructions; low-level ones (assembly, machine code) sit close to the hardware, roughly one line per CPU instruction. Both ultimately become machine code."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **programming language** is a precise, unambiguous notation for telling a computer what to do.
+- The CPU only runs **machine code**; languages exist so humans can write readable instructions that get **translated** down to it.
+- **Low-level** languages map almost one-to-one onto CPU instructions; **high-level** languages are closer to human thought and far more readable.
+- We don't write raw 1s and 0s because high-level code is readable, reusable, and portable across machines.
+- A program is just text until it **runs** — then each line executes, one small step at a time.
+
+</Step>
+
+</Lesson>

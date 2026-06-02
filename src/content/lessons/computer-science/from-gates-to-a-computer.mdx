@@ -1,0 +1,84 @@
+---
+title: From Gates to a Computer
+subject: computer-science
+contentSlug: computer-science/from-gates-to-a-computer
+order: 6
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="The whole ladder, in one view" kind="explain">
+
+Step back and look at what we've built. We started with a single bit — one switch, two states. We made gates that compute logic on bits. We combined gates into circuits, and circuits into an adder that does real arithmetic. In this capstone we'll climb the last few rungs from "a pile of gates" to "a computer."
+
+The astonishing claim of this world is that **nothing magical is added** along the way. A computer is gates — a *lot* of gates, cleverly arranged — and that's all. Let's see the two missing ingredients: doing arithmetic on command, and remembering.
+
+</Step>
+
+<Step title="Computing on demand: the ALU" kind="interactive">
+
+Our adder always adds. A real processor needs to add *or* subtract *or* compare *or* run a logic operation, depending on what the program asks. The fix is a **multiplexer** — a gate circuit that acts as a selector, choosing which result to pass through based on a control signal.
+
+<BinaryAdder />
+
+Wire several operation circuits in parallel (add, subtract, AND, OR…), feed them all the same inputs, and let a multiplexer pick the answer. That bundle is the **Arithmetic Logic Unit** — a calculator that does whichever operation its control bits select. It's the *doing* part of a CPU, and it's pure combinational logic.
+
+</Step>
+
+<Step title="Remembering: from a loop of gates to memory" kind="explain">
+
+Combinational logic can compute but not *remember*. The breakthrough is feedback: connect gates' outputs back to their own inputs so the circuit becomes **stable in one of two states** — and stays there until told to change.
+
+That circuit is a **latch** (or **flip-flop**); it stores exactly one bit. Line up 8 of them and you store a byte — a **register**. Pack millions into a grid, each addressable by number, and you have **RAM**. Memory isn't a different technology from logic; it's the same gates, wired into a loop so they hold their value.
+
+<Callout type="info" title="The two halves of a computer">
+Now you have both halves: the **ALU** (and other logic) to *process*, and **registers/RAM** to *store*. Add a **clock** — a signal that ticks billions of times a second to march everything forward in lockstep — and the machine can take orderly steps instead of dissolving into chaos.
+</Callout>
+
+</Step>
+
+<Step title="Putting it together" kind="interactive">
+
+A processor, at its core, repeats a stupifyingly simple loop driven by the clock: **fetch** the next instruction from memory, **decode** what it asks, **execute** it on the ALU, **store** the result back. Then again. And again. Billions of times a second.
+
+<GateCircuit />
+
+Every layer you'll explore later — operating systems, the internet, AI — ultimately runs on this. The gate that lit up green a few lessons ago is, multiplied by billions and clocked at gigahertz, *the entire machine*. There is no other secret ingredient.
+
+</Step>
+
+<Step title="Why this matters" kind="explain">
+
+This is one of the most empowering ideas in all of computer science: a device that seems infinitely sophisticated is built, with total honesty, from one humble part repeated — the switch — organised by the rules of logic you can hold in your head.
+
+It also frames the deepest question of the whole island, which the final world will tackle: if a computer is *just* logic and memory marching to a clock, then **what exactly can — and cannot — such a machine do?** Turing answered that before the first one was even built. For now, savour the climb: from a single bit to a working computer, and you saw every rung.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Basic logic gates can compute but not remember. How is memory (a 1-bit latch) actually created from them?"
+  options={[
+    "By using a completely different, non-logic technology",
+    "By feeding gates' outputs back into their own inputs, forming a circuit that stays stable in one of two states until changed",
+    "By making the gates physically larger",
+    "Memory cannot be built from gates at all"
+  ]}
+  correctIndex={1}
+  explanation="Feedback is the key: routing outputs back to inputs makes a circuit settle into one of two stable states and hold it — a latch storing one bit. Registers and RAM are just many such latches. Memory is the same gates, wired in a loop."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A computer is **gates, arranged cleverly** — no magical extra ingredient.
+- An **ALU** uses parallel operation circuits + a **multiplexer** to compute whichever operation the program selects.
+- **Feedback** turns gates into a **latch** (1 bit); many latches make **registers** and **RAM** — memory is logic in a loop.
+- A **clock** marches the **fetch–decode–execute–store** loop forward billions of times a second — the basis of everything above.
+
+</Step>
+
+</Lesson>

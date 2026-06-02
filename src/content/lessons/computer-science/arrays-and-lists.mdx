@@ -1,0 +1,85 @@
+---
+title: Arrays & Lists
+subject: computer-science
+contentSlug: computer-science/arrays-and-lists
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Where do we put the data?" kind="explain">
+
+In the last world you met **algorithms** — recipes for getting things done — and discovered that the same task can be fast or painfully slow depending on how you do it. Now we ask the question that decides which algorithms are even *possible*: **where do we keep the data while we work on it?**
+
+The choice of **data structure** — how values are arranged in memory — is what makes an algorithm fast or slow. Pick the right structure and a hard problem melts away. Pick the wrong one and even a clever algorithm crawls.
+
+We start with the simplest, most fundamental structure of all: the **array**.
+
+</Step>
+
+<Step title="A row of numbered boxes" kind="explain">
+
+An **array** stores its values in one **contiguous** block of memory — a single unbroken row of equal-sized slots, sitting side by side. Each slot has an **index**: a position number that always starts at **0**.
+
+Because the slots are the same size and packed together, the computer can find any one with pure arithmetic:
+
+> address of slot *i* = (start address) + *i* × (slot size)
+
+No searching, no scanning — just a multiply and an add. That's the array's superpower.
+
+</Step>
+
+<Step title="Fast access, costly insertion" kind="interactive">
+
+Try it. Click any index and the array jumps **straight** to that slot — one step, no matter how big the array. That's **direct (random) access**, and it costs <Formula tex="O(1)" block /> — constant time.
+
+Now press **Insert in middle** or **Delete from middle** and watch what happens to everything after the gap.
+
+<ArrayViz />
+
+To insert in the middle, every later element must **shift over by one** to make room (or close the gap on delete). The counter shows how many had to move. In the worst case that's the whole array — <Formula tex="O(n)" block /> work.
+
+</Step>
+
+<Step title="The trade-off in a sentence" kind="explain">
+
+So the array's personality is clear:
+
+- **Reading or overwriting by index?** Lightning fast — <Formula tex="O(1)" block />.
+- **Adding or removing in the middle?** Slow — everything downstream shifts, <Formula tex="O(n)" block />.
+- **Adding at the very end** (if there's room) is cheap, which is why many "lists" you use are arrays that mostly grow at the back.
+
+<Callout type="tip" title="Lists, under the hood">
+The "list" or "array" type in Python, JavaScript and most languages is a **dynamic array** — an array that quietly allocates a bigger block and copies everything over when it runs out of room. You get index access in O(1) and convenient appending, at the cost of the occasional resize.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why can an array fetch the element at index i in O(1) time, but inserting a new element in the middle takes O(n)?"
+  options={[
+    "Access scans from the front; insertion does not",
+    "The slots are contiguous and equal-sized, so any index is found by arithmetic — but inserting in the middle forces every later element to shift over",
+    "Arrays can only ever be read, never changed",
+    "Insertion is actually faster than access"
+  ]}
+  correctIndex={1}
+  explanation="Contiguous, equal-sized slots let the computer compute any element's address directly — that's O(1) access. But there's no spare gap in the middle, so inserting means shifting every following element over by one, which is O(n) in the worst case."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **data structure** is how data is arranged in memory; the choice decides which algorithms run fast.
+- An **array** stores values in a **contiguous**, **indexed** block (indices start at 0).
+- **Direct access** by index is <Formula tex="O(1)" block /> — found by arithmetic, no scanning.
+- **Inserting/deleting in the middle** is <Formula tex="O(n)" block /> because later elements must **shift**.
+- Everyday "lists" are usually **dynamic arrays** that resize as they grow.
+
+</Step>
+
+</Lesson>

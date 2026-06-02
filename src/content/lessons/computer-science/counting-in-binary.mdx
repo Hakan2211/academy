@@ -1,0 +1,75 @@
+---
+title: Counting in Binary
+subject: computer-science
+contentSlug: computer-science/counting-in-binary
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The same idea as decimal" kind="explain">
+
+Binary numbers look alien, but they work *exactly* like the decimal numbers you already know — just with two digits instead of ten.
+
+In decimal, each column is worth ten times the one to its right: ones, tens, hundreds. The number 305 means 3×100 + 0×10 + 5×1. In **binary**, each column is worth **two** times the one to its right: ones, twos, fours, eights, sixteens…
+
+</Step>
+
+<Step title="Reading a binary number" kind="interactive">
+
+To read a binary number, add up the place values wherever there's a **1**. Flip the bits below and watch the decimal total — it's just the sum of the lit columns.
+
+<BinaryConverter />
+
+So `1001100` is 64 + 8 + 4 = 76. That's all there is to it: every binary number is a sum of powers of two.
+
+</Step>
+
+<Step title="Converting decimal to binary" kind="explain">
+
+To go the other way — decimal to binary — use the **greedy** method: repeatedly grab the biggest power of two that fits.
+
+Take 76. The biggest power of two ≤ 76 is 64, so that bit is 1 (leaving 12). Next, 32 and 16 are too big (0, 0). 8 fits (1, leaving 4). 4 fits (1, leaving 0). The rest are 0. Result: `01001100`.
+
+<Callout type="info" title="Hexadecimal: binary's shorthand">
+Long binary strings are hard for humans to read, so programmers often use **hex** (base 16). Each hex digit (0–9, then A–F) stands for exactly 4 bits, so `1100` becomes `C` and a whole byte becomes just two hex digits. It's binary, compressed for human eyes.
+</Callout>
+
+</Step>
+
+<Step title="Binary arithmetic" kind="explain">
+
+You can add binary numbers with the same carrying you learned in school — it's even simpler, because there's only one rule to remember: **1 + 1 = 10** (zero, carry one).
+
+For example, `011 + 001`: the rightmost column is 1 + 1 = `10`, so write 0 and carry 1; the next column is 1 + 0 + (carried 1) = `10` again, write 0 carry 1; the last is 0 + 0 + 1 = 1. Result: `100` — which is 3 + 1 = 4. ✓ This tiny rule is exactly what the circuits in the next world are built to perform.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What decimal number does the binary 00101010 represent?"
+  options={[
+    "21",
+    "42",
+    "84",
+    "168"
+  ]}
+  correctIndex={1}
+  explanation="The 1s are in the 32, 8 and 2 columns: 32 + 8 + 2 = 42. Each binary number is just the sum of the place values (powers of two) wherever a 1 appears."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Binary works like decimal, but each column is a **power of two** (1, 2, 4, 8, 16…).
+- To read binary, **sum the place values** where there's a 1.
+- To write decimal as binary, **greedily** subtract the largest power of two that fits.
+- **Hex** (base 16) is a human-friendly shorthand: one hex digit = 4 bits.
+- Binary addition uses one carry rule: **1 + 1 = 10**.
+
+</Step>
+
+</Lesson>

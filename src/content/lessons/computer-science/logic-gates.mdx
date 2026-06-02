@@ -1,0 +1,76 @@
+---
+title: Logic Gates
+subject: computer-science
+contentSlug: computer-science/logic-gates
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Logic made physical" kind="explain">
+
+So far logic has been abstract — true and false. A **logic gate** makes it real: a tiny electronic circuit that takes one or two bits as input (as voltages) and outputs a bit, following one fixed rule.
+
+Gates are built from **transistors** — microscopic switches where one electrical signal controls another. A few transistors wired together make a gate; that's the bridge from the physics of silicon up to the logic of true and false.
+
+</Step>
+
+<Step title="The gate symbols" kind="interactive">
+
+Each operation has a standard symbol that engineers recognise at a glance. Click the input terminals to flip them and watch the signal flow (green = 1) to the output.
+
+<LogicGate />
+
+Notice the small **bubble** on the output of NOT, NAND and NOR — that bubble always means "invert." A NAND is literally an AND with an inverting bubble stuck on the end.
+
+</Step>
+
+<Step title="Why gates are the perfect building block" kind="explain">
+
+Gates have three properties that make them ideal to build with:
+
+- **They're fast** — a modern gate switches in well under a *billionth* of a second.
+- **They're tiny** — billions fit on a chip the size of a fingernail.
+- **They snap to clean 1s and 0s** — each gate restores the signal to a crisp high or low, so errors don't accumulate as signals pass through millions of them.
+
+<Callout type="info" title="From switch to thought">
+A single transistor is just a switch. A few make a gate. Thousands of gates make an adder or a memory cell. Billions make a processor that can run a video game or a language model. It's abstraction stacked dizzyingly high — and it all starts here.
+</Callout>
+
+</Step>
+
+<Step title="Gates have no memory (yet)" kind="explain">
+
+One crucial limitation: a basic gate's output depends *only* on its current inputs. Change the inputs and the output instantly follows. This is called **combinational** logic — it computes, but it can't *remember*.
+
+Yet computers clearly remember things. The trick is to wire gates' outputs back into their own inputs in a loop, creating a circuit that holds onto a value — a **latch**, the seed of memory. We'll meet that idea in this world's capstone. First, let's connect gates together to do something genuinely useful: arithmetic.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What does the small circle (bubble) on the output of a NAND or NOR gate symbol indicate?"
+  options={[
+    "The gate is broken",
+    "It inverts the output — NAND is 'AND then NOT', NOR is 'OR then NOT'",
+    "It marks the input side",
+    "It means the gate has no power"
+  ]}
+  correctIndex={1}
+  explanation="The output bubble always means inversion. NAND = AND with its output flipped; NOR = OR with its output flipped; the NOT gate is a buffer with the same inverting bubble."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **logic gate** is a small circuit (built from **transistors**) that computes a logic operation on bits.
+- Each operation has a **standard symbol**; an output **bubble** means "invert" (NOT, NAND, NOR).
+- Gates are **fast, tiny, and self-correcting** to clean 1s and 0s — perfect to stack by the billion.
+- Basic **combinational** gates compute but can't remember; feeding outputs back creates memory (a latch).
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,78 @@
+---
+title: Version Control
+subject: computer-science
+contentSlug: computer-science/version-control
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The fear of losing work" kind="explain">
+
+Imagine writing software with no undo. You change a working file, something breaks, and you can't remember what it looked like an hour ago. Now imagine five people editing the same files at once, silently overwriting each other's work. That chaos is exactly what software used to be — folders named `final`, `final_v2`, `final_REALLY_final`.
+
+**Version control** ends the fear. It records the *entire history* of a project as a series of saved snapshots, so you can always see what changed, when, by whom — and go back. The tool nearly everyone uses today is called **git**.
+
+</Step>
+
+<Step title="Commits, branches, merges" kind="interactive">
+
+Three ideas do the heavy lifting. Drive this little history yourself: commit a few times, branch off, commit on the branch, then merge it back.
+
+<VersionGraph />
+
+A **commit** is a saved snapshot of the whole project with a message describing the change — a permanent point you can always return to. A **branch** is a parallel line of work, a safe copy where you can experiment without touching the main version. A **merge** brings a branch's changes back into the main line. Together they mean: nothing is ever lost, and everyone can work in parallel.
+
+</Step>
+
+<Step title="History is a superpower" kind="explain">
+
+Because every commit is kept forever, version control gives you abilities that feel like time travel:
+
+- **Go back**: a change broke everything? Return to any earlier commit instantly.
+- **Blame** (the friendly kind): see exactly which commit introduced a line — and read *why*, from its message.
+- **Bisect**: when did this bug appear? Binary-search through history — the very searching idea from the algorithms world — to pinpoint the breaking commit fast.
+
+A clear commit message is a tiny gift to your future self. "Fix login crash when email is empty" tells a story; "stuff" tells nothing. The history is documentation that writes itself.
+
+</Step>
+
+<Step title="Collaboration without collisions" kind="explain">
+
+Version control's deepest gift is **collaboration**. Each person works on their own branch, in their own copy, in parallel — no one blocks anyone. When work is ready, they merge it together, and git intelligently combines the changes.
+
+Occasionally two people edit the very same line; git flags a **merge conflict** and asks a human to decide. That's not a bug — it's the system refusing to silently throw away someone's work. Hosting services like GitHub add a social layer on top: a **pull request** bundles a branch up for **code review** before it merges into main. This is the backbone that lets thousands of strangers build huge open-source projects together without chaos.
+
+<Callout type="info" title="A branch is a safe sandbox">
+Because a branch is isolated, you can try a risky idea, make a mess, and simply throw the branch away if it fails — the main line never knew. Experimentation becomes cheap and safe.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Two developers want to build separate features at the same time without overwriting each other, and be able to combine their work later. Which version-control workflow fits?"
+  options={[
+    "Both edit the main files directly and hope they don't clash",
+    "Each works on their own branch, commits there, then merges back into the main line",
+    "They email zipped folders named 'final_v2' back and forth",
+    "Only one person is allowed to write code at a time"
+  ]}
+  correctIndex={1}
+  explanation="Branches give each developer an isolated, parallel line of work. They commit independently and merge back when ready — git combines the changes and flags any conflicts on the same lines for a human to resolve. No work is lost or overwritten."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Version control** records a project's full history as **commits** — snapshots you can always return to.
+- **Branches** allow safe, parallel experimentation; a **merge** reunites that work into the main line.
+- History gives superpowers: undo, see who changed what and *why*, and **bisect** to find the commit that broke things.
+- It is the backbone of **collaboration** — pull requests and merge conflicts let many people build together without losing work.
+
+</Step>
+
+</Lesson>

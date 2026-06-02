@@ -1,0 +1,86 @@
+---
+title: Graphs
+subject: computer-science
+contentSlug: computer-science/graphs
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The structure of relationships" kind="explain">
+
+A tree captures hierarchy, but it has rules: one root, no loops, every node has a single parent. The real world is messier. Your friends are friends with *each other*. Cities connect by many roads that crisscross and loop. Web pages link back and forth. To model **relationships between things**, with no restrictions, we need the most general structure of all: the **graph**.
+
+A graph is just two ingredients:
+
+- **nodes** (also called *vertices*) — the things,
+- **edges** — connections between pairs of things.
+
+That's it. Friends-and-friendships, cities-and-roads, pages-and-links — all the same shape.
+
+</Step>
+
+<Step title="Trees are special graphs" kind="explain">
+
+Here's a tidy insight: a **tree is just a special kind of graph** — one that's connected and has no cycles, with a chosen root. Loosen those rules and you get a general graph, where edges can form **loops** and a node can connect to **many** others with no notion of "parent."
+
+Graphs can also be **directed** (edges point one way, like web links or "follows" on social media) or **undirected** (edges go both ways, like friendships), and edges can carry **weights** (a road's distance, a flight's cost).
+
+</Step>
+
+<Step title="Exploring a graph" kind="interactive">
+
+The big question with a graph is: starting somewhere, **how do I visit everything reachable?** That's **traversal**, and there are two famous ways. Step through both below, starting from node A.
+
+<GraphViz />
+
+- **BFS — Breadth-First Search** explores in rings: all the immediate neighbours first, then *their* neighbours, fanning outward by distance. It rides on a **queue** (FIFO) and naturally finds the **fewest-hop** path.
+- **DFS — Depth-First Search** plunges down one path as far as it can before backing up. It rides on a **stack** (LIFO) — often just the call stack of recursion.
+
+Watch the numbered visit order differ between the two, even on the same graph.
+
+</Step>
+
+<Step title="What graphs unlock" kind="explain">
+
+Once your data is a graph, a whole toolbox of algorithms opens up:
+
+- **Shortest path** — your map app finding the quickest route (BFS, or Dijkstra's algorithm with weights).
+- **Recommendation & social features** — "people you may know," friends-of-friends.
+- **The web itself** — search engines crawl the link graph and rank pages by it.
+- **Networks** — routing data across the internet, modelling how a disease or rumour spreads.
+
+<Callout type="info" title="One model, endless uses">
+The same graph + traversal ideas describe maps, social networks, dependency charts in build systems, neurons, and molecules. Learning to *see a problem as a graph* is one of the most powerful moves in computer science — suddenly decades of ready-made algorithms apply.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="How do breadth-first search (BFS) and depth-first search (DFS) differ when exploring a graph?"
+  options={[
+    "BFS only works on trees; DFS only works on graphs",
+    "BFS explores neighbours level by level (using a queue) and finds fewest-hop paths; DFS dives deep down one path first (using a stack) before backtracking",
+    "They always visit nodes in exactly the same order",
+    "DFS visits the closest nodes first; BFS visits the farthest first"
+  ]}
+  correctIndex={1}
+  explanation="BFS uses a queue to fan out ring by ring from the start, so it discovers nodes in order of distance and finds shortest hop counts. DFS uses a stack (often recursion) to plunge down one path as far as possible before backing up — same graph, different visit order."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **graph** is **nodes** plus **edges** — the most general way to model relationships, with loops and many-to-many links allowed.
+- A **tree is a special graph**: connected, no cycles, rooted.
+- Edges may be **directed/undirected** and **weighted**.
+- **Traversal** visits reachable nodes: **BFS** fans out by distance (queue, shortest hops); **DFS** dives deep first (stack/recursion).
+- Graphs model maps, social networks, the web and more — seeing a problem *as* a graph unlocks powerful algorithms.
+
+</Step>
+
+</Lesson>

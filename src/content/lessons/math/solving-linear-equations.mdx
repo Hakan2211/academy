@@ -1,0 +1,70 @@
+---
+title: Solving Linear Equations
+subject: math
+contentSlug: math/solving-linear-equations
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Undo, in reverse" kind="explain">
+
+A **linear** equation has the unknown to the first power only — no x², no √x. To solve one, you **undo** the operations wrapped around x, in reverse order, using inverse operations (+ ↔ −, × ↔ ÷). Strip them off until x stands alone.
+
+</Step>
+
+<Step title="Step through a solve" kind="interactive">
+
+Each move is a balanced operation; the equation simplifies toward x = something.
+
+<EquationSolver />
+
+</Step>
+
+<Step title="A worked order of attack" kind="explain">
+
+For 2x + 3 = 11: the x has been multiplied by 2, *then* had 3 added. Undo last-first — subtract 3, then divide by 2:
+
+<Formula tex="2x + 3 = 11 \;\to\; 2x = 8 \;\to\; x = 4" block />
+
+General plan: **+/− first to clear constants, then ×/÷ to clear the coefficient.**
+
+</Step>
+
+<Step title="Unknown on both sides" kind="explain">
+
+When x appears on both sides, gather the x-terms onto one side and the numbers onto the other:
+
+<Formula tex="5x - 4 = 2x + 8 \;\to\; 3x - 4 = 8 \;\to\; 3x = 12 \;\to\; x = 4" block />
+
+Subtract 2x from both sides first (move the smaller x-term to keep things positive), then finish as usual.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Solve 4x + 7 = 2x + 19."
+  options={[
+    "x = 6",
+    "x = 13",
+    "x = 2",
+    "x = 26/6"
+  ]}
+  correctIndex={0}
+  explanation="Subtract 2x: 2x + 7 = 19. Subtract 7: 2x = 12. Divide by 2: x = 6. Check: 4(6)+7 = 31 and 2(6)+19 = 31 ✓."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Linear** = unknown to the first power only.
+- **Undo** operations in reverse, with inverses: clear constants (+/−), then the coefficient (×/÷).
+- Unknown on **both sides**: gather x-terms one side, numbers the other.
+- Always **check** by substituting back.
+
+</Step>
+
+</Lesson>

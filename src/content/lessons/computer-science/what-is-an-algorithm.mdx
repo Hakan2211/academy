@@ -1,0 +1,78 @@
+---
+title: What Is an Algorithm?
+subject: computer-science
+contentSlug: computer-science/what-is-an-algorithm
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="A recipe for solving a problem" kind="explain">
+
+An **algorithm** is a finite, precise, ordered list of steps that solves a problem or completes a task. That's it — no magic. A recipe is an algorithm. So are the directions to a friend's house, and the long-division method you learned in school.
+
+The word honours the 9th-century mathematician **al-Khwārizmī**, but the idea is ancient: humans have always written down repeatable procedures so anyone (or any *thing*) can follow them and get the same result.
+
+</Step>
+
+<Step title="The four things every algorithm must be" kind="explain">
+
+For a procedure to count as a proper algorithm, it should be:
+
+- **Finite** — it eventually stops. "Keep adding 1 forever" is not an algorithm.
+- **Precise** — each step is unambiguous. "Add a pinch of salt" is fine for a cook but too vague for a machine.
+- **Ordered** — the steps run in a definite sequence; order changes the outcome.
+- **Effective** — each step is something the follower can actually do.
+
+<Callout type="info" title="Determinism">
+Most algorithms are **deterministic**: the same input always produces the same output, by the same path. That predictability is exactly what makes them trustworthy — and testable.
+</Callout>
+
+</Step>
+
+<Step title="Trace one for yourself" kind="interactive">
+
+Here's a real algorithm — *find the largest number in a list* — drawn as a **flowchart**. Press **Step** to walk the highlight through it and watch the variables `best` and `i` update.
+
+<AlgorithmFlow />
+
+Notice there's no guesswork. At every diamond the algorithm asks a clear yes/no question; at every rectangle it does one definite piece of work. Run it twice on the same list and you'll get the same path and the same answer — that's determinism in action.
+
+</Step>
+
+<Step title="Why precision matters for machines" kind="explain">
+
+A human cook can improvise around a vague recipe. A computer cannot. It does *exactly* what the steps say — including the mistakes. An algorithm "find a tall person" means nothing to a machine; "scan the list, remember the tallest seen so far, report it at the end" is something it can execute flawlessly.
+
+Turning a fuzzy human goal into steps this precise is the real skill. The rest of this world is about doing it *well* — because the same problem can be solved by many different algorithms, some far better than others.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Which of these is NOT a property that a proper algorithm must have?"
+  options={[
+    "It is finite — it eventually stops",
+    "Its steps are precise and unambiguous",
+    "It always uses the fewest possible steps",
+    "Its steps run in a definite order"
+  ]}
+  correctIndex={2}
+  explanation="Algorithms must be finite, precise, ordered and effective — but they need not be optimal. Plenty of correct algorithms are slow; finding faster ones is a separate goal we explore later in this world."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- An **algorithm** is a finite, precise, ordered set of steps that solves a problem.
+- It must be **finite**, **precise**, **ordered**, and **effective**.
+- Most are **deterministic**: same input, same output, same path — which makes them predictable and testable.
+- Machines do *exactly* what the steps say, so precision is non-negotiable.
+- The same problem can be solved by many algorithms — quality varies hugely.
+
+</Step>
+
+</Lesson>

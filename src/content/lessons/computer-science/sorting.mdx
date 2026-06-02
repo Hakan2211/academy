@@ -1,0 +1,83 @@
+---
+title: Sorting
+subject: computer-science
+contentSlug: computer-science/sorting
+order: 5
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Why bother sorting?" kind="explain">
+
+**Sorting** — arranging items into order — is one of the most studied problems in all of computer science, and for good reason. Sorted data unlocks faster everything: binary search, finding duplicates, spotting the median, merging datasets. Spend a little effort ordering data once, and every later operation gets cheaper.
+
+It's also the perfect arena to *compare algorithms*. There are dozens of sorting methods that all produce the same sorted result — but with wildly different amounts of work. We'll meet four classics.
+
+</Step>
+
+<Step title="The simple-but-slow trio" kind="explain">
+
+Three sorting algorithms are easy to understand and easy to write:
+
+- **Bubble sort** — repeatedly walk the list, swapping any two neighbours that are out of order, until no swaps are needed. The largest values "bubble" to the end.
+- **Selection sort** — repeatedly find the smallest remaining item and place it next.
+- **Insertion sort** — build a sorted section one item at a time, sliding each new item back into its correct spot (how many people sort a hand of cards).
+
+All three are intuitive — but all do roughly **n²** work on a list of n items.
+
+</Step>
+
+<Step title="The clever one: merge sort" kind="explain">
+
+**Merge sort** uses a smarter strategy called **divide and conquer**: split the list in half, sort each half (by splitting *them* in half, and so on), then **merge** the two sorted halves back together in one efficient pass.
+
+Because halving the list only takes about log n levels, and each level does n work, merge sort runs in:
+
+<Formula tex="O(n \log n)" block />
+
+That sounds close to O(n²), but it isn't. For a list of a million items, n² is a *trillion* operations; n log n is about *twenty million* — fifty-thousand times less work.
+
+</Step>
+
+<Step title="Watch them sort" kind="interactive">
+
+Pick an algorithm and press **Play** (or **Step** through it). Bars turn one colour when *compared*, another when *swapped*, green when locked in place. Keep an eye on the comparison and swap counts.
+
+<SortVisualizer />
+
+Run **bubble** then **merge** on the same shuffle and compare the counts. The simple algorithms thrash through far more comparisons; merge sort is calm and efficient. Same result, very different effort.
+
+<Callout type="tip" title="Simple isn't always wrong">
+For *tiny* lists, the simple algorithms can actually be faster — they have less overhead. The cleverness of merge sort only pays off as n grows. Choosing the right algorithm means knowing your data.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Bubble, insertion and selection sort all run in about O(n²). Merge sort runs in O(n log n). For a very large list, what does this mean?"
+  options={[
+    "Merge sort produces a more correctly sorted list",
+    "Merge sort does dramatically less work, so it finishes far faster",
+    "The simple sorts give the wrong answer on large lists",
+    "There is no practical difference for large lists"
+  ]}
+  correctIndex={1}
+  explanation="All four produce the same correctly sorted list. The difference is the amount of work: O(n log n) grows far more slowly than O(n²), so on large inputs merge sort finishes vastly faster. Efficiency, not correctness, is what separates them."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Sorting** orders data and makes many later operations (like binary search) much cheaper.
+- **Bubble**, **selection** and **insertion** sort are simple but quadratic — about **O(n²)**.
+- **Merge sort** uses **divide and conquer** to run in **O(n log n)** — far faster at scale.
+- All four give the *same* sorted result; they differ only in how much **work** they do.
+- The best choice depends on the data — simple sorts can win on tiny lists.
+
+</Step>
+
+</Lesson>

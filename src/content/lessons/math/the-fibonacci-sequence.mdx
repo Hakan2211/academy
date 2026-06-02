@@ -1,0 +1,72 @@
+---
+title: The Fibonacci Sequence
+subject: math
+contentSlug: math/the-fibonacci-sequence
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Each term from the two before" kind="explain">
+
+The most famous sequence in mathematics starts simply: **1, 1, 2, 3, 5, 8, 13, 21, …** — each term is the **sum of the previous two**. Leonardo of Pisa ("Fibonacci") introduced it to Europe in 1202 while modelling rabbit populations, and it has turned up in the most unexpected places ever since.
+
+<Formula tex="F_n = F_{n-1} + F_{n-2}" block />
+
+</Step>
+
+<Step title="The Fibonacci tiling" kind="interactive">
+
+Squares with Fibonacci sides tile together perfectly — because each new side is the sum of the previous two.
+
+<FibonacciSpiral />
+
+</Step>
+
+<Step title="Fibonacci in nature" kind="explain">
+
+The sequence appears throughout the living world — not by magic, but because it's an efficient way to pack and grow:
+
+- The spirals of a sunflower head and a pinecone come in Fibonacci counts (often 34 and 55).
+- Many flowers have a Fibonacci number of petals (lilies 3, buttercups 5, daisies often 34 or 55).
+- New plant leaves spiral by the **golden angle**, so each gets maximum sunlight.
+
+</Step>
+
+<Step title="The golden ratio emerges" kind="explain">
+
+Divide each Fibonacci number by the one before it and the answers settle on a single special number:
+
+<Formula tex="\frac{F_n}{F_{n-1}} \to \varphi = \frac{1 + \sqrt{5}}{2} \approx 1.618" block />
+
+This is the **golden ratio**, φ. A sequence about adding rabbits secretly contains one of the most celebrated constants in mathematics and art — the subject of this world's deep dive.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="The Fibonacci sequence runs 1, 1, 2, 3, 5, 8, 13, … What are the next two terms?"
+  options={[
+    "21, 34",
+    "20, 33",
+    "21, 35",
+    "16, 24"
+  ]}
+  correctIndex={0}
+  explanation="Add the previous two each time: 8 + 13 = 21, then 13 + 21 = 34."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Fibonacci:** each term is the **sum of the previous two** (1, 1, 2, 3, 5, 8, …).
+- The Fibonacci **tiling** of squares fits perfectly by that very rule.
+- It appears in sunflowers, pinecones, petals and leaf spirals — efficient growth.
+- Consecutive ratios converge to the **golden ratio φ ≈ 1.618**.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,72 @@
+---
+title: The Derivative
+subject: math
+contentSlug: math/the-derivative
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="A formula for the slope everywhere" kind="explain">
+
+The tangent slope changes from point to point along a curve. The **derivative** is a new function, written **f′(x)**, that gives the slope at *every* point in one go. Differentiating means finding this slope-function from the original.
+
+</Step>
+
+<Step title="Slide along and read the slope" kind="interactive">
+
+For f(x) = ½x², watch the tangent slope as you move the point — it's always exactly x.
+
+<DerivativeExplorer />
+
+</Step>
+
+<Step title="The definition" kind="explain">
+
+The derivative is the limit of the secant slope as the gap closes — the formal version of the last lesson:
+
+<Formula tex="f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}" block />
+
+Apply it to f(x) = x²: f(x+h) = x² + 2xh + h², so the difference quotient is (2xh + h²)/h = 2x + h. As h → 0, that becomes **2x**. So the derivative of x² is **2x** — a clean rule born from a limit.
+
+</Step>
+
+<Step title="What the derivative tells you" kind="explain">
+
+The sign and size of f′(x) describe the curve's behaviour:
+
+- **f′(x) > 0** → the function is **increasing** (sloping up).
+- **f′(x) < 0** → **decreasing** (sloping down).
+- **f′(x) = 0** → a flat spot: a **maximum, minimum, or turning point**.
+
+That last fact is gold for optimisation: to find where something is largest or smallest (maximum profit, minimum cost, shortest path), find where its derivative is zero.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Using the limit definition, the derivative of f(x) = x² is 2x. What is the slope of y = x² at the point x = 3?"
+  options={[
+    "6",
+    "9",
+    "3",
+    "2"
+  ]}
+  correctIndex={0}
+  explanation="f′(x) = 2x, so f′(3) = 2 × 3 = 6. The tangent to y = x² at x = 3 has gradient 6."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **derivative f′(x)** gives the curve's **slope at every point**.
+- Definition: f′(x) = limₕ→₀ [f(x+h) − f(x)] / h.
+- Worked from the limit, the derivative of **x² is 2x**.
+- **f′ > 0** rising, **f′ < 0** falling, **f′ = 0** turning point — the key to optimisation.
+
+</Step>
+
+</Lesson>

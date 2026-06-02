@@ -1,0 +1,70 @@
+---
+title: Geometric Sequences
+subject: math
+contentSlug: math/geometric-sequences
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Equal multipliers" kind="explain">
+
+A **geometric sequence** *multiplies* by a fixed **common ratio** r each step: 2, 6, 18, 54, … (×3). Where arithmetic sequences add and grow steadily, geometric sequences multiply — and when r > 1 they grow **explosively**.
+
+</Step>
+
+<Step title="Growth and decay" kind="interactive">
+
+Slide the ratio. Above 1 the bars rocket up; between 0 and 1 they melt toward zero.
+
+<GeometricSequence />
+
+</Step>
+
+<Step title="The nth-term rule" kind="explain">
+
+Starting from a and multiplying by r each time:
+
+<Formula tex="\text{nth term} = a \cdot r^{\,n-1}" block />
+
+For 2, 6, 18, …: a = 2, r = 3, so the 5th term is 2 × 3⁴ = 162. Notice the **power** — geometric sequences are exponential, the same maths as compound interest and population growth from the Ratio world.
+
+</Step>
+
+<Step title="The chessboard legend" kind="explain">
+
+A courtier asked his king for one grain of rice on the first chessboard square, two on the second, four on the third — doubling each square (r = 2). It sounds modest. But by the 64th square:
+
+<Formula tex="2^{63} \approx 9.2 \times 10^{18} \text{ grains}" block />
+
+— more rice than has ever been grown on Earth. That's the deceptive power of geometric growth: slow to start, then overwhelming. (If 0 < r < 1, the same maths runs in reverse: each term a fraction of the last, fading toward zero — **decay**.)
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A geometric sequence starts 3, 12, 48, … What is its 5th term?"
+  options={[
+    "768",
+    "192",
+    "240",
+    "3072"
+  ]}
+  correctIndex={0}
+  explanation="The ratio is r = 12 ÷ 3 = 4. The 5th term is a·r⁴ = 3 × 4⁴ = 3 × 256 = 768. (Terms: 3, 12, 48, 192, 768.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Geometric sequence**: constant common ratio r (multiply each step).
+- **nth term = a · rⁿ⁻¹** — a power, so growth is **exponential**.
+- r > 1 explodes; 0 &lt; r &lt; 1 decays toward zero.
+- Geometric growth is slow then staggering — the chessboard/rice legend.
+
+</Step>
+
+</Lesson>

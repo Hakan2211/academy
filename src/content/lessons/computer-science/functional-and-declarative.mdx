@@ -1,0 +1,91 @@
+---
+title: Other Paradigms
+subject: computer-science
+contentSlug: computer-science/functional-and-declarative
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Different ways to think about programs" kind="explain">
+
+So far we've written programs as **step-by-step instructions**: set this variable, loop here, call that function. That style has a name — **imperative** programming — and it's only one **paradigm**, one way of thinking about code.
+
+A paradigm is a mindset, not a language. Many languages support several. The big split is between describing **HOW** to do something step by step, and describing **WHAT** you want and letting the system work out the how.
+
+</Step>
+
+<Step title="Imperative: describe HOW" kind="interactive">
+
+Imperative code is a recipe of commands executed in order — exactly the marching-down-the-lines you've been doing. To sum a list, you create a running total and loop, adding each item:
+
+<CodeStepper />
+
+Every step is explicit: the variable, the loop, the update. *You* manage the state and the control flow. This is the default style of C, Python, JavaScript and most languages you'll meet first — and the loop structure below is its signature move.
+
+<ControlFlowViz />
+
+</Step>
+
+<Step title="Declarative: describe WHAT" kind="explain">
+
+**Declarative** programming flips it: you state the **result** you want, and the system figures out the steps. Two everyday examples you may already know are declarative:
+
+- **SQL** (databases): `SELECT name FROM users WHERE age > 18`. You don't write a loop scanning rows — you *describe* the rows you want, and the database engine decides how to find them.
+- **HTML** (web pages): you declare *what* the page contains — a heading, a list, an image — not the pixel-by-pixel steps to paint it. The browser handles the how.
+
+```
+SELECT name FROM users WHERE age > 18
+```
+
+Same goal, opposite emphasis: imperative spells out the journey; declarative names the destination.
+
+</Step>
+
+<Step title="Functional programming" kind="explain">
+
+**Functional** programming is a powerful style that leans declarative. Two ideas define it:
+
+- **Functions are values.** You can pass a function into another function, return one, and store them — just like numbers. This lets you write `map`, `filter`, `reduce`: "apply *this function* to every item," without an explicit loop.
+- **Avoid mutation.** Instead of changing a variable in place, you produce **new** values and leave the originals untouched. No box gets secretly overwritten.
+
+```
+total = sum(map(double, [1, 2, 3]))   →  12
+```
+
+Because nothing is quietly modified, functional code is often easier to reason about and to run safely in parallel — there are no shared boxes being changed behind your back.
+
+<Callout type="tip" title="Paradigms are tools, not tribes">
+No paradigm is "best." Real programs mix them: a functional pipeline to transform data, objects to model the domain, a sprinkle of imperative loops where they read clearest. Good programmers pick the style that fits the problem.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What best captures the difference between imperative and declarative programming?"
+  options={[
+    "Imperative is for games; declarative is for websites only",
+    "Imperative spells out HOW to do something step by step; declarative describes WHAT result you want and lets the system determine the steps",
+    "Declarative programs cannot be translated to machine code",
+    "Imperative code never uses functions"
+  ]}
+  correctIndex={1}
+  explanation="Imperative code is a sequence of explicit steps you control (loops, assignments). Declarative code states the desired result — like an SQL query or HTML page — and the engine works out the steps. Functional programming leans declarative, treating functions as values and avoiding mutation."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **paradigm** is a way of thinking about programs; many languages support several.
+- **Imperative** programming describes **HOW** — explicit steps, loops, and changing variables (the style you've used so far).
+- **Declarative** programming describes **WHAT** result you want; **SQL** and **HTML** are familiar examples.
+- **Functional** programming leans declarative: **functions are values** you can pass around, and it **avoids mutation**, making code easier to reason about.
+- No paradigm wins outright — real software **mixes** them to fit the problem.
+
+</Step>
+
+</Lesson>

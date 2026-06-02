@@ -1,0 +1,110 @@
+---
+title: Choosing the Right Structure
+subject: computer-science
+contentSlug: computer-science/choosing-the-right-structure
+order: 7
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="The real skill" kind="explain">
+
+You now have a toolkit: arrays, stacks, queues, linked lists, trees, graphs, hash tables. Each one is fast at some things and slow at others — there is no single "best" structure. The genuine skill of this world isn't memorising any one of them; it's **matching the structure to the job**.
+
+The guiding idea from the last world still holds: **the data structure you choose determines which algorithms are fast.** A problem that's agonising with the wrong structure becomes trivial with the right one. So before writing a line of code, ask: *what operations will I do most, and which structure makes those cheap?*
+
+</Step>
+
+<Step title="What vs how: the Abstract Data Type" kind="explain">
+
+To choose well, separate two questions that are easy to tangle:
+
+- **What** operations do I need? (e.g. "add an item," "remove the oldest," "find by key.")
+- **How** are those operations actually implemented in memory?
+
+The **what** is an **Abstract Data Type (ADT)** — a contract describing the operations and their behaviour, *without* saying how they're built. "A queue is something you can enqueue into and dequeue from, oldest-out-first" is an ADT. The **how** is the **data structure** that fulfils it.
+
+This split is liberating: one ADT can have several implementations. A **stack** can be built on an array *or* a linked list — same promise, different innards. A **map** ("look up a value by key") can be a hash table *or* a balanced tree. You pick the implementation by the performance you need, while the rest of your code only sees the clean ADT interface. That's **abstraction** again — the same principle that runs through all of computing.
+
+</Step>
+
+<Step title="Same data, different lens" kind="interactive">
+
+Let's feel the difference. Suppose you need to **look up items by key as fast as possible**. A hash table jumps straight to the answer:
+
+<HashTable />
+
+But if instead you need the data **kept in order** — to list everything alphabetically, or find every value in a range — a hash table is useless (its buckets are scrambled). A tree keeps order for free:
+
+<TreeViz />
+
+And if you mostly **read by position and rarely insert in the middle**, the humble array wins on simplicity and speed:
+
+<ArrayViz />
+
+Same information, three structures — each excellent for a *different* question. The hash table can't give you sorted order; the array can't insert cheaply in the middle; the tree can't match the hash table's flat <Formula tex="O(1)" block /> lookup. Choosing means knowing which question dominates.
+
+</Step>
+
+<Step title="A cheat sheet of costs" kind="explain">
+
+Here's the typical (average-case) Big-O of the headline operations — *access* means by position/index, *search/lookup* means find a value or key:
+
+- **Array** — access <Formula tex="O(1)" block />, search <Formula tex="O(n)" block />, insert/delete in middle <Formula tex="O(n)" block />; ordered by index.
+- **Linked list** — access <Formula tex="O(n)" block />, search <Formula tex="O(n)" block />, insert/delete *at a known node* <Formula tex="O(1)" block />; ordered as a sequence.
+- **Stack / Queue** — push/pop or enqueue/dequeue <Formula tex="O(1)" block />; LIFO / FIFO order, no arbitrary access.
+- **Balanced tree (BST)** — access, search, insert, delete all <Formula tex="O(\log n)" block />; keeps data **sorted**.
+- **Hash table** — search, insert, delete all <Formula tex="O(1)" block /> on average; **no** ordering, no access-by-position.
+
+<Callout type="info" title="Reading the list">
+A linked list's <Formula tex="O(1)" block /> edit is only *once you're at the right node* — finding that node is still <Formula tex="O(n)" block />. Hash tables have no "access by position" because there's no order. And every <Formula tex="O(1)" block /> / <Formula tex="O(\log n)" block /> here is the **average** case; a degenerate hash table or an unbalanced tree can slump to <Formula tex="O(n)" block />. Big-O describes the trend, not a guarantee for every input.
+</Callout>
+
+</Step>
+
+<Step title="Picking by the operation you need" kind="explain">
+
+Turn the table into instincts. Match the dominant operation to a structure:
+
+- **Fast lookup by key** ("is this username taken?", caches, counting words) → **hash table**.
+- **Keep things sorted / range queries** ("all orders between two dates", autocomplete) → **balanced tree**.
+- **Last-in-first-out** (undo, recursion, expression evaluation) → **stack**.
+- **First-in-first-out / fair ordering** (task queues, print spool, BFS) → **queue**.
+- **Index-heavy, mostly read** (a fixed list of scores, a pixel buffer) → **array**.
+- **Constant inserting/removing in a sequence**, position doesn't matter → **linked list**.
+- **Relationships / networks / paths** (maps, friends, dependencies) → **graph**.
+
+<Callout type="tip" title="Profile, don't guess">
+These are starting points, not laws. The "slower" structure sometimes wins in practice — a small array can beat a hash table because contiguous memory is cache-friendly and there's no hashing overhead. For tiny data, simplicity beats cleverness. When performance truly matters, **measure** with real data rather than trusting Big-O alone.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You're building a feature that must list all records in sorted order AND quickly find records in a given range. Which structure fits best, and why?"
+  options={[
+    "A hash table, because lookups are O(1)",
+    "A balanced binary search tree, because it keeps data ordered and supports O(log n) search plus efficient in-order and range queries — things a hash table can't do",
+    "A stack, because LIFO ordering sorts the data",
+    "An array, because access is O(1)"
+  ]}
+  correctIndex={1}
+  explanation="A hash table is great for single-key lookup but scrambles order, so it can't do sorted listing or ranges. A balanced BST keeps everything ordered, searches in O(log n), and walks ranges efficiently — exactly what sorted, range-based access needs."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- There's no universally best structure — **match the structure to the operations** you do most.
+- An **Abstract Data Type (ADT)** is the **what** (the operation contract); a **data structure** is the **how** (the implementation). One ADT, many implementations.
+- Know the typical costs: array (fast index, slow middle), linked list (cheap edits, slow access), tree (sorted, O(log n)), hash table (unordered, average O(1)), stack/queue (O(1) at the ends).
+- Pick by need: **lookup → hash table**, **sorted/range → tree**, **LIFO → stack**, **FIFO → queue**, **relationships → graph**.
+- Big-O guides the choice, but for real performance, **measure with real data** — sometimes the simple structure wins.
+
+</Step>
+
+</Lesson>

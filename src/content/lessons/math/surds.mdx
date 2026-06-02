@@ -1,0 +1,74 @@
+---
+title: Surds
+subject: math
+contentSlug: math/surds
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Roots that refuse to be tidy" kind="explain">
+
+√9 = 3, neat and finished. But √2 = 1.41421356… runs forever without repeating — it's **irrational** (you proved this back in World 1). A root left in exact form, like √2 or 3√5, is called a **surd**.
+
+Why not just use the decimal? Because the surd is **exact**. 1.414 is only an approximation; √2 is the real thing. Mathematicians keep surds to stay precise.
+
+</Step>
+
+<Step title="Simplify by extracting squares" kind="interactive">
+
+The key skill: pull the largest perfect square out from under the root.
+
+<SurdSimplify />
+
+</Step>
+
+<Step title="The two rules" kind="explain">
+
+Surds split and join over **multiplication** (and division), using:
+
+<Formula tex="\sqrt{a} \times \sqrt{b} = \sqrt{ab}, \qquad \sqrt{a \times b} = \sqrt{a}\,\sqrt{b}" block />
+
+So √72 = √(36 × 2) = √36 × √2 = 6√2. **Warning:** there is *no* such rule for addition — √9 + √16 = 3 + 4 = 7, but √(9+16) = √25 = 5. So √a + √b ≠ √(a+b).
+
+</Step>
+
+<Step title="Adding surds, and rationalising" kind="explain">
+
+You can only **add** like surds, just like like terms: 2√3 + 5√3 = 7√3, but 2√3 + 5√2 won't combine.
+
+A surd in a denominator is considered untidy. **Rationalise** it by multiplying top and bottom by that surd:
+
+<Formula tex="\frac{1}{\sqrt{2}} = \frac{1}{\sqrt{2}} \times \frac{\sqrt{2}}{\sqrt{2}} = \frac{\sqrt{2}}{2}" block />
+
+Now the irrational part sits on top, where it's easier to work with.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Simplify √50 + √8."
+  options={[
+    "7√2",
+    "√58",
+    "√2",
+    "12√2"
+  ]}
+  correctIndex={0}
+  explanation="Simplify each: √50 = √(25×2) = 5√2, and √8 = √(4×2) = 2√2. Now they're like surds: 5√2 + 2√2 = 7√2. (You can't add under one root: √58 is wrong.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **surd** is an irrational root kept in **exact** form (√2, 3√5).
+- **Simplify** by extracting the largest square: √(k²·b) = k√b.
+- √a × √b = √(ab), but **√a + √b ≠ √(a+b)**.
+- Add only **like** surds; **rationalise** to clear a surd from a denominator.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,85 @@
+---
+title: What an Operating System Does
+subject: computer-science
+contentSlug: computer-science/what-an-operating-system-does
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="The program that runs all the other programs" kind="explain">
+
+When you press the power button, one special program wakes up before any of your apps: the **operating system**. Windows, macOS, Linux, Android, iOS — they all do the same fundamental job. The OS is the **master program** that brings the bare hardware to life and then lets every other program share it.
+
+Without an OS, an app would have to know the exact electrical details of *your* particular disk, *your* keyboard, *your* graphics chip — and it would have to politely coordinate with every other app over who gets the CPU and the memory. That's impossible to do well. So the OS steps in as the manager in the middle.
+
+</Step>
+
+<Step title="Two jobs: abstraction and management" kind="explain">
+
+The operating system has two great responsibilities, and almost everything it does is one or the other.
+
+First, **hardware abstraction**: it hides the messy specifics of the physical machine behind clean, simple services. An app says "save this file" or "draw this window," never "magnetise these disk sectors" or "set these screen voltages." The OS translates.
+
+Second, **resource management**: a computer has *one* CPU (or a few cores), a *limited* amount of RAM, and a single keyboard, screen and disk — yet dozens of programs want all of it at once. The OS decides who gets what, when, and for how long, so that everyone makes progress and nobody can hog or wreck the machine.
+
+</Step>
+
+<Step title="The services it provides" kind="interactive">
+
+Picture the computer as three layers: your **apps** sit on top, the raw **hardware** sits at the bottom, and the **OS** sits in between offering services. Click each service to see what the OS quietly does on every program's behalf.
+
+<OsServices />
+
+Notice the pattern: in every case the OS takes something hard and shared — the CPU, the RAM, the disk, the devices — and hands each program a simple, private-feeling version of it. That is abstraction and management working together.
+
+</Step>
+
+<Step title="Kernel and shell" kind="explain">
+
+The heart of the OS is the **kernel** — the trusted core that talks directly to the hardware and enforces the rules. It runs with special privileges no ordinary app is allowed, which is why a misbehaving app can crash itself without taking the whole machine down with it.
+
+Around the kernel sit the parts you actually see and touch: the **shell** (a command line) or the **graphical desktop**, plus a bundle of utilities. Different systems make different choices here — a phone's OS and a server's OS feel worlds apart — but underneath, the same kernel-level job is being done: share one machine, safely, among many programs.
+
+<Callout type="info" title="Same idea, many flavours">
+Windows, macOS and Linux look different and run different software, yet each is an operating system doing exactly this dual job. Android is even built *on top of* a Linux kernel. The interface changes; the underlying role does not.
+</Callout>
+
+</Step>
+
+<Step title="Why it matters" kind="explain">
+
+Back in World 4 you saw a program become **machine code** that the CPU fetches and executes, instruction by instruction. But a modern computer runs *many* such programs seemingly at once, on hardware that can only really do one thing per core at a time. The operating system is what makes that possible — it is the layer that takes a single literal machine and turns it into the illusion of a roomy, multi-tasking, multi-user computer.
+
+The rest of this world unpacks the tricks behind that illusion: how the OS juggles running programs, slices time on the CPU, hands out memory, and keeps competing programs from trampling each other.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A photo app calls a simple 'save file' service instead of directly controlling the disk hardware. Which two OS jobs does this illustrate?"
+  options={[
+    "Compiling the app and rendering its graphics",
+    "Hardware abstraction (hiding disk specifics) and resource management (sharing the disk between apps)",
+    "Encrypting the file and compressing it",
+    "Writing the app's machine code and storing it"
+  ]}
+  correctIndex={1}
+  explanation="A simple 'save file' call hides the disk's physical details — that's abstraction. The OS also decides how the shared disk is allocated among all programs — that's resource management. These are the OS's two core responsibilities."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **operating system** (Windows, macOS, Linux, Android…) is the master program that runs all the other programs.
+- It has two jobs: **hardware abstraction** (hide messy device details behind simple services) and **resource management** (fairly share the CPU, memory and devices).
+- It provides services like **process, memory and file management, device drivers, security and a user interface**.
+- The **kernel** is the privileged core that talks to hardware and enforces the rules; the **shell/desktop** is what you touch.
+- The OS turns one literal machine into the illusion of a roomy, multi-tasking, multi-user computer.
+
+</Step>
+
+</Lesson>

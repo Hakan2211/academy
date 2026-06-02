@@ -1,0 +1,74 @@
+---
+title: Expanding Brackets
+subject: math
+contentSlug: math/expanding-brackets
+order: 3
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Multiply everything inside" kind="explain">
+
+A bracket means "do me first," but often we'd rather **expand** it — remove it by multiplying the outside term into *every* term inside. This is the **distributive law**:
+
+<Formula tex="a(b + c) = ab + ac" block />
+
+Miss a term and the whole thing is wrong, so the watchword is *every* term.
+
+</Step>
+
+<Step title="See it as area" kind="interactive">
+
+A rectangle of height a and width (b + c) splits into two pieces — its total area is the expansion.
+
+<ExpandBrackets />
+
+</Step>
+
+<Step title="With letters and signs" kind="explain">
+
+The same rule, now with algebra:
+
+<Formula tex="3(x + 4) = 3x + 12, \qquad x(x - 5) = x^2 - 5x" block />
+
+Mind the signs — a negative outside flips every term:
+
+<Formula tex="-2(x - 3) = -2x + 6" block />
+
+(−2 times −3 is +6.) After expanding, you often **collect like terms**: 2(x + 3) + 4x = 2x + 6 + 4x = 6x + 6.
+
+</Step>
+
+<Step title="Why expand at all?" kind="explain">
+
+Brackets are great for *seeing* structure, but to **solve** equations and combine expressions you usually need them gone first. Expanding turns a compact form into an addable, comparable one. The reverse move — putting the bracket back — is **factorising**, next.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Expand and simplify 4(2x + 1) − 3(x − 2)."
+  options={[
+    "5x + 10",
+    "5x − 2",
+    "11x − 2",
+    "5x + 4"
+  ]}
+  correctIndex={0}
+  explanation="4(2x+1) = 8x + 4. −3(x−2) = −3x + 6 (the minus flips both). Add: 8x − 3x = 5x, and 4 + 6 = 10 → 5x + 10."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Expanding** removes a bracket: multiply the outside into **every** inside term.
+- **a(b + c) = ab + ac** — the distributive law, visible as area.
+- Watch **signs**: a negative outside flips each term.
+- Expand, then **collect like terms**; the reverse is factorising.
+
+</Step>
+
+</Lesson>

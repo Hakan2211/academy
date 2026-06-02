@@ -1,0 +1,71 @@
+---
+title: Frequency & Grouped Data
+subject: math
+contentSlug: math/frequency-and-grouped-data
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Organising lots of values" kind="explain">
+
+With hundreds of values, a list is useless. A **frequency table** counts how many fall into each category or class. For data spread over a range — heights, times, scores — we group it into **classes** like 0–10, 10–20, and count the frequency in each.
+
+</Step>
+
+<Step title="Grouped data as bars" kind="interactive">
+
+Each bar is a class; its height is the frequency.
+
+<Histogram />
+
+</Step>
+
+<Step title="The mean from a frequency table" kind="explain">
+
+For an ungrouped frequency table, the mean uses Σ(value × frequency) ÷ Σ(frequency) — a weighted average:
+
+<Formula tex="\text{mean} = \frac{\sum f x}{\sum f}" block />
+
+For **grouped** data the exact values are lost, so you **estimate** with each class's **midpoint** as a stand-in for x. It's an estimate, not the true mean, because you've assumed every value sits at the class centre.
+
+</Step>
+
+<Step title="Modal class and where the median falls" kind="explain">
+
+Grouped data shifts the language of averages:
+
+- The **modal class** is the class with the highest frequency (the tallest bar).
+- The **median** lies in whichever class contains the middle value — found by counting frequencies up to the halfway point.
+
+You report the *class* an average falls in, not a single exact number — the price of grouping.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A class of 5 students scored 2, 2, 2, 4, 5 goals. Using Σfx ÷ Σf, what is the mean?"
+  options={[
+    "3",
+    "2",
+    "5",
+    "2.5"
+  ]}
+  correctIndex={0}
+  explanation="Σfx = (2×3) + (4×1) + (5×1) = 6 + 4 + 5 = 15. Σf = 5. Mean = 15 ÷ 5 = 3. The frequency table just bundles repeated values."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **frequency table** counts values per category or class; **grouping** handles wide ranges.
+- Mean of a frequency table: **Σfx ÷ Σf** (weighted average).
+- For grouped data, **estimate** the mean using class **midpoints**.
+- Report the **modal class** and the class containing the **median**.
+
+</Step>
+
+</Lesson>

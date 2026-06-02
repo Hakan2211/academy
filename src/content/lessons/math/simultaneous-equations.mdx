@@ -1,0 +1,70 @@
+---
+title: Simultaneous Equations
+subject: math
+contentSlug: math/simultaneous-equations
+order: 5
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Two unknowns need two equations" kind="explain">
+
+One equation with two unknowns — like x + y = 10 — has *many* solutions (1 and 9, 4 and 6, …). To pin down both, you need a **second** equation true at the same time. A pair like this is called **simultaneous equations**, and the solution is the (x, y) that satisfies **both at once**.
+
+</Step>
+
+<Step title="Where the lines cross" kind="interactive">
+
+Each equation is a straight line. The single point where they intersect is the simultaneous solution.
+
+<SimultaneousGraph />
+
+</Step>
+
+<Step title="Solving by elimination" kind="explain">
+
+Graphing shows the answer; **elimination** finds it exactly. Line up the equations so adding or subtracting cancels one variable:
+
+<Formula tex="\begin{aligned} 3x + y &= 11 \\ x + y &= 5 \end{aligned} \;\xrightarrow{\text{subtract}}\; 2x = 6 \;\Rightarrow\; x = 3" block />
+
+Then substitute back: x + y = 5 gives 3 + y = 5, so y = 2. Solution **(3, 2)** — exactly where the lines meet.
+
+</Step>
+
+<Step title="Solving by substitution" kind="explain">
+
+The alternative: rearrange one equation for a variable, then substitute into the other. From y = 5 − x:
+
+<Formula tex="3x + (5 - x) = 11 \;\to\; 2x + 5 = 11 \;\to\; x = 3,\; y = 2" block />
+
+Two methods, same answer. Elimination shines when coefficients line up; substitution shines when one variable is already (or easily made) the subject.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Solve simultaneously:  x + y = 7  and  x − y = 1."
+  options={[
+    "x = 4, y = 3",
+    "x = 3, y = 4",
+    "x = 5, y = 2",
+    "x = 6, y = 1"
+  ]}
+  correctIndex={0}
+  explanation="Add the equations: 2x = 8, so x = 4. Substitute into x + y = 7: y = 3. Both check out: 4+3 = 7 and 4−3 = 1 ✓."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Simultaneous equations** share a solution true for both — graphically, their **intersection**.
+- **Elimination**: add/subtract to cancel a variable, then back-substitute.
+- **Substitution**: make one variable the subject, then sub into the other.
+- Two unknowns need two independent equations to pin down.
+
+</Step>
+
+</Lesson>

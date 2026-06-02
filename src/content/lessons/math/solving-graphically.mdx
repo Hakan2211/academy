@@ -1,0 +1,68 @@
+---
+title: Solving Equations Graphically
+subject: math
+contentSlug: math/solving-graphically
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="A solution is a crossing point" kind="explain">
+
+Graphs give equations a picture — and a powerful new way to solve them. The deep idea: **the solution of an equation is where two graphs meet.** Wherever curves cross, their y-values are equal, which is exactly what the equation demands.
+
+</Step>
+
+<Step title="Two lines, one solution" kind="interactive">
+
+Simultaneous equations are two lines; their single crossing point is the (x, y) that solves both.
+
+<SimultaneousGraph />
+
+</Step>
+
+<Step title="Solving with a curve and a line" kind="explain">
+
+To solve x² − 3 = x graphically, plot **y = x² − 3** and **y = x** and read off where they intersect. The x-values of the crossings are the solutions. A parabola and a line can cross **twice, once, or not at all** — matching the two/one/no solutions you'd get algebraically.
+
+<ParabolaExplorer />
+
+</Step>
+
+<Step title="Roots are crossings with y = 0" kind="explain">
+
+Solving ax² + bx + c = **0** is the special case where the second "graph" is the x-axis itself (the line y = 0). So the **roots are the x-intercepts** — a fact you used in Quadratics, now explained: setting an expression to zero means finding where its graph meets the x-axis.
+
+<Callout type="info" title="Graphical solving handles the unsolvable">
+Some equations can't be solved with neat algebra at all (like x = cos x). Graphing both sides and reading the crossing gives an answer to any accuracy you like — which is how computers solve them.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="To solve x² − 2x − 1 = 0 graphically, which crossings do you read?"
+  options={[
+    "Where y = x² − 2x − 1 crosses the x-axis (y = 0)",
+    "Where the parabola crosses the y-axis",
+    "The vertex of the parabola",
+    "Where two parallel lines meet"
+  ]}
+  correctIndex={0}
+  explanation="Setting the expression equal to 0 means finding where its graph meets the line y = 0 — the x-axis. Those x-intercepts are the solutions (here x = 1 ± √2)."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **solution** of an equation is where the relevant **graphs intersect**.
+- Simultaneous linear equations → the crossing of **two lines**.
+- "= 0" equations → **x-intercepts** (crossings with the x-axis).
+- Graphical methods solve even equations algebra can't, to any accuracy.
+
+</Step>
+
+</Lesson>

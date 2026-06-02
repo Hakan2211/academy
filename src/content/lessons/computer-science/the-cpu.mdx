@@ -1,0 +1,77 @@
+---
+title: The CPU
+subject: computer-science
+contentSlug: computer-science/the-cpu
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Opening the brain" kind="explain">
+
+The CPU — the **central processing unit** — is the part everyone calls the "brain" of a computer. It is a single chip, often smaller than a fingernail, holding billions of the transistors and gates we met earlier.
+
+But what is *inside* it? When you peel back the lid, the brain turns out to be a few simple parts cooperating. None of them is mysterious. In fact, you have already built the most important one.
+
+</Step>
+
+<Step title="The parts inside" kind="explain">
+
+A simple CPU has four kinds of part:
+
+- The **ALU** (Arithmetic Logic Unit) — the calculator we built from gates. It adds, subtracts, compares and runs logic. This is the part that *does* the work.
+- **Registers** — a tiny handful of ultra-fast storage slots, right next to the ALU, holding the numbers the CPU is using this very instant.
+- The **control unit** — the conductor. It reads each instruction and sends signals telling every other part what to do and when.
+- Two special registers: the **program counter (PC)**, which remembers the address of the next instruction, and the **instruction register (IR)**, which holds the instruction being worked on now.
+
+</Step>
+
+<Step title="Inside the chip" kind="interactive">
+
+Click around the CPU and see how the pieces relate. Notice that the **ALU** sits at the centre — it is the same arithmetic-and-logic block you wired from XOR and AND gates, just drawn as one box now.
+
+<CpuDiagram />
+
+The registers are nothing exotic either: each is a row of **latches**, the feedback loops of gates that store a bit. Everything you see here is built from the logic of the previous world — there is no new magic, only new arrangement.
+
+</Step>
+
+<Step title="What the control unit really does" kind="explain">
+
+The **control unit** is the part that turns a CPU from a calculator into a *programmable* machine. The ALU can add two numbers, but it has no idea *which* numbers, or whether you wanted to add at all. The control unit answers those questions.
+
+It reads the instruction in the IR, decodes the opcode, and then flips exactly the right control signals: open this register onto the ALU's input, set the ALU to "add", route the result back to that register. Then it nudges the **program counter** forward so the next instruction is ready.
+
+<Callout type="info" title="Why registers are so fast">
+Registers sit *inside* the CPU, beside the ALU. Reading one takes essentially a single clock tick — far faster than reaching out to RAM. The catch is there are only a few of them, so the CPU constantly juggles values between registers and memory.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Inside the CPU, what is the job of the program counter (PC)?"
+  options={[
+    "It performs the actual addition and subtraction",
+    "It holds the memory address of the next instruction to run, and advances after each one",
+    "It permanently stores all your files",
+    "It counts how many programs are installed"
+  ]}
+  correctIndex={1}
+  explanation="The program counter holds the address of the next instruction. After each instruction it ticks up by one, so the CPU steps through the program in order — until a JUMP instruction sets it somewhere else."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **CPU** is a chip of billions of gates, made of a few cooperating parts.
+- The **ALU** does the arithmetic and logic — it is the calculator built from gates in the last world.
+- **Registers** are a few ultra-fast storage slots beside the ALU; each is a row of latches.
+- The **control unit** decodes instructions and conducts the other parts; the **program counter** tracks the next instruction and the **instruction register** holds the current one.
+
+</Step>
+
+</Lesson>

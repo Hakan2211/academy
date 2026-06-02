@@ -1,0 +1,77 @@
+---
+title: What Is a Database?
+subject: computer-science
+contentSlug: computer-science/what-is-a-database
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Where does all the data live?" kind="explain">
+
+The last world showed how the web delivers pages and apps. But when you log in, post a photo, or check a bank balance, *something* has to remember your account, your friends, your money — reliably, for millions of people at once. That something is almost always a **database**.
+
+A database is an organised collection of data, designed to be **stored, related, and queried** efficiently and safely. You could keep data in a plain file or a spreadsheet, and for a shopping list that's fine. But the moment many people read and write at once, the data grows huge, and mistakes become costly, you need something sturdier.
+
+</Step>
+
+<Step title="Why not just a spreadsheet or a file?" kind="explain">
+
+Imagine running a university on one giant spreadsheet. Two staff edit it at the same time and overwrite each other. A formula breaks and silently corrupts a column. Searching a million rows crawls. There's no rule stopping someone typing "banana" into the age column.
+
+Databases fix exactly these pains. They offer **fast search** over enormous data, **concurrent access** so many users can work at once without clobbering each other, **integrity rules** that reject nonsense, and **durability** so a crash doesn't lose your data. A file just holds bytes; a database actively *protects* and *organises* them.
+
+</Step>
+
+<Step title="The vocabulary: tables, records, fields, keys" kind="interactive">
+
+The most common kind of database arranges data into **tables**. A table is a grid: each **row** is one **record** (one student, one order, one movie), and each **column** is one **field** (a single piece of information like name or year).
+
+The magic ingredient is the **key**. One column is chosen as the **primary key** — a value guaranteed to be unique for every row, so no two records can ever be confused. Explore the Students table below; filter it the way a query would.
+
+<DatabaseTable />
+
+Notice how filtering returns only the rows that match your question, while the `student_id` primary key keeps every record uniquely identifiable.
+
+</Step>
+
+<Step title="The DBMS: the program in charge" kind="explain">
+
+You don't poke at the raw data yourself. You talk to a **Database Management System (DBMS)** — software like **PostgreSQL**, **MySQL**, or **SQLite** that sits between you and the stored bytes.
+
+The DBMS is the gatekeeper. It runs your searches, enforces the integrity rules, coordinates many users safely, and makes sure that if the power fails mid-write, the data isn't left half-finished. You ask questions in a language the DBMS understands; it does the heavy lifting.
+
+<Callout type="info" title="Back-ends run on databases">
+Remember the client–server model from the web world? A web server's "back-end" almost always talks to a database. Your browser asks the server for your profile; the server asks the database; the database hands back your record. Databases are the memory behind the apps.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In a database table, what is the role of the primary key?"
+  options={[
+    "It encrypts the table so others can't read it",
+    "It uniquely identifies each row, so no two records can be confused",
+    "It sorts the rows alphabetically",
+    "It stores the password for the database"
+  ]}
+  correctIndex={1}
+  explanation="A primary key is a column whose value is unique for every row (like student_id). It lets the database — and other tables — refer to exactly one record with no ambiguity. It is not about encryption, sorting, or passwords."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **database** is an organised collection of data built to be stored, related, and **queried** reliably at scale.
+- It beats a file or spreadsheet at **fast search, concurrent access, integrity rules, and durability**.
+- Data lives in **tables**: **rows** are records, **columns** are fields.
+- A **primary key** is a unique value identifying each row.
+- A **DBMS** (PostgreSQL, MySQL, SQLite…) is the program that stores, protects, and queries the data — the memory behind most apps.
+
+</Step>
+
+</Lesson>

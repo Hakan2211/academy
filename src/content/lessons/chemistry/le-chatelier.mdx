@@ -1,0 +1,77 @@
+---
+title: Le Chatelier's Principle
+subject: chemistry
+contentSlug: chemistry/le-chatelier
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Equilibrium pushes back" kind="explain">
+
+Disturb a system at equilibrium and it responds. **Le Chatelier's principle** captures how:
+
+> If you apply a change (a "stress") to a system at equilibrium, it shifts in the direction that **counteracts** the change.
+
+Push it one way and it leans back the other way to partly undo what you did. It's chemistry's version of a stubborn balance.
+
+</Step>
+
+<Step title="Apply some stresses" kind="interactive">
+
+Add reactant, add product, heat, or cool — and watch the equilibrium shift to oppose your change.
+
+<EquilibriumLab />
+
+</Step>
+
+<Step title="The three main stresses" kind="explain">
+
+- **Concentration:** add a substance → the system shifts *away* from it (consuming it). Remove one → it shifts *toward* that side to replace it.
+- **Temperature:** heat shifts equilibrium in the **endothermic** direction (absorbing the added heat); cooling shifts it the **exothermic** way. This one actually changes the equilibrium constant.
+- **Pressure (gases):** increasing pressure shifts toward the side with **fewer gas molecules**.
+
+In each case, the system moves to **partly cancel** the disturbance.
+
+</Step>
+
+<Step title="Why it matters: the Haber process" kind="explain">
+
+Le Chatelier turns equilibrium into a tool for maximising yield. The **Haber process** (N₂ + 3H₂ ⇌ 2NH₃) makes the ammonia that fertilises the world. Engineers tune the conditions:
+
+- **High pressure** — shifts toward the fewer gas molecules (2 NH₃ vs 4 reactant molecules) → more ammonia.
+- **Lower temperature** favours the exothermic forward reaction (more ammonia), but too low is too slow — so a **compromise temperature** plus a catalyst balances yield against speed.
+
+<Callout type="tip" title="Yield vs rate, balanced">
+Le Chatelier maximises *how much* product you can get; kinetics governs *how fast*. Real industrial processes are always a careful compromise between the two — the deep lesson of this whole world.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A system at equilibrium (A ⇌ B) has more reactant A added. According to Le Chatelier's principle, what happens?"
+  options={[
+    "The equilibrium shifts left, making more A",
+    "The equilibrium shifts right, converting the added A into more B to counteract the change",
+    "Nothing changes",
+    "The reaction stops entirely"
+  ]}
+  correctIndex={1}
+  explanation="Adding A is a stress. The system shifts in the direction that opposes it — to the right — consuming the added A by converting it into more B, partly undoing the disturbance."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Le Chatelier's principle**: a system at equilibrium shifts to **counteract** any applied change.
+- **Add** a substance → shift away from it; **remove** → shift toward it.
+- **Heat** → shifts endothermic direction; **pressure ↑** → shifts toward fewer gas molecules.
+- It's used to maximise industrial yields (e.g. the **Haber process**), always balanced against rate.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,88 @@
+---
+title: Why the Table Works
+subject: chemistry
+contentSlug: chemistry/why-the-table-works
+order: 6
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="The shape is no accident" kind="explain">
+
+Mendeleev built the table from *patterns in behaviour*, without knowing why they existed. The deep answer came decades later from **electron configuration**: the table's whole shape is a direct map of how electrons fill orbitals.
+
+Every feature — the number of columns, the odd width of each block, where the metals sit — falls out of the filling order you met in the last world.
+
+</Step>
+
+<Step title="Blocks are sub-shells" kind="interactive">
+
+Recolour the table by **block** and the structure jumps out. Each block is exactly the sub-shell that's being filled across it:
+
+- **s-block** (2 columns) — filling an s sub-shell (2 electrons)
+- **p-block** (6 columns) — filling a p sub-shell (6 electrons)
+- **d-block** (10 columns) — the transition metals, filling d (10)
+- **f-block** (14 columns) — the lanthanides and actinides, filling f (14)
+
+<PeriodicTable mode="blocks" />
+
+</Step>
+
+<Step title="Count the columns" kind="explain">
+
+Look at the widths: 2, then 6, then 10, then 14. Those are precisely the capacities of the s, p, d, and f sub-shells. The table is *wide where sub-shells are big* — its silhouette is a portrait of the orbitals.
+
+A new **period** begins every time electrons start a new principal shell. That's why periods get longer further down: deeper shells contain more sub-shells to fill.
+
+</Step>
+
+<Step title="Configurations down a group" kind="interactive">
+
+Now the punchline. Slide through the elements and compare members of the same group — say lithium (Z=3) and sodium (Z=11). Their *outer* configurations are identical: one s-electron each.
+
+<ElectronConfig />
+
+Same valence configuration → same chemistry. *That* is why a group is a family. The repeating pattern of valence electrons, recurring as each new shell fills, is the physical cause of the entire periodic law.
+
+</Step>
+
+<Step title="Trends, explained" kind="explain">
+
+Configuration even explains the trends:
+
+- **Across a period**, electrons enter the *same* shell while protons increase — stronger pull, smaller atoms, higher electronegativity.
+- **Down a group**, each element adds a whole new shell — bigger atoms, electrons more shielded and easily lost.
+
+<Callout type="info" title="From pattern to cause">
+Mendeleev found *that* properties repeat; quantum mechanics revealed *why*. The periodic table is the meeting point of the two — a chart you can read off by hand, backed by the deepest physics of the atom. Next, we use it to predict how atoms **bond**.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why is the d-block (transition metals) exactly 10 columns wide?"
+  options={[
+    "Because there are 10 periods",
+    "Because a d sub-shell has 5 orbitals holding 10 electrons, filled one element per electron",
+    "Because d-block elements have 10 valence electrons",
+    "It is a coincidence of how the table is drawn"
+  ]}
+  correctIndex={1}
+  explanation="Each block's width equals its sub-shell's electron capacity. A d sub-shell has 5 orbitals × 2 electrons = 10, and the table adds one element per electron added — so the d-block is 10 columns wide."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The table's shape **is** electron configuration: each **block** (s, p, d, f) is the sub-shell being filled.
+- Block widths **2, 6, 10, 14** are the s/p/d/f capacities; a new **period** starts a new shell.
+- Elements in a **group** share an outer configuration → same chemistry (the cause of the periodic law).
+- Configuration also explains the **trends** across periods and down groups.
+
+</Step>
+
+</Lesson>

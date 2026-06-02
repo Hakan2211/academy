@@ -1,0 +1,77 @@
+---
+title: Percentage Change
+subject: math
+contentSlug: math/percentage-change
+order: 7
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Rises, falls, and the multiplier" kind="explain">
+
+A 20% pay rise, a 30% sale, 5% interest — these are **percentage changes**. The professional way to handle them isn't "find the change, then add or subtract." It's a single **multiplier**:
+
+- increase by 20% → × **1.20**
+- decrease by 30% → × **0.70**
+
+You go straight from old value to new in one step.
+
+</Step>
+
+<Step title="Try the multiplier" kind="interactive">
+
+<PercentChange />
+
+</Step>
+
+<Step title="Building the multiplier" kind="explain">
+
+Start from 100% (the whole, = 1.00) and adjust:
+
+<Formula tex="+15\% \to 1 + 0.15 = 1.15 \qquad -15\% \to 1 - 0.15 = 0.85" block />
+
+A £200 phone with 15% added tax: 200 × 1.15 = £230. The same phone with 15% off: 200 × 0.85 = £170.
+
+</Step>
+
+<Step title="Compound change: multipliers multiply" kind="explain">
+
+The real power shows when changes **repeat**. £1000 earning 5% interest a year doesn't gain a flat £50 each year — each year's interest earns interest too:
+
+<Formula tex="1000 \times 1.05^{3} = 1000 \times 1.157625 = 1157.63" block />
+
+This is **compound growth** (and, with a multiplier below 1, **decay** — like a car losing 15% of its value each year). Repeated percentage change is just repeated multiplication: the seed of the exponential functions you'll meet later.
+
+<Callout type="warn" title="A rise then an equal fall doesn't return home">
+Up 10% then down 10% is × 1.1 × 0.9 = × 0.99 — you end 1% *below* where you started. Percentages are taken of different amounts each time.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="£500 is invested at 4% compound interest per year. What is it worth after 2 years?"
+  options={[
+    "£540.80",
+    "£540.00",
+    "£520.00",
+    "£416.00"
+  ]}
+  correctIndex={0}
+  explanation="Multiplier 1.04 each year: 500 × 1.04² = 500 × 1.0816 = £540.80. Simple interest would give only £540 — the extra 80p is interest earned on the first year's interest."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Percentage change is best done with a **multiplier**: +p% → (1 + p/100), −p% → (1 − p/100).
+- One multiply takes old value straight to new.
+- **Repeated** change multiplies the multipliers → **compound** growth or decay.
+- A rise then an equal-percentage fall does **not** return to the start.
+
+</Step>
+
+</Lesson>

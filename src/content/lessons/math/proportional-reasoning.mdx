@@ -1,0 +1,82 @@
+---
+title: Proportional Reasoning Everywhere
+subject: math
+contentSlug: math/proportional-reasoning
+order: 6
+estimatedMinutes: 10
+---
+
+<Lesson>
+
+<Step title="One idea, a thousand uses" kind="explain">
+
+Proportion is quietly everywhere: recipes, exchange rates, scaling drawings, mixing paint, comparing prices, converting units, reading maps. Master one tool — the **unitary method** — and all of them become the same problem.
+
+</Step>
+
+<Step title="The unitary method" kind="interactive">
+
+The move is always the same: **find the value of ONE**, then scale to as many as you need.
+
+<UnitaryMethod />
+
+</Step>
+
+<Step title="Best buy: compare per unit" kind="explain">
+
+Which is better value — 6 eggs for £1.50 or 10 eggs for £2.30? Don't compare totals; compare the **unit price**:
+
+<Formula tex="\tfrac{150}{6} = 25\text{p each} \qquad \tfrac{230}{10} = 23\text{p each}" block />
+
+The 10-pack wins. Reducing everything to "per one" makes unlike quantities instantly comparable — the same idea behind price labels showing "£/100 g."
+
+</Step>
+
+<Step title="Scaling a recipe" kind="explain">
+
+A recipe for 4 serves 600 g flour; you're cooking for 6. Find one serving (600 ÷ 4 = 150 g), then scale (× 6 = 900 g). Or notice the **scale factor** directly: 6 ÷ 4 = 1.5, so multiply every ingredient by 1.5. Two routes, same answer — proportional reasoning gives you both.
+
+</Step>
+
+<Step title="When proportion does NOT apply" kind="explain">
+
+The sharpest skill is knowing when *not* to use it. These are **not** proportional:
+
+- A baby grows 25 cm in its first year — it will not grow 250 cm in ten.
+- One song takes 3 minutes to download; with a fixed connection fee, ten songs aren't simply 30 minutes of setup.
+- Two taps fill a bath in 8 minutes — one tap takes 16, not 4 (that's inverse, but the *relationship* must be checked, not assumed).
+
+Always ask: *if I double the input, does the output truly double?* If not, it isn't direct proportion.
+
+<Callout type="info" title="The deepest pattern in this world">
+Repeated proportional change — multiplying again and again — is no longer proportional at all. It becomes **exponential**: compound interest, population growth, radioactive decay. You'll meet that beast in Functions & Graphs.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="500 g of pasta serves 5 people and needs 750 ml of sauce. How much sauce for 8 people?"
+  options={[
+    "1200 ml",
+    "1000 ml",
+    "1500 ml",
+    "950 ml"
+  ]}
+  correctIndex={0}
+  explanation="Find one serving: 750 ÷ 5 = 150 ml per person. Then × 8 = 1200 ml. (Equivalently, scale factor 8/5 = 1.6, and 750 × 1.6 = 1200 ml.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **unitary method** — find one, then scale — solves nearly every proportion problem.
+- **Best buys**: compare the **unit price**, not the total.
+- **Recipes/conversions**: multiply by the scale factor (new ÷ old).
+- Always test "**does doubling the input double the output?**" — and remember repeated multiplying becomes **exponential**, not proportional.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,72 @@
+---
+title: The Area Under a Curve
+subject: math
+contentSlug: math/the-area-under-a-curve
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The other half of calculus" kind="explain">
+
+Differentiation found slopes. The second great problem is **area** — the area trapped between a curve and the x-axis. It sounds unrelated, but it turns out to be differentiation's mirror image. Finding this area is called **integration**.
+
+</Step>
+
+<Step title="Build it from rectangles" kind="interactive">
+
+Slice the area into rectangles and add them. More, thinner rectangles → a better fit → the exact area in the limit.
+
+<AreaUnderCurve />
+
+</Step>
+
+<Step title="The Riemann sum" kind="explain">
+
+The strategy is pure limit-thinking: approximate the region with n rectangles, add their areas, then let n → ∞ so the rectangles become infinitely thin:
+
+<Formula tex="\text{Area} = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i)\,\Delta x = \int_a^b f(x)\,dx" block />
+
+That elongated S, **∫**, is the **integral sign** — a stretched "S" for "sum." It's the same "add up infinitely many infinitely small pieces" idea from Zeno and the circle-area derivation, now made a precise tool.
+
+</Step>
+
+<Step title="Why area matters" kind="explain">
+
+Area under a curve isn't abstract — it *means* something in every applied field:
+
+- Under a **speed–time** graph → **distance** travelled.
+- Under a **force–distance** graph → **work** done.
+- Under a **rate** graph → the **total accumulated**.
+
+Integration is how you go from a *rate* back to a *total* — accumulating change. Which raises a tantalising question: differentiation breaks a total into rates; integration sums rates into a total. Are they inverses? That's the deep dive.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="On a speed–time graph, what does the area under the curve represent?"
+  options={[
+    "The distance travelled",
+    "The acceleration",
+    "The maximum speed",
+    "The average speed"
+  ]}
+  correctIndex={0}
+  explanation="Speed × time = distance, so accumulating speed over time — the area under a speed–time graph — gives the total distance travelled. (Gradient of that graph would give acceleration.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Integration** finds the **area under a curve** — calculus's second great problem.
+- Approximate with rectangles (a **Riemann sum**), then take the limit as they thin to zero.
+- The integral **∫** is a stretched "S" for "sum."
+- Area under a rate graph = the **accumulated total** (speed-time → distance, force-distance → work).
+
+</Step>
+
+</Lesson>

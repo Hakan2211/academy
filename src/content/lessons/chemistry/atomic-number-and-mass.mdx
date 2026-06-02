@@ -1,0 +1,77 @@
+---
+title: Atomic Number & Mass
+subject: chemistry
+contentSlug: chemistry/atomic-number-and-mass
+order: 3
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="The two numbers that define an atom" kind="explain">
+
+Every atom carries two key counts:
+
+- **Atomic number (Z)** — the number of **protons**. This alone decides which element it is. Hydrogen is *always* Z = 1; carbon is *always* Z = 6.
+- **Mass number (A)** — the total number of **protons + neutrons** in the nucleus (the heavy particles).
+
+Since A counts protons *and* neutrons, the number of neutrons is simply:
+
+<Formula tex="\text{neutrons} = A - Z" block />
+
+</Step>
+
+<Step title="Read it off the atom" kind="interactive">
+
+Build different atoms and watch how Z (protons) names the element while A (protons + neutrons) sets the mass. Electrons don't count toward mass — they're too light.
+
+<AtomBuilder />
+
+</Step>
+
+<Step title="Standard notation" kind="explain">
+
+Chemists write an element with its mass number on top and atomic number on the bottom:
+
+<Formula tex="^{A}_{Z}\text{X}" block />
+
+For example, carbon-12 is written with A = 12 and Z = 6 — so it has 6 protons and 12 − 6 = 6 neutrons. Often the bottom number is dropped (just "carbon-12" or ¹²C), because the element's name already tells you Z.
+
+</Step>
+
+<Step title="Atomic mass on the periodic table" kind="explain">
+
+The periodic table lists a **relative atomic mass** that's usually not a whole number — chlorine is 35.5, for instance. That's because most elements are a mix of **isotopes** (same element, different neutron counts), and the listed value is a weighted average. We'll unpack that next.
+
+<Callout type="info" title="Why mass is measured relatively">
+Atoms are far too light to weigh in grams individually, so chemists compare them to a standard: one atom of carbon-12 is defined as exactly 12 atomic mass units (u). Every other atomic mass is measured against it.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="An atom has atomic number Z = 11 and mass number A = 23. How many protons, neutrons, and electrons does the neutral atom have?"
+  options={[
+    "11 protons, 23 neutrons, 11 electrons",
+    "11 protons, 12 neutrons, 11 electrons",
+    "23 protons, 11 neutrons, 23 electrons",
+    "12 protons, 11 neutrons, 12 electrons"
+  ]}
+  correctIndex={1}
+  explanation="Z = 11 means 11 protons (and 11 electrons in a neutral atom). Neutrons = A − Z = 23 − 11 = 12. This is sodium-23."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Atomic number Z** = number of protons = the element's identity.
+- **Mass number A** = protons + neutrons.
+- **Neutrons = A − Z**; electrons don't add meaningful mass.
+- Notation is ᴬ_ᵤX; periodic-table masses are **weighted averages** over isotopes (next lesson).
+
+</Step>
+
+</Lesson>

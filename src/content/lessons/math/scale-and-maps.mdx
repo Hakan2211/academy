@@ -1,0 +1,70 @@
+---
+title: Scale & Maps
+subject: math
+contentSlug: math/scale-and-maps
+order: 5
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Shrinking the world to fit a page" kind="explain">
+
+A map, a floor plan, a model car — each is a faithful shrink of something real. The **scale** tells you the shrink factor. A scale of **1 : 50** means every 1 cm on the model is 50 cm in real life. The shape is preserved exactly; only the size changes.
+
+</Step>
+
+<Step title="Scale up and down" kind="interactive">
+
+<ScaleModel />
+
+</Step>
+
+<Step title="Converting with a scale" kind="explain">
+
+A scale is just a ratio, used in two directions:
+
+- **model → real:** multiply by the scale factor.
+- **real → model:** divide by it.
+
+On a 1 : 25 000 map, 4 cm represents 4 × 25 000 = 100 000 cm = **1 km**. Watch the units: the answer comes out in the small unit (cm), so convert at the end.
+
+<Formula tex="\text{real distance} = \text{map distance} \times \text{scale factor}" block />
+
+</Step>
+
+<Step title="Areas scale by the square" kind="explain">
+
+Here's the trap. If lengths scale by 50, **areas scale by 50²= 2500**, because area has two dimensions. A 1 : 50 model with 4 cm² of floor represents 4 × 2500 = 10 000 cm² of real floor — not 4 × 50. (And volumes scale by the **cube**.) You'll prove exactly why in the Measurement world.
+
+<Callout type="warn" title="Don't scale area by the length factor">
+Lengths × k, areas × k², volumes × k³. Forgetting the square or cube is the most common scaling error there is.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="On a map with scale 1 : 200 000, two towns are 7 cm apart. What is the real distance?"
+  options={[
+    "14 km",
+    "1.4 km",
+    "140 km",
+    "28 km"
+  ]}
+  correctIndex={0}
+  explanation="7 cm × 200 000 = 1 400 000 cm. Convert: ÷100 → 14 000 m, ÷1000 → 14 km."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **scale** 1 : n means 1 unit on the model is n units in reality.
+- **model → real**: × n; **real → model**: ÷ n; mind the units.
+- **Lengths × k, areas × k², volumes × k³** — scaling is dimensional.
+
+</Step>
+
+</Lesson>

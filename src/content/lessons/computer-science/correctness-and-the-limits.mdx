@@ -1,0 +1,99 @@
+---
+title: Correctness & the Limits
+subject: computer-science
+contentSlug: computer-science/correctness-and-the-limits
+order: 8
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Fast is not enough — it has to be right" kind="explain">
+
+We've spent this world making algorithms *faster*. But speed is worthless if the answer is wrong. A sorting routine that finishes instantly but mis-orders one item is broken. So the deepest question in algorithms is the hardest one to answer with confidence: **how do we know an algorithm is correct?**
+
+There are two ways to gain that confidence — **testing** and **proof** — and they are not the same thing. Most software relies on the first; the most critical software demands the second.
+
+</Step>
+
+<Step title="Testing: necessary, but never complete" kind="explain">
+
+**Testing** runs the algorithm on chosen inputs and checks the outputs are right. It's indispensable: it catches real bugs fast and cheaply. But it has a famous limit, captured by the computer scientist Edsger Dijkstra:
+
+<Callout type="warn" title="Dijkstra's warning">
+"Testing shows the presence, not the absence, of bugs." Passing a thousand tests proves the algorithm works on those thousand inputs — not on the thousand-and-first.
+</Callout>
+
+The dangerous inputs are the **edge cases**: the empty list, a list of one item, all-equal items, the maximum value, negative numbers. Good testers deliberately attack these corners, because that's where assumptions quietly break.
+
+</Step>
+
+<Step title="Edge cases hide in plain sight" kind="interactive">
+
+Watch a sort run, then ask yourself the awkward questions: what happens with an already-sorted list? A reversed one? All-identical bars? A list of length one? A correct algorithm must handle *all* of these — not just the typical, comfortable middle case.
+
+<SortVisualizer />
+
+Shuffle a few times and observe that the algorithm always reaches a fully-sorted (green) state. That repeated success builds *confidence* — but, as Dijkstra warned, it is not the same as *certainty*.
+
+</Step>
+
+<Step title="Proof: invariants and certainty" kind="explain">
+
+To move from confidence to certainty, we **prove** correctness with a logical argument — and the key tool is the **loop invariant**: a statement that stays true before and after every pass of a loop.
+
+Take "find the largest." The invariant is: *`best` always holds the largest value seen so far.* Show it's true at the start, show each pass keeps it true, and when the loop ends — having seen everything — `best` must hold the overall largest. No test cases required; the logic guarantees it for *every* possible input.
+
+This is **provable correctness**: a mathematical demonstration that an algorithm is right for all inputs, not just the ones we happened to try.
+
+</Step>
+
+<Step title="Some problems are brutally expensive" kind="interactive">
+
+Correctness assumes the algorithm even *finishes in time*. Some correct algorithms are useless because they're too slow. Slide n and look at the **O(2ⁿ)** curve.
+
+<BigOChart />
+
+Problems whose only known solutions grow like O(2ⁿ) or worse are called **intractable**: correct in theory, impossible in practice. The famous **travelling salesman problem** — find the shortest route visiting every city — has no known efficient algorithm. For a few dozen cities, checking every route would outlast the universe. These problems sit at the frontier of a field called **computational complexity**.
+
+</Step>
+
+<Step title="And some problems can't be solved at all" kind="explain">
+
+Here is the most startling fact in all of computer science. It's not just that some problems are *slow* — some are **provably unsolvable** by *any* algorithm, no matter how fast the computer.
+
+The classic example is the **Halting Problem**: write a program that, given any program and its input, decides whether that program will eventually stop or loop forever. Alan Turing **proved in 1936** that no such program can exist. Not "we haven't found it yet" — it is logically impossible.
+
+<Callout type="info" title="A bridge to what's next">
+This is the doorway to the **Theory of Computation** — the study of what can and cannot be computed *in principle*. We've spent this world asking how to solve problems *well*; the next great question is which problems can be solved *at all*. That's a whole world of its own.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why can't testing alone guarantee an algorithm is correct for every input?"
+  options={[
+    "Tests run too slowly to be trusted",
+    "Passing tests shows correctness only for the inputs tried, never for all possible inputs",
+    "Testing changes the algorithm's Big-O class",
+    "Only exponential algorithms can be tested"
+  ]}
+  correctIndex={1}
+  explanation="As Dijkstra put it, testing shows the presence, not the absence, of bugs. It can only check the finite set of inputs you actually run. Certainty for all inputs requires a proof — for example, a loop invariant — not more test cases."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- An algorithm must be **correct**, not merely fast — a wrong answer instantly defeats any speed.
+- **Testing** finds bugs cheaply but proves correctness only for the inputs tried; **edge cases** matter most.
+- **Proof** — using tools like **loop invariants** — gives certainty for *every* input.
+- Some problems are **intractable**: their only known algorithms grow like O(2ⁿ), useless at scale.
+- Some problems, like the **Halting Problem**, are **provably unsolvable** — the gateway to the Theory of Computation.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,75 @@
+---
+title: Rounding & Estimation
+subject: math
+contentSlug: math/rounding-and-estimation
+order: 5
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Close enough, on purpose" kind="explain">
+
+Not every number needs all its digits. A crowd of 38,412 people is "about 38,000"; a bill of £19.97 is "about £20." **Rounding** trades a little accuracy for a lot of clarity — and gives you a fast way to *check* exact answers.
+
+</Step>
+
+<Step title="The rounding rule" kind="explain">
+
+To round to a given place, look at the **next digit**:
+
+- 0–4 → round **down** (keep the digit).
+- 5–9 → round **up** (add one).
+
+The reason is distance. A number is rounded to whichever marker it's **nearer** to; the digit 5 is the exact midpoint, and the convention is to round it up.
+
+</Step>
+
+<Step title="See the nearest marker" kind="interactive">
+
+Slide the value and watch which of the two round numbers it's closer to. Cross the dashed midpoint and the answer flips.
+
+<RoundingLine />
+
+</Step>
+
+<Step title="Estimation: rounding with a purpose" kind="explain">
+
+**Estimating** means rounding *before* you calculate, usually to one significant figure, to get a sanity-check answer:
+
+<Formula tex="312 \times 18 \approx 300 \times 20 = 6000" block />
+
+The exact answer is 5616 — and our estimate of 6000 instantly tells us a result like "561.6" or "56,160" would be a slipped decimal point. Estimation is the cheapest error-detector in mathematics.
+
+<Callout type="tip" title="Significant figures">
+The first significant figure is the first non-zero digit. In 0.00408 it's the 4; rounded to 1 s.f. that's 0.004. Leading zeros only locate the number — they don't count as significant.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Estimate 4.92 × 197 by rounding each number to 1 significant figure."
+  options={[
+    "About 1000",
+    "About 100",
+    "About 10,000",
+    "About 500"
+  ]}
+  correctIndex={0}
+  explanation="4.92 ≈ 5 and 197 ≈ 200, so 5 × 200 = 1000. (The exact value is 969.24 — the estimate confirms the order of magnitude.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Round by the **next digit**: 0–4 down, 5–9 up — because you snap to the **nearer** marker.
+- The digit 5 sits on the midpoint; by convention it rounds **up**.
+- **Estimate** by rounding to 1 significant figure to check an answer's size.
+- A good estimate catches misplaced decimal points and missing digits.
+
+</Step>
+
+</Lesson>

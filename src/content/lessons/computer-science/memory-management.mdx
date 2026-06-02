@@ -1,0 +1,83 @@
+---
+title: Memory Management
+subject: computer-science
+contentSlug: computer-science/memory-management
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Sharing one pool of RAM" kind="explain">
+
+Every running process needs **memory** — space to hold its instructions, its variables, its data. But RAM is a single, finite pool, and dozens of processes want some at once. If they all just grabbed whatever addresses they liked, chaos would follow: one program would overwrite another's data, and a single bug could corrupt the entire machine.
+
+So the OS takes charge of memory the same way it takes charge of the CPU — by managing and sharing it. And it pulls off a remarkable illusion in the process: it convinces **every process that it owns a huge, private, perfectly tidy memory all to itself**, even though the real RAM is smaller, shared, and full of holes.
+
+</Step>
+
+<Step title="Virtual addresses: a private map for each process" kind="explain">
+
+The trick is **virtual memory**. Each process works only with **virtual addresses** — its own clean address space starting from zero. It never sees the real physical addresses in the RAM chips.
+
+The OS (helped by hardware called the **MMU**, the memory management unit) silently translates every virtual address a process uses into the real **physical address** where the data actually sits. Because each process has its **own** translation map, process A's "address 1000" and process B's "address 1000" point to completely different physical locations. They cannot accidentally touch each other's memory — the maps simply don't overlap. That's both an illusion *and* a wall of protection.
+
+</Step>
+
+<Step title="Pages, frames, and the page table" kind="interactive">
+
+To make translation manageable, memory is chopped into fixed-size blocks. A process's virtual space is split into **pages**; physical RAM is split into equal-sized **frames**. A **page table** records, for each virtual page, which physical frame currently holds it.
+
+<MemoryPaging />
+
+Click a virtual page to follow its mapping into a RAM frame. Two things stand out: the pages a process sees are simple and contiguous, but the frames they live in are **scattered** across physical RAM — paging lets the OS fit programs into whatever gaps are free, with no fragmentation problem for the program to worry about.
+
+</Step>
+
+<Step title="Paging to disk and the page fault" kind="explain">
+
+Now the boldest part of the illusion. The combined virtual spaces of all your processes can add up to **more memory than the machine physically has**. The OS gets away with this by keeping only the *actively used* pages in RAM and **paging** the rest out to disk.
+
+When a process touches a page that's currently on disk, the hardware raises a **page fault**. The OS pauses the process, finds a free frame (evicting some other page to disk if needed), copies the needed page in from disk, updates the page table, and resumes the process — which never knew anything happened, except that it paused briefly.
+
+<Callout type="warn" title="The cost of the illusion">
+Disk is thousands of times slower than RAM. A few page faults are invisible; *constant* ones — called **thrashing** — grind a machine to a crawl as it spends all its time shuffling pages instead of working. The illusion of unlimited memory is real, but it isn't free.
+</Callout>
+
+</Step>
+
+<Step title="Why this matters" kind="explain">
+
+Virtual memory is one of the OS's masterpieces. It hands every process a large, simple, private address space — easy to program against — while the OS quietly fits them all into limited, shared physical RAM, spilling onto disk when needed. Abstraction and management again: hide the messy reality, share the scarce resource, protect everyone from everyone else.
+
+We've now seen the OS divide up the CPU and the memory. But sharing creates a new hazard: when several processes or threads reach for the *same* resource at the *same* time, things can go badly wrong. That collision is the subject of the next lesson.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A program accesses a virtual page that the OS had moved out to disk. What happens?"
+  options={[
+    "The program crashes, because that page no longer exists",
+    "A page fault occurs: the OS pauses the program, loads the page from disk into a RAM frame, updates the page table, and resumes it",
+    "The CPU runs the program twice as fast to compensate",
+    "The page table is deleted and rebuilt from scratch"
+  ]}
+  correctIndex={1}
+  explanation="Accessing a page that isn't in RAM triggers a page fault. The OS quietly loads the page from disk into a physical frame, updates the page table mapping, and resumes the process — preserving the illusion of abundant memory, at the cost of a slow disk read."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The OS shares one finite pool of **RAM** among many processes and protects them from each other.
+- **Virtual memory** gives each process its own private virtual address space; the **MMU** translates virtual addresses to physical ones.
+- Memory is split into **pages** (virtual) and **frames** (physical); a **page table** maps each page to a frame, letting programs feel contiguous while frames are scattered.
+- Unused pages can be **paged out to disk**; touching one triggers a **page fault** that the OS resolves transparently.
+- The result is the illusion of **large, private, simple memory** for every process — powerful, but slow if overused (**thrashing**).
+
+</Step>
+
+</Lesson>

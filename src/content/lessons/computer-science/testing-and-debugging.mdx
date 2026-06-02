@@ -1,0 +1,86 @@
+---
+title: Testing & Debugging
+subject: computer-science
+contentSlug: computer-science/testing-and-debugging
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Bugs are not a sign of failure" kind="explain">
+
+Every non-trivial program has bugs. Not because programmers are careless, but because software is among the most complex things humans build, and our brains can't track every possible case. The term itself is famous: in 1947 an actual moth was found jamming a relay in an early computer — a literal **bug**.
+
+So the engineering question isn't "how do I write perfect code?" — you can't. It's **"how do I catch mistakes quickly, before they reach users?"** The answer is *testing*, and when something slips through, *debugging*.
+
+</Step>
+
+<Step title="A test suite in action" kind="interactive">
+
+A **test** pins down one expected behaviour: given this input, the code must produce that output. A **test suite** is a pile of them you can re-run any time. Run this suite for a price calculator, then introduce a bug and run it again.
+
+<TestSuite />
+
+The moment the broken code can't produce an expected result, the suite turns red — pointing straight at the problem. Catching a fault the instant it appears, rather than weeks later in production, is the entire value of automated testing.
+
+</Step>
+
+<Step title="Edge cases and kinds of tests" kind="explain">
+
+Notice that several of those tests weren't "normal" inputs — they were **edge cases**: a 0% discount, a 100% discount, a price of zero. Edge cases are where bugs love to hide, because they're easy to forget while coding. A thoughtful test suite deliberately pokes at the boundaries.
+
+Tests also come in layers:
+
+- **Unit tests** check one small piece (a single function) in isolation — fast and precise.
+- **Integration tests** check that several modules work *together* through their interfaces.
+- **End-to-end tests** drive the whole system the way a real user would.
+
+A practice called **test-driven development (TDD)** flips the order: write the failing test *first*, then write just enough code to make it pass. The test becomes a precise statement of what "done" means.
+
+</Step>
+
+<Step title="Debugging is the scientific method" kind="explain">
+
+When a test goes red — or a user reports something broken — you **debug**. And good debugging is exactly the **scientific method** in disguise:
+
+1. **Observe** the symptom and reproduce it reliably.
+2. Form a **hypothesis** about the cause.
+3. **Test** the hypothesis — add a check, print a value, isolate the suspect code.
+4. Keep what the evidence supports, discard what it refutes, and repeat until you've found the cause.
+
+The deepest trap is *guessing and randomly changing things*. Like any science, debugging is about evidence, not hope.
+
+<Callout type="warn" title="Testing shows presence, not absence">
+A passing suite proves your bugs *aren't in the cases you tried* — it can never prove there are *no* bugs at all. As you saw in the algorithms world, **testing finds bugs; only a proof guarantees correctness**. That's why critical systems lean on both.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A developer changes some code and immediately a previously-passing test turns red. What has the test suite just caught?"
+  options={[
+    "A proof that the rest of the program is now perfect",
+    "A regression — the change broke a behaviour that used to work",
+    "A syntax error that stopped the code from compiling",
+    "Proof that the program has no remaining bugs"
+  ]}
+  correctIndex={1}
+  explanation="When a change breaks something that previously worked, that's a regression. Automated tests catch regressions instantly — before they reach users. (Passing tests still can't prove the absence of all bugs.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Bugs are inevitable** in complex software; the goal is to catch them early, not to be flawless.
+- A **test suite** re-checks expected behaviours and turns red the moment a **regression** appears.
+- Cover **edge cases**, and test in layers: **unit**, **integration**, and **end-to-end** (TDD writes the test first).
+- **Debugging is the scientific method**: observe, hypothesise, test, repeat — evidence over guessing.
+- Testing reveals the *presence* of bugs but never their *absence* — proof is the stronger guarantee.
+
+</Step>
+
+</Lesson>

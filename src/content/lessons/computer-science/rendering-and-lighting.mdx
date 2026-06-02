@@ -1,0 +1,79 @@
+---
+title: Rendering & Lighting
+subject: computer-science
+contentSlug: computer-science/rendering-and-lighting
+order: 4
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Turning a model into a picture" kind="explain">
+
+A wireframe mesh is a skeleton — useful, but obviously not what a finished game or film looks like. The step that turns that bare geometry into a final, full-colour image is called **rendering**.
+
+Rendering decides, for every pixel the model covers, what colour it should be. And the single biggest thing driving that colour is **light**. A grey sphere lit from one side reads instantly as a solid ball; the very same sphere lit flat looks like a paper disc. Light is what gives geometry its sense of form.
+
+</Step>
+
+<Step title="Surface normals and diffuse shading" kind="interactive">
+
+The trick is the **surface normal**: an arrow pointing straight out of the surface at each point, telling us which way that bit of surface faces. A patch aimed right at the light catches it fully and looks bright; a patch turned away from the light catches little and falls into shadow.
+
+The standard recipe, **diffuse (Lambertian) shading**, makes brightness proportional to the **dot product** of the surface normal `N` and the direction to the light `L`:
+
+<Formula tex="\text{brightness} = \max(0,\; N \cdot L)" block />
+
+<ShadingLab />
+
+Move the light and watch a flat circle of patches snap into a believable 3D sphere. Nothing about the *geometry* changed — only how each patch's normal lines up with the light.
+
+</Step>
+
+<Step title="Highlights, specular and shadows" kind="explain">
+
+Diffuse shading alone gives a soft, chalky look. Two more effects add realism:
+
+- **Specular highlights** — the bright glint where a shiny surface reflects the light straight toward your eye. The tighter the highlight, the glossier the material looks (think polished metal versus matte clay).
+- **Shadows** — where one object blocks the light from reaching another. Shadows are what truly glue objects to the ground and to each other; without them, things appear to float.
+
+A renderer also handles which surfaces are in front of which (so the near side of the cube hides the far side) — a job called **hidden-surface removal**, usually solved with a per-pixel **depth buffer**.
+
+</Step>
+
+<Step title="Two ways to render" kind="explain">
+
+There are two great families of rendering. **Rasterization** takes each triangle, figures out which pixels it covers, and shades them — it's fast and powers real-time games. **Ray tracing** instead shoots a ray from the eye through every pixel out into the scene, following bounces of light to compute colour — it's slower but produces gorgeously accurate reflections, refractions and shadows, which is why films lean on it. The final world ties these together.
+
+<Callout type="tip" title="The same dot product, everywhere">
+That humble `N · L` is one of the most-computed calculations in all of computing. Every frame of every 3D game evaluates it for millions of points — which is exactly the kind of identical, repeatable maths a GPU is built to do in parallel.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In diffuse shading, why does one side of a sphere look bright and the other dark?"
+  options={[
+    "The bright side stores more pixels than the dark side",
+    "Brightness depends on the angle between each surface point's normal and the direction to the light (their dot product) — patches facing the light are brighter",
+    "The dark side is simply painted a different colour by the artist",
+    "The screen dims half of itself automatically"
+  ]}
+  correctIndex={1}
+  explanation="Diffuse shading sets a point's brightness to max(0, N · L): the dot product of its surface normal and the direction to the light. Patches facing the light have a large dot product and look bright; patches turned away approach zero and fall into shadow — giving a flat shape solid form."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Rendering** turns a bare mesh into a finished image by deciding each pixel's colour.
+- **Diffuse shading** sets brightness to the **dot product of the surface normal and the light direction** (`N · L`).
+- **Specular highlights** add gloss; **shadows** ground objects; a **depth buffer** sorts out which surface is in front.
+- **Rasterization** is fast (real-time games); **ray tracing** follows light rays for photoreal results (films).
+
+</Step>
+
+</Lesson>

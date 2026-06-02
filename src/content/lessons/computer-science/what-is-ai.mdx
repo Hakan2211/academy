@@ -1,0 +1,75 @@
+---
+title: What Is AI?
+subject: computer-science
+contentSlug: computer-science/what-is-ai
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="A machine that finishes your sentence" kind="explain">
+
+Type the start of a sentence into a modern AI and it will finish it — fluently, grammatically, often insightfully. It can summarise a contract, debug your code, or write a poem about your cat. A decade ago this looked like science fiction. Today it runs on a phone.
+
+But what *is* this thing we call **artificial intelligence**? At its simplest, AI is the project of getting machines to do things that, when humans do them, we call *intelligent*: recognising a face, understanding language, planning a route, learning from experience. The astonishing part is that none of it requires the machine to be conscious or to "understand" in the way you do. It just has to produce the right behaviour.
+
+</Step>
+
+<Step title="The modern hook: predicting the next word" kind="interactive">
+
+The systems making headlines today — **large language models** — are built on one disarmingly simple idea: given the text so far, predict the most likely **next word**. Do that well enough, one word at a time, and the result reads like genuine thought.
+
+<TokenPredictor />
+
+Notice there's no hand-written rule saying "cats sit on mats." The model has simply absorbed, from oceans of text, that *mat* tends to follow *the cat sat on the*. Intelligence here is **statistics at scale** — a theme that runs through this entire world.
+
+</Step>
+
+<Step title="Narrow today, general tomorrow?" kind="explain">
+
+Almost every AI in use is **narrow AI**: brilliant at one thing, useless at everything else. The model that beats grandmasters at chess cannot tie a shoelace. A spam filter cannot drive. Even a chatbot that discusses philosophy has no idea what a coffee cup feels like.
+
+The dream — and the worry — is **artificial general intelligence (AGI)**: a single system that learns and reasons across *any* domain, as flexibly as a person. We are not there. Whether scaling today's models gets us there, or whether something fundamentally new is needed, is one of the great open questions of the field.
+
+<Callout type="info" title="The Turing Test">
+In 1950 Alan Turing dodged the unanswerable question "can machines think?" with a practical one: if a machine can converse so convincingly that a human judge can't tell it from a person, does the distinction matter? This **imitation game** reframed intelligence as *behaviour we can observe*, not an inner essence we must prove.
+</Callout>
+
+</Step>
+
+<Step title="Two roads to intelligence" kind="explain">
+
+Historically, AI split into two camps. The **symbolic** approach (the dream of the 1960s–80s) tried to capture intelligence as explicit rules and logic: *if the patient has a fever AND a rash, then…* It produced expert systems and chess engines, but choked on the messy, fuzzy real world — you can't write a rule for every way a cat might look.
+
+The **learning** approach won. Instead of programming the rules, you show the machine thousands of examples and let it *find the patterns itself*. This is **machine learning**, and it powers nearly all modern AI. The shift is profound: we moved from *telling* computers what to do to *teaching* them by example.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What distinguishes the modern, dominant 'learning' approach to AI from the older 'symbolic' approach?"
+  options={[
+    "Learning systems are programmed with more detailed if-then rules",
+    "Instead of hand-coding explicit rules, learning systems discover patterns automatically from large numbers of examples",
+    "Symbolic systems use neural networks while learning systems use logic",
+    "Learning AI requires no data at all, only clever algorithms"
+  ]}
+  correctIndex={1}
+  explanation="The symbolic approach hand-codes rules and logic, which is brittle in the messy real world. The learning approach feeds the machine many examples and lets it find the patterns itself — that data-driven learning is what powers today's AI."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **AI** is the project of getting machines to produce *intelligent behaviour* — it needn't understand or be conscious.
+- Today's headline systems are **large language models**, built on predicting the **next word**, one at a time, from patterns in vast text.
+- Almost all AI is **narrow** (great at one task); **general** intelligence (AGI) remains an open, debated goal.
+- The **Turing Test** judges intelligence by behaviour, not inner essence.
+- AI split into **symbolic** (hand-coded rules) and **learning** (patterns from data) — and the **learning** approach now dominates.
+
+</Step>
+
+</Lesson>

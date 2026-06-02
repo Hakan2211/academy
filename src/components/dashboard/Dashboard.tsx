@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query'
 import { api } from '../../../convex/_generated/api'
 import { useDeviceId } from '#/lib/deviceId.context'
 import { xpToNextLevel } from '#/lib/xp'
-import { BADGES, badgeMeta } from '#/lib/badges'
+import { BADGES, badgeImage, badgeMeta } from '#/lib/badges'
 import { Icon } from '#/components/ui/Icon'
 
 // The returning-learner home base (roadmap §Dashboard). A Cosmic Glass page over
@@ -433,10 +433,7 @@ function RecentBadges({ earned }: { earned: Array<string> }) {
 
 function DashBadge({ badgeKey }: { badgeKey: string }) {
   const meta = badgeMeta(badgeKey)
-  const unitSlug = badgeKey.startsWith('unit-')
-    ? badgeKey.slice('unit-'.length)
-    : null
-  const img = unitSlug ? `/badges/physics/${unitSlug}.png` : null
+  const img = badgeImage(badgeKey)
 
   return (
     <Link

@@ -1,0 +1,106 @@
+---
+title: Control Flow
+subject: computer-science
+contentSlug: computer-science/control-flow
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Three structures build every program" kind="explain">
+
+Here is a genuinely astonishing fact: **every program ever written**, from a calculator to a flight simulator, is assembled from just **three control structures**. Computer scientists proved this — they are all you need.
+
+- **Sequence** — do steps one after another, top to bottom.
+- **Selection** — choose between paths based on a condition (`if` / `else`).
+- **Iteration** — repeat a block while a condition holds (a loop).
+
+"Control flow" is simply the **order** in which a program's lines run. By default that order is sequence; selection and iteration let you bend it.
+
+</Step>
+
+<Step title="Sequence: the default" kind="explain">
+
+Unless told otherwise, a program runs **straight down**, one line after the next — exactly the marching-down-the-lines you saw in the CodeStepper last world over. Sequence is so natural we barely notice it, but it's a real structure: the *order* of steps matters.
+
+```
+total = price + tax
+total = total - discount
+print total
+```
+
+Swap two of those lines and you may get a different (wrong) answer. Sequence is the backbone; the other two structures are detours off it.
+
+</Step>
+
+<Step title="Selection: choosing a path" kind="explain">
+
+**Selection** lets a program decide. It tests a **boolean** condition (remember: `true` or `false`) and runs one block *or* another — never both.
+
+```
+if score ≥ 50:
+    print "Pass"
+else:
+    print "Try again"
+```
+
+This is where the boolean type from the last lesson earns its keep: the condition evaluates to `true` or `false`, and that single bit of truth steers the whole program down one branch.
+
+</Step>
+
+<Step title="Iteration: repeating work" kind="explain">
+
+**Iteration** — a **loop** — repeats a block of steps so you don't have to write them out a hundred times. A loop has a **condition** checked each time around; while it stays `true`, the body runs again, then the program loops back to check once more.
+
+```
+i = 0
+while i < 3:
+    do work
+    i = i + 1
+```
+
+The line `i = i + 1` matters enormously: it nudges the condition toward `false`. Forget it and the condition never changes — an **infinite loop** that runs forever.
+
+</Step>
+
+<Step title="Watch the flow" kind="interactive">
+
+Below, a glowing token walks a **flowchart**. Toggle between the two structures:
+
+- **Selection** — flip the condition and run it; the token takes the matching branch, and only that one.
+- **Iteration** — press Run and watch the token circle back through the loop body while the counter stays below the limit, then exit.
+
+<ControlFlowViz />
+
+Diamonds are decisions; the token's route *is* the control flow. Combine sequence, selection and iteration freely and there is no program you cannot express.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A loop's body never changes the variable its condition tests. What happens?"
+  options={[
+    "The loop runs exactly once and stops",
+    "The loop never runs at all",
+    "The condition stays true forever, so the loop repeats endlessly — an infinite loop",
+    "The program automatically picks a new condition"
+  ]}
+  correctIndex={2}
+  explanation="A loop re-checks its condition each pass. If nothing in the body ever moves that condition toward false, it stays true forever and the loop repeats without end — an infinite loop. That's why a counter like i = i + 1 inside the body is essential."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Control flow** is the order in which a program's statements run.
+- **Sequence** — steps run top to bottom; their order matters.
+- **Selection** (`if`/`else`) — a **boolean** condition chooses exactly one path.
+- **Iteration** (loops) — a block repeats while its condition stays **true**; the body must move that condition toward **false** or the loop runs forever.
+- These three structures, combined, can express **any** program.
+
+</Step>
+
+</Lesson>

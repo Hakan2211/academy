@@ -1,0 +1,69 @@
+---
+title: Punnett Squares & Probability
+subject: biology
+contentSlug: biology/punnett-squares
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Predicting the odds" kind="explain">
+
+Once you know the parents' alleles, you can **predict** the likely offspring — and the tool for it is the **Punnett square**, a simple grid invented by Reginald Punnett.
+
+It works because of meiosis: each parent passes on just **one** of its two alleles, at random, to each gamete. The square lays out every possible combination of parent gametes.
+
+</Step>
+
+<Step title="Building a Punnett square" kind="interactive">
+
+Put one parent's alleles along the top, the other's down the side. Each box combines one allele from each — a possible offspring. Click the alleles to change the parents and watch the predictions update.
+
+<PunnettSquare parent1={["B","b"]} parent2={["B","b"]} />
+
+Try **Bb × bb**: now half the offspring show the recessive trait (a 1:1 ratio). Try **BB × bb**: every child is **Bb** — all show the dominant trait, but all carry the recessive allele.
+
+</Step>
+
+<Step title="It's all probability" kind="explain">
+
+A crucial caution: a Punnett square gives **probabilities**, not guarantees. A 3:1 ratio means each offspring has a **3-in-4 chance** of the dominant trait — like flipping a coin, not filling a quota.
+
+- With four offspring you might get 4 purple and 0 white — chance is lumpy in small numbers.
+- Over **hundreds** of offspring, the real ratio settles close to the predicted 3:1.
+
+This is exactly why Mendel counted *thousands* of plants — only large numbers reveal the underlying ratio clearly.
+
+<Callout type="tip" title="Each birth is independent">
+Having one recessive child doesn't make the next one more or less likely to be recessive. Every offspring is a fresh roll of the dice.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A Punnett square predicts a 3:1 ratio of dominant to recessive offspring. A couple has three children, all showing the dominant trait. What's the chance their fourth child shows the recessive trait?"
+  options={[
+    "0 — they've used up the recessive chance",
+    "100% — it's now 'due'",
+    "About 1 in 4 — each child is independent",
+    "1 in 2"
+  ]}
+  correctIndex={2}
+  explanation="Each child is an independent event. The previous children don't change the odds — the fourth still has roughly a 1-in-4 chance of the recessive trait."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **Punnett square** predicts offspring by combining one allele from each parent in a grid.
+- It works because each parent passes **one random allele** per gamete (from meiosis).
+- It gives **probabilities**, not certainties — ratios only emerge clearly over **large numbers**.
+- Each offspring is an **independent** event.
+
+</Step>
+
+</Lesson>

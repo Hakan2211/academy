@@ -1,0 +1,74 @@
+---
+title: How Networks Work
+subject: computer-science
+contentSlug: computer-science/how-networks-work
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="A network is just connected devices" kind="explain">
+
+So far every computer we've built has been an island. A **network** is what happens when you let two or more of them talk: link them with a cable or radio signal, agree on how to take turns, and now they can pass messages back and forth.
+
+That's the whole idea. A network is nothing more exotic than **devices connected so they can share data** — files, messages, a printer, a screen. Your phone, your laptop and your TV at home already form one. The interesting question isn't *whether* to connect them, but *how* to wire them up.
+
+</Step>
+
+<Step title="LAN vs WAN: how big is the network?" kind="explain">
+
+Networks come in sizes. A **LAN** — Local Area Network — covers a small area you control: a home, a classroom, an office. The devices are close together, the links are fast, and you own all of it.
+
+A **WAN** — Wide Area Network — stitches many LANs together across towns, countries, even continents. You don't own the links in between; you rent them from telecom companies. The key move of a WAN is connecting *networks to other networks*, which is exactly the trick that, scaled up enormously, becomes the internet.
+
+</Step>
+
+<Step title="Choosing a shape" kind="interactive">
+
+The way you connect the devices is called the network's **topology**, and the choice is a genuine trade-off. Switch between layouts below and click a node to see what each shape buys you — and what it costs.
+
+<NetworkTopology />
+
+A **star** is cheap and tidy but the central hub is a single point of failure. A **mesh** survives almost any break because traffic reroutes around it, but every extra device needs many more cables. There's no perfect shape — only the right shape for the job.
+
+<Callout type="tip" title="Why the internet leans mesh">
+At small scale we tolerate stars for simplicity. But the internet is built to keep working when parts fail, so at the large scale it behaves like a **mesh** — many redundant paths between many networks.
+</Callout>
+
+</Step>
+
+<Step title="The internet is a network of networks" kind="explain">
+
+Here's the punchline that reframes everything. The internet is **not** one giant network someone built. It's millions of separate networks — home LANs, company networks, university networks, the networks of internet providers — all agreeing to interconnect.
+
+No one owns it. No central computer runs it. Each network simply agrees to forward traffic toward its neighbours, and out of that cooperation emerges a single global system. The word *inter-net* literally means **between networks**. Everything in the rest of this world is about how those independent networks manage to act as one.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A small office wires every computer into one central switch. The switch then fails. What happens, and what does this reveal about the topology?"
+  options={[
+    "Nothing — a star has many backup paths",
+    "The whole network goes down, because a star has a single point of failure at its hub",
+    "Only one computer loses connection; the rest are fine",
+    "The network automatically becomes a mesh"
+  ]}
+  correctIndex={1}
+  explanation="In a star topology every device depends on the central hub. It's cheap and simple, but if the hub dies, every device loses its only link — the classic single point of failure. A mesh avoids this with redundant paths, at the cost of far more cabling."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **network** is simply devices connected so they can share data.
+- A **LAN** is local and self-owned; a **WAN** links many LANs across long distances.
+- The **topology** (star, mesh, ring…) is a trade-off between cost, simplicity and resilience.
+- The **internet** is a *network of networks* — no owner, no centre, just networks agreeing to interconnect.
+
+</Step>
+
+</Lesson>

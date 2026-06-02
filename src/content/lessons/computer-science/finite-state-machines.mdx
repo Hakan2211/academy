@@ -1,0 +1,82 @@
+---
+title: Finite-State Machines
+subject: computer-science
+contentSlug: computer-science/finite-state-machines
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="States and transitions" kind="explain">
+
+A **finite-state machine** (FSM) is defined by just two things: a finite set of **states**, and a **transition** rule that says, for the current state and the next input symbol, which state to move to. One state is the **start**; some states are **accepting**.
+
+Run a string through it and you land in some final state. If that state is accepting, the machine **accepts** the string; otherwise it **rejects** it. The whole set of strings a given FSM accepts is called its **language**.
+
+</Step>
+
+<Step title="Watch one decide" kind="interactive">
+
+Here is the even-number-of-1s machine again. This time, look closely at *why* it works: the single state holds the entire memory of the computation — the parity of the 1s so far. There is nothing else to remember.
+
+<StateMachine />
+
+Try `110` (two 1s → accept) and `1011` (three 1s → reject). The machine never counts; it just *flips* each time it sees a 1. That economy is the whole point.
+
+</Step>
+
+<Step title="What FSMs are great at" kind="explain">
+
+Finite-state machines are everywhere, precisely because they are cheap and fast:
+
+- A **vending machine** tracking coins inserted so far.
+- A **traffic light** cycling green → yellow → red.
+- Text **pattern matchers** and the **lexers** inside compilers, which chop code into tokens.
+- Network **protocols** that move through handshake states.
+
+Any task that needs only a *fixed, finite* amount of memory to track "where am I" is a perfect fit. The languages FSMs can recognise have a name: **regular languages**.
+
+</Step>
+
+<Step title="The wall they hit" kind="explain">
+
+Now the crucial limit. Because an FSM has only finitely many states, it cannot **count without bound**. Ask it: *does this string have equal numbers of `(` and `)`, properly nested?* It can't do it.
+
+To check balanced brackets you must remember **how many** opening brackets are still unmatched — and that number can grow arbitrarily large. With only a fixed number of states, the machine eventually can't tell "5 open" from "5000 open." It runs out of memory by design.
+
+<Callout type="warn" title="Finite memory, finite power">
+No finite-state machine can match nested brackets, recognise palindromes, or check that a string is `n` copies of `a` followed by `n` copies of `b`. These need *unbounded* counting — exactly what a finite machine lacks.
+</Callout>
+
+That wall is not a flaw to fix; it *defines* the model. To climb past it, we need a machine with unlimited, rewritable memory — which is precisely the next lesson.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why can't any finite-state machine check whether a string of brackets like ((())) is properly balanced?"
+  options={[
+    "Brackets aren't valid input symbols for an FSM",
+    "It would need to remember an unbounded count of unmatched brackets, but an FSM has only finitely many states",
+    "Balancing brackets requires floating-point arithmetic",
+    "FSMs can only read input from left to right"
+  ]}
+  correctIndex={1}
+  explanation="Matching brackets requires counting how many openers are still unmatched, and that count can grow without limit. A finite-state machine has only a fixed number of states, so it cannot distinguish arbitrarily large counts. Unbounded counting is beyond any FSM — it needs a more powerful model with unlimited memory."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- An **FSM** is a finite set of **states** plus a **transition** rule; it **accepts** or **rejects** each input string.
+- The set of strings it accepts is its **language**; FSMs recognise exactly the **regular languages**.
+- They power **vending machines, traffic lights, lexers, and protocols** — anything needing only finite memory.
+- They **cannot count without bound**, so they can't match nested brackets or palindromes.
+- Passing that limit requires a machine with **unlimited memory** — the Turing machine.
+
+</Step>
+
+</Lesson>

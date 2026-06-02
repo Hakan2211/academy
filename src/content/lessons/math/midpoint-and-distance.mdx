@@ -1,0 +1,69 @@
+---
+title: Midpoint & Distance
+subject: math
+contentSlug: math/midpoint-and-distance
+order: 4
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Two points, two questions" kind="explain">
+
+Given two points on the plane, two natural questions arise: where's the **point exactly between** them, and **how far apart** are they? Coordinates turn both into quick calculations — no ruler required.
+
+</Step>
+
+<Step title="Midpoint and distance, live" kind="interactive">
+
+Drag the endpoints and watch the midpoint and the length update.
+
+<MidpointDistance />
+
+</Step>
+
+<Step title="Midpoint: average the coordinates" kind="explain">
+
+The midpoint sits halfway in both directions, so you simply **average** the x's and the y's:
+
+<Formula tex="M = \left( \frac{x_1 + x_2}{2}, \; \frac{y_1 + y_2}{2} \right)" block />
+
+For (−2, −1) and (3, 3): M = ((−2+3)/2, (−1+3)/2) = (½, 1). It's just the centre of mass of two points.
+
+</Step>
+
+<Step title="Distance: Pythagoras in disguise" kind="explain">
+
+The horizontal gap Δx and vertical gap Δy form the legs of a **right triangle**; the straight-line distance is its hypotenuse:
+
+<Formula tex="d = \sqrt{(\Delta x)^2 + (\Delta y)^2}" block />
+
+For those same points: Δx = 5, Δy = 4, so d = √(25 + 16) = √41 ≈ 6.4. This is Pythagoras' theorem (which gets its own World) quietly powering coordinate geometry.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Find the distance between (1, 2) and (4, 6)."
+  options={[
+    "5",
+    "7",
+    "√7",
+    "25"
+  ]}
+  correctIndex={0}
+  explanation="Δx = 4 − 1 = 3, Δy = 6 − 2 = 4. Distance = √(3² + 4²) = √(9 + 16) = √25 = 5. (A classic 3-4-5 triangle.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Midpoint** = average the coordinates: ((x₁+x₂)/2, (y₁+y₂)/2).
+- **Distance** = √(Δx² + Δy²) — Pythagoras on the horizontal and vertical gaps.
+- Coordinates make both purely numerical.
+
+</Step>
+
+</Lesson>

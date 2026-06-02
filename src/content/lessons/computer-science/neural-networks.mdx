@@ -1,0 +1,89 @@
+---
+title: Neural Networks
+subject: computer-science
+contentSlug: computer-science/neural-networks
+order: 4
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Borrowing an idea from the brain" kind="explain">
+
+Your brain runs on roughly 86 billion **neurons**, each a tiny cell that collects signals from its neighbours and, if the total is strong enough, fires a signal of its own. Out of this swarm of dumb little switches emerges everything: vision, language, memory, you.
+
+In the 1940s, researchers asked a bold question: could we capture the *essence* of a neuron in mathematics and wire millions of them together? The result — the **artificial neural network** — is a loose caricature of the brain, not a copy. But that caricature turned out to be one of the most powerful ideas in computing. Let's build it from a single neuron.
+
+</Step>
+
+<Step title="The artificial neuron" kind="interactive">
+
+A single artificial neuron does three things. It multiplies each input by a **weight** (how much that input matters), adds them all up along with a **bias** (a baseline nudge), and passes the total through an **activation function** that decides the output.
+
+<Perceptron />
+
+The whole computation is just a weighted sum squashed by an activation:
+
+<Formula tex="y = \sigma\left(\sum_i w_i x_i + b\right)" block />
+
+Set the weights and bias right and this lone neuron behaves *exactly* like an **AND** or **OR** gate — connecting straight back to the logic gates you built earlier. The crucial difference: a neuron's weights are **numbers we can adjust**, so it's a *learnable* gate. That tiny shift — from fixed logic to tunable logic — is the seed of everything that follows.
+
+</Step>
+
+<Step title="A network of neurons" kind="explain">
+
+One neuron can only carve the world with a single straight boundary — it can't even learn the **XOR** function. The magic appears when you stack neurons into **layers**: the outputs of one layer become the inputs of the next.
+
+An **input layer** receives the raw data. One or more **hidden layers** in the middle transform it, each neuron detecting some feature built from the layer before. An **output layer** delivers the answer. With enough neurons in between, such a network can approximate *almost any function at all* — a remarkable result called the universal approximation theorem.
+
+</Step>
+
+<Step title="Watching information flow" kind="interactive">
+
+When you feed inputs into the network, values ripple left to right: each neuron computes its weighted sum, fires according to its activation, and passes the result onward until the output layer lights up with an answer. This is the **forward pass**.
+
+<NeuralNet />
+
+Move the input sliders and watch the activations cascade. Every glowing node is just the weighted-sum-and-squash you met a moment ago — repeated, layer upon layer. The network's "knowledge" lives entirely in the **weights** on those edges.
+
+</Step>
+
+<Step title="How a network learns" kind="explain">
+
+A fresh network starts with **random** weights and produces nonsense. Learning is the process of fixing that. We show it an example, compare its output to the correct answer, and compute the **error**. Then comes the central trick: **backpropagation**.
+
+Backpropagation works *backwards* through the network, using calculus to figure out exactly how much each individual weight contributed to the error. We then nudge every weight a tiny step in the direction that reduces the error — a process called **gradient descent**. Repeat across millions of examples and the weights slowly settle into values that get the answers right. The network never "understands" anything; it just keeps rolling downhill toward lower error until it works.
+
+<Callout type="info" title="Learning = adjusting weights">
+There is no other secret. A trained neural network is nothing but a particular set of weights, found by repeatedly measuring error and nudging each weight to shrink it. Intelligence, here, is a very well-tuned pile of numbers.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A neural network 'learns.' In concrete terms, what is actually being changed as it learns?"
+  options={[
+    "The number of neurons grows automatically with each example",
+    "The numerical weights (and biases) on the connections are repeatedly nudged to reduce the output error, via backpropagation and gradient descent",
+    "New if-then rules are written into the code by the programmer",
+    "The activation functions are rewritten on every step"
+  ]}
+  correctIndex={1}
+  explanation="A network's knowledge lives in its weights. Learning measures the error, uses backpropagation to find how each weight contributed, and nudges every weight a little to reduce the error (gradient descent). Over many examples, the weights settle into values that produce correct outputs."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- An **artificial neuron** = weighted sum of inputs + bias, passed through an **activation**: a *learnable* version of a logic gate.
+- Stacking neurons into **layers** (input → hidden → output) lets a network approximate almost any function.
+- A **forward pass** flows values left to right; the network's knowledge lives entirely in its **weights**.
+- Learning starts from **random weights** and uses **backpropagation** + **gradient descent** to nudge each weight toward lower error.
+- "Learning" is literally just **adjusting the weights** until the outputs are right.
+
+</Step>
+
+</Lesson>

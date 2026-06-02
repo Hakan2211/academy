@@ -1,0 +1,76 @@
+---
+title: Limiting Reactant & Yield
+subject: chemistry
+contentSlug: chemistry/limiting-reactant-and-yield
+order: 7
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="What runs out first?" kind="explain">
+
+Mix reactants and rarely are they in the exact ratio the equation demands. One will run out before the others — and the moment it does, the reaction **stops**. That one is the **limiting reactant**: it caps how much product you can make.
+
+Whatever is left over is the **excess reactant**. It's like making sandwiches with 10 slices of bread and 3 fillings — you get 3 sandwiches and 4 slices of bread are wasted. The filling limits you.
+
+</Step>
+
+<Step title="Find the limiter" kind="interactive">
+
+Set the amounts of each reactant and watch which one limits the yield — and how much of the other is wasted.
+
+<LimitingReactant />
+
+</Step>
+
+<Step title="How to identify it" kind="explain">
+
+To find the limiting reactant:
+
+1. Convert each reactant to **moles**.
+2. Divide each by its **coefficient** in the balanced equation.
+3. The **smallest** result is the limiting reactant — it determines the product amount.
+
+Then run normal stoichiometry from the *limiting* reactant to find the maximum product (the **theoretical yield**).
+
+</Step>
+
+<Step title="Theoretical vs actual yield" kind="explain">
+
+The **theoretical yield** is the most product the equation allows. In reality you almost always get less — spills, side reactions, incomplete conversion. The **percent yield** measures how well it went:
+
+<Formula tex="\%\text{ yield} = \dfrac{\text{actual yield}}{\text{theoretical yield}} \times 100" block />
+
+<Callout type="info" title="Why it matters in industry">
+Chemical plants obsess over yield and the limiting reactant. They often run the *cheaper* reactant in excess to squeeze the most product from the expensive one — turning stoichiometry directly into money.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="For 2H₂ + O₂ → 2H₂O, you mix 4 mol H₂ with 1 mol O₂. Which is limiting, and how much water forms?"
+  options={[
+    "H₂ is limiting; 4 mol H₂O",
+    "O₂ is limiting; 2 mol H₂O",
+    "Both run out exactly; 4 mol H₂O",
+    "O₂ is limiting; 1 mol H₂O"
+  ]}
+  correctIndex={1}
+  explanation="Divide by coefficients: H₂ → 4/2 = 2, O₂ → 1/1 = 1. O₂ has the smaller value, so it's limiting. From 1 mol O₂, the 1:2 ratio gives 2 mol H₂O, leaving 2 mol H₂ unreacted."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **limiting reactant** runs out first and caps the product; the rest is **excess**.
+- Find it: moles ÷ coefficient for each reactant → the **smallest** is limiting.
+- Calculate the **theoretical yield** from the limiting reactant.
+- **% yield** = actual ÷ theoretical × 100 — real reactions fall short, and industry optimises it.
+
+</Step>
+
+</Lesson>

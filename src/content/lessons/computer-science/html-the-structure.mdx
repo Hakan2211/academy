@@ -1,0 +1,92 @@
+---
+title: "HTML: The Structure"
+subject: computer-science
+contentSlug: computer-science/html-the-structure
+order: 2
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="The skeleton of every page" kind="explain">
+
+The HTML the server sent back is the page's **structure** — its skeleton. HTML stands for **HyperText Markup Language**, and "markup" is the key word: you take plain content and *mark it up* with **tags** that say what each piece *is*.
+
+```html
+<h1>My Page</h1>
+<p>A web page is a tree of tags.</p>
+```
+
+An **element** is an opening tag, some content, and a closing tag: `<p>` … `</p>`. The tag names carry meaning — `<h1>` is a top-level heading, `<p>` is a paragraph, `<ul>` is an unordered list, `<a>` is a link. You're not styling anything yet; you're declaring *what the content means*.
+
+</Step>
+
+<Step title="Tags nest, so HTML is a tree" kind="explain">
+
+The big structural idea is **nesting**: tags live inside other tags. A list contains list items; the body contains the heading and the paragraphs; everything lives inside `<html>`.
+
+```html
+<html>
+  <body>
+    <h1>My Page</h1>
+    <ul>
+      <li>one</li>
+      <li>two</li>
+    </ul>
+  </body>
+</html>
+```
+
+Because every element sits inside exactly one parent and can hold children, the whole document forms a **tree** — the same tree structure you met earlier in data structures, with a single root (`<html>`) branching down to the text at the leaves.
+
+</Step>
+
+<Step title="The DOM: the tree, three ways" kind="interactive">
+
+When the browser reads your HTML, it builds that tree in memory and calls it the **DOM** (Document Object Model). The DOM *is* the live tree of your page. Here's the same little document shown as source, as the DOM tree, and as the rendered result — click any node and watch all three line up:
+
+<DomTree />
+
+Notice how the indentation in the source mirrors the depth in the tree, and how each tree node maps to one thing on screen. **Structure in, structure out**: nested tags become a tree become a laid-out page.
+
+</Step>
+
+<Step title="Semantic structure matters" kind="explain">
+
+You could make text big and bold to *look* like a heading, but using `<h1>` actually *says* "this is the main heading." That's **semantic** HTML — choosing tags for their meaning, not their appearance.
+
+It pays off in ways you can't see: search engines understand your page, screen readers can announce headings and lists to people who can't see the screen, and your CSS and JavaScript can target elements by what they *are*. Good structure is invisible when it works and sorely missed when it's absent.
+
+<Callout type="info" title="Structure is not style">
+HTML deliberately does *not* decide colours, fonts, or spacing. Its only job is structure and meaning. *How* it looks is the next lesson's job — CSS. Keeping the two apart is one of the web's best design decisions.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why is an HTML document best described as a tree?"
+  options={[
+    "Because pages are usually about nature",
+    "Because every element is nested inside exactly one parent and may contain children, forming a branching hierarchy from a single root",
+    "Because the tags are arranged alphabetically",
+    "Because HTML files are stored in folders"
+  ]}
+  correctIndex={1}
+  explanation="Tags nest inside tags: each element has one parent and can hold child elements, all descending from a single root (<html>). That parent-child nesting is exactly a tree — which the browser builds in memory as the DOM."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **HTML** marks up content with **tags** that say what each piece *means* (heading, paragraph, list, link).
+- Tags **nest** inside tags, so a document forms a **tree** with a single root, `<html>`.
+- The browser parses the HTML into that tree in memory — the **DOM**.
+- **Semantic** tags (using `<h1>`, `<ul>`… for meaning) help search, accessibility, and your own code.
+- HTML handles **structure only** — never how the page looks.
+
+</Step>
+
+</Lesson>

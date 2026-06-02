@@ -1,0 +1,81 @@
+---
+title: Oxidation Numbers
+subject: chemistry
+contentSlug: chemistry/oxidation-numbers
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Tracking electrons with a number" kind="explain">
+
+In ionic reactions, electron transfer is obvious. But in covalent compounds, where electrons are *shared*, how do we tell what's oxidised? The answer is the **oxidation number** — a bookkeeping charge each atom *would* have if every bond were fully ionic.
+
+Track how an atom's oxidation number changes across a reaction and you can spot redox even when no obvious ions appear.
+
+</Step>
+
+<Step title="Assign the numbers" kind="interactive">
+
+Pick a compound and see each atom's oxidation number. They always add up to the overall charge.
+
+<OxidationTracker />
+
+</Step>
+
+<Step title="The rules" kind="explain">
+
+A short set of rules assigns them:
+
+- A **free element** (O₂, Cu) is **0**.
+- A **monatomic ion** equals its charge (Na⁺ is +1, Cl⁻ is −1).
+- **Oxygen** is usually **−2**; **hydrogen** usually **+1**.
+- **Group 1** = +1, **group 2** = +2, fluorine = −1.
+- The numbers **sum to the overall charge** (0 for a neutral compound).
+
+Apply them in order and the unknown atom's number falls out — that's how we get S = +6 in H₂SO₄.
+
+</Step>
+
+<Step title="Redox in terms of numbers" kind="explain">
+
+Now oxidation and reduction get a precise definition:
+
+- **Oxidation** = oxidation number **increases** (more positive — lost electrons).
+- **Reduction** = oxidation number **decreases** (more negative — gained electrons).
+
+If any atom's oxidation number changes during a reaction, it's a redox reaction. If none change, it isn't.
+
+<Callout type="info" title="A universal detector">
+Oxidation numbers let you identify redox in *any* reaction — even messy organic ones with no obvious ions. Find the atom whose number went up (oxidised) and the one whose went down (reduced), and you've found the electron transfer.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In H₂SO₄, oxygen is −2 and hydrogen is +1. What is the oxidation number of sulfur? (The compound is neutral.)"
+  options={[
+    "+2",
+    "+4",
+    "+6",
+    "−2"
+  ]}
+  correctIndex={2}
+  explanation="The numbers must sum to 0. Hydrogen: 2 × (+1) = +2. Oxygen: 4 × (−2) = −8. So sulfur must be +6 to balance: (+2) + (+6) + (−8) = 0."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- An **oxidation number** is a bookkeeping charge — what an atom would have if all bonds were ionic.
+- Assign with rules (free element 0, O −2, H +1, group charges) so the total equals the species' charge.
+- **Oxidation** = number goes **up**; **reduction** = number goes **down**.
+- A change in any oxidation number flags a **redox** reaction — even in covalent or organic cases.
+
+</Step>
+
+</Lesson>

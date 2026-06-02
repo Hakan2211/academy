@@ -1,0 +1,69 @@
+---
+title: Perimeter & Area
+subject: math
+contentSlug: math/perimeter-and-area
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Around versus inside" kind="explain">
+
+Two different measurements of a flat shape, often confused:
+
+- **Perimeter** — the total distance **around** the edge (a length, in cm, m, …).
+- **Area** — the amount of surface **inside** (in *square* units, cm², m², …).
+
+A bigger perimeter doesn't mean a bigger area, and vice versa — they measure different things.
+
+</Step>
+
+<Step title="Resize and compare" kind="interactive">
+
+<AreaPerimeter />
+
+</Step>
+
+<Step title="Area formulas" kind="explain">
+
+Area counts unit squares that fit inside:
+
+<Formula tex="\text{rectangle} = b \times h, \quad \text{triangle} = \tfrac12 b h, \quad \text{parallelogram} = b \times h" block />
+
+A triangle is half a rectangle (or parallelogram) of the same base and height — that's where the ½ comes from. **Perimeter** is always just the sum of all the side lengths, added the long way round.
+
+</Step>
+
+<Step title="Compound shapes" kind="explain">
+
+Awkward shapes are handled by **splitting** them into rectangles and triangles, finding each area, and adding (or subtracting a cut-out). An L-shaped room = a big rectangle minus a corner, or two rectangles joined. Break the unfamiliar into the familiar — a strategy that runs through all of mensuration.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A rectangle is 8 cm by 3 cm. What are its area and perimeter?"
+  options={[
+    "Area 24 cm², perimeter 22 cm",
+    "Area 22 cm², perimeter 24 cm",
+    "Area 24 cm², perimeter 24 cm",
+    "Area 11 cm², perimeter 24 cm"
+  ]}
+  correctIndex={0}
+  explanation="Area = b × h = 8 × 3 = 24 cm². Perimeter = 2(8 + 3) = 22 cm. Note the different units: cm² for area, cm for perimeter."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Perimeter** = distance around (length units); **area** = surface inside (square units).
+- Rectangle b×h; triangle ½bh (half a rectangle); parallelogram b×h.
+- **Compound shapes**: split into rectangles/triangles, then add or subtract.
+- Bigger perimeter ≠ bigger area.
+
+</Step>
+
+</Lesson>

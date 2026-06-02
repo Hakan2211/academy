@@ -1,0 +1,89 @@
+---
+title: Scheduling
+subject: computer-science
+contentSlug: computer-science/scheduling
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="One CPU, a crowd of processes" kind="explain">
+
+At any moment a busy computer has many processes that are **Ready** — loaded, waiting, and able to run the instant they're given the CPU. But there's only one CPU core to go round (or a handful). So the OS must constantly answer one question: **which Ready process runs next, and for how long?**
+
+The part of the OS that answers it is the **scheduler**. Its decisions, made thousands of times a second, determine whether your computer feels snappy or sluggish, fair or unfair. There's no single perfect answer — only trade-offs.
+
+</Step>
+
+<Step title="Time-slicing and the illusion of multitasking" kind="explain">
+
+The scheduler's core trick is **time-slicing**: hand the CPU to a process for a tiny slice of time (a few milliseconds), then take it back and give it to another. Repeated fast enough, every process advances a little, all the time — and to you it looks like they all run *together*.
+
+This is the same illusion the OS specialises in. Just as virtual memory makes limited RAM feel abundant, time-slicing makes a single CPU feel like many. The hardware still does the literal fetch–execute cycle on one process at a time; the scheduler simply rotates whose turn it is so quickly that the seams disappear.
+
+</Step>
+
+<Step title="Three classic strategies" kind="interactive">
+
+How should the scheduler choose? Below are three jobs, each with an **arrival time** (when it shows up) and a **burst time** (how long it needs the CPU). Switch the algorithm and watch the **Gantt chart** — the timeline of who runs when — and the resulting **average wait time** change.
+
+<Scheduler />
+
+- **First-come, first-served (FCFS)** runs jobs to completion in arrival order. Dead simple, but a long job at the front makes everyone behind it wait — the "supermarket queue stuck behind a full trolley" problem.
+- **Round robin** gives each job a fixed slice, then rotates. Every job makes steady progress, so the system feels responsive — at the cost of many context switches.
+- **Shortest job first (SJF)** always runs the shortest ready job next. It gives the lowest average wait, but a steady stream of short jobs can leave a long one waiting forever — **starvation**.
+
+</Step>
+
+<Step title="Fairness versus throughput" kind="explain">
+
+Why not just pick the "best" algorithm and be done? Because schedulers must balance goals that pull against each other:
+
+- **Throughput** — finish as many jobs as possible.
+- **Responsiveness** — react quickly to the user (you don't want your keystrokes lagging).
+- **Fairness** — make sure no process is starved of CPU time.
+
+SJF wins on average wait but can be unfair; round robin is fair and responsive but adds overhead. Real operating systems use clever hybrids — often **priority** levels (so an urgent task like audio jumps the queue) combined with round-robin slicing, plus safeguards to lift any long-ignored process so nothing starves forever.
+
+<Callout type="tip" title="Preemption is the key power">
+A modern scheduler is **preemptive**: it can interrupt a running process mid-instruction-stream to hand the CPU elsewhere. Without that power, one greedy or buggy program could seize the CPU and freeze the whole machine. Preemption is what keeps the OS in charge.
+</Callout>
+
+</Step>
+
+<Step title="Why this matters" kind="explain">
+
+Scheduling is resource management at its purest: one scarce resource, the CPU, divided among many competitors in a way that's fast, fair and responsive. The illusion of multitasking that you rely on every day is built, slice by slice, by these decisions.
+
+Next we'll watch the OS perform the same magic with a different resource — **memory** — convincing every process that it has a vast, private space all to itself.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Round-robin scheduling gives each process a fixed time slice and rotates between them. What is its main advantage over running each job to completion in order?"
+  options={[
+    "It eliminates the need for context switching",
+    "Every process makes steady progress, so the system stays responsive instead of stalling behind one long job",
+    "It always produces the lowest possible average wait time",
+    "It lets the CPU run several processes truly at the same time"
+  ]}
+  correctIndex={1}
+  explanation="Round robin keeps every process advancing in turns, so the system feels responsive and no job is stuck waiting for a long one to finish. It actually adds context-switch overhead, and shortest-job-first usually beats it on average wait — its strength is responsiveness and fairness, not raw efficiency."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **scheduler** decides which Ready process runs next on the one CPU, and for how long.
+- **Time-slicing** rotates the CPU between processes so fast that it creates the **illusion of multitasking**.
+- **FCFS** is simple but blocks behind long jobs; **round robin** is fair and responsive; **SJF** minimises average wait but can cause **starvation**.
+- Schedulers trade off **throughput, responsiveness and fairness**; real ones blend priorities with round-robin slicing.
+- **Preemption** — the power to interrupt a running process — keeps the OS in control and prevents any one program from freezing the machine.
+
+</Step>
+
+</Lesson>

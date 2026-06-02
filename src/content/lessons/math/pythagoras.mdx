@@ -1,0 +1,74 @@
+---
+title: Pythagoras' Theorem
+subject: math
+contentSlug: math/pythagoras
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="The most famous theorem" kind="explain">
+
+In any **right-angled triangle**, the square of the longest side (the **hypotenuse**, opposite the right angle) equals the sum of the squares of the other two:
+
+<Formula tex="a^2 + b^2 = c^2" block />
+
+It's over 2,500 years old, has hundreds of proofs, and connects the lengths of a right triangle with perfect precision.
+
+</Step>
+
+<Step title="See it as areas" kind="interactive">
+
+The theorem is literally about areas: the square on the hypotenuse equals the two smaller squares combined.
+
+<PythagorasViz />
+
+</Step>
+
+<Step title="Finding a side" kind="explain">
+
+Know two sides, find the third. For the hypotenuse, add and square-root:
+
+<Formula tex="c = \sqrt{a^2 + b^2}" block />
+
+For a shorter side, rearrange and **subtract**: a = √(c² − b²). The famous **3-4-5** triangle works because 3² + 4² = 9 + 16 = 25 = 5² — a right triangle with whole-number sides.
+
+</Step>
+
+<Step title="Where it's used" kind="explain">
+
+Pythagoras is everywhere distances matter: the diagonal of a screen, whether a corner is square in construction, the straight-line distance between two map points (which is exactly the coordinate distance formula from World 9, √(Δx² + Δy²)). Any time a right angle appears, Pythagoras is waiting.
+
+<Callout type="tip" title="Only for right angles">
+The theorem needs a right angle. For other triangles you'll use the cosine rule later — which is Pythagoras with a correction term.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A right triangle has legs 6 cm and 8 cm. How long is the hypotenuse?"
+  options={[
+    "10 cm",
+    "14 cm",
+    "48 cm",
+    "√14 cm"
+  ]}
+  correctIndex={0}
+  explanation="c = √(6² + 8²) = √(36 + 64) = √100 = 10 cm. (A scaled 3-4-5 triangle: 6-8-10.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- In a right triangle, **a² + b² = c²** (c = hypotenuse).
+- It's an **area** relationship: the big square = the two small squares.
+- Hypotenuse: **√(a² + b²)**; a shorter side: **√(c² − b²)**.
+- Used for any distance involving a right angle (incl. coordinate distance).
+
+</Step>
+
+</Lesson>

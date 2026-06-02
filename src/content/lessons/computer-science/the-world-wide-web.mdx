@@ -1,0 +1,79 @@
+---
+title: The World Wide Web
+subject: computer-science
+contentSlug: computer-science/the-world-wide-web
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The web is NOT the internet" kind="explain">
+
+People say "the internet" and "the web" as if they're the same thing. They are not, and the difference is worth getting right. The **internet** is the network we've been building all world: the global web of cables, routers, IP addresses and packets. It's the *infrastructure*.
+
+The **World Wide Web** is just one **service that runs on top of** that infrastructure — a particular way of linking and viewing documents. Email is another service on the internet. Video calls, file transfers and online games are others. The web is the most famous tenant of the internet, but it is a tenant, not the building. Switch off the web tomorrow and the internet would still carry your email and calls.
+
+</Step>
+
+<Step title="One inventor, one beautiful idea" kind="explain">
+
+In 1989, at the physics lab **CERN**, a scientist named **Tim Berners-Lee** proposed the web. His idea was disarmingly simple: documents stored on computers anywhere, each able to **link** to any other with a click. No central index, no permission needed — just pages pointing at pages.
+
+To make it work he invented three pieces that we still use, unchanged in spirit, today: a way to **address** any document, a **language** to write pages in, and a **protocol** to fetch them. Out of those three small inventions grew the largest information system humanity has ever built.
+
+</Step>
+
+<Step title="The three pillars: URL, HTML, HTTP" kind="explain">
+
+Every page you visit relies on the same trio:
+
+- A **URL** (Uniform Resource Locator) is the page's address — `https://example.com/page` — naming the protocol, the server, and the path to the resource.
+- **HTML** (HyperText Markup Language) is the language pages are written in. The **hyper** in hypertext is the magic part: **hyperlinks** let any page point to any other, weaving documents into a single connected web.
+- **HTTP** (HyperText Transfer Protocol) is the protocol your browser speaks to fetch a page from a server.
+
+Your **browser** ties them together: you give it a URL, it speaks HTTP to the server, downloads the HTML, and renders it on screen — links and all.
+
+<Callout type="tip" title="Hypertext is what makes it a *web*">
+Without hyperlinks you'd just have isolated documents on isolated servers. Links are the threads that connect them into a **web** you can wander endlessly, one click leading to the next. That connectivity *is* the World Wide Web.
+</Callout>
+
+</Step>
+
+<Step title="The web is client–server, dressed up" kind="interactive">
+
+Here's the satisfying part: the web isn't a new mechanism at all. It's the **client–server model** from the last lesson, speaking HTTP. Your browser is the client; a web server holds the pages. Watch the same request/response loop — now it's exactly how every web page reaches you.
+
+<ClientServer />
+
+You type a URL → the browser sends an **HTTP request** to the server → the server replies with an **HTTP response** (the HTML, plus a status code like 200 or 404) → the browser renders it. Click a hyperlink and the whole loop runs again for the next page. The entire web is this one conversation, repeated billions of times a second on top of the internet.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A friend says 'the web and the internet are the same thing.' What's the most accurate correction?"
+  options={[
+    "They're right — the two words mean exactly the same",
+    "The internet is the underlying network; the web is one service (HTTP pages and hyperlinks) that runs on top of it, alongside email and others",
+    "The web came first and the internet runs on top of the web",
+    "The web is the hardware and the internet is the software"
+  ]}
+  correctIndex={1}
+  explanation="The internet is the global network infrastructure — cables, routers, IP, packets. The World Wide Web is just one service running over it (HTTP-served, hyperlinked pages viewed in a browser), alongside email, video calls and more. Same network, many services."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **internet** is the network; the **World Wide Web** is one **service running on it**, not the same thing.
+- The web was invented by **Tim Berners-Lee** (1989, CERN) around the idea of linked documents.
+- Its three pillars: **URLs** (addresses), **HTML** (the page language with **hyperlinks**), and **HTTP** (the fetch protocol).
+- A **browser** is the client that requests a URL, receives the HTML response, and renders the page.
+- The web is the **client–server model** speaking HTTP — repeated for every page and every link.
+
+</Step>
+
+</Lesson>

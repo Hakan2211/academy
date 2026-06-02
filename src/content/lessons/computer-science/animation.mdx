@@ -1,0 +1,76 @@
+---
+title: Animation
+subject: computer-science
+contentSlug: computer-science/animation
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Motion is an illusion of still frames" kind="explain">
+
+There's no real motion on a screen — only a fast sequence of still images, called **frames**, swapped out one after another. Show enough of them per second and your eye blurs them into smooth movement. This is **persistence of vision**: each image lingers briefly on the retina, so the gaps between frames disappear.
+
+The rate is measured in **frames per second (fps)**. Film runs at 24 fps, television around 30, and most games aim for 60 or more. Below roughly 12 fps motion looks like a flickery slideshow; above 60 it's silky. The image-per-frame idea is exactly the "many grids of numbers a second" you met with video — now we get to *generate* those frames.
+
+</Step>
+
+<Step title="Keyframes and tweening" kind="interactive">
+
+Animating every single frame by hand would be brutal — 60 fps means 3,600 drawings a minute. So instead we set a few **keyframes**: the object's pose at chosen key moments. The computer then fills in all the frames between them by **tweening** (short for *in-betweening*) — smoothly interpolating from one keyframe to the next.
+
+<AnimationTimeline />
+
+Scrub the timeline and you'll catch the computer red-handed, inventing an in-between pose that no one drew. Notice too that the motion **eases** — it speeds up and settles rather than moving robotically — because the tween uses a smooth curve, not a straight ramp.
+
+</Step>
+
+<Step title="Interpolation, the heart of tweening" kind="explain">
+
+Tweening is just **interpolation**. To find the position at a fraction `u` (from 0 to 1) of the way between keyframes A and B, blend them:
+
+<Formula tex="P = (1 - u)\,A + u\,B" block />
+
+At `u = 0` you're exactly at A; at `u = 1` exactly at B; halfway gives the midpoint. The same blend works for position, rotation, scale, colour — anything that's a number. Animators often bend `u` through an **easing curve** so things accelerate and decelerate naturally, the way real objects do.
+
+</Step>
+
+<Step title="Keyframe vs physics-based animation" kind="explain">
+
+Keyframing gives an artist total control over every pose — ideal for expressive character acting. But some motion is too complex or chaotic to pose by hand: an explosion, flowing water, a thousand bouncing pebbles, hair and cloth.
+
+For those, animators use **physics-based** (or **procedural**) animation: instead of setting poses, you set up rules — gravity, mass, collisions — and let a **simulation** compute the motion frame by frame. Most modern films and games blend both: keyframes for the hero's performance, simulation for the chaos around them.
+
+<Callout type="info" title="Real-time vs pre-rendered">
+A game must generate each frame in **milliseconds**, live, as you play. A film can spend **hours per frame**, rendered long before you watch. Same frames-per-second idea — wildly different time budgets.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="An animator sets the position of a ball at time 0 and time 100, then plays the animation. How does the computer produce the frames in between?"
+  options={[
+    "It leaves them blank until the animator draws each one",
+    "It tweens — interpolating a position for each in-between frame, e.g. P = (1−u)·A + u·B",
+    "It repeats the first frame until time 100",
+    "It speeds up playback so no in-between frames are needed"
+  ]}
+  correctIndex={1}
+  explanation="The two set poses are keyframes; the computer fills the gap by tweening — interpolating between them, P = (1−u)·A + u·B, optionally bent through an easing curve so the motion accelerates and settles naturally."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Animation is many **still frames** shown fast; **persistence of vision** fuses them into motion, measured in **fps**.
+- Artists set sparse **keyframes**; the computer **tweens** the frames between by **interpolation** (`P = (1−u)·A + u·B`).
+- **Easing curves** make tweened motion accelerate and settle naturally instead of robotically.
+- **Keyframe** animation gives hand-crafted control; **physics-based/procedural** simulation handles chaotic motion like fire, water and cloth.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,74 @@
+---
+title: Factorising
+subject: math
+contentSlug: math/factorising
+order: 4
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Expanding in reverse" kind="explain">
+
+**Factorising** is expanding run backwards: instead of removing a bracket, you put one *in*. You spot what every term has in common — the **highest common factor** — and pull it outside:
+
+<Formula tex="6x + 9 = 3(2x + 3)" block />
+
+Check by expanding: 3 × 2x = 6x, 3 × 3 = 9. ✓ Factorising and expanding are mirror images.
+
+</Step>
+
+<Step title="The area model, read backwards" kind="interactive">
+
+Expanding builds the rectangle's pieces from its sides; factorising starts with the pieces and finds the sides.
+
+<ExpandBrackets />
+
+</Step>
+
+<Step title="Find the common factor" kind="explain">
+
+Take out the most you can — both the **number** HCF and any **shared letters**:
+
+<Formula tex="8x^2 + 12x = 4x(2x + 3)" block />
+
+Here every term shares a factor of 4 *and* an x, so 4x comes out. Always pull out the **highest** common factor; 2(4x² + 6x) is factorised but not *fully*.
+
+<Callout type="tip" title="Always check by expanding">
+Multiply your answer back out. If it doesn't return the original expression, the factor was wrong or incomplete. It's a free, foolproof check.
+</Callout>
+
+</Step>
+
+<Step title="Why factorising is powerful" kind="explain">
+
+A factorised expression reveals when something equals zero: 3(2x + 3) is zero exactly when 2x + 3 = 0. That "**if a product is zero, a factor must be zero**" idea is the master key to solving equations — and it's the whole engine of the Quadratics world ahead.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Fully factorise 10x² − 15x."
+  options={[
+    "5x(2x − 3)",
+    "5(2x² − 3x)",
+    "x(10x − 15)",
+    "5x(2x − 3x)"
+  ]}
+  correctIndex={0}
+  explanation="The HCF of 10x² and 15x is 5x. Pulling it out: 5x(2x − 3). The other near-misses don't extract the full common factor (or expand wrongly)."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Factorising** = expanding reversed: insert a bracket by taking out a common factor.
+- Pull out the **highest** common factor — number *and* shared letters.
+- **Check** by expanding back to the original.
+- Factorised form exposes **zeros**, the key to solving equations.
+
+</Step>
+
+</Lesson>

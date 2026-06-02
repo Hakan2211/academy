@@ -1,0 +1,72 @@
+---
+title: Expanding Double Brackets
+subject: math
+contentSlug: math/expanding-double-brackets
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Two brackets, every pair" kind="explain">
+
+Multiplying two brackets, (x + 3)(x + 2), means every term in the first must multiply every term in the second — four products in all. Many people use **FOIL**: **F**irsts, **O**uters, **I**nners, **L**asts. But the deeper idea is simply "each times each."
+
+</Step>
+
+<Step title="See the four products" kind="interactive">
+
+A rectangle split into a 2×2 grid: the four regions are exactly the four products, and their total area is the expansion.
+
+<DoubleBrackets />
+
+</Step>
+
+<Step title="The result is a quadratic" kind="explain">
+
+<Formula tex="(x + 3)(x + 2) = x^2 + 2x + 3x + 6 = x^2 + 5x + 6" block />
+
+The two x-terms (2x and 3x) combine into the **middle term**, and the constants multiply into the last. This shape — x² + (sum)x + (product) — is a **quadratic**, the star of this whole world. Notice: the middle coefficient is a + b, and the constant is a × b. Remember that; it's the key to factorising.
+
+</Step>
+
+<Step title="Squaring a bracket" kind="explain">
+
+A common case is a bracket squared — and it is **not** just squaring each term:
+
+<Formula tex="(x + 4)^2 = (x+4)(x+4) = x^2 + 8x + 16" block />
+
+The middle term 8x is the trap people miss. Always write the bracket out twice rather than "squaring through."
+
+<Callout type="warn" title="(x + 4)² ≠ x² + 16">
+Squaring a sum is never the sum of squares. The cross terms — here 2·(x)(4) = 8x — are real and matter.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Expand (x − 3)(x + 5)."
+  options={[
+    "x² + 2x − 15",
+    "x² − 2x − 15",
+    "x² + 2x + 15",
+    "x² − 15"
+  ]}
+  correctIndex={0}
+  explanation="Firsts x², outers +5x, inners −3x, lasts −15. Combine the middle: 5x − 3x = +2x. So x² + 2x − 15."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Expand double brackets by multiplying **each term by each** (FOIL = the four products).
+- The result is a **quadratic** x² + (a+b)x + ab.
+- The two x-terms combine into the **middle** term.
+- **(x + a)² has a middle term** — write it out twice, never square through.
+
+</Step>
+
+</Lesson>

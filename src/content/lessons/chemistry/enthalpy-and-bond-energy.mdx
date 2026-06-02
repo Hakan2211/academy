@@ -1,0 +1,80 @@
+---
+title: Enthalpy & Bond Energy
+subject: chemistry
+contentSlug: chemistry/enthalpy-and-bond-energy
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The bond accountant" kind="explain">
+
+Where does ΔH actually *come from*? From bonds. Every reaction is a transaction:
+
+- **Breaking** bonds always **costs** energy (you must pull atoms apart) — energy *in*.
+- **Forming** bonds always **releases** energy (atoms snap to a stable arrangement) — energy *out*.
+
+The reaction's enthalpy change is just the balance of this account:
+
+<Formula tex="\Delta H = (\text{energy to break bonds}) - (\text{energy released forming bonds})" block />
+
+</Step>
+
+<Step title="Tally the bonds" kind="interactive">
+
+Compare the energy spent breaking reactant bonds with the energy released forming product bonds. The net is ΔH.
+
+<BondEnergy />
+
+</Step>
+
+<Step title="The sign falls out naturally" kind="explain">
+
+The bond accounting explains the signs from the last lesson:
+
+- If **forming releases more** than breaking costs → net energy out → **exothermic** (ΔH negative). The products have stronger, more stable bonds.
+- If **breaking costs more** than forming releases → net energy in → **endothermic** (ΔH positive). The products have weaker bonds.
+
+Combustion is so exothermic because the bonds in CO₂ and H₂O are much stronger (lower energy) than those in the fuel and O₂.
+
+</Step>
+
+<Step title="Bond energy values" kind="explain">
+
+Each type of bond has a characteristic **bond energy** (kJ/mol) — the energy to break one mole of it. Stronger bonds (like the triple bond in N₂, 945 kJ/mol) take far more energy to break than weak ones.
+
+Using tabulated bond energies, you can *estimate* a reaction's ΔH before ever doing it: add up the bonds broken, subtract the bonds formed.
+
+<Callout type="info" title="An estimate, not exact">
+Bond energies are averages over many molecules, so this method gives a close estimate, not the exact ΔH. For precise values, chemists measure heat directly (calorimetry, next) or use tabulated enthalpies of formation.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A reaction breaks bonds worth 2644 kJ and forms bonds worth 3466 kJ. What is ΔH, and is it exothermic or endothermic?"
+  options={[
+    "ΔH = +822 kJ, endothermic",
+    "ΔH = −822 kJ, exothermic",
+    "ΔH = +6110 kJ, endothermic",
+    "ΔH = 0, neither"
+  ]}
+  correctIndex={1}
+  explanation="ΔH = bonds broken − bonds formed = 2644 − 3466 = −822 kJ. Forming releases more than breaking costs, so energy is released overall — exothermic, with a negative ΔH."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Breaking** bonds costs energy (in); **forming** bonds releases it (out).
+- **ΔH = energy to break − energy released forming**.
+- Forming releases more → **exothermic**; breaking costs more → **endothermic**.
+- **Bond energies** (kJ/mol) let you estimate ΔH; exact values come from calorimetry.
+
+</Step>
+
+</Lesson>

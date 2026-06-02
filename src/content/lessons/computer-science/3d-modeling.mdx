@@ -1,0 +1,82 @@
+---
+title: 3D Modelling
+subject: computer-science
+contentSlug: computer-science/3d-modeling
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="From 2D points to 3D points" kind="explain">
+
+In 2D every point had two numbers, `(x, y)`. Step into 3D and we add a third, `(x, y, z)`, where `z` measures depth — how near or far a point sits from the viewer. That single extra number is the whole leap from flat pictures to a world with space in it.
+
+A 3D object is built from three kinds of thing:
+
+- **Vertices** — the points in space, each an `(x, y, z)`.
+- **Edges** — straight lines joining pairs of vertices.
+- **Faces** — flat polygons (usually triangles) bounded by edges.
+
+Together they form a **mesh** — the skeleton-and-skin of every 3D model, from a game character to a film monster.
+
+</Step>
+
+<Step title="A mesh you can spin" kind="interactive">
+
+The simplest interesting mesh is a cube: **8 vertices, 12 edges, 6 faces**. Below, those eight points are stored as 3D coordinates and rotated a little every frame. Then comes the crucial trick — the computer **projects** each 3D point onto the flat 2D screen so it can actually be drawn.
+
+<WireframeMesh />
+
+A **wireframe** like this shows only the edges, so you can see straight through the model. It feels three-dimensional even though every line is computed from plain coordinates spun by a rotation formula and flattened onto your screen.
+
+</Step>
+
+<Step title="Projecting 3D onto a flat screen" kind="explain">
+
+Your screen is two-dimensional, so every 3D point must be squashed down to a 2D `(x, y)` to be drawn. The most realistic way is **perspective projection**, which mimics how an eye or camera works: things farther away look smaller. A point at depth `z` is scaled by its distance using something like:
+
+<Formula tex="x' = \dfrac{x \cdot f}{z + d}" block />
+
+Here `f` is a focal length and `d` the camera distance. The bigger the `z` (the farther the point), the smaller `x'` becomes — so distant parts of the mesh shrink toward a **vanishing point**, exactly like railway tracks converging on the horizon. That shrinking is what your brain reads as depth.
+
+</Step>
+
+<Step title="Building models" kind="explain">
+
+Real models are far denser than a cube — a film character can be **millions** of triangles. Artists sculpt them in 3D software, or they're captured by **3D scanners** that measure thousands of surface points off a real object. More triangles mean smoother curves and finer detail, at the cost of more numbers to store and process.
+
+Whatever the source, the model is still just the same humble ingredients: a long list of vertices, the edges and faces connecting them, and the maths to rotate and project them onto your screen.
+
+<Callout type="info" title="Why triangles?">
+Faces are almost always **triangles** because three points always lie in a single flat plane — a triangle can never be bent or twisted. That makes triangles dead simple for hardware to process, which is why GPUs are built to draw billions of them.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A 3D model is stored as a 'mesh'. What is a mesh made of, and how does it appear on a flat screen?"
+  options={[
+    "A single photograph stretched over a box",
+    "A grid of pixels that already contains depth",
+    "Vertices (3D points), edges and faces — which are projected from 3D down to 2D coordinates to be drawn",
+    "A list of colours sorted by brightness"
+  ]}
+  correctIndex={2}
+  explanation="A mesh is vertices (points in (x,y,z) space), edges joining them, and faces (usually triangles). To display it on a 2D screen, each 3D point is projected to 2D — typically with perspective, so distant points shrink toward a vanishing point."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A 3D point adds a depth coordinate: `(x, y, z)`.
+- A **mesh** is **vertices + edges + faces** (usually triangles); a cube has 8, 12 and 6.
+- To draw it, each 3D point is **projected** onto the 2D screen — **perspective** projection shrinks distant points toward a vanishing point.
+- Real models can be **millions of triangles**; more triangles mean more detail and more computation.
+
+</Step>
+
+</Lesson>

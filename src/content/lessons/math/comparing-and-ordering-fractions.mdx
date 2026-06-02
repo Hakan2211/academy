@@ -1,0 +1,68 @@
+---
+title: Comparing & Ordering Fractions
+subject: math
+contentSlug: math/comparing-and-ordering-fractions
+order: 2
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Which is bigger?" kind="explain">
+
+Is ⅔ bigger than ⅗? You can't just compare the numerators (2 vs 3) or the denominators (3 vs 5) — both pieces are different sizes. To compare fairly, you need the pieces to be the **same size**, which means a **common denominator**.
+
+</Step>
+
+<Step title="Make the pieces match" kind="interactive">
+
+Two equal-width bars show the answer instantly; the common denominator proves it.
+
+<FractionCompare />
+
+</Step>
+
+<Step title="The common-denominator method" kind="explain">
+
+Rewrite both fractions over a shared denominator (the LCM of the two), then just compare numerators:
+
+<Formula tex="\frac{2}{3} = \frac{10}{15}, \quad \frac{3}{5} = \frac{9}{15} \;\Rightarrow\; \frac{2}{3} > \frac{3}{5}" block />
+
+Once the denominators match, the bigger numerator is the bigger fraction.
+
+</Step>
+
+<Step title="Shortcuts worth knowing" kind="explain">
+
+- **Same denominator?** Compare numerators directly: 3/7 < 5/7.
+- **Same numerator?** The *smaller* denominator wins — fewer, bigger pieces: ⅓ > ⅕.
+- **Cross-multiply** to compare a/b and c/d: compare a×d with c×b. (It's the common-denominator method in disguise.)
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Put these in order, smallest first: ¾, ⅔, ⅚."
+  options={[
+    "⅔, ¾, ⅚",
+    "¾, ⅔, ⅚",
+    "⅚, ¾, ⅔",
+    "⅔, ⅚, ¾"
+  ]}
+  correctIndex={0}
+  explanation="Common denominator 12: ⅔ = 8/12, ¾ = 9/12, ⅚ = 10/12. So ⅔ < ¾ < ⅚."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Compare fractions by giving them a **common denominator** (their LCM).
+- Then the bigger **numerator** is the bigger fraction.
+- Same numerator → smaller denominator is bigger (fewer, larger pieces).
+- **Cross-multiplication** is a quick two-fraction shortcut.
+
+</Step>
+
+</Lesson>

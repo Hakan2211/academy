@@ -1,0 +1,76 @@
+---
+title: The Software Life Cycle
+subject: computer-science
+contentSlug: computer-science/the-software-life-cycle
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Coding is the easy part" kind="explain">
+
+You can now write code. So you might think building software is just *more* writing — and a lot of it. But here's the secret of this whole world: **writing code is the easy part.** The hard part is building software that is *reliable*, that *other people* can understand, and that keeps working as the world changes around it for *years*.
+
+That shift — from "make it run once on my machine" to "make it survive in the real world with a team" — is what turns programming into **software engineering**. Engineering means a disciplined *process*, not a burst of typing.
+
+</Step>
+
+<Step title="Software is a life cycle, not an event" kind="interactive">
+
+Real software follows a repeating sequence of stages called the **Software Development Life Cycle (SDLC)**. Click around the ring to see what happens in each stage.
+
+<SdlcCycle />
+
+Notice three things. First, **coding (Implementation) is just one stage** — often a small one. Second, it begins with **Requirements**, because building the wrong thing perfectly is still a failure. Third, the ring **loops**: after deployment comes maintenance, which feeds new requirements, and round it goes again.
+
+</Step>
+
+<Step title="Why maintenance eats the budget" kind="explain">
+
+The most surprising fact in software economics: most of the cost comes *after* the software first works. Studies put **maintenance at 60–80% of a system's total lifetime cost**. Fixing bugs, adapting to new phones and laws, and adding features all happen long after launch.
+
+This flips your instincts. The goal isn't to write code fast — it's to write code that will be *cheap to change later*. A clever one-liner nobody can modify is a liability. Code that's plain, clear, and easy to adjust is the real prize, because someone (maybe you, next year) will be living in it for a long time.
+
+<Callout type="info" title="The cost of fixing grows fast">
+A flawed requirement caught during the Requirements stage might cost a conversation to fix. The same flaw discovered after release can cost a hundred times more — rewrites, redeployment, and angry users. Catching problems *early* is the whole game.
+</Callout>
+
+</Step>
+
+<Step title="Waterfall vs iterative" kind="explain">
+
+There are two big philosophies for moving through the cycle.
+
+The **waterfall** model runs the stages once, top to bottom: finish all requirements, then all design, then all code, then test, then ship. It's tidy on paper — but if you misunderstood what users wanted, you don't find out until the very end, when fixing it is brutally expensive.
+
+The **iterative** (or *agile*) approach instead spins the whole cycle quickly and repeatedly, shipping a small working slice, getting feedback, and going round again. You're never far from a flawed assumption, because reality keeps correcting you. Most modern software is built this way — small loops, fast feedback, course corrections.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A team is shocked that their app costs far more to run in the three years after launch than it did to build. What does this most directly illustrate?"
+  options={[
+    "They hired bad programmers who write slow code",
+    "Maintenance — fixing, adapting and extending software after release — is usually the largest share of total cost",
+    "The Requirements stage was skipped entirely",
+    "Iterative development is more expensive than waterfall"
+  ]}
+  correctIndex={1}
+  explanation="Maintenance typically dominates a system's lifetime cost (often 60–80%). Software is mostly maintained, not built — which is why writing code that's easy to change later matters far more than writing it quickly."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Software engineering** is a disciplined *process*, not just writing code — coding is only one stage.
+- The **SDLC** loops through Requirements → Design → Implementation → Testing → Deployment → Maintenance, and never truly ends.
+- **Maintenance dominates cost** (often 60–80%), so the real goal is code that's cheap to *change* later.
+- **Waterfall** runs the stages once; **iterative/agile** spins them in fast loops to catch wrong assumptions early.
+
+</Step>
+
+</Lesson>

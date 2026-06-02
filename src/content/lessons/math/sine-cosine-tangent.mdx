@@ -1,0 +1,70 @@
+---
+title: Sine, Cosine & Tangent
+subject: math
+contentSlug: math/sine-cosine-tangent
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Linking angles to sides" kind="explain">
+
+Pythagoras connects the *sides* of a right triangle. **Trigonometry** connects the **angles** to the sides. The three trig ratios — **sine, cosine, tangent** — each compare two sides, and remarkably depend *only* on the angle, not the triangle's size.
+
+</Step>
+
+<Step title="SOH-CAH-TOA, live" kind="interactive">
+
+Change the angle and watch the ratios. Relative to the angle, the sides are named **opposite**, **adjacent**, and **hypotenuse**.
+
+<TrigRatios />
+
+</Step>
+
+<Step title="The three ratios" kind="explain">
+
+The memory aid **SOH-CAH-TOA** captures all three:
+
+<Formula tex="\sin\theta = \frac{O}{H}, \quad \cos\theta = \frac{A}{H}, \quad \tan\theta = \frac{O}{A}" block />
+
+- **S**ine = **O**pposite / **H**ypotenuse
+- **C**osine = **A**djacent / **H**ypotenuse
+- **T**angent = **O**pposite / **A**djacent
+
+Because similar triangles have proportional sides, these ratios are fixed for each angle — which is why a calculator can store sin 30° = 0.5 once and for all.
+
+</Step>
+
+<Step title="Why it works" kind="explain">
+
+All right triangles with the same angle θ are **similar** (from the geometry world), so their sides are in the same ratio. That ratio *is* the trig value. The Greeks and Indians tabulated these ratios to do astronomy; today they underpin GPS, signal processing, and every wave in physics.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In a right triangle, the side opposite a 30° angle is 5 cm and the hypotenuse is 10 cm. Which ratio does this give?"
+  options={[
+    "sin 30° = 5/10 = 0.5",
+    "cos 30° = 5/10 = 0.5",
+    "tan 30° = 5/10 = 0.5",
+    "sin 30° = 10/5 = 2"
+  ]}
+  correctIndex={0}
+  explanation="Opposite over hypotenuse is sine (SOH): sin 30° = 5/10 = 0.5. And indeed sin 30° = 0.5 exactly."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Trig links a right triangle's **angle** to its **side ratios**.
+- **SOH-CAH-TOA**: sin = O/H, cos = A/H, tan = O/A.
+- Ratios depend only on the **angle** (similar triangles), so they're fixed.
+- They power astronomy, GPS, and all wave science.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,92 @@
+---
+title: Variables & Data Types
+subject: computer-science
+contentSlug: computer-science/variables-and-data-types
+order: 2
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="A named box for a value" kind="explain">
+
+Programs need to remember things: a score, a name, whether the player is alive. The tool for that is the **variable** — think of it as a **labelled box** in the computer's memory. You give the box a name, and you put a value inside.
+
+```
+score = 0
+```
+
+This says: make a box called `score` and put `0` in it. From now on, writing `score` anywhere in the program means "the value currently in that box." Underneath, the name is just a friendly label for a real memory address — exactly the storage you met in World 4.
+
+</Step>
+
+<Step title="Assignment and reassignment" kind="explain">
+
+The `=` sign here is **not** "equals" in the maths sense. It is **assignment**: "put the value on the right into the box on the left." That direction matters.
+
+```
+score = 0
+score = score + 10
+```
+
+The second line reads the box (`0`), adds `10`, and puts the result (`10`) **back** into the same box, replacing what was there. A variable's value can change as often as you like — that is the whole point of a *variable*. The box stays; its contents change.
+
+</Step>
+
+<Step title="Data types" kind="explain">
+
+Every value has a **type** — what *kind* of thing it is. The type tells the computer how to store the value and what you're allowed to do with it. Three you'll meet everywhere:
+
+- **Number** — for counting and arithmetic: `42`, `3.14`. You can add and multiply these.
+- **String** — text, written in quotes: `"Ada"`, `"hello"`. You can join these, not multiply them.
+- **Boolean** — a single truth value: `true` or `false`. The fuel of every decision (next lesson!).
+
+```
+age = 13          (number)
+name = "Ada"      (string)
+ready = true      (boolean)
+```
+
+<Callout type="warn" title="Type mismatches bite">
+`5 + 5` is `10`, but `"5" + "5"` might be `"55"` — joining text, not adding numbers. Mixing types carelessly is one of the most common sources of bugs. The type is not decoration; it changes what an operation *means*.
+</Callout>
+
+</Step>
+
+<Step title="See the box change" kind="interactive">
+
+Here is a single variable box. Click an assignment to drop a new value in. Watch two things: the **value** inside the box, and the **type label** that comes with it. Switch between a number, a string and a boolean and see the box re-colour to match its type.
+
+<VariableBox />
+
+Same box, different contents — and sometimes a different type entirely. A variable is named storage; its type says what kind of value currently lives there.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In the line score = score + 10, what does the = actually do?"
+  options={[
+    "It checks whether score is equal to score + 10",
+    "It assigns: it computes score + 10 and stores that result back into the variable score",
+    "It creates ten new variables",
+    "It converts score into a string"
+  ]}
+  correctIndex={1}
+  explanation="In most languages = is assignment, not mathematical equality. The right-hand side is evaluated first (the old score plus 10), and the result is stored back into the box on the left, overwriting its previous value."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **variable** is a named box in memory that holds a **value**; the name is a friendly label for a real storage location.
+- `=` means **assignment** — store the right-hand value into the box — not mathematical equality.
+- A variable can be **reassigned** any number of times; the box stays, its contents change.
+- Every value has a **data type**: **number**, **string** (text), or **boolean** (true/false) are the everyday three.
+- The type matters: it decides how a value is stored and what operations like `+` actually *do*.
+
+</Step>
+
+</Lesson>

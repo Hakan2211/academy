@@ -1,0 +1,67 @@
+---
+title: Tree Diagrams
+subject: math
+contentSlug: math/tree-diagrams
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Mapping a sequence of events" kind="explain">
+
+When events happen in **stages** — flip a coin, then roll a die; draw a ball, then another — a **tree diagram** lays out every path. Each branch carries a probability, and following a path tells you the chance of that exact sequence.
+
+</Step>
+
+<Step title="Read the tree" kind="interactive">
+
+Each fork is one stage; multiply along a path to get its probability.
+
+<ProbabilityTree />
+
+</Step>
+
+<Step title="Multiply along, add between" kind="explain">
+
+Two rules run every tree:
+
+- **Multiply along** the branches of a single path (it's the AND rule): P(red then blue) = P(red) × P(blue).
+- **Add between** different paths that satisfy your event (the OR rule).
+
+For two flips of a fair coin, P(exactly one head) = P(HT) + P(TH) = ¼ + ¼ = **½**. The branch probabilities at each fork always sum to 1.
+
+</Step>
+
+<Step title="Why trees beat guesswork" kind="explain">
+
+Trees keep multi-stage problems organised so you don't miss or double-count outcomes. They also make it obvious when stages **interact** — which is the whole point of the next lesson. Stick to "multiply along, add between," check each fork sums to 1, and even four-stage problems stay manageable.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A fair coin is flipped twice. What is the probability of getting two heads?"
+  options={[
+    "1/4",
+    "1/2",
+    "1/3",
+    "2/4"
+  ]}
+  correctIndex={0}
+  explanation="Multiply along the HH path: P(H) × P(H) = ½ × ½ = 1/4. (The four equally likely outcomes are HH, HT, TH, TT.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **tree diagram** maps events happening in **stages**, branch by branch.
+- **Multiply along** a path (AND); **add between** paths (OR).
+- Branches at each fork **sum to 1**.
+- Trees prevent missing or double-counting outcomes.
+
+</Step>
+
+</Lesson>

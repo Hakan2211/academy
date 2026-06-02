@@ -1,0 +1,72 @@
+---
+title: Arithmetic Sequences & Series
+subject: math
+contentSlug: math/arithmetic-sequences
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Equal steps" kind="explain">
+
+An **arithmetic sequence** adds the same **common difference** d every step: 3, 7, 11, 15, … When you *add up* the terms of a sequence, the running total is called a **series**. Arithmetic series have a famous, elegant shortcut for their sum.
+
+</Step>
+
+<Step title="The constant difference" kind="interactive">
+
+Keep it on "Add d" and watch the equal steps that define an arithmetic sequence.
+
+<SequenceExplorer />
+
+</Step>
+
+<Step title="Gauss's trick for the sum" kind="explain">
+
+Legend says the young Gauss summed 1 + 2 + … + 100 in seconds. His insight: **pair the ends.** First + last = 101, second + second-last = 101 … fifty pairs of 101 = 5050.
+
+That gives the sum of any arithmetic series:
+
+<Formula tex="S_n = \frac{n}{2}(a + l)" block />
+
+— the number of terms, times the average of the first (a) and last (l) term. The terms are evenly spaced, so their mean is just the average of the two ends.
+
+</Step>
+
+<Step title="Using it" kind="explain">
+
+Sum the first 20 terms of 4, 7, 10, …: first the 20th term, a + 19d = 4 + 19(3) = 61. Then:
+
+<Formula tex="S_{20} = \frac{20}{2}(4 + 61) = 10 \times 65 = 650" block />
+
+No need to add twenty numbers — pair the ends and multiply.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the sum 1 + 2 + 3 + … + 50?"
+  options={[
+    "1275",
+    "2550",
+    "1250",
+    "5050"
+  ]}
+  correctIndex={0}
+  explanation="Use S = (n/2)(a + l) = (50/2)(1 + 50) = 25 × 51 = 1275. (Pairing the ends: 25 pairs each summing to 51.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Arithmetic sequence**: constant common difference d; a **series** is its sum.
+- **Gauss's pairing** gives the sum **Sₙ = (n/2)(a + l)** — terms times the average of the ends.
+- Find the last term first (a + (n−1)d), then apply the formula.
+- Evenly spaced terms make their average simply the midpoint of first and last.
+
+</Step>
+
+</Lesson>

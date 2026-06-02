@@ -1,0 +1,72 @@
+---
+title: Solving by Factorising
+subject: math
+contentSlug: math/solving-by-factorising
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="A quadratic equation, and the zero trick" kind="explain">
+
+A **quadratic equation** sets a quadratic equal to zero: x² − 5x + 6 = 0. Unlike a linear equation, it usually has **two** solutions. The key that unlocks them is a fact so simple it's easy to overlook:
+
+**If two things multiply to give zero, at least one of them must be zero.**
+
+</Step>
+
+<Step title="Get to zero, then factorise" kind="interactive">
+
+Find the factor pair, write the brackets, and the roots fall out.
+
+<FactoriseQuadratic />
+
+</Step>
+
+<Step title="The method in full" kind="explain">
+
+1. Rearrange so one side is **0**.
+2. **Factorise** the quadratic.
+3. Set **each bracket** to zero and solve.
+
+<Formula tex="x^2 - 5x + 6 = 0 \;\to\; (x-2)(x-3) = 0 \;\to\; x = 2 \text{ or } x = 3" block />
+
+Since (x−2)(x−3) = 0, either x − 2 = 0 (giving x = 2) or x − 3 = 0 (giving x = 3). Two factors, two roots.
+
+</Step>
+
+<Step title="Roots are where the graph meets the x-axis" kind="interactive">
+
+The solutions aren't abstract — they're exactly where the parabola crosses the x-axis (where y = 0). Adjust the curve and watch the roots.
+
+<ParabolaExplorer />
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Solve x² + 2x − 15 = 0."
+  options={[
+    "x = 3 or x = −5",
+    "x = −3 or x = 5",
+    "x = 3 or x = 5",
+    "x = 15 or x = −1"
+  ]}
+  correctIndex={0}
+  explanation="Factorise: two numbers multiplying to −15, adding to +2 → +5 and −3, so (x − 3)(x + 5) = 0. Each bracket zero: x = 3 or x = −5."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **quadratic equation** = quadratic set to 0; it usually has **two** roots.
+- **Zero-product rule:** if a product is 0, one factor is 0.
+- Method: **rearrange to 0 → factorise → set each bracket to 0**.
+- The roots are where the **parabola crosses the x-axis**.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,92 @@
+---
+title: Engineering at Scale
+subject: computer-science
+contentSlug: computer-science/engineering-at-scale
+order: 6
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Why big software is genuinely hard" kind="explain">
+
+A weekend project is one person, a few files, a few days. Real-world software is hundreds of engineers, millions of lines, evolving over a *decade*, used by millions of people who will be furious if it breaks. The leap between those two worlds is enormous — and it's mostly *not* about typing faster.
+
+The famous warning is **Brooks's Law**: *adding people to a late software project makes it later.* Why? Because the difficulty scales not with the amount of code, but with the number of **connections** — between modules, and between *people*. Ten engineers have forty-five possible communication links; double the team and the links nearly quadruple. Scale is fundamentally a problem of **complexity and communication**, and this world has been building the tools to fight both.
+
+</Step>
+
+<Step title="Agile and the rhythm of work" kind="interactive">
+
+You can't plan a decade of software up front — reality changes too fast. So large teams run the life cycle in tight, repeating loops rather than one giant waterfall.
+
+<SdlcCycle />
+
+This is the heart of **agile**. A popular flavour, **Scrum**, works in short cycles called **sprints** (often two weeks): pick a small batch of the most valuable work, build it, ship it, gather feedback, and plan the next sprint with what you've learned. A brief daily check-in keeps everyone synced. The aim is to **shorten the feedback loop** — to discover a wrong assumption in days, not after a year of building the wrong thing. Spin the small cycle fast, and the big system stays on course.
+
+</Step>
+
+<Step title="Many hands, one codebase" kind="interactive">
+
+Now the human problem: how do hundreds of people change the *same* codebase every day without descending into chaos? The answer is the version-control workflow from the last lesson, scaled up and made into a culture.
+
+<VersionGraph />
+
+Each engineer works on a branch, opens a **pull request**, and another engineer **reviews** it before it merges. That review step is doing triple duty at scale: catching bugs, spreading knowledge so no single person is a bottleneck, and keeping a sprawling codebase consistent. A strong **code-review culture** — critique the code, never the coder — is one of the clearest markers of a healthy engineering team.
+
+</Step>
+
+<Step title="CI/CD — automating the safety net" kind="explain">
+
+With dozens of merges a day, you can't trust humans to remember to run the tests. So you automate it. This is **CI/CD**:
+
+- **Continuous Integration (CI):** every time someone pushes a change, a server *automatically* builds the software and runs the entire test suite. Break something, and you — and the whole team — know within minutes, before the bad code spreads.
+- **Continuous Delivery / Deployment (CD):** once the tests pass, the change is automatically packaged and rolled out to users, sometimes many times a day.
+
+```
+push → build → run tests → (if green) deploy
+```
+
+CI/CD turns the Testing and Deployment stages of the life cycle into an always-on, automatic guardrail. It's the machinery that lets a huge team move *fast* without breaking things — automation applied to the process of building software itself.
+
+</Step>
+
+<Step title="The relentless enemy: complexity" kind="explain">
+
+Step back and every practice in this world points at one foe: **complexity**. Left unchecked, a codebase grows tangled until adding the smallest feature risks breaking everything — and **technical debt** compounds until the team grinds to a halt.
+
+Look at how the whole arc fights back. **Modularity** splits the system so no one must understand all of it at once — the same *abstraction* that tamed the hardware tower in World 1. **Testing** and **CI** catch regressions automatically, because as you learned in the algorithms world, testing finds bugs even where proof is impractical. **Version control** and **code review** let many minds collaborate on one thing without losing work or coherence. **Agile** keeps the target honest with fast feedback. None of these is about cleverness; each is a disciplined defence against complexity outpacing human understanding.
+
+<Callout type="warn" title="Why famous projects still fail">
+Large software projects fail at a startling rate — and rarely because the code was impossible. They fail from vague requirements, poor communication, runaway complexity, and unmanaged technical debt. The hardest problems in software engineering are *human* and *organisational*, not purely technical.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A 200-engineer team merges code dozens of times a day. Every push automatically triggers a server that builds the project and runs the full test suite, alerting everyone within minutes if something breaks. What is this practice?"
+  options={[
+    "Waterfall development",
+    "Continuous Integration (CI) — automatically building and testing every change so regressions are caught immediately",
+    "A merge conflict",
+    "Technical debt"
+  ]}
+  correctIndex={1}
+  explanation="Automatically building and running the whole test suite on every change is Continuous Integration. It's the automated safety net that lets a large team move fast without silently breaking the shared codebase — and it pairs with Continuous Delivery to roll passing changes out to users."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Building software at scale is hard mainly because of **complexity and communication**, not lines of code (**Brooks's Law**).
+- **Agile/Scrum** runs the life cycle in short **sprints** to shorten feedback loops and stay on the right target.
+- A **code-review culture** plus version control lets hundreds collaborate on one codebase without chaos — critique the code, not the coder.
+- **CI/CD** automates building, testing and deploying every change, catching regressions in minutes.
+- Every practice is a disciplined defence against **complexity** and **technical debt** — and the hardest problems are ultimately *human*.
+
+</Step>
+
+</Lesson>

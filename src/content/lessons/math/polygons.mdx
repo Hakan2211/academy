@@ -1,0 +1,70 @@
+---
+title: Polygons
+subject: math
+contentSlug: math/polygons
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Many-sided shapes" kind="explain">
+
+A **polygon** is a closed shape made of straight sides: triangle (3), quadrilateral (4), pentagon (5), hexagon (6), and on. A **regular** polygon has all sides and all angles equal. Two angle rules govern every one of them.
+
+</Step>
+
+<Step title="Grow the polygon" kind="interactive">
+
+Add sides and watch the angle totals change.
+
+<PolygonAngles />
+
+</Step>
+
+<Step title="Interior angles: split into triangles" kind="explain">
+
+Any n-sided polygon can be cut from one vertex into **(n − 2)** triangles, each 180°. So the interior angles sum to:
+
+<Formula tex="\text{interior sum} = (n - 2) \times 180°" block />
+
+A pentagon (n = 5): 3 × 180 = 540°. For a *regular* polygon, each interior angle is this sum ÷ n.
+
+</Step>
+
+<Step title="Exterior angles: always 360°" kind="explain">
+
+Walk all the way around a polygon and you turn through one full circle. So the **exterior angles always sum to 360°**, no matter how many sides:
+
+<Formula tex="\text{each exterior angle (regular)} = \frac{360°}{n}" block />
+
+A regular hexagon turns 360 ÷ 6 = 60° at each corner. Interior and exterior angles at each vertex sit on a straight line, so they add to 180° — giving you two ways to find either one.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the size of each interior angle of a regular octagon (8 sides)?"
+  options={[
+    "135°",
+    "120°",
+    "145°",
+    "1080°"
+  ]}
+  correctIndex={0}
+  explanation="Interior sum = (8 − 2) × 180 = 1080°. Each of the 8 equal angles is 1080 ÷ 8 = 135°. (Or: exterior 360/8 = 45°, so interior = 180 − 45 = 135°.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **polygon** is a closed straight-sided shape; **regular** = all sides/angles equal.
+- **Interior sum = (n − 2) × 180°** (cut into n − 2 triangles).
+- **Exterior angles always sum to 360°**; each regular one is 360°/n.
+- Interior + exterior at a vertex = 180°.
+
+</Step>
+
+</Lesson>

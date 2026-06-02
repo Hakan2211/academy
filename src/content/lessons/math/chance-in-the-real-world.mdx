@@ -1,0 +1,82 @@
+---
+title: Chance in the Real World
+subject: math
+contentSlug: math/chance-in-the-real-world
+order: 7
+estimatedMinutes: 10
+---
+
+<Lesson>
+
+<Step title="Probability runs the modern world" kind="explain">
+
+Probability isn't just dice and cards. It prices insurance, powers weather forecasts and medical trials, drives machine learning, and quietly governs every decision made under uncertainty. This deep dive shows how the simple rules you've learned scale up to the real thing.
+
+</Step>
+
+<Step title="Relative frequency: estimating from data" kind="interactive">
+
+When you can't count equally likely outcomes, you **estimate** probability from observed data — exactly what the dice-grid frequencies approximate.
+
+<SampleSpace />
+
+</Step>
+
+<Step title="Expected value: the long-run average" kind="explain">
+
+Multiply each outcome's value by its probability and add — that's the **expected value**, what you'd average over many repetitions:
+
+<Formula tex="E = \sum (\text{value} \times \text{probability})" block />
+
+A £1 lottery ticket with a 1-in-a-million chance of £500,000 has expected value £0.50 — so on average you lose half your stake. Casinos, insurers and investors live by this number; a "fair" game is one with expected value zero.
+
+</Step>
+
+<Step title="Independence and the gambler's fallacy" kind="interactive">
+
+Tree diagrams expose a famous mistake: independent events have **no memory**.
+
+<ProbabilityTree />
+
+</Step>
+
+<Step title="Why intuition fails at chance" kind="explain">
+
+Human instinct is terrible at probability, and knowing the traps is a real-world superpower:
+
+- **Gambler's fallacy:** after five reds at roulette, black is *not* "due" — each spin is independent (the with-replacement tree).
+- **Base-rate neglect:** for a rare disease, even an accurate test gives mostly false positives.
+- **Coincidences:** in a room of just 23 people, it's *more likely than not* two share a birthday — surprising, but the combined-events maths is solid.
+
+<Callout type="info" title="From here to statistics">
+Probability is the theory of uncertainty; **statistics** — the final world of this island — is how we collect and read data to estimate those probabilities and test claims about the world. Together they are how science reasons under doubt.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A game costs £2 to play. You win £5 with probability 0.3, otherwise nothing. What is the expected value per play (winnings minus cost)?"
+  options={[
+    "−£0.50 (a loss on average)",
+    "+£1.50",
+    "+£3.00",
+    "£0 (a fair game)"
+  ]}
+  correctIndex={0}
+  explanation="Expected winnings = 0.3 × £5 + 0.7 × £0 = £1.50. Subtract the £2 cost: £1.50 − £2 = −£0.50. On average you lose 50p each play."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Relative frequency** estimates probability from observed data.
+- **Expected value** = Σ(value × probability) — the long-run average that prices games and insurance.
+- Independent events have **no memory** (the gambler's fallacy is a fallacy).
+- Human intuition misjudges chance — base rates, coincidences, "due" outcomes; probability leads into **statistics**.
+
+</Step>
+
+</Lesson>

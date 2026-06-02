@@ -1,0 +1,65 @@
+---
+title: Enlargements & Scale Factor
+subject: math
+contentSlug: math/enlargements
+order: 3
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="The transformation that changes size" kind="explain">
+
+An **enlargement** is the one transformation that *does* resize a shape. It needs a **centre of enlargement** and a **scale factor** k. Every point moves to k times its distance from the centre, so the shape grows (k > 1) or shrinks (0 < k < 1) — but its **shape stays the same** (it's similar to the original).
+
+</Step>
+
+<Step title="Scale it up and down" kind="interactive">
+
+<TransformGrid />
+
+</Step>
+
+<Step title="Scale factor" kind="explain">
+
+The scale factor multiplies every length and every distance from the centre:
+
+- **k > 1** → bigger; **0 < k < 1** → smaller; **k = 1** → unchanged.
+- A **negative** k puts the image on the opposite side of the centre, upside-down.
+
+The image is **similar** to the original: equal angles, sides in the ratio k. (Recall from Measurement: areas then scale by k², volumes by k³.)
+
+</Step>
+
+<Step title="Finding the centre" kind="explain">
+
+Given a shape and its enlargement, you can find the centre by drawing **rays through corresponding points** — they all meet at the centre of enlargement. And the scale factor is the ratio of any image length to the matching original length. Enlargement is the geometry behind projectors, zoom lenses, and scale models.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A triangle is enlarged by scale factor 3 from the origin. A vertex at (2, 1) moves to where?"
+  options={[
+    "(6, 3)",
+    "(5, 4)",
+    "(2/3, 1/3)",
+    "(8, 3)"
+  ]}
+  correctIndex={0}
+  explanation="Enlargement from the origin multiplies each coordinate by the scale factor: (2 × 3, 1 × 3) = (6, 3)."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- An **enlargement** resizes by a **scale factor k** from a **centre**.
+- k > 1 grows, 0 &lt; k &lt; 1 shrinks, negative k flips through the centre.
+- The image is **similar**: equal angles, lengths × k (areas × k², volumes × k³).
+- Rays through corresponding points meet at the **centre of enlargement**.
+
+</Step>
+
+</Lesson>

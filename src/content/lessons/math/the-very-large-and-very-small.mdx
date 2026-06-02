@@ -1,0 +1,86 @@
+---
+title: The Very Large & the Very Small
+subject: math
+contentSlug: math/the-very-large-and-very-small
+order: 7
+estimatedMinutes: 10
+---
+
+<Lesson>
+
+<Step title="Powers of ten run the universe" kind="explain">
+
+From the radius of a proton (about 10⁻¹⁵ m) to the observable universe (about 10²⁷ m), reality spans more than forty powers of ten. Standard form and indices are the only practical way to write, compare, and calculate across that staggering range. This is where everything in this world pays off.
+
+</Step>
+
+<Step title="Travel the orders of magnitude" kind="interactive">
+
+Each step is a factor of ten. Slide from the subatomic to the cosmic and feel how exponents compress the unimaginable into a single number.
+
+<CosmicScale />
+
+</Step>
+
+<Step title="Orders of magnitude" kind="explain">
+
+The **order of magnitude** of a number is its power of ten — roughly, its number of digits. Two quantities "differ by 3 orders of magnitude" means one is about 10³ = 1000 times the other.
+
+This lets you compare wildly different things in one breath: a human (≈ 10⁰ m) sits almost exactly halfway, on a log scale, between an atom and a galaxy. Thinking in orders of magnitude is how scientists keep the whole universe in their heads.
+
+</Step>
+
+<Step title="Calculating in standard form" kind="interactive">
+
+To multiply or divide, handle the number parts and the powers of ten separately — the index laws do the heavy lifting.
+
+<StandardForm />
+
+</Step>
+
+<Step title="The arithmetic, worked" kind="explain">
+
+**Multiplying:** multiply the fronts, **add** the powers, then fix the front to 1–10:
+
+<Formula tex="(4 \times 10^{8}) \times (5 \times 10^{6}) = 20 \times 10^{14} = 2 \times 10^{15}" block />
+
+**Dividing:** divide the fronts, **subtract** the powers:
+
+<Formula tex="\frac{6 \times 10^{9}}{3 \times 10^{4}} = 2 \times 10^{5}" block />
+
+**Adding** is the awkward one — you must first make the powers match, because you can only add quantities of the same scale:
+
+<Formula tex="3 \times 10^{5} + 4 \times 10^{4} = 30 \times 10^{4} + 4 \times 10^{4} = 34 \times 10^{4} = 3.4 \times 10^{5}" block />
+
+<Callout type="info" title="A real example">
+Light travels 3 × 10⁸ m/s. In a year (≈ 3.15 × 10⁷ s) it covers 3 × 10⁸ × 3.15 × 10⁷ ≈ 9.5 × 10¹⁵ m — one light-year. The whole calculation is two multiplications and one addition of indices.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A bacterium has mass ≈ 2 × 10⁻¹⁵ kg. About how many make up 1 kg?"
+  options={[
+    "5 × 10¹⁴",
+    "2 × 10¹⁵",
+    "5 × 10⁻¹⁴",
+    "0.5 × 10¹⁵"
+  ]}
+  correctIndex={0}
+  explanation="Number = 1 ÷ (2 × 10⁻¹⁵) = 0.5 × 10¹⁵ = 5 × 10¹⁴. Dividing subtracts the power: 10⁰ ÷ 10⁻¹⁵ = 10¹⁵, and 1 ÷ 2 = 0.5, rewritten in standard form as 5 × 10¹⁴."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Powers of ten span reality from **10⁻¹⁵ m** to **10²⁷ m** — standard form makes it manageable.
+- **Order of magnitude** = the power of ten; "differ by n orders" means a factor of 10ⁿ.
+- **Multiply/divide**: combine the fronts, **add/subtract** the powers.
+- **Add/subtract**: first rewrite to a **common power** of ten.
+
+</Step>
+
+</Lesson>

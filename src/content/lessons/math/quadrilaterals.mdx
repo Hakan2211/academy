@@ -1,0 +1,72 @@
+---
+title: Quadrilaterals
+subject: math
+contentSlug: math/quadrilaterals
+order: 4
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Four-sided shapes" kind="explain">
+
+A **quadrilateral** is any four-sided polygon. Its four interior angles always add to **360°** — because a diagonal splits it into two triangles, each contributing 180°.
+
+<Formula tex="2 \times 180° = 360°" block />
+
+</Step>
+
+<Step title="Angles in a polygon" kind="interactive">
+
+Set the slider to 4 sides to see the quadrilateral case of the general polygon rule.
+
+<PolygonAngles />
+
+</Step>
+
+<Step title="The family of quadrilaterals" kind="explain">
+
+They form a hierarchy, each a special case of a broader type:
+
+- **Square** — 4 equal sides, 4 right angles (the most special).
+- **Rectangle** — 4 right angles, opposite sides equal.
+- **Rhombus** — 4 equal sides, opposite angles equal.
+- **Parallelogram** — both pairs of opposite sides parallel and equal.
+- **Trapezium** — exactly one pair of parallel sides.
+- **Kite** — two pairs of adjacent equal sides.
+
+A square is a special rectangle *and* a special rhombus — properties inherit downward.
+
+</Step>
+
+<Step title="Using the properties" kind="explain">
+
+Knowing a shape's properties lets you find missing angles and sides. In a **parallelogram**, opposite angles are equal and co-interior angles (adjacent) sum to 180°. In any quadrilateral, if you know three angles, the fourth is 360° minus their sum. The diagonals carry information too — in a rhombus they cross at right angles; in a rectangle they're equal.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A quadrilateral has angles 85°, 100°, 75°, and x. What is x?"
+  options={[
+    "100°",
+    "90°",
+    "110°",
+    "80°"
+  ]}
+  correctIndex={0}
+  explanation="The four angles sum to 360°: 85 + 100 + 75 = 260, so x = 360 − 260 = 100°."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **quadrilateral**'s angles sum to **360°** (two triangles).
+- The family: **square, rectangle, rhombus, parallelogram, trapezium, kite** — special cases inherit properties.
+- Use known properties (parallel sides, equal angles, diagonals) to find unknowns.
+
+</Step>
+
+</Lesson>

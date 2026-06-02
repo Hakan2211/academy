@@ -1,0 +1,78 @@
+---
+title: The Relational Model
+subject: computer-science
+contentSlug: computer-science/the-relational-model
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="One big table isn't enough" kind="explain">
+
+A single table is great for one kind of thing — a list of students, say. But real data is full of *connections*. Students take courses. Courses have students. An order belongs to a customer. A customer has many orders. Cram all of that into one table and you end up repeating the same facts over and over.
+
+The breakthrough idea is to use **many tables, each about one kind of thing**, and then **link them together**. This is the **relational model**, and it has dominated databases for fifty years.
+
+</Step>
+
+<Step title="Codd's elegant idea" kind="explain">
+
+In 1970 a researcher named **Edgar F. Codd** proposed that data be organised as **relations** — what we casually call tables. Each table holds rows of one entity type, and relationships between entities are expressed not by tangled pointers, but simply by **shared values in columns**.
+
+It sounds modest, but it was revolutionary. It gave databases a clean mathematical footing and made them easy to query. Nearly every database you've used — the one behind your bank, your school, your favourite app — descends from Codd's relational model.
+
+</Step>
+
+<Step title="Primary keys and foreign keys" kind="explain">
+
+Two kinds of key make the links work:
+
+- A **primary key (PK)** uniquely identifies each row *within its own table* — `student_id` in Students, `course_id` in Courses.
+- A **foreign key (FK)** is a column in one table that holds the **primary key value of another table**, pointing at the row it relates to.
+
+So if an Enrollments row stores `student_id = 1003`, that foreign key *references* the student whose primary key is 1003. The relationship is just a matching value — no magic, no pointers, just keys that agree.
+
+</Step>
+
+<Step title="Seeing the relationships" kind="interactive">
+
+Here's a classic three-table design. **Students** and **Courses** each describe one kind of thing. The **Enrollments** table sits in the middle, holding two foreign keys to record which student takes which course. Click any table or the relationship line.
+
+<ErDiagram />
+
+This shape models a **many-to-many** relationship: one student takes many courses, and one course has many students. The junction table in the middle captures every pairing, with each link expressed as foreign keys pointing back to primary keys.
+
+<Callout type="tip" title="Read the crow's feet">
+Diagrams like this label the *cardinality* of a link: a **1** end and a **many** (∞) end. "One student → many enrollments" means each student can appear in many enrollment rows, but each enrollment belongs to exactly one student.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="An Enrollments table has a column student_id that holds values like 1003, which match the student_id primary key in the Students table. What is that column?"
+  options={[
+    "A primary key for the Enrollments table",
+    "A foreign key — it references the primary key of another table to link the rows",
+    "A duplicate that should be deleted",
+    "An index used only to speed up searches"
+  ]}
+  correctIndex={1}
+  explanation="A foreign key is a column whose values match the primary key of another table. Here student_id in Enrollments references the matching student in Students, linking each enrollment to its student. That shared value IS the relationship."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **relational model** (Edgar **Codd**, 1970) organises data as **tables (relations)**, one per kind of thing.
+- Relationships are expressed by **shared values in columns**, not tangled pointers.
+- A **primary key** uniquely identifies a row within its table; a **foreign key** holds another table's primary-key value to link to it.
+- A **junction table** (like Enrollments) models a **many-to-many** relationship using two foreign keys.
+- This clean, key-based design underlies almost every database in use today.
+
+</Step>
+
+</Lesson>

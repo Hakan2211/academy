@@ -1,0 +1,71 @@
+---
+title: Multiples & Factors
+subject: math
+contentSlug: math/multiples-and-factors
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Two sides of the same coin" kind="explain">
+
+Take two whole numbers that multiply to give a third, like 3 × 4 = 12.
+
+- 12 is a **multiple** of 3 and of 4 (it's in their times tables).
+- 3 and 4 are **factors** of 12 (they divide into it exactly, no remainder).
+
+Multiples stretch *upward* without end — 3, 6, 9, 12, … Factors are the finite set of numbers that fit *into* a number perfectly.
+
+</Step>
+
+<Step title="Factors come in pairs" kind="explain">
+
+Factors always arrive in pairs, because every division has a partner: since 2 × 6 = 12, finding the factor 2 hands you 6 for free. That's why you only ever need to test up to the square root — beyond it you're just rediscovering pairs you already found.
+
+</Step>
+
+<Step title="A number as rectangles" kind="interactive">
+
+Each factor pair is a way to lay n dots out in a rectangle. Watch how many different rectangles each number allows.
+
+<FactorPairs />
+
+</Step>
+
+<Step title="The number with the fewest factors" kind="explain">
+
+Some numbers make many rectangles (12 makes three: 1×12, 2×6, 3×4). Others make only one — just the thin 1 × n line. Those special numbers, with exactly **two** factors (1 and themselves), are the **primes**, and they're the subject of the next lesson.
+
+<Callout type="tip" title="One is the loneliest number">
+1 has only a single factor (itself), so it is **not** prime. Primes need exactly two distinct factors. This isn't a technicality — it keeps prime factorisation unique, as you'll see.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Which list gives ALL the factors of 18?"
+  options={[
+    "1, 2, 3, 6, 9, 18",
+    "1, 18",
+    "2, 3, 9",
+    "18, 36, 54, 72"
+  ]}
+  correctIndex={0}
+  explanation="Factor pairs of 18: 1×18, 2×9, 3×6. Collecting them gives 1, 2, 3, 6, 9, 18. (The last option lists multiples of 18, not factors.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **multiple** of n is in its times table (infinitely many); a **factor** divides n exactly (finitely many).
+- Factors come in **pairs**, so you only test up to √n.
+- A number's factor pairs are the rectangles you can make from its dots.
+- A number with **exactly two** factors is **prime**; 1 is not prime.
+
+</Step>
+
+</Lesson>

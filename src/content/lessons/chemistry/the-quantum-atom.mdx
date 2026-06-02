@@ -1,0 +1,92 @@
+---
+title: The Quantum Atom
+subject: chemistry
+contentSlug: chemistry/the-quantum-atom
+order: 7
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Beyond tidy orbits" kind="explain">
+
+Bohr's neat circular shells explain a lot — but they're not quite the truth. Electrons don't trace clean circles. They obey **quantum mechanics**, where you can never pin down exactly where an electron is, only the *probability* of finding it in a region.
+
+So the modern atom replaces orbits with **orbitals**: 3D clouds showing where an electron is *likely* to be. The shells you already know are still there — they're just made of these fuzzier orbitals.
+
+</Step>
+
+<Step title="The shape of probability" kind="interactive">
+
+An orbital isn't a path; it's a cloud. The denser the cloud, the more likely the electron is there. Different orbitals have different shapes — spheres, dumbbells, and more.
+
+<ProbabilityCloud />
+
+</Step>
+
+<Step title="Sub-shells: s, p, d, f" kind="explain">
+
+Each main shell is divided into **sub-shells**, each a set of orbitals with a characteristic shape:
+
+- **s** — one spherical orbital (holds 2 electrons)
+- **p** — three dumbbell orbitals (holds 6)
+- **d** — five orbitals (holds 10)
+- **f** — seven orbitals (holds 14)
+
+Each individual orbital holds at most **two** electrons, and they must have opposite "spin." This is why the shells hold 2, 8, 18… — it's just the orbitals adding up.
+
+</Step>
+
+<Step title="The filling rules" kind="interactive">
+
+Electrons fill orbitals by three simple rules:
+
+1. **Aufbau** — fill the lowest-energy sub-shell first.
+2. **Pauli** — max two electrons per orbital, opposite spins.
+3. **Hund** — spread out singly across equal-energy orbitals before pairing up.
+
+Slide the atomic number and watch the boxes fill in order.
+
+<ElectronConfig />
+
+</Step>
+
+<Step title="Configuration explains the table" kind="explain">
+
+Write out where the electrons go and you get an **electron configuration** like oxygen's 1s² 2s² 2p⁴. This notation is the deep key to the periodic table:
+
+- The **s-block, p-block, d-block** regions of the table are exactly the sub-shell being filled.
+- An element's **valence configuration** (its outer s and p electrons) explains its column and its chemistry.
+
+<Callout type="info" title="Why 4s fills before 3d">
+Energy levels overlap as they get higher: the 4s sub-shell sits slightly *below* 3d in energy, so it fills first (potassium and calcium start the 4th shell before the 3d block of transition metals begins). The filling order, not simple shell number, sets the structure of the table.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="By Hund's rule, how are the 4 electrons in a 2p sub-shell (three orbitals) arranged?"
+  options={[
+    "All 4 crammed into one orbital",
+    "Two orbitals with 2 each, one empty",
+    "One electron in each of the three orbitals, then the fourth pairs up in the first",
+    "Spread as 1, 1, 2 only after the f orbitals fill"
+  ]}
+  correctIndex={2}
+  explanation="Hund's rule: electrons occupy equal-energy orbitals singly first (one in each of the three p orbitals), and only then pair up. So the fourth electron pairs in the first orbital, giving ↑↓ ↑ ↑."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Quantum mechanics replaces orbits with **orbitals** — probability clouds for an electron's location.
+- Shells split into **sub-shells** (s, p, d, f) holding 2, 6, 10, 14 electrons; each orbital takes 2 with opposite spin.
+- Electrons fill by **Aufbau, Pauli, and Hund's** rules, giving an **electron configuration**.
+- Configuration explains the periodic table's **blocks** and each element's valence behaviour — including why 4s fills before 3d.
+
+</Step>
+
+</Lesson>

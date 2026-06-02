@@ -1,0 +1,77 @@
+---
+title: Loops & Iteration
+subject: computer-science
+contentSlug: computer-science/step-by-step-and-loops
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The three building blocks of control flow" kind="explain">
+
+Astonishingly, *every* algorithm — however clever — is built from just three ways of arranging steps:
+
+- **Sequence** — do this, then this, then this, in order.
+- **Selection** — choose between paths based on a condition (*if … then … else*).
+- **Iteration** — repeat a block of steps (a **loop**).
+
+This is the **structured programming** insight: these three structures are enough to express any computation. Master them and you can build anything.
+
+</Step>
+
+<Step title="Why loops change everything" kind="explain">
+
+Sequence and selection alone can only do a fixed amount of work. **Iteration** is what lets a short program do a *huge* amount of work.
+
+Without a loop, summing the numbers 1 to 1,000 would need 1,000 written-out lines. With a loop, it's a few lines that simply *repeat* — the same instructions run over and over, each pass nudging the state forward until a condition tells it to stop. A handful of lines, a thousand additions.
+
+</Step>
+
+<Step title="Watch a loop run" kind="interactive">
+
+Here's a loop that sums the numbers from 1 up to **n**. Press **Step** to run one line at a time. Watch the loop variable `i` climb, the accumulator `total` grow, and the `while` line decide each pass whether to go round again or stop.
+
+<LoopTracer />
+
+Two things make it a loop: a **changing variable** (`i`) and a **stopping condition** (`i ≤ n`). Each pass carries state from the last; when the condition finally fails, the loop ends and the program moves on.
+
+</Step>
+
+<Step title="Termination: loops that never stop" kind="explain">
+
+Every loop needs a guarantee that its condition will *eventually* become false — otherwise it runs forever. An **infinite loop** is a classic bug: forget to update `i`, and `i ≤ n` stays true and the program hangs.
+
+<Callout type="tip" title="The loop checklist">
+A safe loop needs three things: **set up** the starting state, a **condition** to test each time, and an **update** that moves the state toward making that condition false. Miss the update and you loop forever.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A loop runs but never stops, freezing the program. What is the most likely cause?"
+  options={[
+    "The loop body has too many statements",
+    "The condition is missing entirely",
+    "The loop variable is never updated toward making the condition false",
+    "The program used selection instead of sequence"
+  ]}
+  correctIndex={2}
+  explanation="An infinite loop usually means the loop's state never changes in a way that ends it — for example, forgetting to increment the counter. The condition stays true forever, so the loop never exits."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- All algorithms are built from three structures: **sequence**, **selection**, and **iteration**.
+- A **loop** repeats a block of steps, carrying state from one pass to the next.
+- Iteration lets a short program do an enormous amount of work.
+- Every safe loop needs **setup**, a **condition**, and an **update** that moves toward stopping.
+- A loop that never updates its state becomes an **infinite loop** — a common bug.
+
+</Step>
+
+</Lesson>

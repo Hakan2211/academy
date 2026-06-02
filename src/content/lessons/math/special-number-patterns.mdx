@@ -1,0 +1,70 @@
+---
+title: Special Number Patterns
+subject: math
+contentSlug: math/special-number-patterns
+order: 5
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Numbers with a shape" kind="explain">
+
+Some sequences are best understood as **pictures**. **Figurate numbers** count the dots you can arrange into a shape — triangles, squares, cubes — and their geometry hands you their formula for free. The ancient Greeks studied them, and they reveal lovely hidden links.
+
+</Step>
+
+<Step title="Draw the pattern" kind="interactive">
+
+Toggle the shape and grow n — the formula is right there in the arrangement.
+
+<FigurateNumbers />
+
+</Step>
+
+<Step title="Triangular and square numbers" kind="explain">
+
+- **Triangular numbers** 1, 3, 6, 10, 15 stack rows of 1, 2, 3, … Two copies form a rectangle, so Tₙ = n(n+1)/2.
+- **Square numbers** 1, 4, 9, 16 fill an n × n grid: Sₙ = n².
+- **Cube numbers** 1, 8, 27, 64 stack n layers of n²: Cₙ = n³.
+
+These are the same square and cube powers from the Powers world, now seen as *shapes*.
+
+</Step>
+
+<Step title="Hidden connections" kind="explain">
+
+Figurate numbers hide beautiful relationships. Add two consecutive triangular numbers and you always get a perfect square:
+
+<Formula tex="T_{n-1} + T_n = n^2, \qquad \text{e.g. } 6 + 10 = 16 = 4^2" block />
+
+The two triangles slot together into a square — provable just by sliding the dot pictures together. Geometry proving arithmetic, with no algebra at all.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the 6th triangular number?"
+  options={[
+    "21",
+    "15",
+    "36",
+    "28"
+  ]}
+  correctIndex={0}
+  explanation="T₆ = 1+2+3+4+5+6 = 21, or by formula n(n+1)/2 = 6×7/2 = 21."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Figurate numbers** count dots arranged into shapes; the shape gives the formula.
+- **Triangular** Tₙ = n(n+1)/2, **square** n², **cube** n³.
+- Consecutive triangular numbers sum to a **square** (Tₙ₋₁ + Tₙ = n²).
+- Geometry can prove number facts directly.
+
+</Step>
+
+</Lesson>

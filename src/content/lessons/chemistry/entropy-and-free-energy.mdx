@@ -1,0 +1,90 @@
+---
+title: Entropy & Spontaneity
+subject: chemistry
+contentSlug: chemistry/entropy-and-free-energy
+order: 6
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Why do some reactions just happen?" kind="explain">
+
+Ice melts on a warm day; iron rusts; gases mix and never un-mix. These changes happen on their own — they're **spontaneous**. But here's the puzzle: not all spontaneous changes release energy. Ice melting *absorbs* heat, yet it still happens.
+
+So energy (ΔH) can't be the whole story. There's a second driving force: **entropy**.
+
+</Step>
+
+<Step title="Entropy: nature's drive toward disorder" kind="interactive">
+
+**Entropy (S)** measures the number of ways a system can be arranged — loosely, its **disorder** or spread of energy. Left alone, systems drift toward higher entropy, because disordered arrangements are overwhelmingly more likely.
+
+<EntropyBox />
+
+Gases spreading to fill a room, a drop of dye dispersing, heat flowing from hot to cold — all are entropy increasing. It almost never reverses on its own.
+
+</Step>
+
+<Step title="Two competing tendencies" kind="explain">
+
+Nature is pulled by two things at once:
+
+- Toward **lower energy** (favouring exothermic, negative ΔH).
+- Toward **higher entropy** (favouring more disorder, positive ΔS).
+
+Sometimes they agree, sometimes they fight. Melting ice is uphill in energy (ΔH positive) but strongly uphill in entropy too (liquid is more disordered than solid) — so above 0 °C, entropy wins and it melts.
+
+</Step>
+
+<Step title="Gibbs free energy: the deciding equation" kind="explain">
+
+The two tendencies combine into one master quantity — the **Gibbs free energy**, ΔG:
+
+<Formula tex="\Delta G = \Delta H - T\Delta S" block />
+
+The rule is beautifully simple:
+
+- **ΔG negative → spontaneous** (the reaction can proceed on its own).
+- **ΔG positive → not spontaneous** (it needs a continuous push).
+
+Notice the **temperature (T)** multiplying entropy: at high temperature the entropy term dominates, which is exactly why heating can drive reactions (like melting or decomposition) that are stuck when cold.
+
+</Step>
+
+<Step title="The deepest law in chemistry" kind="explain">
+
+ΔG ties the whole world together. A reaction's ΔH (from bonds), its ΔS (order vs disorder), and the temperature together decide whether it goes — and how far.
+
+<Callout type="info" title="Spontaneous ≠ fast">
+A crucial caveat: ΔG tells you *whether* a reaction can happen, not *how fast*. Diamond turning to graphite is spontaneous (ΔG negative) — but so slow it takes billions of years. Speed is a separate question, governed by activation energy and kinetics — the very next world.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A reaction has a positive ΔH (endothermic) but a large positive ΔS (big increase in disorder). Using ΔG = ΔH − TΔS, when will it become spontaneous?"
+  options={[
+    "Never — endothermic reactions can't be spontaneous",
+    "At high temperature, where the TΔS term outweighs ΔH and makes ΔG negative",
+    "Only at absolute zero",
+    "At low temperature only"
+  ]}
+  correctIndex={1}
+  explanation="With ΔH positive and ΔS positive, raising T increases the TΔS term until it exceeds ΔH, making ΔG negative — spontaneous. This is why heat drives endothermic, disorder-increasing reactions like melting and decomposition."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A change is **spontaneous** if it happens on its own — driven by both energy *and* **entropy** (disorder).
+- **Entropy (S)** rises naturally; systems drift toward more probable, disordered states.
+- **Gibbs free energy** ΔG = ΔH − TΔS decides it: **negative ΔG → spontaneous**.
+- **Temperature** weights the entropy term — heat can drive otherwise-stuck reactions. But ΔG governs *whether*, not *how fast* (next world: kinetics).
+
+</Step>
+
+</Lesson>

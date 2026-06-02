@@ -1,0 +1,74 @@
+---
+title: Combined Events
+subject: math
+contentSlug: math/combined-events
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="More than one thing at once" kind="explain">
+
+What's the chance of rolling two dice and getting a total of 7? Or a head *and* a six? These are **combined events**. The key is to count **all** the possible outcomes systematically — and a **sample space** diagram does exactly that.
+
+</Step>
+
+<Step title="The two-dice sample space" kind="interactive">
+
+All 36 outcomes, laid out in a grid. Highlight the ones that match a condition.
+
+<SampleSpace />
+
+</Step>
+
+<Step title="Listing every outcome" kind="explain">
+
+For two dice there are 6 × 6 = **36** equally likely outcomes. A sample space grid shows them all, so you just count the ones you want:
+
+<Formula tex="P(\text{sum} = 7) = \frac{6}{36} = \frac{1}{6}" block />
+
+(The six ways: 1-6, 2-5, 3-4, 4-3, 5-2, 6-1.) Listing beats guessing — many people wrongly think every total is equally likely, but 7 is far more common than 2.
+
+</Step>
+
+<Step title="The AND and OR rules" kind="explain">
+
+For **independent** events (one doesn't affect the other):
+
+<Formula tex="P(A \text{ and } B) = P(A) \times P(B)" block />
+
+So P(head and a six) = ½ × 1/6 = 1/12. For **mutually exclusive** events (can't both happen):
+
+<Formula tex="P(A \text{ or } B) = P(A) + P(B)" block />
+
+A handy rule of thumb: "**and** → multiply, **or** → add."
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A fair coin is flipped and a die rolled. What is P(tails AND an even number)?"
+  options={[
+    "1/4",
+    "1/2",
+    "1/12",
+    "2/3"
+  ]}
+  correctIndex={0}
+  explanation="Independent events, so multiply: P(tails) × P(even) = ½ × 3/6 = ½ × ½ = 1/4."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Combined events** involve more than one outcome — list them in a **sample space**.
+- Two dice = **36** equally likely outcomes; count the favourable ones.
+- **AND** (independent) → **multiply**; **OR** (mutually exclusive) → **add**.
+- Systematic listing avoids the "all totals equal" trap.
+
+</Step>
+
+</Lesson>

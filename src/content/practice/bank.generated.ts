@@ -5,6 +5,6426 @@ import type { PracticeItem } from '#/lib/practice'
 
 export const PRACTICE_BANK: Array<PracticeItem> = [
   {
+    "id": "biology/active-transport",
+    "contentSlug": "biology/active-transport",
+    "subject": "biology",
+    "lessonTitle": "Active Transport",
+    "prompt": "A root hair cell absorbs nitrate ions from soil that has a LOWER nitrate concentration than the cell. What must this involve?",
+    "options": [
+      "Simple diffusion",
+      "Osmosis",
+      "Active transport, using ATP to move ions against the gradient",
+      "Nothing — ions can't move against a gradient"
+    ],
+    "correctIndex": 2,
+    "explanation": "Moving ions from low (soil) to high (cell) concentration is uphill, so it requires active transport powered by ATP. This is exactly why root hair cells are full of mitochondria."
+  },
+  {
+    "id": "biology/animal-cell",
+    "contentSlug": "biology/animal-cell",
+    "subject": "biology",
+    "lessonTitle": "Inside an Animal Cell",
+    "prompt": "A cell that produces and exports huge amounts of protein (like a gland cell) would be especially rich in which organelles?",
+    "options": [
+      "Chloroplasts",
+      "Ribosomes, rough ER, and Golgi apparatus",
+      "Cell walls",
+      "Vacuoles"
+    ],
+    "correctIndex": 1,
+    "explanation": "Proteins are built by ribosomes on the rough ER, then modified and packaged for export by the Golgi. A protein-exporting cell is loaded with all three."
+  },
+  {
+    "id": "biology/antibiotics-and-resistance",
+    "contentSlug": "biology/antibiotics-and-resistance",
+    "subject": "biology",
+    "lessonTitle": "Antibiotics & Resistance",
+    "prompt": "A patient takes antibiotics, and afterwards the surviving bacteria are all resistant. What is the best explanation?",
+    "options": [
+      "The antibiotic taught the bacteria to resist",
+      "A few bacteria were already resistant by chance; the antibiotic killed the rest, so only the resistant ones reproduced",
+      "All the bacteria mutated to become resistant at once",
+      "The bacteria decided to resist"
+    ],
+    "correctIndex": 1,
+    "explanation": "It's natural selection. Resistance arose by random mutation before the drug was given. The antibiotic selects for those pre-existing resistant bacteria by killing the non-resistant ones."
+  },
+  {
+    "id": "biology/asexual-vs-sexual",
+    "contentSlug": "biology/asexual-vs-sexual",
+    "subject": "biology",
+    "lessonTitle": "Asexual vs Sexual Reproduction",
+    "prompt": "A population reproduces only asexually. Why might a single new disease be especially dangerous to them?",
+    "options": [
+      "Asexual organisms can't fight disease",
+      "All the offspring are genetically identical, so if one is vulnerable, they all are",
+      "Asexual reproduction is too slow to replace losses",
+      "They have no DNA"
+    ],
+    "correctIndex": 1,
+    "explanation": "Asexual offspring are clones with no genetic variation. If the disease can kill one, it can kill them all — there's no varied individual that might happen to resist it."
+  },
+  {
+    "id": "biology/beyond-mendel",
+    "contentSlug": "biology/beyond-mendel",
+    "subject": "biology",
+    "lessonTitle": "Beyond Mendel",
+    "prompt": "Red-green colour blindness is much more common in men than women. Why?",
+    "options": [
+      "Men have weaker eyes",
+      "The gene is on the X chromosome, and males (XY) have only one X — so a single recessive allele isn't masked",
+      "It's a dominant trait in men only",
+      "Women can't inherit the allele"
+    ],
+    "correctIndex": 1,
+    "explanation": "The colour-vision gene is X-linked and recessive. Females (XX) usually have a second X to mask it, but males (XY) have only one X, so one recessive allele is enough to cause it."
+  },
+  {
+    "id": "biology/biodiversity",
+    "contentSlug": "biology/biodiversity",
+    "subject": "biology",
+    "lessonTitle": "Biodiversity & Conservation",
+    "prompt": "Why is an ecosystem with high biodiversity generally more stable than one with few species?",
+    "options": [
+      "More species means less competition",
+      "If one species is lost, others can fill its role or provide alternative food, cushioning the disruption",
+      "High biodiversity stops all change",
+      "It isn't — fewer species is more stable"
+    ],
+    "correctIndex": 1,
+    "explanation": "In a diverse web there are alternative food sources and overlapping roles, so losing one species is less catastrophic. A simple ecosystem with few species is far more vulnerable to collapse."
+  },
+  {
+    "id": "biology/blood-and-vessels",
+    "contentSlug": "biology/blood-and-vessels",
+    "subject": "biology",
+    "lessonTitle": "Blood & Blood Vessels",
+    "prompt": "Capillaries have walls just one cell thick. Why is this important?",
+    "options": [
+      "To make them stronger",
+      "So substances like oxygen and glucose can diffuse quickly between the blood and the cells",
+      "To carry blood at high pressure",
+      "To store more blood"
+    ],
+    "correctIndex": 1,
+    "explanation": "Capillaries are where exchange happens. A wall just one cell thick gives the shortest possible diffusion distance, so oxygen, nutrients, and waste pass quickly between blood and cells."
+  },
+  {
+    "id": "biology/brain-and-senses",
+    "contentSlug": "biology/brain-and-senses",
+    "subject": "biology",
+    "lessonTitle": "The Brain & the Senses",
+    "prompt": "A person suffers damage to their cerebellum. Which ability is most likely to be affected?",
+    "options": [
+      "Their heart rate and breathing",
+      "Their balance and coordinated movement",
+      "Their long-term memories",
+      "Their body temperature control"
+    ],
+    "correctIndex": 1,
+    "explanation": "The cerebellum coordinates muscles for balance and smooth movement. Damage to it typically causes clumsy, uncoordinated movement and balance problems."
+  },
+  {
+    "id": "biology/bulk-transport",
+    "contentSlug": "biology/bulk-transport",
+    "subject": "biology",
+    "lessonTitle": "Bulk Transport",
+    "prompt": "A white blood cell surrounds and engulfs a whole bacterium, trapping it in a vesicle inside the cell. This is an example of:",
+    "options": [
+      "Exocytosis",
+      "Endocytosis (phagocytosis)",
+      "Osmosis",
+      "Facilitated diffusion"
+    ],
+    "correctIndex": 1,
+    "explanation": "Taking large material INTO the cell by wrapping it in membrane is endocytosis; engulfing a whole cell like a bacterium is the special case called phagocytosis."
+  },
+  {
+    "id": "biology/carbohydrates",
+    "contentSlug": "biology/carbohydrates",
+    "subject": "biology",
+    "lessonTitle": "Carbohydrates",
+    "prompt": "Starch, glycogen, and cellulose are all polysaccharides made from glucose. What makes them so different from one another?",
+    "options": [
+      "They are made of different elements",
+      "The glucose units are joined in different ways, giving each a different structure and job",
+      "Only cellulose contains carbon",
+      "They are actually all identical"
+    ],
+    "correctIndex": 1,
+    "explanation": "All three are glucose chains, but the way the units are linked differs — making starch and glycogen good energy stores and cellulose a tough structural fibre."
+  },
+  {
+    "id": "biology/carbon-and-climate",
+    "contentSlug": "biology/carbon-and-climate",
+    "subject": "biology",
+    "lessonTitle": "The Carbon Cycle & Climate Change",
+    "prompt": "How does burning fossil fuels lead to global warming?",
+    "options": [
+      "It directly heats the atmosphere with flames",
+      "It releases CO₂ that strengthens the greenhouse effect, trapping more of the Sun's heat",
+      "It blocks sunlight from reaching Earth",
+      "It removes oxygen, which cools the planet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Burning fossil fuels releases CO₂, a greenhouse gas. More CO₂ in the atmosphere absorbs and re-radiates more of Earth's outgoing heat — strengthening the greenhouse effect and warming the planet."
+  },
+  {
+    "id": "biology/cardiovascular-in-depth",
+    "contentSlug": "biology/cardiovascular-in-depth",
+    "subject": "biology",
+    "lessonTitle": "The Cardiovascular System in Depth",
+    "prompt": "What is the function of the valves in the heart and veins?",
+    "options": [
+      "To speed the blood up",
+      "To keep blood flowing in one direction by preventing backflow",
+      "To add oxygen to the blood",
+      "To filter waste from the blood"
+    ],
+    "correctIndex": 1,
+    "explanation": "Valves are one-way gates. They snap shut to stop blood flowing backwards, ensuring it keeps moving in the correct direction through the heart and back through the veins."
+  },
+  {
+    "id": "biology/cell-as-a-city",
+    "contentSlug": "biology/cell-as-a-city",
+    "subject": "biology",
+    "lessonTitle": "The Cell as a City",
+    "prompt": "Which observation is the STRONGEST evidence that mitochondria descended from free-living bacteria?",
+    "options": [
+      "They are red in colour",
+      "They have their own circular DNA and bacteria-like ribosomes, and divide by binary fission",
+      "They are found only in animal cells",
+      "They are the largest organelle"
+    ],
+    "correctIndex": 1,
+    "explanation": "Their own bacterial-style DNA and ribosomes, double membrane, and independent division are exactly what you'd expect if they were once free-living bacteria — the heart of endosymbiotic theory."
+  },
+  {
+    "id": "biology/cell-membrane",
+    "contentSlug": "biology/cell-membrane",
+    "subject": "biology",
+    "lessonTitle": "The Cell Membrane",
+    "prompt": "Why can oxygen cross the membrane freely while sodium ions cannot?",
+    "options": [
+      "Oxygen is larger than sodium ions",
+      "Oxygen is small and non-polar, so it dissolves through the oily core; charged ions are repelled by it",
+      "The membrane has special oxygen pumps",
+      "Sodium ions are too small to be noticed"
+    ],
+    "correctIndex": 1,
+    "explanation": "The membrane's core is oily and uncharged. Small non-polar molecules like O₂ dissolve straight through, but charged ions can't enter the oily layer and need protein channels."
+  },
+  {
+    "id": "biology/cell-theory",
+    "contentSlug": "biology/cell-theory",
+    "subject": "biology",
+    "lessonTitle": "Cell Theory",
+    "prompt": "Which statement is NOT part of cell theory?",
+    "options": [
+      "All living things are made of cells",
+      "The cell is the basic unit of life",
+      "Cells only come from other cells",
+      "All cells are exactly the same size and shape"
+    ],
+    "correctIndex": 3,
+    "explanation": "Cells vary enormously in size and shape. Cell theory says all life is cellular, the cell is life's basic unit, and cells arise only from existing cells."
+  },
+  {
+    "id": "biology/cellular-respiration",
+    "contentSlug": "biology/cellular-respiration",
+    "subject": "biology",
+    "lessonTitle": "Cellular Respiration",
+    "prompt": "Where in the cell does aerobic respiration mainly take place, and what does it produce?",
+    "options": [
+      "In the nucleus, producing DNA",
+      "In the mitochondria, producing carbon dioxide, water, and lots of ATP",
+      "In the chloroplasts, producing glucose",
+      "In the cell membrane, producing oxygen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Aerobic respiration occurs in the mitochondria. Using oxygen, it breaks glucose down to carbon dioxide and water, releasing a large amount of energy as ATP."
+  },
+  {
+    "id": "biology/chemistry-of-life",
+    "contentSlug": "biology/chemistry-of-life",
+    "subject": "biology",
+    "lessonTitle": "The Chemistry of Life",
+    "prompt": "Why is carbon so central to the molecules of life?",
+    "options": [
+      "It is the most common element on Earth",
+      "It forms four bonds, so it can build chains, rings, and branches of huge variety",
+      "It is the only element that can bond with hydrogen",
+      "It dissolves easily in water"
+    ],
+    "correctIndex": 1,
+    "explanation": "Carbon's ability to form four stable bonds — including to other carbons — lets it build the large, varied, complex molecules that life depends on."
+  },
+  {
+    "id": "biology/controlling-the-borders",
+    "contentSlug": "biology/controlling-the-borders",
+    "subject": "biology",
+    "lessonTitle": "Controlling the Borders",
+    "prompt": "The sodium–potassium pump uses a huge fraction of the body's resting energy. What is the main benefit that justifies this cost?",
+    "options": [
+      "It keeps the cell perfectly at equilibrium with its surroundings",
+      "It builds up ion gradients that store energy — used for nerve impulses, nutrient uptake, and water balance",
+      "It produces ATP for the rest of the cell",
+      "It removes all sodium from the body permanently"
+    ],
+    "correctIndex": 1,
+    "explanation": "The pump maintains steep ion gradients. Like water behind a dam, those gradients store energy the cell spends on nerve signals, glucose absorption, and resisting osmotic swelling — well worth the ATP."
+  },
+  {
+    "id": "biology/cytoskeleton",
+    "contentSlug": "biology/cytoskeleton",
+    "subject": "biology",
+    "lessonTitle": "The Cytoskeleton & Cell Shape",
+    "prompt": "Which cytoskeleton fibres act as 'highways' that motor proteins use to transport cargo across the cell?",
+    "options": [
+      "Microfilaments",
+      "Intermediate filaments",
+      "Microtubules",
+      "The cell wall"
+    ],
+    "correctIndex": 2,
+    "explanation": "Microtubules are stiff, hollow tubes that serve as tracks. Motor proteins walk along them hauling vesicles — and they also pull chromosomes apart during division."
+  },
+  {
+    "id": "biology/diffusion",
+    "contentSlug": "biology/diffusion",
+    "subject": "biology",
+    "lessonTitle": "Diffusion",
+    "prompt": "Which change would make oxygen diffuse INTO a cell faster?",
+    "options": [
+      "Lowering the temperature",
+      "Increasing the oxygen concentration outside the cell (a steeper gradient)",
+      "Making the cell membrane thicker",
+      "Reducing the cell's surface area"
+    ],
+    "correctIndex": 1,
+    "explanation": "A steeper concentration gradient drives faster net diffusion. The other options (colder, thicker, smaller surface) all slow it down."
+  },
+  {
+    "id": "biology/digestion",
+    "contentSlug": "biology/digestion",
+    "subject": "biology",
+    "lessonTitle": "Digestion",
+    "prompt": "Why must large food molecules like starch be digested before the body can use them?",
+    "options": [
+      "They taste bad",
+      "They are too large and insoluble to be absorbed through the gut wall into the blood",
+      "They contain no energy until cooked",
+      "They are poisonous when whole"
+    ],
+    "correctIndex": 1,
+    "explanation": "Large molecules can't cross the gut wall into the blood. Enzymes break them into small, soluble molecules (like glucose and amino acids) that can be absorbed and transported."
+  },
+  {
+    "id": "biology/diversity-of-life",
+    "contentSlug": "biology/diversity-of-life",
+    "subject": "biology",
+    "lessonTitle": "The Diversity of Life",
+    "prompt": "Bacteria and Archaea are both single-celled and have no nucleus. Why are they placed in two SEPARATE domains?",
+    "options": [
+      "Archaea are larger than bacteria",
+      "They live in different countries",
+      "Their underlying biochemistry and genetics are deeply different",
+      "Archaea can photosynthesise and bacteria can't"
+    ],
+    "correctIndex": 2,
+    "explanation": "Looking similar isn't the same as being closely related. Their molecular machinery is so different that they are as distantly related to each other as either is to eukaryotes."
+  },
+  {
+    "id": "biology/dna-replication",
+    "contentSlug": "biology/dna-replication",
+    "subject": "biology",
+    "lessonTitle": "DNA Replication",
+    "prompt": "DNA replication is described as 'semi-conservative'. What does that mean?",
+    "options": [
+      "Half the DNA is destroyed each time",
+      "Each new double helix contains one original strand and one newly made strand",
+      "Only half the DNA is copied",
+      "The DNA is copied twice to be safe"
+    ],
+    "correctIndex": 1,
+    "explanation": "Semi-conservative means each new helix keeps one of the original strands as a template, paired with one freshly built strand — so the original is always half-preserved."
+  },
+  {
+    "id": "biology/ecosystems-and-energy",
+    "contentSlug": "biology/ecosystems-and-energy",
+    "subject": "biology",
+    "lessonTitle": "Ecosystems & Energy Flow",
+    "prompt": "Why are food chains usually limited to about 4 or 5 links?",
+    "options": [
+      "Animals get bored of eating",
+      "Only ~10% of energy passes to each level, so after a few steps there's too little left to support another",
+      "There aren't enough species",
+      "Predators can't find prey"
+    ],
+    "correctIndex": 1,
+    "explanation": "About 90% of energy is lost at each step (heat, movement, waste). After a few links, so little energy remains that it can't support a further level — so chains stay short."
+  },
+  {
+    "id": "biology/energy-and-atp",
+    "contentSlug": "biology/energy-and-atp",
+    "subject": "biology",
+    "lessonTitle": "Energy & ATP",
+    "prompt": "How does ATP release energy for the cell to use?",
+    "options": [
+      "By absorbing a phosphate group",
+      "By losing its third phosphate group to become ADP, which releases energy",
+      "By breaking down into glucose",
+      "By gaining oxygen"
+    ],
+    "correctIndex": 1,
+    "explanation": "ATP releases energy when it loses its third phosphate, becoming ADP + phosphate. Respiration then uses energy to reattach the phosphate and recharge it back to ATP."
+  },
+  {
+    "id": "biology/energy-economy",
+    "contentSlug": "biology/energy-economy",
+    "subject": "biology",
+    "lessonTitle": "The Energy Economy of the Cell",
+    "prompt": "What is the relationship between photosynthesis and respiration?",
+    "options": [
+      "They are unrelated processes",
+      "They are essentially reverse reactions: photosynthesis stores energy in glucose (releasing O₂), respiration releases it (using O₂ and releasing CO₂)",
+      "Both release oxygen",
+      "Respiration makes glucose and photosynthesis breaks it down"
+    ],
+    "correctIndex": 1,
+    "explanation": "Photosynthesis (CO₂ + water → glucose + oxygen) and respiration (glucose + oxygen → CO₂ + water) are near-mirror images. Their products and reactants feed each other in a planet-wide loop, with energy flowing one way from the Sun."
+  },
+  {
+    "id": "biology/enzyme-rate-factors",
+    "contentSlug": "biology/enzyme-rate-factors",
+    "subject": "biology",
+    "lessonTitle": "What Changes an Enzyme's Rate",
+    "prompt": "An enzyme's reaction rate rises as the temperature climbs to 40°C, then falls sharply above it. Why does it fall?",
+    "options": [
+      "The substrate runs out",
+      "Above the optimum, heat denatures the enzyme — its shape and active site are destroyed",
+      "Enzymes prefer the cold",
+      "The reaction reverses"
+    ],
+    "correctIndex": 1,
+    "explanation": "Up to the optimum, heat speeds collisions. Above it, the heat breaks the bonds holding the enzyme's shape, denaturing it — so the active site no longer works and the rate collapses."
+  },
+  {
+    "id": "biology/enzymes",
+    "contentSlug": "biology/enzymes",
+    "subject": "biology",
+    "lessonTitle": "Enzymes",
+    "prompt": "Why can the enzyme amylase break down starch but not protein?",
+    "options": [
+      "Amylase runs out after one reaction",
+      "Its active site is shaped to fit starch, not protein — enzymes are specific",
+      "Protein is too small to react",
+      "Amylase only works in the dark"
+    ],
+    "correctIndex": 1,
+    "explanation": "An enzyme's active site has a specific shape that fits only its substrate. Amylase fits starch; protein has the wrong shape, so amylase can't act on it."
+  },
+  {
+    "id": "biology/evidence-for-evolution",
+    "contentSlug": "biology/evidence-for-evolution",
+    "subject": "biology",
+    "lessonTitle": "Evidence for Evolution",
+    "prompt": "A human arm, a bat wing, and a whale flipper all contain the same arrangement of bones, used for very different purposes. What does this suggest?",
+    "options": [
+      "They were all designed for flying",
+      "They share a common ancestor, and the same basic limb was adapted to different uses",
+      "It's a complete coincidence",
+      "Whales are closely related to bats but not to humans"
+    ],
+    "correctIndex": 1,
+    "explanation": "These are homologous structures: the same underlying bone pattern inherited from a common ancestor and adapted to different functions — strong evidence of shared descent."
+  },
+  {
+    "id": "biology/evolution-in-action",
+    "contentSlug": "biology/evolution-in-action",
+    "subject": "biology",
+    "lessonTitle": "Evolution in Action",
+    "prompt": "After a course of antibiotics, a bacterial population is almost entirely resistant. What actually happened?",
+    "options": [
+      "The antibiotic taught the bacteria to resist it",
+      "The bacteria chose to become resistant to survive",
+      "A few bacteria were already resistant by chance; the antibiotic killed the rest, leaving the resistant ones to reproduce",
+      "The antibiotic caused new resistance mutations in every cell"
+    ],
+    "correctIndex": 2,
+    "explanation": "Resistance arose by chance mutation BEFORE the antibiotic. The drug is the selection pressure: it kills non-resistant bacteria, leaving the pre-existing resistant ones to multiply — natural selection in real time."
+  },
+  {
+    "id": "biology/excretion-and-kidney",
+    "contentSlug": "biology/excretion-and-kidney",
+    "subject": "biology",
+    "lessonTitle": "Excretion & the Kidney",
+    "prompt": "In the kidney, glucose is filtered out of the blood and then completely reabsorbed. Why doesn't healthy urine normally contain glucose?",
+    "options": [
+      "Glucose is too big to be filtered",
+      "All the filtered glucose is reabsorbed back into the blood during reabsorption",
+      "The kidney destroys glucose",
+      "Glucose turns into urea"
+    ],
+    "correctIndex": 1,
+    "explanation": "Glucose is small enough to be filtered out, but the body needs it — so it is all reabsorbed back into the blood. Healthy urine therefore contains no glucose (glucose in urine can be a sign of diabetes)."
+  },
+  {
+    "id": "biology/facilitated-diffusion",
+    "contentSlug": "biology/facilitated-diffusion",
+    "subject": "biology",
+    "lessonTitle": "Facilitated Diffusion",
+    "prompt": "How does facilitated diffusion differ from simple diffusion?",
+    "options": [
+      "It moves molecules against the gradient using energy",
+      "It uses membrane proteins to carry molecules that can't cross the oily core — but is still passive and downhill",
+      "It only works for oxygen and carbon dioxide",
+      "It requires the cell to make ATP"
+    ],
+    "correctIndex": 1,
+    "explanation": "Facilitated diffusion uses channel or carrier proteins to let large or charged molecules cross. It's still passive (no energy) and still moves DOWN the gradient — only the route is different."
+  },
+  {
+    "id": "biology/fermentation",
+    "contentSlug": "biology/fermentation",
+    "subject": "biology",
+    "lessonTitle": "Anaerobic Respiration & Fermentation",
+    "prompt": "Why does anaerobic respiration release far less energy than aerobic respiration?",
+    "options": [
+      "It uses two molecules of glucose instead of one",
+      "Without oxygen, glucose is only partly broken down, so much less energy is released (~2 ATP vs ~38)",
+      "It happens in the nucleus",
+      "It produces oxygen instead of using it"
+    ],
+    "correctIndex": 1,
+    "explanation": "Oxygen allows glucose to be fully broken down. Without it, the breakdown is incomplete, leaving energy locked in by-products like lactic acid or ethanol — so the yield is far lower."
+  },
+  {
+    "id": "biology/food-webs",
+    "contentSlug": "biology/food-webs",
+    "subject": "biology",
+    "lessonTitle": "Food Chains & Food Webs",
+    "prompt": "In the food chain grass → rabbit → fox, what does the arrow between rabbit and fox represent?",
+    "options": [
+      "The fox protecting the rabbit",
+      "The flow of energy from the rabbit (eaten) to the fox (eater)",
+      "The rabbit chasing the fox",
+      "Nothing in particular"
+    ],
+    "correctIndex": 1,
+    "explanation": "Arrows in a food chain point in the direction energy flows — from the organism that is eaten to the one that eats it. So the arrow goes from rabbit to fox."
+  },
+  {
+    "id": "biology/from-gene-to-protein",
+    "contentSlug": "biology/from-gene-to-protein",
+    "subject": "biology",
+    "lessonTitle": "From Gene to Protein",
+    "prompt": "In the central dogma, what determines the order of amino acids in a protein?",
+    "options": [
+      "The shape of the ribosome",
+      "The sequence of bases in the gene, copied into mRNA codons",
+      "The number of mitochondria in the cell",
+      "Random chance during translation"
+    ],
+    "correctIndex": 1,
+    "explanation": "The base sequence of the gene sets the mRNA codon sequence, which the ribosome reads to add amino acids in a specific order. DNA → mRNA → protein, each step setting the next."
+  },
+  {
+    "id": "biology/from-one-cell-to-a-body",
+    "contentSlug": "biology/from-one-cell-to-a-body",
+    "subject": "biology",
+    "lessonTitle": "From One Cell to a Body",
+    "prompt": "Every cell in your body has the same DNA, yet a muscle cell and a nerve cell are completely different. What process makes them differ?",
+    "options": [
+      "Each cell loses the genes it doesn't need",
+      "Differentiation — each cell type switches on a different set of genes (gene regulation)",
+      "Muscle and nerve cells have different DNA",
+      "Random chance during cell division"
+    ],
+    "correctIndex": 1,
+    "explanation": "All cells keep the full genome. Differentiation works by gene regulation: each cell type switches on a specific set of genes, building the proteins that make it a muscle cell, a nerve cell, and so on."
+  },
+  {
+    "id": "biology/fungi-and-protists",
+    "contentSlug": "biology/fungi-and-protists",
+    "subject": "biology",
+    "lessonTitle": "Fungi & Protists",
+    "prompt": "Which group of microbes are the main decomposers, recycling dead material back into the soil?",
+    "options": [
+      "Viruses",
+      "Fungi",
+      "Algae",
+      "None — bacteria do all decomposition"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fungi are the great decomposers. They feed by absorbing nutrients from dead matter, breaking it down and returning nutrients to the soil (bacteria help too, but fungi are the headline decomposers)."
+  },
+  {
+    "id": "biology/gametes-and-fertilization",
+    "contentSlug": "biology/gametes-and-fertilization",
+    "subject": "biology",
+    "lessonTitle": "Gametes & Fertilization",
+    "prompt": "After one sperm fertilises an egg, the egg's surface changes so no other sperm can enter. Why is this important?",
+    "options": [
+      "To make the egg bigger",
+      "To ensure the zygote has exactly 46 chromosomes, not more",
+      "To speed up development",
+      "To stop the egg from dividing"
+    ],
+    "correctIndex": 1,
+    "explanation": "If two sperm entered, the zygote would have too many chromosomes (69 instead of 46) and could not develop. Sealing the egg ensures exactly one sperm fertilises it, giving the correct 46."
+  },
+  {
+    "id": "biology/gene-regulation",
+    "contentSlug": "biology/gene-regulation",
+    "subject": "biology",
+    "lessonTitle": "Gene Regulation",
+    "prompt": "A skin cell and a nerve cell contain identical DNA, yet do completely different jobs. How is that possible?",
+    "options": [
+      "They actually have different genes",
+      "Each cell type switches on a different set of genes (gene regulation)",
+      "Nerve cells have lost most of their DNA",
+      "Skin cells make proteins but nerve cells don't"
+    ],
+    "correctIndex": 1,
+    "explanation": "Both cells have the same genes, but gene regulation switches on a different subset in each — so each builds the specific proteins its job requires."
+  },
+  {
+    "id": "biology/heart-and-circulation",
+    "contentSlug": "biology/heart-and-circulation",
+    "subject": "biology",
+    "lessonTitle": "The Heart & Circulation",
+    "prompt": "Why is blood said to pass through the heart twice in one complete circuit ('double circulation')?",
+    "options": [
+      "The heart has two chambers",
+      "Blood goes heart → lungs → heart → body → heart, passing through the heart on both the lung loop and the body loop",
+      "Humans have two hearts",
+      "Blood is pumped twice as fast"
+    ],
+    "correctIndex": 1,
+    "explanation": "In double circulation, blood travels to the lungs and back to the heart (pulmonary loop), then out to the body and back (systemic loop) — passing through the heart twice per full circuit."
+  },
+  {
+    "id": "biology/homeostasis",
+    "contentSlug": "biology/homeostasis",
+    "subject": "biology",
+    "lessonTitle": "Homeostasis",
+    "prompt": "After a sugary meal, blood glucose rises. In a healthy person, what happens next?",
+    "options": [
+      "Glucagon is released to raise glucose further",
+      "Insulin is released, causing cells to take up glucose so the level falls back toward the set point",
+      "Nothing — the body ignores it",
+      "The kidneys make more glucose"
+    ],
+    "correctIndex": 1,
+    "explanation": "This is negative feedback. A rise in glucose triggers insulin release, which makes cells absorb glucose, lowering it back toward the set point — opposing the original change."
+  },
+  {
+    "id": "biology/hormones",
+    "contentSlug": "biology/hormones",
+    "subject": "biology",
+    "lessonTitle": "Hormones & the Endocrine System",
+    "prompt": "Which statement best describes how hormones differ from nerve impulses?",
+    "options": [
+      "Hormones are faster and more precise",
+      "Hormones are chemical, travel in the blood, and have slower but longer-lasting, body-wide effects",
+      "Hormones only work in the brain",
+      "Hormones are electrical signals"
+    ],
+    "correctIndex": 1,
+    "explanation": "Hormones are chemicals carried in the blood. Compared with nerve impulses, they act more slowly but their effects are longer-lasting and spread throughout the body."
+  },
+  {
+    "id": "biology/how-a-neuron-fires",
+    "contentSlug": "biology/how-a-neuron-fires",
+    "subject": "biology",
+    "lessonTitle": "How a Neuron Fires",
+    "prompt": "Action potentials are 'all-or-nothing'. How, then, does the nervous system represent a STRONGER stimulus?",
+    "options": [
+      "By producing larger action potentials",
+      "By firing action potentials more frequently",
+      "By slowing the impulse down",
+      "By using fewer neurons"
+    ],
+    "correctIndex": 1,
+    "explanation": "Every action potential is the same size. A stronger stimulus is signalled by a higher FREQUENCY of impulses, not bigger ones — the brain reads intensity from the firing rate."
+  },
+  {
+    "id": "biology/how-biologists-work",
+    "contentSlug": "biology/how-biologists-work",
+    "subject": "biology",
+    "lessonTitle": "How Biologists Work",
+    "prompt": "A student tests if fertiliser helps plants grow. They give the fertilised plant more sun AND more water than the others. Why is the experiment flawed?",
+    "options": [
+      "They didn't use enough fertiliser",
+      "More than one variable changed, so you can't tell what caused any difference",
+      "Plants don't respond to fertiliser",
+      "They should have measured the leaves, not the height"
+    ],
+    "correctIndex": 1,
+    "explanation": "A fair test changes only ONE variable. By also changing sun and water, the student can't know whether any growth came from the fertiliser, the light, or the water."
+  },
+  {
+    "id": "biology/human-genetics",
+    "contentSlug": "biology/human-genetics",
+    "subject": "biology",
+    "lessonTitle": "Human Genetics",
+    "prompt": "Two healthy parents have a child with a recessive genetic condition. What can you conclude about the parents?",
+    "options": [
+      "One parent must be affected",
+      "Both parents are carriers (each has one copy of the recessive allele)",
+      "The condition must be dominant",
+      "It was caused by something in the child's environment"
+    ],
+    "correctIndex": 1,
+    "explanation": "For a recessive condition to appear, the child must inherit a faulty allele from EACH parent. Since the parents are healthy, they must each be carriers (Bb) — masking one faulty allele with a working one."
+  },
+  {
+    "id": "biology/humans-and-the-biosphere",
+    "contentSlug": "biology/humans-and-the-biosphere",
+    "subject": "biology",
+    "lessonTitle": "Humans & the Biosphere",
+    "prompt": "Burning fossil fuels raises atmospheric CO₂ because it...",
+    "options": [
+      "removes plants that release CO₂",
+      "releases carbon, locked away over millions of years, faster than photosynthesis can reabsorb it",
+      "stops animals respiring",
+      "cools the planet, trapping CO₂"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fossil fuels store carbon that was removed from the air long ago. Burning them returns that carbon as CO₂ much faster than photosynthesis can take it back, so it accumulates in the atmosphere."
+  },
+  {
+    "id": "biology/infectious-disease",
+    "contentSlug": "biology/infectious-disease",
+    "subject": "biology",
+    "lessonTitle": "Infectious Disease & How It Spreads",
+    "prompt": "In an outbreak, vaccinating a large fraction of the population can protect even the people who AREN'T vaccinated. What is this effect called?",
+    "options": [
+      "Natural selection",
+      "Herd immunity",
+      "Antibiotic resistance",
+      "Spontaneous recovery"
+    ],
+    "correctIndex": 1,
+    "explanation": "Herd immunity: when enough people are immune, an infected person can't easily find a susceptible neighbour to infect, so the disease can't spread — protecting the whole group, including the unvaccinated."
+  },
+  {
+    "id": "biology/leaf-and-photosynthesis",
+    "contentSlug": "biology/leaf-and-photosynthesis",
+    "subject": "biology",
+    "lessonTitle": "The Leaf & Photosynthesis",
+    "prompt": "Why are the palisade cells, packed with chloroplasts, located near the TOP of the leaf?",
+    "options": [
+      "To keep them warm",
+      "So they receive the most light for photosynthesis",
+      "To make the leaf stronger",
+      "To store water"
+    ],
+    "correctIndex": 1,
+    "explanation": "Light enters from above, so the chloroplast-packed palisade cells sit near the top surface to capture as much of it as possible — maximising photosynthesis."
+  },
+  {
+    "id": "biology/lifting-water",
+    "contentSlug": "biology/lifting-water",
+    "subject": "biology",
+    "lessonTitle": "How a Tree Lifts Water 100 Metres",
+    "prompt": "What allows water to be pulled up over 100 metres in a tall tree as one continuous column?",
+    "options": [
+      "A powerful pump in the roots",
+      "Cohesion — water molecules hold together by hydrogen bonds — so tension from evaporating leaves pulls the whole column up",
+      "Air pressure pushing from below",
+      "The water freezes into a solid rod"
+    ],
+    "correctIndex": 1,
+    "explanation": "Water's cohesion (hydrogen bonding) keeps the column unbroken, so the tension created as water evaporates from the leaves is transmitted all the way down — pulling water up. This is the cohesion–tension mechanism."
+  },
+  {
+    "id": "biology/lipids",
+    "contentSlug": "biology/lipids",
+    "subject": "biology",
+    "lessonTitle": "Lipids",
+    "prompt": "A triglyceride is made of which components?",
+    "options": [
+      "Three glucose molecules",
+      "One glycerol and three fatty acids",
+      "Many amino acids",
+      "A phosphate, a sugar, and a base"
+    ],
+    "correctIndex": 1,
+    "explanation": "A triglyceride is one glycerol molecule joined to three fatty-acid tails. (A phospholipid swaps one fatty acid for a phosphate group — which is what lets it build membranes.)"
+  },
+  {
+    "id": "biology/lungs-and-gas-exchange",
+    "contentSlug": "biology/lungs-and-gas-exchange",
+    "subject": "biology",
+    "lessonTitle": "The Lungs & Gas Exchange",
+    "prompt": "Which feature of the alveoli does NOT help speed up gas exchange?",
+    "options": [
+      "A very large total surface area",
+      "Walls that are one cell thick",
+      "A thick, muscular outer coat",
+      "A rich supply of capillaries"
+    ],
+    "correctIndex": 2,
+    "explanation": "A thick muscular coat would slow diffusion, not speed it. Fast gas exchange needs a large surface area, thin walls, a moist surface, and a rich blood supply to keep gradients steep."
+  },
+  {
+    "id": "biology/meiosis",
+    "contentSlug": "biology/meiosis",
+    "subject": "biology",
+    "lessonTitle": "Meiosis & Variation",
+    "prompt": "How does meiosis differ from mitosis in its outcome?",
+    "options": [
+      "Meiosis makes 2 identical cells with the full chromosome number",
+      "Meiosis makes 4 genetically varied cells, each with half the chromosome number",
+      "Meiosis makes 4 identical cells",
+      "There is no difference"
+    ],
+    "correctIndex": 1,
+    "explanation": "Meiosis involves two divisions, producing four genetically different cells (gametes), each with half the chromosomes — versus mitosis's two identical, full-number cells."
+  },
+  {
+    "id": "biology/mendel",
+    "contentSlug": "biology/mendel",
+    "subject": "biology",
+    "lessonTitle": "Mendel & the Rules of Inheritance",
+    "prompt": "Two purple-flowered pea plants (both Bb) are crossed. Roughly what fraction of the offspring will have white (recessive, bb) flowers?",
+    "options": [
+      "None",
+      "About one quarter",
+      "About one half",
+      "All of them"
+    ],
+    "correctIndex": 1,
+    "explanation": "A Bb × Bb cross gives a 3:1 ratio — about 3/4 purple (BB or Bb) and 1/4 white (bb). Two carriers of the recessive allele can produce recessive offspring."
+  },
+  {
+    "id": "biology/menstrual-cycle",
+    "contentSlug": "biology/menstrual-cycle",
+    "subject": "biology",
+    "lessonTitle": "The Menstrual Cycle & Hormones",
+    "prompt": "What happens around day 14 of the menstrual cycle, and which event marks the chance of pregnancy?",
+    "options": [
+      "Menstruation begins",
+      "Ovulation — an egg is released from the ovary",
+      "The lining is shed",
+      "Progesterone drops to zero"
+    ],
+    "correctIndex": 1,
+    "explanation": "Around day 14, ovulation releases an egg. If sperm are present in the following days, fertilisation — and pregnancy — can occur."
+  },
+  {
+    "id": "biology/mitochondria-and-chloroplasts",
+    "contentSlug": "biology/mitochondria-and-chloroplasts",
+    "subject": "biology",
+    "lessonTitle": "Mitochondria & Chloroplasts",
+    "prompt": "Why do animal cells contain mitochondria but NOT chloroplasts?",
+    "options": [
+      "Animal cells don't need energy",
+      "Animals get energy from food, so they only need to release it (mitochondria), not capture sunlight (chloroplasts)",
+      "Chloroplasts are too big for animal cells",
+      "Animal mitochondria do photosynthesis instead"
+    ],
+    "correctIndex": 1,
+    "explanation": "Animals can't make food from light, so they eat it. They still need mitochondria to release that food's energy — but have no use for the sunlight-capturing chloroplast."
+  },
+  {
+    "id": "biology/mitosis",
+    "contentSlug": "biology/mitosis",
+    "subject": "biology",
+    "lessonTitle": "Mitosis",
+    "prompt": "A human skin cell with 46 chromosomes divides by mitosis. How many chromosomes does each new cell have, and how similar are they?",
+    "options": [
+      "23 chromosomes, genetically different",
+      "46 chromosomes, genetically identical to the original",
+      "92 chromosomes, identical",
+      "46 chromosomes, but genetically different"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mitosis produces two genetically identical daughter cells, each with the full set of 46 chromosomes — because the copied sister chromatids are simply shared out, one to each cell."
+  },
+  {
+    "id": "biology/mutations-and-chromosomes",
+    "contentSlug": "biology/mutations-and-chromosomes",
+    "subject": "biology",
+    "lessonTitle": "Mutations & Chromosomes",
+    "prompt": "Down syndrome is caused by a person having three copies of chromosome 21 instead of two. This usually results from what?",
+    "options": [
+      "A single base substitution in a gene",
+      "Chromosomes failing to separate properly during meiosis (non-disjunction)",
+      "Eating the wrong foods",
+      "A mutation caused after birth"
+    ],
+    "correctIndex": 1,
+    "explanation": "Trisomy 21 is a chromosome mutation. It usually arises when chromosome 21 fails to separate during meiosis (non-disjunction), so a gamete carries an extra copy."
+  },
+  {
+    "id": "biology/naming-and-sorting-life",
+    "contentSlug": "biology/naming-and-sorting-life",
+    "subject": "biology",
+    "lessonTitle": "Naming & Sorting Life",
+    "prompt": "Two organisms have the scientific names Panthera leo and Panthera pardus. What does sharing the first word tell you?",
+    "options": [
+      "They are the exact same species",
+      "They belong to the same genus, so they are closely related",
+      "They live in the same place",
+      "Nothing — the first word is just decoration"
+    ],
+    "correctIndex": 1,
+    "explanation": "The first word is the genus. Sharing it means they're close relatives (here, the lion and the leopard), though still distinct species."
+  },
+  {
+    "id": "biology/natural-selection",
+    "contentSlug": "biology/natural-selection",
+    "subject": "biology",
+    "lessonTitle": "Natural Selection",
+    "prompt": "Peppered moths near sooty industrial cities became mostly dark-coloured over a few decades. What's the natural-selection explanation?",
+    "options": [
+      "The moths chose to become darker to hide",
+      "Soot stained the moths black",
+      "On soot-darkened trees, dark moths were better camouflaged from birds, survived more, and passed on the dark allele",
+      "Dark moths laid more eggs because of the pollution"
+    ],
+    "correctIndex": 2,
+    "explanation": "This famous real example is natural selection: pollution darkened the trees, so dark moths were better hidden from predators. They survived and reproduced more, raising the frequency of the dark allele."
+  },
+  {
+    "id": "biology/neurons",
+    "contentSlug": "biology/neurons",
+    "subject": "biology",
+    "lessonTitle": "Neurons & the Nerve Impulse",
+    "prompt": "How does a nerve impulse cross the synapse (gap) between two neurons?",
+    "options": [
+      "The neurons touch and the electrical signal jumps directly across",
+      "Chemical messengers (neurotransmitters) are released and diffuse across the gap",
+      "The impulse leaps as a spark",
+      "The gap is filled with myelin"
+    ],
+    "correctIndex": 1,
+    "explanation": "At the synapse, the electrical impulse triggers the release of neurotransmitters, which diffuse across the gap and start a new impulse in the next neuron — an electrical-to-chemical-to-electrical relay."
+  },
+  {
+    "id": "biology/nucleic-acids",
+    "contentSlug": "biology/nucleic-acids",
+    "subject": "biology",
+    "lessonTitle": "Nucleic Acids",
+    "prompt": "What are the three parts of a single nucleotide, the building block of DNA?",
+    "options": [
+      "Glycerol, a fatty acid, and a phosphate",
+      "A phosphate, a sugar, and a base",
+      "Three amino acids",
+      "Two sugars and an oxygen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Each nucleotide is a phosphate + a sugar + one of four bases. The order of those bases along the strand spells out the genetic code."
+  },
+  {
+    "id": "biology/nutrient-cycles",
+    "contentSlug": "biology/nutrient-cycles",
+    "subject": "biology",
+    "lessonTitle": "Nutrient Cycles",
+    "prompt": "What essential role do decomposers (bacteria and fungi) play in nutrient cycles?",
+    "options": [
+      "They produce energy for the ecosystem",
+      "They break down dead organisms and waste, returning locked-up nutrients to the soil and air for reuse",
+      "They photosynthesise",
+      "They prevent all decay"
+    ],
+    "correctIndex": 1,
+    "explanation": "Decomposers break down dead matter and waste, releasing the nutrients (carbon, nitrogen, etc.) back into the environment so plants and other organisms can use them again — closing the cycle."
+  },
+  {
+    "id": "biology/nutrition",
+    "contentSlug": "biology/nutrition",
+    "subject": "biology",
+    "lessonTitle": "Nutrition & a Balanced Diet",
+    "prompt": "A person's diet lacks iron. Which problem is most likely to result?",
+    "options": [
+      "Scurvy",
+      "Anaemia — too few healthy red blood cells",
+      "Constipation",
+      "Weak bones"
+    ],
+    "correctIndex": 1,
+    "explanation": "Iron is a mineral needed to make haemoglobin in red blood cells. Without enough, the body can't make enough healthy red cells, causing anaemia."
+  },
+  {
+    "id": "biology/origin-of-life",
+    "contentSlug": "biology/origin-of-life",
+    "subject": "biology",
+    "lessonTitle": "The Origin of Life",
+    "prompt": "Why is RNA central to many ideas about the origin of life?",
+    "options": [
+      "It is found only in humans",
+      "RNA can both store genetic information AND act as a catalyst, so it could copy itself before DNA and proteins existed",
+      "RNA is larger than DNA",
+      "RNA cannot mutate"
+    ],
+    "correctIndex": 1,
+    "explanation": "Unlike DNA, RNA can both carry information and speed up reactions. That dual ability could have let early RNA molecules copy themselves — the 'RNA world' that may have preceded DNA-and-protein life."
+  },
+  {
+    "id": "biology/osmosis",
+    "contentSlug": "biology/osmosis",
+    "subject": "biology",
+    "lessonTitle": "Osmosis",
+    "prompt": "A red blood cell is placed in pure water. What happens, and why?",
+    "options": [
+      "It shrinks, because water leaves the cell",
+      "Nothing, because red blood cells don't do osmosis",
+      "It swells and may burst, because water moves in by osmosis with no cell wall to stop it",
+      "It becomes turgid, held in shape by its cell wall"
+    ],
+    "correctIndex": 2,
+    "explanation": "Pure water is more dilute than the cell's contents, so water enters by osmosis. An animal cell has no wall to resist it, so it swells and can burst (lysis)."
+  },
+  {
+    "id": "biology/photosynthesis",
+    "contentSlug": "biology/photosynthesis",
+    "subject": "biology",
+    "lessonTitle": "Photosynthesis",
+    "prompt": "On a warm, bright day, a plant's photosynthesis rate stops increasing even as the sun gets brighter. What is the most likely limiting factor now?",
+    "options": [
+      "Light intensity",
+      "Carbon dioxide concentration",
+      "The amount of glucose",
+      "Oxygen concentration"
+    ],
+    "correctIndex": 1,
+    "explanation": "With plenty of light and warmth, the factor in shortest supply is usually carbon dioxide. It becomes the limiting factor, capping the rate until more CO₂ is available."
+  },
+  {
+    "id": "biology/phylogeny",
+    "contentSlug": "biology/phylogeny",
+    "subject": "biology",
+    "lessonTitle": "The Tree of Life & Phylogeny",
+    "prompt": "On a phylogenetic tree, what does it mean when two species branch apart very recently (near the tips)?",
+    "options": [
+      "They are distantly related",
+      "They shared a common ancestor recently and are closely related",
+      "One evolved from the other",
+      "They live in the same place"
+    ],
+    "correctIndex": 1,
+    "explanation": "The more recently two species share a branch point, the more recently they shared a common ancestor — so they are closely related and tend to share more DNA."
+  },
+  {
+    "id": "biology/plant-cell",
+    "contentSlug": "biology/plant-cell",
+    "subject": "biology",
+    "lessonTitle": "Inside a Plant Cell",
+    "prompt": "Which set of structures is found in a plant cell but NOT an animal cell?",
+    "options": [
+      "Nucleus, mitochondria, ribosomes",
+      "Cell wall, permanent vacuole, chloroplasts",
+      "Cell membrane, cytoplasm, Golgi",
+      "Rough ER, smooth ER, nucleolus"
+    ],
+    "correctIndex": 1,
+    "explanation": "Both cell types share the nucleus, mitochondria, membrane, and so on. Only plant cells add the cellulose cell wall, a large permanent vacuole, and chloroplasts."
+  },
+  {
+    "id": "biology/plant-nutrition",
+    "contentSlug": "biology/plant-nutrition",
+    "subject": "biology",
+    "lessonTitle": "Plant Nutrition & Minerals",
+    "prompt": "A plant has yellowing leaves between the veins. Which mineral is it most likely lacking, and why?",
+    "options": [
+      "Nitrogen, needed for water transport",
+      "Magnesium, which is needed to make chlorophyll",
+      "Potassium, needed for roots",
+      "Carbon, needed for sugar"
+    ],
+    "correctIndex": 1,
+    "explanation": "Magnesium is a component of chlorophyll. Without it the plant can't make enough green pigment, so leaves yellow (chlorosis) — classically between the veins."
+  },
+  {
+    "id": "biology/plant-reproduction",
+    "contentSlug": "biology/plant-reproduction",
+    "subject": "biology",
+    "lessonTitle": "Plant Reproduction",
+    "prompt": "After fertilisation in a flower, what do the ovules and the ovary become?",
+    "options": [
+      "The ovules become petals and the ovary becomes a root",
+      "The ovules become seeds and the ovary becomes the fruit",
+      "Both become pollen",
+      "They wither and die"
+    ],
+    "correctIndex": 1,
+    "explanation": "Each fertilised ovule develops into a seed, and the ovary surrounding them swells into the fruit — which then helps disperse the seeds."
+  },
+  {
+    "id": "biology/plant-responses",
+    "contentSlug": "biology/plant-responses",
+    "subject": "biology",
+    "lessonTitle": "Plant Responses",
+    "prompt": "A shoot bends toward a light source. How does auxin cause this?",
+    "options": [
+      "Auxin makes the lit side grow faster",
+      "Auxin gathers on the shaded side, making those cells grow longer, so the shoot curves toward the light",
+      "Auxin destroys the cells facing the light",
+      "Auxin has no role in tropisms"
+    ],
+    "correctIndex": 1,
+    "explanation": "Auxin accumulates on the side away from the light (the shaded side). Those cells elongate more, so that side grows longer and the shoot bends toward the light."
+  },
+  {
+    "id": "biology/populations",
+    "contentSlug": "biology/populations",
+    "subject": "biology",
+    "lessonTitle": "Populations & Competition",
+    "prompt": "A population grows quickly, then levels off and stops increasing. What is this ceiling called, and what sets it?",
+    "options": [
+      "The carrying capacity — set by limiting factors like food, space, and predators",
+      "The food chain — set by the number of species",
+      "The biodiversity — set by mutation",
+      "There is no real limit"
+    ],
+    "correctIndex": 0,
+    "explanation": "The ceiling is the carrying capacity: the maximum population the habitat can sustain, determined by limiting factors such as food, space, water, predators, and disease."
+  },
+  {
+    "id": "biology/pregnancy-and-birth",
+    "contentSlug": "biology/pregnancy-and-birth",
+    "subject": "biology",
+    "lessonTitle": "Pregnancy & Birth",
+    "prompt": "How does a developing fetus get oxygen and nutrients, and get rid of waste?",
+    "options": [
+      "It breathes and eats on its own",
+      "Through the placenta, where substances diffuse between the mother's blood and the baby's blood",
+      "Through the amniotic fluid only",
+      "The mother's and baby's blood mix directly"
+    ],
+    "correctIndex": 1,
+    "explanation": "The placenta brings the two blood supplies close together (without mixing). Oxygen and nutrients diffuse from mother to baby, and waste diffuses from baby to mother, all across the placenta."
+  },
+  {
+    "id": "biology/prokaryotes-vs-eukaryotes",
+    "contentSlug": "biology/prokaryotes-vs-eukaryotes",
+    "subject": "biology",
+    "lessonTitle": "Prokaryotes vs Eukaryotes",
+    "prompt": "What is the single defining difference between a prokaryotic and a eukaryotic cell?",
+    "options": [
+      "Prokaryotes have no DNA",
+      "Eukaryotes keep their DNA inside a membrane-bound nucleus; prokaryotes don't",
+      "Prokaryotes are always larger",
+      "Only eukaryotes have a cell membrane"
+    ],
+    "correctIndex": 1,
+    "explanation": "Both have DNA and membranes. The defining split is the nucleus: eukaryotes seal their DNA inside one, prokaryotes leave it floating free."
+  },
+  {
+    "id": "biology/protein-shape",
+    "contentSlug": "biology/protein-shape",
+    "subject": "biology",
+    "lessonTitle": "Protein Shape Is Everything",
+    "prompt": "Boiling an enzyme destroys its ability to work, even though all its atoms are still present. Why?",
+    "options": [
+      "Heat removes the enzyme's amino acids",
+      "Heat breaks the weak bonds holding its 3-D shape, denaturing it and destroying the active site",
+      "Heat turns the enzyme into a carbohydrate",
+      "Enzymes work better when boiled"
+    ],
+    "correctIndex": 1,
+    "explanation": "An enzyme's function depends on its precise folded shape and active site, held by weak bonds. Heat breaks those bonds so the protein denatures — the atoms remain, but the working shape is gone."
+  },
+  {
+    "id": "biology/proteins",
+    "contentSlug": "biology/proteins",
+    "subject": "biology",
+    "lessonTitle": "Proteins",
+    "prompt": "What are proteins built from, and what makes them so varied?",
+    "options": [
+      "Glucose units linked in different ways",
+      "20 kinds of amino acid arranged in any order and length",
+      "Glycerol and fatty acids",
+      "Nucleotides paired into a helix"
+    ],
+    "correctIndex": 1,
+    "explanation": "Proteins are chains of amino acids — 20 types, in any sequence and length — which gives almost unlimited variety, and so an enormous range of jobs."
+  },
+  {
+    "id": "biology/punnett-squares",
+    "contentSlug": "biology/punnett-squares",
+    "subject": "biology",
+    "lessonTitle": "Punnett Squares & Probability",
+    "prompt": "A Punnett square predicts a 3:1 ratio of dominant to recessive offspring. A couple has three children, all showing the dominant trait. What's the chance their fourth child shows the recessive trait?",
+    "options": [
+      "0 — they've used up the recessive chance",
+      "100% — it's now 'due'",
+      "About 1 in 4 — each child is independent",
+      "1 in 2"
+    ],
+    "correctIndex": 2,
+    "explanation": "Each child is an independent event. The previous children don't change the odds — the fourth still has roughly a 1-in-4 chance of the recessive trait."
+  },
+  {
+    "id": "biology/reflexes",
+    "contentSlug": "biology/reflexes",
+    "subject": "biology",
+    "lessonTitle": "Reflexes & the Reflex Arc",
+    "prompt": "Why is a reflex response faster than a normal voluntary response?",
+    "options": [
+      "Reflexes use thicker neurons",
+      "The signal takes a shortcut through the spinal cord instead of going to the brain to be processed",
+      "Reflexes don't use neurons at all",
+      "The brain works faster during reflexes"
+    ],
+    "correctIndex": 1,
+    "explanation": "In a reflex arc, the signal passes through a relay neuron in the spinal cord and straight back to the muscle, bypassing the slower processing of the conscious brain — so the response is much quicker."
+  },
+  {
+    "id": "biology/reproductive-systems",
+    "contentSlug": "biology/reproductive-systems",
+    "subject": "biology",
+    "lessonTitle": "The Human Reproductive Systems",
+    "prompt": "Human gametes (sperm and eggs) each carry 23 chromosomes rather than the usual 46. Why is this essential?",
+    "options": [
+      "So they are smaller",
+      "So that when they join at fertilisation, the normal 46 is restored — not doubled",
+      "Because gametes don't need all their genes",
+      "To make them move faster"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gametes are made by meiosis and carry half the chromosomes (23). At fertilisation, sperm (23) + egg (23) = 46, restoring the full number. If they had 46 each, offspring would have 92."
+  },
+  {
+    "id": "biology/speciation",
+    "contentSlug": "biology/speciation",
+    "subject": "biology",
+    "lessonTitle": "How New Species Form",
+    "prompt": "A single population of squirrels is split by the formation of the Grand Canyon. Over a very long time, what is most likely to happen?",
+    "options": [
+      "Nothing — they stay one species forever",
+      "The two groups diverge under different conditions and may eventually become separate species",
+      "They immediately become two species",
+      "One group dies out automatically"
+    ],
+    "correctIndex": 1,
+    "explanation": "With gene flow blocked by the barrier, the two groups accumulate different changes over many generations. Given enough time, they can diverge into separate species — exactly what's observed with canyon squirrels."
+  },
+  {
+    "id": "biology/sugar-transport",
+    "contentSlug": "biology/sugar-transport",
+    "subject": "biology",
+    "lessonTitle": "Sugar Transport",
+    "prompt": "Which statement correctly contrasts the xylem and phloem?",
+    "options": [
+      "Both carry water upward only",
+      "Xylem carries water up (one way); phloem carries sugar both ways, from source to sink",
+      "Phloem carries water; xylem carries sugar",
+      "They carry the same things in the same direction"
+    ],
+    "correctIndex": 1,
+    "explanation": "Xylem carries water and minerals upward only, driven by transpiration. Phloem carries dissolved sugar from sources to sinks, in either direction, using energy (active transport)."
+  },
+  {
+    "id": "biology/surface-area-and-volume",
+    "contentSlug": "biology/surface-area-and-volume",
+    "subject": "biology",
+    "lessonTitle": "Surface Area & Volume",
+    "prompt": "As a cell grows larger, what happens to its surface-area-to-volume ratio, and why is that a problem?",
+    "options": [
+      "It increases, making exchange too fast",
+      "It decreases, so there's too little surface to supply the growing volume",
+      "It stays the same, so size doesn't matter",
+      "It decreases, which makes exchange easier"
+    ],
+    "correctIndex": 1,
+    "explanation": "Volume grows faster (cube) than surface area (square), so the ratio falls. A large cell can't exchange materials across its surface fast enough to serve its interior — so cells stay small."
+  },
+  {
+    "id": "biology/the-cell-cycle",
+    "contentSlug": "biology/the-cell-cycle",
+    "subject": "biology",
+    "lessonTitle": "The Cell Cycle",
+    "prompt": "During which phase of the cell cycle is the DNA copied, and why must this happen before the cell divides?",
+    "options": [
+      "M phase, so the cell can grow",
+      "S phase, so that each daughter cell receives a complete set of DNA",
+      "G1, to make proteins",
+      "It is copied after division"
+    ],
+    "correctIndex": 1,
+    "explanation": "DNA is replicated during S phase (within interphase). It must be copied before division so that each of the two new cells gets a full, identical set of chromosomes."
+  },
+  {
+    "id": "biology/the-double-helix",
+    "contentSlug": "biology/the-double-helix",
+    "subject": "biology",
+    "lessonTitle": "The Double Helix",
+    "prompt": "One strand of a DNA molecule reads A–A–G–C. What does the matching strand read?",
+    "options": [
+      "A–A–G–C",
+      "T–T–C–G",
+      "G–G–A–T",
+      "C–C–T–A"
+    ],
+    "correctIndex": 1,
+    "explanation": "A pairs with T and G pairs with C. So A–A–G–C is matched by T–T–C–G on the complementary strand."
+  },
+  {
+    "id": "biology/the-genetic-code",
+    "contentSlug": "biology/the-genetic-code",
+    "subject": "biology",
+    "lessonTitle": "The Genetic Code",
+    "prompt": "Why does the genetic code read bases in groups of three rather than one or two?",
+    "options": [
+      "Three is a lucky number in biology",
+      "One or two bases give too few combinations; triplets give 64 — enough for all 20 amino acids",
+      "DNA only has three bases",
+      "It makes the code shorter"
+    ],
+    "correctIndex": 1,
+    "explanation": "Singles give 4 and pairs give 16 combinations — too few for 20 amino acids. Triplets give 64, comfortably enough, with room for start/stop signals and redundancy."
+  },
+  {
+    "id": "biology/the-immune-response",
+    "contentSlug": "biology/the-immune-response",
+    "subject": "biology",
+    "lessonTitle": "The Immune Response in Depth",
+    "prompt": "Why does the adaptive immune response take a few days the FIRST time you meet a pathogen, but is almost instant the second time?",
+    "options": [
+      "The pathogen is weaker the second time",
+      "The first time, the right lymphocytes must be found and multiplied; the second time, memory cells are already primed and respond instantly",
+      "Antibiotics work faster the second time",
+      "The body grows new barriers"
+    ],
+    "correctIndex": 1,
+    "explanation": "The first (primary) response is slow because the body must find and multiply the specific lymphocytes. Memory cells left behind make the second (secondary) response fast and large — the basis of immunity and vaccination."
+  },
+  {
+    "id": "biology/the-immune-system",
+    "contentSlug": "biology/the-immune-system",
+    "subject": "biology",
+    "lessonTitle": "The Immune System",
+    "prompt": "What is the role of antibodies in the immune response?",
+    "options": [
+      "They are barriers that keep microbes out of the body",
+      "They are proteins that lock onto a specific pathogen's antigens, marking it for destruction",
+      "They are pathogens that cause disease",
+      "They digest food in the gut"
+    ],
+    "correctIndex": 1,
+    "explanation": "Antibodies are Y-shaped proteins made by lymphocytes. Each one binds to a specific antigen on a pathogen, clumping invaders and tagging them so phagocytes can destroy them."
+  },
+  {
+    "id": "biology/the-microbial-world",
+    "contentSlug": "biology/the-microbial-world",
+    "subject": "biology",
+    "lessonTitle": "The Microbial World",
+    "prompt": "How does a bacterium store its DNA, compared with one of your cells?",
+    "options": [
+      "In a nucleus, just like your cells",
+      "As a single loop of DNA floating free in the cytoplasm, with no nucleus",
+      "It has no DNA",
+      "In its mitochondria"
+    ],
+    "correctIndex": 1,
+    "explanation": "Bacteria are prokaryotes: they have no nucleus. Their DNA is a single circular loop free in the cytoplasm, often accompanied by small extra rings called plasmids."
+  },
+  {
+    "id": "biology/the-microscope",
+    "contentSlug": "biology/the-microscope",
+    "subject": "biology",
+    "lessonTitle": "The Microscope",
+    "prompt": "You magnify a photo of a cell 1000× but it just looks like a bigger blur, with no extra detail. What was the limiting factor?",
+    "options": [
+      "Magnification",
+      "Resolution",
+      "Brightness",
+      "The size of the screen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Magnification only enlarges the image. Resolution determines whether finer detail is actually there to see — and it was the bottleneck here."
+  },
+  {
+    "id": "biology/the-nervous-system",
+    "contentSlug": "biology/the-nervous-system",
+    "subject": "biology",
+    "lessonTitle": "The Nervous System",
+    "prompt": "Put the response pathway in the correct order: effector, receptor, CNS, stimulus.",
+    "options": [
+      "stimulus → receptor → CNS → effector",
+      "receptor → stimulus → effector → CNS",
+      "CNS → receptor → stimulus → effector",
+      "stimulus → effector → CNS → receptor"
+    ],
+    "correctIndex": 0,
+    "explanation": "A stimulus is detected by a receptor, which sends a message to the CNS to coordinate a response, which is carried out by an effector (muscle or gland)."
+  },
+  {
+    "id": "biology/the-nucleus",
+    "contentSlug": "biology/the-nucleus",
+    "subject": "biology",
+    "lessonTitle": "The Nucleus & Control Centre",
+    "prompt": "Why does the cell send out mRNA copies of a gene instead of the DNA itself?",
+    "options": [
+      "DNA is too small to move",
+      "To keep the master DNA safe inside the nucleus while disposable copies do the work",
+      "Ribosomes can read DNA but not mRNA",
+      "mRNA carries more information than DNA"
+    ],
+    "correctIndex": 1,
+    "explanation": "The DNA is the irreplaceable master copy, so it stays protected in the nucleus. Expendable mRNA copies carry the instructions out to the ribosomes."
+  },
+  {
+    "id": "biology/the-scale-of-life",
+    "contentSlug": "biology/the-scale-of-life",
+    "subject": "biology",
+    "lessonTitle": "The Scale of Life",
+    "prompt": "Put these in order from SMALLEST to largest: organ, cell, tissue, organism.",
+    "options": [
+      "cell → tissue → organ → organism",
+      "organism → organ → tissue → cell",
+      "tissue → cell → organ → organism",
+      "cell → organ → tissue → organism"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cells group into tissues, tissues build organs, and organs work together to make the whole organism — each level nested inside the next."
+  },
+  {
+    "id": "biology/the-tree-of-life",
+    "contentSlug": "biology/the-tree-of-life",
+    "subject": "biology",
+    "lessonTitle": "The Tree of Life",
+    "prompt": "What single piece of evidence most strongly suggests that ALL life shares one common ancestor?",
+    "options": [
+      "All organisms need water",
+      "All organisms use the same DNA code, read with the same dictionary",
+      "All organisms are made of cells of similar size",
+      "All organisms live on the same planet"
+    ],
+    "correctIndex": 1,
+    "explanation": "A universal genetic code that didn't have to be universal points to shared inheritance. Needing water or being cellular is suggestive, but the shared code is the decisive fingerprint of common ancestry."
+  },
+  {
+    "id": "biology/transcription",
+    "contentSlug": "biology/transcription",
+    "subject": "biology",
+    "lessonTitle": "Transcription",
+    "prompt": "During transcription, a section of DNA template reads T–A–C–G. What is the matching mRNA sequence?",
+    "options": [
+      "T–A–C–G",
+      "A–U–G–C",
+      "A–T–G–C",
+      "U–A–C–G"
+    ],
+    "correctIndex": 1,
+    "explanation": "mRNA pairs A–U and G–C, using U instead of T. So the template T–A–C–G is copied as A–U–G–C in the mRNA."
+  },
+  {
+    "id": "biology/translation",
+    "contentSlug": "biology/translation",
+    "subject": "biology",
+    "lessonTitle": "Translation",
+    "prompt": "During translation, what is the job of a tRNA molecule?",
+    "options": [
+      "To copy DNA into mRNA",
+      "To bring the correct amino acid for each codon the ribosome reads",
+      "To unzip the DNA helix",
+      "To join two ribosomes together"
+    ],
+    "correctIndex": 1,
+    "explanation": "Each tRNA carries a specific amino acid and matches it to the right codon on the mRNA, so the ribosome can add amino acids to the protein chain in the correct order."
+  },
+  {
+    "id": "biology/vaccines",
+    "contentSlug": "biology/vaccines",
+    "subject": "biology",
+    "lessonTitle": "Vaccines & Immunity",
+    "prompt": "How does a vaccine make you immune to a disease without making you ill?",
+    "options": [
+      "It kills all the pathogens in your body",
+      "It contains a harmless version of the pathogen, so your immune system makes memory cells ready for the real thing",
+      "It coats your cells in a protective layer",
+      "It works exactly like an antibiotic"
+    ],
+    "correctIndex": 1,
+    "explanation": "A vaccine exposes the immune system to a harmless form of the pathogen's antigens. This triggers antibody production and, vitally, memory cells — so a later real infection meets a fast, strong secondary response."
+  },
+  {
+    "id": "biology/variation-and-adaptation",
+    "contentSlug": "biology/variation-and-adaptation",
+    "subject": "biology",
+    "lessonTitle": "Variation & Adaptation",
+    "prompt": "Which of these is a true adaptation in the evolutionary sense?",
+    "options": [
+      "A bodybuilder's muscles, gained through training",
+      "A suntan developed over summer",
+      "A desert fox's large ears, inherited and helping it lose heat",
+      "A scar from an old injury"
+    ],
+    "correctIndex": 2,
+    "explanation": "An adaptation is an inherited feature that aids survival. Large ears that help a fox lose heat are inherited and passed on. Muscles, tans, and scars are acquired in a lifetime and can't be inherited."
+  },
+  {
+    "id": "biology/viruses",
+    "contentSlug": "biology/viruses",
+    "subject": "biology",
+    "lessonTitle": "Viruses",
+    "prompt": "Why are antibiotics useless against a viral infection like the common cold?",
+    "options": [
+      "Viruses are too big for antibiotics",
+      "Antibiotics target features of bacterial cells, which viruses don't have — viruses hide and replicate inside your own cells",
+      "Antibiotics only work in winter",
+      "Viruses eat antibiotics"
+    ],
+    "correctIndex": 1,
+    "explanation": "Antibiotics work by attacking structures specific to bacteria (like their cell wall). Viruses have none of these and replicate inside your own cells, so antibiotics can't touch them."
+  },
+  {
+    "id": "biology/water",
+    "contentSlug": "biology/water",
+    "subject": "biology",
+    "lessonTitle": "Water: The Solvent of Life",
+    "prompt": "What single feature of water explains why it dissolves so many substances and sticks to itself?",
+    "options": [
+      "It is a very small molecule",
+      "It is polar — one end slightly negative, the other slightly positive",
+      "It contains carbon",
+      "It is a liquid at room temperature"
+    ],
+    "correctIndex": 1,
+    "explanation": "Water's polarity (a δ− oxygen and δ+ hydrogens) lets it attract charged particles (making it a great solvent) and attract other water molecules (cohesion)."
+  },
+  {
+    "id": "biology/water-transport",
+    "contentSlug": "biology/water-transport",
+    "subject": "biology",
+    "lessonTitle": "Water Transport & Transpiration",
+    "prompt": "On which kind of day would a plant transpire (lose water) fastest?",
+    "options": [
+      "Cool, still, and humid",
+      "Hot, windy, and dry",
+      "Dark and cold",
+      "Humid and dark"
+    ],
+    "correctIndex": 1,
+    "explanation": "Heat speeds evaporation, wind removes humid air to keep the gradient steep, and dry air means more water can evaporate. Hot, windy, and dry conditions maximise transpiration."
+  },
+  {
+    "id": "biology/what-is-life",
+    "contentSlug": "biology/what-is-life",
+    "subject": "biology",
+    "lessonTitle": "What Is Life?",
+    "prompt": "A car burns fuel, moves, gives off exhaust, and needs 'feeding' at the pump. Why isn't it alive?",
+    "options": [
+      "It doesn't move on its own",
+      "It can't grow, sense, reproduce, or do all seven life processes",
+      "It isn't made of metal",
+      "It uses too much energy"
+    ],
+    "correctIndex": 1,
+    "explanation": "A car does a couple of life-like things, but life requires ALL seven processes — including growth, sensitivity, and reproduction — which no machine performs."
+  },
+  {
+    "id": "chemistry/acid-base-theories",
+    "contentSlug": "chemistry/acid-base-theories",
+    "subject": "chemistry",
+    "lessonTitle": "Acid–Base Theories",
+    "prompt": "By the Brønsted–Lowry definition, what is an acid?",
+    "options": [
+      "Any substance that produces OH⁻ ions",
+      "A proton (H⁺) donor",
+      "A proton (H⁺) acceptor",
+      "Any substance that tastes sour"
+    ],
+    "correctIndex": 1,
+    "explanation": "Brønsted–Lowry defines an acid as a proton (H⁺) donor and a base as a proton acceptor. This is broader than the Arrhenius 'produces H⁺ in water' view and explains bases like ammonia that contain no OH⁻."
+  },
+  {
+    "id": "chemistry/alcohols-and-carboxylic-acids",
+    "contentSlug": "chemistry/alcohols-and-carboxylic-acids",
+    "subject": "chemistry",
+    "lessonTitle": "Alcohols & Carboxylic Acids",
+    "prompt": "Why does an open bottle of wine eventually taste sour like vinegar?",
+    "options": [
+      "The water evaporates, concentrating the sugar",
+      "The ethanol (an alcohol) is oxidised by air into acetic acid (a carboxylic acid)",
+      "The alcohol turns into an ester",
+      "Bacteria add more alcohol"
+    ],
+    "correctIndex": 1,
+    "explanation": "Exposed to air, the ethanol (–OH alcohol group) is oxidised to acetic acid (–COOH carboxylic acid) — the sour-tasting acid in vinegar. It's a direct alcohol-to-carboxylic-acid oxidation."
+  },
+  {
+    "id": "chemistry/alkenes-and-alkynes",
+    "contentSlug": "chemistry/alkenes-and-alkynes",
+    "subject": "chemistry",
+    "lessonTitle": "Alkenes & Alkynes",
+    "prompt": "A hydrocarbon decolourises orange bromine water. What does this tell you?",
+    "options": [
+      "It is a saturated alkane",
+      "It is unsaturated (contains a C=C double bond), so it is an alkene",
+      "It contains only single bonds",
+      "It is not a hydrocarbon at all"
+    ],
+    "correctIndex": 1,
+    "explanation": "Decolourising bromine water is the classic test for unsaturation: the C=C double bond of an alkene adds across the bromine, removing its colour. Saturated alkanes have no double bond and don't react."
+  },
+  {
+    "id": "chemistry/atomic-number-and-mass",
+    "contentSlug": "chemistry/atomic-number-and-mass",
+    "subject": "chemistry",
+    "lessonTitle": "Atomic Number & Mass",
+    "prompt": "An atom has atomic number Z = 11 and mass number A = 23. How many protons, neutrons, and electrons does the neutral atom have?",
+    "options": [
+      "11 protons, 23 neutrons, 11 electrons",
+      "11 protons, 12 neutrons, 11 electrons",
+      "23 protons, 11 neutrons, 23 electrons",
+      "12 protons, 11 neutrons, 12 electrons"
+    ],
+    "correctIndex": 1,
+    "explanation": "Z = 11 means 11 protons (and 11 electrons in a neutral atom). Neutrons = A − Z = 23 − 11 = 12. This is sodium-23."
+  },
+  {
+    "id": "chemistry/atomic-theory",
+    "contentSlug": "chemistry/atomic-theory",
+    "subject": "chemistry",
+    "lessonTitle": "The Idea of the Atom",
+    "prompt": "Rutherford's gold-foil experiment, in which a few particles bounced sharply back, led to which conclusion?",
+    "options": [
+      "Atoms are solid, indivisible spheres",
+      "Electrons are spread evenly through a positive pudding",
+      "The atom has a tiny, dense, positively charged nucleus and is mostly empty space",
+      "Electrons orbit in fixed energy shells"
+    ],
+    "correctIndex": 2,
+    "explanation": "Most particles passed straight through (empty space), but a few hit something tiny, dense, and positive and bounced back — the nucleus. That overturned Thomson's plum-pudding model."
+  },
+  {
+    "id": "chemistry/balancing-equations",
+    "contentSlug": "chemistry/balancing-equations",
+    "subject": "chemistry",
+    "lessonTitle": "Balancing Equations",
+    "prompt": "Balance: ___ H₂ + ___ O₂ → ___ H₂O. What are the coefficients?",
+    "options": [
+      "1, 1, 1",
+      "2, 1, 2",
+      "1, 2, 2",
+      "2, 2, 1"
+    ],
+    "correctIndex": 1,
+    "explanation": "2H₂ + O₂ → 2H₂O. Left: 4 H and 2 O. Right: 4 H (2×2) and 2 O (2×1). Every atom balances — and you only changed coefficients, never the formulas."
+  },
+  {
+    "id": "chemistry/balancing-redox",
+    "contentSlug": "chemistry/balancing-redox",
+    "subject": "chemistry",
+    "lessonTitle": "Balancing Redox Reactions",
+    "prompt": "In the half-reaction method, why must you sometimes multiply the half-reactions by different numbers before adding them?",
+    "options": [
+      "To balance the temperature",
+      "So the number of electrons lost in oxidation equals the number gained in reduction, letting them cancel",
+      "To make both halves exothermic",
+      "To change the oxidation numbers"
+    ],
+    "correctIndex": 1,
+    "explanation": "Electrons can't be created or destroyed, so the electrons lost in the oxidation half must exactly equal those gained in the reduction half. If the halves have different electron counts, you scale them to a common multiple so the electrons cancel when added."
+  },
+  {
+    "id": "chemistry/batteries-and-corrosion",
+    "contentSlug": "chemistry/batteries-and-corrosion",
+    "subject": "chemistry",
+    "lessonTitle": "Batteries & Corrosion",
+    "prompt": "Why does attaching a block of zinc to an iron ship's hull protect the iron from rusting?",
+    "options": [
+      "Zinc is waterproof and seals the iron",
+      "Zinc is more reactive, so it is oxidised in preference to the iron — sacrificing itself",
+      "Zinc makes the iron less dense",
+      "Zinc lowers the temperature of the seawater"
+    ],
+    "correctIndex": 1,
+    "explanation": "Zinc is higher in the activity series than iron, so it gives up electrons more readily and is oxidised first. This 'sacrificial' zinc corrodes instead of the iron, protecting the hull — and it's replaced periodically."
+  },
+  {
+    "id": "chemistry/buffers-and-equilibrium",
+    "contentSlug": "chemistry/buffers-and-equilibrium",
+    "subject": "chemistry",
+    "lessonTitle": "Buffers & the Balance of pH",
+    "prompt": "How does a buffer keep pH nearly constant when a small amount of acid is added?",
+    "options": [
+      "It boils off the extra acid",
+      "Its conjugate base (A⁻) reacts with the added H⁺, removing it from solution so the pH barely changes",
+      "It dilutes the acid with water",
+      "It converts the acid into a salt and a gas"
+    ],
+    "correctIndex": 1,
+    "explanation": "A buffer contains a weak acid and its conjugate base. Added H⁺ is consumed by the conjugate base (A⁻ + H⁺ → HA), and added OH⁻ is neutralised by the weak acid. Either way the free [H⁺] stays nearly constant, so the pH holds."
+  },
+  {
+    "id": "chemistry/calorimetry",
+    "contentSlug": "chemistry/calorimetry",
+    "subject": "chemistry",
+    "lessonTitle": "Calorimetry",
+    "prompt": "A reaction heats 200 g of water by 10 °C. Using q = mcΔT with c = 4.18 J/g·°C, how much heat was released?",
+    "options": [
+      "836 J",
+      "8360 J (about 8.4 kJ)",
+      "2090 J",
+      "418 J"
+    ],
+    "correctIndex": 1,
+    "explanation": "q = mcΔT = 200 g × 4.18 J/g·°C × 10 °C = 8360 J ≈ 8.4 kJ. The water absorbed this much heat, so the reaction released about 8.4 kJ (an exothermic reaction)."
+  },
+  {
+    "id": "chemistry/carbohydrates",
+    "contentSlug": "chemistry/carbohydrates",
+    "subject": "chemistry",
+    "lessonTitle": "Carbohydrates",
+    "prompt": "Starch and cellulose are both polysaccharides made from glucose, yet we can digest starch but not cellulose. What does this illustrate?",
+    "options": [
+      "They are made of different elements",
+      "The way identical glucose units are linked (structure) determines the molecule's properties and function",
+      "Cellulose contains no carbon",
+      "Starch is not a carbohydrate"
+    ],
+    "correctIndex": 1,
+    "explanation": "Both are glucose polymers, but the glucose units are linked differently. That difference in structure means our enzymes can break starch's bonds but not cellulose's — so cellulose passes through as dietary fibre. Structure determines function."
+  },
+  {
+    "id": "chemistry/catalysts",
+    "contentSlug": "chemistry/catalysts",
+    "subject": "chemistry",
+    "lessonTitle": "Catalysts",
+    "prompt": "How does a catalyst speed up a reaction, and what happens to it by the end?",
+    "options": [
+      "It raises the temperature; it is used up",
+      "It provides a pathway with lower activation energy; it is regenerated unchanged",
+      "It increases ΔH; it is consumed",
+      "It removes products; it evaporates"
+    ],
+    "correctIndex": 1,
+    "explanation": "A catalyst offers an alternative route with a lower activation energy, so more collisions succeed and the reaction speeds up. It takes part but is regenerated unchanged — and it doesn't alter ΔH or the equilibrium position."
+  },
+  {
+    "id": "chemistry/chemical-formulas",
+    "contentSlug": "chemistry/chemical-formulas",
+    "subject": "chemistry",
+    "lessonTitle": "Chemical Formulas",
+    "prompt": "How many atoms of each element are in one formula unit of (NH₄)₂SO₄?",
+    "options": [
+      "1 N, 4 H, 1 S, 4 O",
+      "2 N, 8 H, 1 S, 4 O",
+      "2 N, 4 H, 2 S, 4 O",
+      "2 N, 8 H, 2 S, 8 O"
+    ],
+    "correctIndex": 1,
+    "explanation": "The (NH₄) group is multiplied by 2: that's 2 N and 8 H. Then add the SO₄: 1 S and 4 O. So the total is 2 N, 8 H, 1 S, 4 O."
+  },
+  {
+    "id": "chemistry/classifying-matter",
+    "contentSlug": "chemistry/classifying-matter",
+    "subject": "chemistry",
+    "lessonTitle": "The Map of Matter",
+    "prompt": "A clear liquid can be boiled away completely, leaving a white solid behind, and the vapour condenses into a different pure liquid. The original clear liquid was most likely…",
+    "options": [
+      "An element",
+      "A compound",
+      "A homogeneous mixture (a solution)",
+      "A heterogeneous mixture"
+    ],
+    "correctIndex": 2,
+    "explanation": "It separated into two substances by a purely physical method (boiling/condensing), so it was a mixture — and because it looked uniform (clear), it was homogeneous: a solution, like salt dissolved in water."
+  },
+  {
+    "id": "chemistry/colligative-properties",
+    "contentSlug": "chemistry/colligative-properties",
+    "subject": "chemistry",
+    "lessonTitle": "Colligative Properties",
+    "prompt": "Why does spreading salt on an icy road help melt the ice?",
+    "options": [
+      "Salt is hot and warms the ice",
+      "Dissolved salt particles lower the freezing point of water, so it stays liquid below 0 °C",
+      "Salt reacts chemically with ice to make heat",
+      "Salt raises the freezing point of water"
+    ],
+    "correctIndex": 1,
+    "explanation": "Salt dissolving in the thin film of water lowers its freezing point (a colligative property). The salty water no longer freezes at 0 °C, so the ice melts. Because salt splits into ions, it's especially effective."
+  },
+  {
+    "id": "chemistry/collision-theory",
+    "contentSlug": "chemistry/collision-theory",
+    "subject": "chemistry",
+    "lessonTitle": "Collision Theory",
+    "prompt": "According to collision theory, what two conditions must a collision meet to result in a reaction?",
+    "options": [
+      "High pressure and low temperature",
+      "Sufficient energy (above the activation energy) and correct orientation",
+      "The particles must be the same element",
+      "The particles must be moving slowly and gently"
+    ],
+    "correctIndex": 1,
+    "explanation": "A successful collision needs enough energy to clear the activation energy AND the right orientation for new bonds to form. Collisions that are too weak or poorly aligned simply bounce off without reacting."
+  },
+  {
+    "id": "chemistry/combustion",
+    "contentSlug": "chemistry/combustion",
+    "subject": "chemistry",
+    "lessonTitle": "Combustion",
+    "prompt": "What are the products of the COMPLETE combustion of a hydrocarbon like methane (CH₄)?",
+    "options": [
+      "Carbon monoxide and hydrogen",
+      "Carbon dioxide and water",
+      "Soot and hydrogen gas",
+      "Only heat — no new substances"
+    ],
+    "correctIndex": 1,
+    "explanation": "Complete combustion (with plenty of oxygen) converts all the carbon to CO₂ and all the hydrogen to H₂O, releasing energy. Incomplete combustion, with too little oxygen, also makes carbon monoxide and soot."
+  },
+  {
+    "id": "chemistry/concentration-and-molarity",
+    "contentSlug": "chemistry/concentration-and-molarity",
+    "subject": "chemistry",
+    "lessonTitle": "Concentration & Molarity",
+    "prompt": "How many moles of solute are in 2 litres of a 3 M solution?",
+    "options": [
+      "1.5 mol",
+      "3 mol",
+      "6 mol",
+      "0.67 mol"
+    ],
+    "correctIndex": 2,
+    "explanation": "moles = M × V = 3 mol/L × 2 L = 6 mol. Molarity multiplied by volume gives the number of moles of solute."
+  },
+  {
+    "id": "chemistry/covalent-bonding",
+    "contentSlug": "chemistry/covalent-bonding",
+    "subject": "chemistry",
+    "lessonTitle": "Covalent Bonding",
+    "prompt": "Why does water (a covalent molecule) have a much lower melting point than salt (an ionic lattice)?",
+    "options": [
+      "Water molecules are heavier than salt",
+      "Melting water only requires overcoming weak forces between separate molecules, not breaking the strong covalent bonds inside them",
+      "Water has no chemical bonds at all",
+      "Salt is a gas at room temperature"
+    ],
+    "correctIndex": 1,
+    "explanation": "The covalent bonds within an H₂O molecule are strong, but the attractions between separate molecules are weak. Melting only needs to overcome those weak inter-molecular forces — unlike salt's giant lattice of strong attractions."
+  },
+  {
+    "id": "chemistry/dynamic-equilibrium",
+    "contentSlug": "chemistry/dynamic-equilibrium",
+    "subject": "chemistry",
+    "lessonTitle": "Dynamic Equilibrium",
+    "prompt": "At dynamic equilibrium, which statement is true?",
+    "options": [
+      "Both forward and reverse reactions have stopped",
+      "The forward and reverse reactions continue at equal rates, so concentrations stay constant",
+      "There must be equal amounts of reactants and products",
+      "Only the forward reaction is occurring"
+    ],
+    "correctIndex": 1,
+    "explanation": "Dynamic equilibrium means the forward and reverse reactions are still running, but at equal rates — so concentrations remain constant. The reactions haven't stopped, and the amounts of reactant and product need not be equal."
+  },
+  {
+    "id": "chemistry/electrolysis",
+    "contentSlug": "chemistry/electrolysis",
+    "subject": "chemistry",
+    "lessonTitle": "Electrolysis",
+    "prompt": "How does electrolysis differ from a galvanic cell?",
+    "options": [
+      "Electrolysis releases electricity from a spontaneous reaction",
+      "Electrolysis uses electrical energy to force a non-spontaneous reaction to occur",
+      "Electrolysis involves no electron transfer",
+      "They are exactly the same process"
+    ],
+    "correctIndex": 1,
+    "explanation": "A galvanic cell releases energy from a spontaneous redox reaction. Electrolysis is the reverse — it puts electrical energy IN to drive a non-spontaneous reaction, such as splitting water or extracting reactive metals."
+  },
+  {
+    "id": "chemistry/electrolytes-and-water",
+    "contentSlug": "chemistry/electrolytes-and-water",
+    "subject": "chemistry",
+    "lessonTitle": "Electrolytes & the Water of Life",
+    "prompt": "Salt water conducts electricity but a sugar solution does not, even though both dissolve in water. Why?",
+    "options": [
+      "Sugar molecules are too heavy to move",
+      "Salt splits into free-moving ions (an electrolyte) that carry charge, while sugar dissolves as neutral molecules with no charges to move",
+      "Sugar is insoluble in water",
+      "Salt water is hotter"
+    ],
+    "correctIndex": 1,
+    "explanation": "Conduction needs mobile charges. Salt is an electrolyte — it splits into free Na⁺ and Cl⁻ ions that carry current. Sugar dissolves as neutral molecules (a non-electrolyte) with no ions, so its solution can't conduct."
+  },
+  {
+    "id": "chemistry/electron-arrangement",
+    "contentSlug": "chemistry/electron-arrangement",
+    "subject": "chemistry",
+    "lessonTitle": "How Electrons Are Arranged",
+    "prompt": "Magnesium has 12 electrons. What is its electron arrangement, and how many valence electrons does it have?",
+    "options": [
+      "2, 10 — with 10 valence electrons",
+      "2, 8, 2 — with 2 valence electrons",
+      "8, 4 — with 4 valence electrons",
+      "2, 8, 8, 2 — with 2 valence electrons"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fill inside out: 2 in the first shell, 8 in the second, leaving 2 for the third. That's 2, 8, 2 — so magnesium has 2 valence electrons in its outer shell, which it tends to lose to form Mg²⁺."
+  },
+  {
+    "id": "chemistry/energy-in-reactions",
+    "contentSlug": "chemistry/energy-in-reactions",
+    "subject": "chemistry",
+    "lessonTitle": "Energy in Reactions",
+    "prompt": "At the most basic level, where does the energy released or absorbed in a chemical reaction come from?",
+    "options": [
+      "From the mass of the atoms disappearing",
+      "From the difference between energy used to break bonds and energy released when new bonds form",
+      "From friction between molecules",
+      "From electricity in the surroundings"
+    ],
+    "correctIndex": 1,
+    "explanation": "Breaking bonds absorbs energy and forming bonds releases it. The net energy change of a reaction is the difference between the two — chemical energy stored in bonds being repackaged, with total energy always conserved."
+  },
+  {
+    "id": "chemistry/enthalpy-and-bond-energy",
+    "contentSlug": "chemistry/enthalpy-and-bond-energy",
+    "subject": "chemistry",
+    "lessonTitle": "Enthalpy & Bond Energy",
+    "prompt": "A reaction breaks bonds worth 2644 kJ and forms bonds worth 3466 kJ. What is ΔH, and is it exothermic or endothermic?",
+    "options": [
+      "ΔH = +822 kJ, endothermic",
+      "ΔH = −822 kJ, exothermic",
+      "ΔH = +6110 kJ, endothermic",
+      "ΔH = 0, neither"
+    ],
+    "correctIndex": 1,
+    "explanation": "ΔH = bonds broken − bonds formed = 2644 − 3466 = −822 kJ. Forming releases more than breaking costs, so energy is released overall — exothermic, with a negative ΔH."
+  },
+  {
+    "id": "chemistry/entropy-and-free-energy",
+    "contentSlug": "chemistry/entropy-and-free-energy",
+    "subject": "chemistry",
+    "lessonTitle": "Entropy & Spontaneity",
+    "prompt": "A reaction has a positive ΔH (endothermic) but a large positive ΔS (big increase in disorder). Using ΔG = ΔH − TΔS, when will it become spontaneous?",
+    "options": [
+      "Never — endothermic reactions can't be spontaneous",
+      "At high temperature, where the TΔS term outweighs ΔH and makes ΔG negative",
+      "Only at absolute zero",
+      "At low temperature only"
+    ],
+    "correctIndex": 1,
+    "explanation": "With ΔH positive and ΔS positive, raising T increases the TΔS term until it exceeds ΔH, making ΔG negative — spontaneous. This is why heat drives endothermic, disorder-increasing reactions like melting and decomposition."
+  },
+  {
+    "id": "chemistry/enzymes-and-metabolism",
+    "contentSlug": "chemistry/enzymes-and-metabolism",
+    "subject": "chemistry",
+    "lessonTitle": "Enzymes & Metabolism",
+    "prompt": "Enzymes are biological catalysts. How do they speed up the reactions of life?",
+    "options": [
+      "By raising the body's temperature",
+      "By lowering the activation energy of a reaction, without being used up themselves",
+      "By increasing ΔH so more energy is released",
+      "By becoming part of the product"
+    ],
+    "correctIndex": 1,
+    "explanation": "Like all catalysts, enzymes lower the activation energy, so far more collisions succeed and the reaction speeds up dramatically — and the enzyme is regenerated unchanged. Their specific shape (active site) lets each one catalyse just one reaction."
+  },
+  {
+    "id": "chemistry/exothermic-and-endothermic",
+    "contentSlug": "chemistry/exothermic-and-endothermic",
+    "subject": "chemistry",
+    "lessonTitle": "Exothermic & Endothermic",
+    "prompt": "An instant cold pack gets cold when activated. What does this tell you about the reaction inside?",
+    "options": [
+      "It is exothermic, with a negative ΔH",
+      "It is endothermic, absorbing heat from the surroundings, with a positive ΔH",
+      "It releases energy as light",
+      "No reaction is occurring"
+    ],
+    "correctIndex": 1,
+    "explanation": "The pack gets cold because the reaction absorbs heat from its surroundings — that's endothermic, with a positive ΔH. (An exothermic reaction would warm up, like a hand-warmer.)"
+  },
+  {
+    "id": "chemistry/factors-affecting-rate",
+    "contentSlug": "chemistry/factors-affecting-rate",
+    "subject": "chemistry",
+    "lessonTitle": "Factors Affecting Rate",
+    "prompt": "Why does powdered zinc react much faster with acid than the same mass of zinc in one lump?",
+    "options": [
+      "Powder is a different element",
+      "Powder has far more surface area exposed, so more frequent collisions with the acid",
+      "Powder is at a higher temperature",
+      "The acid becomes more concentrated near powder"
+    ],
+    "correctIndex": 1,
+    "explanation": "Grinding a solid into powder dramatically increases its surface area, exposing far more particles to collide with the acid. More frequent successful collisions means a faster reaction — the same reason flour dust can explode."
+  },
+  {
+    "id": "chemistry/functional-groups",
+    "contentSlug": "chemistry/functional-groups",
+    "subject": "chemistry",
+    "lessonTitle": "Functional Groups",
+    "prompt": "What is a functional group, and why is it so useful for understanding organic molecules?",
+    "options": [
+      "The carbon backbone, which determines all reactions",
+      "A reactive cluster of atoms that defines a molecule's family and its characteristic reactions, regardless of backbone size",
+      "The number of carbon atoms in a chain",
+      "A type of isomer"
+    ],
+    "correctIndex": 1,
+    "explanation": "A functional group is the reactive part of an organic molecule. It defines the family (alcohol, acid, amine…) and the molecule's reactions — so learning a few groups lets you predict the behaviour of countless molecules whatever their backbone."
+  },
+  {
+    "id": "chemistry/galvanic-cells",
+    "contentSlug": "chemistry/galvanic-cells",
+    "subject": "chemistry",
+    "lessonTitle": "Galvanic Cells",
+    "prompt": "In a galvanic cell, where does oxidation occur and which way do electrons flow through the external wire?",
+    "options": [
+      "Oxidation at the cathode; electrons flow cathode → anode",
+      "Oxidation at the anode; electrons flow anode → cathode",
+      "Oxidation at both electrodes; no electron flow",
+      "Reduction at the anode; electrons flow randomly"
+    ],
+    "correctIndex": 1,
+    "explanation": "Oxidation always happens at the anode (An Ox), releasing electrons. They flow through the wire to the cathode, where reduction occurs (Red Cat). That electron flow is the electric current the cell delivers."
+  },
+  {
+    "id": "chemistry/groups-and-families",
+    "contentSlug": "chemistry/groups-and-families",
+    "subject": "chemistry",
+    "lessonTitle": "Groups & Families",
+    "prompt": "Why are the noble gases (Group 18) almost completely unreactive?",
+    "options": [
+      "They have one valence electron they lose instantly",
+      "They are all metals with tightly bound electrons",
+      "They already have a full outer shell, so they have no drive to gain or lose electrons",
+      "They are too heavy to react"
+    ],
+    "correctIndex": 2,
+    "explanation": "A full outer shell is the stable arrangement every atom 'wants'. The noble gases already have it, so they have no tendency to bond — and that full-shell stability is exactly what other atoms chase when they react."
+  },
+  {
+    "id": "chemistry/hess-law",
+    "contentSlug": "chemistry/hess-law",
+    "subject": "chemistry",
+    "lessonTitle": "Hess's Law",
+    "prompt": "Forming CO₂ directly has ΔH = −393 kJ. Forming it in two steps (C → CO, then CO → CO₂) gives ΔH₁ = −110 and ΔH₂ = ? . What must ΔH₂ be?",
+    "options": [
+      "−110 kJ",
+      "−283 kJ",
+      "−393 kJ",
+      "+283 kJ"
+    ],
+    "correctIndex": 1,
+    "explanation": "By Hess's Law the steps must sum to the direct value: ΔH₁ + ΔH₂ = −393. So ΔH₂ = −393 − (−110) = −283 kJ. The path doesn't change the total enthalpy."
+  },
+  {
+    "id": "chemistry/how-things-dissolve",
+    "contentSlug": "chemistry/how-things-dissolve",
+    "subject": "chemistry",
+    "lessonTitle": "How Things Dissolve",
+    "prompt": "Based on 'like dissolves like', which substance would dissolve best in water (a polar solvent)?",
+    "options": [
+      "Cooking oil (non-polar)",
+      "Wax (non-polar)",
+      "Table salt (ionic)",
+      "Candle paraffin (non-polar)"
+    ],
+    "correctIndex": 2,
+    "explanation": "Water is polar, so it dissolves polar and ionic substances. Table salt is ionic, and water's dipoles pull its ions apart (hydration). The non-polar oils and waxes won't dissolve in water — they need a non-polar solvent."
+  },
+  {
+    "id": "chemistry/hydrocarbons-alkanes",
+    "contentSlug": "chemistry/hydrocarbons-alkanes",
+    "subject": "chemistry",
+    "lessonTitle": "Hydrocarbons & Alkanes",
+    "prompt": "Using the alkane formula CₙH₂ₙ₊₂, what is the molecular formula of the alkane with 3 carbons (propane)?",
+    "options": [
+      "C₃H₆",
+      "C₃H₈",
+      "C₃H₄",
+      "C₃H₁₀"
+    ],
+    "correctIndex": 1,
+    "explanation": "For n = 3: H = 2(3) + 2 = 8. So propane is C₃H₈. Alkanes are saturated, holding the maximum hydrogen for their chain length."
+  },
+  {
+    "id": "chemistry/inside-the-atom",
+    "contentSlug": "chemistry/inside-the-atom",
+    "subject": "chemistry",
+    "lessonTitle": "Inside the Atom",
+    "prompt": "Where is almost all of an atom's mass, and almost all of its volume?",
+    "options": [
+      "Mass in the electron cloud; volume in the nucleus",
+      "Both mass and volume are in the nucleus",
+      "Mass in the nucleus (protons + neutrons); volume in the electron cloud",
+      "Both mass and volume are in the electron cloud"
+    ],
+    "correctIndex": 2,
+    "explanation": "Protons and neutrons are heavy and packed in the tiny nucleus, so that's where the mass is. The electrons are nearly massless but range far out, so they take up nearly all the volume — the atom is mostly empty space."
+  },
+  {
+    "id": "chemistry/intermolecular-forces-and-states",
+    "contentSlug": "chemistry/intermolecular-forces-and-states",
+    "subject": "chemistry",
+    "lessonTitle": "Forces & States of Matter",
+    "prompt": "Oxygen (O₂) boils at −183 °C while water (H₂O) boils at 100 °C, despite similar molecular sizes. Why?",
+    "options": [
+      "Oxygen molecules are much heavier",
+      "Water is non-polar and oxygen is polar",
+      "Water molecules hydrogen-bond strongly to each other, so far more energy is needed to separate them than oxygen's weak dispersion forces",
+      "Oxygen has stronger bonds inside each molecule"
+    ],
+    "correctIndex": 2,
+    "explanation": "The state depends on forces BETWEEN molecules. Water is polar and forms strong hydrogen bonds, so it stays liquid until 100 °C. Oxygen is non-polar with only weak dispersion forces, so its molecules separate into gas at a very low temperature."
+  },
+  {
+    "id": "chemistry/ionic-bonding",
+    "contentSlug": "chemistry/ionic-bonding",
+    "subject": "chemistry",
+    "lessonTitle": "Ionic Bonding",
+    "prompt": "Why do ionic compounds like NaCl have high melting points?",
+    "options": [
+      "Because individual NaCl molecules are very heavy",
+      "Because the ions share electrons very tightly",
+      "Because every ion is attracted to many oppositely charged neighbours in a strong lattice, which takes lots of energy to break apart",
+      "Because they are made of metals only"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ionic compounds form a giant lattice where each ion is held by strong electrostatic attraction to many neighbours. Melting means overcoming all those attractions at once, which requires a great deal of energy."
+  },
+  {
+    "id": "chemistry/ions",
+    "contentSlug": "chemistry/ions",
+    "subject": "chemistry",
+    "lessonTitle": "Ions",
+    "prompt": "Why does a chlorine atom form a Cl⁻ ion rather than a Cl⁺ ion?",
+    "options": [
+      "It has 7 valence electrons, so gaining 1 to complete its outer shell is far easier than losing 7",
+      "It has 1 valence electron, so it loses it easily",
+      "Chlorine is a metal and metals always form negative ions",
+      "It gains a proton to become negative"
+    ],
+    "correctIndex": 0,
+    "explanation": "Chlorine has 7 valence electrons — just one short of a full shell. Gaining a single electron (becoming Cl⁻) is far easier than losing all 7. Non-metals near a full shell gain electrons to form anions."
+  },
+  {
+    "id": "chemistry/isomers",
+    "contentSlug": "chemistry/isomers",
+    "subject": "chemistry",
+    "lessonTitle": "Isomers",
+    "prompt": "n-Butane and isobutane share the molecular formula C₄H₁₀ but have different boiling points. Why?",
+    "options": [
+      "They are different elements",
+      "They have different numbers of atoms",
+      "They are isomers — same formula but different structures, so different properties",
+      "One is an alkene and the other an alkane"
+    ],
+    "correctIndex": 2,
+    "explanation": "They're isomers: identical molecular formula (C₄H₁₀) but different arrangements of the atoms. The branched structure packs differently, giving weaker forces and a different boiling point. Structure determines properties."
+  },
+  {
+    "id": "chemistry/isotopes",
+    "contentSlug": "chemistry/isotopes",
+    "subject": "chemistry",
+    "lessonTitle": "Isotopes",
+    "prompt": "Carbon-12 and carbon-14 are isotopes. How do they differ, and how do they behave chemically?",
+    "options": [
+      "They have different numbers of protons, and react differently",
+      "They have different numbers of neutrons, but react identically",
+      "They have different numbers of electrons, and react differently",
+      "They are different elements that happen to react the same way"
+    ],
+    "correctIndex": 1,
+    "explanation": "Isotopes of an element have the same protons but different neutrons (here 6 vs 8). Since chemistry is governed by electrons, isotopes react identically — they differ only in mass and nuclear stability."
+  },
+  {
+    "id": "chemistry/kinetic-molecular-theory",
+    "contentSlug": "chemistry/kinetic-molecular-theory",
+    "subject": "chemistry",
+    "lessonTitle": "Kinetic Molecular Theory",
+    "prompt": "According to kinetic molecular theory, what does the temperature of a gas measure?",
+    "options": [
+      "The total number of particles",
+      "The average kinetic energy (speed) of the particles",
+      "The pressure on the walls",
+      "The size of the individual particles"
+    ],
+    "correctIndex": 1,
+    "explanation": "Temperature is a measure of the average kinetic energy of the particles. Higher temperature means faster-moving particles — which is why heating a gas raises its pressure and tends to expand it."
+  },
+  {
+    "id": "chemistry/le-chatelier",
+    "contentSlug": "chemistry/le-chatelier",
+    "subject": "chemistry",
+    "lessonTitle": "Le Chatelier's Principle",
+    "prompt": "A system at equilibrium (A ⇌ B) has more reactant A added. According to Le Chatelier's principle, what happens?",
+    "options": [
+      "The equilibrium shifts left, making more A",
+      "The equilibrium shifts right, converting the added A into more B to counteract the change",
+      "Nothing changes",
+      "The reaction stops entirely"
+    ],
+    "correctIndex": 1,
+    "explanation": "Adding A is a stress. The system shifts in the direction that opposes it — to the right — consuming the added A by converting it into more B, partly undoing the disturbance."
+  },
+  {
+    "id": "chemistry/lewis-structures",
+    "contentSlug": "chemistry/lewis-structures",
+    "subject": "chemistry",
+    "lessonTitle": "Lewis Structures",
+    "prompt": "In a Lewis structure, what does a single line between two atoms represent?",
+    "options": [
+      "A lone pair of electrons on one atom",
+      "One shared (bonding) pair of electrons — a single covalent bond",
+      "A transferred electron forming an ion",
+      "An empty orbital"
+    ],
+    "correctIndex": 1,
+    "explanation": "A line is one shared pair of electrons — a single covalent bond. Two lines mean two shared pairs (a double bond), and dots show lone pairs that aren't involved in bonding."
+  },
+  {
+    "id": "chemistry/limiting-reactant-and-yield",
+    "contentSlug": "chemistry/limiting-reactant-and-yield",
+    "subject": "chemistry",
+    "lessonTitle": "Limiting Reactant & Yield",
+    "prompt": "For 2H₂ + O₂ → 2H₂O, you mix 4 mol H₂ with 1 mol O₂. Which is limiting, and how much water forms?",
+    "options": [
+      "H₂ is limiting; 4 mol H₂O",
+      "O₂ is limiting; 2 mol H₂O",
+      "Both run out exactly; 4 mol H₂O",
+      "O₂ is limiting; 1 mol H₂O"
+    ],
+    "correctIndex": 1,
+    "explanation": "Divide by coefficients: H₂ → 4/2 = 2, O₂ → 1/1 = 1. O₂ has the smaller value, so it's limiting. From 1 mol O₂, the 1:2 ratio gives 2 mol H₂O, leaving 2 mol H₂ unreacted."
+  },
+  {
+    "id": "chemistry/lipids",
+    "contentSlug": "chemistry/lipids",
+    "subject": "chemistry",
+    "lessonTitle": "Lipids",
+    "prompt": "Why do phospholipids spontaneously form a bilayer (the cell membrane) in water?",
+    "options": [
+      "They are fully water-soluble",
+      "Their water-loving phosphate heads face the water while their water-hating tails huddle inward, away from it",
+      "They are held together by ionic bonds to water",
+      "Water pushes them into random clumps"
+    ],
+    "correctIndex": 1,
+    "explanation": "Each phospholipid has a polar (water-loving) head and non-polar (water-hating) tails. In water they arrange tails-inward, heads-out — forming a stable bilayer. It's 'like dissolves like' producing the self-assembling membrane of every cell."
+  },
+  {
+    "id": "chemistry/measuring-matter",
+    "contentSlug": "chemistry/measuring-matter",
+    "subject": "chemistry",
+    "lessonTitle": "Measuring Matter",
+    "prompt": "A block has a mass of 60 g and a volume of 20 cm³. It is placed in water (density 1 g/cm³). What happens?",
+    "options": [
+      "It floats, because its density (3 g/cm³) is greater than water's",
+      "It sinks, because its density (3 g/cm³) is greater than water's",
+      "It floats, because its mass is greater than its volume",
+      "It sinks, because 60 g is heavier than water"
+    ],
+    "correctIndex": 1,
+    "explanation": "Density = mass ÷ volume = 60 g ÷ 20 cm³ = 3 g/cm³. That's greater than water's 1 g/cm³, so the block sinks. Whether something floats depends on density, not mass alone."
+  },
+  {
+    "id": "chemistry/metallic-bonding",
+    "contentSlug": "chemistry/metallic-bonding",
+    "subject": "chemistry",
+    "lessonTitle": "Metallic Bonding",
+    "prompt": "Why can metals conduct electricity and be bent into shape without breaking?",
+    "options": [
+      "Their atoms share fixed pairs of electrons",
+      "They have a sea of delocalised electrons that carry charge and let ion layers slide while staying bonded",
+      "They are made of oppositely charged ions in a rigid lattice",
+      "Their electrons are locked tightly to each atom"
+    ],
+    "correctIndex": 1,
+    "explanation": "In metallic bonding the valence electrons are delocalised into a mobile sea. Those free electrons carry electric current, and they flow to keep the bond intact when layers of ions slide past each other — so the metal bends rather than shatters."
+  },
+  {
+    "id": "chemistry/metals-nonmetals-metalloids",
+    "contentSlug": "chemistry/metals-nonmetals-metalloids",
+    "subject": "chemistry",
+    "lessonTitle": "Metals, Non-metals & Metalloids",
+    "prompt": "Which set of properties describes a typical metal?",
+    "options": [
+      "Dull, brittle, poor conductor, gains electrons",
+      "Shiny, malleable, good conductor, loses electrons",
+      "Always a gas at room temperature",
+      "Found only in the top-right corner of the table"
+    ],
+    "correctIndex": 1,
+    "explanation": "Metals are shiny, bendable, conduct heat and electricity (thanks to loosely held electrons), and tend to lose those electrons to form positive ions. Non-metals show the opposite set of properties."
+  },
+  {
+    "id": "chemistry/molar-mass",
+    "contentSlug": "chemistry/molar-mass",
+    "subject": "chemistry",
+    "lessonTitle": "Molar Mass",
+    "prompt": "The molar mass of CO₂ is 44 g/mol. How many moles are in 88 g of CO₂?",
+    "options": [
+      "0.5 mol",
+      "2 mol",
+      "44 mol",
+      "132 mol"
+    ],
+    "correctIndex": 1,
+    "explanation": "n = m ÷ M = 88 g ÷ 44 g/mol = 2 mol. Molar mass converts a weighed mass directly into a count of moles."
+  },
+  {
+    "id": "chemistry/molecular-shapes",
+    "contentSlug": "chemistry/molecular-shapes",
+    "subject": "chemistry",
+    "lessonTitle": "Molecular Shapes",
+    "prompt": "Methane (CH₄) and water (H₂O) both have four electron regions around the central atom. Why is methane tetrahedral (109.5°) but water bent (104.5°)?",
+    "options": [
+      "Water has more atoms than methane",
+      "Methane is ionic and water is covalent",
+      "Water's two lone pairs repel more strongly than bonding pairs, squeezing the H–O–H angle smaller",
+      "Methane has lone pairs and water does not"
+    ],
+    "correctIndex": 2,
+    "explanation": "Both have four regions, so both are based on a tetrahedron. But water's two lone pairs spread out wider than bonds and push the two O–H bonds closer together, bending the angle from 109.5° down to about 104.5°."
+  },
+  {
+    "id": "chemistry/net-ionic-equations",
+    "contentSlug": "chemistry/net-ionic-equations",
+    "subject": "chemistry",
+    "lessonTitle": "Net Ionic Equations",
+    "prompt": "In the reaction Pb(NO₃)₂ + 2KI → PbI₂(s) + 2KNO₃, which are the spectator ions?",
+    "options": [
+      "Pb²⁺ and I⁻",
+      "K⁺ and NO₃⁻",
+      "Pb²⁺ and NO₃⁻",
+      "There are no spectator ions"
+    ],
+    "correctIndex": 1,
+    "explanation": "Pb²⁺ and I⁻ combine into the solid precipitate PbI₂ — they're the real reaction. K⁺ and NO₃⁻ remain dissolved and unchanged on both sides, so they're the spectators. The net ionic equation is Pb²⁺ + 2I⁻ → PbI₂(s)."
+  },
+  {
+    "id": "chemistry/neutralization-and-salts",
+    "contentSlug": "chemistry/neutralization-and-salts",
+    "subject": "chemistry",
+    "lessonTitle": "Neutralization & Salts",
+    "prompt": "Hydrochloric acid (HCl) reacts with sodium hydroxide (NaOH). What are the products?",
+    "options": [
+      "Hydrogen gas and chlorine gas",
+      "Sodium chloride (a salt) and water",
+      "Two new acids",
+      "Only water"
+    ],
+    "correctIndex": 1,
+    "explanation": "Acid + base → salt + water. HCl + NaOH → NaCl + H₂O. The H⁺ and OH⁻ form water, while Na⁺ and Cl⁻ remain as the salt sodium chloride."
+  },
+  {
+    "id": "chemistry/nucleic-acids",
+    "contentSlug": "chemistry/nucleic-acids",
+    "subject": "chemistry",
+    "lessonTitle": "Nucleic Acids",
+    "prompt": "What type of interaction holds the two strands of the DNA double helix together, pairing A with T and C with G?",
+    "options": [
+      "Ionic bonds",
+      "Hydrogen bonds between complementary bases",
+      "Covalent bonds between the strands",
+      "Metallic bonding"
+    ],
+    "correctIndex": 1,
+    "explanation": "The two DNA strands are held by hydrogen bonds between complementary base pairs (A–T, C–G). This specific, relatively weak bonding lets the strands separate and act as templates — so DNA can be copied exactly."
+  },
+  {
+    "id": "chemistry/organic-reactions",
+    "contentSlug": "chemistry/organic-reactions",
+    "subject": "chemistry",
+    "lessonTitle": "The Logic of Organic Reactions",
+    "prompt": "Which reaction type is characteristic of an alkene (a molecule with a C=C double bond)?",
+    "options": [
+      "Substitution — swapping one atom for another",
+      "Addition — atoms add across the double bond, which opens up",
+      "Elimination — removing a small molecule",
+      "Alkenes do not react"
+    ],
+    "correctIndex": 1,
+    "explanation": "The C=C double bond of an alkene is a reactive site that undergoes ADDITION: atoms (H₂, bromine, water, or more monomers) add across it and the double bond opens. This is the basis of hydrogenation and polymerisation."
+  },
+  {
+    "id": "chemistry/organizing-the-elements",
+    "contentSlug": "chemistry/organizing-the-elements",
+    "subject": "chemistry",
+    "lessonTitle": "Organizing the Elements",
+    "prompt": "What was the key insight behind Mendeleev's periodic table?",
+    "options": [
+      "Elements should be sorted alphabetically",
+      "When elements are ordered by mass (now atomic number), their properties repeat at regular intervals",
+      "All elements have identical properties",
+      "Heavier elements are always metals"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mendeleev saw that ordering elements revealed a repeating (periodic) pattern in their properties, letting him group similar elements in columns — and even predict undiscovered ones from the gaps."
+  },
+  {
+    "id": "chemistry/oxidation-and-reduction",
+    "contentSlug": "chemistry/oxidation-and-reduction",
+    "subject": "chemistry",
+    "lessonTitle": "Oxidation & Reduction",
+    "prompt": "In the reaction Zn + Cu²⁺ → Zn²⁺ + Cu, which species is oxidised?",
+    "options": [
+      "Cu²⁺, because it gains electrons",
+      "Zn, because it loses electrons to become Zn²⁺",
+      "Both are oxidised",
+      "Neither — this isn't a redox reaction"
+    ],
+    "correctIndex": 1,
+    "explanation": "Zinc loses two electrons to become Zn²⁺ — that's oxidation (OIL: Oxidation Is Loss). The copper ion gains those electrons and is reduced. Zinc is the reducing agent; Cu²⁺ is the oxidising agent."
+  },
+  {
+    "id": "chemistry/oxidation-numbers",
+    "contentSlug": "chemistry/oxidation-numbers",
+    "subject": "chemistry",
+    "lessonTitle": "Oxidation Numbers",
+    "prompt": "In H₂SO₄, oxygen is −2 and hydrogen is +1. What is the oxidation number of sulfur? (The compound is neutral.)",
+    "options": [
+      "+2",
+      "+4",
+      "+6",
+      "−2"
+    ],
+    "correctIndex": 2,
+    "explanation": "The numbers must sum to 0. Hydrogen: 2 × (+1) = +2. Oxygen: 4 × (−2) = −8. So sulfur must be +6 to balance: (+2) + (+6) + (−8) = 0."
+  },
+  {
+    "id": "chemistry/percent-composition",
+    "contentSlug": "chemistry/percent-composition",
+    "subject": "chemistry",
+    "lessonTitle": "Percent Composition & Formulas",
+    "prompt": "A compound is found to be 40% carbon, 6.7% hydrogen, and 53.3% oxygen by mass (atomic masses C 12, H 1, O 16). What is its empirical formula?",
+    "options": [
+      "C₂H₃O",
+      "CH₂O",
+      "CHO",
+      "C₆H₁₂O₆"
+    ],
+    "correctIndex": 1,
+    "explanation": "In 100 g: C = 40/12 ≈ 3.33 mol, H = 6.7/1 = 6.7 mol, O = 53.3/16 ≈ 3.33 mol. Divide by the smallest (3.33): C 1, H 2, O 1 → CH₂O."
+  },
+  {
+    "id": "chemistry/periodic-trends",
+    "contentSlug": "chemistry/periodic-trends",
+    "subject": "chemistry",
+    "lessonTitle": "Periodic Trends",
+    "prompt": "As you move from left to right across a period, what happens to atomic radius and electronegativity?",
+    "options": [
+      "Both increase",
+      "Both decrease",
+      "Radius decreases while electronegativity increases",
+      "Radius increases while electronegativity decreases"
+    ],
+    "correctIndex": 2,
+    "explanation": "Across a period, protons pile up and pull the same outer shell inward, so atoms shrink (radius decreases). That stronger pull also grips shared electrons harder, so electronegativity increases. The two trends point opposite ways."
+  },
+  {
+    "id": "chemistry/phase-changes",
+    "contentSlug": "chemistry/phase-changes",
+    "subject": "chemistry",
+    "lessonTitle": "Phase Changes",
+    "prompt": "Why does the temperature stay constant while ice is melting, even though heat is still being added?",
+    "options": [
+      "The thermometer is broken",
+      "The added energy goes into breaking the forces holding the particles in the lattice, not into raising their speed",
+      "Ice cannot absorb heat",
+      "The heat is being reflected away"
+    ],
+    "correctIndex": 1,
+    "explanation": "During a phase change, the absorbed energy (latent heat) is used to overcome the attractions between particles — breaking the lattice — rather than increasing their kinetic energy. So the temperature pauses until melting is complete."
+  },
+  {
+    "id": "chemistry/physical-and-chemical-changes",
+    "contentSlug": "chemistry/physical-and-chemical-changes",
+    "subject": "chemistry",
+    "lessonTitle": "Physical & Chemical Changes",
+    "prompt": "Which of these is a chemical change?",
+    "options": [
+      "Ice melting into water",
+      "Sugar dissolving in tea",
+      "Iron rusting into iron oxide",
+      "A copper wire being bent"
+    ],
+    "correctIndex": 2,
+    "explanation": "Rusting creates a brand-new substance (iron oxide) with different properties from iron — bonds break and re-form. Melting, dissolving, and bending only rearrange the same molecules, so they are physical changes."
+  },
+  {
+    "id": "chemistry/polarity-and-intermolecular-forces",
+    "contentSlug": "chemistry/polarity-and-intermolecular-forces",
+    "subject": "chemistry",
+    "lessonTitle": "Polarity & Intermolecular Forces",
+    "prompt": "CO₂ has two polar C=O bonds but is a non-polar molecule, while H₂O has two polar O–H bonds and IS polar. What makes the difference?",
+    "options": [
+      "CO₂ has stronger bonds than H₂O",
+      "Shape: CO₂ is linear so its bond polarities cancel, while H₂O is bent so its polarities add up",
+      "Oxygen is more electronegative in water than in carbon dioxide",
+      "H₂O has ionic bonds and CO₂ has covalent bonds"
+    ],
+    "correctIndex": 1,
+    "explanation": "Both have polar bonds, but molecular shape decides the overall polarity. CO₂ is linear, so the equal and opposite pulls cancel. Water is bent, so the two pulls combine into a net dipole — making the whole molecule polar."
+  },
+  {
+    "id": "chemistry/polymers",
+    "contentSlug": "chemistry/polymers",
+    "subject": "chemistry",
+    "lessonTitle": "Polymers",
+    "prompt": "In addition polymerisation, how do monomers like ethene join to form a polymer?",
+    "options": [
+      "They each lose a water molecule as they join",
+      "Their C=C double bonds open up and link together with nothing lost",
+      "They form ionic bonds with each other",
+      "They break into single carbon atoms first"
+    ],
+    "correctIndex": 1,
+    "explanation": "In addition polymerisation, the C=C double bonds of unsaturated monomers open and link directly, with no atoms lost. Many ethene units become poly(ethene). Condensation polymerisation, by contrast, expels a small molecule (like water) at each link."
+  },
+  {
+    "id": "chemistry/precipitation-reactions",
+    "contentSlug": "chemistry/precipitation-reactions",
+    "subject": "chemistry",
+    "lessonTitle": "Precipitation Reactions",
+    "prompt": "Silver nitrate solution is mixed with sodium chloride solution. A white solid forms. What is it, and why?",
+    "options": [
+      "Sodium nitrate, because nitrates are insoluble",
+      "Silver chloride, because most chlorides are soluble but silver chloride is a key exception",
+      "Sodium chloride, because it precipitates out",
+      "Nothing forms; both stay dissolved"
+    ],
+    "correctIndex": 1,
+    "explanation": "Swapping partners gives sodium nitrate (soluble) and silver chloride. Chlorides are usually soluble, but silver chloride is a famous exception — it's insoluble, so it precipitates as a white solid."
+  },
+  {
+    "id": "chemistry/predicting-reactions",
+    "contentSlug": "chemistry/predicting-reactions",
+    "subject": "chemistry",
+    "lessonTitle": "Predicting Reactions",
+    "prompt": "Will copper metal react with zinc sulfate solution (ZnSO₄)?",
+    "options": [
+      "Yes — copper displaces zinc, forming CuSO₄ and zinc metal",
+      "No — copper is less reactive than zinc, so there's no driving force for displacement",
+      "Yes — all metals react with all salt solutions",
+      "No — because copper is a non-metal"
+    ],
+    "correctIndex": 1,
+    "explanation": "This would be single replacement, but copper sits BELOW zinc in the activity series. A less reactive metal can't displace a more reactive one, so there's no driving force — no reaction occurs."
+  },
+  {
+    "id": "chemistry/proteins-and-amino-acids",
+    "contentSlug": "chemistry/proteins-and-amino-acids",
+    "subject": "chemistry",
+    "lessonTitle": "Proteins & Amino Acids",
+    "prompt": "Amino acids link into proteins via peptide bonds. Which two functional groups react to form a peptide bond?",
+    "options": [
+      "Two hydroxyl (–OH) groups",
+      "The amine group (–NH₂) of one and the carboxylic acid group (–COOH) of another, releasing water",
+      "Two carbon–carbon double bonds",
+      "A phosphate and a sugar"
+    ],
+    "correctIndex": 1,
+    "explanation": "A peptide bond forms by condensation between the –COOH of one amino acid and the –NH₂ of the next, releasing a water molecule. It's the acid + amine chemistry from the organic world, repeated to build the protein polymer."
+  },
+  {
+    "id": "chemistry/pure-substances-and-mixtures",
+    "contentSlug": "chemistry/pure-substances-and-mixtures",
+    "subject": "chemistry",
+    "lessonTitle": "Pure Substances & Mixtures",
+    "prompt": "Salt water is best classified as…",
+    "options": [
+      "An element",
+      "A compound",
+      "A homogeneous mixture",
+      "A heterogeneous mixture"
+    ],
+    "correctIndex": 2,
+    "explanation": "Salt water is a mixture — the salt and water aren't chemically bonded and can be separated by evaporation. It's homogeneous (a solution) because the salt is dissolved evenly and you can't see separate parts."
+  },
+  {
+    "id": "chemistry/reaction-rates",
+    "contentSlug": "chemistry/reaction-rates",
+    "subject": "chemistry",
+    "lessonTitle": "Reaction Rates",
+    "prompt": "On a graph of reactant concentration versus time, what represents the rate of reaction, and how does it usually change as the reaction proceeds?",
+    "options": [
+      "The y-intercept; it stays constant",
+      "The steepness (slope) of the curve; it usually decreases as reactants are used up",
+      "The total area under the curve; it increases",
+      "The final concentration; it increases over time"
+    ],
+    "correctIndex": 1,
+    "explanation": "The rate is the slope of the concentration–time curve. It's typically steepest (fastest) at the start when reactant concentration is high, then flattens as reactants deplete."
+  },
+  {
+    "id": "chemistry/reaction-types",
+    "contentSlug": "chemistry/reaction-types",
+    "subject": "chemistry",
+    "lessonTitle": "Types of Reaction",
+    "prompt": "The reaction 2H₂O₂ → 2H₂O + O₂ (hydrogen peroxide breaking down) is which type?",
+    "options": [
+      "Synthesis",
+      "Decomposition",
+      "Single replacement",
+      "Double replacement"
+    ],
+    "correctIndex": 1,
+    "explanation": "One compound (H₂O₂) breaks down into simpler substances (H₂O and O₂). One reactant becoming two or more products is the signature of a decomposition reaction."
+  },
+  {
+    "id": "chemistry/reading-the-table",
+    "contentSlug": "chemistry/reading-the-table",
+    "subject": "chemistry",
+    "lessonTitle": "Reading the Table",
+    "prompt": "An element is in Group 16, Period 3. What can you immediately say about it?",
+    "options": [
+      "It has 3 valence electrons and is in the 16th row",
+      "It has 6 valence electrons and its outer electrons are in the 3rd shell",
+      "It has 16 protons and 3 neutrons",
+      "It is a transition metal"
+    ],
+    "correctIndex": 1,
+    "explanation": "Group 16 (a main group) means 6 valence electrons; Period 3 means those electrons are in the 3rd shell. That element is sulfur — exactly where reading the table places it."
+  },
+  {
+    "id": "chemistry/separating-mixtures",
+    "contentSlug": "chemistry/separating-mixtures",
+    "subject": "chemistry",
+    "lessonTitle": "Separating Mixtures",
+    "prompt": "You have salty water and want to collect the pure water (not the salt). Which method should you use?",
+    "options": [
+      "Filtration — the salt is too big to pass through",
+      "Evaporation — boil the water away and keep the salt",
+      "Distillation — boil the water, then condense the vapour back to liquid",
+      "Chromatography — let the salt climb the paper"
+    ],
+    "correctIndex": 2,
+    "explanation": "Distillation boils the water off and then condenses the vapour to recover pure liquid water, leaving the salt behind. Filtration won't work because salt is dissolved, and evaporation keeps the salt while losing the water."
+  },
+  {
+    "id": "chemistry/solubility",
+    "contentSlug": "chemistry/solubility",
+    "subject": "chemistry",
+    "lessonTitle": "Solubility",
+    "prompt": "A warm bottle of soda goes flat faster than a cold one. Why?",
+    "options": [
+      "Gases are more soluble in warm liquids",
+      "Gases are less soluble in warm liquids, so the CO₂ escapes more easily",
+      "Warm liquids evaporate the sugar",
+      "Cold makes the CO₂ react with water"
+    ],
+    "correctIndex": 1,
+    "explanation": "Unlike solids, gases become LESS soluble as temperature rises. A warm drink can hold less dissolved CO₂, so the gas escapes faster and it goes flat. (Lower pressure speeds this up too — hence the fizz on opening.)"
+  },
+  {
+    "id": "chemistry/states-of-matter",
+    "contentSlug": "chemistry/states-of-matter",
+    "subject": "chemistry",
+    "lessonTitle": "The States of Matter",
+    "prompt": "What is the main difference between a solid and a gas at the particle level?",
+    "options": [
+      "Gas particles are a different substance from solid particles",
+      "Solid particles are heavier than gas particles",
+      "In a solid the particles are packed and only vibrate; in a gas they are far apart and move freely",
+      "Solids have particles but gases do not"
+    ],
+    "correctIndex": 2,
+    "explanation": "The particles are the same — only their arrangement and energy differ. Solid particles are locked in place and vibrate; gas particles have enough energy to break free and fly apart."
+  },
+  {
+    "id": "chemistry/stoichiometry",
+    "contentSlug": "chemistry/stoichiometry",
+    "subject": "chemistry",
+    "lessonTitle": "Stoichiometry",
+    "prompt": "For N₂ + 3H₂ → 2NH₃, how many moles of ammonia (NH₃) form from 6 moles of hydrogen (with plenty of nitrogen)?",
+    "options": [
+      "6 mol",
+      "2 mol",
+      "4 mol",
+      "9 mol"
+    ],
+    "correctIndex": 2,
+    "explanation": "The mole ratio is 2 NH₃ : 3 H₂. So mol NH₃ = 6 × (2/3) = 4 mol. The coefficients are the conversion factor between substances."
+  },
+  {
+    "id": "chemistry/strong-and-weak",
+    "contentSlug": "chemistry/strong-and-weak",
+    "subject": "chemistry",
+    "lessonTitle": "Strong & Weak",
+    "prompt": "Which statement is correct about a 'strong' acid?",
+    "options": [
+      "It is always highly concentrated",
+      "It ionises almost completely in water, releasing nearly all its H⁺",
+      "It has a pH near 7",
+      "It cannot be diluted"
+    ],
+    "correctIndex": 1,
+    "explanation": "Strength refers to the degree of ionisation, not concentration. A strong acid splits almost completely into ions, releasing nearly all its H⁺ — independent of how concentrated or dilute it is."
+  },
+  {
+    "id": "chemistry/the-activity-series",
+    "contentSlug": "chemistry/the-activity-series",
+    "subject": "chemistry",
+    "lessonTitle": "The Activity Series",
+    "prompt": "An iron nail is placed in copper(II) sulfate solution and becomes coated in copper. What does this tell you?",
+    "options": [
+      "Copper is more reactive than iron",
+      "Iron is more reactive than copper, so it displaces copper from the solution",
+      "Iron and copper are equally reactive",
+      "No reaction is possible between a metal and a salt solution"
+    ],
+    "correctIndex": 1,
+    "explanation": "The iron displaces copper, coating the nail with copper metal while iron dissolves into solution. Displacement only happens when the added metal is MORE reactive — so iron sits above copper in the activity series."
+  },
+  {
+    "id": "chemistry/the-arithmetic-of-reactions",
+    "contentSlug": "chemistry/the-arithmetic-of-reactions",
+    "subject": "chemistry",
+    "lessonTitle": "The Arithmetic of Reactions",
+    "prompt": "Using N₂ + 3H₂ → 2NH₃ (N₂ = 28 g/mol, NH₃ = 17 g/mol), what mass of NH₃ is the theoretical yield from 56 g of N₂ with excess H₂?",
+    "options": [
+      "17 g",
+      "34 g",
+      "68 g",
+      "56 g"
+    ],
+    "correctIndex": 2,
+    "explanation": "56 g N₂ ÷ 28 g/mol = 2 mol N₂. Ratio 2 NH₃ : 1 N₂ → 4 mol NH₃. 4 mol × 17 g/mol = 68 g NH₃. Grams → moles → ratio → moles → grams."
+  },
+  {
+    "id": "chemistry/the-chemistry-of-carbon",
+    "contentSlug": "chemistry/the-chemistry-of-carbon",
+    "subject": "chemistry",
+    "lessonTitle": "The Chemistry of Carbon",
+    "prompt": "What two features of carbon allow it to form such an enormous variety of compounds?",
+    "options": [
+      "It is a metal and conducts electricity",
+      "It forms four covalent bonds and can bond to itself in long chains and rings (catenation)",
+      "It is radioactive and unstable",
+      "It only ever forms ionic bonds"
+    ],
+    "correctIndex": 1,
+    "explanation": "Carbon has four valence electrons, so it forms four strong covalent bonds, and it bonds readily to itself (catenation) — chaining into endless straight, branched, and ring structures. Together these give a near-unlimited variety of stable compounds."
+  },
+  {
+    "id": "chemistry/the-chemistry-of-life",
+    "contentSlug": "chemistry/the-chemistry-of-life",
+    "subject": "chemistry",
+    "lessonTitle": "The Chemistry of Life",
+    "prompt": "What is the central message of biochemistry — the chemistry of life?",
+    "options": [
+      "Life uses a special chemistry that breaks the normal rules",
+      "Life is ordinary chemistry — bonding, energy, reactions, organic structures — organised into a self-sustaining system",
+      "Living things contain no real chemical reactions",
+      "Biology and chemistry are completely unrelated"
+    ],
+    "correctIndex": 1,
+    "explanation": "Life obeys every chemical law you've learned — bonding, thermochemistry, kinetics, equilibrium, redox, organic chemistry. Biochemistry shows that life is not a separate magic, but ordinary chemistry organised into an astonishingly intricate, self-sustaining system."
+  },
+  {
+    "id": "chemistry/the-electrochemical-series",
+    "contentSlug": "chemistry/the-electrochemical-series",
+    "subject": "chemistry",
+    "lessonTitle": "The Electrochemical Series",
+    "prompt": "Two metals far apart in the electrochemical series are combined into a galvanic cell. Compared with two metals close together, the cell voltage will be:",
+    "options": [
+      "Smaller, because they react less",
+      "Larger, because a bigger difference in electrode potential means a bigger voltage",
+      "Exactly the same — distance doesn't matter",
+      "Zero, because they cancel out"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cell voltage = E°cathode − E°anode. Metals far apart in the series have a large difference in electrode potential, producing a larger voltage. Zinc and copper, far apart, give about 1.10 V."
+  },
+  {
+    "id": "chemistry/the-equilibrium-constant",
+    "contentSlug": "chemistry/the-equilibrium-constant",
+    "subject": "chemistry",
+    "lessonTitle": "The Equilibrium Constant",
+    "prompt": "A reaction has a very large equilibrium constant (K ≫ 1). What does this tell you?",
+    "options": [
+      "The reaction is very fast",
+      "At equilibrium, products strongly dominate — the reaction goes nearly to completion",
+      "Reactants strongly dominate at equilibrium",
+      "The reaction never reaches equilibrium"
+    ],
+    "correctIndex": 1,
+    "explanation": "K is the ratio of products to reactants at equilibrium. A large K (≫ 1) means products dominate, so equilibrium lies far to the right. Note this says nothing about speed — that's kinetics, a separate matter."
+  },
+  {
+    "id": "chemistry/the-gas-laws",
+    "contentSlug": "chemistry/the-gas-laws",
+    "subject": "chemistry",
+    "lessonTitle": "The Gas Laws",
+    "prompt": "A gas at constant temperature is compressed from 6 L to 2 L. By Boyle's Law, what happens to its pressure?",
+    "options": [
+      "It falls to one-third",
+      "It stays the same",
+      "It triples",
+      "It doubles"
+    ],
+    "correctIndex": 2,
+    "explanation": "Boyle's Law: P × V = constant. The volume shrank to one-third (6 → 2 L), so the pressure must triple to keep the product constant. Squeezing gas into less space raises its pressure."
+  },
+  {
+    "id": "chemistry/the-gas-phase",
+    "contentSlug": "chemistry/the-gas-phase",
+    "subject": "chemistry",
+    "lessonTitle": "The Gas Phase",
+    "prompt": "What causes the pressure a gas exerts on its container?",
+    "options": [
+      "The weight of the gas pressing down",
+      "Countless gas particles colliding with the container walls",
+      "The particles bonding to the walls",
+      "Static electricity between particles"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gas pressure comes from the constant bombardment of fast-moving particles hitting the container walls. More frequent or harder collisions (from more gas, less volume, or higher temperature) mean higher pressure."
+  },
+  {
+    "id": "chemistry/the-ideal-gas-law",
+    "contentSlug": "chemistry/the-ideal-gas-law",
+    "subject": "chemistry",
+    "lessonTitle": "The Ideal Gas Law",
+    "prompt": "In the ideal gas law PV = nRT, if you double the number of moles of gas (n) while keeping volume and temperature constant, what happens to the pressure?",
+    "options": [
+      "It halves",
+      "It stays the same",
+      "It doubles",
+      "It quadruples"
+    ],
+    "correctIndex": 2,
+    "explanation": "With V and T fixed, P is proportional to n. Doubling the moles of gas doubles the number of particles hitting the walls, so the pressure doubles."
+  },
+  {
+    "id": "chemistry/the-mole",
+    "contentSlug": "chemistry/the-mole",
+    "subject": "chemistry",
+    "lessonTitle": "The Mole",
+    "prompt": "Carbon has a molar mass of 12 g/mol. How many moles are in 36 g of carbon, and roughly how many atoms is that?",
+    "options": [
+      "0.33 mol, about 2 × 10²³ atoms",
+      "3 mol, about 1.8 × 10²⁴ atoms",
+      "36 mol, about 2 × 10²⁵ atoms",
+      "12 mol, about 7 × 10²⁴ atoms"
+    ],
+    "correctIndex": 1,
+    "explanation": "moles = mass ÷ molar mass = 36 ÷ 12 = 3 mol. Each mole is 6.022 × 10²³ atoms, so 3 mol ≈ 1.8 × 10²⁴ atoms. Weighing let us count atoms."
+  },
+  {
+    "id": "chemistry/the-molecules-of-life",
+    "contentSlug": "chemistry/the-molecules-of-life",
+    "subject": "chemistry",
+    "lessonTitle": "The Molecules of Life",
+    "prompt": "Three of the four families of biological molecules are polymers. Which one is NOT a true polymer of repeating units?",
+    "options": [
+      "Carbohydrates (polymers of sugars)",
+      "Proteins (polymers of amino acids)",
+      "Lipids (fats and oils)",
+      "Nucleic acids (polymers of nucleotides)"
+    ],
+    "correctIndex": 2,
+    "explanation": "Carbohydrates, proteins, and nucleic acids are all polymers of repeating monomers (sugars, amino acids, nucleotides). Lipids are assembled from smaller parts but aren't true repeating polymers."
+  },
+  {
+    "id": "chemistry/the-ph-scale",
+    "contentSlug": "chemistry/the-ph-scale",
+    "subject": "chemistry",
+    "lessonTitle": "The pH Scale",
+    "prompt": "How much more acidic is a solution of pH 2 compared with one of pH 5?",
+    "options": [
+      "3 times more acidic",
+      "30 times more acidic",
+      "1000 times more acidic",
+      "Equally acidic"
+    ],
+    "correctIndex": 2,
+    "explanation": "pH is logarithmic — each unit is a 10× change in [H⁺]. From pH 5 to pH 2 is 3 steps: 10 × 10 × 10 = 1000 times more acidic."
+  },
+  {
+    "id": "chemistry/the-quantum-atom",
+    "contentSlug": "chemistry/the-quantum-atom",
+    "subject": "chemistry",
+    "lessonTitle": "The Quantum Atom",
+    "prompt": "By Hund's rule, how are the 4 electrons in a 2p sub-shell (three orbitals) arranged?",
+    "options": [
+      "All 4 crammed into one orbital",
+      "Two orbitals with 2 each, one empty",
+      "One electron in each of the three orbitals, then the fourth pairs up in the first",
+      "Spread as 1, 1, 2 only after the f orbitals fill"
+    ],
+    "correctIndex": 2,
+    "explanation": "Hund's rule: electrons occupy equal-energy orbitals singly first (one in each of the three p orbitals), and only then pair up. So the fourth electron pairs in the first orbital, giving ↑↓ ↑ ↑."
+  },
+  {
+    "id": "chemistry/the-shape-of-molecules",
+    "contentSlug": "chemistry/the-shape-of-molecules",
+    "subject": "chemistry",
+    "lessonTitle": "The Shape of Molecules",
+    "prompt": "Methane (CH₄) and water (H₂O) are similar in size, yet water boils at 100 °C and methane at −161 °C. The best explanation is:",
+    "options": [
+      "Methane has weaker covalent bonds inside its molecules",
+      "Water molecules are polar and hydrogen-bond to each other, so far more energy is needed to separate them than methane's weak dispersion forces",
+      "Methane is an ionic compound",
+      "Water has a higher atomic number"
+    ],
+    "correctIndex": 1,
+    "explanation": "Boiling overcomes the forces *between* molecules. Water's bent, polar shape lets it form strong hydrogen bonds, which take lots of energy to break. Methane is non-polar with only weak dispersion forces, so it boils at a very low temperature."
+  },
+  {
+    "id": "chemistry/titration",
+    "contentSlug": "chemistry/titration",
+    "subject": "chemistry",
+    "lessonTitle": "Titration",
+    "prompt": "During a titration, what is the 'equivalence point'?",
+    "options": [
+      "When the indicator is first added",
+      "When the moles of added base exactly neutralise the moles of acid",
+      "When the solution starts to boil",
+      "When half the acid has reacted"
+    ],
+    "correctIndex": 1,
+    "explanation": "The equivalence point is where the added base has exactly neutralised the acid (equal moles for a 1:1 reaction). The pH changes sharply there, and an indicator flips colour to mark it — letting you read the volume needed."
+  },
+  {
+    "id": "chemistry/what-are-acids-and-bases",
+    "contentSlug": "chemistry/what-are-acids-and-bases",
+    "subject": "chemistry",
+    "lessonTitle": "What Are Acids & Bases?",
+    "prompt": "In water, what ion do acids release, and what ion do bases (alkalis) release?",
+    "options": [
+      "Acids release OH⁻; bases release H⁺",
+      "Acids release H⁺; bases release OH⁻",
+      "Both release H⁺",
+      "Both release OH⁻"
+    ],
+    "correctIndex": 1,
+    "explanation": "Acids release hydrogen ions (H⁺) in water, while bases release hydroxide ions (OH⁻). These opposite ions are what give each family its properties — and let them neutralise one another."
+  },
+  {
+    "id": "chemistry/what-is-a-reaction",
+    "contentSlug": "chemistry/what-is-a-reaction",
+    "subject": "chemistry",
+    "lessonTitle": "What Is a Reaction?",
+    "prompt": "What fundamentally happens to the atoms during a chemical reaction?",
+    "options": [
+      "Atoms are destroyed and brand-new atoms are created",
+      "Atoms are rearranged into new combinations by breaking and forming bonds",
+      "Protons are converted into electrons",
+      "Nothing changes; only the temperature does"
+    ],
+    "correctIndex": 1,
+    "explanation": "In a chemical reaction, atoms are conserved — they're simply rearranged into new substances by breaking old bonds and forming new ones. None are created or destroyed."
+  },
+  {
+    "id": "chemistry/what-is-a-solution",
+    "contentSlug": "chemistry/what-is-a-solution",
+    "subject": "chemistry",
+    "lessonTitle": "What Is a Solution?",
+    "prompt": "In a cup of sweet tea, sugar is dissolved in water. Which is the solute and which is the solvent?",
+    "options": [
+      "Sugar is the solvent; water is the solute",
+      "Sugar is the solute; water is the solvent",
+      "Both are solvents",
+      "Neither — tea is a compound"
+    ],
+    "correctIndex": 1,
+    "explanation": "The solute is the substance being dissolved (sugar), and the solvent is what dissolves it, usually the larger amount (water). Together they form a homogeneous mixture — a solution."
+  },
+  {
+    "id": "chemistry/what-is-chemistry",
+    "contentSlug": "chemistry/what-is-chemistry",
+    "subject": "chemistry",
+    "lessonTitle": "What Is Chemistry?",
+    "prompt": "Which statement best describes what chemistry studies?",
+    "options": [
+      "Only the reactions that happen inside a laboratory",
+      "Matter — what it is made of, how it behaves, and how it changes into new substances",
+      "The motion of objects under forces",
+      "Living organisms and how they evolve"
+    ],
+    "correctIndex": 1,
+    "explanation": "Chemistry is the science of matter: its composition, its properties, and the transformations that turn one substance into another. That scope reaches far beyond the lab."
+  },
+  {
+    "id": "chemistry/why-atoms-bond",
+    "contentSlug": "chemistry/why-atoms-bond",
+    "subject": "chemistry",
+    "lessonTitle": "Why Atoms Bond",
+    "prompt": "What is the underlying reason atoms form chemical bonds?",
+    "options": [
+      "To gain more protons",
+      "To reach a more stable, lower-energy arrangement — usually a full outer electron shell",
+      "Because all atoms are magnetic",
+      "To become radioactive"
+    ],
+    "correctIndex": 1,
+    "explanation": "Atoms bond to achieve a full outer shell (the octet), which is a stable, lower-energy state. Noble gases already have full shells, so they don't bond — everything else does, by sharing, giving, or taking electrons."
+  },
+  {
+    "id": "chemistry/why-the-table-works",
+    "contentSlug": "chemistry/why-the-table-works",
+    "subject": "chemistry",
+    "lessonTitle": "Why the Table Works",
+    "prompt": "Why is the d-block (transition metals) exactly 10 columns wide?",
+    "options": [
+      "Because there are 10 periods",
+      "Because a d sub-shell has 5 orbitals holding 10 electrons, filled one element per electron",
+      "Because d-block elements have 10 valence electrons",
+      "It is a coincidence of how the table is drawn"
+    ],
+    "correctIndex": 1,
+    "explanation": "Each block's width equals its sub-shell's electron capacity. A d sub-shell has 5 orbitals × 2 electrons = 10, and the table adds one element per electron added — so the d-block is 10 columns wide."
+  },
+  {
+    "id": "computer-science/2d-graphics-and-transformations",
+    "contentSlug": "computer-science/2d-graphics-and-transformations",
+    "subject": "computer-science",
+    "lessonTitle": "2D Graphics & Transformations",
+    "prompt": "A graphics program rotates a triangle by 30 degrees. What is it actually doing to the triangle's data?",
+    "options": [
+      "Re-drawing the triangle by hand, pixel by pixel",
+      "Applying a rotation formula (a matrix multiply) to each corner's (x, y) coordinates to get new coordinates",
+      "Storing the word 'rotated' alongside the image",
+      "Increasing the file's resolution"
+    ],
+    "correctIndex": 1,
+    "explanation": "The triangle is stored as corner coordinates. Rotating it means computing new coordinates for each corner with the rotation formula x' = x·cosθ − y·sinθ, y' = x·sinθ + y·cosθ — a matrix multiplication. The same rule applies to every point."
+  },
+  {
+    "id": "computer-science/3d-modeling",
+    "contentSlug": "computer-science/3d-modeling",
+    "subject": "computer-science",
+    "lessonTitle": "3D Modelling",
+    "prompt": "A 3D model is stored as a 'mesh'. What is a mesh made of, and how does it appear on a flat screen?",
+    "options": [
+      "A single photograph stretched over a box",
+      "A grid of pixels that already contains depth",
+      "Vertices (3D points), edges and faces — which are projected from 3D down to 2D coordinates to be drawn",
+      "A list of colours sorted by brightness"
+    ],
+    "correctIndex": 2,
+    "explanation": "A mesh is vertices (points in (x,y,z) space), edges joining them, and faces (usually triangles). To display it on a 2D screen, each 3D point is projected to 2D — typically with perspective, so distant points shrink toward a vanishing point."
+  },
+  {
+    "id": "computer-science/abstraction-and-layers",
+    "contentSlug": "computer-science/abstraction-and-layers",
+    "subject": "computer-science",
+    "lessonTitle": "Abstraction & Layers",
+    "prompt": "A phone manufacturer completely redesigns the chip inside a new model, yet your existing apps still run unchanged. Why is this possible?",
+    "options": [
+      "Apps secretly contain a copy of the old chip's design",
+      "The apps talk to a stable interface (the instruction set / OS), so the hardware below it can change as long as the promise is kept",
+      "Apps don't actually use the chip at all",
+      "The new chip is identical to the old one"
+    ],
+    "correctIndex": 1,
+    "explanation": "Apps depend on a stable interface, not on specific hardware. As long as the new chip honours the same promises (instruction set, OS services), everything in the layers above keeps working — the essence of layered abstraction."
+  },
+  {
+    "id": "computer-science/algorithm-efficiency",
+    "contentSlug": "computer-science/algorithm-efficiency",
+    "subject": "computer-science",
+    "lessonTitle": "Algorithm Efficiency & Big-O",
+    "prompt": "An algorithm runs in O(n²). You double the input size n. Roughly how does the amount of work change?",
+    "options": [
+      "It stays about the same",
+      "It roughly doubles",
+      "It roughly quadruples (×4)",
+      "It increases by just one step"
+    ],
+    "correctIndex": 2,
+    "explanation": "In O(n²), work grows with the square of n. Doubling n multiplies the work by 2² = 4. That quadrupling-on-doubling is exactly why quadratic algorithms become unusable as inputs grow — and why we hunt for O(n log n) or better."
+  },
+  {
+    "id": "computer-science/anatomy-of-a-computer",
+    "contentSlug": "computer-science/anatomy-of-a-computer",
+    "subject": "computer-science",
+    "lessonTitle": "Anatomy of a Computer",
+    "prompt": "You turn your computer off, then back on. Why does your saved document survive but the app you had open is gone?",
+    "options": [
+      "The document was in the CPU and the app was in storage",
+      "The document was saved to permanent storage; the app was only in volatile RAM, which is wiped when power is lost",
+      "Documents are special files that never disappear, but apps always do",
+      "Both were in RAM, so neither should have survived"
+    ],
+    "correctIndex": 1,
+    "explanation": "RAM is volatile: losing power wipes it, so the running app (which lived in RAM) is gone. Saving writes the document to storage, which keeps its contents without power, so the file survives."
+  },
+  {
+    "id": "computer-science/animation",
+    "contentSlug": "computer-science/animation",
+    "subject": "computer-science",
+    "lessonTitle": "Animation",
+    "prompt": "An animator sets the position of a ball at time 0 and time 100, then plays the animation. How does the computer produce the frames in between?",
+    "options": [
+      "It leaves them blank until the animator draws each one",
+      "It tweens — interpolating a position for each in-between frame, e.g. P = (1−u)·A + u·B",
+      "It repeats the first frame until time 100",
+      "It speeds up playback so no in-between frames are needed"
+    ],
+    "correctIndex": 1,
+    "explanation": "The two set poses are keyframes; the computer fills the gap by tweening — interpolating between them, P = (1−u)·A + u·B, optionally bent through an easing curve so the motion accelerates and settles naturally."
+  },
+  {
+    "id": "computer-science/arrays-and-lists",
+    "contentSlug": "computer-science/arrays-and-lists",
+    "subject": "computer-science",
+    "lessonTitle": "Arrays & Lists",
+    "prompt": "Why can an array fetch the element at index i in O(1) time, but inserting a new element in the middle takes O(n)?",
+    "options": [
+      "Access scans from the front; insertion does not",
+      "The slots are contiguous and equal-sized, so any index is found by arithmetic — but inserting in the middle forces every later element to shift over",
+      "Arrays can only ever be read, never changed",
+      "Insertion is actually faster than access"
+    ],
+    "correctIndex": 1,
+    "explanation": "Contiguous, equal-sized slots let the computer compute any element's address directly — that's O(1) access. But there's no spare gap in the middle, so inserting means shifting every following element over by one, which is O(n) in the worst case."
+  },
+  {
+    "id": "computer-science/beyond-relational",
+    "contentSlug": "computer-science/beyond-relational",
+    "subject": "computer-science",
+    "lessonTitle": "Beyond Relational",
+    "prompt": "You're building a social network and constantly ask 'who is a friend of a friend?' Which database family fits most naturally?",
+    "options": [
+      "A key-value store, because friendships are simple values",
+      "A graph database, because it stores data as nodes and edges, making relationships first-class and fast to traverse",
+      "A relational database is the only option that can store friendships",
+      "No database can model friendships"
+    ],
+    "correctIndex": 1,
+    "explanation": "Graph databases store entities as nodes and relationships as edges, so traversing connections (friends of friends) is direct and efficient. Relational databases can model this with join tables, but a graph store is purpose-built for relationship-heavy queries."
+  },
+  {
+    "id": "computer-science/binary-addition",
+    "contentSlug": "computer-science/binary-addition",
+    "subject": "computer-science",
+    "lessonTitle": "Binary Addition",
+    "prompt": "In a half adder for two bits A and B, which gates produce the sum bit and the carry bit?",
+    "options": [
+      "Sum = AND, Carry = OR",
+      "Sum = XOR (1 when bits differ), Carry = AND (1 only when both are 1)",
+      "Sum = OR, Carry = NOT",
+      "Both come from a single NOT gate"
+    ],
+    "correctIndex": 1,
+    "explanation": "The sum of two bits is 1 exactly when they differ — that's XOR. A carry is generated only when both bits are 1 — that's AND. A half adder is just those two gates working in parallel."
+  },
+  {
+    "id": "computer-science/bits-and-binary",
+    "contentSlug": "computer-science/bits-and-binary",
+    "subject": "computer-science",
+    "lessonTitle": "Bits & Binary",
+    "prompt": "Why do computers represent information in binary (just two states) rather than using ten digits like humans?",
+    "options": [
+      "Binary numbers are shorter to write than decimal ones",
+      "Two clearly-separated states (high/low voltage) are far more reliable for electronics to store and tell apart at high speed",
+      "Computers can't count past one",
+      "It was a legal requirement when computers were invented"
+    ],
+    "correctIndex": 1,
+    "explanation": "Distinguishing just two well-separated states is robust against noise, heat and interference, even at billions of operations per second. That reliability is worth the minor inconvenience of longer-looking numbers."
+  },
+  {
+    "id": "computer-science/boolean-logic",
+    "contentSlug": "computer-science/boolean-logic",
+    "subject": "computer-science",
+    "lessonTitle": "Boolean Logic",
+    "prompt": "A security door should open only when: a valid badge is present AND it is NOT outside working hours. The badge is valid, and it IS outside working hours. Does the door open?",
+    "options": [
+      "Yes — the badge is valid",
+      "No — 'NOT outside working hours' is false, and AND needs both sides true",
+      "Yes — OR makes it open",
+      "It depends on the weather"
+    ],
+    "correctIndex": 1,
+    "explanation": "The rule is (validBadge AND (NOT outsideHours)). It's outside hours, so 'NOT outside hours' is false. AND requires BOTH inputs true, so the result is false — the door stays shut."
+  },
+  {
+    "id": "computer-science/building-a-web-app",
+    "contentSlug": "computer-science/building-a-web-app",
+    "subject": "computer-science",
+    "lessonTitle": "Building a Web App",
+    "prompt": "A user clicks 'Post' in a web app and the new post appears for everyone. Which sequence best describes what happens?",
+    "options": [
+      "CSS sends the post to every other user's browser directly",
+      "JavaScript handles the click and calls the back-end API, which writes the post to the database; later requests read it back as JSON and the front-end renders it into the DOM",
+      "The HTML file is permanently rewritten on the user's hard drive",
+      "The browser stores the post locally and never contacts a server"
+    ],
+    "correctIndex": 1,
+    "explanation": "The front-end's JavaScript catches the click and calls the API. The back-end writes the post to the database (shared, persistent, trusted). When others load the feed, the API returns the data as JSON and their front-ends render it into the DOM. Every layer plays its part."
+  },
+  {
+    "id": "computer-science/choosing-the-right-structure",
+    "contentSlug": "computer-science/choosing-the-right-structure",
+    "subject": "computer-science",
+    "lessonTitle": "Choosing the Right Structure",
+    "prompt": "You're building a feature that must list all records in sorted order AND quickly find records in a given range. Which structure fits best, and why?",
+    "options": [
+      "A hash table, because lookups are O(1)",
+      "A balanced binary search tree, because it keeps data ordered and supports O(log n) search plus efficient in-order and range queries — things a hash table can't do",
+      "A stack, because LIFO ordering sorts the data",
+      "An array, because access is O(1)"
+    ],
+    "correctIndex": 1,
+    "explanation": "A hash table is great for single-key lookup but scrambles order, so it can't do sorted listing or ranges. A balanced BST keeps everything ordered, searches in O(log n), and walks ranges efficiently — exactly what sorted, range-based access needs."
+  },
+  {
+    "id": "computer-science/combining-gates",
+    "contentSlug": "computer-science/combining-gates",
+    "subject": "computer-science",
+    "lessonTitle": "Combining Gates",
+    "prompt": "After wiring AND, OR and NOT gates into a circuit that behaves exactly like XOR, why can engineers then treat it as a single 'XOR block'?",
+    "options": [
+      "Because the smaller gates stop existing",
+      "Because it has a well-defined input/output behaviour (truth table), so it can be reused as one component while hiding the internal wiring",
+      "Because XOR is faster than its parts",
+      "They can't — every gate must always be drawn individually"
+    ],
+    "correctIndex": 1,
+    "explanation": "Once a circuit has a fixed, well-defined behaviour, it can be packaged as a single block with a clean interface. Designers reuse it without re-examining the internal gates — the same layered abstraction used throughout computing."
+  },
+  {
+    "id": "computer-science/compilers-and-interpreters",
+    "contentSlug": "computer-science/compilers-and-interpreters",
+    "subject": "computer-science",
+    "lessonTitle": "Compilers & Interpreters",
+    "prompt": "What is the key difference between a compiler and an interpreter?",
+    "options": [
+      "A compiler translates the whole program to machine code ahead of time; an interpreter translates and runs it line-by-line as the program executes",
+      "A compiler needs a CPU but an interpreter does not",
+      "An interpreter produces faster programs in every case",
+      "Only compilers can report syntax errors"
+    ],
+    "correctIndex": 0,
+    "explanation": "A compiler does all the translation up front, producing a machine-code file that runs fast afterward. An interpreter translates and executes the source line-by-line at run time — slower per line but starting instantly and easy to run anywhere the interpreter exists. Both ultimately produce CPU-runnable instructions."
+  },
+  {
+    "id": "computer-science/computational-thinking",
+    "contentSlug": "computer-science/computational-thinking",
+    "subject": "computer-science",
+    "lessonTitle": "Computational Thinking",
+    "prompt": "A designer draws a subway map that ignores real distances and street layout, keeping only which stations connect. Which pillar of computational thinking is this?",
+    "options": [
+      "Decomposition — breaking the problem into parts",
+      "Pattern recognition — spotting what repeats",
+      "Abstraction — keeping only the detail that matters and ignoring the rest",
+      "Algorithm — writing the exact steps"
+    ],
+    "correctIndex": 2,
+    "explanation": "Deliberately discarding irrelevant detail (distance, geography) while keeping what matters (the connections) is abstraction — modelling the world in just enough detail to solve the problem."
+  },
+  {
+    "id": "computer-science/concurrency-and-deadlock",
+    "contentSlug": "computer-science/concurrency-and-deadlock",
+    "subject": "computer-science",
+    "lessonTitle": "Concurrency & Deadlock",
+    "prompt": "Two processes are deadlocked: P1 holds resource R1 and waits for R2, while P2 holds R2 and waits for R1. What single feature must this situation have?",
+    "options": [
+      "Both processes are running on separate CPU cores",
+      "A circular wait — a cycle in which each process is waiting for a resource held by the next",
+      "One process has higher priority than the other",
+      "The two processes share no resources at all"
+    ],
+    "correctIndex": 1,
+    "explanation": "Deadlock requires a circular wait: P1 waits for R2 (held by P2) and P2 waits for R1 (held by P1), forming a closed loop. With every process holding what the next one needs and none willing to release, the cycle never breaks on its own. Breaking the circular wait (e.g. by preemption) resolves it."
+  },
+  {
+    "id": "computer-science/control-flow",
+    "contentSlug": "computer-science/control-flow",
+    "subject": "computer-science",
+    "lessonTitle": "Control Flow",
+    "prompt": "A loop's body never changes the variable its condition tests. What happens?",
+    "options": [
+      "The loop runs exactly once and stops",
+      "The loop never runs at all",
+      "The condition stays true forever, so the loop repeats endlessly — an infinite loop",
+      "The program automatically picks a new condition"
+    ],
+    "correctIndex": 2,
+    "explanation": "A loop re-checks its condition each pass. If nothing in the body ever moves that condition toward false, it stays true forever and the loop repeats without end — an infinite loop. That's why a counter like i = i + 1 inside the body is essential."
+  },
+  {
+    "id": "computer-science/correctness-and-the-limits",
+    "contentSlug": "computer-science/correctness-and-the-limits",
+    "subject": "computer-science",
+    "lessonTitle": "Correctness & the Limits",
+    "prompt": "Why can't testing alone guarantee an algorithm is correct for every input?",
+    "options": [
+      "Tests run too slowly to be trusted",
+      "Passing tests shows correctness only for the inputs tried, never for all possible inputs",
+      "Testing changes the algorithm's Big-O class",
+      "Only exponential algorithms can be tested"
+    ],
+    "correctIndex": 1,
+    "explanation": "As Dijkstra put it, testing shows the presence, not the absence, of bugs. It can only check the finite set of inputs you actually run. Certainty for all inputs requires a proof — for example, a loop invariant — not more test cases."
+  },
+  {
+    "id": "computer-science/counting-in-binary",
+    "contentSlug": "computer-science/counting-in-binary",
+    "subject": "computer-science",
+    "lessonTitle": "Counting in Binary",
+    "prompt": "What decimal number does the binary 00101010 represent?",
+    "options": [
+      "21",
+      "42",
+      "84",
+      "168"
+    ],
+    "correctIndex": 1,
+    "explanation": "The 1s are in the 32, 8 and 2 columns: 32 + 8 + 2 = 42. Each binary number is just the sum of the place values (powers of two) wherever a 1 appears."
+  },
+  {
+    "id": "computer-science/css-the-style",
+    "contentSlug": "computer-science/css-the-style",
+    "subject": "computer-science",
+    "lessonTitle": "CSS: The Style",
+    "prompt": "In the CSS box model, what is the difference between padding and margin?",
+    "options": [
+      "They are two names for the same thing",
+      "Padding is space inside the border (around the content); margin is space outside the border (pushing other elements away)",
+      "Padding sets the text colour; margin sets the font",
+      "Margin is inside the element and padding is outside it"
+    ],
+    "correctIndex": 1,
+    "explanation": "Padding sits between the content and the border — it pads the inside. Margin sits outside the border and creates space between this box and its neighbours. Both add to how much room an element takes up."
+  },
+  {
+    "id": "computer-science/data-compression",
+    "contentSlug": "computer-science/data-compression",
+    "subject": "computer-science",
+    "lessonTitle": "Data Compression",
+    "prompt": "Run-length encoding turns a noisy, non-repetitive pattern into a LARGER file than the original. Why can this happen?",
+    "options": [
+      "RLE is broken",
+      "With no repeated runs, RLE stores a count of '1' alongside almost every symbol — adding overhead instead of saving it",
+      "Noisy data contains more colours",
+      "The computer ran out of memory"
+    ],
+    "correctIndex": 1,
+    "explanation": "RLE only helps when values repeat. On data with no runs, it pairs a useless count of 1 with each symbol, so the output grows. Any lossless scheme that shrinks some inputs must enlarge others."
+  },
+  {
+    "id": "computer-science/deep-learning-and-llms",
+    "contentSlug": "computer-science/deep-learning-and-llms",
+    "subject": "computer-science",
+    "lessonTitle": "Deep Learning & LLMs",
+    "prompt": "What is the core training objective of a large language model, and why does such a simple goal produce such capable behaviour?",
+    "options": [
+      "It memorises a database of answers and retrieves the closest match",
+      "It is trained to predict the next token from the text so far; at huge scale, predicting well forces it to absorb grammar, facts, and reasoning patterns",
+      "It is given explicit grammar rules and a dictionary by its programmers",
+      "It searches the live internet for each answer in real time"
+    ],
+    "correctIndex": 1,
+    "explanation": "An LLM's only objective is next-token prediction. At enormous scale, getting that prediction right requires implicitly learning grammar, facts, and reasoning — those capabilities emerge as a side effect of mastering 'autocomplete' over a vast slice of human text, compressed into its weights rather than looked up."
+  },
+  {
+    "id": "computer-science/describing-algorithms",
+    "contentSlug": "computer-science/describing-algorithms",
+    "subject": "computer-science",
+    "lessonTitle": "Describing Algorithms",
+    "prompt": "Why is natural language often a poor way to describe an algorithm for a computer?",
+    "options": [
+      "Computers cannot read English at all",
+      "It tends to be ambiguous, leaving gaps a machine cannot resolve correctly",
+      "It is always longer than pseudocode",
+      "Flowcharts run faster than English"
+    ],
+    "correctIndex": 1,
+    "explanation": "The problem isn't length or readability — it's ambiguity. Natural language lets writers leave gaps that humans fill from common sense but machines cannot. Pseudocode and flowcharts force the precision a computer needs."
+  },
+  {
+    "id": "computer-science/designing-a-database",
+    "contentSlug": "computer-science/designing-a-database",
+    "subject": "computer-science",
+    "lessonTitle": "Designing a Database",
+    "prompt": "A table repeats each customer's address on every one of their orders. What is the main risk, and what fixes it?",
+    "options": [
+      "No real risk; repeating data makes queries faster, so leave it",
+      "Update anomalies — change the address once and copies disagree; normalising into a separate Customers table linked by a foreign key fixes it",
+      "The table will run out of primary keys; add more keys",
+      "Nothing can fix duplicated data in a relational database"
+    ],
+    "correctIndex": 1,
+    "explanation": "Duplicated facts cause update anomalies: editing one copy leaves the others stale and contradictory. Normalisation moves the address into its own Customers table stored once, with orders referencing it by foreign key, so a single edit updates it everywhere."
+  },
+  {
+    "id": "computer-science/engineering-at-scale",
+    "contentSlug": "computer-science/engineering-at-scale",
+    "subject": "computer-science",
+    "lessonTitle": "Engineering at Scale",
+    "prompt": "A 200-engineer team merges code dozens of times a day. Every push automatically triggers a server that builds the project and runs the full test suite, alerting everyone within minutes if something breaks. What is this practice?",
+    "options": [
+      "Waterfall development",
+      "Continuous Integration (CI) — automatically building and testing every change so regressions are caught immediately",
+      "A merge conflict",
+      "Technical debt"
+    ],
+    "correctIndex": 1,
+    "explanation": "Automatically building and running the whole test suite on every change is Continuous Integration. It's the automated safety net that lets a large team move fast without silently breaking the shared codebase — and it pairs with Continuous Delivery to roll passing changes out to users."
+  },
+  {
+    "id": "computer-science/error-detection-and-correction",
+    "contentSlug": "computer-science/error-detection-and-correction",
+    "subject": "computer-science",
+    "lessonTitle": "Error Detection & Correction",
+    "prompt": "A single parity bit is added to each byte. Why can it DETECT a one-bit error but not CORRECT it — and why might it miss a two-bit error?",
+    "options": [
+      "It corrects errors but can't detect them",
+      "A flipped bit makes the count of 1s odd (detected), but parity gives no information about WHICH bit flipped; two flips return the count to even, so they go unnoticed",
+      "Parity bits only work on text, not numbers",
+      "It can fix any number of errors but never detect them"
+    ],
+    "correctIndex": 1,
+    "explanation": "One flip changes the 1s-count from even to odd, signalling an error — but parity carries no location, so it can't correct. Two flips cancel out (even again), slipping past undetected. Correcting and catching multi-bit errors needs more redundancy, like Hamming codes."
+  },
+  {
+    "id": "computer-science/finite-state-machines",
+    "contentSlug": "computer-science/finite-state-machines",
+    "subject": "computer-science",
+    "lessonTitle": "Finite-State Machines",
+    "prompt": "Why can't any finite-state machine check whether a string of brackets like ((())) is properly balanced?",
+    "options": [
+      "Brackets aren't valid input symbols for an FSM",
+      "It would need to remember an unbounded count of unmatched brackets, but an FSM has only finitely many states",
+      "Balancing brackets requires floating-point arithmetic",
+      "FSMs can only read input from left to right"
+    ],
+    "correctIndex": 1,
+    "explanation": "Matching brackets requires counting how many openers are still unmatched, and that count can grow without limit. A finite-state machine has only a fixed number of states, so it cannot distinguish arbitrarily large counts. Unbounded counting is beyond any FSM — it needs a more powerful model with unlimited memory."
+  },
+  {
+    "id": "computer-science/from-data-to-insight",
+    "contentSlug": "computer-science/from-data-to-insight",
+    "subject": "computer-science",
+    "lessonTitle": "From Data to Insight",
+    "prompt": "You want a report of the number of orders per city. Which two SQL ideas, combined, produce it?",
+    "options": [
+      "DELETE and DROP, to remove unwanted rows",
+      "A JOIN to bring each order's city in from the customers table, then GROUP BY city with COUNT(*) to summarise",
+      "Only a WHERE clause, since filtering alone counts rows per city",
+      "A foreign-key constraint, which automatically generates the report"
+    ],
+    "correctIndex": 1,
+    "explanation": "First JOIN orders to customers so each order carries its customer's city, then GROUP BY city and COUNT(*) to collapse the joined rows into one count per city. Join to enrich, group to summarise — the core analytics pattern."
+  },
+  {
+    "id": "computer-science/from-gates-to-a-computer",
+    "contentSlug": "computer-science/from-gates-to-a-computer",
+    "subject": "computer-science",
+    "lessonTitle": "From Gates to a Computer",
+    "prompt": "Basic logic gates can compute but not remember. How is memory (a 1-bit latch) actually created from them?",
+    "options": [
+      "By using a completely different, non-logic technology",
+      "By feeding gates' outputs back into their own inputs, forming a circuit that stays stable in one of two states until changed",
+      "By making the gates physically larger",
+      "Memory cannot be built from gates at all"
+    ],
+    "correctIndex": 1,
+    "explanation": "Feedback is the key: routing outputs back to inputs makes a circuit settle into one of two stable states and hold it — a latch storing one bit. Registers and RAM are just many such latches. Memory is the same gates, wired in a loop."
+  },
+  {
+    "id": "computer-science/front-end-and-back-end",
+    "contentSlug": "computer-science/front-end-and-back-end",
+    "subject": "computer-science",
+    "lessonTitle": "Front-End & Back-End",
+    "prompt": "In a typical web app, where does the database live, and why?",
+    "options": [
+      "In the user's browser, so the app loads faster",
+      "On the back-end server, because data must persist, be shared across all users, and be protected from tampering",
+      "Inside the CSS file",
+      "It is split evenly between every visitor's device"
+    ],
+    "correctIndex": 1,
+    "explanation": "The database lives on the back-end server. The server persists data long-term, lets all users share the same data, and is trusted ground where sensitive logic runs — unlike browser code, which anyone can inspect or alter."
+  },
+  {
+    "id": "computer-science/functional-and-declarative",
+    "contentSlug": "computer-science/functional-and-declarative",
+    "subject": "computer-science",
+    "lessonTitle": "Other Paradigms",
+    "prompt": "What best captures the difference between imperative and declarative programming?",
+    "options": [
+      "Imperative is for games; declarative is for websites only",
+      "Imperative spells out HOW to do something step by step; declarative describes WHAT result you want and lets the system determine the steps",
+      "Declarative programs cannot be translated to machine code",
+      "Imperative code never uses functions"
+    ],
+    "correctIndex": 1,
+    "explanation": "Imperative code is a sequence of explicit steps you control (loops, assignments). Declarative code states the desired result — like an SQL query or HTML page — and the engine works out the steps. Functional programming leans declarative, treating functions as values and avoiding mutation."
+  },
+  {
+    "id": "computer-science/functions-and-procedures",
+    "contentSlug": "computer-science/functions-and-procedures",
+    "subject": "computer-science",
+    "lessonTitle": "Functions & Procedures",
+    "prompt": "When one function calls another, what does the call stack do, and in what order do frames leave it?",
+    "options": [
+      "It pushes a frame for each call and pops them in the same order they were pushed (first in, first out)",
+      "It pushes a frame for each call; the most recently called function returns first, so frames pop in last-in, first-out order",
+      "It stores all variables permanently and never removes them",
+      "It runs all functions at the same time with no ordering"
+    ],
+    "correctIndex": 1,
+    "explanation": "The call stack is LIFO. Each call pushes a frame on top; when a function returns, its frame (the top one) is popped first, handing a value back to the caller beneath. The innermost call finishes first, then unwinds outward."
+  },
+  {
+    "id": "computer-science/graphs",
+    "contentSlug": "computer-science/graphs",
+    "subject": "computer-science",
+    "lessonTitle": "Graphs",
+    "prompt": "How do breadth-first search (BFS) and depth-first search (DFS) differ when exploring a graph?",
+    "options": [
+      "BFS only works on trees; DFS only works on graphs",
+      "BFS explores neighbours level by level (using a queue) and finds fewest-hop paths; DFS dives deep down one path first (using a stack) before backtracking",
+      "They always visit nodes in exactly the same order",
+      "DFS visits the closest nodes first; BFS visits the farthest first"
+    ],
+    "correctIndex": 1,
+    "explanation": "BFS uses a queue to fan out ring by ring from the start, so it discovers nodes in order of distance and finds shortest hop counts. DFS uses a stack (often recursion) to plunge down one path as far as possible before backing up — same graph, different visit order."
+  },
+  {
+    "id": "computer-science/hash-tables",
+    "contentSlug": "computer-science/hash-tables",
+    "subject": "computer-science",
+    "lessonTitle": "Hash Tables",
+    "prompt": "What makes a hash-table lookup average O(1), and how are collisions handled?",
+    "options": [
+      "It sorts the keys first; collisions are ignored",
+      "A hash function computes a bucket index directly so you jump straight there (no scanning); when two keys collide, they're chained in a small list inside that bucket",
+      "It scans every bucket until it finds the key",
+      "It stores keys in a balanced binary search tree"
+    ],
+    "correctIndex": 1,
+    "explanation": "The hash function turns a key into a bucket index by calculation, so storing and finding a key is a direct jump — average O(1), no scan. When two keys hash to the same bucket (a collision), chaining keeps a short list in that bucket, and you scan just those few entries."
+  },
+  {
+    "id": "computer-science/hashing-and-passwords",
+    "contentSlug": "computer-science/hashing-and-passwords",
+    "subject": "computer-science",
+    "lessonTitle": "Hashing & Passwords",
+    "prompt": "A website stores only the hashes of users' passwords, each combined with a unique salt. Attackers steal the entire database. Why is this far less catastrophic than storing plaintext passwords?",
+    "options": [
+      "The hashes can be quickly reversed, so users just change their passwords",
+      "Hashes are one-way, so the attacker cannot recover the original passwords; and unique salts mean identical passwords hash differently, defeating precomputed lookup tables and forcing each account to be attacked separately",
+      "Hashing encrypts the passwords so the attacker needs the decryption key",
+      "Salting makes every password automatically strong"
+    ],
+    "correctIndex": 1,
+    "explanation": "A one-way hash cannot be run backwards to reveal the password. Unique salts ensure two users with the same password get different digests, so attackers cannot reuse a single precomputed table — they must grind through each salted account individually. (Salting still does not rescue a weak, guessable password.)"
+  },
+  {
+    "id": "computer-science/how-a-language-runs",
+    "contentSlug": "computer-science/how-a-language-runs",
+    "subject": "computer-science",
+    "lessonTitle": "How a Language Runs",
+    "prompt": "A running program's memory splits into a stack and a heap. What is each mainly used for?",
+    "options": [
+      "The stack stores the program file; the heap stores the CPU",
+      "The stack holds function call frames (parameters, locals, return spots) in last-in-first-out order; the heap is a flexible pool for data like objects that must outlive a single call",
+      "The stack is for compiled code and the heap is for interpreted code",
+      "They are two names for the same region of memory"
+    ],
+    "correctIndex": 1,
+    "explanation": "The stack manages the call stack — a frame per function call, pushed and popped LIFO, holding parameters and locals. The heap is a larger, flexible region for dynamically created data such as objects, whose size or lifetime isn't tied to one function call. Both are just organised regions of the process's RAM."
+  },
+  {
+    "id": "computer-science/how-a-program-runs",
+    "contentSlug": "computer-science/how-a-program-runs",
+    "subject": "computer-science",
+    "lessonTitle": "How a Program Runs",
+    "prompt": "What is the core insight of the stored-program (von Neumann) concept?",
+    "options": [
+      "Programs must be physically wired into the hardware before use",
+      "Instructions and data are both stored as ordinary numbers in the same memory, so running a new program just means loading different numbers",
+      "Each program needs its own separate, special kind of memory",
+      "The CPU can only run one fixed program built into it"
+    ],
+    "correctIndex": 1,
+    "explanation": "The stored-program idea keeps instructions and data together in the same memory, both as numbers. The hardware stays fixed; to run a different program you simply load different numbers into memory and point the program counter at them."
+  },
+  {
+    "id": "computer-science/how-hard-is-hard",
+    "contentSlug": "computer-science/how-hard-is-hard",
+    "subject": "computer-science",
+    "lessonTitle": "How Hard Is Hard?",
+    "prompt": "What does it mean for a problem to be in NP?",
+    "options": [
+      "It is impossible for any computer to solve",
+      "A proposed solution can be CHECKED quickly, even if finding one may be hard",
+      "It can always be solved in linear time",
+      "It requires a quantum computer"
+    ],
+    "correctIndex": 1,
+    "explanation": "NP is the class of problems whose proposed answers can be verified quickly. Finding the answer might be hard, but checking a given one is fast — like verifying a completed Sudoku. P (solvable quickly) sits inside NP, and whether P equals NP is the field's biggest open question, with deep consequences for cryptography."
+  },
+  {
+    "id": "computer-science/how-networks-work",
+    "contentSlug": "computer-science/how-networks-work",
+    "subject": "computer-science",
+    "lessonTitle": "How Networks Work",
+    "prompt": "A small office wires every computer into one central switch. The switch then fails. What happens, and what does this reveal about the topology?",
+    "options": [
+      "Nothing — a star has many backup paths",
+      "The whole network goes down, because a star has a single point of failure at its hub",
+      "Only one computer loses connection; the rest are fine",
+      "The network automatically becomes a mesh"
+    ],
+    "correctIndex": 1,
+    "explanation": "In a star topology every device depends on the central hub. It's cheap and simple, but if the hub dies, every device loses its only link — the classic single point of failure. A mesh avoids this with redundant paths, at the cost of far more cabling."
+  },
+  {
+    "id": "computer-science/how-the-web-works",
+    "contentSlug": "computer-science/how-the-web-works",
+    "subject": "computer-science",
+    "lessonTitle": "How the Web Works",
+    "prompt": "When you visit a web page, what does the server actually send back to your browser?",
+    "options": [
+      "A finished picture of the page that the server has already drawn",
+      "Text (HTML, and code) which the browser then renders into the visible page on your device",
+      "A direct copy of the server's screen",
+      "Nothing — the page is stored permanently inside the browser"
+    ],
+    "correctIndex": 1,
+    "explanation": "The server sends text — HTML (often with CSS and JavaScript). Your browser receives that text and renders it into the page you see. The drawing happens locally, on your device, not on the server."
+  },
+  {
+    "id": "computer-science/html-the-structure",
+    "contentSlug": "computer-science/html-the-structure",
+    "subject": "computer-science",
+    "lessonTitle": "HTML: The Structure",
+    "prompt": "Why is an HTML document best described as a tree?",
+    "options": [
+      "Because pages are usually about nature",
+      "Because every element is nested inside exactly one parent and may contain children, forming a branching hierarchy from a single root",
+      "Because the tags are arranged alphabetically",
+      "Because HTML files are stored in folders"
+    ],
+    "correctIndex": 1,
+    "explanation": "Tags nest inside tags: each element has one parent and can hold child elements, all descending from a single root (<html>). That parent-child nesting is exactly a tree — which the browser builds in memory as the DOM."
+  },
+  {
+    "id": "computer-science/images-and-color",
+    "contentSlug": "computer-science/images-and-color",
+    "subject": "computer-science",
+    "lessonTitle": "Images & Colour",
+    "prompt": "A screen displays the colour yellow. How is a single yellow pixel actually represented?",
+    "options": [
+      "A special 'yellow' symbol stored once",
+      "Three numbers — the red, green and blue light levels — that together mix to yellow (high red + high green, low blue)",
+      "A mixture of yellow paint values",
+      "The word 'yellow' encoded in ASCII"
+    ],
+    "correctIndex": 1,
+    "explanation": "Screens use additive RGB colour: each pixel is three numbers giving the brightness of red, green and blue light. High red + high green + low blue mixes to yellow. There's no single 'yellow' value."
+  },
+  {
+    "id": "computer-science/javascript-the-behavior",
+    "contentSlug": "computer-science/javascript-the-behavior",
+    "subject": "computer-science",
+    "lessonTitle": "JavaScript: The Behavior",
+    "prompt": "If HTML is structure and CSS is style, what does JavaScript contribute to a web page?",
+    "options": [
+      "It sets the colours and fonts",
+      "It defines which tags are headings and paragraphs",
+      "Behaviour — it responds to events and changes the DOM, making the page interactive",
+      "It stores the page on the server"
+    ],
+    "correctIndex": 2,
+    "explanation": "JavaScript is the behaviour layer. It registers event handlers (for clicks, keypresses, etc.) and manipulates the DOM in response, so the page can react and change — turning a static document into an interactive app."
+  },
+  {
+    "id": "computer-science/linked-lists",
+    "contentSlug": "computer-science/linked-lists",
+    "subject": "computer-science",
+    "lessonTitle": "Linked Lists",
+    "prompt": "Compared with an array, what is the linked list's key trade-off?",
+    "options": [
+      "It is faster at everything",
+      "Insertion/deletion at a known node is cheap (no shifting), but reaching an element by position is slow because you must follow pointers from the start",
+      "It can only store numbers",
+      "It offers O(1) access to any index"
+    ],
+    "correctIndex": 1,
+    "explanation": "A linked list keeps order in its pointers, so inserting or deleting a node only repoints a few arrows — no shifting. But it has no direct indexing: to reach position i you must hop through the chain from the head, which is O(n)."
+  },
+  {
+    "id": "computer-science/logic-gates",
+    "contentSlug": "computer-science/logic-gates",
+    "subject": "computer-science",
+    "lessonTitle": "Logic Gates",
+    "prompt": "What does the small circle (bubble) on the output of a NAND or NOR gate symbol indicate?",
+    "options": [
+      "The gate is broken",
+      "It inverts the output — NAND is 'AND then NOT', NOR is 'OR then NOT'",
+      "It marks the input side",
+      "It means the gate has no power"
+    ],
+    "correctIndex": 1,
+    "explanation": "The output bubble always means inversion. NAND = AND with its output flipped; NOR = OR with its output flipped; the NOT gate is a buffer with the same inverting bubble."
+  },
+  {
+    "id": "computer-science/machine-language",
+    "contentSlug": "computer-science/machine-language",
+    "subject": "computer-science",
+    "lessonTitle": "Machine Language",
+    "prompt": "A machine-code instruction is split into an opcode and an operand. What does each part mean?",
+    "options": [
+      "The opcode is the answer; the operand is the question",
+      "The opcode says WHICH operation to perform; the operand is the value or address it acts on",
+      "The opcode is for input; the operand is for output",
+      "They are two unrelated programs stored together"
+    ],
+    "correctIndex": 1,
+    "explanation": "An instruction is one number in two fields: the opcode selects the operation (ADD, LOAD, JUMP…), and the operand supplies the data or address it works on. The control unit reads both halves to act."
+  },
+  {
+    "id": "computer-science/machine-learning",
+    "contentSlug": "computer-science/machine-learning",
+    "subject": "computer-science",
+    "lessonTitle": "Machine Learning",
+    "prompt": "A model scores 99% on its training data but only 62% on a held-out test set. What has gone wrong, and why do we test on unseen data?",
+    "options": [
+      "The model is underpowered; we test on training data instead",
+      "The model has overfit — it memorised the training examples rather than learning a general pattern, which only shows up on unseen test data",
+      "The test set is simply too hard and should be removed",
+      "Nothing is wrong; high training accuracy is the only goal"
+    ],
+    "correctIndex": 1,
+    "explanation": "A big gap between training and test accuracy is the signature of overfitting: the model memorised quirks of the training set instead of the underlying pattern. We hold out a test set precisely to measure whether it generalises to data it has never seen."
+  },
+  {
+    "id": "computer-science/making-virtual-worlds",
+    "contentSlug": "computer-science/making-virtual-worlds",
+    "subject": "computer-science",
+    "lessonTitle": "Making Virtual Worlds",
+    "prompt": "Why is graphics work run on a GPU with thousands of small cores rather than a CPU with a few large ones?",
+    "options": [
+      "GPUs store more colours than CPUs can",
+      "A frame requires the same simple calculation (transform a vertex, shade a pixel) on millions of independent points, so it parallelises across thousands of cores at once",
+      "CPUs cannot do multiplication, only addition",
+      "GPUs render in vector format while CPUs only do raster"
+    ],
+    "correctIndex": 1,
+    "explanation": "Rendering is 'embarrassingly parallel': the same operation must run on millions of independent vertices and pixels per frame. A GPU's thousands of small cores do them all at once, which a few large CPU cores cannot match — the reason GPUs (and now AI) rely on massive parallelism."
+  },
+  {
+    "id": "computer-science/memory-and-storage",
+    "contentSlug": "computer-science/memory-and-storage",
+    "subject": "computer-science",
+    "lessonTitle": "Memory & Storage",
+    "prompt": "As you move DOWN the memory hierarchy (registers → cache → RAM → disk), what happens?",
+    "options": [
+      "Everything gets faster and smaller",
+      "Capacity grows and cost per byte falls, but access gets slower",
+      "Speed and size both increase together",
+      "Nothing changes except the name"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lower levels are bigger and cheaper per byte but slower to access — the inverse relationship at the heart of the hierarchy. Computers exploit it by keeping frequently used data near the fast top."
+  },
+  {
+    "id": "computer-science/memory-management",
+    "contentSlug": "computer-science/memory-management",
+    "subject": "computer-science",
+    "lessonTitle": "Memory Management",
+    "prompt": "A program accesses a virtual page that the OS had moved out to disk. What happens?",
+    "options": [
+      "The program crashes, because that page no longer exists",
+      "A page fault occurs: the OS pauses the program, loads the page from disk into a RAM frame, updates the page table, and resumes it",
+      "The CPU runs the program twice as fast to compensate",
+      "The page table is deleted and rebuilt from scratch"
+    ],
+    "correctIndex": 1,
+    "explanation": "Accessing a page that isn't in RAM triggers a page fault. The OS quietly loads the page from disk into a physical frame, updates the page table mapping, and resumes the process — preserving the illusion of abundant memory, at the cost of a slow disk read."
+  },
+  {
+    "id": "computer-science/models-of-computation",
+    "contentSlug": "computer-science/models-of-computation",
+    "subject": "computer-science",
+    "lessonTitle": "Models of Computation",
+    "prompt": "What is the point of defining an abstract 'model of computation' like a finite-state machine?",
+    "options": [
+      "To make computers run faster by simplifying their hardware",
+      "To capture the essence of computation with simple, exact rules, so we can prove what any machine can and cannot do",
+      "To replace programming languages with diagrams",
+      "To measure how much electricity a computer uses"
+    ],
+    "correctIndex": 1,
+    "explanation": "A model of computation is an abstract machine with a tiny, precise rule set. By stripping away hardware details it lets us reason and prove general truths about computation itself — what is possible, what is impossible, and how hard problems are — independent of any specific computer."
+  },
+  {
+    "id": "computer-science/modularity-and-design",
+    "contentSlug": "computer-science/modularity-and-design",
+    "subject": "computer-science",
+    "lessonTitle": "Modularity & Design",
+    "prompt": "Your payment code is split into its own module that the rest of the app uses only through a small, clearly defined interface. Which pair of qualities does this describe?",
+    "options": [
+      "High coupling and low cohesion",
+      "Loose coupling and high cohesion",
+      "Tight coupling and high cohesion",
+      "Loose coupling and low cohesion"
+    ],
+    "correctIndex": 1,
+    "explanation": "The module does one focused job (high cohesion) and connects to the rest only through a narrow interface (loose coupling). That combination is the hallmark of good modular design — easy to change, hard to break the rest."
+  },
+  {
+    "id": "computer-science/naming-and-routing",
+    "contentSlug": "computer-science/naming-and-routing",
+    "subject": "computer-science",
+    "lessonTitle": "Naming & Routing",
+    "prompt": "You type 'example.com' and press Enter. What must happen before your computer can send a request to the right machine?",
+    "options": [
+      "Nothing — routers understand domain names directly",
+      "DNS resolves the domain name into an IP address; then routers forward packets hop by hop toward that address",
+      "Your computer guesses the IP address at random",
+      "The domain name is sent unchanged across every router"
+    ],
+    "correctIndex": 1,
+    "explanation": "Routers only forward by IP address, so the human-friendly name must first be translated by DNS into an IP. With that address in hand, routers each pick the next hop, relaying the packet step by step until it reaches the destination."
+  },
+  {
+    "id": "computer-science/neural-networks",
+    "contentSlug": "computer-science/neural-networks",
+    "subject": "computer-science",
+    "lessonTitle": "Neural Networks",
+    "prompt": "A neural network 'learns.' In concrete terms, what is actually being changed as it learns?",
+    "options": [
+      "The number of neurons grows automatically with each example",
+      "The numerical weights (and biases) on the connections are repeatedly nudged to reduce the output error, via backpropagation and gradient descent",
+      "New if-then rules are written into the code by the programmer",
+      "The activation functions are rewritten on every step"
+    ],
+    "correctIndex": 1,
+    "explanation": "A network's knowledge lives in its weights. Learning measures the error, uses backpropagation to find how each weight contributed, and nudges every weight a little to reduce the error (gradient descent). Over many examples, the weights settle into values that produce correct outputs."
+  },
+  {
+    "id": "computer-science/object-oriented-programming",
+    "contentSlug": "computer-science/object-oriented-programming",
+    "subject": "computer-science",
+    "lessonTitle": "Object-Oriented Programming",
+    "prompt": "In object-oriented programming, what is the relationship between a class and an object?",
+    "options": [
+      "They are two words for exactly the same thing",
+      "A class is a blueprint defining fields and methods; an object is a concrete instance built from that blueprint, with its own data but shared methods",
+      "An object is the blueprint and a class is one specific instance of it",
+      "A class stores data while an object stores only code"
+    ],
+    "correctIndex": 1,
+    "explanation": "A class is the plan: it lists the fields and methods. An object (instance) is a real thing created from that plan. Many objects can come from one class — each holds its own field values but shares the class's methods."
+  },
+  {
+    "id": "computer-science/pixels-and-images",
+    "contentSlug": "computer-science/pixels-and-images",
+    "subject": "computer-science",
+    "lessonTitle": "Pixels & Raster Graphics",
+    "prompt": "Why does a diagonal line look jagged ('the jaggies') on a low-resolution screen?",
+    "options": [
+      "The screen is broken or the colour is wrong",
+      "Each square pixel must be fully one colour, so a smooth diagonal is approximated by a staircase of whole squares",
+      "Diagonal lines are stored less accurately than horizontal ones",
+      "The computer runs out of memory while drawing"
+    ],
+    "correctIndex": 1,
+    "explanation": "A raster screen is a fixed grid of square pixels, each a single solid colour. A smooth diagonal can only be approximated by turning whole squares on or off, producing a staircase — aliasing. More pixels or anti-aliasing hides the steps."
+  },
+  {
+    "id": "computer-science/processes-and-threads",
+    "contentSlug": "computer-science/processes-and-threads",
+    "subject": "computer-science",
+    "lessonTitle": "Processes & Threads",
+    "prompt": "On a single CPU core, how can a browser, a music player and a file download all appear to run at the same time?",
+    "options": [
+      "The core physically runs all three programs simultaneously",
+      "The OS rapidly context-switches between them — saving and restoring each one's state — so fast that it looks simultaneous",
+      "Each program gets its own hidden extra core",
+      "Only one is really running; the others are paused until you click them"
+    ],
+    "correctIndex": 1,
+    "explanation": "A single core runs one process at a time. The OS performs context switches thousands of times a second, saving one process's program counter and registers and loading another's. The switching is so fast it creates the illusion of true simultaneity."
+  },
+  {
+    "id": "computer-science/protocols-and-layers",
+    "contentSlug": "computer-science/protocols-and-layers",
+    "subject": "computer-science",
+    "lessonTitle": "Protocols & Layers",
+    "prompt": "As a message goes DOWN the sender's TCP/IP stack, what does each layer do, and what is this process called?",
+    "options": [
+      "Each layer removes a header; this is called routing",
+      "Each layer adds its own header, wrapping the message — this is called encapsulation",
+      "Each layer rewrites the entire message in a new language",
+      "Nothing happens until the message reaches the wire"
+    ],
+    "correctIndex": 1,
+    "explanation": "Going down the stack, every layer wraps the data in its own header (like nesting envelopes) — encapsulation. The receiver reverses it, each layer stripping its own header (decapsulation). Each layer talks only to its peer layer on the other side."
+  },
+  {
+    "id": "computer-science/public-key-cryptography",
+    "contentSlug": "computer-science/public-key-cryptography",
+    "subject": "computer-science",
+    "lessonTitle": "Public-Key Cryptography",
+    "prompt": "In the colour-mixing exchange, an eavesdropper hears the public base colour AND both public mixtures. Why can they still not work out the shared secret?",
+    "options": [
+      "The messages are sent too quickly to intercept",
+      "Mixing colours is a one-way function: combining is easy, but 'un-mixing' a blend back into its ingredients is practically impossible, so the private colours stay hidden",
+      "The eavesdropper does not have a fast enough computer to read the messages",
+      "Alice and Bob send the secret key separately in encrypted form"
+    ],
+    "correctIndex": 1,
+    "explanation": "The whole scheme rests on a one-way function. The eavesdropper can see everything that was sent, yet recovering a private colour from a public mixture would require un-mixing paint — easy forwards, infeasible backwards. That asymmetry, not secrecy of the messages, is what protects the shared secret."
+  },
+  {
+    "id": "computer-science/quality-and-documentation",
+    "contentSlug": "computer-science/quality-and-documentation",
+    "subject": "computer-science",
+    "lessonTitle": "Quality & Documentation",
+    "prompt": "A team rushes a messy, untested feature to hit a deadline, planning to clean it up 'later.' Six months on, every change near that feature is slow and bug-prone. What's the best name for this?",
+    "options": [
+      "A regression caught by the test suite",
+      "Technical debt — a deliberate shortcut that now charges interest in slower, riskier changes",
+      "Loose coupling between modules",
+      "Successful test-driven development"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cutting corners to ship fast creates technical debt. Like financial debt it accrues interest: future work in that area becomes slower and more error-prone until the shortcut is paid down."
+  },
+  {
+    "id": "computer-science/querying-with-sql",
+    "contentSlug": "computer-science/querying-with-sql",
+    "subject": "computer-science",
+    "lessonTitle": "Querying with SQL",
+    "prompt": "Why is SQL described as a 'declarative' language?",
+    "options": [
+      "Because you must declare every variable before using it",
+      "Because you describe what data you want, and the database engine works out how to retrieve it",
+      "Because it can only declare new tables, not read them",
+      "Because queries run in the exact step-by-step order you type them"
+    ],
+    "correctIndex": 1,
+    "explanation": "In a declarative language you specify the desired result, not the procedure. A SQL query states which columns, rows and order you want; the DBMS's query planner decides how to actually fetch and filter the data. You say what, it figures out how."
+  },
+  {
+    "id": "computer-science/recursion",
+    "contentSlug": "computer-science/recursion",
+    "subject": "computer-science",
+    "lessonTitle": "Recursion",
+    "prompt": "What happens if a recursive function has a recursive case but no reachable base case?",
+    "options": [
+      "It returns the wrong number but still stops",
+      "It runs forever, calling itself until it crashes the call stack",
+      "It automatically becomes a loop",
+      "It refuses to compile"
+    ],
+    "correctIndex": 1,
+    "explanation": "The base case is what stops the descent. Without a reachable one, each call makes another call, the stack keeps growing, and the program eventually runs out of stack space and crashes — the recursive equivalent of an infinite loop."
+  },
+  {
+    "id": "computer-science/rendering-and-lighting",
+    "contentSlug": "computer-science/rendering-and-lighting",
+    "subject": "computer-science",
+    "lessonTitle": "Rendering & Lighting",
+    "prompt": "In diffuse shading, why does one side of a sphere look bright and the other dark?",
+    "options": [
+      "The bright side stores more pixels than the dark side",
+      "Brightness depends on the angle between each surface point's normal and the direction to the light (their dot product) — patches facing the light are brighter",
+      "The dark side is simply painted a different colour by the artist",
+      "The screen dims half of itself automatically"
+    ],
+    "correctIndex": 1,
+    "explanation": "Diffuse shading sets a point's brightness to max(0, N · L): the dot product of its surface normal and the direction to the light. Patches facing the light have a large dot product and look bright; patches turned away approach zero and fall into shadow — giving a flat shape solid form."
+  },
+  {
+    "id": "computer-science/representing-numbers",
+    "contentSlug": "computer-science/representing-numbers",
+    "subject": "computer-science",
+    "lessonTitle": "Representing Numbers",
+    "prompt": "In an 8-bit two's complement number, what makes the representation of negative numbers work so neatly?",
+    "options": [
+      "A separate bit elsewhere stores the minus sign as text",
+      "The leftmost bit's place value is negative (−128), so normal binary addition works for both positive and negative numbers",
+      "Negative numbers are stored in a different memory chip",
+      "The computer simply refuses to store negatives"
+    ],
+    "correctIndex": 1,
+    "explanation": "Two's complement makes the top bit worth −128. With that single change, the same addition circuit handles positive and negative numbers identically — no special cases needed."
+  },
+  {
+    "id": "computer-science/robotics-and-perception",
+    "contentSlug": "computer-science/robotics-and-perception",
+    "subject": "computer-science",
+    "lessonTitle": "Robotics & Perception",
+    "prompt": "Why is perception the hardest part of robotics, and how do robots cope?",
+    "options": [
+      "Sensors are perfectly accurate, so the only challenge is acting fast enough",
+      "Sensors give noisy, uncertain readings, so robots fuse many sensors and track beliefs over time rather than trusting any single reading",
+      "Robots avoid sensors entirely and rely on pre-programmed maps",
+      "Perception is easy; the hard part is manufacturing the motors"
+    ],
+    "correctIndex": 1,
+    "explanation": "Real sensors return noisy, sometimes contradictory estimates, so a robot can never be certain about the world. It copes through sensor fusion — combining many imperfect sources so errors cancel — and by tracking a belief over time that blends new readings with prior expectations, acting on probabilities rather than single readings."
+  },
+  {
+    "id": "computer-science/scheduling",
+    "contentSlug": "computer-science/scheduling",
+    "subject": "computer-science",
+    "lessonTitle": "Scheduling",
+    "prompt": "Round-robin scheduling gives each process a fixed time slice and rotates between them. What is its main advantage over running each job to completion in order?",
+    "options": [
+      "It eliminates the need for context switching",
+      "Every process makes steady progress, so the system stays responsive instead of stalling behind one long job",
+      "It always produces the lowest possible average wait time",
+      "It lets the CPU run several processes truly at the same time"
+    ],
+    "correctIndex": 1,
+    "explanation": "Round robin keeps every process advancing in turns, so the system feels responsive and no job is stuck waiting for a long one to finish. It actually adds context-switch overhead, and shortest-job-first usually beats it on average wait — its strength is responsiveness and fairness, not raw efficiency."
+  },
+  {
+    "id": "computer-science/search-and-problem-solving",
+    "contentSlug": "computer-science/search-and-problem-solving",
+    "subject": "computer-science",
+    "lessonTitle": "Search & Problem-Solving",
+    "prompt": "What does the A* algorithm add to plain breadth-first search to find the goal far more efficiently?",
+    "options": [
+      "It searches at random instead of systematically",
+      "It uses a heuristic estimate of the remaining distance to the goal, expanding the most promising states first",
+      "It memorises the answer in advance",
+      "It only ever moves in a straight line, ignoring walls"
+    ],
+    "correctIndex": 1,
+    "explanation": "A* combines the cost already paid to reach a state with a heuristic estimate of the cost remaining, always expanding the most promising candidate. That informed guidance lets it head almost straight for the goal while still finding the shortest path."
+  },
+  {
+    "id": "computer-science/searching",
+    "contentSlug": "computer-science/searching",
+    "subject": "computer-science",
+    "lessonTitle": "Searching",
+    "prompt": "Binary search is far faster than linear search, yet we can't always use it. Why not?",
+    "options": [
+      "It only works on lists of even length",
+      "It requires the data to be sorted first",
+      "It needs the target to be a number",
+      "It uses too much memory on large lists"
+    ],
+    "correctIndex": 1,
+    "explanation": "Binary search relies on the data being sorted so it can safely discard half the list at each step. On unsorted data it would throw away the wrong half. If the data isn't already sorted, you must either sort it first or fall back to linear search."
+  },
+  {
+    "id": "computer-science/secret-codes",
+    "contentSlug": "computer-science/secret-codes",
+    "subject": "computer-science",
+    "lessonTitle": "Secret Codes",
+    "prompt": "The Caesar cipher and modern AES are both symmetric ciphers, yet Caesar is broken in milliseconds while AES is unbreakable. What is the essential difference?",
+    "options": [
+      "AES keeps its method secret, while Caesar's method is public",
+      "The number of possible keys: Caesar has only 25, so all can be tried instantly, whereas AES has so many keys that trying them all would take longer than the age of the universe",
+      "AES does not use a key at all",
+      "Caesar works on bits and AES works on letters"
+    ],
+    "correctIndex": 1,
+    "explanation": "Both methods are public — security must live in the key, not the method. Caesar's 25 keys fall to brute force (and frequency analysis) at once; AES's astronomically huge keyspace makes brute force hopeless. A cipher is only as strong as the difficulty of guessing its key."
+  },
+  {
+    "id": "computer-science/sorting",
+    "contentSlug": "computer-science/sorting",
+    "subject": "computer-science",
+    "lessonTitle": "Sorting",
+    "prompt": "Bubble, insertion and selection sort all run in about O(n²). Merge sort runs in O(n log n). For a very large list, what does this mean?",
+    "options": [
+      "Merge sort produces a more correctly sorted list",
+      "Merge sort does dramatically less work, so it finishes far faster",
+      "The simple sorts give the wrong answer on large lists",
+      "There is no practical difference for large lists"
+    ],
+    "correctIndex": 1,
+    "explanation": "All four produce the same correctly sorted list. The difference is the amount of work: O(n log n) grows far more slowly than O(n²), so on large inputs merge sort finishes vastly faster. Efficiency, not correctness, is what separates them."
+  },
+  {
+    "id": "computer-science/sound-and-media",
+    "contentSlug": "computer-science/sound-and-media",
+    "subject": "computer-science",
+    "lessonTitle": "Sound & Media",
+    "prompt": "When digitising sound, what do 'sample rate' and 'bit depth' control?",
+    "options": [
+      "The volume and the speed of playback",
+      "How often the wave is measured (rate), and how many levels each measurement is rounded to (depth)",
+      "The file name and the file type",
+      "The number of speakers required"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sample rate is how many times per second the wave's height is measured; bit depth is how finely each measurement is rounded. Higher values give a more faithful but larger recording."
+  },
+  {
+    "id": "computer-science/speaking-to-computers",
+    "contentSlug": "computer-science/speaking-to-computers",
+    "subject": "computer-science",
+    "lessonTitle": "Speaking to Computers",
+    "prompt": "What is the main difference between a high-level and a low-level programming language?",
+    "options": [
+      "High-level languages run without a CPU; low-level ones need one",
+      "A high-level line is closer to human thought and stands for many machine instructions, while a low-level line maps almost one-to-one onto CPU instructions",
+      "Low-level languages are newer and faster to write",
+      "High-level languages cannot be translated into machine code"
+    ],
+    "correctIndex": 1,
+    "explanation": "High-level languages (Python, JavaScript) read like human intentions and one line may expand into many machine instructions; low-level ones (assembly, machine code) sit close to the hardware, roughly one line per CPU instruction. Both ultimately become machine code."
+  },
+  {
+    "id": "computer-science/stacks-and-queues",
+    "contentSlug": "computer-science/stacks-and-queues",
+    "subject": "computer-science",
+    "lessonTitle": "Stacks & Queues",
+    "prompt": "You push 1, then 2, then 3 onto a stack, and separately enqueue 1, then 2, then 3 into a queue. What comes out first from each?",
+    "options": [
+      "Stack gives 1, queue gives 1",
+      "Stack gives 3 (LIFO), queue gives 1 (FIFO)",
+      "Stack gives 1 (LIFO), queue gives 3 (FIFO)",
+      "Both give 3 first"
+    ],
+    "correctIndex": 1,
+    "explanation": "A stack is LIFO, so the last item pushed (3) pops off first. A queue is FIFO, so the first item enqueued (1) is dequeued first. Same inputs, opposite output order — that's the whole distinction."
+  },
+  {
+    "id": "computer-science/staying-safe-online",
+    "contentSlug": "computer-science/staying-safe-online",
+    "subject": "computer-science",
+    "lessonTitle": "Staying Safe Online",
+    "prompt": "You use the same fairly strong password on twenty sites. One of those sites suffers a data breach. Why is this dangerous, and what single tool best fixes the underlying problem?",
+    "options": [
+      "It is not dangerous as long as the password was strong",
+      "Attackers will try the leaked password on your other accounts (credential stuffing); a password manager fixes the root cause by giving every site a unique, long, random password you do not have to remember",
+      "You should make the one shared password longer and keep reusing it",
+      "Two-factor authentication makes password reuse completely safe"
+    ],
+    "correctIndex": 1,
+    "explanation": "Reuse turns one breach into many: attackers replay the leaked password across your other accounts. Strength does not help once the exact password is known. A password manager removes the temptation to reuse by storing a unique strong password per site, while 2FA adds a valuable second layer on top."
+  },
+  {
+    "id": "computer-science/step-by-step-and-loops",
+    "contentSlug": "computer-science/step-by-step-and-loops",
+    "subject": "computer-science",
+    "lessonTitle": "Loops & Iteration",
+    "prompt": "A loop runs but never stops, freezing the program. What is the most likely cause?",
+    "options": [
+      "The loop body has too many statements",
+      "The condition is missing entirely",
+      "The loop variable is never updated toward making the condition false",
+      "The program used selection instead of sequence"
+    ],
+    "correctIndex": 2,
+    "explanation": "An infinite loop usually means the loop's state never changes in a way that ends it — for example, forgetting to increment the counter. The condition stays true forever, so the loop never exits."
+  },
+  {
+    "id": "computer-science/talking-to-devices",
+    "contentSlug": "computer-science/talking-to-devices",
+    "subject": "computer-science",
+    "lessonTitle": "Talking to Devices",
+    "prompt": "Why are interrupts usually better than polling for a CPU dealing with a slow device?",
+    "options": [
+      "Interrupts make the device itself run faster",
+      "With interrupts the CPU does useful work and is signalled only when the device is ready, instead of wasting time repeatedly checking",
+      "Polling does not work on modern computers at all",
+      "Interrupts remove the need for any device controller"
+    ],
+    "correctIndex": 1,
+    "explanation": "Polling wastes CPU time repeatedly asking 'ready yet?' Interrupts let the CPU keep computing; the device's controller signals it only when there is something to handle — like a doorbell instead of waiting at the door."
+  },
+  {
+    "id": "computer-science/testing-and-debugging",
+    "contentSlug": "computer-science/testing-and-debugging",
+    "subject": "computer-science",
+    "lessonTitle": "Testing & Debugging",
+    "prompt": "A developer changes some code and immediately a previously-passing test turns red. What has the test suite just caught?",
+    "options": [
+      "A proof that the rest of the program is now perfect",
+      "A regression — the change broke a behaviour that used to work",
+      "A syntax error that stopped the code from compiling",
+      "Proof that the program has no remaining bugs"
+    ],
+    "correctIndex": 1,
+    "explanation": "When a change breaks something that previously worked, that's a regression. Automated tests catch regressions instantly — before they reach users. (Passing tests still can't prove the absence of all bugs.)"
+  },
+  {
+    "id": "computer-science/text-and-character-codes",
+    "contentSlug": "computer-science/text-and-character-codes",
+    "subject": "computer-science",
+    "lessonTitle": "Text & Character Codes",
+    "prompt": "The same 8 bits 01000001 can be the number 65, the letter 'A', or part of a colour. What does this tell us?",
+    "options": [
+      "The computer is malfunctioning",
+      "Bits have no inherent meaning — their meaning comes entirely from the agreed interpretation (the code) being used",
+      "Letters and numbers are stored in different places",
+      "Only one of those interpretations is ever correct"
+    ],
+    "correctIndex": 1,
+    "explanation": "A bit pattern means nothing by itself. The same bits are a number, a letter, or a colour depending on the code we agree to read them with. Shared conventions are what make data meaningful."
+  },
+  {
+    "id": "computer-science/the-big-ideas-of-cs",
+    "contentSlug": "computer-science/the-big-ideas-of-cs",
+    "subject": "computer-science",
+    "lessonTitle": "The Big Ideas of Computer Science",
+    "prompt": "Which set best captures the recurring 'big ideas' that tie computer science together?",
+    "options": [
+      "Typing speed, memorising syntax, and fixing hardware",
+      "Representing information as bits, computing by following procedures, taming complexity with abstraction, and automating within real limits",
+      "Using the latest programming language and the fastest computer",
+      "Building websites and mobile apps"
+    ],
+    "correctIndex": 1,
+    "explanation": "The unifying threads are: everything becomes information (bits); computation is faithfully following a procedure; abstraction manages complexity through layers; and computing automates information processing — powerfully, but within genuine theoretical and human limits."
+  },
+  {
+    "id": "computer-science/the-client-server-model",
+    "contentSlug": "computer-science/the-client-server-model",
+    "subject": "computer-science",
+    "lessonTitle": "The Client–Server Model",
+    "prompt": "In the client–server model, what does a status code like 200 or 404 in the response tell the client?",
+    "options": [
+      "The IP address of the server",
+      "How the request went — 200 means success, 404 means the requested resource was not found",
+      "Which router the packet took",
+      "The client's port number"
+    ],
+    "correctIndex": 1,
+    "explanation": "The server's response includes a status code summarising the outcome: 200 OK for success, 404 Not Found when the requested resource doesn't exist. The client uses it to decide what to do — show the page, or show an error."
+  },
+  {
+    "id": "computer-science/the-cpu",
+    "contentSlug": "computer-science/the-cpu",
+    "subject": "computer-science",
+    "lessonTitle": "The CPU",
+    "prompt": "Inside the CPU, what is the job of the program counter (PC)?",
+    "options": [
+      "It performs the actual addition and subtraction",
+      "It holds the memory address of the next instruction to run, and advances after each one",
+      "It permanently stores all your files",
+      "It counts how many programs are installed"
+    ],
+    "correctIndex": 1,
+    "explanation": "The program counter holds the address of the next instruction. After each instruction it ticks up by one, so the CPU steps through the program in order — until a JUMP instruction sets it somewhere else."
+  },
+  {
+    "id": "computer-science/the-edge-of-computability",
+    "contentSlug": "computer-science/the-edge-of-computability",
+    "subject": "computer-science",
+    "lessonTitle": "The Edge of Computability",
+    "prompt": "A friend says: 'Quantum computers will eventually solve the halting problem and all NP-complete problems efficiently.' Why is this wrong?",
+    "options": [
+      "Quantum computers are slower than ordinary computers",
+      "Quantum computers compute the same functions as Turing machines (so undecidable problems stay undecidable) and are not believed to solve NP-complete problems efficiently",
+      "Quantum computers can only add and subtract",
+      "The halting problem was already solved by ordinary computers"
+    ],
+    "correctIndex": 1,
+    "explanation": "Quantum computers obey the Church–Turing thesis: they compute exactly the same set of functions as Turing machines, so undecidable problems like halting remain undecidable. They speed up certain problems (e.g. factoring) but are not believed to crack NP-complete problems efficiently. They may move the tractable/intractable line for special cases — never the decidable/undecidable one."
+  },
+  {
+    "id": "computer-science/the-fetch-execute-cycle",
+    "contentSlug": "computer-science/the-fetch-execute-cycle",
+    "subject": "computer-science",
+    "lessonTitle": "The Fetch–Execute Cycle",
+    "prompt": "What are the three repeating steps of the cycle a CPU performs to run a program?",
+    "options": [
+      "Save, load, print",
+      "Fetch the next instruction, decode what it means, then execute it",
+      "Input, output, store",
+      "Compile, link, run"
+    ],
+    "correctIndex": 1,
+    "explanation": "The fetch–execute cycle: fetch the instruction the program counter points to, decode it, then execute it (often using the ALU) and advance the program counter. The CPU repeats this loop billions of times a second."
+  },
+  {
+    "id": "computer-science/the-history-of-computing",
+    "contentSlug": "computer-science/the-history-of-computing",
+    "subject": "computer-science",
+    "lessonTitle": "The History of Computing",
+    "prompt": "Why is Alan Turing considered foundational to computer science, even though he worked before modern computers existed?",
+    "options": [
+      "He built the first personal computer",
+      "He invented the transistor",
+      "He defined mathematically what computation is — and what computers can and cannot do",
+      "He wrote the first web browser"
+    ],
+    "correctIndex": 2,
+    "explanation": "Turing's 1936 abstract machine gave a precise definition of computation and revealed both its power and its limits. These ideas hold true regardless of the hardware that runs them."
+  },
+  {
+    "id": "computer-science/the-internet",
+    "contentSlug": "computer-science/the-internet",
+    "subject": "computer-science",
+    "lessonTitle": "The Internet",
+    "prompt": "You send a 4-packet message. Packet 3 takes a fast route and arrives before packet 2. How does the system cope?",
+    "options": [
+      "It fails — packets must always arrive in order",
+      "Each packet carries a sequence number, so the destination reassembles them in the correct order regardless of arrival order",
+      "Packet 3 is thrown away and resent later",
+      "A dedicated line is opened to force them in order"
+    ],
+    "correctIndex": 1,
+    "explanation": "Packet switching expects out-of-order arrival. Every packet's header includes a sequence number, so the receiver can hold them, sort them, and reassemble the original message — no dedicated line required. This is exactly what makes the network flexible and resilient."
+  },
+  {
+    "id": "computer-science/the-journey-of-a-packet",
+    "contentSlug": "computer-science/the-journey-of-a-packet",
+    "subject": "computer-science",
+    "lessonTitle": "The Journey of a Packet",
+    "prompt": "Put the core stages of loading a web page in the correct order.",
+    "options": [
+      "Route packets → DNS lookup → render page → open TCP connection",
+      "DNS lookup → open TCP connection → request split into packets and routed hop by hop → reassembled → response rendered",
+      "Render page → DNS lookup → open TCP connection → route packets",
+      "Open TCP connection → DNS lookup → render page → route packets"
+    ],
+    "correctIndex": 1,
+    "explanation": "First DNS turns the name into an IP. Then TCP opens a reliable connection. The HTTP request is encapsulated, split into packets, and routed hop by hop; packets are reassembled in order at the server, which sends a response that travels back and is finally rendered by the browser."
+  },
+  {
+    "id": "computer-science/the-mathematics-of-secrecy",
+    "contentSlug": "computer-science/the-mathematics-of-secrecy",
+    "subject": "computer-science",
+    "lessonTitle": "The Mathematics of Secrecy",
+    "prompt": "RSA publishes the number n (the product of two secret primes) as part of the public key, yet remains secure. Why does revealing n NOT let an attacker decrypt messages — and what future technology threatens this?",
+    "options": [
+      "n is encrypted, so the attacker cannot read it; nothing threatens RSA",
+      "Recovering the private key from n requires factoring n into its primes, which is infeasible for huge numbers on ordinary computers — but a large quantum computer running Shor's algorithm could factor efficiently, breaking it",
+      "n is chosen randomly each time, so it carries no useful information at all",
+      "The attacker would need the message's hash, which is also one-way"
+    ],
+    "correctIndex": 1,
+    "explanation": "The private key can only be derived by factoring n back into its two primes, and factoring hundreds-of-digit numbers is believed infeasible for classical computers — so publishing n is safe today. A large-scale quantum computer running Shor's algorithm could factor quickly, which is why post-quantum cryptography is being developed now."
+  },
+  {
+    "id": "computer-science/the-os-as-referee",
+    "contentSlug": "computer-science/the-os-as-referee",
+    "subject": "computer-science",
+    "lessonTitle": "The OS as Referee",
+    "prompt": "Why can a buggy or malicious app crash itself without taking down the whole operating system?",
+    "options": [
+      "The OS makes a fresh backup of itself before every app runs",
+      "Apps run in user mode where privileged instructions are forbidden by hardware, and they reach the kernel only through checked system calls — so they can't bypass the OS",
+      "Every app is fully tested and proven correct before it is allowed to run",
+      "The CPU automatically deletes any app that contains a bug"
+    ],
+    "correctIndex": 1,
+    "explanation": "The CPU enforces a user/kernel-mode split. Apps run in user mode, unable to execute privileged instructions or touch hardware directly; they must ask the kernel via system calls, which check each request. Because apps physically cannot bypass the OS, a crashing or hostile one harms only itself — the protection that makes safe multitasking possible."
+  },
+  {
+    "id": "computer-science/the-promise-and-peril-of-ai",
+    "contentSlug": "computer-science/the-promise-and-peril-of-ai",
+    "subject": "computer-science",
+    "lessonTitle": "The Promise & Peril of AI",
+    "prompt": "A language model gives you a confident, fluent, well-cited answer to a factual question. Based on how these systems work, what is the wisest response?",
+    "options": [
+      "Trust it completely — fluency and citations prove the answer is correct",
+      "Verify the key claims independently, because the model generates likely-sounding text and can hallucinate convincing but false facts and citations",
+      "Assume it is always wrong and ignore it entirely",
+      "Raise the temperature setting to make the answer more accurate"
+    ],
+    "correctIndex": 1,
+    "explanation": "An LLM generates the most likely continuation, and 'likely-sounding' is not the same as 'true' — it can hallucinate convincing facts and even fake citations. Fluency makes errors more dangerous, not less, so the wise move is to treat the output as a fast, fallible draft and verify anything that matters."
+  },
+  {
+    "id": "computer-science/the-relational-model",
+    "contentSlug": "computer-science/the-relational-model",
+    "subject": "computer-science",
+    "lessonTitle": "The Relational Model",
+    "prompt": "An Enrollments table has a column student_id that holds values like 1003, which match the student_id primary key in the Students table. What is that column?",
+    "options": [
+      "A primary key for the Enrollments table",
+      "A foreign key — it references the primary key of another table to link the rows",
+      "A duplicate that should be deleted",
+      "An index used only to speed up searches"
+    ],
+    "correctIndex": 1,
+    "explanation": "A foreign key is a column whose values match the primary key of another table. Here student_id in Enrollments references the matching student in Students, linking each enrollment to its student. That shared value IS the relationship."
+  },
+  {
+    "id": "computer-science/the-software-life-cycle",
+    "contentSlug": "computer-science/the-software-life-cycle",
+    "subject": "computer-science",
+    "lessonTitle": "The Software Life Cycle",
+    "prompt": "A team is shocked that their app costs far more to run in the three years after launch than it did to build. What does this most directly illustrate?",
+    "options": [
+      "They hired bad programmers who write slow code",
+      "Maintenance — fixing, adapting and extending software after release — is usually the largest share of total cost",
+      "The Requirements stage was skipped entirely",
+      "Iterative development is more expensive than waterfall"
+    ],
+    "correctIndex": 1,
+    "explanation": "Maintenance typically dominates a system's lifetime cost (often 60–80%). Software is mostly maintained, not built — which is why writing code that's easy to change later matters far more than writing it quickly."
+  },
+  {
+    "id": "computer-science/the-turing-machine",
+    "contentSlug": "computer-science/the-turing-machine",
+    "subject": "computer-science",
+    "lessonTitle": "The Turing Machine",
+    "prompt": "What does the Church–Turing thesis claim about the Turing machine?",
+    "options": [
+      "It is the fastest possible computer",
+      "Anything that can be computed by any method can be computed by a Turing machine — it defines computation itself",
+      "It can solve any problem given enough memory",
+      "It was the first physical computer ever built"
+    ],
+    "correctIndex": 1,
+    "explanation": "The Church–Turing thesis says the Turing machine captures the full notion of 'computable.' Every independently invented model of computation proved equally powerful, so anything computable by any means is computable by a Turing machine. It says nothing about speed, and — crucially — not everything CAN be computed, as the next lesson shows."
+  },
+  {
+    "id": "computer-science/the-world-wide-web",
+    "contentSlug": "computer-science/the-world-wide-web",
+    "subject": "computer-science",
+    "lessonTitle": "The World Wide Web",
+    "prompt": "A friend says 'the web and the internet are the same thing.' What's the most accurate correction?",
+    "options": [
+      "They're right — the two words mean exactly the same",
+      "The internet is the underlying network; the web is one service (HTTP pages and hyperlinks) that runs on top of it, alongside email and others",
+      "The web came first and the internet runs on top of the web",
+      "The web is the hardware and the internet is the software"
+    ],
+    "correctIndex": 1,
+    "explanation": "The internet is the global network infrastructure — cables, routers, IP, packets. The World Wide Web is just one service running over it (HTTP-served, hyperlinked pages viewed in a browser), alongside email, video calls and more. Same network, many services."
+  },
+  {
+    "id": "computer-science/thinking-like-a-defender",
+    "contentSlug": "computer-science/thinking-like-a-defender",
+    "subject": "computer-science",
+    "lessonTitle": "Thinking Like a Defender",
+    "prompt": "A company gives every employee full administrator access 'to keep things simple'. One account is later compromised by phishing. Which two principles were violated, making the breach far worse?",
+    "options": [
+      "Confidentiality and availability — the data was simply too valuable",
+      "Least privilege (accounts had far more access than needed) and defence in depth (no inner layers contained the breach once one account fell)",
+      "None — full access is the most secure configuration",
+      "Integrity, because the password was too short"
+    ],
+    "correctIndex": 1,
+    "explanation": "Granting everyone admin rights violates least privilege, so one stolen account unlocked everything. With no inner layers to slow the spread, defence in depth was absent too. Limiting access and stacking independent defences both contain damage when — not if — something fails."
+  },
+  {
+    "id": "computer-science/threats-and-attacks",
+    "contentSlug": "computer-science/threats-and-attacks",
+    "subject": "computer-science",
+    "lessonTitle": "Threats & Attacks",
+    "prompt": "An organisation has world-class encryption and firewalls, yet gets breached when a staff member types their password into a fake login page from an email. What principle does this illustrate?",
+    "options": [
+      "Encryption was the problem and should be removed",
+      "A system is only as strong as its weakest link — and people are part of the attack surface, so technical defences alone are not enough",
+      "Phishing is impossible to defend against, so there is no point trying",
+      "Firewalls cause breaches"
+    ],
+    "correctIndex": 1,
+    "explanation": "The strongest technical controls are bypassed entirely if a human is tricked into handing over credentials. Security must cover software, networks AND people; the weakest link sets the real strength of the whole system."
+  },
+  {
+    "id": "computer-science/trees",
+    "contentSlug": "computer-science/trees",
+    "subject": "computer-science",
+    "lessonTitle": "Trees",
+    "prompt": "In a balanced binary search tree, why does searching for a value take only about O(log n) steps?",
+    "options": [
+      "Because it checks every node once",
+      "Because the ordering rule lets each comparison discard an entire subtree — about half the remaining values — so the search depth grows like log n",
+      "Because trees store data in a contiguous array",
+      "Because all nodes are leaves"
+    ],
+    "correctIndex": 1,
+    "explanation": "At each node the search compares once and goes left or right, throwing away the whole other subtree — roughly half of what remains. Halving repeatedly means the number of steps grows like log n, so even a million values are only ~20 levels deep."
+  },
+  {
+    "id": "computer-science/truth-tables",
+    "contentSlug": "computer-science/truth-tables",
+    "subject": "computer-science",
+    "lessonTitle": "Truth Tables",
+    "prompt": "Two engineers build a component in completely different ways, but both produce identical truth tables. What can we conclude?",
+    "options": [
+      "One of them must be wrong",
+      "They are logically interchangeable — the truth table fully defines the behaviour, so the internal design doesn't matter",
+      "They will give different results for some inputs",
+      "Truth tables can't be compared"
+    ],
+    "correctIndex": 1,
+    "explanation": "A truth table is the complete specification of a logical function. If two components share the same table, they produce the same output for every input and are interchangeable — only cost, speed or size differ."
+  },
+  {
+    "id": "computer-science/variables-and-data-types",
+    "contentSlug": "computer-science/variables-and-data-types",
+    "subject": "computer-science",
+    "lessonTitle": "Variables & Data Types",
+    "prompt": "In the line score = score + 10, what does the = actually do?",
+    "options": [
+      "It checks whether score is equal to score + 10",
+      "It assigns: it computes score + 10 and stores that result back into the variable score",
+      "It creates ten new variables",
+      "It converts score into a string"
+    ],
+    "correctIndex": 1,
+    "explanation": "In most languages = is assignment, not mathematical equality. The right-hand side is evaluated first (the old score plus 10), and the result is stored back into the box on the left, overwriting its previous value."
+  },
+  {
+    "id": "computer-science/version-control",
+    "contentSlug": "computer-science/version-control",
+    "subject": "computer-science",
+    "lessonTitle": "Version Control",
+    "prompt": "Two developers want to build separate features at the same time without overwriting each other, and be able to combine their work later. Which version-control workflow fits?",
+    "options": [
+      "Both edit the main files directly and hope they don't clash",
+      "Each works on their own branch, commits there, then merges back into the main line",
+      "They email zipped folders named 'final_v2' back and forth",
+      "Only one person is allowed to write code at a time"
+    ],
+    "correctIndex": 1,
+    "explanation": "Branches give each developer an isolated, parallel line of work. They commit independently and merge back when ready — git combines the changes and flags any conflicts on the same lines for a human to resolve. No work is lost or overwritten."
+  },
+  {
+    "id": "computer-science/what-an-operating-system-does",
+    "contentSlug": "computer-science/what-an-operating-system-does",
+    "subject": "computer-science",
+    "lessonTitle": "What an Operating System Does",
+    "prompt": "A photo app calls a simple 'save file' service instead of directly controlling the disk hardware. Which two OS jobs does this illustrate?",
+    "options": [
+      "Compiling the app and rendering its graphics",
+      "Hardware abstraction (hiding disk specifics) and resource management (sharing the disk between apps)",
+      "Encrypting the file and compressing it",
+      "Writing the app's machine code and storing it"
+    ],
+    "correctIndex": 1,
+    "explanation": "A simple 'save file' call hides the disk's physical details — that's abstraction. The OS also decides how the shared disk is allocated among all programs — that's resource management. These are the OS's two core responsibilities."
+  },
+  {
+    "id": "computer-science/what-computers-cannot-do",
+    "contentSlug": "computer-science/what-computers-cannot-do",
+    "subject": "computer-science",
+    "lessonTitle": "What Computers Cannot Do",
+    "prompt": "Why is the halting problem 'undecidable'?",
+    "options": [
+      "Today's computers are simply too slow to solve it",
+      "Assuming a program that decides halting leads to a logical contradiction, so no such program can exist for any computer",
+      "It can be solved, but only with quantum computers",
+      "Programmers haven't yet discovered the right algorithm"
+    ],
+    "correctIndex": 1,
+    "explanation": "Turing's proof assumes a perfect halt-detector H exists, then builds a program that asks H about itself and does the opposite of H's answer — forcing a contradiction. So H cannot exist, for any computer, however fast. Undecidability is a logical impossibility, not a temporary engineering gap."
+  },
+  {
+    "id": "computer-science/what-is-a-database",
+    "contentSlug": "computer-science/what-is-a-database",
+    "subject": "computer-science",
+    "lessonTitle": "What Is a Database?",
+    "prompt": "In a database table, what is the role of the primary key?",
+    "options": [
+      "It encrypts the table so others can't read it",
+      "It uniquely identifies each row, so no two records can be confused",
+      "It sorts the rows alphabetically",
+      "It stores the password for the database"
+    ],
+    "correctIndex": 1,
+    "explanation": "A primary key is a column whose value is unique for every row (like student_id). It lets the database — and other tables — refer to exactly one record with no ambiguity. It is not about encryption, sorting, or passwords."
+  },
+  {
+    "id": "computer-science/what-is-ai",
+    "contentSlug": "computer-science/what-is-ai",
+    "subject": "computer-science",
+    "lessonTitle": "What Is AI?",
+    "prompt": "What distinguishes the modern, dominant 'learning' approach to AI from the older 'symbolic' approach?",
+    "options": [
+      "Learning systems are programmed with more detailed if-then rules",
+      "Instead of hand-coding explicit rules, learning systems discover patterns automatically from large numbers of examples",
+      "Symbolic systems use neural networks while learning systems use logic",
+      "Learning AI requires no data at all, only clever algorithms"
+    ],
+    "correctIndex": 1,
+    "explanation": "The symbolic approach hand-codes rules and logic, which is brittle in the messy real world. The learning approach feeds the machine many examples and lets it find the patterns itself — that data-driven learning is what powers today's AI."
+  },
+  {
+    "id": "computer-science/what-is-an-algorithm",
+    "contentSlug": "computer-science/what-is-an-algorithm",
+    "subject": "computer-science",
+    "lessonTitle": "What Is an Algorithm?",
+    "prompt": "Which of these is NOT a property that a proper algorithm must have?",
+    "options": [
+      "It is finite — it eventually stops",
+      "Its steps are precise and unambiguous",
+      "It always uses the fewest possible steps",
+      "Its steps run in a definite order"
+    ],
+    "correctIndex": 2,
+    "explanation": "Algorithms must be finite, precise, ordered and effective — but they need not be optimal. Plenty of correct algorithms are slow; finding faster ones is a separate goal we explore later in this world."
+  },
+  {
+    "id": "computer-science/what-is-computer-science",
+    "contentSlug": "computer-science/what-is-computer-science",
+    "subject": "computer-science",
+    "lessonTitle": "What Is Computer Science?",
+    "prompt": "Which statement best captures what computer science is about?",
+    "options": [
+      "Memorising the syntax of a programming language",
+      "Solving problems with computation — representing information and designing precise procedures to process it",
+      "Repairing the physical hardware inside computers",
+      "Using apps and websites efficiently"
+    ],
+    "correctIndex": 1,
+    "explanation": "Programming is one tool, and hardware repair is engineering. Computer science is the broader study of computation: how to represent information and design step-by-step procedures (algorithms) to process it."
+  },
+  {
+    "id": "math/adding-and-subtracting-fractions",
+    "contentSlug": "math/adding-and-subtracting-fractions",
+    "subject": "math",
+    "lessonTitle": "Adding & Subtracting Fractions",
+    "prompt": "What is ⅚ − ¾?",
+    "options": [
+      "1/12",
+      "2/3",
+      "2/2",
+      "1/3"
+    ],
+    "correctIndex": 0,
+    "explanation": "Common denominator 12: ⅚ = 10/12 and ¾ = 9/12. Then 10/12 − 9/12 = 1/12. (Subtracting the bottoms, 6−4, is the classic mistake.)"
+  },
+  {
+    "id": "math/angles-with-parallel-lines",
+    "contentSlug": "math/angles-with-parallel-lines",
+    "subject": "math",
+    "lessonTitle": "Angles with Parallel Lines",
+    "prompt": "A transversal crosses two parallel lines. One angle is 110°. What is its co-interior angle?",
+    "options": [
+      "70°",
+      "110°",
+      "55°",
+      "250°"
+    ],
+    "correctIndex": 0,
+    "explanation": "Co-interior (C-shape) angles add to 180°, so the partner is 180 − 110 = 70°. (Its corresponding and alternate angles would be 110°.)"
+  },
+  {
+    "id": "math/area-of-circles",
+    "contentSlug": "math/area-of-circles",
+    "subject": "math",
+    "lessonTitle": "Circumference & Area of Circles",
+    "prompt": "A circle has radius 5 cm. What is its area (to 1 d.p.)?",
+    "options": [
+      "78.5 cm²",
+      "31.4 cm²",
+      "15.7 cm²",
+      "25 cm²"
+    ],
+    "correctIndex": 0,
+    "explanation": "A = πr² = π × 5² = 25π ≈ 78.5 cm². (Its circumference, for comparison, is 2π × 5 ≈ 31.4 cm — a length, not an area.)"
+  },
+  {
+    "id": "math/arithmetic-sequences",
+    "contentSlug": "math/arithmetic-sequences",
+    "subject": "math",
+    "lessonTitle": "Arithmetic Sequences & Series",
+    "prompt": "What is the sum 1 + 2 + 3 + … + 50?",
+    "options": [
+      "1275",
+      "2550",
+      "1250",
+      "5050"
+    ],
+    "correctIndex": 0,
+    "explanation": "Use S = (n/2)(a + l) = (50/2)(1 + 50) = 25 × 51 = 1275. (Pairing the ends: 25 pairs each summing to 51.)"
+  },
+  {
+    "id": "math/averages-and-range",
+    "contentSlug": "math/averages-and-range",
+    "subject": "math",
+    "lessonTitle": "Averages & Range",
+    "prompt": "Find the mean and median of: 2, 3, 3, 6, 16.",
+    "options": [
+      "Mean 6, median 3",
+      "Mean 3, median 6",
+      "Mean 6, median 6",
+      "Mean 5, median 3"
+    ],
+    "correctIndex": 0,
+    "explanation": "Mean = (2+3+3+6+16)/5 = 30/5 = 6. Median = the middle value of the sorted list = 3. The outlier 16 pulls the mean above the median."
+  },
+  {
+    "id": "math/calculating-probability",
+    "contentSlug": "math/calculating-probability",
+    "subject": "math",
+    "lessonTitle": "Calculating Probability",
+    "prompt": "A bag has 4 red, 3 green and 5 blue counters. What is the probability of drawing a green one?",
+    "options": [
+      "3/12 = 1/4",
+      "3/9 = 1/3",
+      "1/3 of red",
+      "3/5"
+    ],
+    "correctIndex": 0,
+    "explanation": "Total = 4 + 3 + 5 = 12 counters; 3 are green. P(green) = 3/12 = 1/4."
+  },
+  {
+    "id": "math/chance-in-the-real-world",
+    "contentSlug": "math/chance-in-the-real-world",
+    "subject": "math",
+    "lessonTitle": "Chance in the Real World",
+    "prompt": "A game costs £2 to play. You win £5 with probability 0.3, otherwise nothing. What is the expected value per play (winnings minus cost)?",
+    "options": [
+      "−£0.50 (a loss on average)",
+      "+£1.50",
+      "+£3.00",
+      "£0 (a fair game)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Expected winnings = 0.3 × £5 + 0.7 × £0 = £1.50. Subtract the £2 cost: £1.50 − £2 = −£0.50. On average you lose 50p each play."
+  },
+  {
+    "id": "math/circle-theorems",
+    "contentSlug": "math/circle-theorems",
+    "subject": "math",
+    "lessonTitle": "The Circle Theorems",
+    "prompt": "A and B are ends of a chord. The angle at the centre subtended by AB is 100°. What is the angle at the circumference on the major arc?",
+    "options": [
+      "50°",
+      "100°",
+      "200°",
+      "80°"
+    ],
+    "correctIndex": 0,
+    "explanation": "The angle at the centre is twice the angle at the circumference on the same arc, so the circumference angle is 100 ÷ 2 = 50°."
+  },
+  {
+    "id": "math/circles-and-their-parts",
+    "contentSlug": "math/circles-and-their-parts",
+    "subject": "math",
+    "lessonTitle": "Circles & Their Parts",
+    "prompt": "Which statement is correct?",
+    "options": [
+      "The diameter is twice the radius, and a chord through the centre is a diameter",
+      "The radius is twice the diameter",
+      "A tangent passes through the centre",
+      "An arc is a straight line across the circle"
+    ],
+    "correctIndex": 0,
+    "explanation": "Diameter = 2 × radius, and the longest chord — one passing through the centre — is exactly a diameter. A tangent only touches the edge; an arc is part of the curved circumference."
+  },
+  {
+    "id": "math/combined-events",
+    "contentSlug": "math/combined-events",
+    "subject": "math",
+    "lessonTitle": "Combined Events",
+    "prompt": "A fair coin is flipped and a die rolled. What is P(tails AND an even number)?",
+    "options": [
+      "1/4",
+      "1/2",
+      "1/12",
+      "2/3"
+    ],
+    "correctIndex": 0,
+    "explanation": "Independent events, so multiply: P(tails) × P(even) = ½ × 3/6 = ½ × ½ = 1/4."
+  },
+  {
+    "id": "math/comparing-and-ordering-fractions",
+    "contentSlug": "math/comparing-and-ordering-fractions",
+    "subject": "math",
+    "lessonTitle": "Comparing & Ordering Fractions",
+    "prompt": "Put these in order, smallest first: ¾, ⅔, ⅚.",
+    "options": [
+      "⅔, ¾, ⅚",
+      "¾, ⅔, ⅚",
+      "⅚, ¾, ⅔",
+      "⅔, ⅚, ¾"
+    ],
+    "correctIndex": 0,
+    "explanation": "Common denominator 12: ⅔ = 8/12, ¾ = 9/12, ⅚ = 10/12. So ⅔ < ¾ < ⅚."
+  },
+  {
+    "id": "math/completing-the-square",
+    "contentSlug": "math/completing-the-square",
+    "subject": "math",
+    "lessonTitle": "Completing the Square",
+    "prompt": "Write x² + 8x + 3 in completed-square form.",
+    "options": [
+      "(x + 4)² − 13",
+      "(x + 4)² + 3",
+      "(x + 8)² − 61",
+      "(x + 4)² − 16"
+    ],
+    "correctIndex": 0,
+    "explanation": "Half of 8 is 4, and 4² = 16. So x² + 8x + 3 = (x + 4)² − 16 + 3 = (x + 4)² − 13."
+  },
+  {
+    "id": "math/conditional-probability",
+    "contentSlug": "math/conditional-probability",
+    "subject": "math",
+    "lessonTitle": "Conditional Probability",
+    "prompt": "A bag has 5 sweets: 2 red, 3 yellow. You eat one, then take another (no replacement). What is P(both red)?",
+    "options": [
+      "2/5 × 1/4 = 1/10",
+      "2/5 × 2/5 = 4/25",
+      "2/5 + 1/4 = 13/20",
+      "1/2"
+    ],
+    "correctIndex": 0,
+    "explanation": "First red: 2/5. After eating it, 1 red remains of 4 sweets, so the second is 1/4. Multiply: 2/5 × 1/4 = 2/20 = 1/10. The second probability is conditional on the first."
+  },
+  {
+    "id": "math/congruence-and-similarity",
+    "contentSlug": "math/congruence-and-similarity",
+    "subject": "math",
+    "lessonTitle": "Congruence & Similarity",
+    "prompt": "Two similar triangles: the small one has sides 3, 4, 5; the large one's shortest side is 9. What is the large one's longest side?",
+    "options": [
+      "15",
+      "12",
+      "11",
+      "45"
+    ],
+    "correctIndex": 0,
+    "explanation": "The scale factor is 9 ÷ 3 = 3 (matching the shortest sides). The longest side scales the same way: 5 × 3 = 15."
+  },
+  {
+    "id": "math/constructions-and-loci",
+    "contentSlug": "math/constructions-and-loci",
+    "subject": "math",
+    "lessonTitle": "Constructions & Loci",
+    "prompt": "What is the locus of all points exactly 4 cm from a fixed point P?",
+    "options": [
+      "A circle of radius 4 cm centred on P",
+      "The perpendicular bisector of P",
+      "A straight line 4 cm from P",
+      "A square of side 4 cm around P"
+    ],
+    "correctIndex": 0,
+    "explanation": "Every point at a fixed distance from one point forms a circle of that radius — here radius 4 cm, centred on P."
+  },
+  {
+    "id": "math/counting-the-infinite",
+    "contentSlug": "math/counting-the-infinite",
+    "subject": "math",
+    "lessonTitle": "Counting the Infinite",
+    "prompt": "Cantor showed the real numbers are 'uncountable'. What does his diagonal argument prove?",
+    "options": [
+      "No list of all reals can be complete — you can always construct a real that's missing",
+      "There are exactly as many reals as naturals",
+      "The reals are finite",
+      "Fractions cannot be counted"
+    ],
+    "correctIndex": 0,
+    "explanation": "The diagonal argument builds a number differing from every entry on any proposed complete list, so no such list exists. The reals are a strictly larger infinity than the naturals (the fractions, by contrast, ARE countable)."
+  },
+  {
+    "id": "math/cumulative-frequency-and-quartiles",
+    "contentSlug": "math/cumulative-frequency-and-quartiles",
+    "subject": "math",
+    "lessonTitle": "Cumulative Frequency & Quartiles",
+    "prompt": "A dataset has Q1 = 12, median = 18, Q3 = 27. What is the interquartile range?",
+    "options": [
+      "15",
+      "9",
+      "18",
+      "39"
+    ],
+    "correctIndex": 0,
+    "explanation": "IQR = Q3 − Q1 = 27 − 12 = 15. It measures the spread of the middle 50% of the data, unaffected by extreme values."
+  },
+  {
+    "id": "math/decimals",
+    "contentSlug": "math/decimals",
+    "subject": "math",
+    "lessonTitle": "Decimals, Fractions & Percents",
+    "prompt": "Order these from smallest to largest: 0.6, ⅝, 65%.",
+    "options": [
+      "⅝, 0.6, 65%",
+      "0.6, ⅝, 65%",
+      "65%, ⅝, 0.6",
+      "0.6, 65%, ⅝"
+    ],
+    "correctIndex": 1,
+    "explanation": "Put them all in one costume — decimals: 0.6, ⅝ = 0.625, 65% = 0.65. So 0.6 < 0.625 < 0.65, i.e. 0.6 < ⅝ < 65%."
+  },
+  {
+    "id": "math/difference-of-two-squares",
+    "contentSlug": "math/difference-of-two-squares",
+    "subject": "math",
+    "lessonTitle": "The Difference of Two Squares",
+    "prompt": "Factorise 4x² − 49.",
+    "options": [
+      "(2x + 7)(2x − 7)",
+      "(2x − 7)²",
+      "(4x + 7)(x − 7)",
+      "It does not factorise"
+    ],
+    "correctIndex": 0,
+    "explanation": "Both are perfect squares: 4x² = (2x)² and 49 = 7², with a minus between. So it's (2x + 7)(2x − 7)."
+  },
+  {
+    "id": "math/differentiation-rules",
+    "contentSlug": "math/differentiation-rules",
+    "subject": "math",
+    "lessonTitle": "Differentiation Rules & Turning Points",
+    "prompt": "Differentiate f(x) = x³ − 6x² + 5, then find where f′(x) = 0.",
+    "options": [
+      "f′(x) = 3x² − 12x; zero at x = 0 and x = 4",
+      "f′(x) = 3x² − 12x + 5; zero at x = 1",
+      "f′(x) = x² − 12x; zero at x = 12",
+      "f′(x) = 3x − 12; zero at x = 4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Power rule term by term: x³→3x², −6x²→−12x, +5→0. So f′(x) = 3x² − 12x = 3x(x − 4) = 0 at x = 0 and x = 4 — the two turning points."
+  },
+  {
+    "id": "math/direct-proportion",
+    "contentSlug": "math/direct-proportion",
+    "subject": "math",
+    "lessonTitle": "Direct Proportion",
+    "prompt": "5 identical books weigh 1.2 kg. Assuming direct proportion, how much do 8 books weigh?",
+    "options": [
+      "1.92 kg",
+      "1.5 kg",
+      "2.4 kg",
+      "0.24 kg"
+    ],
+    "correctIndex": 0,
+    "explanation": "One book: 1.2 ÷ 5 = 0.24 kg (the constant k). Then 8 × 0.24 = 1.92 kg."
+  },
+  {
+    "id": "math/displaying-data",
+    "contentSlug": "math/displaying-data",
+    "subject": "math",
+    "lessonTitle": "Displaying Data",
+    "prompt": "You want to show how one company's monthly sales changed across a year. Which display is best?",
+    "options": [
+      "A line graph",
+      "A pie chart",
+      "A single bar",
+      "A Venn diagram"
+    ],
+    "correctIndex": 0,
+    "explanation": "Change over time is exactly what a line graph shows — the trend across the months. A pie shows shares of a whole, not change over time."
+  },
+  {
+    "id": "math/enlargements",
+    "contentSlug": "math/enlargements",
+    "subject": "math",
+    "lessonTitle": "Enlargements & Scale Factor",
+    "prompt": "A triangle is enlarged by scale factor 3 from the origin. A vertex at (2, 1) moves to where?",
+    "options": [
+      "(6, 3)",
+      "(5, 4)",
+      "(2/3, 1/3)",
+      "(8, 3)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Enlargement from the origin multiplies each coordinate by the scale factor: (2 × 3, 1 × 3) = (6, 3)."
+  },
+  {
+    "id": "math/equations-with-brackets-and-fractions",
+    "contentSlug": "math/equations-with-brackets-and-fractions",
+    "subject": "math",
+    "lessonTitle": "Equations with Brackets & Fractions",
+    "prompt": "Solve (x + 1)/2 = 4.",
+    "options": [
+      "x = 7",
+      "x = 8",
+      "x = 3",
+      "x = 9"
+    ],
+    "correctIndex": 0,
+    "explanation": "Multiply both sides by 2: x + 1 = 8. Subtract 1: x = 7. Check: (7+1)/2 = 8/2 = 4 ✓."
+  },
+  {
+    "id": "math/exact-values",
+    "contentSlug": "math/exact-values",
+    "subject": "math",
+    "lessonTitle": "Special Angles & the Unit Circle",
+    "prompt": "On the unit circle, what are the coordinates of the point at 90°?",
+    "options": [
+      "(0, 1)",
+      "(1, 0)",
+      "(0, −1)",
+      "(½, ½)"
+    ],
+    "correctIndex": 0,
+    "explanation": "The point is (cos 90°, sin 90°) = (0, 1) — straight up. cos 90° = 0 and sin 90° = 1."
+  },
+  {
+    "id": "math/expanding-brackets",
+    "contentSlug": "math/expanding-brackets",
+    "subject": "math",
+    "lessonTitle": "Expanding Brackets",
+    "prompt": "Expand and simplify 4(2x + 1) − 3(x − 2).",
+    "options": [
+      "5x + 10",
+      "5x − 2",
+      "11x − 2",
+      "5x + 4"
+    ],
+    "correctIndex": 0,
+    "explanation": "4(2x+1) = 8x + 4. −3(x−2) = −3x + 6 (the minus flips both). Add: 8x − 3x = 5x, and 4 + 6 = 10 → 5x + 10."
+  },
+  {
+    "id": "math/expanding-double-brackets",
+    "contentSlug": "math/expanding-double-brackets",
+    "subject": "math",
+    "lessonTitle": "Expanding Double Brackets",
+    "prompt": "Expand (x − 3)(x + 5).",
+    "options": [
+      "x² + 2x − 15",
+      "x² − 2x − 15",
+      "x² + 2x + 15",
+      "x² − 15"
+    ],
+    "correctIndex": 0,
+    "explanation": "Firsts x², outers +5x, inners −3x, lasts −15. Combine the middle: 5x − 3x = +2x. So x² + 2x − 15."
+  },
+  {
+    "id": "math/factorising",
+    "contentSlug": "math/factorising",
+    "subject": "math",
+    "lessonTitle": "Factorising",
+    "prompt": "Fully factorise 10x² − 15x.",
+    "options": [
+      "5x(2x − 3)",
+      "5(2x² − 3x)",
+      "x(10x − 15)",
+      "5x(2x − 3x)"
+    ],
+    "correctIndex": 0,
+    "explanation": "The HCF of 10x² and 15x is 5x. Pulling it out: 5x(2x − 3). The other near-misses don't extract the full common factor (or expand wrongly)."
+  },
+  {
+    "id": "math/factorising-quadratics",
+    "contentSlug": "math/factorising-quadratics",
+    "subject": "math",
+    "lessonTitle": "Factorising Quadratics",
+    "prompt": "Factorise x² − 7x + 12.",
+    "options": [
+      "(x − 3)(x − 4)",
+      "(x + 3)(x + 4)",
+      "(x − 6)(x − 2)",
+      "(x − 12)(x + 1)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Need two numbers multiplying to +12 and adding to −7: that's −3 and −4 (both negative). So (x − 3)(x − 4). Check: x² − 4x − 3x + 12 = x² − 7x + 12 ✓."
+  },
+  {
+    "id": "math/famous-unsolved-problems",
+    "contentSlug": "math/famous-unsolved-problems",
+    "subject": "math",
+    "lessonTitle": "Famous Unsolved Problems",
+    "prompt": "Which statement about famous unsolved problems is TRUE?",
+    "options": [
+      "Goldbach's conjecture (every even number > 2 is a sum of two primes) is easy to state but remains unproven",
+      "All the Millennium Prize Problems have been solved",
+      "The Collatz conjecture was proved in 2003",
+      "Unsolved problems are useless to mathematics"
+    ],
+    "correctIndex": 0,
+    "explanation": "Goldbach's conjecture is trivially simple to state yet has gone unproven since 1742. Of the seven Millennium Problems, only the Poincaré Conjecture is solved; and the pursuit of open problems drives mathematical progress."
+  },
+  {
+    "id": "math/finding-sides-and-angles",
+    "contentSlug": "math/finding-sides-and-angles",
+    "subject": "math",
+    "lessonTitle": "Finding Sides & Angles",
+    "prompt": "A right triangle has the side opposite angle θ = 7 and the adjacent side = 7. What is θ?",
+    "options": [
+      "45°",
+      "30°",
+      "60°",
+      "90°"
+    ],
+    "correctIndex": 0,
+    "explanation": "tan θ = O/A = 7/7 = 1, so θ = tan⁻¹(1) = 45°. Equal opposite and adjacent sides always mean a 45° angle."
+  },
+  {
+    "id": "math/forming-equations",
+    "contentSlug": "math/forming-equations",
+    "subject": "math",
+    "lessonTitle": "Forming Equations",
+    "prompt": "Three consecutive whole numbers add up to 72. If the smallest is n, which equation is correct — and what is n?",
+    "options": [
+      "n + (n+1) + (n+2) = 72, giving n = 23",
+      "3n = 72, giving n = 24",
+      "n + 2n + 3n = 72, giving n = 12",
+      "n + (n+1) + (n+2) = 72, giving n = 24"
+    ],
+    "correctIndex": 0,
+    "explanation": "Consecutive numbers are n, n+1, n+2. Their sum: 3n + 3 = 72, so 3n = 69 and n = 23. (The numbers are 23, 24, 25.)"
+  },
+  {
+    "id": "math/fractals",
+    "contentSlug": "math/fractals",
+    "subject": "math",
+    "lessonTitle": "Fractals & Self-Similarity",
+    "prompt": "What is the defining property of a fractal?",
+    "options": [
+      "Self-similarity — it looks the same (or similar) at every scale of magnification",
+      "It must be a triangle",
+      "It has exactly two dimensions",
+      "It can be drawn without lifting your pen"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fractals are self-similar: zoom in and the same structure repeats, generated by a rule applied over and over. This even gives them fractional dimensions, like the Sierpinski triangle's ≈ 1.585."
+  },
+  {
+    "id": "math/fractional-indices-and-roots",
+    "contentSlug": "math/fractional-indices-and-roots",
+    "subject": "math",
+    "lessonTitle": "Fractional Indices & Roots",
+    "prompt": "Evaluate 27^(2/3).",
+    "options": [
+      "9",
+      "18",
+      "729",
+      "6"
+    ],
+    "correctIndex": 0,
+    "explanation": "Denominator first (the root): ∛27 = 3. Then the numerator power: 3² = 9. Rooting before powering keeps the arithmetic easy."
+  },
+  {
+    "id": "math/frequency-and-grouped-data",
+    "contentSlug": "math/frequency-and-grouped-data",
+    "subject": "math",
+    "lessonTitle": "Frequency & Grouped Data",
+    "prompt": "A class of 5 students scored 2, 2, 2, 4, 5 goals. Using Σfx ÷ Σf, what is the mean?",
+    "options": [
+      "3",
+      "2",
+      "5",
+      "2.5"
+    ],
+    "correctIndex": 0,
+    "explanation": "Σfx = (2×3) + (4×1) + (5×1) = 6 + 4 + 5 = 15. Σf = 5. Mean = 15 ÷ 5 = 3. The frequency table just bundles repeated values."
+  },
+  {
+    "id": "math/geometric-sequences",
+    "contentSlug": "math/geometric-sequences",
+    "subject": "math",
+    "lessonTitle": "Geometric Sequences",
+    "prompt": "A geometric sequence starts 3, 12, 48, … What is its 5th term?",
+    "options": [
+      "768",
+      "192",
+      "240",
+      "3072"
+    ],
+    "correctIndex": 0,
+    "explanation": "The ratio is r = 12 ÷ 3 = 4. The 5th term is a·r⁴ = 3 × 4⁴ = 3 × 256 = 768. (Terms: 3, 12, 48, 192, 768.)"
+  },
+  {
+    "id": "math/hcf-and-lcm",
+    "contentSlug": "math/hcf-and-lcm",
+    "subject": "math",
+    "lessonTitle": "HCF & LCM",
+    "prompt": "Given 24 = 2³ × 3 and 36 = 2² × 3², what are the HCF and LCM?",
+    "options": [
+      "HCF = 12, LCM = 72",
+      "HCF = 6, LCM = 72",
+      "HCF = 12, LCM = 864",
+      "HCF = 72, LCM = 12"
+    ],
+    "correctIndex": 0,
+    "explanation": "HCF = lowest powers = 2² × 3 = 12. LCM = highest powers = 2³ × 3² = 72. Check: 12 × 72 = 864 = 24 × 36. ✓"
+  },
+  {
+    "id": "math/histograms",
+    "contentSlug": "math/histograms",
+    "subject": "math",
+    "lessonTitle": "Histograms",
+    "prompt": "A histogram class spans 20–40 (width 20) with frequency 30. What is its frequency density?",
+    "options": [
+      "1.5",
+      "30",
+      "600",
+      "10"
+    ],
+    "correctIndex": 0,
+    "explanation": "Frequency density = frequency ÷ class width = 30 ÷ 20 = 1.5. Using density (not raw frequency) keeps bar areas comparable when widths differ."
+  },
+  {
+    "id": "math/index-notation",
+    "contentSlug": "math/index-notation",
+    "subject": "math",
+    "lessonTitle": "Index Notation",
+    "prompt": "What is the value of 2 × 3³?",
+    "options": [
+      "54",
+      "216",
+      "18",
+      "729"
+    ],
+    "correctIndex": 0,
+    "explanation": "The index binds only to the 3: 3³ = 27, then × 2 = 54. Treating it as (2×3)³ = 6³ = 216 is the classic slip."
+  },
+  {
+    "id": "math/inequalities",
+    "contentSlug": "math/inequalities",
+    "subject": "math",
+    "lessonTitle": "Inequalities",
+    "prompt": "Solve the inequality 5 − 2x ≤ 11.",
+    "options": [
+      "x ≥ −3",
+      "x ≤ −3",
+      "x ≤ 3",
+      "x ≥ 3"
+    ],
+    "correctIndex": 0,
+    "explanation": "Subtract 5: −2x ≤ 6. Divide by −2 and FLIP the sign: x ≥ −3. (Dividing by a negative reverses ≤ to ≥.)"
+  },
+  {
+    "id": "math/integers-and-negative-numbers",
+    "contentSlug": "math/integers-and-negative-numbers",
+    "subject": "math",
+    "lessonTitle": "Integers & Negative Numbers",
+    "prompt": "A diver is at −12 m (12 m below the surface) and descends another 8 m, then rises 5 m. What is the new depth?",
+    "options": [
+      "−15 m",
+      "−25 m",
+      "−9 m",
+      "−5 m"
+    ],
+    "correctIndex": 0,
+    "explanation": "Descending is subtracting: −12 − 8 = −20. Rising is adding: −20 + 5 = −15. The diver is 15 m below the surface."
+  },
+  {
+    "id": "math/inverse-proportion",
+    "contentSlug": "math/inverse-proportion",
+    "subject": "math",
+    "lessonTitle": "Inverse Proportion",
+    "prompt": "A trip takes 3 hours at 60 km/h. Speed and time are inversely proportional. How long at 90 km/h?",
+    "options": [
+      "2 hours",
+      "4.5 hours",
+      "1.5 hours",
+      "2.5 hours"
+    ],
+    "correctIndex": 0,
+    "explanation": "The constant is distance: 60 × 3 = 180 km. At 90 km/h, time = 180 ÷ 90 = 2 hours. Faster speed, shorter time — the product (distance) is fixed."
+  },
+  {
+    "id": "math/kinds-of-number",
+    "contentSlug": "math/kinds-of-number",
+    "subject": "math",
+    "lessonTitle": "Kinds of Number",
+    "prompt": "Which statement is true about the number √9?",
+    "options": [
+      "It is irrational, like √2",
+      "It equals 3, so it is a natural number (and an integer, rational, and real)",
+      "It is rational but not an integer",
+      "It is not a real number"
+    ],
+    "correctIndex": 1,
+    "explanation": "√9 = 3 exactly. A perfect square root is a whole number, so √9 is natural — and therefore also an integer, rational, and real. Only non-perfect roots like √2 are irrational."
+  },
+  {
+    "id": "math/laws-of-indices",
+    "contentSlug": "math/laws-of-indices",
+    "subject": "math",
+    "lessonTitle": "The Laws of Indices",
+    "prompt": "Simplify (x⁵ × x³) ÷ x².  ",
+    "options": [
+      "x⁶",
+      "x¹⁰",
+      "x⁰",
+      "x⁷"
+    ],
+    "correctIndex": 0,
+    "explanation": "Multiply first: x⁵ × x³ = x⁸ (add 5+3). Then divide by x²: x⁸ ÷ x² = x⁶ (subtract 8−2). "
+  },
+  {
+    "id": "math/letters-for-numbers",
+    "contentSlug": "math/letters-for-numbers",
+    "subject": "math",
+    "lessonTitle": "Letters for Numbers",
+    "prompt": "Sara is n years old. Her brother is 3 years younger, and their dad is twice Sara's age. Which expressions are correct?",
+    "options": [
+      "Brother: n − 3,  Dad: 2n",
+      "Brother: n + 3,  Dad: n + 2",
+      "Brother: 3 − n,  Dad: n²",
+      "Brother: 3n,  Dad: n/2"
+    ],
+    "correctIndex": 0,
+    "explanation": "'3 years younger' means subtract 3 → n − 3. 'Twice Sara's age' means 2 × n → 2n. The letter n stands for Sara's age whatever it is."
+  },
+  {
+    "id": "math/lines-and-angles",
+    "contentSlug": "math/lines-and-angles",
+    "subject": "math",
+    "lessonTitle": "Lines & Angles",
+    "prompt": "Three angles meet at a point on one side of a straight line: 50°, x, and 70°. What is x?",
+    "options": [
+      "60°",
+      "70°",
+      "120°",
+      "240°"
+    ],
+    "correctIndex": 0,
+    "explanation": "Angles on a straight line sum to 180°: 50 + x + 70 = 180, so x = 180 − 120 = 60°."
+  },
+  {
+    "id": "math/mental-arithmetic",
+    "contentSlug": "math/mental-arithmetic",
+    "subject": "math",
+    "lessonTitle": "Mental Arithmetic",
+    "prompt": "What is the quickest mental route to 25 × 16?",
+    "options": [
+      "Multiply 25 × 16 digit by digit on paper",
+      "Double-and-halve: 25 × 16 = 50 × 8 = 100 × 4 = 400",
+      "25 × 16 = 25 + 16 = 41",
+      "25 × 16 = 25 × 10 = 250"
+    ],
+    "correctIndex": 1,
+    "explanation": "Doubling one factor and halving the other keeps the product the same: 25 × 16 → 50 × 8 → 100 × 4 = 400. Friendly numbers, no paper needed."
+  },
+  {
+    "id": "math/midpoint-and-distance",
+    "contentSlug": "math/midpoint-and-distance",
+    "subject": "math",
+    "lessonTitle": "Midpoint & Distance",
+    "prompt": "Find the distance between (1, 2) and (4, 6).",
+    "options": [
+      "5",
+      "7",
+      "√7",
+      "25"
+    ],
+    "correctIndex": 0,
+    "explanation": "Δx = 4 − 1 = 3, Δy = 6 − 2 = 4. Distance = √(3² + 4²) = √(9 + 16) = √25 = 5. (A classic 3-4-5 triangle.)"
+  },
+  {
+    "id": "math/multiples-and-factors",
+    "contentSlug": "math/multiples-and-factors",
+    "subject": "math",
+    "lessonTitle": "Multiples & Factors",
+    "prompt": "Which list gives ALL the factors of 18?",
+    "options": [
+      "1, 2, 3, 6, 9, 18",
+      "1, 18",
+      "2, 3, 9",
+      "18, 36, 54, 72"
+    ],
+    "correctIndex": 0,
+    "explanation": "Factor pairs of 18: 1×18, 2×9, 3×6. Collecting them gives 1, 2, 3, 6, 9, 18. (The last option lists multiples of 18, not factors.)"
+  },
+  {
+    "id": "math/multiplying-and-dividing-fractions",
+    "contentSlug": "math/multiplying-and-dividing-fractions",
+    "subject": "math",
+    "lessonTitle": "Multiplying & Dividing Fractions",
+    "prompt": "What is ⅘ ÷ ⅖?",
+    "options": [
+      "2",
+      "8/25",
+      "⅖",
+      "4/10"
+    ],
+    "correctIndex": 0,
+    "explanation": "Flip and multiply: ⅘ × 5/2 = 20/10 = 2. Makes sense — ⅖ fits into ⅘ exactly twice."
+  },
+  {
+    "id": "math/negative-and-zero-indices",
+    "contentSlug": "math/negative-and-zero-indices",
+    "subject": "math",
+    "lessonTitle": "Zero & Negative Indices",
+    "prompt": "What is the value of 5⁻²?",
+    "options": [
+      "1/25",
+      "−25",
+      "−10",
+      "25"
+    ],
+    "correctIndex": 0,
+    "explanation": "A negative index means reciprocal: 5⁻² = 1/5² = 1/25 = 0.04. It is positive — the sign flips the power to a fraction, not below zero."
+  },
+  {
+    "id": "math/number-sequences",
+    "contentSlug": "math/number-sequences",
+    "subject": "math",
+    "lessonTitle": "Number Sequences",
+    "prompt": "What are the next two terms of 4, 7, 10, 13, … ?",
+    "options": [
+      "16, 19",
+      "15, 17",
+      "17, 22",
+      "16, 20"
+    ],
+    "correctIndex": 0,
+    "explanation": "The term-to-term rule is +3 each time (arithmetic). So 13 + 3 = 16, then 16 + 3 = 19."
+  },
+  {
+    "id": "math/order-of-operations",
+    "contentSlug": "math/order-of-operations",
+    "subject": "math",
+    "lessonTitle": "Order of Operations",
+    "prompt": "Evaluate 20 − 2 × 3² following the order of operations.",
+    "options": [
+      "2",
+      "162",
+      "324",
+      "8"
+    ],
+    "correctIndex": 0,
+    "explanation": "Orders first: 3² = 9. Then multiply: 2 × 9 = 18. Then subtract: 20 − 18 = 2. (Doing it left to right would wrongly give 162.)"
+  },
+  {
+    "id": "math/parallel-and-perpendicular-lines",
+    "contentSlug": "math/parallel-and-perpendicular-lines",
+    "subject": "math",
+    "lessonTitle": "Parallel & Perpendicular Lines",
+    "prompt": "A line has gradient ⅔. What is the gradient of any line perpendicular to it?",
+    "options": [
+      "−3/2",
+      "2/3",
+      "3/2",
+      "−2/3"
+    ],
+    "correctIndex": 0,
+    "explanation": "Perpendicular gradients are negative reciprocals: flip ⅔ to 3/2 and change the sign → −3/2. Check: ⅔ × (−3/2) = −1 ✓."
+  },
+  {
+    "id": "math/patterns-to-infinity",
+    "contentSlug": "math/patterns-to-infinity",
+    "subject": "math",
+    "lessonTitle": "Patterns to Infinity",
+    "prompt": "What does the infinite sum ½ + ¼ + ⅛ + 1/16 + … add up to?",
+    "options": [
+      "Exactly 1",
+      "Infinity — it never stops growing",
+      "About 0.99, never quite 1",
+      "2"
+    ],
+    "correctIndex": 0,
+    "explanation": "It's geometric with a = ½ and r = ½, so the sum is a/(1 − r) = ½ / (½) = 1. Infinitely many shrinking terms converge to exactly 1 — Zeno's paradox dissolved."
+  },
+  {
+    "id": "math/percentage-change",
+    "contentSlug": "math/percentage-change",
+    "subject": "math",
+    "lessonTitle": "Percentage Change",
+    "prompt": "£500 is invested at 4% compound interest per year. What is it worth after 2 years?",
+    "options": [
+      "£540.80",
+      "£540.00",
+      "£520.00",
+      "£416.00"
+    ],
+    "correctIndex": 0,
+    "explanation": "Multiplier 1.04 each year: 500 × 1.04² = 500 × 1.0816 = £540.80. Simple interest would give only £540 — the extra 80p is interest earned on the first year's interest."
+  },
+  {
+    "id": "math/percentages",
+    "contentSlug": "math/percentages",
+    "subject": "math",
+    "lessonTitle": "Percentages",
+    "prompt": "A jacket costs £80. In a sale it's reduced by 35%. What is the sale price?",
+    "options": [
+      "£52",
+      "£45",
+      "£28",
+      "£35"
+    ],
+    "correctIndex": 0,
+    "explanation": "35% of 80 = 0.35 × 80 = £28 off. So the price is 80 − 28 = £52. (Or directly: paying 65%, 0.65 × 80 = £52.)"
+  },
+  {
+    "id": "math/perimeter-and-area",
+    "contentSlug": "math/perimeter-and-area",
+    "subject": "math",
+    "lessonTitle": "Perimeter & Area",
+    "prompt": "A rectangle is 8 cm by 3 cm. What are its area and perimeter?",
+    "options": [
+      "Area 24 cm², perimeter 22 cm",
+      "Area 22 cm², perimeter 24 cm",
+      "Area 24 cm², perimeter 24 cm",
+      "Area 11 cm², perimeter 24 cm"
+    ],
+    "correctIndex": 0,
+    "explanation": "Area = b × h = 8 × 3 = 24 cm². Perimeter = 2(8 + 3) = 22 cm. Note the different units: cm² for area, cm for perimeter."
+  },
+  {
+    "id": "math/place-value-and-the-number-line",
+    "contentSlug": "math/place-value-and-the-number-line",
+    "subject": "math",
+    "lessonTitle": "Place Value & the Number Line",
+    "prompt": "In the number 7,082, what is the value of the digit 8?",
+    "options": [
+      "8",
+      "80",
+      "800",
+      "8,000"
+    ],
+    "correctIndex": 1,
+    "explanation": "Reading the columns: 7 thousands, 0 hundreds, 8 tens, 2 ones. The 8 sits in the tens column, so it is worth 8 × 10 = 80."
+  },
+  {
+    "id": "math/polygons",
+    "contentSlug": "math/polygons",
+    "subject": "math",
+    "lessonTitle": "Polygons",
+    "prompt": "What is the size of each interior angle of a regular octagon (8 sides)?",
+    "options": [
+      "135°",
+      "120°",
+      "145°",
+      "1080°"
+    ],
+    "correctIndex": 0,
+    "explanation": "Interior sum = (8 − 2) × 180 = 1080°. Each of the 8 equal angles is 1080 ÷ 8 = 135°. (Or: exterior 360/8 = 45°, so interior = 180 − 45 = 135°.)"
+  },
+  {
+    "id": "math/powers-and-square-roots",
+    "contentSlug": "math/powers-and-square-roots",
+    "subject": "math",
+    "lessonTitle": "Powers & Square Roots",
+    "prompt": "Which of these is NOT equal to 64?",
+    "options": [
+      "4³",
+      "2⁶",
+      "8²",
+      "6⁴"
+    ],
+    "correctIndex": 3,
+    "explanation": "4³ = 64, 2⁶ = 64, 8² = 64 — three different powers of the same number. But 6⁴ = 1296, nowhere near 64."
+  },
+  {
+    "id": "math/prime-factorisation",
+    "contentSlug": "math/prime-factorisation",
+    "subject": "math",
+    "lessonTitle": "Prime Factorisation",
+    "prompt": "What is the prime factorisation of 72?",
+    "options": [
+      "2³ × 3²",
+      "8 × 9",
+      "2² × 3³",
+      "2 × 36"
+    ],
+    "correctIndex": 0,
+    "explanation": "72 = 8 × 9 = (2×2×2) × (3×3) = 2³ × 3². The others either aren't all prime (8×9, 2×36) or have the wrong powers (2²×3³ = 108)."
+  },
+  {
+    "id": "math/prime-numbers",
+    "contentSlug": "math/prime-numbers",
+    "subject": "math",
+    "lessonTitle": "Prime Numbers",
+    "prompt": "How many of these are prime: 1, 2, 9, 17, 21, 23?",
+    "options": [
+      "Three: 2, 17, 23",
+      "Four: 1, 2, 17, 23",
+      "Two: 17, 23",
+      "Five: 2, 9, 17, 21, 23"
+    ],
+    "correctIndex": 0,
+    "explanation": "2, 17 and 23 are prime. 1 is not prime (only one factor); 9 = 3×3; 21 = 3×7. So exactly three are prime."
+  },
+  {
+    "id": "math/proportional-reasoning",
+    "contentSlug": "math/proportional-reasoning",
+    "subject": "math",
+    "lessonTitle": "Proportional Reasoning Everywhere",
+    "prompt": "500 g of pasta serves 5 people and needs 750 ml of sauce. How much sauce for 8 people?",
+    "options": [
+      "1200 ml",
+      "1000 ml",
+      "1500 ml",
+      "950 ml"
+    ],
+    "correctIndex": 0,
+    "explanation": "Find one serving: 750 ÷ 5 = 150 ml per person. Then × 8 = 1200 ml. (Equivalently, scale factor 8/5 = 1.6, and 750 × 1.6 = 1200 ml.)"
+  },
+  {
+    "id": "math/pythagoras",
+    "contentSlug": "math/pythagoras",
+    "subject": "math",
+    "lessonTitle": "Pythagoras' Theorem",
+    "prompt": "A right triangle has legs 6 cm and 8 cm. How long is the hypotenuse?",
+    "options": [
+      "10 cm",
+      "14 cm",
+      "48 cm",
+      "√14 cm"
+    ],
+    "correctIndex": 0,
+    "explanation": "c = √(6² + 8²) = √(36 + 64) = √100 = 10 cm. (A scaled 3-4-5 triangle: 6-8-10.)"
+  },
+  {
+    "id": "math/quadratic-graphs",
+    "contentSlug": "math/quadratic-graphs",
+    "subject": "math",
+    "lessonTitle": "Quadratic Graphs",
+    "prompt": "The graph of y = x² − 6x + 8 — where is its line of symmetry?",
+    "options": [
+      "x = 3",
+      "x = 6",
+      "x = −3",
+      "x = 8"
+    ],
+    "correctIndex": 0,
+    "explanation": "The line of symmetry is x = −b/2a = −(−6)/(2·1) = 3. (Its roots, x = 2 and x = 4, sit symmetrically either side of 3.)"
+  },
+  {
+    "id": "math/quadrilaterals",
+    "contentSlug": "math/quadrilaterals",
+    "subject": "math",
+    "lessonTitle": "Quadrilaterals",
+    "prompt": "A quadrilateral has angles 85°, 100°, 75°, and x. What is x?",
+    "options": [
+      "100°",
+      "90°",
+      "110°",
+      "80°"
+    ],
+    "correctIndex": 0,
+    "explanation": "The four angles sum to 360°: 85 + 100 + 75 = 260, so x = 360 − 260 = 100°."
+  },
+  {
+    "id": "math/rates-of-change",
+    "contentSlug": "math/rates-of-change",
+    "subject": "math",
+    "lessonTitle": "Rates of Change",
+    "prompt": "On a distance–time graph, what does the gradient of the tangent at a point represent?",
+    "options": [
+      "The instantaneous speed at that moment",
+      "The total distance travelled",
+      "The average speed for the whole journey",
+      "The acceleration"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gradient on a distance–time graph is speed. The tangent's gradient at a point is the instantaneous speed there — what a speedometer reads — whereas a secant's gradient gives the average speed over an interval."
+  },
+  {
+    "id": "math/rearranging-formulae",
+    "contentSlug": "math/rearranging-formulae",
+    "subject": "math",
+    "lessonTitle": "Rearranging Formulae",
+    "prompt": "Make r the subject of the circle-area formula A = πr².",
+    "options": [
+      "r = √(A / π)",
+      "r = A / π²",
+      "r = A / (2π)",
+      "r = √(Aπ)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Divide both sides by π: A/π = r². Then take the square root (the inverse of squaring): r = √(A/π)."
+  },
+  {
+    "id": "math/recurring-decimals",
+    "contentSlug": "math/recurring-decimals",
+    "subject": "math",
+    "lessonTitle": "Recurring Decimals",
+    "prompt": "Using the subtraction trick, what fraction equals the recurring decimal 0.4545… (with '45' repeating)?",
+    "options": [
+      "5/11",
+      "45/99 = 5/11",
+      "9/20",
+      "1/45"
+    ],
+    "correctIndex": 1,
+    "explanation": "Let x = 0.4545…; the cycle is two digits, so multiply by 100: 100x = 45.4545…, then 100x − x = 45, giving 99x = 45, so x = 45/99 = 5/11."
+  },
+  {
+    "id": "math/reflections-and-rotations",
+    "contentSlug": "math/reflections-and-rotations",
+    "subject": "math",
+    "lessonTitle": "Reflections & Rotations",
+    "prompt": "The point (4, 1) is reflected in the y-axis. Where does it go?",
+    "options": [
+      "(−4, 1)",
+      "(4, −1)",
+      "(1, 4)",
+      "(−4, −1)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Reflecting in the y-axis flips the sign of x only: (4, 1) → (−4, 1). (Reflecting in the x-axis would flip y instead.)"
+  },
+  {
+    "id": "math/rounding-and-estimation",
+    "contentSlug": "math/rounding-and-estimation",
+    "subject": "math",
+    "lessonTitle": "Rounding & Estimation",
+    "prompt": "Estimate 4.92 × 197 by rounding each number to 1 significant figure.",
+    "options": [
+      "About 1000",
+      "About 100",
+      "About 10,000",
+      "About 500"
+    ],
+    "correctIndex": 0,
+    "explanation": "4.92 ≈ 5 and 197 ≈ 200, so 5 × 200 = 1000. (The exact value is 969.24 — the estimate confirms the order of magnitude.)"
+  },
+  {
+    "id": "math/scale-and-maps",
+    "contentSlug": "math/scale-and-maps",
+    "subject": "math",
+    "lessonTitle": "Scale & Maps",
+    "prompt": "On a map with scale 1 : 200 000, two towns are 7 cm apart. What is the real distance?",
+    "options": [
+      "14 km",
+      "1.4 km",
+      "140 km",
+      "28 km"
+    ],
+    "correctIndex": 0,
+    "explanation": "7 cm × 200 000 = 1 400 000 cm. Convert: ÷100 → 14 000 m, ÷1000 → 14 km."
+  },
+  {
+    "id": "math/scatter-graphs-and-correlation",
+    "contentSlug": "math/scatter-graphs-and-correlation",
+    "subject": "math",
+    "lessonTitle": "Scatter Graphs & Correlation",
+    "prompt": "A study finds towns with more firefighters have more fire damage. Does more firefighters cause more damage?",
+    "options": [
+      "No — bigger fires (a third factor) cause both more firefighters and more damage",
+      "Yes — firefighters clearly cause the damage",
+      "Yes, because the correlation is positive",
+      "There is no correlation here"
+    ],
+    "correctIndex": 0,
+    "explanation": "It's a lurking variable: larger fires demand more firefighters AND cause more damage. The correlation is real, but the causation runs through fire size — correlation is not causation."
+  },
+  {
+    "id": "math/simplifying-and-sharing-ratios",
+    "contentSlug": "math/simplifying-and-sharing-ratios",
+    "subject": "math",
+    "lessonTitle": "Simplifying & Sharing Ratios",
+    "prompt": "A 56 cm ribbon is cut in the ratio 3 : 4. How long is the shorter piece?",
+    "options": [
+      "24 cm",
+      "21 cm",
+      "32 cm",
+      "28 cm"
+    ],
+    "correctIndex": 0,
+    "explanation": "Parts: 3 + 4 = 7. One part: 56 ÷ 7 = 8 cm. Shorter piece = 3 × 8 = 24 cm (and the longer is 4 × 8 = 32 cm; 24 + 32 = 56 ✓)."
+  },
+  {
+    "id": "math/simplifying-expressions",
+    "contentSlug": "math/simplifying-expressions",
+    "subject": "math",
+    "lessonTitle": "Simplifying Expressions",
+    "prompt": "Simplify 5a + 3b − 2a + b.",
+    "options": [
+      "3a + 4b",
+      "7a + 4b",
+      "6ab",
+      "3a + 3b"
+    ],
+    "correctIndex": 0,
+    "explanation": "Collect a-terms: 5a − 2a = 3a. Collect b-terms: 3b + b = 4b. Result 3a + 4b. The a's and b's are different terms and stay separate."
+  },
+  {
+    "id": "math/simultaneous-equations",
+    "contentSlug": "math/simultaneous-equations",
+    "subject": "math",
+    "lessonTitle": "Simultaneous Equations",
+    "prompt": "Solve simultaneously:  x + y = 7  and  x − y = 1.",
+    "options": [
+      "x = 4, y = 3",
+      "x = 3, y = 4",
+      "x = 5, y = 2",
+      "x = 6, y = 1"
+    ],
+    "correctIndex": 0,
+    "explanation": "Add the equations: 2x = 8, so x = 4. Substitute into x + y = 7: y = 3. Both check out: 4+3 = 7 and 4−3 = 1 ✓."
+  },
+  {
+    "id": "math/sine-cosine-tangent",
+    "contentSlug": "math/sine-cosine-tangent",
+    "subject": "math",
+    "lessonTitle": "Sine, Cosine & Tangent",
+    "prompt": "In a right triangle, the side opposite a 30° angle is 5 cm and the hypotenuse is 10 cm. Which ratio does this give?",
+    "options": [
+      "sin 30° = 5/10 = 0.5",
+      "cos 30° = 5/10 = 0.5",
+      "tan 30° = 5/10 = 0.5",
+      "sin 30° = 10/5 = 2"
+    ],
+    "correctIndex": 0,
+    "explanation": "Opposite over hypotenuse is sine (SOH): sin 30° = 5/10 = 0.5. And indeed sin 30° = 0.5 exactly."
+  },
+  {
+    "id": "math/solving-by-factorising",
+    "contentSlug": "math/solving-by-factorising",
+    "subject": "math",
+    "lessonTitle": "Solving by Factorising",
+    "prompt": "Solve x² + 2x − 15 = 0.",
+    "options": [
+      "x = 3 or x = −5",
+      "x = −3 or x = 5",
+      "x = 3 or x = 5",
+      "x = 15 or x = −1"
+    ],
+    "correctIndex": 0,
+    "explanation": "Factorise: two numbers multiplying to −15, adding to +2 → +5 and −3, so (x − 3)(x + 5) = 0. Each bracket zero: x = 3 or x = −5."
+  },
+  {
+    "id": "math/solving-graphically",
+    "contentSlug": "math/solving-graphically",
+    "subject": "math",
+    "lessonTitle": "Solving Equations Graphically",
+    "prompt": "To solve x² − 2x − 1 = 0 graphically, which crossings do you read?",
+    "options": [
+      "Where y = x² − 2x − 1 crosses the x-axis (y = 0)",
+      "Where the parabola crosses the y-axis",
+      "The vertex of the parabola",
+      "Where two parallel lines meet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Setting the expression equal to 0 means finding where its graph meets the line y = 0 — the x-axis. Those x-intercepts are the solutions (here x = 1 ± √2)."
+  },
+  {
+    "id": "math/solving-linear-equations",
+    "contentSlug": "math/solving-linear-equations",
+    "subject": "math",
+    "lessonTitle": "Solving Linear Equations",
+    "prompt": "Solve 4x + 7 = 2x + 19.",
+    "options": [
+      "x = 6",
+      "x = 13",
+      "x = 2",
+      "x = 26/6"
+    ],
+    "correctIndex": 0,
+    "explanation": "Subtract 2x: 2x + 7 = 19. Subtract 7: 2x = 12. Divide by 2: x = 6. Check: 4(6)+7 = 31 and 2(6)+19 = 31 ✓."
+  },
+  {
+    "id": "math/special-number-patterns",
+    "contentSlug": "math/special-number-patterns",
+    "subject": "math",
+    "lessonTitle": "Special Number Patterns",
+    "prompt": "What is the 6th triangular number?",
+    "options": [
+      "21",
+      "15",
+      "36",
+      "28"
+    ],
+    "correctIndex": 0,
+    "explanation": "T₆ = 1+2+3+4+5+6 = 21, or by formula n(n+1)/2 = 6×7/2 = 21."
+  },
+  {
+    "id": "math/spread-and-standard-deviation",
+    "contentSlug": "math/spread-and-standard-deviation",
+    "subject": "math",
+    "lessonTitle": "Spread & Standard Deviation",
+    "prompt": "Two classes both average 60% on a test. Class A's standard deviation is 4%; class B's is 18%. What does this tell you?",
+    "options": [
+      "Class A's scores are tightly clustered near 60%; class B's are widely spread",
+      "Class A scored higher overall",
+      "Class B has fewer students",
+      "Both classes have identical results"
+    ],
+    "correctIndex": 0,
+    "explanation": "Same mean, different spread. A small SD (4%) means A's scores hug 60% closely; a large SD (18%) means B's range widely — some much higher, some much lower."
+  },
+  {
+    "id": "math/standard-form",
+    "contentSlug": "math/standard-form",
+    "subject": "math",
+    "lessonTitle": "Standard Form",
+    "prompt": "Write 0.00076 in standard form.",
+    "options": [
+      "7.6 × 10⁻⁴",
+      "7.6 × 10⁴",
+      "76 × 10⁻⁵",
+      "0.76 × 10⁻³"
+    ],
+    "correctIndex": 0,
+    "explanation": "Move the point to just after the first non-zero digit (7), which is 4 places right, so the power is −4: 7.6 × 10⁻⁴. The others aren't in valid standard form (a must be between 1 and 10)."
+  },
+  {
+    "id": "math/straight-line-graphs",
+    "contentSlug": "math/straight-line-graphs",
+    "subject": "math",
+    "lessonTitle": "Straight-Line Graphs",
+    "prompt": "A line passes through (0, −3) and has gradient 2. What is its equation?",
+    "options": [
+      "y = 2x − 3",
+      "y = −3x + 2",
+      "y = 2x + 3",
+      "y = −2x − 3"
+    ],
+    "correctIndex": 0,
+    "explanation": "The y-intercept is c = −3 (it passes through (0, −3)), and the gradient is m = 2. So y = mx + c = 2x − 3."
+  },
+  {
+    "id": "math/substitution-and-formulae",
+    "contentSlug": "math/substitution-and-formulae",
+    "subject": "math",
+    "lessonTitle": "Substitution & Formulae",
+    "prompt": "Using v = u + at with u = 5, a = −2, t = 3, find v.",
+    "options": [
+      "−1",
+      "9",
+      "11",
+      "1"
+    ],
+    "correctIndex": 0,
+    "explanation": "v = 5 + (−2)(3) = 5 + (−6) = −1. Do the multiplication first (a × t), then add — and mind the negative."
+  },
+  {
+    "id": "math/surds",
+    "contentSlug": "math/surds",
+    "subject": "math",
+    "lessonTitle": "Surds",
+    "prompt": "Simplify √50 + √8.",
+    "options": [
+      "7√2",
+      "√58",
+      "√2",
+      "12√2"
+    ],
+    "correctIndex": 0,
+    "explanation": "Simplify each: √50 = √(25×2) = 5√2, and √8 = √(4×2) = 2√2. Now they're like surds: 5√2 + 2√2 = 7√2. (You can't add under one root: √58 is wrong.)"
+  },
+  {
+    "id": "math/surface-area",
+    "contentSlug": "math/surface-area",
+    "subject": "math",
+    "lessonTitle": "Surface Area",
+    "prompt": "A cube has edges of 5 cm. What is its surface area?",
+    "options": [
+      "150 cm²",
+      "125 cm²",
+      "100 cm²",
+      "30 cm²"
+    ],
+    "correctIndex": 0,
+    "explanation": "A cube has 6 identical square faces, each 5 × 5 = 25 cm². Total = 6 × 25 = 150 cm². (125 cm³ would be its volume.)"
+  },
+  {
+    "id": "math/symmetry-and-shape",
+    "contentSlug": "math/symmetry-and-shape",
+    "subject": "math",
+    "lessonTitle": "Symmetry & the Language of Shape",
+    "prompt": "Why do regular hexagons tessellate (tile with no gaps)?",
+    "options": [
+      "Their interior angle is 120°, and three meet at each point: 3 × 120° = 360°",
+      "They have six sides",
+      "Their angles are all 90°",
+      "Because they have rotational symmetry"
+    ],
+    "correctIndex": 0,
+    "explanation": "To tile with no gaps, the angles meeting at a point must total 360°. A regular hexagon's interior angle is 120°, and 3 × 120° = 360° exactly — so three hexagons fit perfectly around every point."
+  },
+  {
+    "id": "math/telling-the-truth-with-data",
+    "contentSlug": "math/telling-the-truth-with-data",
+    "subject": "math",
+    "lessonTitle": "Telling the Truth with Data",
+    "prompt": "An ad shows a bar chart where Brand X's bar is twice the height of Brand Y's, suggesting it's 'twice as good'. The y-axis starts at 90 (X = 96, Y = 93). What's the deception?",
+    "options": [
+      "The truncated axis exaggerates a tiny 3-point difference into a doubled bar",
+      "Bar charts can't compare brands",
+      "96 really is twice 93",
+      "There is no deception"
+    ],
+    "correctIndex": 0,
+    "explanation": "Starting the axis at 90 means the bars show only the part above 90 (6 vs 3), making X's bar twice Y's — even though 96 is barely 3% more than 93. From zero, the bars would look almost identical."
+  },
+  {
+    "id": "math/the-area-under-a-curve",
+    "contentSlug": "math/the-area-under-a-curve",
+    "subject": "math",
+    "lessonTitle": "The Area Under a Curve",
+    "prompt": "On a speed–time graph, what does the area under the curve represent?",
+    "options": [
+      "The distance travelled",
+      "The acceleration",
+      "The maximum speed",
+      "The average speed"
+    ],
+    "correctIndex": 0,
+    "explanation": "Speed × time = distance, so accumulating speed over time — the area under a speed–time graph — gives the total distance travelled. (Gradient of that graph would give acceleration.)"
+  },
+  {
+    "id": "math/the-art-of-solving",
+    "contentSlug": "math/the-art-of-solving",
+    "subject": "math",
+    "lessonTitle": "The Art of Solving",
+    "prompt": "How many solutions does 3(x − 2) = 3x + 5 have?",
+    "options": [
+      "None — it simplifies to −6 = 5, which is false",
+      "One: x = −6",
+      "Infinitely many",
+      "One: x = 5"
+    ],
+    "correctIndex": 0,
+    "explanation": "Expand: 3x − 6 = 3x + 5. Subtract 3x: −6 = 5, a false statement. The variable vanished and what's left is impossible, so there is NO solution."
+  },
+  {
+    "id": "math/the-atoms-of-arithmetic",
+    "contentSlug": "math/the-atoms-of-arithmetic",
+    "subject": "math",
+    "lessonTitle": "The Atoms of Arithmetic",
+    "prompt": "Euclid's proof shows there are infinitely many primes. What is the key step?",
+    "options": [
+      "Multiplying all the assumed primes and adding 1 gives a number none of them divides — a contradiction",
+      "Checking every number up to a billion and finding more primes",
+      "Showing that prime gaps always stay the same size",
+      "Proving every even number is the sum of two primes"
+    ],
+    "correctIndex": 0,
+    "explanation": "Assume finitely many primes, multiply them and add 1. The result has remainder 1 with every listed prime, so a new prime factor must exist — contradicting the 'complete' list. (The last option is Goldbach's conjecture, still unproven.)"
+  },
+  {
+    "id": "math/the-coordinate-plane",
+    "contentSlug": "math/the-coordinate-plane",
+    "subject": "math",
+    "lessonTitle": "The Coordinate Plane",
+    "prompt": "In which quadrant does the point (−4, 3) lie?",
+    "options": [
+      "Quadrant II (top-left)",
+      "Quadrant I (top-right)",
+      "Quadrant III (bottom-left)",
+      "Quadrant IV (bottom-right)"
+    ],
+    "correctIndex": 0,
+    "explanation": "x = −4 is to the left of the origin; y = 3 is above it. Left and up is the top-left region — quadrant II."
+  },
+  {
+    "id": "math/the-cosine-rule",
+    "contentSlug": "math/the-cosine-rule",
+    "subject": "math",
+    "lessonTitle": "The Cosine Rule & Area",
+    "prompt": "A triangle has sides 4 and 5 with an angle of 90° between them. Using the cosine rule, find the third side.",
+    "options": [
+      "√41 ≈ 6.40",
+      "9",
+      "3",
+      "√20 ≈ 4.47"
+    ],
+    "correctIndex": 0,
+    "explanation": "c² = 4² + 5² − 2·4·5·cos 90° = 16 + 25 − 40(0) = 41, so c = √41 ≈ 6.40. With a 90° angle the cosine rule is just Pythagoras."
+  },
+  {
+    "id": "math/the-derivative",
+    "contentSlug": "math/the-derivative",
+    "subject": "math",
+    "lessonTitle": "The Derivative",
+    "prompt": "Using the limit definition, the derivative of f(x) = x² is 2x. What is the slope of y = x² at the point x = 3?",
+    "options": [
+      "6",
+      "9",
+      "3",
+      "2"
+    ],
+    "correctIndex": 0,
+    "explanation": "f′(x) = 2x, so f′(3) = 2 × 3 = 6. The tangent to y = x² at x = 3 has gradient 6."
+  },
+  {
+    "id": "math/the-fibonacci-sequence",
+    "contentSlug": "math/the-fibonacci-sequence",
+    "subject": "math",
+    "lessonTitle": "The Fibonacci Sequence",
+    "prompt": "The Fibonacci sequence runs 1, 1, 2, 3, 5, 8, 13, … What are the next two terms?",
+    "options": [
+      "21, 34",
+      "20, 33",
+      "21, 35",
+      "16, 24"
+    ],
+    "correctIndex": 0,
+    "explanation": "Add the previous two each time: 8 + 13 = 21, then 13 + 21 = 34."
+  },
+  {
+    "id": "math/the-fundamental-theorem",
+    "contentSlug": "math/the-fundamental-theorem",
+    "subject": "math",
+    "lessonTitle": "The Fundamental Theorem of Calculus",
+    "prompt": "What does the Fundamental Theorem of Calculus establish?",
+    "options": [
+      "Differentiation and integration are inverse operations — each undoes the other",
+      "All curves have the same area",
+      "The derivative of every function is zero",
+      "Limits do not exist"
+    ],
+    "correctIndex": 0,
+    "explanation": "The Fundamental Theorem links the two halves of calculus: integrating then differentiating (or vice versa) returns the original function. This makes areas computable via antiderivatives — F(b) − F(a) — instead of infinite sums."
+  },
+  {
+    "id": "math/the-gallery-of-functions",
+    "contentSlug": "math/the-gallery-of-functions",
+    "subject": "math",
+    "lessonTitle": "The Gallery of Functions",
+    "prompt": "The graph of y = x² is moved to give y = (x − 3)² − 2. How has it shifted?",
+    "options": [
+      "3 right and 2 down",
+      "3 left and 2 up",
+      "3 right and 2 up",
+      "3 left and 2 down"
+    ],
+    "correctIndex": 0,
+    "explanation": "Inside the bracket, x − 3 shifts the curve 3 to the RIGHT (it's counter-intuitive). The − 2 outside shifts it 2 DOWN. So the vertex moves to (3, −2)."
+  },
+  {
+    "id": "math/the-golden-ratio",
+    "contentSlug": "math/the-golden-ratio",
+    "subject": "math",
+    "lessonTitle": "The Golden Ratio",
+    "prompt": "The golden ratio φ satisfies a famously simple equation. Which one?",
+    "options": [
+      "φ² = φ + 1",
+      "φ² = 2φ",
+      "φ = 2π",
+      "φ² = φ − 1"
+    ],
+    "correctIndex": 0,
+    "explanation": "φ is the positive solution of x² = x + 1 (equivalently x² − x − 1 = 0), giving φ = (1 + √5)/2 ≈ 1.618. Squaring it is the same as adding one."
+  },
+  {
+    "id": "math/the-idea-of-a-limit",
+    "contentSlug": "math/the-idea-of-a-limit",
+    "subject": "math",
+    "lessonTitle": "The Idea of a Limit",
+    "prompt": "What does the notation lim(x→3) of (x² ) equal, and what does it mean?",
+    "options": [
+      "9 — the value x² approaches as x gets arbitrarily close to 3",
+      "0 — because you can't reach 3",
+      "Undefined — limits never have values",
+      "3 — the value x approaches"
+    ],
+    "correctIndex": 0,
+    "explanation": "As x approaches 3, x² approaches 3² = 9. For a well-behaved function the limit is just the value you'd plug in — limits get interesting when direct substitution fails (like 0/0)."
+  },
+  {
+    "id": "math/the-idea-of-an-equation",
+    "contentSlug": "math/the-idea-of-an-equation",
+    "subject": "math",
+    "lessonTitle": "The Idea of an Equation",
+    "prompt": "Which value of x balances the equation 3x − 5 = 7?",
+    "options": [
+      "x = 4",
+      "x = 2/3",
+      "x = 12",
+      "x = 1"
+    ],
+    "correctIndex": 0,
+    "explanation": "Add 5 to both sides: 3x = 12. Divide by 3: x = 4. Check: 3(4) − 5 = 12 − 5 = 7 ✓."
+  },
+  {
+    "id": "math/the-nth-term",
+    "contentSlug": "math/the-nth-term",
+    "subject": "math",
+    "lessonTitle": "The nth Term",
+    "prompt": "Find the nth-term rule for the sequence 7, 12, 17, 22, …",
+    "options": [
+      "5n + 2",
+      "5n + 7",
+      "7n + 5",
+      "n + 5"
+    ],
+    "correctIndex": 0,
+    "explanation": "Common difference d = 5, so the rule starts 5n. At n = 1 that gives 5, but we need 7, so add 2: rule is 5n + 2. Check n = 3: 17 ✓."
+  },
+  {
+    "id": "math/the-parabola",
+    "contentSlug": "math/the-parabola",
+    "subject": "math",
+    "lessonTitle": "The Parabola",
+    "prompt": "A ball's height is h = −5t² + 20t (metres, after t seconds). When does it hit the ground again?",
+    "options": [
+      "t = 4 s",
+      "t = 20 s",
+      "t = 5 s",
+      "t = 2 s"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ground means h = 0: −5t² + 20t = 0 → −5t(t − 4) = 0 → t = 0 (launch) or t = 4 (landing). The two roots are the start and end of the flight; t = 2 is the vertex, the highest point."
+  },
+  {
+    "id": "math/the-power-of-the-unknown",
+    "contentSlug": "math/the-power-of-the-unknown",
+    "subject": "math",
+    "lessonTitle": "The Power of the Unknown",
+    "prompt": "A student checks that n² + n is even for n = 1, 2, 3, 4 and concludes it's always even. What's the status of this claim?",
+    "options": [
+      "It's true, but the checks are only evidence — a proof factorises n² + n = n(n+1), the product of consecutive integers, one of which must be even",
+      "It's proven, because four examples is enough",
+      "It's false, since n² + n is sometimes odd",
+      "It can never be proven either way"
+    ],
+    "correctIndex": 0,
+    "explanation": "Examples only suggest. The proof: n² + n = n(n + 1) is a product of two consecutive integers, and one of any two consecutive integers is even — so the product is always even. Algebra turns a pattern into a certainty."
+  },
+  {
+    "id": "math/the-probability-scale",
+    "contentSlug": "math/the-probability-scale",
+    "subject": "math",
+    "lessonTitle": "The Probability Scale",
+    "prompt": "The probability a bus is late is 0.15. What is the probability it is NOT late?",
+    "options": [
+      "0.85",
+      "0.15",
+      "1.15",
+      "0.5"
+    ],
+    "correctIndex": 0,
+    "explanation": "The complement: P(not late) = 1 − P(late) = 1 − 0.15 = 0.85. An event and its complement always sum to 1."
+  },
+  {
+    "id": "math/the-quadratic-formula",
+    "contentSlug": "math/the-quadratic-formula",
+    "subject": "math",
+    "lessonTitle": "The Quadratic Formula",
+    "prompt": "How many real solutions does x² + 3x + 5 = 0 have?",
+    "options": [
+      "None — the discriminant 9 − 20 = −11 is negative",
+      "Two real solutions",
+      "One repeated solution",
+      "Infinitely many"
+    ],
+    "correctIndex": 0,
+    "explanation": "Discriminant = b² − 4ac = 3² − 4(1)(5) = 9 − 20 = −11 < 0. A negative discriminant means no real roots — the parabola never touches the x-axis."
+  },
+  {
+    "id": "math/the-sine-rule",
+    "contentSlug": "math/the-sine-rule",
+    "subject": "math",
+    "lessonTitle": "The Sine Rule",
+    "prompt": "In a triangle, A = 30°, a = 5, and B = 90°. Find side b (opposite the 90° angle).",
+    "options": [
+      "10",
+      "5",
+      "2.5",
+      "8.66"
+    ],
+    "correctIndex": 0,
+    "explanation": "a/sin A = b/sin B → 5/sin 30° = b/sin 90°. Since sin 30° = 0.5 and sin 90° = 1: b = 5 × 1 / 0.5 = 10."
+  },
+  {
+    "id": "math/the-unreasonable-effectiveness-of-math",
+    "contentSlug": "math/the-unreasonable-effectiveness-of-math",
+    "subject": "math",
+    "lessonTitle": "The Unreasonable Effectiveness of Mathematics",
+    "prompt": "What did Eugene Wigner mean by the 'unreasonable effectiveness of mathematics'?",
+    "options": [
+      "Mathematics describes the physical universe astonishingly well — often maths invented for its own sake later turns out to fit nature exactly",
+      "Mathematics is too difficult to be useful",
+      "Only applied mathematics has any value",
+      "The universe contains no patterns"
+    ],
+    "correctIndex": 0,
+    "explanation": "Wigner marvelled that abstract mathematics — sometimes developed purely for beauty, with no application in mind — repeatedly turns out to describe physical reality with uncanny precision. Why this should be so remains a genuine, unsolved mystery."
+  },
+  {
+    "id": "math/the-very-large-and-very-small",
+    "contentSlug": "math/the-very-large-and-very-small",
+    "subject": "math",
+    "lessonTitle": "The Very Large & the Very Small",
+    "prompt": "A bacterium has mass ≈ 2 × 10⁻¹⁵ kg. About how many make up 1 kg?",
+    "options": [
+      "5 × 10¹⁴",
+      "2 × 10¹⁵",
+      "5 × 10⁻¹⁴",
+      "0.5 × 10¹⁵"
+    ],
+    "correctIndex": 0,
+    "explanation": "Number = 1 ÷ (2 × 10⁻¹⁵) = 0.5 × 10¹⁵ = 5 × 10¹⁴. Dividing subtracts the power: 10⁰ ÷ 10⁻¹⁵ = 10¹⁵, and 1 ÷ 2 = 0.5, rewritten in standard form as 5 × 10¹⁴."
+  },
+  {
+    "id": "math/translations",
+    "contentSlug": "math/translations",
+    "subject": "math",
+    "lessonTitle": "Translations",
+    "prompt": "A point at (5, 3) is translated by the vector (−2, 4). Where does it land?",
+    "options": [
+      "(3, 7)",
+      "(7, −1)",
+      "(3, −1)",
+      "(−10, 12)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Add the vector to the coordinates: (5 + (−2), 3 + 4) = (3, 7). The top number shifts x, the bottom shifts y."
+  },
+  {
+    "id": "math/tree-diagrams",
+    "contentSlug": "math/tree-diagrams",
+    "subject": "math",
+    "lessonTitle": "Tree Diagrams",
+    "prompt": "A fair coin is flipped twice. What is the probability of getting two heads?",
+    "options": [
+      "1/4",
+      "1/2",
+      "1/3",
+      "2/4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Multiply along the HH path: P(H) × P(H) = ½ × ½ = 1/4. (The four equally likely outcomes are HH, HT, TH, TT.)"
+  },
+  {
+    "id": "math/triangles",
+    "contentSlug": "math/triangles",
+    "subject": "math",
+    "lessonTitle": "Triangles",
+    "prompt": "An isosceles triangle has an apex angle of 40°. What are its two equal base angles?",
+    "options": [
+      "70° each",
+      "40° each",
+      "50° each",
+      "140° each"
+    ],
+    "correctIndex": 0,
+    "explanation": "The base angles are equal and the three sum to 180°: 180 − 40 = 140° shared between two equal angles, so each is 70°."
+  },
+  {
+    "id": "math/trigonometry-in-3d",
+    "contentSlug": "math/trigonometry-in-3d",
+    "subject": "math",
+    "lessonTitle": "Trigonometry in 3-D",
+    "prompt": "What is the length of the space diagonal of a 2 × 3 × 6 cuboid?",
+    "options": [
+      "7",
+      "11",
+      "√41 ≈ 6.4",
+      "√11 ≈ 3.3"
+    ],
+    "correctIndex": 0,
+    "explanation": "The 3-D Pythagoras: D = √(2² + 3² + 6²) = √(4 + 9 + 36) = √49 = 7. (Found by applying Pythagoras twice.)"
+  },
+  {
+    "id": "math/types-of-data-and-sampling",
+    "contentSlug": "math/types-of-data-and-sampling",
+    "subject": "math",
+    "lessonTitle": "Types of Data & Sampling",
+    "prompt": "A researcher surveys people leaving a fast-food restaurant about how often they eat fast food. Why is this sample biased?",
+    "options": [
+      "Fast-food customers eat it more than the general population, so the sample isn't representative",
+      "The sample is too large",
+      "Fast food is qualitative data",
+      "It isn't biased — it's a random sample"
+    ],
+    "correctIndex": 0,
+    "explanation": "The location pre-selects frequent fast-food eaters, so the sample over-represents them. A representative sample would draw from the whole population, not one self-selecting spot."
+  },
+  {
+    "id": "math/understanding-fractions",
+    "contentSlug": "math/understanding-fractions",
+    "subject": "math",
+    "lessonTitle": "Understanding Fractions",
+    "prompt": "Which fraction is NOT equivalent to ⅔?",
+    "options": [
+      "4/6",
+      "6/9",
+      "10/15",
+      "8/15"
+    ],
+    "correctIndex": 3,
+    "explanation": "⅔ scales to 4/6, 6/9, 10/15 (×2, ×3, ×5 top and bottom). But 8/15 doesn't: 8/15 = 0.533…, while ⅔ = 0.667. Top and bottom weren't multiplied by the same number."
+  },
+  {
+    "id": "math/units-and-conversions",
+    "contentSlug": "math/units-and-conversions",
+    "subject": "math",
+    "lessonTitle": "Units & Conversions",
+    "prompt": "A floor is 3 m². How many cm² is that?",
+    "options": [
+      "30 000 cm²",
+      "300 cm²",
+      "3000 cm²",
+      "90 000 cm²"
+    ],
+    "correctIndex": 0,
+    "explanation": "1 m² = 100² = 10 000 cm² (square the factor, not just ×100). So 3 m² = 3 × 10 000 = 30 000 cm²."
+  },
+  {
+    "id": "math/vectors",
+    "contentSlug": "math/vectors",
+    "subject": "math",
+    "lessonTitle": "Vectors",
+    "prompt": "If a = (2, 5) and b = (3, −1), what is a + 2b?",
+    "options": [
+      "(8, 3)",
+      "(5, 4)",
+      "(7, 3)",
+      "(8, 9)"
+    ],
+    "correctIndex": 0,
+    "explanation": "2b = (6, −2). Then a + 2b = (2 + 6, 5 + (−2)) = (8, 3). Add and scale components separately."
+  },
+  {
+    "id": "math/venn-diagrams",
+    "contentSlug": "math/venn-diagrams",
+    "subject": "math",
+    "lessonTitle": "Venn Diagrams & Set Notation",
+    "prompt": "In a class, 18 study French, 12 study Spanish, and 5 study both. How many study at least one language?",
+    "options": [
+      "25",
+      "30",
+      "35",
+      "23"
+    ],
+    "correctIndex": 0,
+    "explanation": "n(A ∪ B) = n(A) + n(B) − n(A ∩ B) = 18 + 12 − 5 = 25. Subtracting the 5 'both' avoids counting them twice."
+  },
+  {
+    "id": "math/volume-of-prisms",
+    "contentSlug": "math/volume-of-prisms",
+    "subject": "math",
+    "lessonTitle": "Volume of Prisms & Cylinders",
+    "prompt": "A cylinder has radius 3 cm and height 10 cm. What is its volume (to 1 d.p.)?",
+    "options": [
+      "282.7 cm³",
+      "94.2 cm³",
+      "188.5 cm³",
+      "90 cm³"
+    ],
+    "correctIndex": 0,
+    "explanation": "V = πr²h = π × 3² × 10 = 90π ≈ 282.7 cm³. The base area is πr² = 9π ≈ 28.3 cm², stacked 10 cm high."
+  },
+  {
+    "id": "math/volume-of-pyramids-cones-spheres",
+    "contentSlug": "math/volume-of-pyramids-cones-spheres",
+    "subject": "math",
+    "lessonTitle": "Volume of Pyramids, Cones & Spheres",
+    "prompt": "A cone and a cylinder have the same radius and the same height. The cylinder holds 600 cm³. What does the cone hold?",
+    "options": [
+      "200 cm³",
+      "600 cm³",
+      "300 cm³",
+      "1800 cm³"
+    ],
+    "correctIndex": 0,
+    "explanation": "A cone is exactly one third of its enclosing cylinder: 600 ÷ 3 = 200 cm³. Three cone-fulls fill the cylinder."
+  },
+  {
+    "id": "math/what-is-a-proof",
+    "contentSlug": "math/what-is-a-proof",
+    "subject": "math",
+    "lessonTitle": "What Is a Proof?",
+    "prompt": "A student verifies that a formula works for n = 1 to 1,000,000. Have they proved it true for all n?",
+    "options": [
+      "No — that's strong evidence, but a proof must cover every case, e.g. by induction",
+      "Yes — a million cases is more than enough",
+      "Yes, as long as they used a computer",
+      "No, and the formula must therefore be false"
+    ],
+    "correctIndex": 0,
+    "explanation": "Checking cases is evidence, never proof — case 1,000,001 could fail. Only an argument covering all infinitely many cases (such as induction) proves it. (Nor does failing to prove it make it false.)"
+  },
+  {
+    "id": "math/what-is-a-ratio",
+    "contentSlug": "math/what-is-a-ratio",
+    "subject": "math",
+    "lessonTitle": "What Is a Ratio?",
+    "prompt": "A fruit punch mixes juice and soda in the ratio 2 : 3. What fraction of the punch is juice?",
+    "options": [
+      "⅖",
+      "⅔",
+      "⅗",
+      "2/3 of the soda"
+    ],
+    "correctIndex": 0,
+    "explanation": "2 + 3 = 5 parts in total, and juice is 2 of them — so ⅖ of the punch is juice. (A ratio compares the parts; the fraction is part-over-whole.)"
+  },
+  {
+    "id": "math/why-the-formulas-work",
+    "contentSlug": "math/why-the-formulas-work",
+    "subject": "math",
+    "lessonTitle": "Why the Formulas Work",
+    "prompt": "A balloon is inflated so its radius triples. By what factor does its volume increase?",
+    "options": [
+      "27 times",
+      "3 times",
+      "9 times",
+      "6 times"
+    ],
+    "correctIndex": 0,
+    "explanation": "Volume scales by the cube of the length factor: 3³ = 27. (Its surface area would grow by 3² = 9.) This is the square–cube law."
+  },
+  {
     "id": "physics/acceleration",
     "contentSlug": "physics/acceleration",
     "subject": "physics",

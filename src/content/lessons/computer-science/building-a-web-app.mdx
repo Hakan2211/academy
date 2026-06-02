@@ -1,0 +1,104 @@
+---
+title: Building a Web App
+subject: computer-science
+contentSlug: computer-science/building-a-web-app
+order: 6
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Putting the pieces together" kind="explain">
+
+You now hold every ingredient of a working web app. This capstone assembles them. A real product — a social feed, a shop, a game with a leaderboard — is nothing more than the parts of this world, combined:
+
+- **HTML** for structure,
+- **CSS** for style,
+- **JavaScript** for behaviour,
+- a **back-end** for logic, served over an **API**,
+- a **database** for memory.
+
+No new magic ingredient appears here, just as none appeared when we climbed from logic gates to a whole computer. An app is these five things, wired together with care. Let's walk one through, front to back.
+
+</Step>
+
+<Step title="Start with structure" kind="interactive">
+
+Every app begins as a tree of tags — the **DOM**. Before any styling or interactivity, you decide *what content exists and how it nests*: a header, a list of items, each item a few elements deep. Here's that structural foundation again — source, tree, and rendered page in lockstep:
+
+<DomTree />
+
+In a real app this tree is rarely typed out by hand for every screen. Instead the front-end **builds and rebuilds** parts of it as data changes — but the end result the browser holds is always exactly this: a DOM tree. Get the structure right and everything else has something solid to attach to.
+
+</Step>
+
+<Step title="Add behaviour" kind="interactive">
+
+Style is poured on with CSS; then **JavaScript** brings the page to life by responding to events and editing the DOM. The same engine you tried earlier powers the most ambitious app you can imagine — it's just more of the same handlers and updates:
+
+<JsInteractive />
+
+A like button, an infinite-scrolling feed, a drag-and-drop board: each is JavaScript listening for an event and changing the page in response. When the change depends on saved or shared data, though, the front-end alone isn't enough — it has to ask the server.
+
+</Step>
+
+<Step title="Reach the back-end" kind="interactive">
+
+That's the final link. When the app needs to *remember* something or fetch *shared* data, the front-end calls the **back-end** over an **API**, which queries the **database** and replies with **JSON**. Step through the full loop one more time, watching where each piece runs:
+
+<FrontBackEnd />
+
+String these together and you have the whole flow of a real app: HTML structures the screen → CSS styles it → JavaScript reacts to a click → it calls the API → the back-end reads or writes the database → JSON returns → JavaScript updates the DOM → you see the result. That cycle, repeated, *is* a web app.
+
+</Step>
+
+<Step title="Frameworks: standing on shoulders" kind="explain">
+
+Writing all of that by hand for a large app gets repetitive fast — so developers use **frameworks**, pre-built toolkits that handle the tedious parts so you focus on your idea.
+
+- **Front-end frameworks** (like React, the very thing these lessons are built with) let you describe the UI as reusable **components** and automatically keep the DOM in sync with your data — no manual `textContent` juggling.
+- **Back-end frameworks** give you ready-made routing, database access, and request handling, so an API endpoint is a few lines instead of hundreds.
+
+Frameworks are **abstraction** — the island's first big idea — applied to web development: a simpler interface over the raw HTML/DOM/HTTP machinery, so you build faster on a foundation others have hardened.
+
+<Callout type="info" title="It's still just the basics underneath">
+A framework never replaces what you learned — it sits *on top* of it. React still produces a DOM tree; an API framework still speaks HTTP and JSON. When something breaks, you debug by dropping back down to these fundamentals. That's why understanding the layer beneath the framework matters.
+</Callout>
+
+</Step>
+
+<Step title="From your machine to the world" kind="explain">
+
+A finished app on your laptop helps nobody until you **deploy** it — put the back-end and database on a server that's always on, and the front-end files somewhere a browser can fetch them. Cloud **hosting** providers run that server for you; a **domain name** (bought once) points a friendly URL at it. Push your code, and minutes later anyone with the link can use what you built.
+
+That completes the promise we opened with: a person anywhere in the world types your URL, their browser sends an HTTP request, your server responds, and your app appears on their screen. The modern web **stack** — HTML, CSS, JS, a framework, an API, a database, hosting — is just these layers cooperating, each one an abstraction over the one below, all the way down to the gates and bits where this island began.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A user clicks 'Post' in a web app and the new post appears for everyone. Which sequence best describes what happens?"
+  options={[
+    "CSS sends the post to every other user's browser directly",
+    "JavaScript handles the click and calls the back-end API, which writes the post to the database; later requests read it back as JSON and the front-end renders it into the DOM",
+    "The HTML file is permanently rewritten on the user's hard drive",
+    "The browser stores the post locally and never contacts a server"
+  ]}
+  correctIndex={1}
+  explanation="The front-end's JavaScript catches the click and calls the API. The back-end writes the post to the database (shared, persistent, trusted). When others load the feed, the API returns the data as JSON and their front-ends render it into the DOM. Every layer plays its part."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A web app is the world's five parts combined: **HTML, CSS, JavaScript, a back-end API, and a database**.
+- The full loop: structure the **DOM** → style with CSS → **JS** reacts to events → calls the **API** → back-end reads/writes the **database** → **JSON** returns → JS updates the DOM.
+- **Frameworks** (front-end like React, plus back-end toolkits) are **abstractions** that speed up building on these fundamentals.
+- **Deploying** to a **host** with a **domain** is what lets the whole world reach what you built.
+- The modern web **stack** is just these layers cooperating — abstraction all the way down to the bits and gates.
+
+</Step>
+
+</Lesson>

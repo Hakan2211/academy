@@ -1,0 +1,81 @@
+---
+title: The Gallery of Functions
+subject: math
+contentSlug: math/the-gallery-of-functions
+order: 7
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="A function is a machine" kind="explain">
+
+A **function** takes an input, applies a rule, and returns exactly one output — written f(x). Feed in x, out comes f(x). The graph is simply the picture of *every* input-output pair at once. Each family of functions has its own unmistakable shape, and learning to recognise them is like learning the alphabet of mathematics.
+
+</Step>
+
+<Step title="Tour the families" kind="interactive">
+
+Step through the gallery. Notice how each rule produces a wholly different signature curve.
+
+<FunctionGallery />
+
+</Step>
+
+<Step title="The headline shapes" kind="explain">
+
+- **Linear** (y = x): a straight line, constant rate.
+- **Quadratic** (y = x²): a parabola, one turn.
+- **Cubic** (y = x³): an S-shaped twist.
+- **Reciprocal** (y = 1/x): two branches that rush toward the axes but never touch them — **asymptotes**.
+- **Exponential** (y = 2ˣ): slow then explosive growth; the curve of compound interest and populations.
+- **Sine** (y = sin x): an endless wave — the shape of anything that repeats.
+
+</Step>
+
+<Step title="Transforming any graph" kind="explain">
+
+Once you know a shape, you can move it around without re-plotting. The same rules work on *every* function:
+
+<Formula tex="f(x) + a \;(\text{up } a), \quad f(x - a) \;(\text{right } a), \quad -f(x) \;(\text{flip vertically})" block />
+
+So y = (x − 2)² + 3 is just the basic parabola slid 2 right and 3 up. Inside the bracket shifts horizontally (and counter-intuitively, x − 2 moves *right*); outside shifts vertically.
+
+</Step>
+
+<Step title="The circle: when one input isn't enough" kind="explain">
+
+Not every graph is a function. The circle x² + y² = r² is a perfectly good curve, but for most x there are **two** y-values (top and bottom). A relation like this fails the "one output per input" test — a vertical line would cut it twice. It reminds us that functions are a *special*, well-behaved kind of relationship, and the broader world of curves is bigger still.
+
+<Callout type="info" title="Why functions matter">
+Functions are how mathematics describes dependence — how distance depends on time, cost on quantity, temperature on height. The calculus you'll meet in the frontier worlds is entirely about how one function changes as its input changes. Master the gallery and you're ready for it.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="The graph of y = x² is moved to give y = (x − 3)² − 2. How has it shifted?"
+  options={[
+    "3 right and 2 down",
+    "3 left and 2 up",
+    "3 right and 2 up",
+    "3 left and 2 down"
+  ]}
+  correctIndex={0}
+  explanation="Inside the bracket, x − 3 shifts the curve 3 to the RIGHT (it's counter-intuitive). The − 2 outside shifts it 2 DOWN. So the vertex moves to (3, −2)."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **function** gives exactly one output per input; its graph shows them all.
+- Know the signature shapes: **linear, quadratic, cubic, reciprocal, exponential, sine**.
+- **Transformations** move any graph: f(x)+a up, f(x−a) right, −f(x) flipped.
+- The **circle** isn't a function (two y's per x) — functions are a special, tidy class of curves.
+
+</Step>
+
+</Lesson>

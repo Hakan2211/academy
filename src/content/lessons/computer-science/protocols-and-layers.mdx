@@ -1,0 +1,82 @@
+---
+title: Protocols & Layers
+subject: computer-science
+contentSlug: computer-science/protocols-and-layers
+order: 3
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="A protocol is an agreed set of rules" kind="explain">
+
+Packets fly around the network, but how do two machines built by different companies, running different software, on opposite sides of the planet, actually *understand* each other? They follow a **protocol**: an agreed set of rules for how to format, send and respond to messages.
+
+You use protocols constantly without naming them. "Hello?" answers a ringing phone; you wait your turn in conversation; you end with "bye." Both sides know the script, so it works. On the internet the scripts are written down precisely — and there are different protocols for different jobs.
+
+</Step>
+
+<Step title="Divide and conquer with layers" kind="explain">
+
+One giant protocol covering *everything* — from radio signals to web pages — would be unmanageable. So the internet splits the work into **layers**, each a stack built on the one below, each with its own protocols and its own narrow job.
+
+We'll use the simplified **TCP/IP model** with four layers:
+
+- **Application** — your actual message (a web request, an email).
+- **Transport** — splitting data into reliable, ordered segments and steering them to the right program.
+- **Internet** — addressing and routing each packet across networks.
+- **Link** — turning packets into real signals on Wi-Fi, cable or fibre.
+
+Each layer trusts the layer below to do its job and offers a simple promise to the layer above — exactly the **abstraction** idea from earlier in this island, applied to networking.
+
+</Step>
+
+<Step title="Encapsulation: wrapping the envelope" kind="interactive">
+
+Watch a message travel **down** the sender's stack and **up** the receiver's. Step through, or click a layer to read its job.
+
+<ProtocolStack />
+
+Going down, each layer wraps the message in its own **header** — like sealing a letter inside successively bigger envelopes. This is **encapsulation**. Going up the other side, each layer peels off **its own** header and hands the rest upward — **decapsulation**. The beautiful part: every layer only ever talks to its **matching peer** on the other machine. Transport speaks to Transport; it neither knows nor cares about Wi-Fi versus fibre underneath.
+
+</Step>
+
+<Step title="TCP vs UDP: reliable or fast?" kind="explain">
+
+At the Transport layer you get a choice, and it's a classic engineering trade-off. **TCP** (Transmission Control Protocol) is the careful one: it numbers every segment, checks that each arrives, asks for any that go missing, and delivers them in order. Reliable — but all that checking adds delay.
+
+**UDP** (User Datagram Protocol) is the reckless sprinter: fire the packets and don't look back. No reordering, no resending, no guarantees — but no waiting either. Use TCP when correctness matters (a web page, a file, an email). Use UDP when speed beats perfection (live video, voice calls, online games), where a slightly dropped frame is better than a stutter.
+
+<Callout type="tip" title="Ports: which program gets it?">
+The Transport layer also stamps each message with a **port number** — a label saying which program it's for. Web traffic uses port 443, email another. One IP address, many ports: that's how a single machine runs a browser, an email client and a game at once without mixing up their traffic.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="As a message goes DOWN the sender's TCP/IP stack, what does each layer do, and what is this process called?"
+  options={[
+    "Each layer removes a header; this is called routing",
+    "Each layer adds its own header, wrapping the message — this is called encapsulation",
+    "Each layer rewrites the entire message in a new language",
+    "Nothing happens until the message reaches the wire"
+  ]}
+  correctIndex={1}
+  explanation="Going down the stack, every layer wraps the data in its own header (like nesting envelopes) — encapsulation. The receiver reverses it, each layer stripping its own header (decapsulation). Each layer talks only to its peer layer on the other side."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **protocol** is an agreed set of rules that lets different machines understand each other.
+- The internet divides the work into **layers** (TCP/IP: Application, Transport, Internet, Link), each with its own job.
+- **Encapsulation** wraps the message in a header at each layer going down; **decapsulation** unwraps it going up.
+- Each layer talks only to its **peer** layer on the other side.
+- **TCP** trades speed for reliable, ordered delivery; **UDP** trades reliability for raw speed; **ports** route data to the right program.
+
+</Step>
+
+</Lesson>

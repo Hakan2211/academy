@@ -1,0 +1,72 @@
+---
+title: Equations with Brackets & Fractions
+subject: math
+contentSlug: math/equations-with-brackets-and-fractions
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Tidy first, then solve" kind="explain">
+
+Messier equations hide a plain linear equation underneath. The strategy is to **clear the clutter** — expand brackets and remove fractions — until you're back to the familiar "undo in reverse" you already know.
+
+</Step>
+
+<Step title="Brackets: expand, then solve" kind="interactive">
+
+<EquationSolver />
+
+</Step>
+
+<Step title="Clearing brackets" kind="explain">
+
+Expand any brackets first, then proceed as normal:
+
+<Formula tex="3(x - 2) = 12 \;\to\; 3x - 6 = 12 \;\to\; 3x = 18 \;\to\; x = 6" block />
+
+You *could* divide by 3 first here, but expanding always works, especially when brackets sit on both sides.
+
+</Step>
+
+<Step title="Clearing fractions" kind="explain">
+
+Fractions vanish if you **multiply every term by the denominator** (or the LCM of several):
+
+<Formula tex="\frac{x}{3} + 2 = 5 \;\xrightarrow{\times 3}\; x + 6 = 15 \;\to\; x = 9" block />
+
+With two fractions, multiply through by the **LCM** of the denominators so all of them clear at once. Multiply *every* term — including the ones without a fraction.
+
+<Callout type="warn" title="Multiply the whole side">
+When you multiply to clear a fraction, every term gets multiplied — not just the fraction. Forgetting the "+2" above (→ 6) is the most common error here.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Solve (x + 1)/2 = 4."
+  options={[
+    "x = 7",
+    "x = 8",
+    "x = 3",
+    "x = 9"
+  ]}
+  correctIndex={0}
+  explanation="Multiply both sides by 2: x + 1 = 8. Subtract 1: x = 7. Check: (7+1)/2 = 8/2 = 4 ✓."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Expand brackets** and **clear fractions** before solving.
+- Clear a fraction by **multiplying every term** by the denominator (or the LCM).
+- Then it's an ordinary linear equation — undo in reverse.
+- Multiply the **whole side**, not just the fractional term.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,66 @@
+---
+title: Translations
+subject: math
+contentSlug: math/translations
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Sliding without turning" kind="explain">
+
+A **translation** slides a shape — every point moves the same distance in the same direction, with no turning or resizing. It's described by a **column vector** telling you how far to move across and up:
+
+<Formula tex="\begin{pmatrix} 3 \\ -2 \end{pmatrix} \;=\; 3 \text{ right, } 2 \text{ down}" block />
+
+</Step>
+
+<Step title="Slide the shape" kind="interactive">
+
+Set the translation vector and watch the whole shape slide.
+
+<TransformGrid />
+
+</Step>
+
+<Step title="A transformation that preserves everything" kind="explain">
+
+Translation is the gentlest transformation: the image is **congruent** to the original — same size, same shape, same orientation, just relocated. Every point (x, y) maps to (x + a, y + b) for the vector (a, b).
+
+The top number moves you across (positive = right); the bottom moves you up (positive = up, negative = down). To reverse a translation, simply negate the vector.
+
+</Step>
+
+<Step title="Why transformations matter" kind="explain">
+
+Translations, reflections, rotations and enlargements are the four ways to move a shape around the plane. Together they're the foundation of computer graphics, animation, and tiling patterns — every moving sprite in a game is being transformed. They also formalise **symmetry**: a shape is symmetric if some transformation leaves it looking unchanged.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A point at (5, 3) is translated by the vector (−2, 4). Where does it land?"
+  options={[
+    "(3, 7)",
+    "(7, −1)",
+    "(3, −1)",
+    "(−10, 12)"
+  ]}
+  correctIndex={0}
+  explanation="Add the vector to the coordinates: (5 + (−2), 3 + 4) = (3, 7). The top number shifts x, the bottom shifts y."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **translation** slides every point the same way, set by a **column vector** (across, up).
+- (x, y) → (x + a, y + b); the image is **congruent** to the original.
+- Negate the vector to reverse it.
+- It's one of four transformations underpinning graphics and symmetry.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,70 @@
+---
+title: Surface Area
+subject: math
+contentSlug: math/surface-area
+order: 4
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="The skin of a solid" kind="explain">
+
+**Surface area** is the total area of all the faces of a 3-D shape — the amount of "skin" you'd need to wrap it, or paint to cover it. The trick is to **unfold** the solid flat into its **net** and add up the face areas. It's an area, so it's measured in square units.
+
+</Step>
+
+<Step title="Unfold the box" kind="interactive">
+
+A cuboid opens into six rectangles. Change the dimensions and watch the net.
+
+<SurfaceArea />
+
+</Step>
+
+<Step title="A cuboid's six faces" kind="explain">
+
+The six faces come in three matching pairs — top/bottom, front/back, left/right:
+
+<Formula tex="\text{SA} = 2(lw + lh + wh)" block />
+
+For a 4 × 3 × 2 box: 2(12 + 8 + 6) = 2 × 26 = 52 square units. Always work out each distinct face, double for its partner, and add.
+
+</Step>
+
+<Step title="Cylinders and other solids" kind="explain">
+
+The same "unfold and add" idea works for any solid. A **cylinder** opens into two circles (the ends, 2 × πr²) and one rectangle (the curved side, which unrolls to a rectangle of width = the circumference 2πr):
+
+<Formula tex="\text{SA of cylinder} = 2\pi r^2 + 2\pi r h" block />
+
+Picture peeling the label off a tin — it's a rectangle as tall as the tin and as wide as the way around.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A cube has edges of 5 cm. What is its surface area?"
+  options={[
+    "150 cm²",
+    "125 cm²",
+    "100 cm²",
+    "30 cm²"
+  ]}
+  correctIndex={0}
+  explanation="A cube has 6 identical square faces, each 5 × 5 = 25 cm². Total = 6 × 25 = 150 cm². (125 cm³ would be its volume.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Surface area** = total area of all faces (square units).
+- Unfold into a **net** and add the face areas.
+- Cuboid: **2(lw + lh + wh)**; cube: 6×(edge)².
+- Cylinder: two circles + an unrolled rectangle = **2πr² + 2πrh**.
+
+</Step>
+
+</Lesson>

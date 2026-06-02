@@ -1,0 +1,74 @@
+---
+title: The Ideal Gas Law
+subject: chemistry
+contentSlug: chemistry/the-ideal-gas-law
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="One equation to rule them all" kind="explain">
+
+The separate gas laws each fix some quantities. Bring in the **amount of gas (n, in moles)** and they unify into a single master equation — the **ideal gas law**:
+
+<Formula tex="PV = nRT" block />
+
+where **P** is pressure, **V** volume, **n** moles, **T** temperature (kelvin), and **R** the universal **gas constant** (8.31 J/mol·K). It connects all four gas quantities at once.
+
+</Step>
+
+<Step title="It contains the other laws" kind="interactive">
+
+Every gas law you've met is hiding inside PV = nRT. Hold n and T constant and you get Boyle's P×V = constant; hold n and P constant and you get Charles's V/T = constant.
+
+<GasLawLab />
+
+</Step>
+
+<Step title="Using PV = nRT" kind="explain">
+
+The equation lets you find any one quantity if you know the other three. Rearrange as needed:
+
+<Formula tex="n = \dfrac{PV}{RT} \qquad V = \dfrac{nRT}{P} \qquad P = \dfrac{nRT}{V}" block />
+
+A powerful consequence: at the same temperature and pressure, **equal volumes of any gas contain equal numbers of molecules** (Avogadro's principle). One mole of *any* ideal gas fills about **22.4 litres** at standard temperature and pressure.
+
+</Step>
+
+<Step title="Why 'ideal'?" kind="explain">
+
+The law assumes an ideal gas — point-like particles with no attractions. Real gases follow it closely at ordinary conditions but stray at **high pressure** (particles' own volume matters) or **low temperature** (attractions pull them together, eventually condensing them to liquid).
+
+<Callout type="info" title="A workhorse equation">
+PV = nRT is one of the most-used equations in chemistry — sizing reaction vessels, working out gas yields, modelling the atmosphere, even estimating airbag inflation. Master it and you can handle almost any gas problem.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In the ideal gas law PV = nRT, if you double the number of moles of gas (n) while keeping volume and temperature constant, what happens to the pressure?"
+  options={[
+    "It halves",
+    "It stays the same",
+    "It doubles",
+    "It quadruples"
+  ]}
+  correctIndex={2}
+  explanation="With V and T fixed, P is proportional to n. Doubling the moles of gas doubles the number of particles hitting the walls, so the pressure doubles."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **ideal gas law**, **PV = nRT**, links pressure, volume, moles, and temperature with the gas constant R.
+- It **contains** Boyle's, Charles's, and Gay-Lussac's laws as special cases.
+- Equal volumes of gas (same T, P) hold equal numbers of molecules; 1 mol ≈ **22.4 L** at STP.
+- "Ideal" breaks down at **high pressure / low temperature**, where real-gas effects appear.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,66 @@
+---
+title: The nth Term
+subject: math
+contentSlug: math/the-nth-term
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="A formula for any position" kind="explain">
+
+A **position-to-term** rule, the **nth term**, gives any term directly from its position number n — no need to list the ones before it. Want the 100th term? Substitute n = 100. For arithmetic sequences this formula is wonderfully simple.
+
+</Step>
+
+<Step title="Build the nth term" kind="interactive">
+
+Set the first term and common difference; the rule appears, and you can jump to any position.
+
+<NthTermFinder />
+
+</Step>
+
+<Step title="The arithmetic nth-term rule" kind="explain">
+
+The **common difference d** is how much the sequence jumps each step — so it's the coefficient of n. The formula is:
+
+<Formula tex="\text{nth term} = a + (n-1)d = dn + (a - d)" block />
+
+For 5, 8, 11, 14, …: d = 3 and a = 5, so the rule is 3n + 2. Check: n = 1 gives 5 ✓, n = 4 gives 14 ✓. The "+2" is just where the dn pattern starts.
+
+</Step>
+
+<Step title="Reading a rule backwards" kind="explain">
+
+Given a rule like 4n − 1, you can read the sequence straight off: the coefficient of n (4) is the **common difference**, and substituting n = 1, 2, 3 gives 3, 7, 11, … And to test whether a number is *in* the sequence, set the rule equal to it and see if n comes out a whole number: is 31 in 4n − 1? Solve 4n − 1 = 31 → n = 8 ✓.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Find the nth-term rule for the sequence 7, 12, 17, 22, …"
+  options={[
+    "5n + 2",
+    "5n + 7",
+    "7n + 5",
+    "n + 5"
+  ]}
+  correctIndex={0}
+  explanation="Common difference d = 5, so the rule starts 5n. At n = 1 that gives 5, but we need 7, so add 2: rule is 5n + 2. Check n = 3: 17 ✓."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **nth term** gives any term directly from its position n.
+- For arithmetic: **nth term = dn + (a − d)**, where d is the common difference.
+- The **coefficient of n is the common difference**.
+- Set the rule equal to a value to test if it's in the sequence (n must be a whole number).
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,75 @@
+---
+title: Reflections & Rotations
+subject: math
+contentSlug: math/reflections-and-rotations
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Flipping and turning" kind="explain">
+
+Two more transformations that keep a shape's size but change how it sits:
+
+- A **reflection** flips a shape across a **mirror line** — producing a mirror image (orientation reverses).
+- A **rotation** turns a shape about a fixed **centre** by an angle (orientation preserved).
+
+Both produce a **congruent** image — only the position and facing change.
+
+</Step>
+
+<Step title="Flip and turn it" kind="interactive">
+
+Switch between reflect and rotate and try different lines and angles.
+
+<TransformGrid />
+
+</Step>
+
+<Step title="Reflections" kind="explain">
+
+To reflect, every point moves to the opposite side of the mirror line, the same distance away. Common mirror lines give simple coordinate rules:
+
+<Formula tex="\text{in } x\text{-axis: } (x, y) \to (x, -y); \quad \text{in } y\text{-axis: } (x, y) \to (-x, y)" block />
+
+Reflection in the line y = x swaps the coordinates: (x, y) → (y, x). A reflected shape is "handed" — like a left and right glove.
+
+</Step>
+
+<Step title="Rotations" kind="explain">
+
+A rotation needs three things: a **centre**, an **angle**, and a **direction** (clockwise or anticlockwise). About the origin, the quarter-turns are clean:
+
+<Formula tex="90° \text{ anticlockwise: } (x, y) \to (-y, x); \quad 180°: (x, y) \to (-x, -y)" block />
+
+A 180° rotation is the same whichever way you turn. Unlike reflection, rotation keeps the shape's "handedness."
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="The point (4, 1) is reflected in the y-axis. Where does it go?"
+  options={[
+    "(−4, 1)",
+    "(4, −1)",
+    "(1, 4)",
+    "(−4, −1)"
+  ]}
+  correctIndex={0}
+  explanation="Reflecting in the y-axis flips the sign of x only: (4, 1) → (−4, 1). (Reflecting in the x-axis would flip y instead.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Reflection** flips across a **mirror line** (orientation reverses): x-axis (x,−y), y-axis (−x,y), y=x swaps.
+- **Rotation** turns about a **centre** by an angle (orientation kept): 90° ACW (−y,x), 180° (−x,−y).
+- Both give a **congruent** image.
+- Reflection changes "handedness"; rotation doesn't.
+
+</Step>
+
+</Lesson>

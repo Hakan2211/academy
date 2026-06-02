@@ -1,0 +1,78 @@
+---
+title: Thinking Like a Defender
+subject: computer-science
+contentSlug: computer-science/thinking-like-a-defender
+order: 2
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="What are we actually protecting?" kind="explain">
+
+Before you can defend a system, you need a clear answer to a deceptively simple question: protect it from *what*? Security people answer with three goals, known together as the **CIA triad** — and it has nothing to do with spies.
+
+- **Confidentiality** — only the right people can *read* the data. (Your messages stay private.)
+- **Integrity** — the data cannot be *altered* without detection. (Your bank balance is not silently edited.)
+- **Availability** — the system is *there when you need it*. (The site does not go down.)
+
+Every attack in the last lesson maps onto these. Eavesdropping breaks confidentiality, tampering breaks integrity, a DDoS flood breaks availability. Defence means deciding which of the three matters most for *your* data, and guarding it.
+
+</Step>
+
+<Step title="The same threats, through a defender's eyes" kind="interactive">
+
+Revisit the threat gallery — but this time, for each attack, ask which corner of the CIA triad it breaks, and notice how the defence restores it.
+
+<ThreatGallery />
+
+A man-in-the-middle attacker reading your traffic is a **confidentiality** failure that encryption fixes. Ransomware encrypting your files is an **availability** failure that backups fix. The triad gives you a checklist for thinking about any new system.
+
+</Step>
+
+<Step title="Defence in depth & least privilege" kind="explain">
+
+No single wall is unbreakable, so good defenders never rely on one. **Defence in depth** stacks independent layers — a firewall, *and* encryption, *and* logging, *and* trained staff — so that breaching one still leaves the attacker facing the next. A castle has a moat *and* walls *and* guards.
+
+The second great principle is **least privilege**: give every user, program, and process exactly the access it needs to do its job, and not one drop more. If a hijacked account can only read one folder, the damage is contained to that folder. Most catastrophic breaches are really small breaches that were allowed to spread.
+
+<Callout type="tip" title="Fail safe, not open">
+Well-designed systems fail *closed*: when something goes wrong, the default is to deny access, not grant it. A locked door that jams should stay locked, not spring open.
+</Callout>
+
+</Step>
+
+<Step title="Humans are the weakest link" kind="explain">
+
+The most sophisticated attacks often skip the technology entirely. **Social engineering** — phishing, pretexting, a confident phone call from "IT" — manipulates people into opening the door themselves. No firewall blocks a freely given password.
+
+So a defender's job includes the human layer: training people to pause and verify, designing systems that do not *ask* for risky actions, and assuming that someone, somewhere, will eventually be fooled. Security is a property of people and processes, not just code.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A company gives every employee full administrator access 'to keep things simple'. One account is later compromised by phishing. Which two principles were violated, making the breach far worse?"
+  options={[
+    "Confidentiality and availability — the data was simply too valuable",
+    "Least privilege (accounts had far more access than needed) and defence in depth (no inner layers contained the breach once one account fell)",
+    "None — full access is the most secure configuration",
+    "Integrity, because the password was too short"
+  ]}
+  correctIndex={1}
+  explanation="Granting everyone admin rights violates least privilege, so one stolen account unlocked everything. With no inner layers to slow the spread, defence in depth was absent too. Limiting access and stacking independent defences both contain damage when — not if — something fails."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **CIA triad** names what we protect: **Confidentiality** (only the right people read it), **Integrity** (it cannot be secretly altered), **Availability** (it is there when needed).
+- **Defence in depth** stacks independent layers so breaching one still leaves more to defeat.
+- **Least privilege** gives each user and program only the access it truly needs, containing damage when an account is compromised.
+- **Humans are the weakest link** — social engineering bypasses technology, so defence must include people and processes, and systems should **fail closed**.
+
+</Step>
+
+</Lesson>

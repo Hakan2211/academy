@@ -1,0 +1,87 @@
+---
+title: "Front-End & Back-End"
+subject: computer-science
+contentSlug: computer-science/front-end-and-back-end
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Two places, one app" kind="explain">
+
+So far everything — HTML, CSS, JavaScript — runs in the browser. But most real apps need things the browser can't safely do alone: keep your data after you close the tab, share it between users, guard a password. For that, an app is split across **two places**.
+
+The **front-end** is the part that runs in *your* browser: the screen you see and touch. The **back-end** is code running on a *server* somewhere else, where the app's **database** lives. This is the **client–server** split you met in networking — now wearing app-developer clothes.
+
+</Step>
+
+<Step title="Why the database lives on the server" kind="explain">
+
+The database — the app's long-term memory of users, posts, orders, scores — sits on the **back-end**, never in the browser. There are three good reasons:
+
+- **Persistence**: the server stays running and remembers things long after you've closed the tab.
+- **Sharing**: everyone's browser talks to the *same* server, so we all see the same shared data.
+- **Trust**: code in your browser can be inspected and tampered with by anyone; the server is controlled ground, so that's where passwords are checked and rules are enforced.
+
+The front-end is a guest you can't fully trust; the back-end is the house. Sensitive logic and data stay in the house.
+
+</Step>
+
+<Step title="The conversation: an API and JSON" kind="interactive">
+
+The two halves talk over an **API** (Application Programming Interface) — a defined set of requests the back-end will answer. The front-end sends an HTTP request like `GET /api/user/42`; the back-end queries the database and replies with the data as **JSON**, a plain-text format for describing structured data. Step through one full exchange and watch *where* each piece runs:
+
+<FrontBackEnd />
+
+Trace it: your click happens in the browser → the front-end calls the API → the back-end queries the database on the server → it returns JSON → the front-end drops that data into the page. The screen updates with no full reload, because only *data* crossed the wire.
+
+</Step>
+
+<Step title="JSON: the language of APIs" kind="explain">
+
+Why **JSON**? Because both ends need a shared, simple way to write down data as text — and JSON is exactly that: objects with named fields, lists, numbers, strings.
+
+```json
+{
+  "id": 42,
+  "name": "Nora",
+  "skills": ["html", "css", "js"]
+}
+```
+
+The back-end serialises a database row into JSON text; that text travels in the HTTP response; the front-end parses it back into values its JavaScript can use. It's deliberately tiny and human-readable, which is why nearly every web API speaks it. A developer comfortable on both sides — front and back — is called **full-stack**.
+
+<Callout type="tip" title="The same data, presented two ways">
+The back-end usually doesn't send a finished page — it sends *data* (JSON). The front-end decides how to *present* it. That's why one API can feed a website, a phone app, and a smart-watch face all at once.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In a typical web app, where does the database live, and why?"
+  options={[
+    "In the user's browser, so the app loads faster",
+    "On the back-end server, because data must persist, be shared across all users, and be protected from tampering",
+    "Inside the CSS file",
+    "It is split evenly between every visitor's device"
+  ]}
+  correctIndex={1}
+  explanation="The database lives on the back-end server. The server persists data long-term, lets all users share the same data, and is trusted ground where sensitive logic runs — unlike browser code, which anyone can inspect or alter."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- An app splits into a **front-end** (runs in the browser) and a **back-end** (runs on a server).
+- The **database** lives on the back-end — for **persistence**, **sharing**, and **trust**.
+- The two halves talk through an **API**: the front-end requests, the back-end queries the DB and responds.
+- Data crosses the wire as **JSON** — compact, human-readable text the front-end parses and presents.
+- A developer who works on both sides is **full-stack**.
+
+</Step>
+
+</Lesson>

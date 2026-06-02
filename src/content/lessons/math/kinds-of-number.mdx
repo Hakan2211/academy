@@ -1,0 +1,88 @@
+---
+title: Kinds of Number
+subject: math
+contentSlug: math/kinds-of-number
+order: 6
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Numbers were invented in layers" kind="explain">
+
+Numbers feel like they've always existed, but humanity built them up one crisis at a time. Each new kind of number was invented to answer a question the old ones couldn't. Follow that story and you'll understand the whole architecture of the number line.
+
+</Step>
+
+<Step title="Counting numbers, then integers" kind="explain">
+
+It starts with the **natural numbers** ℕ: 1, 2, 3, … — the numbers you count with.
+
+But 3 − 5 has no answer there, so we add zero and the negatives to get the **integers** ℤ: … −2, −1, 0, 1, 2 … Now every subtraction works.
+
+</Step>
+
+<Step title="Rationals fill the gaps" kind="explain">
+
+Integers still can't answer 3 ÷ 2. The fix is the **rational numbers** ℚ — anything writable as a fraction of two integers, a/b.
+
+Every rational has a decimal that either **stops** (¾ = 0.75) or **repeats forever** (⅓ = 0.333…). Between any two rationals there's always another — they're packed infinitely densely.
+
+</Step>
+
+<Step title="The shock: some numbers are irrational" kind="explain">
+
+You'd think fractions fill the line completely. They don't. The ancient Greeks proved that **√2** — the diagonal of a unit square — cannot be written as *any* fraction. Its decimal runs forever with no repeating pattern: 1.41421356…
+
+Numbers like √2 and π are **irrational**. Add them to the rationals and you finally get the **real numbers** ℝ — one for every single point on the line, with no gaps left.
+
+<Callout type="info" title="The proof that broke a worldview">
+Legend says the Pythagoreans, who believed all was ratio, were so disturbed by the proof that √2 is irrational that they kept it secret. A number had escaped their entire philosophy.
+</Callout>
+
+</Step>
+
+<Step title="The number onion" kind="interactive">
+
+Each set sits inside the next: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ. Tap a number to see the **smallest** set it belongs to.
+
+<NumberSystems />
+
+</Step>
+
+<Step title="And it doesn't even stop there" kind="explain">
+
+The reals seem total — but ask for √(−1) and even they fall short, since no real number squares to a negative. Mathematicians invented the **imaginary** unit *i* with i² = −1, opening up the **complex numbers**. That's a story for a later world; for now, notice the pattern:
+
+<Formula tex="\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}" block />
+
+Every new layer was born from a question the previous numbers couldn't answer.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Which statement is true about the number √9?"
+  options={[
+    "It is irrational, like √2",
+    "It equals 3, so it is a natural number (and an integer, rational, and real)",
+    "It is rational but not an integer",
+    "It is not a real number"
+  ]}
+  correctIndex={1}
+  explanation="√9 = 3 exactly. A perfect square root is a whole number, so √9 is natural — and therefore also an integer, rational, and real. Only non-perfect roots like √2 are irrational."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **ℕ** (counting) ⊂ **ℤ** (integers) ⊂ **ℚ** (rationals) ⊂ **ℝ** (reals).
+- Each set was invented to answer a question the previous one couldn't (subtraction, division, roots).
+- **Rationals** are fractions; their decimals stop or repeat.
+- **Irrationals** (√2, π) never repeat — together with the rationals they complete the real line, with **no gaps**.
+
+</Step>
+
+</Lesson>

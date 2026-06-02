@@ -1,0 +1,82 @@
+---
+title: Public-Key Cryptography
+subject: computer-science
+contentSlug: computer-science/public-key-cryptography
+order: 4
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="The impossible-sounding idea" kind="explain">
+
+Last lesson left us stuck: two strangers cannot share a secret key over a channel an eavesdropper is watching. In the 1970s, cryptographers proposed something that sounds like magic — a way to agree on a shared secret *in full public view*, where everyone hears every message exchanged, yet only the two parties end up knowing the secret.
+
+The trick rests on a **one-way function**: a calculation that is easy to do forwards but practically impossible to undo. Mixing two tins of paint is easy; separating the blend back into its original colours is hopeless. That asymmetry — easy one way, infeasible the other — is the foundation of all public-key cryptography.
+
+</Step>
+
+<Step title="Mixing colours in public" kind="interactive">
+
+Here is the famous paint analogy, which mirrors the real **Diffie–Hellman** key exchange. Alice and Bob agree on a public base colour everyone can see. Each secretly adds a private colour, then publicly swaps the *mixtures*. Each stirs in their own private colour once more — and both arrive at the identical final shade.
+
+<PublicKeyExchange />
+
+Change either private colour and watch the shared secret update *identically* on both sides. The eavesdropper saw the base and both public mixtures — yet cannot un-mix paint to recover a private colour, so the final secret stays out of reach. They agreed on a secret without ever sending it.
+
+</Step>
+
+<Step title="Public keys and private keys" kind="explain">
+
+Real systems extend this into a **key pair**: two mathematically linked keys. You publish one — your **public key** — for the whole world to see, and you guard the other — your **private key** — and never share it.
+
+The pair has a beautiful property: anything **locked with the public key** can only be **unlocked with the matching private key**. So anyone can encrypt a message *to* you using your freely-published public key, but only you, holding the private key, can read it. The key-distribution problem dissolves: there is no shared secret to exchange in advance.
+
+<Callout type="info" title="A padlock anyone can snap shut">
+Think of handing out open padlocks. Anyone can lock a box with one of your padlocks and send it to you — but only *you* hold the single key that opens them. Distributing padlocks (public keys) is safe; the key (private key) never leaves your pocket.
+</Callout>
+
+</Step>
+
+<Step title="Digital signatures: running it backwards" kind="explain">
+
+Run the key pair the other way and you get something just as powerful. If *you* lock something with your **private key**, anyone can unlock it with your public key — and the fact that it unlocks proves it came from you, because only your private key could have produced it. That is a **digital signature**.
+
+Signatures give us **integrity** and **authenticity**: a message that has not been tampered with, from someone you can verify. Combine encryption (privacy) with signatures (proof of origin), and you have the trust machinery the modern internet runs on.
+
+</Step>
+
+<Step title="The backbone of HTTPS" kind="explain">
+
+This is happening right now, invisibly, every time you see the padlock in your browser. Visiting an `https://` site, your browser and the server use public-key cryptography to **verify the server's identity** (via a signed certificate) and to **agree on a fresh symmetric key** for the session — Diffie–Hellman in action.
+
+Why switch back to a symmetric key? Public-key maths is slow; symmetric encryption is fast. So the web uses the best of both: public-key crypto to safely *establish* a shared key, then speedy symmetric encryption to protect the actual conversation. Strangers, trusting each other over untrusted wires — solved.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In the colour-mixing exchange, an eavesdropper hears the public base colour AND both public mixtures. Why can they still not work out the shared secret?"
+  options={[
+    "The messages are sent too quickly to intercept",
+    "Mixing colours is a one-way function: combining is easy, but 'un-mixing' a blend back into its ingredients is practically impossible, so the private colours stay hidden",
+    "The eavesdropper does not have a fast enough computer to read the messages",
+    "Alice and Bob send the secret key separately in encrypted form"
+  ]}
+  correctIndex={1}
+  explanation="The whole scheme rests on a one-way function. The eavesdropper can see everything that was sent, yet recovering a private colour from a public mixture would require un-mixing paint — easy forwards, infeasible backwards. That asymmetry, not secrecy of the messages, is what protects the shared secret."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Public-key cryptography solves key distribution using a **one-way function** — easy to compute forwards, infeasible to reverse (like mixing paint).
+- The colour-mixing demo mirrors **Diffie–Hellman**: two parties reach the same shared secret in public view that an eavesdropper cannot derive.
+- A **key pair** has a public key (shared freely, used to encrypt *to* you) and a private key (kept secret, the only way to decrypt).
+- Running it in reverse gives **digital signatures** (proof of origin and integrity); together this underpins **HTTPS**, which uses public-key crypto to agree on a fast symmetric key.
+
+</Step>
+
+</Lesson>

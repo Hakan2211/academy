@@ -1,0 +1,75 @@
+---
+title: The Client–Server Model
+subject: computer-science
+contentSlug: computer-science/the-client-server-model
+order: 5
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="One conversation runs the internet" kind="explain">
+
+We have packets, addresses, routes and protocols. But once a connection is open, what do two machines actually *say* to each other? Overwhelmingly, they have one kind of conversation, repeated trillions of times a day: a **request** and a **response**.
+
+This is the **client–server model**. One machine — the **client** — asks for something. Another machine — the **server** — listens for such asks, does the work, and sends back an answer. The client initiates; the server responds. That asymmetry is the entire shape of it.
+
+</Step>
+
+<Step title="Client asks, server answers" kind="interactive">
+
+Pick a request and send it. Watch the request travel out to the server and the response come back.
+
+<ClientServer />
+
+Your **browser** is a client. When you open a page it sends a request — "GET me `/index.html`" — to the web server. The server finds the page and replies with a **response**: the content, plus a **status code** that says how it went. **200 OK** means success; **404 Not Found** means the thing you asked for isn't there. Try the broken link to see a 404 come back.
+
+<Callout type="info" title="Ports: knocking on the right door">
+A server might run many services at once — a website, an email system, a database. **Port numbers** keep them separate. The client addresses not just the server's IP but a specific port (web traffic typically uses port 443), like asking for a particular department at one big building.
+</Callout>
+
+</Step>
+
+<Step title="Why centralise the answer?" kind="explain">
+
+Why hand all the work to a server instead of letting every device fend for itself? Because it concentrates effort where it pays off. The server holds the authoritative data and the heavy machinery; thousands of lightweight clients can share it. Update the server once and every client instantly sees the new version. The server can be backed up, scaled and secured in one place.
+
+This is why a server is usually a powerful machine in a data centre, always on, waiting. Clients — your phone, your laptop — can be modest and come and go as they please. One server, many clients: a clean division of labour.
+
+</Step>
+
+<Step title="The model is everywhere" kind="explain">
+
+Once you see the request/response shape, you see it everywhere. Loading a **web** page: your browser requests, a web server responds. **Email**: your mail app asks a mail server to send or fetch messages. A weather **app**: it requests today's forecast from a server and displays the response. Streaming, banking, messaging, games — nearly all of it is clients asking and servers answering.
+
+The model is so universal because it's simple and scalable. The next lesson builds directly on it: the **World Wide Web** is, at heart, a colossal client–server system speaking one particular protocol — but, crucially, it is *not* the same thing as the internet.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In the client–server model, what does a status code like 200 or 404 in the response tell the client?"
+  options={[
+    "The IP address of the server",
+    "How the request went — 200 means success, 404 means the requested resource was not found",
+    "Which router the packet took",
+    "The client's port number"
+  ]}
+  correctIndex={1}
+  explanation="The server's response includes a status code summarising the outcome: 200 OK for success, 404 Not Found when the requested resource doesn't exist. The client uses it to decide what to do — show the page, or show an error."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **client–server model** is a request/response conversation: the client asks, the server answers.
+- A **client** (e.g. a browser) initiates; a **server** listens, does the work, and replies.
+- Responses carry a **status code** — **200 OK** for success, **404 Not Found** when missing.
+- **Port numbers** let one server offer many services and route each request correctly.
+- The model underlies the **web, email and apps** — and sets up the next lesson on the World Wide Web.
+
+</Step>
+
+</Lesson>

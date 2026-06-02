@@ -1,0 +1,90 @@
+---
+title: How Hard Is Hard?
+subject: computer-science
+contentSlug: computer-science/how-hard-is-hard
+order: 5
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Computable, but at what cost?" kind="explain">
+
+Set undecidable problems aside. Even among the problems computers *can* solve, the difference in **difficulty** is staggering. Sorting a billion numbers is routine; finding the shortest tour through a few hundred cities can defeat every computer on Earth — though both have perfectly correct algorithms.
+
+So we sort solvable problems into **complexity classes** by how the work grows with input size. The great divide is **tractable** (efficient, scales well) versus **intractable** (correct, but the only known algorithms explode).
+
+</Step>
+
+<Step title="P and NP" kind="explain">
+
+Two classes sit at the heart of the field:
+
+- **P** — problems we can **solve** quickly (in polynomial time). Sorting, searching, shortest paths. These stay practical at huge scale.
+- **NP** — problems whose proposed answer we can **check** quickly, even if finding it seems hard. Hand me a filled-in Sudoku and I can verify it fast; *finding* the solution is another matter.
+
+Every problem in P is also in NP — if you can solve it fast, you can certainly check an answer fast. The interesting question is whether NP contains anything *genuinely* harder than P.
+
+</Step>
+
+<Step title="Map the territory" kind="interactive">
+
+Picture the classes as nested sets. **P** lives inside **NP**, and at NP's hard frontier sit the **NP-complete** problems — the toughest in NP, all secretly linked. Click each region to explore its examples.
+
+<ComplexityClasses />
+
+The recurring intuition: these problems are **easy to check, hard to solve**. NP-complete problems like **SAT** and the **travelling salesman** share a magic property — crack *one* of them efficiently and you instantly crack them *all*.
+
+</Step>
+
+<Step title="Feel the cliff" kind="interactive">
+
+Why does "intractable" mean *impossible in practice*? Because the work grows **exponentially**. Slide n on the chart and watch the curves fan apart — then fixate on **O(2ⁿ)**.
+
+<BigOChart />
+
+A tractable algorithm might be **O(n)** or **O(n log n)**; an intractable one is **O(2ⁿ)** or worse. At n = 40 that exponential curve already needs over a *trillion* steps. Add a few more cities to a travelling-salesman tour and the brute-force cost outlasts the age of the universe. Same problem, just slightly bigger — utterly out of reach.
+
+</Step>
+
+<Step title="P =? NP, the biggest open question" kind="explain">
+
+Here is the million-dollar question — literally. Is every problem that's easy to **check** also easy to **solve**? That is:
+
+<Formula tex="P \stackrel{?}{=} NP" block />
+
+Almost everyone believes **P ≠ NP** — that some problems really are fundamentally harder to solve than to verify — but **no one has proved it**. A proof either way would reshape mathematics.
+
+<Callout type="tip" title="Why this isn't just academic">
+Modern **cryptography** bets your security on P ≠ NP. It is easy to *check* a password or *verify* a signature, but should be infeasible to *solve* for the secret. If someone proved P = NP with a fast algorithm, much of today's encryption could collapse overnight — and conversely, a proof of P ≠ NP would put that security on solid ground.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What does it mean for a problem to be in NP?"
+  options={[
+    "It is impossible for any computer to solve",
+    "A proposed solution can be CHECKED quickly, even if finding one may be hard",
+    "It can always be solved in linear time",
+    "It requires a quantum computer"
+  ]}
+  correctIndex={1}
+  explanation="NP is the class of problems whose proposed answers can be verified quickly. Finding the answer might be hard, but checking a given one is fast — like verifying a completed Sudoku. P (solvable quickly) sits inside NP, and whether P equals NP is the field's biggest open question, with deep consequences for cryptography."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Even **solvable** problems range from **tractable** (efficient, scales) to **intractable** (only exponential algorithms known).
+- **P** = solvable quickly; **NP** = answers checkable quickly; P sits inside NP.
+- **NP-complete** problems (SAT, travelling salesman) are NP's hard frontier — solve one efficiently and you solve them all.
+- Intractable means **O(2ⁿ)** growth: a few more inputs and the cost outlasts the universe.
+- **P =? NP** is the field's biggest open question, and modern **cryptography** depends on the answer.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,74 @@
+---
+title: Titration
+subject: chemistry
+contentSlug: chemistry/titration
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Finding an unknown concentration" kind="explain">
+
+How much acid is in this solution? **Titration** answers it precisely. You add a base of *known* concentration, drop by drop, to a measured volume of the acid until it's exactly neutralised. The volume needed reveals the unknown concentration.
+
+It's one of chemistry's most reliable lab techniques — accurate, simple, and used everywhere from quality control to medicine.
+
+</Step>
+
+<Step title="Run a titration" kind="interactive">
+
+Add base gradually and watch the pH. It barely moves at first, then leaps through neutral at the **equivalence point** — where moles of acid exactly match moles of base.
+
+<TitrationLab />
+
+</Step>
+
+<Step title="The equivalence point and indicators" kind="explain">
+
+The **equivalence point** is where neutralization is exactly complete. Because the pH changes so sharply there, an **indicator** that flips colour in that range pinpoints it — a single drop turns the flask pink (phenolphthalein) and you stop.
+
+The volume of base added at that moment is the **end point**, read straight off the burette.
+
+</Step>
+
+<Step title="The calculation" kind="explain">
+
+At the equivalence point, the moles of acid and base match (for a 1:1 reaction):
+
+<Formula tex="M_a V_a = M_b V_b" block />
+
+Knowing the base's concentration (M_b), the volume added (V_b), and the acid's volume (V_a), you solve for the acid's unknown concentration (M_a). Stoichiometry, applied with a burette.
+
+<Callout type="tip" title="Mind the ratio">
+The simple M_aV_a = M_bV_b assumes a 1:1 mole ratio. If the equation isn't 1:1 (say H₂SO₄ needs two NaOH), include the coefficient — it's just the mole-ratio idea from the stoichiometry world applied here.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="During a titration, what is the 'equivalence point'?"
+  options={[
+    "When the indicator is first added",
+    "When the moles of added base exactly neutralise the moles of acid",
+    "When the solution starts to boil",
+    "When half the acid has reacted"
+  ]}
+  correctIndex={1}
+  explanation="The equivalence point is where the added base has exactly neutralised the acid (equal moles for a 1:1 reaction). The pH changes sharply there, and an indicator flips colour to mark it — letting you read the volume needed."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Titration** finds an unknown concentration by adding a known solution to neutralization.
+- The **equivalence point** is where acid and base moles match — the pH leaps and an **indicator** flips colour.
+- Calculate with **MₐVₐ = M_bV_b** (adjusting for the mole ratio if not 1:1).
+- It's a precise, everyday lab method built on stoichiometry.
+
+</Step>
+
+</Lesson>

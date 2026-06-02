@@ -1,0 +1,78 @@
+---
+title: Calorimetry
+subject: chemistry
+contentSlug: chemistry/calorimetry
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Measuring heat directly" kind="explain">
+
+You can't see energy, but you can measure the **temperature change** it causes. **Calorimetry** does exactly that: run a reaction in (or under) water and measure how much the water's temperature changes. From that you calculate the heat transferred.
+
+The key equation:
+
+<Formula tex="q = m \, c \, \Delta T" block />
+
+where **q** is heat (J), **m** is mass of water (g), **c** is its specific heat capacity, and **ΔT** is the temperature change.
+
+</Step>
+
+<Step title="Run a calorimeter" kind="interactive">
+
+Adjust the mass of water and the temperature change to see the heat released.
+
+<Calorimeter />
+
+</Step>
+
+<Step title="Specific heat capacity" kind="explain">
+
+The **specific heat capacity (c)** is how much energy it takes to raise 1 gram of a substance by 1 °C. Water's is unusually high — **4.18 J/g·°C** — meaning it soaks up a lot of energy for a small temperature rise.
+
+That high value is why water is the standard calorimetry fluid, why oceans moderate climate, and why your body uses water to buffer its temperature.
+
+</Step>
+
+<Step title="From q to ΔH" kind="explain">
+
+The heat absorbed by the water equals the heat *released* by the reaction (with opposite sign). Divide by the moles reacting and you get the molar enthalpy change:
+
+<Formula tex="\Delta H = \dfrac{-q}{\text{moles of reactant}}" block />
+
+The minus sign flips perspective: heat leaving the reaction (exothermic) *enters* the water, so a temperature *rise* in the water means a *negative* ΔH for the reaction.
+
+<Callout type="tip" title="Simple but powerful">
+A foam cup, a thermometer, and this one equation are enough to measure the energy of combustion, neutralization, or dissolving — turning an invisible energy change into a number you can read off a thermometer.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A reaction heats 200 g of water by 10 °C. Using q = mcΔT with c = 4.18 J/g·°C, how much heat was released?"
+  options={[
+    "836 J",
+    "8360 J (about 8.4 kJ)",
+    "2090 J",
+    "418 J"
+  ]}
+  correctIndex={1}
+  explanation="q = mcΔT = 200 g × 4.18 J/g·°C × 10 °C = 8360 J ≈ 8.4 kJ. The water absorbed this much heat, so the reaction released about 8.4 kJ (an exothermic reaction)."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Calorimetry** finds reaction heat from a **temperature change**: **q = mcΔT**.
+- **Specific heat capacity (c)** is energy per gram per °C; water's is high (4.18 J/g·°C).
+- The water's heat gain equals the reaction's heat loss → **ΔH = −q ÷ moles**.
+- A cup, thermometer, and one equation measure invisible energy changes.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,82 @@
+---
+title: The Atoms of Arithmetic
+subject: math
+contentSlug: math/the-atoms-of-arithmetic
+order: 6
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="The periodic table of numbers" kind="explain">
+
+Chemists break matter into atoms; mathematicians break numbers into **primes**. The analogy is exact: every whole number above 1 is built from primes in exactly one way, just as every molecule is built from elements. The primes are the indivisible atoms of arithmetic.
+
+This lesson is about three deep facts: primes are *unique* builders, there are *infinitely many* of them, and they quietly *guard the internet*.
+
+</Step>
+
+<Step title="Uniqueness: the Fundamental Theorem" kind="explain">
+
+The **Fundamental Theorem of Arithmetic** says the prime factorisation of any number is unique. This is why 1 is excluded from the primes: if 1 were prime, then 6 = 2 × 3 = 1 × 2 × 3 = 1 × 1 × 2 × 3 … and uniqueness would collapse. Excluding 1 keeps every number's fingerprint one-of-a-kind.
+
+<FactorTree />
+
+</Step>
+
+<Step title="Infinity: Euclid's proof" kind="explain">
+
+Do the primes ever run out? Euclid proved, around 300 BC, that they don't — with one of the most elegant arguments in all of mathematics:
+
+Suppose there were only finitely many primes. Multiply them *all* together and add 1, calling the result N. Now N leaves remainder 1 when divided by every prime on the list — so none of them divides it. Yet every number has a prime factor. So N is either prime itself or has a prime factor we missed. **Contradiction.** The list can never be complete.
+
+<Callout type="info" title="A proof by contradiction">
+Euclid didn't build infinitely many primes — he showed that assuming a finite list leads to nonsense. Showing "the opposite is impossible" is one of mathematics' sharpest tools, and you'll meet it again in the Infinity world.
+</Callout>
+
+</Step>
+
+<Step title="The primes thin out, but never stop" kind="interactive">
+
+Primes get rarer as numbers grow — there are 25 below 100 but only 21 in the next hundred — yet they march on forever. Sieve the field once more and watch the survivors.
+
+<PrimeSieve />
+
+</Step>
+
+<Step title="Why primes guard your secrets" kind="explain">
+
+Multiplying two primes is easy: 1009 × 3643 = 3,675,787 in a blink. But going backwards — given only 3,675,787, *find the two primes* — is brutally hard. There's no fast method, and that one-way difficulty is the lock.
+
+Internet encryption (RSA) multiplies two enormous primes, each hundreds of digits long. The product is public; the primes are the secret key. To break it, an eavesdropper would have to factor a number so large that every computer on Earth working together couldn't finish before the Sun burns out.
+
+<Formula tex="\text{easy: } p \times q = N \qquad \text{hard: } N \to p, q" block />
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Euclid's proof shows there are infinitely many primes. What is the key step?"
+  options={[
+    "Multiplying all the assumed primes and adding 1 gives a number none of them divides — a contradiction",
+    "Checking every number up to a billion and finding more primes",
+    "Showing that prime gaps always stay the same size",
+    "Proving every even number is the sum of two primes"
+  ]}
+  correctIndex={0}
+  explanation="Assume finitely many primes, multiply them and add 1. The result has remainder 1 with every listed prime, so a new prime factor must exist — contradicting the 'complete' list. (The last option is Goldbach's conjecture, still unproven.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Primes are the **atoms** of arithmetic — every number is a unique product of them (**Fundamental Theorem**).
+- Excluding 1 from the primes is what keeps that factorisation unique.
+- **Euclid** proved there are **infinitely many** primes by contradiction.
+- Their factorisation is easy one way and hard the other — which is why primes **encrypt the internet**.
+
+</Step>
+
+</Lesson>

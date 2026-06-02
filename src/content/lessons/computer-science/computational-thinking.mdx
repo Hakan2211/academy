@@ -1,0 +1,74 @@
+---
+title: Computational Thinking
+subject: computer-science
+contentSlug: computer-science/computational-thinking
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Thinking like a problem-solver" kind="explain">
+
+Before you write a single line of code, you have to *think* in a way that suits a machine. **Computational thinking** is a reusable method for tackling any problem so that a computer — or even a careful person — can solve it.
+
+The good news: you already do parts of it every day. Planning a trip, following a recipe, finding a name in a list — all of it uses the same mental moves. Computer science just makes them explicit and sharp.
+
+</Step>
+
+<Step title="The four pillars" kind="interactive">
+
+There are four core moves. Pick an everyday problem and step through how each pillar applies to it.
+
+<ComputationalThinking />
+
+The order matters: you **break it down**, **spot the patterns**, **strip away the noise**, then **write the exact steps**. By the end you have something precise enough to hand to a machine.
+
+</Step>
+
+<Step title="Why abstraction is the hard one" kind="explain">
+
+Decomposition and patterns feel natural. **Abstraction** — deciding what to *ignore* — is the move that takes practice.
+
+A subway map is a perfect example: it throws away real distances, road layouts and scenery, keeping only "which lines connect which stops." That's a *lie* about geography, but it's the *truth* you need to plan a journey. Good abstraction keeps exactly what matters for the problem and discards the rest.
+
+<Callout type="tip" title="A model is a useful simplification">
+"All models are wrong, but some are useful." Every computer program is a simplified model of some slice of reality. The art is choosing which details to keep.
+</Callout>
+
+</Step>
+
+<Step title="From thinking to an algorithm" kind="explain">
+
+The payoff of computational thinking is the fourth pillar: an **algorithm** — a finite, precise, step-by-step procedure that solves the problem *every time*, with no guesswork.
+
+"Find the largest number in a list" becomes: *assume the first is biggest; check each of the rest; whenever you see a bigger one, remember it; the one you remember at the end is the answer.* That's unambiguous enough for a machine — and it's the bridge from human thinking to working code. You'll spend a whole world on algorithms later.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A designer draws a subway map that ignores real distances and street layout, keeping only which stations connect. Which pillar of computational thinking is this?"
+  options={[
+    "Decomposition — breaking the problem into parts",
+    "Pattern recognition — spotting what repeats",
+    "Abstraction — keeping only the detail that matters and ignoring the rest",
+    "Algorithm — writing the exact steps"
+  ]}
+  correctIndex={2}
+  explanation="Deliberately discarding irrelevant detail (distance, geography) while keeping what matters (the connections) is abstraction — modelling the world in just enough detail to solve the problem."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Computational thinking** is a reusable method for framing problems so a machine can solve them.
+- The four pillars: **decomposition**, **pattern recognition**, **abstraction**, and **algorithm**.
+- **Abstraction** — choosing what to ignore — is the subtlest and most powerful.
+- It all leads to an **algorithm**: a precise, repeatable, step-by-step solution.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,80 @@
+---
+title: Models of Computation
+subject: computer-science
+contentSlug: computer-science/models-of-computation
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="What is a 'model of computation'?" kind="explain">
+
+We have built a real computer from gates, and written real algorithms to run on it. Now we ask a stranger, deeper question: **what is computation itself?** Not *this* computer or *that* language — but the abstract idea that all of them share.
+
+To reason about it cleanly, computer scientists strip away every detail of hardware and invent **abstract machines**: imaginary devices with a tiny, exact set of rules. Such a device is a **model of computation**. It lets us prove things that are true for *every* computer ever built — and every one that ever will be.
+
+</Step>
+
+<Step title="Why bother formalizing it?" kind="explain">
+
+It sounds almost too philosophical. But making "computation" precise pays off enormously:
+
+- We can ask **what a machine can and cannot do** — and *prove* the answer.
+- We can compare problems by **how hard** they are, independent of any particular computer.
+- We can show that wildly different machines are secretly **equally powerful**.
+
+The trick is to choose a model **simple enough to reason about**, yet **powerful enough to matter**. We will climb a short ladder of models, each more capable than the last — and discover, astonishingly, that the ladder has a top.
+
+</Step>
+
+<Step title="The simplest machine that computes" kind="interactive">
+
+The most minimal useful model is the **finite-state machine**. It has only a handful of **states** and reads its input one symbol at a time, hopping between states by a fixed rule. Its entire memory is *which state it is in* — a finite, bounded amount.
+
+Step this machine through a binary string. It accepts strings with an **even number of 1s**, flipping between EVEN and ODD as each `1` arrives.
+
+<StateMachine />
+
+Notice what it does *not* have: no scratch paper, no counter, no way to remember how many symbols it has seen. Just a current state and a rule. Yet that is already a genuine, if humble, model of computation.
+
+</Step>
+
+<Step title="A ladder of machines" kind="explain">
+
+Finite-state machines sit at the bottom of a hierarchy. Add a little memory and you get more power; add unlimited memory of the right kind and — as we'll see — you reach the most powerful model there is.
+
+<Callout type="info" title="The big surprise ahead">
+You might expect the ladder to climb forever. It does not. A single model, the **Turing machine**, turns out to capture *everything* that can be computed by any machine, in any language, on any hardware. That claim — the **Church–Turing thesis** — is the summit of this world.
+</Callout>
+
+A model of computation, then, is our microscope for studying computation in the abstract. Choose the right one, and questions about *all* computers become questions about a few simple rules.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the point of defining an abstract 'model of computation' like a finite-state machine?"
+  options={[
+    "To make computers run faster by simplifying their hardware",
+    "To capture the essence of computation with simple, exact rules, so we can prove what any machine can and cannot do",
+    "To replace programming languages with diagrams",
+    "To measure how much electricity a computer uses"
+  ]}
+  correctIndex={1}
+  explanation="A model of computation is an abstract machine with a tiny, precise rule set. By stripping away hardware details it lets us reason and prove general truths about computation itself — what is possible, what is impossible, and how hard problems are — independent of any specific computer."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **model of computation** is an abstract machine with a small, exact set of rules.
+- We formalize computation to **prove** what machines can and cannot do, and to compare problem **difficulty**.
+- The **finite-state machine** is the simplest model: a few states and a transition rule, with only *finite* memory.
+- Models form a **ladder of power** — and remarkably, that ladder has a top, which the rest of this world will reach.
+
+</Step>
+
+</Lesson>

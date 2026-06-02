@@ -1,0 +1,74 @@
+---
+title: Abstraction & Layers
+subject: computer-science
+contentSlug: computer-science/abstraction-and-layers
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The most important idea in CS" kind="explain">
+
+If you remember one idea from this whole island, make it **abstraction**: hiding complexity behind a simple interface so you can use something without understanding how it works inside.
+
+You drive a car with a wheel and pedals, never thinking about combustion. You send a text without knowing about radio waves or routing. Each is an abstraction — a simple "front" over a complicated "back." Computers are built from *layers* of these, stacked dozens deep.
+
+</Step>
+
+<Step title="The tower of a computer" kind="interactive">
+
+A running app sits on top of a tall stack. Click each layer to see what it does — and crucially, what it *hides* from the layer above.
+
+<AbstractionLayers />
+
+The magic: a web developer can build a site without knowing how a transistor switches. The chip designer never thinks about websites. Each layer only has to trust the simple promise of the one below.
+
+</Step>
+
+<Step title="Interfaces: the promises between layers" kind="explain">
+
+What holds the tower together is the **interface** — the agreed promise each layer offers. A light switch promises "flip me and the light changes," no matter how the wiring works. As long as the promise holds, you can completely replace what's behind it.
+
+This is why your old apps still run on a new phone, and why a website works on a laptop *and* a fridge: they talk to **stable interfaces**, not to specific hardware. Swap the internals, keep the promise, and everything above keeps working.
+
+<Callout type="info" title="Why layering wins">
+Layering lets millions of people build one enormous system together. Each team masters one layer and trusts the interfaces around it. No single human understands the whole stack from physics to app — and they don't need to.
+</Callout>
+
+</Step>
+
+<Step title="When abstractions leak" kind="explain">
+
+Abstractions are powerful but never perfect. Sometimes the detail underneath *leaks* through: a video stutters (the network layer showing), an app freezes (memory limits showing), a calculation is slightly wrong (how numbers are stored showing).
+
+That's why a great computer scientist can **move up and down the stack**: think at a high level most of the time, but drop down a layer when something breaks. The rest of this island climbs the tower one floor at a time — bits, gates, machine code, programs, systems, networks — so you'll understand what each layer is really hiding.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A phone manufacturer completely redesigns the chip inside a new model, yet your existing apps still run unchanged. Why is this possible?"
+  options={[
+    "Apps secretly contain a copy of the old chip's design",
+    "The apps talk to a stable interface (the instruction set / OS), so the hardware below it can change as long as the promise is kept",
+    "Apps don't actually use the chip at all",
+    "The new chip is identical to the old one"
+  ]}
+  correctIndex={1}
+  explanation="Apps depend on a stable interface, not on specific hardware. As long as the new chip honours the same promises (instruction set, OS services), everything in the layers above keeps working — the essence of layered abstraction."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Abstraction** hides complexity behind a simple interface so you can use something without knowing its internals.
+- A computer is a **tower of layers**, from physics up to apps; each layer hides the one below.
+- **Interfaces** are the stable promises between layers — keep the promise and you can swap the internals.
+- Abstractions can **leak**, so a strong CS thinker can move up and down the stack when needed.
+
+</Step>
+
+</Lesson>

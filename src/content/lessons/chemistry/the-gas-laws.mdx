@@ -1,0 +1,78 @@
+---
+title: The Gas Laws
+subject: chemistry
+contentSlug: chemistry/the-gas-laws
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Linking pressure, volume, and temperature" kind="explain">
+
+For a fixed amount of gas, pressure, volume, and temperature are tied together. Change one and another must respond. The **gas laws** capture these links, each holding two quantities steady:
+
+- **Boyle's Law** — at constant temperature, **P × V = constant**.
+- **Charles's Law** — at constant pressure, **V ÷ T = constant**.
+- **Gay-Lussac's Law** — at constant volume, **P ÷ T = constant**.
+
+</Step>
+
+<Step title="Trace each law" kind="interactive">
+
+Switch between the laws and drag the variable to see the relationship — a curve for Boyle, straight lines for the others.
+
+<GasLawLab />
+
+</Step>
+
+<Step title="Boyle: squeeze and the pressure rises" kind="explain">
+
+**Boyle's Law** (P × V = constant) gives an inverse curve: halve the volume and you double the pressure. The particles, crammed into less space, hit the walls twice as often.
+
+<Formula tex="P_1 V_1 = P_2 V_2" block />
+
+It's why a syringe gets harder to push as you block the tip, and why your ears pop as air pressure changes.
+
+</Step>
+
+<Step title="Charles and Gay-Lussac: heat expands and pressurises" kind="explain">
+
+**Charles's Law** (V ÷ T = constant): heat a gas at constant pressure and it **expands** in direct proportion to its kelvin temperature — the principle behind a hot-air balloon.
+
+<Formula tex="\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}" block />
+
+**Gay-Lussac's Law** (P ÷ T = constant): heat a gas in a *sealed* container and the **pressure** climbs — which is why an aerosol can warns "do not incinerate."
+
+<Callout type="tip" title="One combined law">
+All three merge into the combined gas law: P₁V₁/T₁ = P₂V₂/T₂. Hold any quantity constant and it collapses back to Boyle, Charles, or Gay-Lussac.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A gas at constant temperature is compressed from 6 L to 2 L. By Boyle's Law, what happens to its pressure?"
+  options={[
+    "It falls to one-third",
+    "It stays the same",
+    "It triples",
+    "It doubles"
+  ]}
+  correctIndex={2}
+  explanation="Boyle's Law: P × V = constant. The volume shrank to one-third (6 → 2 L), so the pressure must triple to keep the product constant. Squeezing gas into less space raises its pressure."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- For fixed gas, **P, V, and T** are linked by the gas laws.
+- **Boyle** (constant T): P × V = constant — inverse (squeeze → higher P).
+- **Charles** (constant P): V ÷ T = constant — heat expands.
+- **Gay-Lussac** (constant V): P ÷ T = constant — heat a sealed gas → higher P. All combine into P₁V₁/T₁ = P₂V₂/T₂.
+
+</Step>
+
+</Lesson>

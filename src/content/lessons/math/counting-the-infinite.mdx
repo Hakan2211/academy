@@ -1,0 +1,70 @@
+---
+title: Counting the Infinite
+subject: math
+contentSlug: math/counting-the-infinite
+order: 2
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Are all infinities the same?" kind="explain">
+
+Infinity isn't just "a very big number" — it's a profound idea, and one of mathematics' most mind-bending discoveries is that **there are different sizes of infinity**. In the 1870s Georg Cantor found a way to compare infinite sets, and the answers overturned everyone's intuition (including his own).
+
+</Step>
+
+<Step title="Matching, not counting" kind="interactive">
+
+Two infinite sets are the "same size" if you can pair their members one-to-one — a perfect matching. Try it.
+
+<InfinityMatch />
+
+</Step>
+
+<Step title="The same size as 'half' of itself" kind="explain">
+
+Here's the shock: the even numbers can be perfectly matched with **all** the natural numbers (n ↔ 2n), so there are *exactly as many* evens as whole numbers — even though the evens skip half of them! Any infinite set you can list this way — evens, squares, even all the **fractions** — has this "countable" size, written **ℵ₀** (aleph-null). Infinity plays by strange rules: a part can equal the whole.
+
+</Step>
+
+<Step title="A bigger infinity" kind="explain">
+
+Then Cantor proved something staggering: the **real numbers** (all the decimals) **cannot** be matched to the naturals. His **diagonal argument**: suppose you had a complete list of all reals between 0 and 1. Build a new number whose first digit differs from the 1st number's first digit, whose second differs from the 2nd's second, and so on. This number differs from *every* entry — so it was missing. The list can never be complete.
+
+<Formula tex="|\mathbb{N}| = \aleph_0 \;<\; |\mathbb{R}|" block />
+
+So the reals are a **strictly bigger** infinity than the naturals. There is an endless hierarchy of ever-larger infinities — a tower with no top.
+
+<Callout type="info" title="A revolution resisted">
+Cantor's ideas were so radical that leading mathematicians attacked them; he died in poverty and ill health. Today his theory of infinite sets is a cornerstone of mathematics. David Hilbert declared, "No one shall expel us from the paradise Cantor has created."
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Cantor showed the real numbers are 'uncountable'. What does his diagonal argument prove?"
+  options={[
+    "No list of all reals can be complete — you can always construct a real that's missing",
+    "There are exactly as many reals as naturals",
+    "The reals are finite",
+    "Fractions cannot be counted"
+  ]}
+  correctIndex={0}
+  explanation="The diagonal argument builds a number differing from every entry on any proposed complete list, so no such list exists. The reals are a strictly larger infinity than the naturals (the fractions, by contrast, ARE countable)."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Infinite sets are compared by **one-to-one matching**, not counting.
+- Naturals, evens, squares and fractions are all the **same** countable size, **ℵ₀** — a part can equal the whole.
+- The **reals are uncountable** — a strictly bigger infinity (Cantor's **diagonal argument**).
+- There is an endless **hierarchy of infinities**.
+
+</Step>
+
+</Lesson>

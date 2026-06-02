@@ -1,0 +1,75 @@
+---
+title: Sound & Media
+subject: computer-science
+contentSlug: computer-science/sound-and-media
+order: 6
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Sound is a wave — computers store numbers" kind="explain">
+
+Sound is a continuous wave of changing air pressure. A microphone turns that wave into a smoothly changing voltage. But a computer can't store something smooth and continuous — it only stores discrete numbers. So we have to convert.
+
+The process is called **digitising**, and it has two steps: chop the wave into moments in time, and round each moment to a number. These two steps turn an infinitely smooth wave into a finite list of values.
+
+</Step>
+
+<Step title="Sampling and bit depth" kind="interactive">
+
+**Sampling** measures the wave's height many times a second; the **sample rate** is how often. **Bit depth** is how many levels each measurement can round to. Adjust both and watch the digital version (orange steps) chase the real wave (grey).
+
+<SamplingLab />
+
+Too few samples or levels and the result is a coarse, stair-stepped approximation. Crank both up and the steps shrink below what you can hear — at the cost of more data.
+
+</Step>
+
+<Step title="Real numbers" kind="explain">
+
+CD-quality audio samples **44,100 times per second** at 16 bits per sample. That's not arbitrary: a famous result (the **sampling theorem**) says you must sample at least twice as fast as the highest frequency you want to capture. Human hearing tops out around 20,000 Hz, so ~44,000 samples a second is enough to reconstruct everything we can hear.
+
+<Callout type="info" title="Why more isn't always better">
+Sampling far beyond what the ear can detect just makes bigger files with no audible benefit. Good engineering means matching the digital precision to the limits of the human senses — not maxing out the numbers.
+</Callout>
+
+</Step>
+
+<Step title="Compressing media: lossy vs lossless" kind="explain">
+
+Raw audio and video are huge, so they're almost always **compressed**. There are two families:
+
+- **Lossless** (like ZIP or PNG) rebuilds the original *exactly* — it only removes redundancy.
+- **Lossy** (like MP3 and JPEG) throws away detail the senses won't miss — frequencies you can't hear, colour differences you can't see — for *much* smaller files.
+
+MP3, JPEG and streaming video all lean on lossy compression. They work because they model the **limits of human perception**: the best place to save space is detail no one will notice is gone.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="When digitising sound, what do 'sample rate' and 'bit depth' control?"
+  options={[
+    "The volume and the speed of playback",
+    "How often the wave is measured (rate), and how many levels each measurement is rounded to (depth)",
+    "The file name and the file type",
+    "The number of speakers required"
+  ]}
+  correctIndex={1}
+  explanation="Sample rate is how many times per second the wave's height is measured; bit depth is how finely each measurement is rounded. Higher values give a more faithful but larger recording."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Continuous sound is **digitised** by sampling (in time) and rounding to levels (bit depth).
+- The **sampling theorem** sets how fast you must sample; CD audio uses 44,100 samples/sec at 16 bits.
+- Matching precision to **human perception** avoids wasted data.
+- Media uses **lossless** (exact) or **lossy** (discards unnoticed detail) compression — MP3, JPEG and video are lossy.
+
+</Step>
+
+</Lesson>

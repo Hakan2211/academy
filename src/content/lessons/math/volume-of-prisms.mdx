@@ -1,0 +1,67 @@
+---
+title: Volume of Prisms & Cylinders
+subject: math
+contentSlug: math/volume-of-prisms
+order: 5
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Filling space" kind="explain">
+
+**Volume** measures the space a solid occupies, counted in **cubic units** (cm³, m³). A **prism** is a solid with the same cross-section all the way along — a box, a tube, a Toblerone. For every prism, one rule does the job.
+
+</Step>
+
+<Step title="Stack the base" kind="interactive">
+
+<VolumePrism />
+
+</Step>
+
+<Step title="Base area × length" kind="explain">
+
+A prism is its **cross-section, stacked up** its length. So:
+
+<Formula tex="\text{Volume} = \text{cross-section area} \times \text{length}" block />
+
+- **Cuboid:** the cross-section is a rectangle, so V = l × w × h.
+- **Cylinder:** the cross-section is a circle, so V = πr² × h.
+
+For a triangular prism, it's (½ base × height) × length — find the cross-section's area, then multiply by how long it is.
+
+</Step>
+
+<Step title="Why cubic units" kind="explain">
+
+Volume multiplies three lengths, so the units are **cubed**: cm × cm × cm = cm³. This is also why volume conversions cube their factor (1 m³ = 1 000 000 cm³, from the conversions lesson). A 2 cm cube holds 2 × 2 × 2 = 8 one-centimetre cubes — you can literally count them.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A cylinder has radius 3 cm and height 10 cm. What is its volume (to 1 d.p.)?"
+  options={[
+    "282.7 cm³",
+    "94.2 cm³",
+    "188.5 cm³",
+    "90 cm³"
+  ]}
+  correctIndex={0}
+  explanation="V = πr²h = π × 3² × 10 = 90π ≈ 282.7 cm³. The base area is πr² = 9π ≈ 28.3 cm², stacked 10 cm high."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Volume** = space inside, in **cubic units**.
+- A **prism** has a constant cross-section: **V = cross-section area × length**.
+- Cuboid **l·w·h**; cylinder **πr²h**; triangular prism (½bh)×length.
+- Three lengths multiplied → cubic units (and cubed conversion factors).
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,79 @@
+---
+title: Searching
+subject: computer-science
+contentSlug: computer-science/searching
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Finding a needle in a haystack" kind="explain">
+
+**Searching** — finding whether (and where) a value sits in a collection — is one of the most common things computers do. Every time you look up a word, a contact, or a web page, a search algorithm runs underneath.
+
+There are two famous approaches, and the gap between them is the perfect first lesson in *efficiency*: solve the same problem two ways, and discover one is dramatically faster.
+
+</Step>
+
+<Step title="Linear search: check everything" kind="explain">
+
+**Linear search** is the obvious method: start at the beginning and check each item in turn until you find your target or run out of items.
+
+It always works, on any list, sorted or not. But it's slow: in the worst case (the item is last, or absent) you check *every* element. For a list of n items that's up to **n** comparisons — written as:
+
+<Formula tex="O(n)" block />
+
+</Step>
+
+<Step title="Binary search: halve it every time" kind="explain">
+
+If the list is **sorted**, you can do far better. **Binary search** checks the *middle* item. If that's your target, done. If the target is smaller, the whole upper half can be thrown away; if larger, throw away the lower half. Repeat on what's left.
+
+Each comparison **halves** the remaining search space. A million items needs only about 20 checks. That halving is the signature of logarithmic growth:
+
+<Formula tex="O(\log n)" block />
+
+<Callout type="warn" title="The catch">
+Binary search *only works on sorted data*. On an unsorted list it would happily discard the half containing your answer. The speed is bought with the requirement that the data be ordered first.
+</Callout>
+
+</Step>
+
+<Step title="Race them side by side" kind="interactive">
+
+Toggle between the two methods, pick a target, and **Step** through. Linear marches left to right; binary jumps to the middle and shrinks its window by half each time. Watch the comparison counts.
+
+<SearchVisualizer />
+
+On 16 items, linear may need up to 16 comparisons; binary never needs more than about 5. Multiply the list size and the gap only widens — that's the difference between linear and logarithmic.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Binary search is far faster than linear search, yet we can't always use it. Why not?"
+  options={[
+    "It only works on lists of even length",
+    "It requires the data to be sorted first",
+    "It needs the target to be a number",
+    "It uses too much memory on large lists"
+  ]}
+  correctIndex={1}
+  explanation="Binary search relies on the data being sorted so it can safely discard half the list at each step. On unsorted data it would throw away the wrong half. If the data isn't already sorted, you must either sort it first or fall back to linear search."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Linear search** checks each item in turn — works on any list, but is O(n).
+- **Binary search** repeatedly checks the middle and discards half the list — O(log n).
+- Each binary step **halves** the search space, so even huge lists need very few checks.
+- Binary search **requires sorted data**; that ordering is the price of its speed.
+- The same problem, two algorithms, wildly different costs — a preview of efficiency.
+
+</Step>
+
+</Lesson>

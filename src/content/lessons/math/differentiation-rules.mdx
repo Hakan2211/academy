@@ -1,0 +1,70 @@
+---
+title: Differentiation Rules & Turning Points
+subject: math
+contentSlug: math/differentiation-rules
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Shortcuts beat the limit every time" kind="explain">
+
+Computing every derivative from the limit definition would be exhausting. Happily, patterns emerge that become **rules** — and the most important is the **power rule**, which differentiates any power of x instantly.
+
+</Step>
+
+<Step title="The power rule" kind="explain">
+
+To differentiate xⁿ, **multiply by the power, then drop the power by one**:
+
+<Formula tex="\frac{d}{dx}\,x^n = n x^{n-1}" block />
+
+So x² → 2x, x³ → 3x², x⁵ → 5x⁴. Two more handy facts: a constant multiplier stays put (5x² → 10x), and a plain constant differentiates to 0 (it has zero slope). Terms differentiate one at a time, so 3x² + 4x − 7 → 6x + 4.
+
+</Step>
+
+<Step title="Slopes everywhere" kind="interactive">
+
+<DerivativeExplorer />
+
+</Step>
+
+<Step title="Finding turning points" kind="explain">
+
+The killer application: **optimisation**. A curve's maximum or minimum sits where its tangent is flat — where **f′(x) = 0**. So:
+
+1. Differentiate to get f′(x).
+2. Solve **f′(x) = 0** for the turning points.
+3. Check whether each is a max or min.
+
+For f(x) = x² − 4x + 1: f′(x) = 2x − 4 = 0 gives x = 2, the minimum. This is how engineers find the strongest shape, the least material, the maximum profit — calculus turns "find the best" into "solve an equation."
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Differentiate f(x) = x³ − 6x² + 5, then find where f′(x) = 0."
+  options={[
+    "f′(x) = 3x² − 12x; zero at x = 0 and x = 4",
+    "f′(x) = 3x² − 12x + 5; zero at x = 1",
+    "f′(x) = x² − 12x; zero at x = 12",
+    "f′(x) = 3x − 12; zero at x = 4"
+  ]}
+  correctIndex={0}
+  explanation="Power rule term by term: x³→3x², −6x²→−12x, +5→0. So f′(x) = 3x² − 12x = 3x(x − 4) = 0 at x = 0 and x = 4 — the two turning points."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **power rule**: d/dx (xⁿ) = n·xⁿ⁻¹ (multiply by the power, drop it by one).
+- Constant multipliers stay; plain **constants differentiate to 0**; differentiate term by term.
+- **Turning points** are where **f′(x) = 0**.
+- Setting the derivative to zero is the engine of **optimisation**.
+
+</Step>
+
+</Lesson>

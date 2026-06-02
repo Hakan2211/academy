@@ -1,0 +1,82 @@
+---
+title: Processes & Threads
+subject: computer-science
+contentSlug: computer-science/processes-and-threads
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="A program versus a process" kind="explain">
+
+A **program** is a lifeless thing: a file of machine-code instructions sitting on disk, like a recipe written on a card. Nothing happens until you run it. The moment you do, the OS creates a **process** — the program *in the act of running*.
+
+A process is far more than the instructions. It is the program **plus** everything the OS must track to keep it alive: the **program counter** (which instruction is next), the contents of the **registers**, its own slice of **memory**, the files it has open, and its current status. Run the same program twice and you get two separate processes, each with its own bookkeeping — like two cooks following identical recipes at two different stoves.
+
+</Step>
+
+<Step title="The life of a process" kind="interactive">
+
+A process rarely sprints from start to finish. It moves through a handful of **states**, pushed along by the OS scheduler and by the slow world outside the CPU. Step through one process's lifecycle and watch where it goes.
+
+<ProcessStates />
+
+The crucial state is **Waiting** (or **Blocked**). Disks, networks and keyboards are millions of times slower than the CPU. Rather than freeze the whole machine while one process waits for data, the OS sets it aside and runs *someone else*. When the data finally arrives, the waiting process rejoins the **Ready** queue for another turn.
+
+</Step>
+
+<Step title="One core, one runner — the context switch" kind="explain">
+
+Here is the fact that makes everything else click: a single CPU core can only run **one process at a time**. So how do you have a browser, a music player and a download all "running together"?
+
+The OS performs a **context switch**. It freezes the running process, carefully saves its program counter and registers (its *context*), loads the saved context of another process, and lets *that* one run for a few milliseconds. Then it switches again. And again — thousands of times a second. Because the switches are so fast, it *looks* like everything runs at once, even though the core is really taking rapid turns.
+
+<Callout type="info" title="It's the same fetch–execute loop">
+Whichever process is running, the CPU is still doing the fetch–decode–execute cycle from World 4. A context switch just changes *whose* instructions and data the loop is working on by swapping the registers and program counter.
+</Callout>
+
+</Step>
+
+<Step title="Threads: lightweight workers inside a process" kind="explain">
+
+Sometimes a single program wants to do several things at once *itself* — a browser rendering a page while also downloading an image and responding to your scrolling. Spawning a whole new process for each would be heavy and slow, and they'd have separate memory.
+
+Instead, a process can contain several **threads**: independent strands of execution that **share the same memory and open files** but each have their own program counter and registers. Threads are lightweight — cheap to create and quick to switch between — and because they share memory, they can cooperate easily. That sharing is also where danger lurks, as we'll see when two threads reach for the same data at once.
+
+</Step>
+
+<Step title="Why this matters" kind="explain">
+
+Processes and threads are the OS's unit of "a thing that is running." Everything the OS does — scheduling, memory, security — is organised around them. Understanding that a process is a program *plus its live state*, and that only one runs per core at a time, demystifies how a single machine appears to do a hundred things at once.
+
+It also sets up the next question. If only one process can run per core, and many are clamouring for a turn, **who decides whose turn it is, and for how long?** That is the job of the scheduler.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="On a single CPU core, how can a browser, a music player and a file download all appear to run at the same time?"
+  options={[
+    "The core physically runs all three programs simultaneously",
+    "The OS rapidly context-switches between them — saving and restoring each one's state — so fast that it looks simultaneous",
+    "Each program gets its own hidden extra core",
+    "Only one is really running; the others are paused until you click them"
+  ]}
+  correctIndex={1}
+  explanation="A single core runs one process at a time. The OS performs context switches thousands of times a second, saving one process's program counter and registers and loading another's. The switching is so fast it creates the illusion of true simultaneity."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **program** is instructions on disk; a **process** is that program *running*, plus its live state (program counter, registers, memory, open files).
+- A process moves through states: **New → Ready → Running → (Waiting) → Terminated**, driven by the scheduler and by slow I/O.
+- A single core runs **one process at a time**; the OS does fast **context switches** to create the illusion of many running at once.
+- **Threads** are lightweight strands of execution inside one process that **share its memory** — handy for cooperation, but a source of bugs when they collide.
+
+</Step>
+
+</Lesson>

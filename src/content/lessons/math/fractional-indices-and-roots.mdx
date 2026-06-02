@@ -1,0 +1,72 @@
+---
+title: Fractional Indices & Roots
+subject: math
+contentSlug: math/fractional-indices-and-roots
+order: 4
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="What would a power of ½ mean?" kind="explain">
+
+The index laws have led us to zero and negative powers. Pushing further: what is 9^(½)? The laws decide it for us. Whatever it is, multiplying it by itself must obey the add rule:
+
+<Formula tex="9^{1/2} \times 9^{1/2} = 9^{1/2 + 1/2} = 9^1 = 9" block />
+
+A number that gives 9 when multiplied by itself is **√9 = 3**. So a power of ½ *is* a square root.
+
+</Step>
+
+<Step title="The ½ power is the square root" kind="interactive">
+
+<SquareDots />
+
+</Step>
+
+<Step title="The general rule" kind="explain">
+
+The denominator of a fractional index is the **root**; the numerator is the ordinary **power**:
+
+<Formula tex="a^{1/n} = \sqrt[n]{a}, \qquad a^{m/n} = \left(\sqrt[n]{a}\right)^{m}" block />
+
+So 8^(1/3) = ∛8 = 2, and 8^(2/3) = (∛8)² = 2² = 4. Take the root first (it keeps the numbers small), then raise to the power.
+
+</Step>
+
+<Step title="It all stays consistent" kind="explain">
+
+Every index rule now works for *any* rational power. Combine them freely:
+
+<Formula tex="16^{-1/2} = \frac{1}{16^{1/2}} = \frac{1}{4}" block />
+
+Negative *and* fractional: reciprocal of the square root. This single, unified system — integer, zero, negative, fractional — is one of algebra's quiet triumphs.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Evaluate 27^(2/3)."
+  options={[
+    "9",
+    "18",
+    "729",
+    "6"
+  ]}
+  correctIndex={0}
+  explanation="Denominator first (the root): ∛27 = 3. Then the numerator power: 3² = 9. Rooting before powering keeps the arithmetic easy."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A fractional index is a **root**: a^(1/n) = ⁿ√a.
+- In general a^(m/n) = (ⁿ√a)ᵐ — **root by the denominator, power by the numerator**.
+- Take the **root first** to keep numbers manageable.
+- The index laws now hold for every rational power, including negative-fractional ones.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,64 @@
+---
+title: Circumference & Area of Circles
+subject: math
+contentSlug: math/area-of-circles
+order: 3
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="π ties it all together" kind="explain">
+
+Every circle's measurements run on **π ≈ 3.14159**, the ratio of circumference to diameter. From the radius alone you can find both the distance around and the area inside.
+
+<Formula tex="C = 2\pi r = \pi d, \qquad A = \pi r^2" block />
+
+</Step>
+
+<Step title="Grow the radius" kind="interactive">
+
+<CircleArea />
+
+</Step>
+
+<Step title="Circumference: distance around" kind="explain">
+
+Since π = C ÷ d, rearranging gives **C = πd = 2πr**. A wheel of radius 30 cm has circumference 2π × 30 ≈ 188 cm — so it rolls 1.88 m per turn. Circumference is a *length*, measured in cm or m.
+
+</Step>
+
+<Step title="Area: space inside" kind="explain">
+
+The area is **πr²** — note the radius is **squared**, so area grows fast. Double the radius and the circumference doubles, but the area **quadruples** (it scales by the square, just like the area rule from the conversions lesson).
+
+For **sectors and arcs**, take the right fraction of the whole: a 90° sector is ¼ of the circle, so ¼ of πr² for its area and ¼ of 2πr for its arc.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A circle has radius 5 cm. What is its area (to 1 d.p.)?"
+  options={[
+    "78.5 cm²",
+    "31.4 cm²",
+    "15.7 cm²",
+    "25 cm²"
+  ]}
+  correctIndex={0}
+  explanation="A = πr² = π × 5² = 25π ≈ 78.5 cm². (Its circumference, for comparison, is 2π × 5 ≈ 31.4 cm — a length, not an area.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **C = 2πr = πd** (circumference, a length).
+- **A = πr²** (area, square units — r is squared).
+- Double r → circumference ×2 but area ×4.
+- **Sectors/arcs** are a fraction (angle/360) of the whole circle.
+
+</Step>
+
+</Lesson>

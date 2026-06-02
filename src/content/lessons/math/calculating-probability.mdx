@@ -1,0 +1,72 @@
+---
+title: Calculating Probability
+subject: math
+contentSlug: math/calculating-probability
+order: 2
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Counting equally likely outcomes" kind="explain">
+
+When every outcome is **equally likely** — a fair die, a shuffled deck, a balanced spinner — probability is just counting:
+
+<Formula tex="P(\text{event}) = \frac{\text{number of favourable outcomes}}{\text{total number of outcomes}}" block />
+
+The probability of rolling a 4 on a die is 1 favourable out of 6 total = 1/6.
+
+</Step>
+
+<Step title="Pick an event" kind="interactive">
+
+See which faces count toward each event, and the resulting probability.
+
+<DiceSpinner />
+
+</Step>
+
+<Step title="Theoretical versus experimental" kind="explain">
+
+- **Theoretical** probability is what the maths predicts: P(heads) = ½ for a fair coin.
+- **Experimental** (or relative frequency) is what you actually observe: flip 100 times, get 53 heads → 0.53.
+
+The two close in as the number of trials grows — the **law of large numbers**. Ten flips might give 7 heads; ten thousand will hug 50% tightly.
+
+</Step>
+
+<Step title="Expected frequency" kind="explain">
+
+Multiply a probability by the number of trials to predict **how often** something should happen:
+
+<Formula tex="\text{expected} = P \times \text{number of trials}" block />
+
+Roll a die 60 times and you'd expect a six about 1/6 × 60 = **10** times. Not guaranteed — but the best prediction, and what casinos and insurers bank on.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A bag has 4 red, 3 green and 5 blue counters. What is the probability of drawing a green one?"
+  options={[
+    "3/12 = 1/4",
+    "3/9 = 1/3",
+    "1/3 of red",
+    "3/5"
+  ]}
+  correctIndex={0}
+  explanation="Total = 4 + 3 + 5 = 12 counters; 3 are green. P(green) = 3/12 = 1/4."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- For equally likely outcomes: **P = favourable ÷ total**.
+- **Theoretical** = predicted; **experimental** = observed (they converge — law of large numbers).
+- **Expected frequency = P × number of trials.**
+
+</Step>
+
+</Lesson>

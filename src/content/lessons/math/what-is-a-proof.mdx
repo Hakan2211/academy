@@ -1,0 +1,70 @@
+---
+title: What Is a Proof?
+subject: math
+contentSlug: math/what-is-a-proof
+order: 1
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The thing that makes maths different" kind="explain">
+
+Welcome to the summit. Every other science gathers evidence; **mathematics demands proof**. A **proof** is an unbroken chain of logic from agreed starting points (**axioms**) to a conclusion that *must* be true — not probably, not usually, but **always and forever**. It's the reason a 2,000-year-old theorem is still exactly as true today.
+
+</Step>
+
+<Step title="A proof you can see" kind="interactive">
+
+The sum of the first n odd numbers is always n². Here's the proof — no words needed, just the picture.
+
+<ProofWithoutWords />
+
+</Step>
+
+<Step title="Why examples are never enough" kind="explain">
+
+Check a pattern for the first million cases and you have **evidence**, not proof — case a million-and-one might break it. (This isn't paranoia: some patterns hold for *billions* of cases then fail.) A proof closes that gap forever by arguing about *every* case at once, usually with algebra or logic. As you saw in the algebra world, "odd + odd = even" is settled by writing (2a+1) + (2b+1) = 2(a+b+1).
+
+</Step>
+
+<Step title="The shapes of proof" kind="explain">
+
+Mathematicians have a toolkit of proof styles:
+
+- **Direct proof** — reason straight from assumptions to conclusion.
+- **Proof by contradiction** — assume the opposite, derive nonsense (Euclid's infinitely many primes; the irrationality of √2).
+- **Proof by induction** — prove it for n = 1, then show "if true for n, then true for n+1" — toppling an infinite line of dominoes.
+
+<Callout type="info" title="Beauty in proof">
+Mathematicians prize *elegant* proofs — short, surprising, illuminating. The book "Proofs from THE BOOK" collects arguments so beautiful they seem divinely inspired. A great proof doesn't just confirm a fact; it shows you *why* it had to be true.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A student verifies that a formula works for n = 1 to 1,000,000. Have they proved it true for all n?"
+  options={[
+    "No — that's strong evidence, but a proof must cover every case, e.g. by induction",
+    "Yes — a million cases is more than enough",
+    "Yes, as long as they used a computer",
+    "No, and the formula must therefore be false"
+  ]}
+  correctIndex={0}
+  explanation="Checking cases is evidence, never proof — case 1,000,001 could fail. Only an argument covering all infinitely many cases (such as induction) proves it. (Nor does failing to prove it make it false.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **proof** is airtight logic from **axioms** to a conclusion that is **always** true.
+- **Examples are evidence, not proof** — a proof settles every case at once.
+- Key styles: **direct**, **contradiction**, **induction**.
+- Proof is what sets mathematics apart from every other field — and elegant proofs are prized for showing *why*.
+
+</Step>
+
+</Lesson>

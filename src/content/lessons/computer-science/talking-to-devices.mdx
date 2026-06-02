@@ -1,0 +1,77 @@
+---
+title: Talking to Devices
+subject: computer-science
+contentSlug: computer-science/talking-to-devices
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="A fast brain in a slow world" kind="explain">
+
+The CPU runs its fetch–execute cycle billions of times a second. The devices around it — keyboards, disks, networks, printers — are *agonisingly* slow by comparison, and worse, they are unpredictable. A keypress might come now, or in ten minutes.
+
+So how does a lightning-fast CPU cooperate with slow, sporadic devices without wasting its time? This is one of the central design problems in a computer, and there are two main answers.
+
+</Step>
+
+<Step title="Buses and controllers" kind="explain">
+
+First, the plumbing. The CPU does not wire directly to every device. Each device has a **controller** — a small chip that knows how to operate that particular piece of hardware and presents a simple interface to the CPU. The CPU sends and receives data through controllers over the shared **bus**.
+
+This keeps the CPU general: it does not need to know the messy details of a specific disk or webcam. It just talks to the controller, and the controller handles the device.
+
+</Step>
+
+<Step title="Polling vs interrupts" kind="interactive">
+
+Now the timing problem — knowing *when* a slow device is ready. Two strategies:
+
+- **Polling**: the CPU repeatedly asks the controller "ready yet? ready yet?" Simple, but it burns time checking, usually to be told "not yet."
+- **Interrupts**: the CPU gets on with other work. When the device is finally ready, its controller sends an **interrupt** — a signal that makes the CPU pause, run a short **handler**, then resume exactly where it left off.
+
+Toggle the modes. In interrupt mode, press the button to fire a device event and watch the CPU stop, handle it, and carry on.
+
+<IoDevices />
+
+</Step>
+
+<Step title="Why interrupts win" kind="explain">
+
+Interrupts are how nearly all real I/O works, because they let the CPU spend its time *computing* instead of *checking*. The device only disturbs the CPU when there is genuinely something to do.
+
+It is the difference between standing at the door waiting for a delivery all afternoon (polling) versus getting on with your day and answering when the doorbell rings (interrupts). An interrupt is just a doorbell for the CPU.
+
+<Callout type="info" title="Interrupts also handle emergencies">
+Interrupts are not only for slow devices. A divide-by-zero, a timer firing, a key combination — all can interrupt the CPU so the operating system can step in. Interrupts are the mechanism that lets software react instantly to the outside world.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why are interrupts usually better than polling for a CPU dealing with a slow device?"
+  options={[
+    "Interrupts make the device itself run faster",
+    "With interrupts the CPU does useful work and is signalled only when the device is ready, instead of wasting time repeatedly checking",
+    "Polling does not work on modern computers at all",
+    "Interrupts remove the need for any device controller"
+  ]}
+  correctIndex={1}
+  explanation="Polling wastes CPU time repeatedly asking 'ready yet?' Interrupts let the CPU keep computing; the device's controller signals it only when there is something to handle — like a doorbell instead of waiting at the door."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The CPU is fast; devices are slow and unpredictable, so they must cooperate carefully.
+- Each device has a **controller** that operates it and talks to the CPU over the shared **bus**, keeping the CPU general.
+- **Polling** = the CPU keeps checking "ready yet?" — simple but wasteful.
+- **Interrupts** = the device signals the CPU only when ready; the CPU pauses, runs a **handler**, then resumes — efficient, and how real I/O works.
+
+</Step>
+
+</Lesson>

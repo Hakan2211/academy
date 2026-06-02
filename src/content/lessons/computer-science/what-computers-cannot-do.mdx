@@ -1,0 +1,81 @@
+---
+title: What Computers Cannot Do
+subject: computer-science
+contentSlug: computer-science/what-computers-cannot-do
+order: 4
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="A limit you cannot engineer away" kind="explain">
+
+The Turing machine can compute anything *computable*. That tiny word hides the most surprising discovery in all of computer science: **some problems are not computable at all.** No algorithm solves them — not today, not with a faster chip, not ever.
+
+This is not like "we haven't figured it out yet." It is a **mathematical impossibility**, proved with certainty, true for every computer in every possible universe. Problems with no algorithm are called **undecidable**.
+
+</Step>
+
+<Step title="The halting problem" kind="explain">
+
+The famous example is the **halting problem**. It sounds utterly reasonable:
+
+> Given any program and its input, decide whether that program will eventually **stop**, or **loop forever**.
+
+A useful tool, surely — it would catch infinite loops before they happen. Some cases are easy: a program that just prints "hello" obviously halts; `while true: pass` obviously never does. The question is whether **one** algorithm can answer correctly for *every* program. Turing proved in 1936 that the answer is **no**.
+
+</Step>
+
+<Step title="The self-referential trap" kind="interactive">
+
+The proof is a thing of beauty: a logical trap built from self-reference. Walk through it. Suppose a perfect halt-detector `H` exists. Then build a saboteur program that asks `H` about *itself* — and deliberately does the **opposite** of whatever `H` predicts.
+
+<HaltingProblem />
+
+Whatever `H` answers about the saboteur, the saboteur was constructed to make it wrong. The only thing we assumed was that `H` exists — so that assumption must be false. **No halt-deciding program can exist.** It is the same shape as "this sentence is false": self-reference forcing a contradiction.
+
+</Step>
+
+<Step title="A hard limit, not a tech limit" kind="explain">
+
+This matters far beyond one puzzle. The halting problem is the *seed* of a whole forest of undecidable questions, many intensely practical:
+
+- Will this program ever **crash** or access invalid memory?
+- Do these two programs always produce the **same output**?
+- Will this code ever reach this **line**?
+
+Each is undecidable in full generality — provably unsolvable by any algorithm. That is why perfect bug-finders and perfect virus-detectors are impossible *in principle*. Real tools get useful **approximate** answers, but no tool can be perfect for all programs.
+
+<Callout type="warn" title="The deepest humility in computing">
+These limits were discovered by **pure reason**, before computers existed, and apply to all of them forever. A faster machine computes the *computable* faster — it cannot make the **undecidable** decidable. Some doors are closed, and we can prove it.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why is the halting problem 'undecidable'?"
+  options={[
+    "Today's computers are simply too slow to solve it",
+    "Assuming a program that decides halting leads to a logical contradiction, so no such program can exist for any computer",
+    "It can be solved, but only with quantum computers",
+    "Programmers haven't yet discovered the right algorithm"
+  ]}
+  correctIndex={1}
+  explanation="Turing's proof assumes a perfect halt-detector H exists, then builds a program that asks H about itself and does the opposite of H's answer — forcing a contradiction. So H cannot exist, for any computer, however fast. Undecidability is a logical impossibility, not a temporary engineering gap."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Some problems are **undecidable**: no algorithm can solve them, on any computer, ever.
+- The **halting problem** — does a given program stop or loop forever? — is the classic example.
+- Turing's proof uses **self-reference**: a saboteur that does the opposite of a halt-detector's verdict, forcing a contradiction.
+- Many practical questions (will it crash? are these programs equivalent?) are undecidable too, so **perfect** analysers are impossible.
+- This is a **hard limit discovered by reason** — faster hardware cannot make the undecidable decidable.
+
+</Step>
+
+</Lesson>

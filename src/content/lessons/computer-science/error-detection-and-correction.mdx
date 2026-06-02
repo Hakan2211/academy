@@ -1,0 +1,82 @@
+---
+title: Error Detection & Correction
+subject: computer-science
+contentSlug: computer-science/error-detection-and-correction
+order: 8
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="Bits go wrong" kind="explain">
+
+The physical world is noisy. A scratch on a disc, interference on a wire, a cosmic ray hitting memory — any of these can flip a bit from 0 to 1 or back. Across billions of bits moving every second, errors are not rare events; they're a certainty.
+
+So a deep question runs through all of computing: how can a system built on perfectly precise bits survive **imperfect** storage and transmission? The answer is to add cleverly-chosen **redundancy** — extra bits that let us notice, and even fix, when something goes wrong.
+
+</Step>
+
+<Step title="The parity bit" kind="interactive">
+
+The simplest guard is a **parity bit**. Before sending, the sender counts the 1s and adds one extra bit to make that count **even**. The receiver recounts: if the total is now *odd*, a bit must have flipped. Try corrupting the message below.
+
+<ParityCheck />
+
+It's elegantly cheap — one bit guards a whole byte. But it's limited: it can tell you *that* an error happened, not *where*, and if **two** bits flip, the count stays even and the error slips through undetected.
+
+</Step>
+
+<Step title="Detecting more: checksums and CRCs" kind="explain">
+
+For bigger data we need stronger detection. A **checksum** combines all the bytes into a short summary value (in the simplest form, just add them up) and sends it along. The receiver recomputes the summary; if it differs, the data is corrupt.
+
+Real systems use a tougher relative called a **CRC** (cyclic redundancy check), which catches burst errors far more reliably. Every network packet, ZIP file and hard-disk sector carries a CRC. These schemes **detect** corruption with very high confidence — and the usual response is simply to **ask for the data again**.
+
+<Callout type="info" title="Detect vs correct">
+Detection is cheap but only tells you to retry. When you *can't* retry — a deep-space probe, a scratched disc, a live stream — you need enough redundancy to **repair** the data on the spot. That costs more bits, but buys self-healing.
+</Callout>
+
+</Step>
+
+<Step title="Correcting errors: redundancy that heals" kind="explain">
+
+**Error-correcting codes** add enough structure that the receiver can pinpoint *which* bit is wrong and flip it back. The classic **Hamming code** arranges several parity bits so their pattern of failures spells out, in binary, the exact position of the broken bit.
+
+The general idea is **distance**: design your valid codewords so they differ from each other in many bit positions. Then a single flip lands "closest" to exactly one valid codeword, and you snap it back. The more spread-out the codewords, the more errors you can fix — at the cost of more redundant bits.
+
+</Step>
+
+<Step title="Where this lives" kind="explain">
+
+Error handling is silent and everywhere. **QR codes** still scan when partly torn. **CDs** play through scratches. **Server memory (ECC RAM)** quietly fixes bit-flips from cosmic rays. **Spacecraft** beam data across billions of kilometres through noise and still arrive intact. **Deep-space missions and 5G** use powerful modern codes (Reed–Solomon, LDPC) descended from these same ideas.
+
+It's a beautiful resolution of the tension we opened with: by spending some bits on structured redundancy, a fundamentally unreliable physical world is made to deliver **perfectly reliable** digital information.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A single parity bit is added to each byte. Why can it DETECT a one-bit error but not CORRECT it — and why might it miss a two-bit error?"
+  options={[
+    "It corrects errors but can't detect them",
+    "A flipped bit makes the count of 1s odd (detected), but parity gives no information about WHICH bit flipped; two flips return the count to even, so they go unnoticed",
+    "Parity bits only work on text, not numbers",
+    "It can fix any number of errors but never detect them"
+  ]}
+  correctIndex={1}
+  explanation="One flip changes the 1s-count from even to odd, signalling an error — but parity carries no location, so it can't correct. Two flips cancel out (even again), slipping past undetected. Correcting and catching multi-bit errors needs more redundancy, like Hamming codes."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Physical storage and transmission **flip bits**; computing survives this by adding **redundancy**.
+- A **parity bit** detects any single-bit error cheaply, but can't locate it and misses two-bit flips.
+- **Checksums/CRCs** strongly detect corruption in larger data — usually triggering a resend.
+- **Error-correcting codes** (Hamming, Reed–Solomon, LDPC) add enough structure to **repair** errors in place, powering QR codes, CDs, ECC RAM and spacecraft.
+
+</Step>
+
+</Lesson>

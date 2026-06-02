@@ -1,0 +1,70 @@
+---
+title: Spread & Standard Deviation
+subject: math
+contentSlug: math/spread-and-standard-deviation
+order: 5
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="The average isn't enough" kind="explain">
+
+Two factories both average 100 widgets a day. One makes 98–102; the other swings 60–140. Same mean, wildly different **consistency**. To capture that, we measure **spread** — and the gold-standard measure is the **standard deviation**.
+
+</Step>
+
+<Step title="Stretch the data" kind="interactive">
+
+Same mean throughout — only the spread, and so the standard deviation, changes.
+
+<StandardDeviation />
+
+</Step>
+
+<Step title="What standard deviation means" kind="explain">
+
+Standard deviation (SD) is the **typical distance of a value from the mean**. You compute it by averaging the *squared* distances, then square-rooting:
+
+<Formula tex="\text{SD} = \sqrt{\frac{\sum (x - \bar{x})^2}{n}}" block />
+
+We square the distances so positives and negatives don't cancel, then take the root to return to the original units. A small SD means tightly clustered, predictable data; a large SD means spread out and variable.
+
+</Step>
+
+<Step title="Why it rules statistics" kind="explain">
+
+Standard deviation is everywhere serious data lives. In a typical (normal) distribution, about **68%** of values lie within 1 SD of the mean and **95%** within 2 SD — the rule behind exam grade boundaries, manufacturing tolerances, and "statistically significant" results in science. It turns "how unusual is this value?" into a precise number of standard deviations from the mean (a **z-score**).
+
+<Callout type="info" title="The bell curve">
+So many natural quantities — heights, measurement errors, test scores — pile up into the symmetric bell-shaped normal distribution, fully described by just its mean and standard deviation. SD is the ruler of that bell.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Two classes both average 60% on a test. Class A's standard deviation is 4%; class B's is 18%. What does this tell you?"
+  options={[
+    "Class A's scores are tightly clustered near 60%; class B's are widely spread",
+    "Class A scored higher overall",
+    "Class B has fewer students",
+    "Both classes have identical results"
+  ]}
+  correctIndex={0}
+  explanation="Same mean, different spread. A small SD (4%) means A's scores hug 60% closely; a large SD (18%) means B's range widely — some much higher, some much lower."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Spread** measures consistency; **standard deviation** is the key measure.
+- SD = √(average **squared** distance from the mean) — small SD = clustered, large SD = spread.
+- In a normal distribution, ~**68%** fall within 1 SD, ~**95%** within 2 SD.
+- SD underpins the **bell curve**, z-scores, and statistical significance.
+
+</Step>
+
+</Lesson>

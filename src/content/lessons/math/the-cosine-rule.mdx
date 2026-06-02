@@ -1,0 +1,75 @@
+---
+title: The Cosine Rule & Area
+subject: math
+contentSlug: math/the-cosine-rule
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Pythagoras, generalised" kind="explain">
+
+When the sine rule doesn't fit — you have two sides and the angle *between* them, or all three sides — the **cosine rule** steps in:
+
+<Formula tex="c^2 = a^2 + b^2 - 2ab\cos C" block />
+
+Look closely: it's Pythagoras (a² + b² = c²) plus a correction term that vanishes when C = 90°, because cos 90° = 0. The cosine rule *contains* Pythagoras.
+
+</Step>
+
+<Step title="Open and close the angle" kind="interactive">
+
+Swing the included angle and watch the third side — and notice 90° gives plain Pythagoras.
+
+<CosineRule />
+
+</Step>
+
+<Step title="Using it" kind="explain">
+
+Two uses, mirror images of each other:
+
+- **Find a side:** know two sides (a, b) and the angle **between** them (C) → c² = a² + b² − 2ab cos C.
+- **Find an angle:** know all three sides → rearrange to cos C = (a² + b² − c²) / 2ab, then take cos⁻¹.
+
+A triangle with sides 5 and 8 and a 60° angle between: c² = 25 + 64 − 2·5·8·cos 60° = 89 − 40 = 49, so c = 7.
+
+</Step>
+
+<Step title="The area of any triangle" kind="explain">
+
+Trig also gives a triangle's area when you know two sides and the angle between them — no need for the perpendicular height:
+
+<Formula tex="\text{Area} = \tfrac12 ab\sin C" block />
+
+It's "½ × base × height" in disguise: a sin C *is* the height when b is the base. Together, the sine rule, cosine rule and this area formula let you solve **any** triangle completely.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A triangle has sides 4 and 5 with an angle of 90° between them. Using the cosine rule, find the third side."
+  options={[
+    "√41 ≈ 6.40",
+    "9",
+    "3",
+    "√20 ≈ 4.47"
+  ]}
+  correctIndex={0}
+  explanation="c² = 4² + 5² − 2·4·5·cos 90° = 16 + 25 − 40(0) = 41, so c = √41 ≈ 6.40. With a 90° angle the cosine rule is just Pythagoras."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Cosine rule:** c² = a² + b² − 2ab cos C — Pythagoras with a correction term.
+- Use it for **two sides + included angle**, or **all three sides** (rearrange for the angle).
+- At C = 90° it reduces to **Pythagoras** (cos 90° = 0).
+- **Area = ½ ab sin C** finds a triangle's area from two sides and their angle.
+
+</Step>
+
+</Lesson>

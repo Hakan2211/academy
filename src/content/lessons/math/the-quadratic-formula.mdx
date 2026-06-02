@@ -1,0 +1,76 @@
+---
+title: The Quadratic Formula
+subject: math
+contentSlug: math/the-quadratic-formula
+order: 6
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="One formula to solve them all" kind="explain">
+
+Complete the square on the *general* quadratic ax² + bx + c = 0 — keeping a, b, c as letters — and out drops a formula that solves **every** quadratic in one step:
+
+<Formula tex="x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}" block />
+
+It's worth memorising. Identify a, b, c, substitute, and turn the handle.
+
+</Step>
+
+<Step title="Plug in a, b, c" kind="interactive">
+
+<QuadraticFormula />
+
+</Step>
+
+<Step title="The discriminant decides everything" kind="explain">
+
+The part under the root, **b² − 4ac**, is called the **discriminant**, and its sign alone tells you how many solutions exist — before you finish the sum:
+
+- **b² − 4ac > 0** → two real roots (the parabola crosses the x-axis twice).
+- **b² − 4ac = 0** → one repeated root (it just touches the axis).
+- **b² − 4ac < 0** → no real roots (it never reaches the axis; you'd need the *imaginary* numbers hinted at in World 1).
+
+</Step>
+
+<Step title="A worked example" kind="explain">
+
+Solve 2x² − 7x + 3 = 0, so a = 2, b = −7, c = 3:
+
+<Formula tex="x = \frac{7 \pm \sqrt{49 - 24}}{4} = \frac{7 \pm 5}{4} = 3 \;\text{ or }\; \tfrac{1}{2}" block />
+
+The formula never fails. Factorising is faster *when it works*; the formula is the reliable fallback that always works.
+
+<Callout type="tip" title="Watch the signs of b">
+With b = −7, the −b in the formula becomes +7. Putting b into the formula with its sign is the number-one source of errors — use brackets.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="How many real solutions does x² + 3x + 5 = 0 have?"
+  options={[
+    "None — the discriminant 9 − 20 = −11 is negative",
+    "Two real solutions",
+    "One repeated solution",
+    "Infinitely many"
+  ]}
+  correctIndex={0}
+  explanation="Discriminant = b² − 4ac = 3² − 4(1)(5) = 9 − 20 = −11 < 0. A negative discriminant means no real roots — the parabola never touches the x-axis."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **quadratic formula** x = (−b ± √(b²−4ac)) / 2a solves every quadratic.
+- The **discriminant b² − 4ac** counts the roots: positive → 2, zero → 1, negative → 0 (real).
+- Substitute a, b, c **with their signs** (use brackets).
+- Factorise when easy; reach for the formula when not.
+
+</Step>
+
+</Lesson>

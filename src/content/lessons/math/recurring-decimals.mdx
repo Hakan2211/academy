@@ -1,0 +1,82 @@
+---
+title: Recurring Decimals
+subject: math
+contentSlug: math/recurring-decimals
+order: 8
+estimatedMinutes: 10
+---
+
+<Lesson>
+
+<Step title="Why ⅓ never finishes" kind="explain">
+
+Type 1 ÷ 3 into a calculator and it answers 0.3333… forever. Yet ⅓ is a perfectly ordinary, *exact* number. So what's going on with its decimal?
+
+The answer reveals something deep: a fraction's decimal must **either stop or repeat** — it can never be random — and the reason is a beautifully simple counting argument.
+
+</Step>
+
+<Step title="Watch the remainders loop" kind="interactive">
+
+Do the long division and track the **remainders**. The moment a remainder repeats, the digits must repeat too — the division has entered a loop it can never escape.
+
+<RecurringDecimal />
+
+</Step>
+
+<Step title="The pigeonhole reason" kind="explain">
+
+When you divide by *d*, the only possible remainders are 0, 1, 2, …, *d* − 1 — just **d** options. So within at most *d* steps, either you hit remainder 0 (the decimal **terminates**) or a remainder **repeats** — and once it does, every following digit repeats in the same cycle.
+
+This is the **pigeonhole principle**: with more steps than possible remainders, a repeat is unavoidable. A fraction *cannot* produce an endless non-repeating decimal — which is exactly why irrational numbers like π are *not* fractions.
+
+</Step>
+
+<Step title="Turning a recurring decimal back into a fraction" kind="explain">
+
+The loop also lets us prove surprising equalities. Let x = 0.7777…, then multiply by 10 to shift one full cycle and subtract:
+
+<Formula tex="10x = 7.777\ldots,\quad 10x - x = 7 \;\Rightarrow\; 9x = 7 \;\Rightarrow\; x = \tfrac{7}{9}" block />
+
+The same trick delivers the famous result. Let x = 0.999…:
+
+<Formula tex="10x - x = 9 \;\Rightarrow\; 9x = 9 \;\Rightarrow\; x = 1" block />
+
+<Callout type="info" title="0.999… really does equal 1">
+This isn't a rounding fudge — it's an exact equality. 0.999… and 1 are two decimal names for the very same point on the number line, just as ½ and 0.5 are.
+</Callout>
+
+</Step>
+
+<Step title="Which fractions terminate?" kind="explain">
+
+A fraction in simplest form terminates exactly when its denominator's only prime factors are **2 and 5** — the primes of base ten. So 7/40 terminates (40 = 2³ × 5) but 1/6 recurs (6 = 2 × 3, and that stubborn 3 forces the loop). Prime factorisation strikes again.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Using the subtraction trick, what fraction equals the recurring decimal 0.4545… (with '45' repeating)?"
+  options={[
+    "5/11",
+    "45/99 = 5/11",
+    "9/20",
+    "1/45"
+  ]}
+  correctIndex={1}
+  explanation="Let x = 0.4545…; the cycle is two digits, so multiply by 100: 100x = 45.4545…, then 100x − x = 45, giving 99x = 45, so x = 45/99 = 5/11."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Every fraction's decimal **terminates or recurs** — never endless-and-random.
+- The reason is the **pigeonhole principle**: only *d* possible remainders, so one must repeat.
+- The **10ⁿ-subtraction trick** converts any recurring decimal back to a fraction (and proves 0.999… = 1).
+- A fraction terminates iff its denominator's primes are only **2 and 5**.
+
+</Step>
+
+</Lesson>

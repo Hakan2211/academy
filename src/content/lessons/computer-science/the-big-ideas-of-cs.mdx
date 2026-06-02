@@ -1,0 +1,93 @@
+---
+title: The Big Ideas of Computer Science
+subject: computer-science
+contentSlug: computer-science/the-big-ideas-of-cs
+order: 5
+estimatedMinutes: 11
+---
+
+<Lesson>
+
+<Step title="The threads that run through everything" kind="explain">
+
+This island has sixteen worlds — bits, gates, algorithms, networks, AI, and more. They can look like separate subjects, but they're held together by a handful of **big ideas** that reappear everywhere. Spotting them turns a pile of topics into one connected way of thinking.
+
+In this capstone we'll name the threads, so that when you meet them again — in a sorting algorithm, a network protocol, a neural network — you'll recognise old friends in new clothes.
+
+</Step>
+
+<Step title="Big idea 1 — Everything is information" kind="interactive">
+
+A computer doesn't know about photos, money, or music. It only knows **patterns of bits**. The genius of CS is *encoding*: agreeing on a way to represent any kind of information as numbers, and any number as bits.
+
+<ComputerModel />
+
+Whatever flows through that input → process → output loop — text, images, sound, sensor readings — has first been turned into bits. **Representation comes before computation.** That's why the very next world is about how data is stored.
+
+</Step>
+
+<Step title="Big idea 2 — Computation is following a procedure" kind="explain">
+
+The second thread: hard things get done by **mechanically following precise steps**. No insight is required at the moment of execution — just faithful, repeatable obedience to an algorithm.
+
+This is both thrilling and humbling. It means a machine with no understanding can sort a billion records, route your message across the planet, or beat a grandmaster at chess — purely by carrying out steps very fast. It also means the *cleverness* lives in the algorithm we designed, not in the machine running it.
+
+<Callout type="info" title="Speed changes what's possible">
+A procedure that's hopeless by hand becomes world-changing at a billion steps per second. Much of CS is finding procedures whose number of steps grows *slowly* as the problem grows — the study of efficiency.
+</Callout>
+
+</Step>
+
+<Step title="Big idea 3 — Abstraction tames complexity" kind="interactive">
+
+No human understands a modern computer from electrons to apps. We cope by **layering abstractions** — each hiding the complexity below behind a simple promise.
+
+<AbstractionLayers />
+
+The same trick scales software too: functions hide steps, objects hide data, libraries hide whole systems. Abstraction is how a few people can build something far bigger than any of them could hold in their head.
+
+</Step>
+
+<Step title="Big idea 4 — Automation, and its limits" kind="explain">
+
+Put the threads together and you get the grand project of computing: **automating information processing.** Anything we can represent as data and describe as a procedure, we can hand to a machine to do tirelessly, cheaply, and at scale.
+
+But there are **limits** — and they're not just about today's hardware:
+
+- Some problems are **undecidable**: no algorithm can solve them, ever (you'll meet the halting problem in the final world).
+- Some are **intractable**: solvable in principle, but needing more steps than the universe has time for.
+- And automation raises **human** questions — bias, jobs, privacy, security — that no algorithm answers for us.
+
+<Callout type="tip" title="The arc of this island">
+You'll build *up* the tower — bits → gates → architecture → algorithms → data → languages → systems → networks → web → databases → security → graphics → AI — and finish at **theory of computation**, where you'll discover the beautiful, hard edge of what computers can do at all.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Which set best captures the recurring 'big ideas' that tie computer science together?"
+  options={[
+    "Typing speed, memorising syntax, and fixing hardware",
+    "Representing information as bits, computing by following procedures, taming complexity with abstraction, and automating within real limits",
+    "Using the latest programming language and the fastest computer",
+    "Building websites and mobile apps"
+  ]}
+  correctIndex={1}
+  explanation="The unifying threads are: everything becomes information (bits); computation is faithfully following a procedure; abstraction manages complexity through layers; and computing automates information processing — powerfully, but within genuine theoretical and human limits."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Everything is information** — represented as bits before it can be computed.
+- **Computation is following a procedure** — cleverness lives in the algorithm, speed makes it powerful.
+- **Abstraction tames complexity** through layers and interfaces, in hardware *and* software.
+- The grand project is **automating information processing** — bounded by undecidability, intractability, and human consequences.
+- These threads run through all sixteen worlds, ending at the **theory of computation**.
+
+</Step>
+
+</Lesson>

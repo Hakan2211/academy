@@ -1,0 +1,67 @@
+---
+title: Index Notation
+subject: math
+contentSlug: math/index-notation
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="Powers, properly named" kind="explain">
+
+You met powers as repeated multiplication. Now the vocabulary, because the rest of this world depends on it:
+
+<Formula tex="\underbrace{a}_{\text{base}}{}^{\overbrace{n}^{\text{index}}} = \underbrace{a \times a \times \cdots \times a}_{n \text{ times}}" block />
+
+The **base** is what's multiplied; the **index** (or **exponent**, or **power**) counts how many copies. "Index notation" is just this compact shorthand — and it's the language of growth, area, volume, and very large numbers.
+
+</Step>
+
+<Step title="Climb the ladder of powers" kind="interactive">
+
+Pick a base and step the index. Each rung up multiplies by the base.
+
+<PowerExplorer />
+
+</Step>
+
+<Step title="Reading and saying them" kind="explain">
+
+- 5³ is "five to the power three" or "five cubed" = 125.
+- 2⁸ = 256 (every doubling — bytes, cell division — is a power of 2).
+- Indices apply only to what they're attached to: 3 × 2⁴ = 3 × 16 = 48, **not** 6⁴. The power binds tighter than the multiplication (remember BODMAS — Orders before ×).
+
+</Step>
+
+<Step title="Why powers matter" kind="explain">
+
+Powers grow shockingly fast. Fold a paper 42 times — 2⁴² layers — and the stack would reach the Moon. This explosive behaviour is why powers describe compound interest, populations, and computing, and why we need a tidy notation to tame the huge and the tiny.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the value of 2 × 3³?"
+  options={[
+    "54",
+    "216",
+    "18",
+    "729"
+  ]}
+  correctIndex={0}
+  explanation="The index binds only to the 3: 3³ = 27, then × 2 = 54. Treating it as (2×3)³ = 6³ = 216 is the classic slip."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Base** to the **index**: aⁿ means n copies of a multiplied.
+- The index attaches only to its base — powers come **before** ×/÷.
+- Powers grow extremely fast, so we need compact, rule-governed notation.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,79 @@
+---
+title: The Parabola
+subject: math
+contentSlug: math/the-parabola
+order: 7
+estimatedMinutes: 10
+---
+
+<Lesson>
+
+<Step title="The curve hiding everywhere" kind="explain">
+
+Every quadratic draws the same elegant curve: the **parabola**. It's the arc of a thrown ball, the cross-section of a satellite dish and a car headlight, the cable of a suspension bridge, the path of water from a fountain. Understand this one curve and you understand a huge slice of the physical world.
+
+</Step>
+
+<Step title="Anatomy of a parabola" kind="interactive">
+
+Sweep a, b and c and watch the curve respond — its direction, width, position, roots, and turning point.
+
+<ParabolaExplorer />
+
+</Step>
+
+<Step title="What each part controls" kind="explain">
+
+- **a** — opens **up** (a > 0, a valley) or **down** (a < 0, a hill); larger |a| makes it narrower.
+- **c** — the **y-intercept**, where the curve cuts the vertical axis.
+- The **vertex** is the turning point, on the **axis of symmetry** at x = −b/2a; the curve is a perfect mirror image either side.
+- The **roots** are where it crosses the x-axis — the solutions of ax² + bx + c = 0.
+
+</Step>
+
+<Step title="The discriminant, seen" kind="explain">
+
+The discriminant b² − 4ac becomes visual on the graph — it's simply **how the parabola meets the x-axis**:
+
+<Formula tex="b^2 - 4ac > 0 \;(\text{2 crossings}), \;\; = 0 \;(\text{just touches}), \;\; < 0 \;(\text{misses})" block />
+
+A ball's flight makes this concrete: "when does height = 0?" has two answers (launch and landing), one (a ball rolling off at ground level), or none (a path that never reaches the ground), exactly mirroring the discriminant.
+
+</Step>
+
+<Step title="Why a parabola, physically" kind="explain">
+
+The reason projectiles trace parabolas is beautiful: horizontal distance grows **steadily** with time (x ∝ t), but gravity makes the fall grow with **time squared** (drop ∝ t²). Eliminate time and height becomes a quadratic in horizontal distance — a parabola. The squared term in algebra *is* the constant pull of gravity. Algebra and the physical world meet in this one curve.
+
+<Callout type="info" title="A focusing magic">
+Every parabola has a focus point. Rays coming straight in all bounce to that single focus — which is why dishes collect faint signals there, and why a headlight's bulb at the focus throws a parallel beam. The shape isn't decorative; its geometry does the work.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A ball's height is h = −5t² + 20t (metres, after t seconds). When does it hit the ground again?"
+  options={[
+    "t = 4 s",
+    "t = 20 s",
+    "t = 5 s",
+    "t = 2 s"
+  ]}
+  correctIndex={0}
+  explanation="Ground means h = 0: −5t² + 20t = 0 → −5t(t − 4) = 0 → t = 0 (launch) or t = 4 (landing). The two roots are the start and end of the flight; t = 2 is the vertex, the highest point."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Every quadratic graphs a **parabola** — projectiles, dishes, bridges, fountains.
+- **a** sets direction/width, **c** the y-intercept, the **vertex** sits at x = −b/2a on the axis of symmetry.
+- The **discriminant** is visible: 2 crossings, 1 touch, or 0 — how the curve meets the x-axis.
+- Projectiles are parabolic because distance ∝ t but fall ∝ t² — the squared term is gravity.
+
+</Step>
+
+</Lesson>
