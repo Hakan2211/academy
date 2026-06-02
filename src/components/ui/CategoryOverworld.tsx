@@ -160,12 +160,37 @@ const LAYOUT_18: Array<Pt> = [
   { x: 49, y: 10, scale: 0.59 }, // summit
 ]
 
+// Hand-tuned winding path for a 17-world trail (Psychology). Sits between the 16
+// and 18 trails: one fewer slalom than Math over the same vertical span, so the
+// orbs run a touch larger and the wide meander (x ~27->77 in the foreground,
+// amplitude receding toward the summit) keeps neighbours well apart.
+const LAYOUT_17: Array<Pt> = [
+  { x: 72, y: 88, scale: 0.94 },
+  { x: 49, y: 83.5, scale: 0.9 },
+  { x: 27, y: 79, scale: 0.86 },
+  { x: 42, y: 74.5, scale: 0.82 },
+  { x: 65, y: 70, scale: 0.79 },
+  { x: 77, y: 65.5, scale: 0.76 },
+  { x: 58, y: 61, scale: 0.73 },
+  { x: 35, y: 56.5, scale: 0.7 },
+  { x: 46, y: 52, scale: 0.67 },
+  { x: 66, y: 47.5, scale: 0.64 },
+  { x: 57, y: 43, scale: 0.62 },
+  { x: 39, y: 38.5, scale: 0.6 },
+  { x: 47, y: 34, scale: 0.58 },
+  { x: 60, y: 29.5, scale: 0.56 },
+  { x: 53, y: 24.5, scale: 0.55 },
+  { x: 44, y: 18.5, scale: 0.54 },
+  { x: 49, y: 11, scale: 0.6 }, // summit
+]
+
 // Hand-tuned trails keyed by world count; subjects matching a count share the
 // even, wide meander. Anything else falls back to the procedural genLayout.
 const HAND_LAYOUTS: Record<number, Array<Pt>> = {
   12: LAYOUT_12,
   14: LAYOUT_14,
   16: LAYOUT_16,
+  17: LAYOUT_17,
   18: LAYOUT_18,
 }
 

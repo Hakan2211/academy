@@ -1,0 +1,102 @@
+---
+title: Hearing
+subject: psychology
+contentSlug: psychology/hearing
+order: 5
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Reading the air" kind="explain">
+
+Sound is nothing but moving air. When something vibrates — a string, a voice, a slamming door — it pushes the air around it into a travelling pattern of **pressure waves**: regions where molecules bunch up, then spread apart, rippling outward at about 340 metres per second.
+
+Your task, as a hearing animal, is to read those invisible ripples and turn them into the rich world of speech and music. The astonishing part is how *much* you extract — not just loud-or-soft, but pitch, timbre, rhythm, and the direction a sound came from, all from a wobble in the air pressing on a membrane the size of a fingernail.
+
+Two properties of the wave carry most of the information.
+
+</Step>
+
+<Step title="Frequency and amplitude" kind="explain">
+
+A sound wave has two key dimensions, and each maps onto a different perception:
+
+- **Frequency** — how many pressure cycles pass per second, measured in **hertz (Hz)**. This is what you hear as **pitch**: high frequency → high pitch, low frequency → low pitch. Healthy young humans hear roughly **20 Hz to 20,000 Hz**.
+- **Amplitude** — the *size* of the pressure swings. This is what you hear as **loudness**, measured in **decibels (dB)**. Bigger waves → louder sound.
+
+These two are independent: a note can be high *and* quiet, or low *and* loud. Keep them straight and most of hearing falls into place.
+
+</Step>
+
+<Step title="See a sound wave" kind="interactive">
+
+Here's a travelling wave like the one a pure tone makes in the air. Raise the **amplitude** and imagine it getting louder; raise the **frequency** and imagine the pitch climbing.
+
+<WaveLab />
+
+A real sound is many such waves layered together — that blend of frequencies is what makes a violin and a flute playing the same note sound utterly different. That quality is called **timbre**.
+
+</Step>
+
+<Step title="The ear: three stages" kind="explain">
+
+The ear's job is to capture those faint pressure waves and deliver them, transduced, to the brain. It works in three sections, handing the signal along like a relay:
+
+- **Outer ear** — the visible **pinna** funnels sound into the **ear canal**, which channels it to the eardrum.
+- **Middle ear** — the **eardrum** vibrates with the wave, and three tiny bones (the **ossicles** — hammer, anvil, stirrup) lever and *amplify* that vibration.
+- **Inner ear** — the stirrup pushes on the **cochlea**, a coiled, fluid-filled tube. The vibration becomes a wave travelling along its length, bending tiny **hair cells** that transduce motion into nerve impulses for the **auditory nerve**.
+
+</Step>
+
+<Step title="Trace a sound through the ear" kind="interactive">
+
+Follow the path. Click each part to learn its role, and watch the vibration travel from the pinna all the way to the hair cells, where hearing finally becomes a neural signal.
+
+<EarViewer />
+
+Those hair cells are precious and fragile. Loud sound can shear them off — and unlike many cells, they **don't grow back**. That's why a lifetime of loud headphones or concerts quietly steals the high frequencies first.
+
+</Step>
+
+<Step title="How the cochlea codes pitch" kind="explain">
+
+So a vibration reaches the cochlea — but how does the brain know *which pitch* it was? Two mechanisms work together, covering different frequency ranges.
+
+- **Place theory** — the cochlea's membrane is stiff at one end and floppy at the other, so different frequencies peak at different *places* along it. High pitches stir hair cells near the entrance, low pitches deep inside. The brain reads pitch from **which hair cells** fire. This handles **high** frequencies well.
+- **Frequency theory** — for **low** sounds, the whole membrane fires impulses at the *same rate* as the sound wave. A 100 Hz tone makes the nerve fire 100 times a second. The brain reads pitch from the **firing rate**.
+
+Neither alone covers the whole range — place theory falters for very low tones, frequency theory for very high ones (neurons can't fire fast enough). Together, they span everything you hear.
+
+<Callout type="info" title="The volley principle">
+Above about 1000 Hz, single neurons can't fire fast enough to match the sound. Instead, groups of neurons take turns firing in rapid *volleys* — so the combined signal still matches the wave even when no single cell could keep up.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A singer holds the same musical note (same pitch) but gradually sings it louder. Which property of the sound wave is changing?"
+  options={[
+    "Its frequency increases",
+    "Its amplitude increases",
+    "Its wavelength decreases",
+    "Its timbre changes"
+  ]}
+  correctIndex={1}
+  explanation="Pitch is determined by frequency, and the note's pitch is staying the same — so frequency is constant. Loudness corresponds to amplitude (the size of the pressure swings), measured in decibels. Singing louder at the same pitch means increasing amplitude while frequency stays fixed."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Sound is travelling **pressure waves** in the air. **Frequency** (Hz) is heard as **pitch**; **amplitude** (dB) is heard as **loudness**. Humans hear roughly **20–20,000 Hz**.
+- The ear works in three stages: **outer** (pinna, canal) funnels, **middle** (eardrum + ossicles) amplifies, **inner** (cochlea, hair cells) transduces.
+- **Hair cells** convert vibration to nerve impulses and **do not regenerate** — loud sound permanently harms hearing.
+- Pitch is coded two ways: **place theory** (which hair cells fire — high frequencies) and **frequency theory** (firing rate — low frequencies), with the **volley principle** bridging the middle.
+
+</Step>
+
+</Lesson>

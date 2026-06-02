@@ -1,0 +1,84 @@
+---
+title: The Experiment
+subject: psychology
+contentSlug: psychology/the-experiment
+order: 3
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="The one method that shows cause" kind="explain">
+
+Observation and case studies can tell you that two things go *together*. Only one method can tell you that one thing **causes** another: the **experiment**. Its trick is simple but powerful — instead of passively watching, you actively **change one thing** and see what happens.
+
+That deliberately changed thing is the **independent variable** (IV) — the suspected cause. The thing you measure in response is the **dependent variable** (DV) — the effect, which *depends* on the IV. Caffeine versus no caffeine is the IV; reaction time is the DV.
+
+</Step>
+
+<Step title="Two groups, treated the same — except one thing" kind="explain">
+
+To see the effect of your IV, you compare groups:
+
+- The **experimental group** gets the treatment (the real caffeine).
+- The **control group** gets everything *identical* except the treatment (a decaf that looks and tastes the same).
+
+If the only difference between the groups is the IV, then any difference in the DV at the end must be **caused by the IV**. The control group is your "what would have happened anyway" baseline. Without it, you'd have nothing to compare against.
+
+</Step>
+
+<Step title="Random assignment: the secret ingredient" kind="explain">
+
+Here's the catch: people differ wildly before your study even begins — in sleep, motivation, talent, mood. If those differences pile up unevenly into your two groups, you can't tell whether the IV or the people produced the result.
+
+The fix is **random assignment**: every participant has an equal chance of landing in either group (a coin flip). Randomising doesn't make the groups identical, but it makes them **equivalent on average** — the differences scatter evenly. It is the single feature that turns a comparison into a true experiment.
+
+</Step>
+
+<Step title="Confounds: the lurking spoiler" kind="explain">
+
+A **confound** is any variable *other than the IV* that differs between your groups and could explain the result. Test caffeine in the morning and decaf at night, and "time of day" is now confounded with your treatment — you'll never untangle which one moved the DV.
+
+Two more guards against confounds, especially for expectations:
+
+- **Placebo** — give the control group a fake treatment that's indistinguishable from the real one, so *believing* you got the drug can't masquerade as the drug's effect.
+- **Double-blind** — neither the participants *nor* the researchers measuring them know who got the real treatment, shutting down both placebo effects and experimenter expectancy at once.
+
+</Step>
+
+<Step title="Design one yourself" kind="interactive">
+
+Build a small experiment: pick what you'll change, what you'll measure, and how you'll assign people to groups. Some assignment choices quietly smuggle in a confound — watch for the warning, and see what fixes it.
+
+<ExperimentDesigner />
+
+Try the sloppy options on purpose. Letting people choose their own group, or sorting them by a trait, breaks the one rule that gives experiments their power: groups equivalent *before* the manipulation.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A study finds a new drug group improved more than a control group. Critics note the drug group also attended weekly support meetings the control group didn't. The support meetings are best described as:"
+  options={[
+    "The dependent variable",
+    "A placebo",
+    "A confound — an extra difference between the groups that could explain the result",
+    "Random assignment"
+  ]}
+  correctIndex={2}
+  explanation="The groups differed in more than the IV: one also got support meetings. That extra, uncontrolled difference is a confound — the improvement might be due to the meetings, not the drug, and the design can't tell them apart."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- An **experiment** establishes cause by deliberately changing the **independent variable** and measuring the **dependent variable**.
+- The **control group** is the no-treatment baseline; compare it with the **experimental group** to isolate the IV's effect.
+- **Random assignment** makes groups equivalent on average — the feature that licenses causal claims.
+- A **confound** is any other difference between groups that could explain the result; **placebos** and **double-blind** procedures shut out expectation effects.
+
+</Step>
+
+</Lesson>

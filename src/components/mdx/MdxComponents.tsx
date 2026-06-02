@@ -398,6 +398,133 @@ import { TuringMachine } from './TuringMachine'
 import { HaltingProblem } from './HaltingProblem'
 import { ComplexityClasses } from './ComplexityClasses'
 import { DecidabilityMap } from './DecidabilityMap'
+// --- Psychology ---
+import { ABCModel } from './ABCModel'
+import { AbnormalCriteria } from './AbnormalCriteria'
+import { AmbiguousFigures } from './AmbiguousFigures'
+import { AnxietyCycle } from './AnxietyCycle'
+import { AnxietyDisorders } from './AnxietyDisorders'
+import { AschConformity } from './AschConformity'
+import { AttachmentStyles } from './AttachmentStyles'
+import { AttributionError } from './AttributionError'
+import { AttributionStyle } from './AttributionStyle'
+import { BigFive } from './BigFive'
+import { BiopsychosocialModel } from './BiopsychosocialModel'
+import { BipolarMood } from './BipolarMood'
+import { BlindSpotDemo } from './BlindSpotDemo'
+import { BoboDoll } from './BoboDoll'
+import { BrainImaging } from './BrainImaging'
+import { BystanderEffect } from './BystanderEffect'
+import { CBTThoughtRecord } from './CBTThoughtRecord'
+import { CharacterStrengths } from './CharacterStrengths'
+import { ChunkingDemo } from './ChunkingDemo'
+import { CircadianClock } from './CircadianClock'
+import { ClassicalConditioning } from './ClassicalConditioning'
+import { CognitiveDissonance } from './CognitiveDissonance'
+import { CognitiveTriad } from './CognitiveTriad'
+import { ColorBlindTest } from './ColorBlindTest'
+import { ColorVision } from './ColorVision'
+import { ConceptPrototype } from './ConceptPrototype'
+import { ConditioningProcesses } from './ConditioningProcesses'
+import { ConfirmationBias } from './ConfirmationBias'
+import { ConsciousnessLevels } from './ConsciousnessLevels'
+import { ConservationTask } from './ConservationTask'
+import { CopingStrategies } from './CopingStrategies'
+import { CorrelationScatter } from './CorrelationScatter'
+import { DSMExplorer } from './DSMExplorer'
+import { DefenseMechanisms } from './DefenseMechanisms'
+import { DepthCues } from './DepthCues'
+import { DescriptiveStats } from './DescriptiveStats'
+import { DevelopmentMethods } from './DevelopmentMethods'
+import { DiathesisStress } from './DiathesisStress'
+import { DreamTheories } from './DreamTheories'
+import { EarViewer } from './EarViewer'
+import { EmotionTheories } from './EmotionTheories'
+import { EmotionWheel } from './EmotionWheel'
+import { EriksonStages } from './EriksonStages'
+import { EthicsScenarios } from './EthicsScenarios'
+import { ExperimentDesigner } from './ExperimentDesigner'
+import { ExposureExtinction } from './ExposureExtinction'
+import { EyeViewer } from './EyeViewer'
+import { FacialExpressions } from './FacialExpressions'
+import { FacialFeedback } from './FacialFeedback'
+import { FalseMemory } from './FalseMemory'
+import { FlowChannel } from './FlowChannel'
+import { FlynnEffect } from './FlynnEffect'
+import { ForgettingCurve } from './ForgettingCurve'
+import { FramingDemo } from './FramingDemo'
+import { FreudIceberg } from './FreudIceberg'
+import { GASCurve } from './GASCurve'
+import { GestaltGrouping } from './GestaltGrouping'
+import { GoalsOfPsychology } from './GoalsOfPsychology'
+import { GrowthMindset } from './GrowthMindset'
+import { HappinessFactors } from './HappinessFactors'
+import { HedonicTreadmill } from './HedonicTreadmill'
+import { HemisphereLab } from './HemisphereLab'
+import { Heritability } from './Heritability'
+import { HeuristicsLab } from './HeuristicsLab'
+import { HungerRegulation } from './HungerRegulation'
+import { IQItems } from './IQItems'
+import { IllusionGallery } from './IllusionGallery'
+import { ImplicitBias } from './ImplicitBias'
+import { IntelligenceTheories } from './IntelligenceTheories'
+import { KohlbergDilemma } from './KohlbergDilemma'
+import { LanguageStructure } from './LanguageStructure'
+import { LinguisticRelativity } from './LinguisticRelativity'
+import { LocusOfControl } from './LocusOfControl'
+import { LoveTriangle } from './LoveTriangle'
+import { MaslowPyramid } from './MaslowPyramid'
+import { MeditationBreath } from './MeditationBreath'
+import { MemorySpan } from './MemorySpan'
+import { MemoryStages } from './MemoryStages'
+import { MemoryTypes } from './MemoryTypes'
+import { MilgramObedience } from './MilgramObedience'
+import { Mnemonics } from './Mnemonics'
+import { MotivationTheories } from './MotivationTheories'
+import { MultipleIntelligences } from './MultipleIntelligences'
+import { Neuroplasticity } from './Neuroplasticity'
+import { NormalCurve } from './NormalCurve'
+import { ObjectPermanence } from './ObjectPermanence'
+import { OperantBox } from './OperantBox'
+import { PValueSim } from './PValueSim'
+import { PerceptualConstancy } from './PerceptualConstancy'
+import { PersonalityTests } from './PersonalityTests'
+import { PersuasionRoutes } from './PersuasionRoutes'
+import { PiagetStages } from './PiagetStages'
+import { PrenatalTimeline } from './PrenatalTimeline'
+import { ProblemSolving } from './ProblemSolving'
+import { PsychPerspectives } from './PsychPerspectives'
+import { PsychTimeline } from './PsychTimeline'
+import { PsychosexualStages } from './PsychosexualStages'
+import { ReciprocalDeterminism } from './ReciprocalDeterminism'
+import { ReinforcementMatrix } from './ReinforcementMatrix'
+import { ReinforcementSchedules } from './ReinforcementSchedules'
+import { ReliabilityValidity } from './ReliabilityValidity'
+import { RewardPathway } from './RewardPathway'
+import { SamplingDemo } from './SamplingDemo'
+import { Schizophrenia } from './Schizophrenia'
+import { SerialPosition } from './SerialPosition'
+import { Shaping } from './Shaping'
+import { SleepDisorders } from './SleepDisorders'
+import { SleepHypnogram } from './SleepHypnogram'
+import { StanfordPrison } from './StanfordPrison'
+import { StereotypeThreat } from './StereotypeThreat'
+import { StigmaMythFacts } from './StigmaMythFacts'
+import { StressResponse } from './StressResponse'
+import { StressScale } from './StressScale'
+import { StudyScience } from './StudyScience'
+import { SubfieldExplorer } from './SubfieldExplorer'
+import { SynapseViz } from './SynapseViz'
+import { SystematicDesensitization } from './SystematicDesensitization'
+import { TeenBrain } from './TeenBrain'
+import { TherapyApproaches } from './TherapyApproaches'
+import { TherapyEffectiveness } from './TherapyEffectiveness'
+import { ThresholdLab } from './ThresholdLab'
+import { TransductionFlow } from './TransductionFlow'
+import { TrolleyProblem } from './TrolleyProblem'
+import { WellBeingModel } from './WellBeingModel'
+import { WorkingMemory } from './WorkingMemory'
+import { YerkesDodson } from './YerkesDodson'
 
 // Injected globally via <MDXProvider> so authored .mdx can use these directly.
 export const mdxComponents = {
@@ -805,6 +932,134 @@ export const mdxComponents = {
   HaltingProblem,
   ComplexityClasses,
   DecidabilityMap,
+
+  // Psychology
+  ABCModel,
+  AbnormalCriteria,
+  AmbiguousFigures,
+  AnxietyCycle,
+  AnxietyDisorders,
+  AschConformity,
+  AttachmentStyles,
+  AttributionError,
+  AttributionStyle,
+  BigFive,
+  BiopsychosocialModel,
+  BipolarMood,
+  BlindSpotDemo,
+  BoboDoll,
+  BrainImaging,
+  BystanderEffect,
+  CBTThoughtRecord,
+  CharacterStrengths,
+  ChunkingDemo,
+  CircadianClock,
+  ClassicalConditioning,
+  CognitiveDissonance,
+  CognitiveTriad,
+  ColorBlindTest,
+  ColorVision,
+  ConceptPrototype,
+  ConditioningProcesses,
+  ConfirmationBias,
+  ConsciousnessLevels,
+  ConservationTask,
+  CopingStrategies,
+  CorrelationScatter,
+  DSMExplorer,
+  DefenseMechanisms,
+  DepthCues,
+  DescriptiveStats,
+  DevelopmentMethods,
+  DiathesisStress,
+  DreamTheories,
+  EarViewer,
+  EmotionTheories,
+  EmotionWheel,
+  EriksonStages,
+  EthicsScenarios,
+  ExperimentDesigner,
+  ExposureExtinction,
+  EyeViewer,
+  FacialExpressions,
+  FacialFeedback,
+  FalseMemory,
+  FlowChannel,
+  FlynnEffect,
+  ForgettingCurve,
+  FramingDemo,
+  FreudIceberg,
+  GASCurve,
+  GestaltGrouping,
+  GoalsOfPsychology,
+  GrowthMindset,
+  HappinessFactors,
+  HedonicTreadmill,
+  HemisphereLab,
+  Heritability,
+  HeuristicsLab,
+  HungerRegulation,
+  IQItems,
+  IllusionGallery,
+  ImplicitBias,
+  IntelligenceTheories,
+  KohlbergDilemma,
+  LanguageStructure,
+  LinguisticRelativity,
+  LocusOfControl,
+  LoveTriangle,
+  MaslowPyramid,
+  MeditationBreath,
+  MemorySpan,
+  MemoryStages,
+  MemoryTypes,
+  MilgramObedience,
+  Mnemonics,
+  MotivationTheories,
+  MultipleIntelligences,
+  Neuroplasticity,
+  NormalCurve,
+  ObjectPermanence,
+  OperantBox,
+  PValueSim,
+  PerceptualConstancy,
+  PersonalityTests,
+  PersuasionRoutes,
+  PiagetStages,
+  PrenatalTimeline,
+  ProblemSolving,
+  PsychPerspectives,
+  PsychTimeline,
+  PsychosexualStages,
+  ReciprocalDeterminism,
+  ReinforcementMatrix,
+  ReinforcementSchedules,
+  ReliabilityValidity,
+  RewardPathway,
+  SamplingDemo,
+  Schizophrenia,
+  SerialPosition,
+  Shaping,
+  SleepDisorders,
+  SleepHypnogram,
+  StanfordPrison,
+  StereotypeThreat,
+  StigmaMythFacts,
+  StressResponse,
+  StressScale,
+  StudyScience,
+  SubfieldExplorer,
+  SynapseViz,
+  SystematicDesensitization,
+  TeenBrain,
+  TherapyApproaches,
+  TherapyEffectiveness,
+  ThresholdLab,
+  TransductionFlow,
+  TrolleyProblem,
+  WellBeingModel,
+  WorkingMemory,
+  YerkesDodson,
 
   // Styled base elements for a polished read
   h1: (p: ComponentProps<'h1'>) => (

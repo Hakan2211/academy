@@ -1,0 +1,105 @@
+---
+title: Colour Vision
+subject: psychology
+contentSlug: psychology/color-vision
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Colour is in your head" kind="explain">
+
+Here is a fact that sounds like a riddle: **colour does not exist in the world.** Out there are only electromagnetic waves of different lengths. A "red" rose is reflecting light of a wavelength around 700 nanometres — but the *redness* is something your nervous system manufactures. Colour is a creation of the brain, a useful label it paints onto wavelength.
+
+So how does the brain build colour from raw light? For over a century, two theories competed to explain it. The surprising resolution: **both are right**, at different stages of the visual system. Let's take them in order.
+
+</Step>
+
+<Step title="The trichromatic theory: three cones" kind="explain">
+
+The first answer comes from the retina itself. You don't have a separate receptor for every colour — you have just **three** types of **cone**, each most sensitive to a different range of wavelengths: roughly **red**, **green** and **blue**.
+
+Every colour you see is your brain's reading of the *ratio* in which these three cones fire. Pure yellow light and a mix of red + green light fire the cones in nearly the same pattern — so they look identical to you, even though they're physically different. This is the **trichromatic** (three-colour) theory, and it's exactly why screens work: a TV has no yellow pixels, only red, green and blue lights it mixes to fool your three cones.
+
+This is **additive** colour mixing — adding lights together. (It's the opposite of mixing paints, which *subtract* light.)
+
+</Step>
+
+<Step title="Mix the light yourself" kind="interactive">
+
+Try the trichromatic idea directly. Combine red, green and blue *light* and watch any colour emerge from just three channels — the same trick your three cone types and every screen rely on.
+
+<ColorVision />
+
+(Keep this open — we'll come back to the second tab in a moment.)
+
+</Step>
+
+<Step title="The opponent-process theory: pairs that fight" kind="explain">
+
+Three cones can't explain everything. Why can you imagine a "reddish-yellow" (orange) but never a "reddish-green"? Why do afterimages appear in the *opposite* colour? The trichromatic theory is silent on this.
+
+The answer is the **opponent-process theory**. *After* the cones, signals feed into channels organised as **opposing pairs**: **red–green**, **blue–yellow**, and **black–white**. Each channel can swing one way or the other, but not both. A channel can't be red *and* green at once — which is exactly why "reddish-green" is unimaginable.
+
+So the two theories aren't rivals; they're **stages**. Trichromatic at the receptors, opponent-process in the wiring just beyond them.
+
+</Step>
+
+<Step title="Afterimages: opponent channels in action" kind="explain">
+
+The opponent system makes a striking, testable prediction. Stare hard at a coloured shape and you *fatigue* one side of an opponent pair — say, the red side of red–green. Look away to a blank white surface, and the rested green side suddenly over-fires, painting a **green afterimage** where the red shape was.
+
+The afterimage is always the **complement** — the opposite member of the opponent pair. Red gives green, blue gives yellow, and vice versa. Go back to the afterimage tab in the demo above, hold your stare, then release onto the blank field, and watch the ghost appear in the opposite colour. That faint coloured ghost is a direct window onto how your visual system is wired.
+
+</Step>
+
+<Step title="Colour blindness" kind="explain">
+
+Because colour depends on those three cone types, problems with a cone type change which colours a person can tell apart. The most common form is **red–green colour blindness**, where the red or green cone pigment is missing or shifted, so certain reds and greens look the same.
+
+It's far more common in men (around 8%) than women (under 1%) because the genes for those pigments sit on the **X chromosome** — men, with a single X, have no backup copy. People with the condition see a full, vivid world; they simply can't separate hues that the rest of us split apart.
+
+<Callout type="info" title="Why design matters">
+This is why good charts, maps and traffic systems never rely on red-versus-green *alone* — they add shape, position or labels, so the information survives for everyone.
+</Callout>
+
+</Step>
+
+<Step title="See colour blindness from the inside" kind="interactive">
+
+The classic test for colour deficiency is an **Ishihara plate**: a number hidden in a field of coloured dots, visible only if you can tell the figure's hue from the background's. Flip the toggle to simulate red-green colour blindness and watch the number simply disappear.
+
+<ColorBlindTest />
+
+For someone with the deficiency, the number was never there to begin with — a quiet reminder that even something as basic as colour is a private construction, not a fixed feature of the world.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You stare at a bright green square for 30 seconds, then look at a white wall and see a faint reddish ghost. Which theory of colour vision best explains this afterimage?"
+  options={[
+    "The trichromatic theory — three cones mixing red, green and blue",
+    "The opponent-process theory — fatiguing one side of the red–green channel lets the opposite side rebound",
+    "Sensory adaptation of the lens",
+    "The blind spot filling in the missing colour"
+  ]}
+  correctIndex={1}
+  explanation="Afterimages appear in the complementary colour and are explained by the opponent-process theory. Staring at green fatigues the green side of the red–green opponent channel; when you look away, the rested red side over-fires, producing a red afterimage. The trichromatic theory describes the cones but can't account for complementary afterimages — both theories operate, at different stages."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Colour is constructed by the brain** from wavelength — it isn't a property of the world itself.
+- **Trichromatic theory:** the retina has **three cone types** (red, green, blue); colour is the ratio of their firing. This is why **additive** mixing of three lights makes any colour, and why screens work.
+- **Opponent-process theory:** beyond the cones, signals run in opposing pairs (**red–green, blue–yellow, black–white**) — explaining why "reddish-green" is impossible and why **afterimages** appear in the complementary colour.
+- The two theories are **stages**, not rivals — both are correct.
+- **Red–green colour blindness** comes from a missing/shifted cone pigment, is X-linked (commoner in men), and is why good design never relies on colour alone.
+
+</Step>
+
+</Lesson>

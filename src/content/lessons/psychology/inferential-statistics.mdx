@@ -1,0 +1,117 @@
+---
+title: From Sample to Truth
+subject: psychology
+contentSlug: psychology/inferential-statistics
+order: 8
+estimatedMinutes: 12
+---
+
+<Lesson>
+
+<Step title="The leap nobody can avoid" kind="explain">
+
+You can never measure everyone. You study a few hundred people — a **sample** — yet you want to say something about the millions you'll never meet — the **population**. That leap from sample to population is the entire job of **inferential statistics**: using what you saw in the few to make a careful, quantified bet about the many.
+
+Every poll, every clinical trial, every "studies show…" headline rests on this leap. The rest of this lesson is about doing it honestly — and spotting when others don't.
+
+</Step>
+
+<Step title="Why the sample must be representative" kind="explain">
+
+The leap only works if your sample fairly mirrors the population. The gold standard is a **random sample**, where every member of the population has an equal chance of being chosen. Randomness is what stops the sample from quietly over-representing one kind of person.
+
+Get this wrong and you get **sampling bias** — and bias is *not* fixed by collecting more data. A 1936 magazine famously polled millions of people and confidently predicted the wrong winner of a US election, because its giant sample was drawn from car and phone owners: wealthier, and unrepresentative. Millions of biased responses are still biased.
+
+</Step>
+
+<Step title="Watch a sample chase the truth" kind="interactive">
+
+Here's a whole population of dots. Draw a random sample and compare its mean to the true population mean; then drag the sample size up.
+
+<SamplingDemo />
+
+Two lessons live here. With a **random** sample, growing *n* shrinks the error toward zero — the **law of large numbers**. But flip on the **biased** sample and watch the error refuse to close no matter how large *n* grows. Size cures random noise; only fair sampling cures bias.
+
+</Step>
+
+<Step title="The normal curve as a ruler" kind="explain">
+
+So many natural measurements — and, crucially, the *means of repeated samples* — follow the bell-shaped **normal distribution** that it becomes a measuring stick. Its great gift is that the percentage of values falling within any band of standard deviations is fixed and known: about **68%** within ±1 SD of the mean, **95%** within ±2, and **99.7%** within ±3.
+
+That lets us convert any raw score into a **z-score** — how many SDs it sits from the mean — and instantly read off how unusual it is. Drag the marker and watch a score become a z-score and a percentile.
+
+<NormalCurve />
+
+Hold onto that idea of "how far out in the tail" — it's about to become the heart of a p-value.
+
+</Step>
+
+<Step title="Statistical significance and the p-value" kind="explain">
+
+Suppose your treatment group beats your control group. Could that gap just be luck — the kind of difference you'd see by chance even if the treatment did nothing? To answer, statisticians start from the **null hypothesis**: the assumption that there's *no real effect*, and any difference is chance.
+
+The **p-value** is the probability of getting a result *at least as extreme* as yours **if the null hypothesis were true**. A small p means "a fluke this big would be rare" — so the no-effect story looks implausible. By convention, **p < .05** is called **statistically significant**: a result this extreme would happen by chance less than 5% of the time.
+
+</Step>
+
+<Step title="Shade the tail" kind="interactive">
+
+This bell is the range of results you'd expect *if nothing were really going on*. Slide your observed result outward and watch the tail beyond it shade — that shaded area **is** the p-value.
+
+<PValueSim />
+
+Push your result far into the tail and p collapses toward zero: a result that far out is hard to dismiss as luck. Pull it back near the center and p balloons — exactly what you'd expect from chance alone.
+
+</Step>
+
+<Step title="Significant is not the same as important" kind="explain">
+
+Here's where smart people get fooled. "Statistically significant" only means *probably not pure chance*. It says **nothing** about how *big* or *useful* the effect is.
+
+- With a huge sample, a *trivial* difference — a third of a point on a 100-point scale — can be highly "significant" yet matter to no one. That's where **effect size** comes in: a separate measure of *how large* the effect is.
+- p < .05 still means a real result could be a fluke up to 1 time in 20 — which is why a single study is never the last word, and **replication** matters.
+
+<Callout type="warn" title="p-hacking">
+Test enough variables and *something* will cross p < .05 by chance alone. Researchers who quietly run dozens of comparisons and report only the "significant" ones are p-hacking — manufacturing flukes. Pre-registering the planned analysis is the modern guard.
+</Callout>
+
+</Step>
+
+<Step title="Be a critical consumer" kind="explain">
+
+You'll meet statistics far more often as a reader than as a researcher. A few questions defuse most misleading claims:
+
+- **Who was sampled, and how?** A biased or tiny sample sinks everything downstream.
+- **Significant — but how big?** Always ask for the effect size, not just the p-value.
+- **Correlation or experiment?** Only a controlled experiment with random assignment supports a causal claim.
+- **Has it replicated?** One study is a hint; a finding that holds up across labs is knowledge.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A study of 50,000 people finds a 'statistically significant' (p < .001) effect: a supplement raises test scores by an average of 0.2 points out of 100. What's the most accurate takeaway?"
+  options={[
+    "The supplement has a large, important effect on test scores",
+    "The result is almost certainly a measurement error",
+    "The effect is very unlikely to be pure chance, but it's tiny — statistical significance isn't the same as a meaningful effect size",
+    "A small p-value proves the supplement causes higher scores with certainty"
+  ]}
+  correctIndex={2}
+  explanation="A huge sample can make even a trivial effect statistically significant — p just says the gap probably isn't pure chance. The effect size (0.2 points) tells you it's practically meaningless. Significance and importance are different questions, and no p-value proves anything with certainty."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Inferential statistics** generalise from a **sample** to a **population** — a leap that only works with a **representative (ideally random) sample**.
+- **Sampling bias** is not cured by a bigger sample; the **law of large numbers** only shrinks *random* error.
+- The **normal curve** (68–95–99.7) turns scores into **z-scores** and underlies how we judge a result's rarity.
+- A **p-value** is the chance of a result this extreme *if the null (no effect) were true*; **p < .05** is the usual bar for **statistical significance**.
+- Significance ≠ importance: always ask about **effect size**, **sampling**, whether it's correlational or experimental, and whether it **replicated**.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,99 @@
+---
+title: Measuring Intelligence
+subject: psychology
+contentSlug: psychology/measuring-intelligence
+order: 3
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="From idea to number" kind="explain">
+
+It's one thing to argue about what intelligence *is*. It's another to *measure* it — to turn that slippery word into a number you can compare across millions of people. The story of how psychologists pulled this off is full of good intentions, clever maths, and cautionary lessons.
+
+It begins, oddly, with a practical school problem in Paris.
+
+</Step>
+
+<Step title="Binet and the birth of mental age" kind="explain">
+
+In 1905 the French government asked **Alfred Binet** to find children who needed extra help in school. He and Théodore Simon built a test of reasoning, memory and problem-solving — and made a crucial move. They asked: *what can a typical child of each age do?*
+
+From this came **mental age**. A child who solves the problems a typical 8-year-old can solve has a mental age of 8 — regardless of their actual age. A 6-year-old with a mental age of 8 is ahead; a 10-year-old with a mental age of 8 is behind.
+
+Binet was careful: he saw this as a tool to *help* struggling children, **not** a fixed measure of worth or a ranking of human value. That caution would soon be forgotten by others — a thread we'll pick up in the final lesson.
+
+</Step>
+
+<Step title="The IQ formula" kind="explain">
+
+The German psychologist William Stern turned mental age into a single ratio, and Lewis Terman brought it to America as the **intelligence quotient (IQ)**:
+
+<Formula tex="\text{IQ} = \frac{\text{mental age}}{\text{chronological age}} \times 100" block />
+
+Multiplying by 100 makes the *average* child — whose mental age matches their actual age — score exactly **100**. A 10-year-old performing like a typical 13-year-old scores 13/10 × 100 = **130**. A 10-year-old performing like a typical 8-year-old scores 8/10 × 100 = **80**.
+
+<Callout type="warn" title="Why this formula broke">
+The ratio works for children, but collapses for adults. Does a 40-year-old really have twice the "mental age" of a 20-year-old? Of course not — mental ability levels off. So modern tests abandoned the ratio entirely and compare you to *people your own age* instead, which we'll see in a moment.
+</Callout>
+
+</Step>
+
+<Step title="The Wechsler scales: today's standard" kind="explain">
+
+David Wechsler built the tests most used today — the **WAIS** for adults and **WISC** for children. Two big improvements over Binet:
+
+- They report **separate scores** (verbal comprehension, working memory, perceptual reasoning, processing speed) *and* a full-scale IQ — honouring the idea that intelligence has parts.
+- They drop the mental-age ratio. Instead your score is a **deviation IQ**: it simply asks how far above or below your *age group's average* you fall. By definition the average is set to 100.
+
+So what do the items actually look like? Try a few real *types* — pattern, number, and verbal — yourself:
+
+<IQItems />
+
+Notice that none reward memorised facts. They probe reasoning — exactly the *g*-like ability we met earlier.
+
+</Step>
+
+<Step title="Standardization and norming" kind="interactive">
+
+A test score is meaningless on its own. "You got 47" — out of what, compared to whom? Two ideas fix this:
+
+- **Standardization** — everyone takes the test under the *same conditions* with the *same scoring*, so scores are comparable.
+- **Norming** — the test is first given to a large, representative **sample**. Their scores define what's "normal." Your raw score is then converted into a position relative to that group.
+
+The norming sample's scores form a **bell curve**, set to a mean of **100** and a standard deviation of **15**. Your IQ is really just your *place on this curve*. Drag the marker to see how a score maps to a percentile:
+
+<NormalCurve mean={100} sd={15} unit="" label="IQ" />
+
+An IQ of 115 isn't "115 units of smart" — it's "one standard deviation above average, ahead of about 84% of your peers." The number only means something *relative to the norm*.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="On the original ratio formula, an 8-year-old child solves the problems a typical 10-year-old can solve. What is the child's IQ?"
+  options={[
+    "80",
+    "100",
+    "125",
+    "It can't be calculated without the test's standard deviation"
+  ]}
+  correctIndex={2}
+  explanation="Using IQ = (mental age ÷ chronological age) × 100, the child's mental age is 10 and chronological age is 8: (10 ÷ 8) × 100 = 125. The standard deviation matters for modern deviation IQ, but the classic ratio formula only needs the two ages."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Binet** invented **mental age** to *help* struggling schoolchildren — explicitly not as a fixed ranking of worth.
+- The classic ratio **IQ = (mental age ÷ chronological age) × 100** sets the average to 100, but breaks down for adults.
+- Modern **Wechsler scales (WAIS/WISC)** give separate ability scores plus a full-scale IQ, and use a **deviation IQ** comparing you to your own age group.
+- **Standardization** (same conditions, same scoring) and **norming** (a large representative sample) make scores meaningful.
+- IQ scores form a **bell curve** with mean **100** and standard deviation **15** — your IQ is really your **place on that curve**, not an absolute amount.
+
+</Step>
+
+</Lesson>

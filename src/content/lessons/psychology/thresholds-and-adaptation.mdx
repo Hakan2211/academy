@@ -1,0 +1,109 @@
+---
+title: Thresholds & Adaptation
+subject: psychology
+contentSlug: psychology/thresholds-and-adaptation
+order: 2
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="The limits of the doorway" kind="explain">
+
+Your senses are extraordinary, but they have limits. A signal can be too faint to notice, and a change can be too small to detect. The study of these limits — the relationship between physical stimulation and the sensations it produces — is the oldest quantitative branch of psychology, called **psychophysics**.
+
+Two questions sit at its heart:
+
+- **How faint a stimulus can you detect at all?** (the *absolute* threshold)
+- **How small a change can you notice?** (the *difference* threshold)
+
+The answers turn out to be surprisingly precise — and surprisingly slippery, because detection isn't just about the eye or ear. It's also about the mind making a judgement call.
+
+</Step>
+
+<Step title="The absolute threshold isn't a wall" kind="explain">
+
+The **absolute threshold** is the smallest amount of a stimulus you can detect. You might imagine it as a wall: below it, nothing; above it, everything. Reality is gentler.
+
+If we slowly turn up a tone from silence, there's no single intensity where you suddenly hear it. Detection *fades in*. So psychologists define the absolute threshold as the intensity you detect **50% of the time** — the middle of a smooth S-shaped curve.
+
+The human limits are humbling. On a clear, dark night you could in principle see a single candle flame from about 30 miles away, and you can smell a single drop of perfume diffused through a small house. Your senses run close to the physical limits of what's detectable.
+
+</Step>
+
+<Step title="Weber's law: change is relative" kind="explain">
+
+Now the second question — the smallest *change* you can notice, called the **just-noticeable difference (JND)** or difference threshold.
+
+Here's the beautiful regularity, discovered by Ernst Weber: the JND is not a fixed amount. It's a constant **fraction** of the original stimulus.
+
+<Formula tex="\frac{\Delta I}{I} = k" block />
+
+Add one candle to a room lit by one candle and the change is obvious. Add one candle to a room lit by a hundred and you won't notice a thing — even though both times you added exactly one candle. To be detectable, a change must be proportional to the starting level. For lifting weights the fraction is about 2%; for loudness, larger; for tones, tiny.
+
+</Step>
+
+<Step title="Detection is also a decision" kind="explain">
+
+There's a twist that pure thresholds miss. Whether you report seeing a faint flash depends not only on your eyes but on your **expectations, motivation and willingness to guess**. This is the insight of **signal detection theory**.
+
+On any faint trial, the world is in one of two states (signal present or absent) and you make one of two responses (yes or no). That gives four outcomes:
+
+- **Hit** — signal present, you said yes.
+- **Miss** — signal present, you said no.
+- **False alarm** — signal absent, you said yes.
+- **Correct rejection** — signal absent, you said no.
+
+Where you set your internal **criterion** trades off the two errors. A radiologist terrified of missing a tumour says "yes" more readily — catching more real cases (hits) but also flagging more healthy scans (false alarms). There is no setting that eliminates both errors at once.
+
+</Step>
+
+<Step title="Explore the thresholds" kind="interactive">
+
+Three ideas, one lab. Slide the intensity and watch the gentle detection curve cross its 50% threshold. Switch to Weber's law and feel how a heavier load needs a bigger change before you notice. Then meet the four signal-detection outcomes.
+
+<ThresholdLab />
+
+Notice how none of these is a simple "the stimulus did it" story. Detection depends on intensity, on the *context* of intensity, and on the decision you make.
+
+</Step>
+
+<Step title="Sensory adaptation: tuning out the constant" kind="explain">
+
+One last feature, and a profoundly useful one. Get into a cool pool and it's a shock — then within minutes it feels fine. Walk into a bakery and the smell is overwhelming — then it fades. You haven't stopped being in cold water or sweet-smelling air. Your receptors have undergone **sensory adaptation**: with constant, unchanging stimulation, they reduce their response.
+
+This is a feature, not a bug. Your senses are built to report **change**, because change is where the news is — a new sound, a moving shape, a sudden smell. A stimulus that stays put carries no new information, so the system stops spending energy on it.
+
+<Callout type="info" title="Why your eyes are the exception">
+Vision seems immune to adaptation — but only because your eyes make tiny, constant tremors (microsaccades) that keep refreshing the image. In lab setups that stabilise an image perfectly on the retina, it literally fades from view within seconds.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You can just barely notice when 1 kg is added to a 50 kg load. According to Weber's law, how much would you need to add to a 100 kg load to just notice the change?"
+  options={[
+    "1 kg — the just-noticeable difference is a fixed amount",
+    "About 2 kg — the JND is a constant fraction of the starting load",
+    "0.5 kg — bigger loads make you more sensitive",
+    "It cannot be predicted from this information"
+  ]}
+  correctIndex={1}
+  explanation="Weber's law says the just-noticeable difference is a constant proportion of the original stimulus, not a fixed amount. Here 1 kg out of 50 kg is 2%. To notice a change on a 100 kg load you'd need about 2% of 100 kg — roughly 2 kg."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Psychophysics** measures how physical stimulation maps onto sensation.
+- The **absolute threshold** is the intensity detected **50% of the time** — detection fades in smoothly, it isn't an on/off wall.
+- **Weber's law:** the **just-noticeable difference** is a constant **fraction** of the original stimulus, so change is judged proportionally.
+- **Signal detection theory:** detecting a faint signal is a **decision**; your **criterion** trades off hits/misses against false alarms — both errors can't vanish at once.
+- **Sensory adaptation** reduces the response to constant stimulation, because senses are tuned to report **change**.
+
+</Step>
+
+</Lesson>

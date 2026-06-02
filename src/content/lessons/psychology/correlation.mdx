@@ -1,0 +1,78 @@
+---
+title: Correlation & Causation
+subject: psychology
+contentSlug: psychology/correlation
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="When you can't run an experiment" kind="explain">
+
+You can't randomly assign people to smoke for 20 years, or to grow up rich or poor. For huge swaths of psychology, experiments are impossible or unethical. So instead you measure two things as they naturally vary and ask: **do they move together?** That relationship is a **correlation**.
+
+A correlation is summarised by a single number, the **correlation coefficient** (written **r**), that captures both the *direction* and the *strength* of the link in one tidy value.
+
+</Step>
+
+<Step title="Reading r" kind="explain">
+
+The coefficient **r** always lands between −1 and +1:
+
+- **Sign** = direction. A **positive** r means the two rise together (more study, higher grades). A **negative** r means one rises as the other falls (more absences, lower grades).
+- **Size** = strength. The further from zero — toward +1 or −1 — the tighter and more predictable the relationship. An r near **0** means no linear relationship at all.
+
+A **scatterplot** lets you *see* it: each dot is one case plotted on two variables. Tight, line-like clouds mean strong r; shapeless blobs mean weak or zero r.
+
+</Step>
+
+<Step title="See r come to life" kind="interactive">
+
+Drag r from −1 to +1 and watch the cloud of dots tighten, flip direction, and scatter. Notice how a strong relationship makes the points hug a line — and a weak one lets them drift apart.
+
+<CorrelationScatter />
+
+This is also where the most famous warning in all of statistics lives, printed right under the plot.
+
+</Step>
+
+<Step title="Correlation is not causation" kind="explain">
+
+A strong correlation tells you two things travel together. It does **not** tell you that one causes the other. Two traps explain why:
+
+- **The third-variable problem.** A hidden factor may drive *both*. Ice-cream sales and drownings rise together — not because cones are deadly, but because **hot weather** sends people to both the ice-cream stand and the water.
+- **The directionality problem.** Even if A and B are genuinely linked, you can't tell *which way* the arrow points. Does low mood cause poor sleep, or does poor sleep cause low mood? The correlation looks the same either way.
+
+<Callout type="warn" title="The headline trap">
+"People who eat breakfast weigh less" does not mean breakfast causes thinness. Maybe health-conscious habits cause both. A correlation is a clue worth investigating — never a verdict.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Cities with more police officers report more crime. A reporter concludes that hiring police causes crime. What's the most likely flaw?"
+  options={[
+    "The correlation must be negative, not positive",
+    "A third variable — city size — drives both: bigger cities have more people, more crime, and more police",
+    "Correlation coefficients can't exceed 1",
+    "Police hiring is the dependent variable"
+  ]}
+  correctIndex={1}
+  explanation="This is the third-variable problem. City population inflates both the crime count and the police force; neither causes the other. (If anything, the causal arrow likely runs the other way — more crime prompts hiring more police — which is the directionality problem.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **correlation** measures whether two naturally varying things move together, summarised by **r**, which runs from −1 to +1.
+- r's **sign** gives direction (positive vs negative); its **size** gives strength; **0** means no linear link.
+- A **scatterplot** shows the relationship as a cloud of dots — tighter clouds mean stronger r.
+- **Correlation ≠ causation**: beware the **third-variable** problem (a hidden common cause) and the **directionality** problem (which way the arrow points).
+
+</Step>
+
+</Lesson>

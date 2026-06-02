@@ -1,0 +1,90 @@
+---
+title: The Action Potential
+subject: psychology
+contentSlug: psychology/the-action-potential
+order: 4
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="A battery, charged and waiting" kind="explain">
+
+How does a neuron actually carry a signal down its axon? Not as a current flowing through a wire, but as a travelling **wave of electrical change** called the **action potential**. To understand it, start with the neuron at rest.
+
+Even when it's doing nothing, a neuron is a tiny charged battery. The inside of the axon is slightly **negative** relative to the outside — about **−70 millivolts**. This **resting potential** is maintained by pumps in the membrane that push positive sodium (Na⁺) ions out and pull potassium (K⁺) ions in, keeping the cell *polarised* and primed, like a drawn bow waiting to release.
+
+</Step>
+
+<Step title="The spike, traced" kind="interactive">
+
+When a strong enough signal arrives, the neuron fires. Watch the membrane voltage spike from rest, shoot up, and crash back — and read each phase as the marker passes through it.
+
+<ActionPotential />
+
+The phases, in order:
+
+- **Resting (−70 mV)** — polarised and ready.
+- **Depolarisation** — sodium channels fly open, Na⁺ floods *in*, and the voltage rockets up past **+40 mV**.
+- **Repolarisation** — potassium channels open, K⁺ rushes *out*, and the voltage plunges back down.
+- **Refractory period** — a brief overshoot and recovery during which the neuron *cannot* fire again, no matter how strong the next stimulus.
+
+</Step>
+
+<Step title="Threshold and the all-or-none law" kind="explain">
+
+A neuron does not fire a little for a weak signal and a lot for a strong one. It obeys the **all-or-none law**: either the incoming signal pushes the membrane past a critical **threshold** (around −55 mV) and a *full* spike fires, or it falls short and *nothing* happens. There's no half-spike.
+
+So how does the brain encode intensity — the difference between a tap and a slap? Not by bigger spikes, but by **how often** neurons fire and **how many** fire at once. A bright light or loud sound means a higher *firing rate* across *more* neurons — like Morse code, where meaning lives in the pattern of identical pulses, not their size.
+
+</Step>
+
+<Step title="Refractory period and speed" kind="explain">
+
+Two more features make the system work:
+
+- **The refractory period** forces a brief pause after each spike. This caps the maximum firing rate — and, importantly, it ensures the impulse travels in **one direction only**, since the patch just behind the spike is momentarily unable to re-fire. The wave can't run backwards.
+- **Myelin sets the speed.** Recall the fatty insulation around many axons. The action potential doesn't crawl down a myelinated axon inch by inch — it **leaps** between the tiny gaps in the sheath, a process called *saltatory* (jumping) conduction. A myelinated axon can carry signals over **100 metres per second**; a bare one is far slower.
+
+<Callout type="info" title="The same spike, every time">
+Because firing is all-or-none, every action potential a given neuron sends is essentially identical in size. The richness of your experience — the difference between a whisper and a shout — is written entirely in *timing* and *numbers*, never in the height of any single spike.
+</Callout>
+
+</Step>
+
+<Step title="From electrical to chemical" kind="explain">
+
+The action potential races to the end of the axon — and then hits a wall. Between one neuron and the next lies a microscopic gap, and electricity can't jump it. So at the terminal, the *electrical* signal converts into a *chemical* one, releasing messenger molecules that drift across the gap to the next cell.
+
+That hand-off — from electrical impulse to chemical message — happens at the **synapse**, which is exactly where the next lesson begins.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A neuron receives a much stronger stimulus than usual. How does its action potential change?"
+  options={[
+    "The spike is taller and travels with more force",
+    "The spike is identical — but the neuron fires more often, and more neurons fire alongside it",
+    "The resting potential rises permanently",
+    "Nothing changes; neurons ignore stimulus strength entirely"
+  ]}
+  correctIndex={1}
+  explanation="Action potentials are all-or-none: every spike is the same size. A stronger stimulus is encoded not by a bigger spike but by a higher firing rate and the recruitment of more neurons — intensity lives in the pattern, not the amplitude."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A neuron rests at about **−70 mV** (polarised), maintained by ion pumps — a charged battery, primed to fire.
+- The **action potential**: **depolarisation** (Na⁺ in, voltage spikes to ~+40 mV) → **repolarisation** (K⁺ out, voltage falls) → a **refractory period** of recovery.
+- Firing is **all-or-none**: a stimulus either crosses **threshold** (~−55 mV) and fires a full, fixed-size spike, or nothing happens.
+- Intensity is coded by **firing rate** and the **number** of neurons firing — never by spike size.
+- The **refractory period** enforces one-way travel; **myelin** lets the impulse *leap* between gaps for huge gains in speed.
+- At the axon's end, the electrical impulse becomes a **chemical** message at the **synapse** — the next lesson.
+
+</Step>
+
+</Lesson>

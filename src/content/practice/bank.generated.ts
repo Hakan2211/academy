@@ -7893,5 +7893,1790 @@ export const PRACTICE_BANK: Array<PracticeItem> = [
     ],
     "correctIndex": 1,
     "explanation": "Work = force × distance. With zero distance moved, the work done on the car is zero — no matter how hard you pushed."
+  },
+  {
+    "id": "psychology/achievement",
+    "contentSlug": "psychology/achievement",
+    "subject": "psychology",
+    "lessonTitle": "Achievement & Attribution",
+    "prompt": "Two students both fail the same quiz. Maya thinks 'I didn't review the last chapter — I'll fix that.' Leo thinks 'I'm just stupid; I always fail.' Whose attribution better protects future motivation, and why?",
+    "options": [
+      "Leo's, because internal explanations build character",
+      "Maya's, because she attributes failure to an internal but unstable, controllable cause she can change",
+      "They are equivalent — both attribute failure internally",
+      "Maya's, because she blames the situation rather than herself"
+    ],
+    "correctIndex": 1,
+    "explanation": "Both attribute the failure internally, but the stability dimension is what matters here. Maya's cause (not reviewing) is unstable and controllable — she can fix it next time, which sustains effort. Leo's cause ('stupid', 'always') is stable and global, which breeds helplessness. Maya does NOT blame the situation; she blames a changeable behaviour."
+  },
+  {
+    "id": "psychology/adolescence-to-aging",
+    "contentSlug": "psychology/adolescence-to-aging",
+    "subject": "psychology",
+    "lessonTitle": "From the Teen Brain to a Good Old Age",
+    "prompt": "A 16-year-old aces a written quiz on the dangers of speeding, yet drives recklessly when friends are in the car. What does the maturation-gap account of the teen brain best predict here?",
+    "options": [
+      "The teen lacks the knowledge to assess the risk",
+      "The teen's prefrontal cortex has fully matured but their reward system hasn't",
+      "In emotionally hot, peer-present moments, the early-maturing reward system overpowers the still-maturing prefrontal 'brakes' — even though cool reasoning is intact",
+      "Risk-taking proves the teen has reached formal operational thought"
+    ],
+    "correctIndex": 2,
+    "explanation": "The maturation gap is about timing, not ignorance. The reward/limbic system matures early while the prefrontal cortex (impulse control) matures into the mid-twenties. In cool moments the teen reasons fine — hence the perfect quiz score — but in hot, peer-charged moments the revved accelerator overpowers the unfinished brakes, producing risky behaviour despite knowing better."
+  },
+  {
+    "id": "psychology/altered-states-and-drugs",
+    "contentSlug": "psychology/altered-states-and-drugs",
+    "subject": "psychology",
+    "lessonTitle": "Drugs & the Brain",
+    "prompt": "Cocaine jams the pump that normally recycles dopamine, so dopamine pools in the synapse and over-stimulates the reward pathway. After weeks of use, the same amount gives a far weaker high. Which mechanism and which adaptation is this?",
+    "options": [
+      "It acts as a receptor antagonist, and the weaker high is withdrawal",
+      "It acts as a reuptake blocker, and the weaker high reflects tolerance from the brain down-regulating dopamine",
+      "It is a depressant boosting GABA, and the weaker high is dependence",
+      "It mimics dopamine as an agonist, and the weaker high means the drug stopped working chemically"
+    ],
+    "correctIndex": 1,
+    "explanation": "Jamming the recycling pump so the messenger lingers is the reuptake-blocker mechanism (the same lever SSRIs pull on serotonin). The diminishing high is tolerance: faced with the dopamine flood, the brain down-regulates receptors and dopamine, so the same dose yields less effect — driving users to escalate."
+  },
+  {
+    "id": "psychology/anxiety-disorders",
+    "contentSlug": "psychology/anxiety-disorders",
+    "subject": "psychology",
+    "lessonTitle": "Anxiety & OCD",
+    "prompt": "A person fears crowded shops, so they leave the moment they feel panic rising. Their anxiety drops instantly — yet over time their fear of shops gets worse. Why?",
+    "options": [
+      "Leaving is a coincidence; the fear would have grown anyway",
+      "The escape (avoidance) is reinforced by the instant relief, and the brain never learns the shop was safe — so the fear is maintained and grows",
+      "They must have a separate biological disorder unrelated to the shop",
+      "Crowded shops are objectively dangerous"
+    ],
+    "correctIndex": 1,
+    "explanation": "This is the anxiety maintenance cycle. Escaping brings immediate relief, which negatively reinforces the avoidance, making it more likely next time. Because the person always leaves, they never gather evidence that the feared situation is actually safe — so the fear is preserved and often strengthens. Exposure therapy breaks the loop by staying with the trigger until the alarm subsides on its own."
+  },
+  {
+    "id": "psychology/attachment",
+    "contentSlug": "psychology/attachment",
+    "subject": "psychology",
+    "lessonTitle": "Attachment and Early Bonds",
+    "prompt": "In the Strange Situation, a one-year-old explores happily while the parent is present, cries when the parent leaves, and is quickly comforted and returns to play when the parent comes back. Which attachment style is this?",
+    "options": [
+      "Avoidant",
+      "Anxious-ambivalent",
+      "Secure",
+      "Disorganized"
+    ],
+    "correctIndex": 2,
+    "explanation": "Using the parent as a secure base for exploration, showing distress at separation, and — the key signal — being readily comforted at reunion before resuming play is the hallmark of secure attachment. Avoidant children show little reaction; anxious-ambivalent children seek yet resist comfort and are hard to settle; disorganized children show confused, contradictory behaviour."
+  },
+  {
+    "id": "psychology/attitudes-and-persuasion",
+    "contentSlug": "psychology/attitudes-and-persuasion",
+    "subject": "psychology",
+    "lessonTitle": "Attitudes & Persuasion",
+    "prompt": "In Festinger and Carlsmith's study, participants paid only $1 (not $20) to call a boring task 'enjoyable' later rated it as MORE fun. The best explanation is:",
+    "options": [
+      "$1 is enough to make any task genuinely enjoyable",
+      "With $20 they were happier overall, so they liked everything more",
+      "With only $1 they had no external excuse for lying, so they reduced the dissonance by changing their attitude to fit their behaviour",
+      "Participants forgot which task they had done"
+    ],
+    "correctIndex": 2,
+    "explanation": "A large payment ($20) provides an external justification for the lie, so there's little dissonance to resolve. A tiny payment ($1) doesn't justify it, leaving the clash 'I said it was fun but it was dull' — the cheapest fix is to shift the attitude: it actually wasn't so bad. Behaviour reshapes attitude."
+  },
+  {
+    "id": "psychology/attraction-and-love",
+    "contentSlug": "psychology/attraction-and-love",
+    "subject": "psychology",
+    "lessonTitle": "Attraction & Love",
+    "prompt": "A couple married 40 years feel deep closeness and an unshakeable commitment, but the fiery passion of their youth has mellowed. In Sternberg's theory, this is best described as:",
+    "options": [
+      "Infatuation — passion alone",
+      "Consummate love — all three components at full strength",
+      "Companionate love — high intimacy and commitment, lower passion",
+      "Empty love — commitment with neither intimacy nor passion"
+    ],
+    "correctIndex": 2,
+    "explanation": "High intimacy and commitment with diminished passion is companionate love — the warm, steady bond typical of enduring relationships. Passion commonly fades over time while intimacy and commitment can grow, so romantic love often matures into companionate love."
+  },
+  {
+    "id": "psychology/attribution",
+    "contentSlug": "psychology/attribution",
+    "subject": "psychology",
+    "lessonTitle": "Explaining Behavior",
+    "prompt": "After acing a test, Maria thinks 'I'm clearly talented.' After failing the next one, she thinks 'that test was ridiculously unfair.' Which bias is this?",
+    "options": [
+      "The fundamental attribution error",
+      "The self-serving bias — crediting success to herself, blaming failure on the situation",
+      "A self-fulfilling prophecy",
+      "The actor–observer effect about someone else"
+    ],
+    "correctIndex": 1,
+    "explanation": "Taking internal credit for success ('I'm talented') while blaming failure on external circumstances ('unfair test') is the self-serving bias — it cushions self-esteem but can blind us to real lessons. The fundamental attribution error is specifically about over-blaming OTHERS' dispositions."
+  },
+  {
+    "id": "psychology/behavior-therapy",
+    "contentSlug": "psychology/behavior-therapy",
+    "subject": "psychology",
+    "lessonTitle": "Behavior Therapy",
+    "prompt": "A therapist treats a client's fear of flying by teaching deep relaxation, then having the client stay relaxed while imagining a ranked ladder of scenes — from booking a ticket up to taking off — moving up only when each feels calm. This technique is:",
+    "options": [
+      "Flooding",
+      "Systematic desensitization",
+      "Aversion therapy",
+      "A token economy"
+    ],
+    "correctIndex": 1,
+    "explanation": "Systematic desensitization pairs deep relaxation with a graded fear hierarchy, exploiting the fact that relaxation and fear are incompatible. The client climbs the ladder gradually. Flooding, by contrast, confronts the most feared situation all at once; aversion therapy and token economies are operant techniques."
+  },
+  {
+    "id": "psychology/biomedical-therapy",
+    "contentSlug": "psychology/biomedical-therapy",
+    "subject": "psychology",
+    "lessonTitle": "Biomedical Therapy",
+    "prompt": "An SSRI antidepressant raises mood by jamming the pump that normally clears serotonin from the synapse, so more serotonin lingers and keeps signalling. In synaptic terms, an SSRI acts as a:",
+    "options": [
+      "Receptor antagonist (it blocks receptors)",
+      "Reuptake blocker (it stops the messenger being recycled)",
+      "Agonist (it mimics the neurotransmitter)",
+      "Mood stabiliser that replaces serotonin"
+    ],
+    "correctIndex": 1,
+    "explanation": "An SSRI is a Selective Serotonin Reuptake Inhibitor — it blocks the reuptake pump, so serotonin stays in the cleft longer and keeps signalling. An antagonist blocks receptors (the mechanism of many antipsychotics on dopamine); an agonist mimics the transmitter itself."
+  },
+  {
+    "id": "psychology/circadian-rhythms",
+    "contentSlug": "psychology/circadian-rhythms",
+    "subject": "psychology",
+    "lessonTitle": "The Body Clock",
+    "prompt": "A traveller flies six time zones east and, for several days, feels wide awake at 3am and exhausted at noon. Which explanation fits best?",
+    "options": [
+      "Her suprachiasmatic nucleus instantly reset, so this can't be a body-clock effect",
+      "Her internal circadian clock still runs on home time and re-syncs only ~1 zone per day, so melatonin and low body temperature arrive at the wrong local hours",
+      "Melatonin is released in bright light, which confused her",
+      "Circadian rhythms only exist if you can see a clock, which she couldn't on the plane"
+    ],
+    "correctIndex": 1,
+    "explanation": "Jet lag is a mismatch: the SCN keeps near-home time and re-entrains slowly (about one time zone per day), so its melatonin surge and temperature trough fall at the wrong local hours. The rhythm is internally driven (it persists without time cues), and melatonin rises in darkness, not light."
+  },
+  {
+    "id": "psychology/classical-conditioning",
+    "contentSlug": "psychology/classical-conditioning",
+    "subject": "psychology",
+    "lessonTitle": "Pavlov's Bell",
+    "prompt": "Every time you use an electric can opener, your cat comes running and meows for food. The whirring sound has become which of these?",
+    "options": [
+      "An unconditioned stimulus (UCS)",
+      "An unconditioned response (UCR)",
+      "A conditioned stimulus (CS)",
+      "A conditioned response (CR)"
+    ],
+    "correctIndex": 2,
+    "explanation": "The whirring was originally neutral. Because it has reliably preceded food (the UCS), it became a learned signal that predicts food — a conditioned stimulus. The cat's running and meowing in response to the sound is the conditioned response."
+  },
+  {
+    "id": "psychology/classifying-disorders",
+    "contentSlug": "psychology/classifying-disorders",
+    "subject": "psychology",
+    "lessonTitle": "Classifying Disorders",
+    "prompt": "What was the central lesson most psychologists drew from Rosenhan's 'On Being Sane in Insane Places'?",
+    "options": [
+      "Psychiatric diagnoses are always wrong and should be abandoned",
+      "A diagnostic label can be powerfully 'sticky' — once applied, it shapes how all of a person's behaviour is interpreted",
+      "Hospital staff are deliberately cruel to patients",
+      "Hearing voices is a normal, harmless experience"
+    ],
+    "correctIndex": 1,
+    "explanation": "The study's enduring message is about the power of labels: once the pseudopatients were diagnosed, normal behaviour was reinterpreted to fit the label, and the label proved very hard to shed. It is a caution about over-relying on classification — not a claim that diagnosis is worthless (it has real value) nor that staff were malicious."
+  },
+  {
+    "id": "psychology/cognitive-development-today",
+    "contentSlug": "psychology/cognitive-development-today",
+    "subject": "psychology",
+    "lessonTitle": "Beyond Piaget",
+    "prompt": "A teacher gives a struggling student a worked example, then on the next problem only a hint, then on the third just a 'you've got this' — and by the fourth the student works alone. Which concept best describes the teacher's strategy?",
+    "options": [
+      "Assimilation",
+      "Object permanence",
+      "Scaffolding within the zone of proximal development",
+      "Conservation"
+    ],
+    "correctIndex": 2,
+    "explanation": "The teacher is providing temporary support tuned to tasks just beyond the student's solo reach (the zone of proximal development), then gradually withdrawing that support as competence grows. That fading-support strategy is scaffolding — Vygotsky's central educational idea. Assimilation and conservation are Piagetian; object permanence is an infant milestone."
+  },
+  {
+    "id": "psychology/cognitive-therapy",
+    "contentSlug": "psychology/cognitive-therapy",
+    "subject": "psychology",
+    "lessonTitle": "Cognitive Therapy & CBT",
+    "prompt": "In Ellis's ABC model, a student fails one quiz (A) and falls into despair (C). The model claims the despair is most directly caused by:",
+    "options": [
+      "The failure itself — bad events directly cause bad feelings",
+      "An irrational belief about the failure, such as 'this proves I'm a total failure' (B)",
+      "A chemical imbalance triggered by stress",
+      "Unconscious conflict from childhood surfacing"
+    ],
+    "correctIndex": 1,
+    "explanation": "The ABC model places the Belief (B) between the Activating event (A) and the emotional Consequence (C). The despair flows from the irrational belief about the failure, not the failure itself — which is why disputing and changing that belief changes the feeling, even though the event is unchanged."
+  },
+  {
+    "id": "psychology/color-vision",
+    "contentSlug": "psychology/color-vision",
+    "subject": "psychology",
+    "lessonTitle": "Colour Vision",
+    "prompt": "You stare at a bright green square for 30 seconds, then look at a white wall and see a faint reddish ghost. Which theory of colour vision best explains this afterimage?",
+    "options": [
+      "The trichromatic theory — three cones mixing red, green and blue",
+      "The opponent-process theory — fatiguing one side of the red–green channel lets the opposite side rebound",
+      "Sensory adaptation of the lens",
+      "The blind spot filling in the missing colour"
+    ],
+    "correctIndex": 1,
+    "explanation": "Afterimages appear in the complementary colour and are explained by the opponent-process theory. Staring at green fatigues the green side of the red–green opponent channel; when you look away, the rested red side over-fires, producing a red afterimage. The trichromatic theory describes the cones but can't account for complementary afterimages — both theories operate, at different stages."
+  },
+  {
+    "id": "psychology/concepts-and-categories",
+    "contentSlug": "psychology/concepts-and-categories",
+    "subject": "psychology",
+    "lessonTitle": "The Mind's Filing System",
+    "prompt": "People judge a robin to be a 'better' example of a bird than a penguin, and say so faster. What does this best demonstrate?",
+    "options": [
+      "Penguins are not really birds",
+      "Categories are defined by strict necessary-and-sufficient rules",
+      "Concepts are organised around prototypes, so more typical members are judged faster (the typicality effect)",
+      "People simply know more facts about robins"
+    ],
+    "correctIndex": 2,
+    "explanation": "Logically a penguin and a robin are equally members of the category 'bird'. The fact that the robin is judged 'birdier' and recognised faster shows the mind judges by resemblance to a prototype (the best example), not by a checklist of rules. That speed-and-confidence gap is the typicality effect."
+  },
+  {
+    "id": "psychology/conditioning-processes",
+    "contentSlug": "psychology/conditioning-processes",
+    "subject": "psychology",
+    "lessonTitle": "Extinction, Generalization & Discrimination",
+    "prompt": "A dog conditioned to salivate at a 1000 Hz tone is now trained so that ONLY the 1000 Hz tone (never a 1500 Hz tone) is followed by food. After this training, what happens to its generalization gradient?",
+    "options": [
+      "It widens, so even very different tones produce salivation",
+      "It sharpens into a narrow peak around 1000 Hz — discrimination",
+      "It disappears entirely through extinction",
+      "It shifts so the dog now responds only to 1500 Hz"
+    ],
+    "correctIndex": 1,
+    "explanation": "Reinforcing only the true CS while withholding food for the similar tone teaches discrimination. The dog learns to respond to 1000 Hz but not to 1500 Hz, which sharpens the broad generalization gradient into a narrow spike around the original CS."
+  },
+  {
+    "id": "psychology/conformity",
+    "contentSlug": "psychology/conformity",
+    "subject": "psychology",
+    "lessonTitle": "Conformity",
+    "prompt": "In Asch's experiment, conformity dropped sharply when one confederate broke from the group — even when that person gave a DIFFERENT wrong answer. This shows that the key factor crushing independent judgment was:",
+    "options": [
+      "The sheer number of people in the group",
+      "The unanimity of the majority — a single dissenter, even a wrong one, breaks the spell",
+      "The participant's low intelligence",
+      "Informational influence about the correct line"
+    ],
+    "correctIndex": 1,
+    "explanation": "Asch found group size matters only up to about 3–4, but unanimity is decisive: a single ally who breaks ranks — even with a different wrong answer — drops conformity dramatically. It is being the lone dissenter, not the group's size, that people find unbearable."
+  },
+  {
+    "id": "psychology/coping",
+    "contentSlug": "psychology/coping",
+    "subject": "psychology",
+    "lessonTitle": "Coping with Stress",
+    "prompt": "A person is grieving the death of a parent — a loss that cannot be undone. Which coping approach is generally healthiest here?",
+    "options": [
+      "Problem-focused coping, because action always beats avoidance",
+      "Emotion-focused coping, such as acceptance and seeking support, because the stressor is uncontrollable",
+      "Neither — coping cannot help with major loss",
+      "Suppressing the emotion entirely to stay productive"
+    ],
+    "correctIndex": 1,
+    "explanation": "The controllability rule applies: a bereavement cannot be changed, so problem-focused efforts to 'fix' it only add frustration. Emotion-focused coping — acceptance, grieving, leaning on social support — tends to the distress, which is the appropriate fit for an uncontrollable stressor."
+  },
+  {
+    "id": "psychology/correlation",
+    "contentSlug": "psychology/correlation",
+    "subject": "psychology",
+    "lessonTitle": "Correlation & Causation",
+    "prompt": "Cities with more police officers report more crime. A reporter concludes that hiring police causes crime. What's the most likely flaw?",
+    "options": [
+      "The correlation must be negative, not positive",
+      "A third variable — city size — drives both: bigger cities have more people, more crime, and more police",
+      "Correlation coefficients can't exceed 1",
+      "Police hiring is the dependent variable"
+    ],
+    "correctIndex": 1,
+    "explanation": "This is the third-variable problem. City population inflates both the crime count and the police force; neither causes the other. (If anything, the causal arrow likely runs the other way — more crime prompts hiring more police — which is the directionality problem.)"
+  },
+  {
+    "id": "psychology/descriptive-statistics",
+    "contentSlug": "psychology/descriptive-statistics",
+    "subject": "psychology",
+    "lessonTitle": "Making Sense of Data",
+    "prompt": "A town's household incomes are mostly modest, but a few billionaires live there. Which single number best describes the 'typical' household income?",
+    "options": [
+      "The mean, because it uses every value",
+      "The median, because it isn't dragged upward by the few extreme incomes",
+      "The range, because it shows the full span",
+      "The standard deviation, because it measures spread"
+    ],
+    "correctIndex": 1,
+    "explanation": "A few huge incomes pull the mean far above what most households actually earn — the data are right-skewed. The median, the middle value, ignores how extreme those outliers are and stays near the typical household. This is exactly why income is reported as a median."
+  },
+  {
+    "id": "psychology/does-therapy-work",
+    "contentSlug": "psychology/does-therapy-work",
+    "subject": "psychology",
+    "lessonTitle": "Does Therapy Work?",
+    "prompt": "Meta-analyses repeatedly find that well-delivered CBT, psychodynamic, and person-centred therapies produce roughly equivalent overall outcomes — the 'dodo-bird verdict'. What is the best interpretation?",
+    "options": [
+      "Therapy doesn't really work; the schools just cancel out",
+      "Much of the benefit comes from common factors they share (like the alliance and hope), though specific methods still have an edge for specific disorders",
+      "Only the oldest school, psychoanalysis, truly works",
+      "Effect sizes prove every therapy is identical for every problem"
+    ],
+    "correctIndex": 1,
+    "explanation": "The rough equivalence on average suggests shared common factors — especially the therapeutic alliance, hope, and a believable rationale — do much of the healing. But this is an average across mixed problems: for specific disorders (phobias, OCD, depression) particular evidence-based methods still outperform, so both common factors AND specific matching matter."
+  },
+  {
+    "id": "psychology/emotion-expression",
+    "contentSlug": "psychology/emotion-expression",
+    "subject": "psychology",
+    "lessonTitle": "Faces, Culture & Feeling",
+    "prompt": "Alone, Japanese and American viewers showed identical facial disgust at a gross film; with an authority figure present, the Japanese viewers masked it with smiles far more. What does this best demonstrate?",
+    "options": [
+      "Facial expressions of disgust are entirely learned, not universal",
+      "The basic expression is universal, but culturally learned display rules govern when and how strongly it is shown",
+      "The facial-feedback hypothesis — smiling made them less disgusted",
+      "Microexpressions reveal that the Japanese viewers were lying"
+    ],
+    "correctIndex": 1,
+    "explanation": "Alone, both groups produced the same universal disgust expression — evidence it is biologically built in. The difference appeared only when an authority figure was present, showing that culturally learned DISPLAY RULES govern the management of expressions (when, where, how strongly to show them) — not the underlying capacity itself."
+  },
+  {
+    "id": "psychology/erikson",
+    "contentSlug": "psychology/erikson",
+    "subject": "psychology",
+    "lessonTitle": "Erikson's Eight Ages",
+    "prompt": "A 17-year-old keeps changing their friend group, political views, music taste and even how they dress, trying to figure out 'who they really are.' Which of Erikson's stages best captures this?",
+    "options": [
+      "Trust vs mistrust",
+      "Industry vs inferiority",
+      "Identity vs role confusion",
+      "Generativity vs stagnation"
+    ],
+    "correctIndex": 2,
+    "explanation": "Adolescence is Erikson's stage of identity versus role confusion: the teenager experiments with roles, values and styles in search of a coherent sense of self. Successfully forming an identity yields the virtue of fidelity; failing leaves the person in role confusion. Generativity is a middle-adulthood concern; industry is the school-age stage."
+  },
+  {
+    "id": "psychology/evolution-and-behavior",
+    "contentSlug": "psychology/evolution-and-behavior",
+    "subject": "psychology",
+    "lessonTitle": "Evolution & Behavior",
+    "prompt": "People across nearly every culture find sugary, fatty foods delicious — even though such diets can now harm health. What's the best evolutionary explanation?",
+    "options": [
+      "Modern advertising trained everyone to like these foods",
+      "A taste for calorie-rich food was adaptive when food was scarce, so it was selected for — even though it can misfire today",
+      "Liking sugar is a free choice each person makes",
+      "It proves evolution shapes bodies but not behaviour"
+    ],
+    "correctIndex": 1,
+    "explanation": "A strong preference for calorie-dense food helped ancestors survive scarcity, so the tendency spread by natural selection. In today's world of cheap, abundant sugar that same evolved preference 'misfires' — a classic mismatch between our ancestral mind and our modern environment."
+  },
+  {
+    "id": "psychology/false-memories",
+    "contentSlug": "psychology/false-memories",
+    "subject": "psychology",
+    "lessonTitle": "The Reconstructive Mind",
+    "prompt": "Witnesses to a crash are later asked how fast the cars were going when they 'smashed' (vs 'hit'). The 'smashed' group reports higher speeds and, a week later, recalls broken glass that wasn't there. What does this demonstrate?",
+    "options": [
+      "Decay — their memories simply faded over the week",
+      "The misinformation effect — post-event suggestion (a single loaded word) altered the actual memory of the event",
+      "Proactive interference from earlier crashes they'd seen",
+      "State-dependent memory tied to their mood"
+    ],
+    "correctIndex": 1,
+    "explanation": "This is Loftus's misinformation effect. Information introduced after the event — here, the loaded verb 'smashed' in the question — was incorporated into the reconstructed memory, raising speed estimates and even adding nonexistent broken glass. The memory wasn't merely reported differently; it was rewritten by the suggestion."
+  },
+  {
+    "id": "psychology/flow",
+    "contentSlug": "psychology/flow",
+    "subject": "psychology",
+    "lessonTitle": "Flow & Engagement",
+    "prompt": "A skilled climber finds an easy beginner route dull, but a route slightly beyond her current ability leaves her completely absorbed, losing track of time. What does this illustrate?",
+    "options": [
+      "The hedonic treadmill — she's adapted to climbing",
+      "Flow arises when challenge and skill are matched (and high); too-easy tasks bring boredom, well-matched ones bring absorption",
+      "Savouring — she is appreciating the view",
+      "A fixed mindset about her climbing ability"
+    ],
+    "correctIndex": 1,
+    "explanation": "This is Csikszentmihalyi's challenge–skill balance. The easy route (low challenge, high skill) produces boredom; the route just beyond her ability matches a high challenge to her high skill, dropping her into the flow channel — fully absorbed, with time seeming to vanish."
+  },
+  {
+    "id": "psychology/from-stimulus-to-sensation",
+    "contentSlug": "psychology/from-stimulus-to-sensation",
+    "subject": "psychology",
+    "lessonTitle": "From Stimulus to Sensation",
+    "prompt": "You are looking at a coffee mug on the table. What is the proximal stimulus?",
+    "options": [
+      "The mug itself, sitting on the table",
+      "The image of the mug projected onto your retina",
+      "Your memory of having used the mug before",
+      "The word 'mug' that comes to mind"
+    ],
+    "correctIndex": 1,
+    "explanation": "The distal stimulus is the actual mug out in the world. The proximal stimulus is the energy that physically reaches the sense organ — here, the pattern of light the mug casts on your retina. You never sense the distal object directly; your brain reconstructs it from the proximal imprint."
+  },
+  {
+    "id": "psychology/genes-and-behavior",
+    "contentSlug": "psychology/genes-and-behavior",
+    "subject": "psychology",
+    "lessonTitle": "Nature & Nurture",
+    "prompt": "A study reports that a personality trait is '50% heritable.' What does this correctly mean?",
+    "options": [
+      "Half of each person's personality is fixed by their genes",
+      "About half of the variation among people in this trait, in this population, is associated with genetic differences",
+      "Genes and environment contribute equally to every individual",
+      "The trait is half learned and half inherited in each person"
+    ],
+    "correctIndex": 1,
+    "explanation": "Heritability is a population statistic: it describes how much of the differences among people trace to genetic differences — here, about half. It says nothing about the genetic 'share' within any single individual, where nature and nurture are inseparably intertwined."
+  },
+  {
+    "id": "psychology/good-and-evil",
+    "contentSlug": "psychology/good-and-evil",
+    "subject": "psychology",
+    "lessonTitle": "Aggression, Altruism & the Power of the Situation",
+    "prompt": "You collapse on a crowded platform and dozens of people are present, yet no one helps. According to Darley and Latané, the most effective thing you could do is:",
+    "options": [
+      "Wait quietly — in a big crowd someone is statistically certain to help",
+      "Single out one specific person and assign them the task: 'You, in the red coat — call 911'",
+      "Assume everyone present is simply heartless",
+      "Stand up and apologise for the disturbance"
+    ],
+    "correctIndex": 1,
+    "explanation": "In a crowd, responsibility diffuses and no one feels personally obligated. Naming one specific person assigns them step three of the helping chain — taking responsibility — overriding the diffusion. Singling someone out reliably gets help where a general plea to the crowd fails."
+  },
+  {
+    "id": "psychology/growth-mindset",
+    "contentSlug": "psychology/growth-mindset",
+    "subject": "psychology",
+    "lessonTitle": "Mindset & Optimism",
+    "prompt": "A teacher wants to build a growth mindset in her students. According to Dweck's research, which kind of praise should she favour?",
+    "options": [
+      "Praising their fixed talent: 'You're so smart and naturally gifted'",
+      "Praising their effort and strategy: 'You worked hard and found a clever approach'",
+      "Avoiding all praise, so they don't become dependent on it",
+      "Praising only the final grade, regardless of how it was earned"
+    ],
+    "correctIndex": 1,
+    "explanation": "Praising effort and strategy fosters a growth mindset — it teaches that ability grows through what you do. Praising fixed traits ('you're so smart') backfires: it teaches that the trait is what matters and is on the line every time, making children avoid challenges that might expose its limits."
+  },
+  {
+    "id": "psychology/health-psychology",
+    "contentSlug": "psychology/health-psychology",
+    "subject": "psychology",
+    "lessonTitle": "Health Psychology",
+    "prompt": "A health psychologist argues that a patient's recovery depends on their genes, their optimism and coping style, AND their family support — all interacting. Which model is she using?",
+    "options": [
+      "The biomedical model — health is the absence of disease",
+      "The biopsychosocial model — biological, psychological and social factors interact to shape health",
+      "Selye's General Adaptation Syndrome",
+      "The Type A personality model"
+    ],
+    "correctIndex": 1,
+    "explanation": "Treating health as the joint, interacting product of biological (genes), psychological (optimism, coping) and social (family support) factors is the defining move of the biopsychosocial model. The biomedical model, by contrast, would consider only the disease and its physical treatment."
+  },
+  {
+    "id": "psychology/hearing",
+    "contentSlug": "psychology/hearing",
+    "subject": "psychology",
+    "lessonTitle": "Hearing",
+    "prompt": "A singer holds the same musical note (same pitch) but gradually sings it louder. Which property of the sound wave is changing?",
+    "options": [
+      "Its frequency increases",
+      "Its amplitude increases",
+      "Its wavelength decreases",
+      "Its timbre changes"
+    ],
+    "correctIndex": 1,
+    "explanation": "Pitch is determined by frequency, and the note's pitch is staying the same — so frequency is constant. Loudness corresponds to amplitude (the size of the pressure swings), measured in decibels. Singing louder at the same pitch means increasing amplitude while frequency stays fixed."
+  },
+  {
+    "id": "psychology/how-to-study-psychology",
+    "contentSlug": "psychology/how-to-study-psychology",
+    "subject": "psychology",
+    "lessonTitle": "Learning How to Learn",
+    "prompt": "Two students study the same chapter for the same total time. Ana re-reads it four times. Ben reads it once, then tests himself from memory three times over the next week. Who will likely remember more, and why?",
+    "options": [
+      "Ana — repeated re-reading drills the material in deepest",
+      "Ben — self-testing (active recall) spread over time uses the testing effect and spacing, the strongest methods",
+      "They'll be equal, since study time is identical",
+      "Ana — testing yourself before you've memorised it is counterproductive"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ben uses two of psychology's best-supported techniques: active recall (retrieving from memory strengthens it far more than re-reading) and spaced practice (spreading review over days beats massing it). Equal time, very unequal results — effortful retrieval wins."
+  },
+  {
+    "id": "psychology/how-we-develop",
+    "contentSlug": "psychology/how-we-develop",
+    "subject": "psychology",
+    "lessonTitle": "How We Develop",
+    "prompt": "A researcher tests 20-, 50-, and 80-year-olds on memory this year and finds memory scores drop with age. A colleague warns the result may be misleading. What is the most likely concern?",
+    "options": [
+      "Attrition — too many participants dropped out over time",
+      "A cohort effect — the older groups grew up with less schooling and different nutrition, so the gap may not be due to ageing alone",
+      "There was no control group",
+      "The study should have used a sensitive period design"
+    ],
+    "correctIndex": 1,
+    "explanation": "This is a cross-sectional study (all ages tested at once), so its main weakness is the cohort effect: the 80-year-olds differ from the 20-year-olds in education, history and nutrition — not just age. The apparent 'decline' could partly be a generation gap. Attrition is a longitudinal problem, since cross-sectional studies test each person only once."
+  },
+  {
+    "id": "psychology/humanistic",
+    "contentSlug": "psychology/humanistic",
+    "subject": "psychology",
+    "lessonTitle": "The Humanistic View",
+    "prompt": "According to Rogers, what is the likely result when a person's real self and ideal self are far apart (incongruence)?",
+    "options": [
+      "Self-actualisation and peak experiences",
+      "Anxiety, defensiveness and low self-worth",
+      "A stronger superego",
+      "Higher heritability of traits"
+    ],
+    "correctIndex": 1,
+    "explanation": "For Rogers, a wide gap between the real self and the ideal self is incongruence, which breeds anxiety, defensiveness and low self-worth. Congruence — the two selves roughly matching — is what supports contentment and growth, fostered by unconditional positive regard."
+  },
+  {
+    "id": "psychology/humanistic-and-group",
+    "contentSlug": "psychology/humanistic-and-group",
+    "subject": "psychology",
+    "lessonTitle": "Humanistic & Group Therapy",
+    "prompt": "A therapist offers warm, non-judgemental acceptance, deep empathy, and genuine honesty, and uses active listening to help clients find their own direction. This describes:",
+    "options": [
+      "Beck's cognitive therapy",
+      "Systematic desensitization",
+      "Rogers' person-centred therapy",
+      "Aversion therapy"
+    ],
+    "correctIndex": 2,
+    "explanation": "Unconditional positive regard, empathy, genuineness, and active listening are the defining conditions of Carl Rogers' person-centred (humanistic) therapy. The therapist provides an accepting relationship rather than interpretations or techniques, trusting the client's own drive toward growth."
+  },
+  {
+    "id": "psychology/hunger-and-eating",
+    "contentSlug": "psychology/hunger-and-eating",
+    "subject": "psychology",
+    "lessonTitle": "Hunger & Eating",
+    "prompt": "A dieter loses 8 kg, then finds they feel ravenously hungry, think about food constantly, and regain the weight despite real effort. From a set-point perspective, what is happening?",
+    "options": [
+      "Their stomach has permanently shrunk, increasing hunger",
+      "The feedback loop is defending a set point — raising ghrelin and hunger and slowing metabolism to restore the lost weight",
+      "Leptin levels have risen, which increases appetite",
+      "Their hypothalamus has stopped functioning"
+    ],
+    "correctIndex": 1,
+    "explanation": "When weight drops below the defended set point, fat cells release less leptin and the stomach releases more ghrelin, so the hypothalamus cranks up hunger and slows metabolism — actively pulling the body back toward its set point. This biological defence, not just weak willpower, is a major reason diets rebound."
+  },
+  {
+    "id": "psychology/hypnosis-and-meditation",
+    "contentSlug": "psychology/hypnosis-and-meditation",
+    "subject": "psychology",
+    "lessonTitle": "Hypnosis & Meditation",
+    "prompt": "A volunteer is easily hypnotised and reports an arm 'lifting on its own,' while another barely responds at all. A skeptic insists hypnosis is just sleep and total mind control. What's the accurate picture?",
+    "options": [
+      "The skeptic is right: hypnosis is a form of sleep that overrides the will",
+      "Hypnosis is focused, suggestible waking attention — not sleep and not mind control; responsiveness depends mostly on the person's own suggestibility, which varies widely",
+      "Everyone is equally hypnotisable; the second volunteer was faking",
+      "Hypnosis reliably recovers accurate hidden memories"
+    ],
+    "correctIndex": 1,
+    "explanation": "Hypnosis is an awake state of focused attention and openness to suggestion — not sleep, not mind control, and not a reliable memory tool (it can implant false memories). Crucially, how well it works depends mostly on the individual's suggestibility, a stable trait that varies a lot — which is why the two volunteers responded so differently."
+  },
+  {
+    "id": "psychology/illusions-and-interpretation",
+    "contentSlug": "psychology/illusions-and-interpretation",
+    "subject": "psychology",
+    "lessonTitle": "Illusions & Interpretation",
+    "prompt": "You measure the two horizontal lines in the Müller-Lyer illusion and confirm they are exactly equal. Yet when you look again, one still appears longer. What does this best demonstrate?",
+    "options": [
+      "Your measurement must have been inaccurate",
+      "Perception relies on automatic top-down processes that knowledge alone cannot switch off",
+      "The lines physically change length when you look away",
+      "You have a mild form of colour blindness"
+    ],
+    "correctIndex": 1,
+    "explanation": "The persistence of the illusion despite knowing the lines are equal shows that perception is driven by automatic, largely top-down processes — the brain applies depth assumptions (the fins as near/far corners) outside conscious control. Knowing the truth doesn't dismantle the perceptual machinery, which is exactly why illusions are such powerful evidence that perception is construction, not recording."
+  },
+  {
+    "id": "psychology/inferential-statistics",
+    "contentSlug": "psychology/inferential-statistics",
+    "subject": "psychology",
+    "lessonTitle": "From Sample to Truth",
+    "prompt": "A study of 50,000 people finds a 'statistically significant' (p < .001) effect: a supplement raises test scores by an average of 0.2 points out of 100. What's the most accurate takeaway?",
+    "options": [
+      "The supplement has a large, important effect on test scores",
+      "The result is almost certainly a measurement error",
+      "The effect is very unlikely to be pure chance, but it's tiny — statistical significance isn't the same as a meaningful effect size",
+      "A small p-value proves the supplement causes higher scores with certainty"
+    ],
+    "correctIndex": 2,
+    "explanation": "A huge sample can make even a trivial effect statistically significant — p just says the gap probably isn't pure chance. The effect size (0.2 points) tells you it's practically meaningless. Significance and importance are different questions, and no p-value proves anything with certainty."
+  },
+  {
+    "id": "psychology/judgment-and-decisions",
+    "contentSlug": "psychology/judgment-and-decisions",
+    "subject": "psychology",
+    "lessonTitle": "Fast Guesses and Where They Fail",
+    "prompt": "A person hears that 'Tom is meticulous, quiet and loves order' and immediately guesses he is a librarian rather than a salesperson — even though salespeople vastly outnumber librarians. Which two effects are at work?",
+    "options": [
+      "Anchoring and framing",
+      "The availability heuristic and loss aversion",
+      "The representativeness heuristic and base-rate neglect",
+      "Confirmation bias and the conjunction fallacy"
+    ],
+    "correctIndex": 2,
+    "explanation": "Tom matches the stereotype of a librarian, so the representativeness heuristic makes 'librarian' feel likely. At the same time the judgment ignores the much larger number of salespeople — that's base-rate neglect. Resemblance to a type overrides the real background frequencies, the classic Kahneman & Tversky finding."
+  },
+  {
+    "id": "psychology/language",
+    "contentSlug": "psychology/language",
+    "subject": "psychology",
+    "lessonTitle": "From Sounds to Sentences",
+    "prompt": "A three-year-old who has correctly said 'went' for months suddenly starts saying 'goed' and 'runned'. What does this reveal about how she is learning language?",
+    "options": [
+      "Her language ability is regressing",
+      "She has memorised fewer words than before",
+      "She has extracted a grammatical rule (add '-ed' for past tense) and is over-applying it, showing she learns rules, not just individual words",
+      "She is simply imitating an adult's errors"
+    ],
+    "correctIndex": 2,
+    "explanation": "These 'overregularization' errors are a famous sign of rule-learning. The child has unconsciously extracted the past-tense rule (add '-ed') and applies it even to irregular verbs she previously said correctly. Far from regression, it's evidence she is building grammar from rules rather than memorising each word one by one."
+  },
+  {
+    "id": "psychology/language-and-mind",
+    "contentSlug": "psychology/language-and-mind",
+    "subject": "psychology",
+    "lessonTitle": "Does Language Shape Thought?",
+    "prompt": "Russian speakers distinguish two blues faster than English speakers, but only when the shades cross the goluboy/siniy word boundary; when both shades share one Russian word, the advantage disappears. Which conclusion does this best support?",
+    "options": [
+      "Strong linguistic determinism — Russian speakers literally cannot see colours English speakers can",
+      "Weak linguistic relativity — language influences perception at the margins (sharpening a boundary) without determining what can be perceived",
+      "Language has no effect whatsoever on perception",
+      "English speakers are colour-blind to blue"
+    ],
+    "correctIndex": 1,
+    "explanation": "The effect is real but bounded: it appears only at the lexical boundary and only as a speed difference, not as an inability to see shades. That fits weak linguistic relativity (language nudges what we notice and how fast) and contradicts strong determinism (which would claim language sets hard limits on what can be thought or perceived)."
+  },
+  {
+    "id": "psychology/long-term-memory",
+    "contentSlug": "psychology/long-term-memory",
+    "subject": "psychology",
+    "lessonTitle": "Long-Term Memory",
+    "prompt": "A patient with severe amnesia cannot recall ever meeting his therapist, yet after days of practice he gets noticeably faster at a mirror-tracing task he insists he's never tried. What does this reveal?",
+    "options": [
+      "His memory is fully intact; he is pretending not to remember",
+      "Explicit (episodic) memory can be impaired while implicit (procedural) memory stays intact — they are separate systems",
+      "Skills are stored in short-term memory, which is unaffected by amnesia",
+      "Mirror-tracing requires no memory at all"
+    ],
+    "correctIndex": 1,
+    "explanation": "The patient cannot form new explicit, episodic memories (recalling the meetings) yet his implicit, procedural memory works fine — he learns the motor skill without any conscious memory of practising. This dissociation is the classic evidence that long-term memory is several separate systems, not one."
+  },
+  {
+    "id": "psychology/maslow",
+    "contentSlug": "psychology/maslow",
+    "subject": "psychology",
+    "lessonTitle": "Maslow's Hierarchy",
+    "prompt": "A teacher starts paying a student $5 for every book she reads. The student had been an avid reader. A year later the payments stop — and she now reads far less than before the payments began. What best explains this?",
+    "options": [
+      "Drive reduction — reading no longer reduces a biological need",
+      "The overjustification effect — the external reward undermined her intrinsic motivation to read",
+      "She has reached self-actualisation and no longer needs to read",
+      "Reading was always an extrinsic behaviour for her"
+    ],
+    "correctIndex": 1,
+    "explanation": "The student began with strong intrinsic motivation (she loved reading). Adding a tangible reward led her to re-attribute the behaviour to the money rather than to her own interest — the overjustification effect. When the reward was removed, the original intrinsic drive had been crowded out, so reading dropped below its starting level."
+  },
+  {
+    "id": "psychology/measurement-and-tests",
+    "contentSlug": "psychology/measurement-and-tests",
+    "subject": "psychology",
+    "lessonTitle": "Good Measurement",
+    "prompt": "A personality quiz gives you nearly the same score every time you take it, but psychologists find the score doesn't predict anything about your actual personality. The quiz is:",
+    "options": [
+      "Reliable but not valid",
+      "Valid but not reliable",
+      "Both reliable and valid",
+      "Neither reliable nor valid"
+    ],
+    "correctIndex": 0,
+    "explanation": "Consistent results across retakes means it's reliable. But because the score fails to capture the trait it claims to measure, it isn't valid. Reliable-but-not-valid is the seductive trap: the consistency makes a useless measure feel trustworthy."
+  },
+  {
+    "id": "psychology/measuring-intelligence",
+    "contentSlug": "psychology/measuring-intelligence",
+    "subject": "psychology",
+    "lessonTitle": "Measuring Intelligence",
+    "prompt": "On the original ratio formula, an 8-year-old child solves the problems a typical 10-year-old can solve. What is the child's IQ?",
+    "options": [
+      "80",
+      "100",
+      "125",
+      "It can't be calculated without the test's standard deviation"
+    ],
+    "correctIndex": 2,
+    "explanation": "Using IQ = (mental age ÷ chronological age) × 100, the child's mental age is 10 and chronological age is 8: (10 ÷ 8) × 100 = 125. The standard deviation matters for modern deviation IQ, but the classic ratio formula only needs the two ages."
+  },
+  {
+    "id": "psychology/mood-disorders",
+    "contentSlug": "psychology/mood-disorders",
+    "subject": "psychology",
+    "lessonTitle": "Mood Disorders",
+    "prompt": "According to Beck's cognitive theory of depression, what most directly maintains the low mood?",
+    "options": [
+      "A single traumatic event in the distant past",
+      "A self-reinforcing triad of automatic negative thoughts about the self, the world, and the future",
+      "Only an imbalance of serotonin, with no role for thinking",
+      "A deliberate choice to feel sad"
+    ],
+    "correctIndex": 1,
+    "explanation": "Beck argued that depression is sustained by the negative cognitive triad — habitual, automatic negative beliefs about oneself, the world, and the future — that act as a filter confirming the gloom. This is the rationale for CBT, which helps people test and reshape those thoughts. Biology (e.g. serotonin) also matters, but Beck's specific contribution was the cognitive mechanism, and depression is never a chosen feeling."
+  },
+  {
+    "id": "psychology/moral-development",
+    "contentSlug": "psychology/moral-development",
+    "subject": "psychology",
+    "lessonTitle": "How We Learn Right from Wrong",
+    "prompt": "Two people discuss the Heinz dilemma. One says 'He shouldn't steal — he'll get caught and punished.' The other says 'He shouldn't steal — laws exist to keep society functioning.' How do these compare in Kohlberg's scheme?",
+    "options": [
+      "Both are postconventional, since they both say no",
+      "The first is preconventional (avoiding punishment); the second is conventional (upholding law and social order)",
+      "Both are preconventional, since neither mentions principles",
+      "The verdicts are what matter, and they agree, so they reason identically"
+    ],
+    "correctIndex": 1,
+    "explanation": "They reach the same verdict ('don't steal') for reasoning at different levels. 'He'll get caught and punished' centres on consequences to the self — preconventional. 'Laws keep society functioning' centres on maintaining social order — conventional. For Kohlberg, the level is set by the reasoning, not the yes/no answer."
+  },
+  {
+    "id": "psychology/neo-freudians",
+    "contentSlug": "psychology/neo-freudians",
+    "subject": "psychology",
+    "lessonTitle": "Beyond Freud",
+    "prompt": "Which neo-Freudian proposed a 'collective unconscious' — a layer of inherited, universal archetypes shared by all of humanity?",
+    "options": [
+      "Alfred Adler",
+      "Karen Horney",
+      "Carl Jung",
+      "Sigmund Freud himself"
+    ],
+    "correctIndex": 2,
+    "explanation": "The collective unconscious and its archetypes are Carl Jung's signature contribution. Adler emphasised inferiority and the striving for superiority; Horney emphasised basic anxiety and cultural critique; Freud's unconscious was personal, not collective."
+  },
+  {
+    "id": "psychology/obedience",
+    "contentSlug": "psychology/obedience",
+    "subject": "psychology",
+    "lessonTitle": "Obedience to Authority",
+    "prompt": "Across Milgram's variations, obedience dropped most when the learner sat right next to the teacher and the experimenter gave orders by phone from another room. The best summary is:",
+    "options": [
+      "Obedience depends almost entirely on the participant's personality",
+      "Obedience is driven largely by situational factors — the authority's proximity and legitimacy, and the victim's closeness",
+      "People will obey any order no matter the circumstances",
+      "The shocks were real, which is why people obeyed"
+    ],
+    "correctIndex": 1,
+    "explanation": "Milgram's variations showed obedience is highly situational: it rises when authority is close and legitimate and the victim is distant, and falls when authority is remote (orders by phone) or the victim is near. Personality predicted far less than the setup — the power of the situation again."
+  },
+  {
+    "id": "psychology/observation-and-bias",
+    "contentSlug": "psychology/observation-and-bias",
+    "subject": "psychology",
+    "lessonTitle": "Watching Behavior",
+    "prompt": "A researcher who hopes a new tutoring method works rates the 'method' students as more engaged — partly because she unconsciously smiles more at them and reads their behaviour generously. This is best described as:",
+    "options": [
+      "A naturalistic observation",
+      "Observer bias and an expectancy effect (a Clever-Hans-style problem)",
+      "A valid operational definition",
+      "A double-blind procedure"
+    ],
+    "correctIndex": 1,
+    "explanation": "Her expectation both colours what she records (observer bias) and subtly changes the students' behaviour through unintended cues like smiling (an expectancy effect) — the same mechanism as Clever Hans. Keeping observers blind to who got which method is the standard guard."
+  },
+  {
+    "id": "psychology/observational-learning",
+    "contentSlug": "psychology/observational-learning",
+    "subject": "psychology",
+    "lessonTitle": "Learning by Watching",
+    "prompt": "Children who watched a model get PUNISHED for hitting Bobo imitated the aggression less. But when later offered a reward to show what they'd seen, they reproduced it just as well as everyone else. What does this reveal?",
+    "options": [
+      "The children never actually learned the aggressive behaviour",
+      "Learning and performance are distinct — all learned by watching; the model's punishment only affected whether they chose to perform it (vicarious punishment)",
+      "Punishment erased the memory of the behaviour, which the reward then restored",
+      "Observational learning only works when the observer is directly reinforced"
+    ],
+    "correctIndex": 1,
+    "explanation": "All the children learned the behaviour equally just by watching — the offered reward proved they could reproduce it. The model's punishment only suppressed their willingness to perform it (vicarious punishment). This separates learning from performance, the key insight of Bandura's social-cognitive theory."
+  },
+  {
+    "id": "psychology/operant-conditioning",
+    "contentSlug": "psychology/operant-conditioning",
+    "subject": "psychology",
+    "lessonTitle": "Consequences: Operant Conditioning",
+    "prompt": "A student takes an aspirin to get rid of a pounding headache; the headache disappears, and now she reaches for aspirin more readily at the first twinge. Taking the aspirin was strengthened by…",
+    "options": [
+      "Positive reinforcement (a pleasant stimulus was added)",
+      "Negative reinforcement (an aversive stimulus was removed)",
+      "Positive punishment (an aversive stimulus was added)",
+      "Negative punishment (a pleasant stimulus was removed)"
+    ],
+    "correctIndex": 1,
+    "explanation": "The aversive headache was REMOVED (negative = remove), and the behaviour of taking aspirin INCREASED (reinforcement). That combination is negative reinforcement — the cell most people mistake for punishment. Escaping or avoiding something unpleasant is rewarding, so it strengthens the behaviour."
+  },
+  {
+    "id": "psychology/organizing-perception",
+    "contentSlug": "psychology/organizing-perception",
+    "subject": "psychology",
+    "lessonTitle": "Organizing the World",
+    "prompt": "A friend walks away from you across a field. Their image on your retina gets steadily smaller, yet they don't appear to shrink. Which perceptual principle is at work?",
+    "options": [
+      "Figure-ground organisation",
+      "Size constancy — the brain rescales using depth cues so a familiar object keeps its perceived size",
+      "The phi phenomenon",
+      "Sensory adaptation"
+    ],
+    "correctIndex": 1,
+    "explanation": "This is size constancy: even though the retinal image shrinks with distance, the brain uses depth cues to keep the object's perceived size stable, so your friend doesn't appear to physically shrink. Constancies are what give us a stable world despite a constantly changing retinal image."
+  },
+  {
+    "id": "psychology/personality-and-childhood-disorders",
+    "contentSlug": "psychology/personality-and-childhood-disorders",
+    "subject": "psychology",
+    "lessonTitle": "Personality, Eating & Childhood Disorders",
+    "prompt": "Which statement best reflects the modern, accurate understanding of these conditions?",
+    "options": [
+      "Eating disorders are mainly about vanity and can be overcome with willpower",
+      "Antisocial personality disorder is just a clinical word for 'violent criminal'",
+      "Autism is increasingly understood as a spectrum and a form of neurodiversity — a different way of processing the world, with strengths as well as challenges",
+      "ADHD is simply a result of bad parenting and lack of discipline"
+    ],
+    "correctIndex": 2,
+    "explanation": "Autism is best understood as a spectrum and, increasingly, through neurodiversity — a different mode of processing the world, not merely a deficit. The other options repeat damaging myths: eating disorders are serious illnesses, not vanity or weak will; most people with ASPD are not violent; and ADHD reflects real differences in attention and self-regulation, not poor parenting."
+  },
+  {
+    "id": "psychology/piaget",
+    "contentSlug": "psychology/piaget",
+    "subject": "psychology",
+    "lessonTitle": "Piaget and the Child's Mind",
+    "prompt": "A child happily calls every four-legged animal at the zoo 'doggie' — the lion, the zebra, the goat. In Piaget's terms, what is the child doing?",
+    "options": [
+      "Accommodation — changing a schema to fit new information",
+      "Assimilation — fitting new animals into an existing 'dog' schema",
+      "Conservation — understanding quantity stays the same",
+      "Object permanence — knowing the animals exist when unseen"
+    ],
+    "correctIndex": 1,
+    "explanation": "The child is cramming new, unfamiliar animals into a schema they already have ('dog'). That's assimilation. Accommodation would be the opposite — splitting or revising the schema once the child learns these are different animals with different names and traits."
+  },
+  {
+    "id": "psychology/prejudice",
+    "contentSlug": "psychology/prejudice",
+    "subject": "psychology",
+    "lessonTitle": "Prejudice & Stereotypes",
+    "prompt": "A school simply seats students from two rival groups in the same room, with no shared task — and tension actually worsens. According to the contact hypothesis, what was missing?",
+    "options": [
+      "Nothing — contact always reduces prejudice automatically",
+      "Cooperation toward a shared (superordinate) goal, plus equal status and institutional support",
+      "More members of each group in the room",
+      "Stronger stereotypes to overcome the bias"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mere contact isn't enough and can backfire. Prejudice falls when groups have equal status, work cooperatively toward a shared superordinate goal, have institutional support, and get to know each other as individuals — the conditions demonstrated in Sherif's Robbers Cave study."
+  },
+  {
+    "id": "psychology/prenatal-and-infancy",
+    "contentSlug": "psychology/prenatal-and-infancy",
+    "subject": "psychology",
+    "lessonTitle": "Before and Just After the Beginning",
+    "prompt": "A teratogen exposure causes its most severe structural damage to developing organs. During which prenatal stage is this risk greatest, and why?",
+    "options": [
+      "The germinal stage, because the zygote is dividing fastest",
+      "The embryonic stage (weeks 2–8), because the major organs are first being formed then",
+      "The fetal stage, because the fetus is largest then",
+      "It is equally dangerous at all stages"
+    ],
+    "correctIndex": 1,
+    "explanation": "The embryonic stage (weeks 2–8) is when the heart, brain and every major organ first take shape — so a teratogen striking then can derail the basic structure of an organ. By the fetal stage the organs already exist, so damage is less likely to be structural (though the brain stays vulnerable). The germinal stage tends to be all-or-nothing rather than selectively damaging."
+  },
+  {
+    "id": "psychology/problem-solving",
+    "contentSlug": "psychology/problem-solving",
+    "subject": "psychology",
+    "lessonTitle": "Getting From Here to There",
+    "prompt": "Someone can't fasten a candle to a wall because they only think of the tack box as a container for tacks, never as a possible shelf. This failure is best described as:",
+    "options": [
+      "Using an algorithm instead of a heuristic",
+      "Functional fixedness — seeing an object only in terms of its usual function",
+      "Means-end analysis",
+      "Confirmation bias"
+    ],
+    "correctIndex": 1,
+    "explanation": "Functional fixedness is the tendency to see an object only in its customary role. Fixating on the box as 'just a tack-holder' blocks the insight that the box itself can serve as a shelf. It's a failure of flexibility, not of effort — the answer appears the moment you let the object take on a new function."
+  },
+  {
+    "id": "psychology/psychodynamic",
+    "contentSlug": "psychology/psychodynamic",
+    "subject": "psychology",
+    "lessonTitle": "Freud & the Unconscious",
+    "prompt": "A man is furious at his boss but can't risk saying so. He gets home and yells at his dog over nothing. Which defence mechanism is this?",
+    "options": [
+      "Repression — forgetting the anger entirely",
+      "Sublimation — channelling the anger into something productive",
+      "Displacement — redirecting the impulse onto a safer target",
+      "Denial — refusing to admit he is angry at all"
+    ],
+    "correctIndex": 2,
+    "explanation": "Redirecting an impulse from a threatening target (the boss) onto a safer substitute (the dog) is displacement. Repression would push the anger out of awareness; sublimation would channel it into a valued activity; denial would refuse to acknowledge the anger exists."
+  },
+  {
+    "id": "psychology/psychodynamic-therapy",
+    "contentSlug": "psychology/psychodynamic-therapy",
+    "subject": "psychology",
+    "lessonTitle": "Psychodynamic Therapy",
+    "prompt": "In therapy, a client begins reacting to the therapist with the same resentment and need for approval she once felt toward her critical mother. In psychodynamic terms, this is called:",
+    "options": [
+      "Resistance",
+      "Free association",
+      "Transference",
+      "Counterconditioning"
+    ],
+    "correctIndex": 2,
+    "explanation": "Transference is the client unconsciously redirecting feelings about an important past figure onto the therapist. Rather than a problem, it's treated as a valuable live re-enactment of the client's patterns that can be interpreted and reworked in the room."
+  },
+  {
+    "id": "psychology/reasoning",
+    "contentSlug": "psychology/reasoning",
+    "subject": "psychology",
+    "lessonTitle": "When Logic Meets the Human Mind",
+    "prompt": "In the 2-4-6 task, a player guesses the rule is 'even numbers increasing by 2' and only ever tests triples like 10-12-14 and 50-52-54 — all of which 'fit'. Why is this a poor strategy?",
+    "options": [
+      "Those triples are too large to be informative",
+      "She is using deduction when she should use induction",
+      "She only tests cases that confirm her guess; she never tries a triple designed to break it, so 'fits' tells her almost nothing",
+      "The rule cannot be discovered by testing at all"
+    ],
+    "correctIndex": 2,
+    "explanation": "This is confirmation bias. Every triple she tries already matches her hypothesis, so each 'fits' is consistent with countless other rules too — it can't distinguish her guess from the truth. The informative move is to test a triple she expects to be rejected (a disconfirming test). Seeking only confirmation is the classic reasoning error the 2-4-6 task exposes."
+  },
+  {
+    "id": "psychology/reinforcement-schedules",
+    "contentSlug": "psychology/reinforcement-schedules",
+    "subject": "psychology",
+    "lessonTitle": "Schedules of Reinforcement",
+    "prompt": "A telemarketer makes a sale after an unpredictable number of calls — sometimes the 3rd call, sometimes the 30th. Which schedule is this, and what behaviour does it produce?",
+    "options": [
+      "Fixed interval — slow responding with a scallop near a deadline",
+      "Variable interval — a slow, steady rate",
+      "Variable ratio — a high, steady, extinction-resistant rate",
+      "Fixed ratio — bursts of work with post-reinforcement pauses"
+    ],
+    "correctIndex": 2,
+    "explanation": "Reinforcement depends on the NUMBER of calls (a ratio), and that number is UNPREDICTABLE (variable) — a variable-ratio schedule. VR produces the highest, steadiest rate and the strongest resistance to extinction, which is exactly why it keeps gamblers and telemarketers going."
+  },
+  {
+    "id": "psychology/research-ethics",
+    "contentSlug": "psychology/research-ethics",
+    "subject": "psychology",
+    "lessonTitle": "The Ethics of Research",
+    "prompt": "A study must hide its true purpose to work, so participants are misled about what's being tested. To run ethically, what is essential afterward?",
+    "options": [
+      "Nothing — if they consented to a study, the deception is automatically fine",
+      "A thorough debriefing that reveals the truth, explains the deception, and checks on the participant",
+      "Paying participants extra money to compensate",
+      "Publishing the participants' names for transparency"
+    ],
+    "correctIndex": 1,
+    "explanation": "Deception is permitted only when necessary, low-risk, and — crucially — followed by debriefing: revealing the real purpose, explaining why the deception was used, and ensuring the participant is unharmed. (Publishing names would itself violate confidentiality.)"
+  },
+  {
+    "id": "psychology/resilience",
+    "contentSlug": "psychology/resilience",
+    "subject": "psychology",
+    "lessonTitle": "Resilience & Well-Being",
+    "prompt": "A large study found that high stress predicted higher mortality risk — but with one crucial qualifier. What was it?",
+    "options": [
+      "Only for people over 65",
+      "Only for people who also believed that stress was harmful to health",
+      "Only for people facing acute, not chronic, stress",
+      "The effect disappeared entirely when controlling for income"
+    ],
+    "correctIndex": 1,
+    "explanation": "The raised mortality risk appeared only among those who both experienced high stress AND believed stress was harmful. People with equally high stress who viewed it as enhancing showed no such raised risk — a striking demonstration that one's stress mindset (an appraisal) shapes the body's actual response."
+  },
+  {
+    "id": "psychology/resilience-and-meaning",
+    "contentSlug": "psychology/resilience-and-meaning",
+    "subject": "psychology",
+    "lessonTitle": "Resilience & Meaning",
+    "prompt": "Across both the resilience literature and studies of happiness, which single factor most consistently predicts who weathers adversity AND who reports a happy life?",
+    "options": [
+      "High income and material comfort",
+      "Raw intelligence (IQ)",
+      "At least one warm, supportive close relationship",
+      "Having experienced little hardship in the past"
+    ],
+    "correctIndex": 2,
+    "explanation": "Warm, supportive relationships are the strongest single protective factor in the resilience literature and the best predictor of happiness in long-term studies. We're deeply social animals: close bonds are simultaneously our best shield against adversity (the R in PERMA) and our richest source of joy — outweighing income, IQ, and a charmed, hardship-free past."
+  },
+  {
+    "id": "psychology/retrieval-and-forgetting",
+    "contentSlug": "psychology/retrieval-and-forgetting",
+    "subject": "psychology",
+    "lessonTitle": "Retrieval & Forgetting",
+    "prompt": "Hannah studies for an exam in her quiet bedroom but takes the test in a noisy hall, and blanks on things she knew the night before. The same facts return easily once she's home. What best explains this?",
+    "options": [
+      "The memories decayed overnight and regenerated at home",
+      "Context-dependent memory — the bedroom cues present at encoding were missing in the exam hall, so retrieval failed there",
+      "Proactive interference from older material",
+      "The information was never stored in long-term memory"
+    ],
+    "correctIndex": 1,
+    "explanation": "The facts were stored fine — they returned at home. What failed was retrieval in a mismatched context: the environmental cues present when she encoded the material (her bedroom) were absent in the exam hall, so the hooks to the memory were missing. This is context-dependent memory, and it's why varying your study settings helps."
+  },
+  {
+    "id": "psychology/schizophrenia",
+    "contentSlug": "psychology/schizophrenia",
+    "subject": "psychology",
+    "lessonTitle": "Schizophrenia",
+    "prompt": "In describing schizophrenia, what do clinicians mean by a 'positive' symptom?",
+    "options": [
+      "A symptom that is beneficial or helpful to the person",
+      "An experience added on top of normal functioning, such as a hallucination or delusion",
+      "A sign that the person is recovering",
+      "A second personality that emerges"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Positive' means added, not good. Positive symptoms — hallucinations, delusions, disorganised thought — are experiences added to normal functioning. 'Negative' symptoms are normal functions reduced or lost (flat affect, avolition, withdrawal). And schizophrenia is a disorder of thought and perception, not a 'second personality'."
+  },
+  {
+    "id": "psychology/seeing",
+    "contentSlug": "psychology/seeing",
+    "subject": "psychology",
+    "lessonTitle": "The Eye & Seeing",
+    "prompt": "On a dark night you notice that a faint star is easier to see when you look slightly to the side of it rather than straight at it. Why?",
+    "options": [
+      "Looking away relaxes the lens, sharpening the image",
+      "The cones in the central fovea are most sensitive in the dark",
+      "Looking to the side lands the star's image on the rod-rich periphery, which is far more sensitive in dim light",
+      "The pupil only dilates when you look sideways"
+    ],
+    "correctIndex": 2,
+    "explanation": "Rods, concentrated in the peripheral retina, are far more sensitive to dim light than cones, which cluster in the central fovea and need bright light. Looking slightly to the side casts the faint star's image onto the rod-rich periphery, making it easier to detect — a trick astronomers call averted vision."
+  },
+  {
+    "id": "psychology/shaping-and-cognition",
+    "contentSlug": "psychology/shaping-and-cognition",
+    "subject": "psychology",
+    "lessonTitle": "Shaping & Cognitive Learning",
+    "prompt": "Rats allowed to wander a maze with no food show no sign of learning it — until food is placed at the goal, after which they run it as fast as already-rewarded rats. This best demonstrates…",
+    "options": [
+      "Shaping by successive approximation",
+      "Latent learning — learning happened without reinforcement and stayed hidden until there was a reason to show it",
+      "Spontaneous recovery of an extinguished response",
+      "Positive reinforcement on a variable-ratio schedule"
+    ],
+    "correctIndex": 1,
+    "explanation": "The rats clearly learned the maze layout while exploring, but didn't perform until reinforcement gave them a reason to. This is Tolman's latent learning, showing that learning can occur without reinforcement and that learning and performance are distinct — a finding the strict behaviourist account couldn't explain."
+  },
+  {
+    "id": "psychology/social-cognitive",
+    "contentSlug": "psychology/social-cognitive",
+    "subject": "psychology",
+    "lessonTitle": "Social-Cognitive Theories",
+    "prompt": "A student believes, 'Whether I pass depends on my own preparation,' tackles hard practice problems, and bounces back quickly after a poor mock exam. Which concepts best describe her?",
+    "options": [
+      "An external locus of control and low self-efficacy",
+      "An internal locus of control and high self-efficacy",
+      "Repression and an oral fixation",
+      "Incongruence between her real and ideal self"
+    ],
+    "correctIndex": 1,
+    "explanation": "Believing outcomes flow from her own effort is an internal locus of control (Rotter); attempting hard tasks and recovering fast from failure are hallmarks of high self-efficacy (Bandura). Both are social-cognitive constructs about belief, not unconscious drives or self-discrepancy."
+  },
+  {
+    "id": "psychology/strengths-and-gratitude",
+    "contentSlug": "psychology/strengths-and-gratitude",
+    "subject": "psychology",
+    "lessonTitle": "Strengths & Gratitude",
+    "prompt": "In the famous study, people who kept a weekly GRATITUDE journal — versus those listing daily hassles or neutral events — showed which result after ten weeks?",
+    "options": [
+      "No difference; journaling content doesn't matter",
+      "They were happier and more optimistic, and even reported fewer physical complaints",
+      "They became more anxious from focusing on what they might lose",
+      "Only the hassles group improved, by venting their frustrations"
+    ],
+    "correctIndex": 1,
+    "explanation": "The gratitude group ended up happier, more optimistic, and reported fewer physical symptoms and more exercise than the hassles or neutral groups. Simply redirecting attention toward what's good counters hedonic adaptation — the mechanism behind why gratitude is such a reliable well-being practice."
+  },
+  {
+    "id": "psychology/stress-and-the-body",
+    "contentSlug": "psychology/stress-and-the-body",
+    "subject": "psychology",
+    "lessonTitle": "When Stress Makes Us Sick",
+    "prompt": "Research on the Type A personality eventually pinpointed which component as the strongest predictor of heart disease?",
+    "options": [
+      "Ambition and a hard-driving work ethic",
+      "A constant sense of time-urgency",
+      "Chronic hostility and anger",
+      "Competitiveness in sports and games"
+    ],
+    "correctIndex": 2,
+    "explanation": "The original Type A profile bundled time-urgency, competitiveness and hostility together, but follow-up research showed that chronic hostility and anger — not ambition or hurry — was the toxic ingredient, because it keeps the cardiovascular system in near-constant stress arousal. Encouragingly, it's a modifiable pattern."
+  },
+  {
+    "id": "psychology/the-action-potential",
+    "contentSlug": "psychology/the-action-potential",
+    "subject": "psychology",
+    "lessonTitle": "The Action Potential",
+    "prompt": "A neuron receives a much stronger stimulus than usual. How does its action potential change?",
+    "options": [
+      "The spike is taller and travels with more force",
+      "The spike is identical — but the neuron fires more often, and more neurons fire alongside it",
+      "The resting potential rises permanently",
+      "Nothing changes; neurons ignore stimulus strength entirely"
+    ],
+    "correctIndex": 1,
+    "explanation": "Action potentials are all-or-none: every spike is the same size. A stronger stimulus is encoded not by a bigger spike but by a higher firing rate and the recruitment of more neurons — intensity lives in the pattern, not the amplitude."
+  },
+  {
+    "id": "psychology/the-bell-curve",
+    "contentSlug": "psychology/the-bell-curve",
+    "subject": "psychology",
+    "lessonTitle": "The Bell Curve & Its Extremes",
+    "prompt": "A psychologist refuses to diagnose a teenager with intellectual disability despite an IQ of 68, noting he holds a part-time job, manages his own routine, and navigates social life well. Is this defensible?",
+    "options": [
+      "No — an IQ below 70 is sufficient on its own",
+      "Yes — diagnosis also requires significant deficits in adaptive functioning, which he doesn't show",
+      "No — the bell curve makes the cutoff exact",
+      "Yes — but only because IQ tests are never accurate"
+    ],
+    "correctIndex": 1,
+    "explanation": "Intellectual disability requires both a low IQ AND significant limitations in adaptive functioning (everyday practical and social skills). Since the teenager functions well in daily life, the low score alone does not justify the diagnosis — a score is not a person."
+  },
+  {
+    "id": "psychology/the-biology-of-memory",
+    "contentSlug": "psychology/the-biology-of-memory",
+    "subject": "psychology",
+    "lessonTitle": "Where Memory Lives",
+    "prompt": "After hippocampal damage, a patient cannot form any new explicit memories but recalls his childhood clearly and can still learn new motor skills (while denying he's practised them). What does this pattern tell us about the hippocampus?",
+    "options": [
+      "It is the permanent storehouse of all long-term memories",
+      "It is essential for FORMING new explicit memories and consolidating them elsewhere, but is not where memories are permanently stored, and isn't needed for procedural learning",
+      "It stores only procedural (skill) memories",
+      "It has no role in memory at all"
+    ],
+    "correctIndex": 1,
+    "explanation": "The pattern (intact old memories, preserved procedural learning, but no new explicit memories) shows the hippocampus is the gateway for forming and consolidating new explicit memories, while long-term storage lives in the cortex and procedural learning runs through other systems. This is exactly the dissociation seen in patient H.M."
+  },
+  {
+    "id": "psychology/the-brain-map",
+    "contentSlug": "psychology/the-brain-map",
+    "subject": "psychology",
+    "lessonTitle": "A Tour of the Brain",
+    "prompt": "A patient suffers damage to the hippocampus. Which difficulty is most likely?",
+    "options": [
+      "Loss of balance and coordinated movement",
+      "Inability to form new long-term memories",
+      "Failure of automatic breathing and heartbeat",
+      "Total loss of vision"
+    ],
+    "correctIndex": 1,
+    "explanation": "The hippocampus, part of the limbic system, is essential for forming new long-term memories. Damage to it can leave a person unable to lay down new memories. Balance is the cerebellum's job, breathing the brainstem's, and vision the occipital lobe's."
+  },
+  {
+    "id": "psychology/the-experiment",
+    "contentSlug": "psychology/the-experiment",
+    "subject": "psychology",
+    "lessonTitle": "The Experiment",
+    "prompt": "A study finds a new drug group improved more than a control group. Critics note the drug group also attended weekly support meetings the control group didn't. The support meetings are best described as:",
+    "options": [
+      "The dependent variable",
+      "A placebo",
+      "A confound — an extra difference between the groups that could explain the result",
+      "Random assignment"
+    ],
+    "correctIndex": 2,
+    "explanation": "The groups differed in more than the IV: one also got support meetings. That extra, uncontrolled difference is a confound — the improvement might be due to the meetings, not the drug, and the design can't tell them apart."
+  },
+  {
+    "id": "psychology/the-good-life",
+    "contentSlug": "psychology/the-good-life",
+    "subject": "psychology",
+    "lessonTitle": "The Good Life, by Evidence",
+    "prompt": "After more than 80 years of data, the Harvard Study of Adult Development concluded that the strongest predictor of who grew into a happy, healthy old age was —",
+    "options": [
+      "Wealth and career success",
+      "High intelligence and education",
+      "The warmth and quality of their close relationships",
+      "Having avoided all major stress and hardship"
+    ],
+    "correctIndex": 2,
+    "explanation": "The Harvard study's clearest finding was that those most satisfied in their relationships at midlife were the healthiest decades later — 'good relationships keep us happier and healthier, period.' It converges with the broader evidence: close connections, not wealth, IQ, or a hardship-free life, are the single best predictor of a life that goes well."
+  },
+  {
+    "id": "psychology/the-intelligence-debate",
+    "contentSlug": "psychology/the-intelligence-debate",
+    "subject": "psychology",
+    "lessonTitle": "Nature, Nurture & the IQ Controversy",
+    "prompt": "A study reports IQ is '60% heritable.' Which interpretation is scientifically correct?",
+    "options": [
+      "Each person's intelligence is 60% caused by their genes",
+      "60% of the differences among people in this group and environment are associated with genetic differences — it says nothing about gaps between groups or about fixedness",
+      "Intelligence is mostly fixed at birth and can't be improved",
+      "Environment explains only 40% of anyone's potential"
+    ],
+    "correctIndex": 1,
+    "explanation": "Heritability describes how much of the variation within one population in one environment tracks genetic differences. It is not a statement about any individual, it does not mean intelligence is fixed (the Flynn effect proves it isn't), and it tells you nothing about why two different groups might differ."
+  },
+  {
+    "id": "psychology/the-many-lenses",
+    "contentSlug": "psychology/the-many-lenses",
+    "subject": "psychology",
+    "lessonTitle": "One Question, Seven Lenses",
+    "prompt": "Two psychologists explain the same assault. One cites a spike in the attacker's stress hormones; the other cites the evolved value of defending status. How should we regard these explanations?",
+    "options": [
+      "They contradict each other; only one can be correct",
+      "They are the same explanation stated twice",
+      "They are complementary — a proximate (immediate-mechanism) cause and an ultimate (evolutionary) cause answering different questions",
+      "Neither is scientific because they disagree"
+    ],
+    "correctIndex": 2,
+    "explanation": "The hormone account is a proximate cause (the immediate biological mechanism); the evolutionary account is an ultimate cause (why such mechanisms exist at all). They answer different questions — 'how, right now?' versus 'why is this capacity here?' — and fit together rather than competing."
+  },
+  {
+    "id": "psychology/the-memory-stores",
+    "contentSlug": "psychology/the-memory-stores",
+    "subject": "psychology",
+    "lessonTitle": "Sensory, Short-Term & Long-Term",
+    "prompt": "You glance at an unfamiliar 7-digit number, then someone asks you a question for 30 seconds before you can dial. The number is gone. Which store failed, and why?",
+    "options": [
+      "The sensory register — iconic memory faded in a quarter-second",
+      "Short-term memory — without rehearsal it holds ~7 items only ~15–20 seconds, and the distraction blocked rehearsal",
+      "Long-term memory — the number decayed after years",
+      "No store failed; 7 digits exceeds all human memory"
+    ],
+    "correctIndex": 1,
+    "explanation": "The number sat in short-term memory, which holds about seven items for only 15–20 seconds without rehearsal. The 30-second distraction prevented you from rehearsing it, so it faded before reaching long-term storage. Seven digits is right at the capacity limit, but it was the duration limit — broken by interrupted rehearsal — that lost it."
+  },
+  {
+    "id": "psychology/the-neuron",
+    "contentSlug": "psychology/the-neuron",
+    "subject": "psychology",
+    "lessonTitle": "The Neuron",
+    "prompt": "Which sequence correctly traces a signal through a single neuron, from input to output?",
+    "options": [
+      "Axon → cell body → dendrites → terminals",
+      "Dendrites → cell body → axon → terminals",
+      "Terminals → axon → cell body → dendrites",
+      "Cell body → dendrites → terminals → axon"
+    ],
+    "correctIndex": 1,
+    "explanation": "Signals flow one way: dendrites receive them, the cell body (soma) sums them, the axon carries the impulse away (sped up by its myelin sheath), and the terminals pass it on to the next cell across the synapse."
+  },
+  {
+    "id": "psychology/the-other-senses",
+    "contentSlug": "psychology/the-other-senses",
+    "subject": "psychology",
+    "lessonTitle": "Smell, Taste, Touch & Pain",
+    "prompt": "You stub your toe and immediately grab and rub it, which eases the pain. According to gate-control theory, why does rubbing help?",
+    "options": [
+      "Rubbing repairs the damaged tissue faster",
+      "Rubbing activates large touch fibres that 'close the gate', crowding out the pain signal in the spinal cord",
+      "Rubbing increases the amplitude of the pain signal until it adapts",
+      "Rubbing releases extra pain receptors"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gate-control theory proposes a neural 'gate' in the spinal cord that pain signals must pass to reach the brain. Stimulating large touch fibres by rubbing helps close that gate, blocking some of the pain signal. (Signals from the brain — distraction, calm — can close it too.) Pain is a managed signal, not a simple readout of damage."
+  },
+  {
+    "id": "psychology/the-plastic-brain",
+    "contentSlug": "psychology/the-plastic-brain",
+    "subject": "psychology",
+    "lessonTitle": "The Plastic Brain",
+    "prompt": "A researcher wants to pinpoint exactly WHICH small brain region becomes active when a person feels fear, but doesn't need millisecond timing. Which tool is the best fit?",
+    "options": [
+      "EEG — superb timing but fuzzy about location",
+      "fMRI — fine spatial detail showing where blood flow rises, though timing lags",
+      "CT — a fast structural X-ray image",
+      "A standard MRI — detailed structure but no activity"
+    ],
+    "correctIndex": 1,
+    "explanation": "fMRI tracks where blood and oxygen flow as regions work, giving fine spatial detail — ideal for locating an active region. Its weakness is timing (blood flow lags neural firing by seconds), but that doesn't matter here. EEG has the opposite profile (great timing, poor location), and CT/MRI show structure, not activity."
+  },
+  {
+    "id": "psychology/the-research-process",
+    "contentSlug": "psychology/the-research-process",
+    "subject": "psychology",
+    "lessonTitle": "Thinking Like a Scientist",
+    "prompt": "A researcher writes: 'Anxiety = a score of 40+ on the State Anxiety Inventory.' What part of the research process is this?",
+    "options": [
+      "A theory",
+      "A hypothesis",
+      "An operational definition",
+      "A falsification"
+    ],
+    "correctIndex": 2,
+    "explanation": "It pins the vague concept 'anxiety' to a specific, measurable procedure — a score on a named test. That is an operational definition: it tells anyone exactly how to measure the variable so the study can be repeated and checked."
+  },
+  {
+    "id": "psychology/the-roots-of-psychology",
+    "contentSlug": "psychology/the-roots-of-psychology",
+    "subject": "psychology",
+    "lessonTitle": "The Roots of Psychology",
+    "prompt": "What was the key difference between structuralism and functionalism?",
+    "options": [
+      "Structuralism used experiments; functionalism rejected science",
+      "Structuralism asked what the mind is made of (its elements); functionalism asked what the mind is for (its purpose)",
+      "Structuralism studied behaviour; functionalism studied the brain",
+      "They were two names for exactly the same approach"
+    ],
+    "correctIndex": 1,
+    "explanation": "Structuralism tried to break consciousness into basic elements via introspection — a 'chemistry of mind.' Functionalism, inspired by evolution, instead asked why mental processes exist: what they do to help us adapt and survive."
+  },
+  {
+    "id": "psychology/the-science-of-happiness",
+    "contentSlug": "psychology/the-science-of-happiness",
+    "subject": "psychology",
+    "lessonTitle": "The Science of Happiness",
+    "prompt": "A man is convinced that finally buying his dream car will make him lastingly happier. Based on the science of well-being, what's the most likely outcome?",
+    "options": [
+      "His happiness will rise permanently, since circumstances are what matter most",
+      "His happiness will spike, then drift back toward his baseline set point as he adapts — the hedonic treadmill",
+      "His happiness will drop, because material things always make people unhappy",
+      "Nothing will change at all, because happiness is purely genetic"
+    ],
+    "correctIndex": 1,
+    "explanation": "Hedonic adaptation means we adjust to new circumstances. The car produces a real but temporary spike in happiness, after which he returns toward his personal set point — the hedonic treadmill. It's why intentional activities (the PERMA pillars), not new purchases, are the durable route to well-being."
+  },
+  {
+    "id": "psychology/the-self-and-assessment",
+    "contentSlug": "psychology/the-self-and-assessment",
+    "subject": "psychology",
+    "lessonTitle": "The Self & Measuring Personality",
+    "prompt": "A clinician praises a test because two different scorers reach the same conclusion and the same client scores the same way months apart — but warns that the test still may not measure what it claims. Which property is strong, and which is in doubt?",
+    "options": [
+      "Validity is strong; reliability is in doubt",
+      "Reliability is strong; validity is in doubt",
+      "Both are strong, so the warning makes no sense",
+      "Neither applies; these describe projective tests only"
+    ],
+    "correctIndex": 1,
+    "explanation": "Consistent results across scorers and across time is reliability — and it's strong here. But a test can be perfectly consistent yet still measure the wrong thing, so validity (does it measure what it claims?) remains in doubt. Reliability is necessary but not sufficient for validity."
+  },
+  {
+    "id": "psychology/the-seven-perspectives",
+    "contentSlug": "psychology/the-seven-perspectives",
+    "subject": "psychology",
+    "lessonTitle": "Seven Ways to See the Mind",
+    "prompt": "A psychologist explains a person's fear of dogs as a reaction conditioned by a painful bite years ago. Which perspective is she using?",
+    "options": [
+      "Biological — focusing on brain chemistry",
+      "Behaviourist — the fear was learned through experience (conditioning)",
+      "Humanistic — focusing on personal growth",
+      "Evolutionary — focusing on ancestral survival"
+    ],
+    "correctIndex": 1,
+    "explanation": "Explaining a behaviour as learned through experience — here, a neutral thing (dogs) paired with pain producing a conditioned fear — is the signature of the behaviourist perspective. A biological account would emphasise the fear circuitry; an evolutionary one, an inherited readiness to fear animals."
+  },
+  {
+    "id": "psychology/the-sleep-cycle",
+    "contentSlug": "psychology/the-sleep-cycle",
+    "subject": "psychology",
+    "lessonTitle": "Stages of Sleep",
+    "prompt": "A sleep researcher wakes a volunteer four hours into the night and finds an awake-looking EEG, darting eyes, and limp muscles. The volunteer reports a vivid dream. Which stage is this — and what's the apparent paradox?",
+    "options": [
+      "Deep N3 sleep — paradoxical because dreams shouldn't occur there",
+      "REM sleep — paradoxical because the brain is highly active while the body is paralysed",
+      "N1 sleep — paradoxical because it's so brief",
+      "Wakefulness — the volunteer never actually fell asleep"
+    ],
+    "correctIndex": 1,
+    "explanation": "An awake-like EEG, rapid eye movements, vivid dreaming, and muscle paralysis are the signature of REM sleep. It's called paradoxical because the brain is nearly as active as waking while the major muscles are switched off — the protective paralysis that stops us acting out dreams."
+  },
+  {
+    "id": "psychology/the-social-world",
+    "contentSlug": "psychology/the-social-world",
+    "subject": "psychology",
+    "lessonTitle": "Constructing Social Reality",
+    "prompt": "A normally gentle person becomes harsh and controlling after being assigned the role of 'supervisor' in a strict workplace. A social psychologist would most likely emphasise:",
+    "options": [
+      "The person was secretly harsh all along — their true character finally showed",
+      "The power of the situation — the role and setting shaped the behaviour",
+      "Pure random chance unrelated to any cause",
+      "That behaviour can never be explained scientifically"
+    ],
+    "correctIndex": 1,
+    "explanation": "The defining theme of social psychology is the power of the situation: roles, settings and pressures can reshape behaviour dramatically, even in people whose 'character' would predict otherwise. Reaching first for hidden character is exactly the dispositional bias the field warns against."
+  },
+  {
+    "id": "psychology/the-stress-response",
+    "contentSlug": "psychology/the-stress-response",
+    "subject": "psychology",
+    "lessonTitle": "The Stress Response",
+    "prompt": "Which sequence correctly describes the HPA axis releasing the main stress hormone?",
+    "options": [
+      "Adrenal medulla → adrenaline → pituitary → cortisol",
+      "Hypothalamus → pituitary → adrenal cortex → cortisol",
+      "Pituitary → hypothalamus → adrenal medulla → adrenaline",
+      "Adrenal cortex → hypothalamus → pituitary → adrenaline"
+    ],
+    "correctIndex": 1,
+    "explanation": "The HPA axis is a top-down relay: the Hypothalamus releases CRH, which prompts the Pituitary to release ACTH, which travels to the Adrenal cortex, which releases cortisol. The fast SAM pathway (adrenaline from the adrenal medulla) is a separate, quicker track."
+  },
+  {
+    "id": "psychology/the-synapse",
+    "contentSlug": "psychology/the-synapse",
+    "subject": "psychology",
+    "lessonTitle": "The Synapse",
+    "prompt": "At a normal synapse, what happens to a neurotransmitter shortly after it binds a receptor and passes its message?",
+    "options": [
+      "It permanently fuses to the receptor, keeping the signal on forever",
+      "It is quickly cleared — reabsorbed into the sending neuron (reuptake) or broken down — so the signal stays brief",
+      "It turns back into an electrical impulse and crosses the cleft again",
+      "It multiplies to strengthen the next signal"
+    ],
+    "correctIndex": 1,
+    "explanation": "A clean signal must be a brief one. After binding, the neurotransmitter is rapidly removed from the cleft — pumped back into the sending neuron (reuptake) or enzymatically broken down — clearing the synapse for the next message. Many drugs work precisely by interfering with this clearance."
+  },
+  {
+    "id": "psychology/the-therapeutic-context",
+    "contentSlug": "psychology/the-therapeutic-context",
+    "subject": "psychology",
+    "lessonTitle": "What Is Therapy?",
+    "prompt": "Research repeatedly identifies which factor as one of the strongest predictors of whether therapy helps — across very different schools of therapy?",
+    "options": [
+      "The specific brand-name technique the therapist was trained in",
+      "The therapeutic alliance — the trust and shared purpose between client and therapist",
+      "Whether medication is also prescribed",
+      "How many years ago the therapist trained"
+    ],
+    "correctIndex": 1,
+    "explanation": "The therapeutic alliance — an emotional bond plus agreement on goals and tasks — is one of the most consistent predictors of good outcomes, often outweighing which specific technique is used. It's the reason a warm, collaborative relationship matters in every school of therapy."
+  },
+  {
+    "id": "psychology/theories-of-emotion",
+    "contentSlug": "psychology/theories-of-emotion",
+    "subject": "psychology",
+    "lessonTitle": "Theories of Emotion",
+    "prompt": "A person crosses a high, swaying bridge and meets an attractive stranger. Their heart is already pounding from the height — but they interpret the arousal as attraction and feel drawn to the stranger. Which theory best explains this misattribution?",
+    "options": [
+      "James-Lange — each emotion has a unique bodily signature",
+      "Cannon-Bard — arousal and emotion occur independently",
+      "Schachter-Singer two-factor — generic arousal was given a cognitive label ('attraction') drawn from the situation",
+      "None — arousal cannot be mislabelled"
+    ],
+    "correctIndex": 2,
+    "explanation": "This is the classic two-factor scenario. The arousal was generic (caused by the height), but the person scanned the situation, found an explanation ('the attractive stranger'), and labelled the arousal as attraction. Schachter-Singer's theory — arousal plus a cognitive label — predicts exactly this kind of misattribution."
+  },
+  {
+    "id": "psychology/theories-of-intelligence",
+    "contentSlug": "psychology/theories-of-intelligence",
+    "subject": "psychology",
+    "lessonTitle": "Theories of Intelligence",
+    "prompt": "A manager is a mediocre test-taker but reliably senses tension in her team, defuses conflicts, and adapts plans to messy real-world constraints. Whose view of intelligence best honours her strengths?",
+    "options": [
+      "Spearman's — she clearly has high g",
+      "Sternberg's practical intelligence and the idea of emotional intelligence",
+      "None — these are personality, not intelligence at all",
+      "Factor analysis, which would score her highly"
+    ],
+    "correctIndex": 1,
+    "explanation": "Adapting to real-world constraints is Sternberg's practical intelligence; reading and managing others' emotions is emotional intelligence. Both were proposed precisely because abilities like hers are real and valuable yet largely invisible to a standard g-loaded IQ test."
+  },
+  {
+    "id": "psychology/thinking-traps",
+    "contentSlug": "psychology/thinking-traps",
+    "subject": "psychology",
+    "lessonTitle": "The Mind's Blind Spots",
+    "prompt": "A gambler has watched the roulette ball land on red eight times in a row and bets heavily on black, reasoning that black is now 'overdue'. Which bias is this, and is the reasoning sound?",
+    "options": [
+      "Hindsight bias; the reasoning is sound",
+      "The gambler's fallacy; the reasoning is flawed because each spin is independent, so black is no more likely than before",
+      "Loss aversion; the reasoning is sound",
+      "The framing effect; the reasoning is flawed"
+    ],
+    "correctIndex": 1,
+    "explanation": "This is the gambler's fallacy: treating independent events as if past results change future odds. The wheel has no memory, so after any sequence of reds the chance of black on the next spin is unchanged (just under 50% on a real wheel). A run does not make the opposite outcome 'due'."
+  },
+  {
+    "id": "psychology/thresholds-and-adaptation",
+    "contentSlug": "psychology/thresholds-and-adaptation",
+    "subject": "psychology",
+    "lessonTitle": "Thresholds & Adaptation",
+    "prompt": "You can just barely notice when 1 kg is added to a 50 kg load. According to Weber's law, how much would you need to add to a 100 kg load to just notice the change?",
+    "options": [
+      "1 kg — the just-noticeable difference is a fixed amount",
+      "About 2 kg — the JND is a constant fraction of the starting load",
+      "0.5 kg — bigger loads make you more sensitive",
+      "It cannot be predicted from this information"
+    ],
+    "correctIndex": 1,
+    "explanation": "Weber's law says the just-noticeable difference is a constant proportion of the original stimulus, not a fixed amount. Here 1 kg out of 50 kg is 2%. To notice a change on a 100 kg load you'd need about 2% of 100 kg — roughly 2 kg."
+  },
+  {
+    "id": "psychology/trait-theories",
+    "contentSlug": "psychology/trait-theories",
+    "subject": "psychology",
+    "lessonTitle": "Traits & the Big Five",
+    "prompt": "Studies find Big Five traits are about 40–60% heritable. What does the remaining variation mostly come from?",
+    "options": [
+      "The shared family environment everyone in a household has in common",
+      "Pure random chance with no real cause",
+      "Non-shared environment — each person's own unique experiences — plus measurement error",
+      "Nothing; the other 40–60% is also genetic but undiscovered"
+    ],
+    "correctIndex": 2,
+    "explanation": "Surprisingly, the shared family environment contributes little to adult personality differences. The non-genetic portion is dominated by the non-shared environment — your unique experiences, peers and chance events — together with measurement noise. Personality is genuinely both nature and nurture."
+  },
+  {
+    "id": "psychology/trauma-and-dissociation",
+    "contentSlug": "psychology/trauma-and-dissociation",
+    "subject": "psychology",
+    "lessonTitle": "Trauma & Dissociation",
+    "prompt": "A war veteran is jolted by sudden, vivid flashbacks in which the combat feels like it's happening now, avoids anything that reminds them of the war, and is constantly on edge. Which disorder do these clusters point to?",
+    "options": [
+      "Dissociative identity disorder",
+      "Major depressive disorder",
+      "Post-traumatic stress disorder (PTSD)",
+      "A somatic symptom disorder"
+    ],
+    "correctIndex": 2,
+    "explanation": "Intrusive flashbacks, avoidance of reminders, and persistent hyperarousal following a traumatic event are core symptom clusters of PTSD. DID centres on distinct identity states with memory gaps; depression centres on persistent low mood and loss of pleasure; somatic symptom disorders centre on distressing physical symptoms — none of which is the picture described here."
+  },
+  {
+    "id": "psychology/two-brains-and-hormones",
+    "contentSlug": "psychology/two-brains-and-hormones",
+    "subject": "psychology",
+    "lessonTitle": "Two Hemispheres & Hormones",
+    "prompt": "In a split-brain patient, a picture of a key is flashed to the LEFT visual field. What happens?",
+    "options": [
+      "They easily say 'key' aloud",
+      "They report seeing nothing, but their left hand can pick out a key by touch",
+      "They report seeing nothing and cannot respond to it at all",
+      "Both hemispheres name it instantly"
+    ],
+    "correctIndex": 1,
+    "explanation": "The left visual field projects to the right hemisphere, which usually lacks speech. With the corpus callosum cut, that information can't reach the left (language) hemisphere — so the person can't say what they saw. But the right hemisphere controls the left hand, which can still point to or grasp the matching object."
+  },
+  {
+    "id": "psychology/understanding-disorder",
+    "contentSlug": "psychology/understanding-disorder",
+    "subject": "psychology",
+    "lessonTitle": "The Roots of Disorder & the Cost of Stigma",
+    "prompt": "Two people live through the same severe, stressful event. One develops a disorder; the other does not. How does the diathesis-stress model explain this?",
+    "options": [
+      "The one who developed a disorder simply did not try hard enough to cope",
+      "They must have experienced entirely different events",
+      "They differ in underlying vulnerability (diathesis); the same stress crosses the onset threshold for one but not the other",
+      "Stress alone fully determines who develops a disorder, regardless of the person"
+    ],
+    "correctIndex": 2,
+    "explanation": "The diathesis-stress model holds that onset depends on the combination of a person's underlying vulnerability and the stress they face. With the same stress, the person carrying greater vulnerability is more likely to cross the threshold into a disorder. It is never about insufficient effort, and stress alone does not determine the outcome — the diathesis each person brings is decisive."
+  },
+  {
+    "id": "psychology/what-drives-us",
+    "contentSlug": "psychology/what-drives-us",
+    "subject": "psychology",
+    "lessonTitle": "What Drives Us",
+    "prompt": "A well-rested, well-fed person spends their Saturday on a hard crossword purely because they enjoy the challenge. Which theory of motivation struggles most to explain this?",
+    "options": [
+      "Arousal theory — they may be seeking an optimal level of stimulation",
+      "Incentive theory — the satisfaction of solving it is a pull toward the goal",
+      "Drive-reduction theory — no biological need is being reduced, yet they're motivated",
+      "All four theories explain it equally well"
+    ],
+    "correctIndex": 2,
+    "explanation": "Drive-reduction theory says we act only to reduce an unpleasant biological need (hunger, thirst). Here no such need is present, yet the person is clearly motivated. Arousal theory (seeking optimal stimulation) and incentive theory (the pull of an enjoyable goal) handle this case far more comfortably."
+  },
+  {
+    "id": "psychology/what-is-abnormal",
+    "contentSlug": "psychology/what-is-abnormal",
+    "subject": "psychology",
+    "lessonTitle": "What Is \"Abnormal\"?",
+    "prompt": "A person has an unusual hobby that most people find strange, but it brings them joy, harms no one, and they function well at work and home. Using the four D's, how should this be regarded?",
+    "options": [
+      "A disorder, because the behaviour is deviant (unusual)",
+      "A disorder, because others disapprove of it",
+      "Not a disorder — deviance alone, without distress, dysfunction, or danger, does not make a behaviour disordered",
+      "Impossible to judge without a brain scan"
+    ],
+    "correctIndex": 2,
+    "explanation": "Being unusual (deviant) is only one of the four D's, and it carries little weight on its own. With no distress, no dysfunction in daily life, and no danger, there is no basis to call this a disorder — it is simply human variation. Labelling mere difference as illness is exactly the objectivity trap to avoid."
+  },
+  {
+    "id": "psychology/what-is-consciousness",
+    "contentSlug": "psychology/what-is-consciousness",
+    "subject": "psychology",
+    "lessonTitle": "What Is Consciousness?",
+    "prompt": "While absorbed in a gripping book, you don't notice a clock ticking — until it stops, and the silence pulls your focus. What does this best illustrate?",
+    "options": [
+      "Consciousness is an all-or-nothing on/off switch",
+      "Awareness and attention are the same thing",
+      "The ticking was outside awareness; attention is a spotlight you can aim, and unattended input is still monitored enough to grab focus when it changes",
+      "The clock was never processed by the brain at all"
+    ],
+    "correctIndex": 2,
+    "explanation": "The ticking sat in your broad awareness but outside the narrow spotlight of attention while you read. Because unattended input is still monitored at a low level, a sudden change — the silence — was enough to swing the spotlight onto it. Attention and awareness are related but distinct, and neither is a simple on/off switch."
+  },
+  {
+    "id": "psychology/what-is-emotion",
+    "contentSlug": "psychology/what-is-emotion",
+    "subject": "psychology",
+    "lessonTitle": "What Is Emotion?",
+    "prompt": "A startled hiker freezes, heart hammering, eyes wide, gripped by a clear sense of dread. Which of the three components of emotion is the racing heart?",
+    "options": [
+      "Subjective experience — the felt quality of the emotion",
+      "Expressive behaviour — the outward, visible signal",
+      "Physiological arousal — the body's internal surge",
+      "Appraisal — the interpretation of the situation"
+    ],
+    "correctIndex": 2,
+    "explanation": "A pounding heart is physiological arousal — the body's internal, autonomic surge that prepares it for action. The wide eyes are expressive behaviour (the visible signal), and the felt 'dread' is the subjective experience. A complete emotion is all three at once."
+  },
+  {
+    "id": "psychology/what-is-intelligence",
+    "contentSlug": "psychology/what-is-intelligence",
+    "subject": "psychology",
+    "lessonTitle": "What Is Intelligence?",
+    "prompt": "An 18-year-old beats her grandfather at a brand-new logic puzzle, but he easily wins their weekly crossword. Which best explains this?",
+    "options": [
+      "The grandfather has more g overall",
+      "She has stronger fluid intelligence; he has stronger crystallised intelligence",
+      "Crossword puzzles don't measure any intelligence",
+      "Fluid and crystallised intelligence are the same thing measured twice"
+    ],
+    "correctIndex": 1,
+    "explanation": "Novel on-the-spot reasoning is fluid intelligence, which peaks young — hence her edge on the new puzzle. The crossword leans on accumulated vocabulary and knowledge, which is crystallised intelligence and keeps growing with age."
+  },
+  {
+    "id": "psychology/what-is-learning",
+    "contentSlug": "psychology/what-is-learning",
+    "subject": "psychology",
+    "lessonTitle": "What Is Learning?",
+    "prompt": "A 13-month-old who couldn't walk last month now toddles across the room, even though no one 'trained' her. Is this learning?",
+    "options": [
+      "Yes — her behaviour changed permanently",
+      "No — the change is due to maturation, not experience",
+      "Yes — it counts as habituation",
+      "No — walking is a reflex"
+    ],
+    "correctIndex": 1,
+    "explanation": "Walking emerges on a biological timetable as the nervous system and muscles mature, not because experience taught it. A relatively permanent change only counts as learning when it is caused by experience — which is why maturation, reflexes and temporary states are excluded."
+  },
+  {
+    "id": "psychology/what-is-memory",
+    "contentSlug": "psychology/what-is-memory",
+    "subject": "psychology",
+    "lessonTitle": "What Is Memory?",
+    "prompt": "You're introduced to someone but, distracted by your phone, you instantly 'forget' their name. Which memory process most likely failed?",
+    "options": [
+      "Storage — the name decayed in long-term memory",
+      "Retrieval — the name is stored but you can't find it",
+      "Encoding — distracted, you never formed the trace in the first place",
+      "None — names simply cannot be remembered"
+    ],
+    "correctIndex": 2,
+    "explanation": "Because your attention was elsewhere, the name was never properly encoded — no trace was formed, so there is nothing to store or retrieve. This is the most common everyday 'memory failure', and the fix isn't a better memory but better attention at the moment of encoding."
+  },
+  {
+    "id": "psychology/what-is-personality",
+    "contentSlug": "psychology/what-is-personality",
+    "subject": "psychology",
+    "lessonTitle": "What Is Personality?",
+    "prompt": "A researcher writes a single, book-length study of one extraordinary person, mapping their unique history and qualities without comparing them to anyone else. Which approach is this?",
+    "options": [
+      "Nomothetic — placing people on universal dimensions",
+      "Idiographic — focusing on the unique individual in depth",
+      "Behaviourist — counting observable responses",
+      "Statistical — averaging across a large sample"
+    ],
+    "correctIndex": 1,
+    "explanation": "An in-depth study of a single, unique individual on their own terms is the idiographic approach. The nomothetic approach would instead place that person on standard dimensions so they could be compared with everyone else."
+  },
+  {
+    "id": "psychology/what-is-psychology",
+    "contentSlug": "psychology/what-is-psychology",
+    "subject": "psychology",
+    "lessonTitle": "What Is Psychology?",
+    "prompt": "A researcher notices students cram the night before exams, proposes that anxiety-driven relief reinforces the delay, and forecasts that the scariest assignments will be put off most. Which goals of psychology has she moved through — and what's the missing fourth?",
+    "options": [
+      "Predict, control, describe — she's missing 'explain'",
+      "Describe, explain, predict — she's missing 'control' (changing the behaviour)",
+      "Explain and control only — description isn't a real goal",
+      "She has completed all four already"
+    ],
+    "correctIndex": 1,
+    "explanation": "She described the behaviour (cramming), explained it (anxiety-relief reinforcement), and predicted when it recurs (scary tasks). The fourth goal, control, would mean designing an intervention to actually change the behaviour — and testing whether it works."
+  },
+  {
+    "id": "psychology/what-is-stress",
+    "contentSlug": "psychology/what-is-stress",
+    "subject": "psychology",
+    "lessonTitle": "What Is Stress?",
+    "prompt": "Two students face the identical pop quiz. One is calm; the other is in a panic. According to Lazarus, what best explains the difference?",
+    "options": [
+      "The quiz is objectively more stressful for one of them",
+      "Their appraisals differ — one judges the threat as larger relative to their coping resources",
+      "Only chronic stressors cause a stress response",
+      "Stress depends only on the stressor, not the person"
+    ],
+    "correctIndex": 1,
+    "explanation": "The stressor is identical, so the difference lies in appraisal. Primary appraisal sizes up the threat and secondary appraisal sizes up one's resources to cope; stress is felt when the threat outweighs the resources. That subjective sizing-up, not the event alone, drives the response."
+  },
+  {
+    "id": "psychology/what-psychologists-do",
+    "contentSlug": "psychology/what-psychologists-do",
+    "subject": "psychology",
+    "lessonTitle": "What Psychologists Actually Do",
+    "prompt": "A patient needs medication for severe depression. Which professional is qualified to prescribe it?",
+    "options": [
+      "A clinical psychologist, because they treat disorders",
+      "A psychoanalyst, because they specialise in the mind",
+      "A psychiatrist, because they are a medical doctor (MD)",
+      "Any psychologist with a doctorate"
+    ],
+    "correctIndex": 2,
+    "explanation": "A psychiatrist is a physician (MD) and so can prescribe medication. Clinical psychologists hold doctorates and treat disorders, but in most jurisdictions they treat through therapy and cannot prescribe. A psychoanalyst is trained in a specific therapeutic tradition, not a prescribing role."
+  },
+  {
+    "id": "psychology/why-we-sleep-and-dream",
+    "contentSlug": "psychology/why-we-sleep-and-dream",
+    "subject": "psychology",
+    "lessonTitle": "Why We Sleep & Dream",
+    "prompt": "One theorist says a recurring dream hides a forbidden wish behind its surface story; another says the dream is the cortex weaving a narrative from random brainstem signals during REM. How are these two views best described?",
+    "options": [
+      "Both are the activation-synthesis theory stated differently",
+      "The first is Freudian wish-fulfilment; the second is activation-synthesis — competing accounts of the same phenomenon, neither yet proven",
+      "The first is the restoration theory; the second is memory consolidation",
+      "They are identical because both involve REM sleep"
+    ],
+    "correctIndex": 1,
+    "explanation": "Hidden-wish-behind-a-disguise is Freud's wish-fulfilment theory; random-brainstem-signals-woven-into-a-story is Hobson and McCarley's activation-synthesis theory. They are genuine rivals about why we dream, and dream science remains open — the truth may even combine them with memory consolidation."
+  },
+  {
+    "id": "psychology/working-memory",
+    "contentSlug": "psychology/working-memory",
+    "subject": "psychology",
+    "lessonTitle": "Working Memory",
+    "prompt": "A student can comfortably navigate a mental map while humming a tune, but completely loses a phone number she's repeating the moment she starts saying a sentence aloud. Why?",
+    "options": [
+      "Humming is harder than speaking, so it should interfere more",
+      "The map (visuospatial sketchpad) and the tune (different stream) don't compete, but the number and the spoken sentence both demand the phonological loop, which jams",
+      "Working memory has only one component, so all tasks interfere equally",
+      "The central executive has unlimited capacity, so no interference should occur"
+    ],
+    "correctIndex": 1,
+    "explanation": "In Baddeley's model the visuospatial sketchpad (the map) and the phonological loop (verbal material) are separate, so a spatial task and a verbal one barely interfere. But repeating a number and speaking a sentence both rely on the single phonological loop — they collide, and the number is lost. Separate subsystems, separate (non-competing) resources."
   }
 ]

@@ -1,0 +1,86 @@
+---
+title: Making Sense of Data
+subject: psychology
+contentSlug: psychology/descriptive-statistics
+order: 7
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="From a pile of numbers to a story" kind="explain">
+
+Run a study and you end up holding a heap of raw numbers — hundreds of scores that mean nothing at a glance. **Descriptive statistics** are the tools that compress that heap into a few honest summaries: a typical value, and a sense of how spread out the data are. They *describe* your sample; they don't yet draw conclusions beyond it (that's the next lesson).
+
+Two questions do most of the work: **where is the center?** and **how spread out is it?**
+
+</Step>
+
+<Step title="Measures of center" kind="explain">
+
+Three numbers answer "what's typical," and they don't always agree:
+
+- **Mean** — the arithmetic average: add everything, divide by how many. Uses every value, but gets dragged around by extremes.
+- **Median** — the middle value when the data are lined up in order. Half fall below, half above. It shrugs off outliers.
+- **Mode** — the most frequent value. The only one that works for categories (the most common eye color), and the only one that can name several "peaks."
+
+When a few extreme values pull the mean far from the median, that gap is itself a signal — the data are **skewed**.
+
+</Step>
+
+<Step title="Measures of spread" kind="explain">
+
+A center alone can mislead. Two classes can both average 70%, yet one is all 68–72 while the other is half 40s and half 90s. **Spread** captures that difference:
+
+- **Range** — simply the highest value minus the lowest. Quick, but hostage to a single outlier.
+- **Variance** — the average *squared* distance of each value from the mean.
+- **Standard deviation (SD)** — the square root of the variance, which pulls the answer back into the original units. It's the workhorse: the *typical* distance a value sits from the mean. Small SD = tightly clustered; large SD = widely scattered.
+
+</Step>
+
+<Step title="Build a dataset and watch it react" kind="interactive">
+
+Click the bars to raise and lower individual values, and watch every statistic recompute live. The histogram below marks the mean and median.
+
+<DescriptiveStats />
+
+Push one bar to an extreme and watch the **mean** chase after it while the **median** barely flinches. That single demonstration is why we report the median for skewed data like income — one billionaire warps the average, not the middle.
+
+</Step>
+
+<Step title="Shape: the normal curve and skew" kind="explain">
+
+Plot enough naturally varying measurements — heights, reaction times, test scores — and they tend to pile into a symmetric, bell-shaped **normal distribution**: most values clump near the middle, tapering off evenly on both sides. In a perfect bell, the mean, median, and mode all sit together at the peak.
+
+When the data are **skewed**, a tail stretches out to one side, dragging the mean toward the tail and away from the median. The bell below is the symmetric, no-skew baseline — the shape against which we judge whether real data lean.
+
+<NormalCurve />
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A town's household incomes are mostly modest, but a few billionaires live there. Which single number best describes the 'typical' household income?"
+  options={[
+    "The mean, because it uses every value",
+    "The median, because it isn't dragged upward by the few extreme incomes",
+    "The range, because it shows the full span",
+    "The standard deviation, because it measures spread"
+  ]}
+  correctIndex={1}
+  explanation="A few huge incomes pull the mean far above what most households actually earn — the data are right-skewed. The median, the middle value, ignores how extreme those outliers are and stays near the typical household. This is exactly why income is reported as a median."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Descriptive statistics** summarise a sample's center and spread without yet generalising beyond it.
+- **Center:** the **mean** (average, sensitive to outliers), the **median** (middle, outlier-resistant), and the **mode** (most frequent).
+- **Spread:** the **range**, the **variance**, and especially the **standard deviation** — the typical distance from the mean, in the original units.
+- A symmetric **normal distribution** puts mean, median, and mode together; **skew** stretches a tail and separates the mean from the median.
+
+</Step>
+
+</Lesson>

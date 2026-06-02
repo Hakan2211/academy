@@ -1,0 +1,102 @@
+---
+title: Drugs & the Brain
+subject: psychology
+contentSlug: psychology/altered-states-and-drugs
+order: 6
+estimatedMinutes: 12
+---
+
+<Lesson>
+
+<Step title="Chemistry that rewrites experience" kind="explain">
+
+A few milligrams of a molecule can transform consciousness — slowing the world to a crawl, speeding it to a blur, painting the air with colour, or blanketing everything in warm relief. **Psychoactive drugs** are substances that cross into the brain and alter perception, mood, thinking or behaviour. They are the most dramatic everyday demonstration that your mind is, at bottom, chemistry.
+
+To understand any of them, you need one idea from biology: the **synapse**, the tiny gap where one neuron signals the next using chemical messengers called **neurotransmitters**. Nearly every drug works by hijacking this hand-off. Get the synapse, and the whole zoo of drug effects clicks into place.
+
+</Step>
+
+<Step title="How drugs hijack the synapse" kind="interactive">
+
+At a normal synapse, the sending neuron releases neurotransmitter molecules; they drift across the gap, briefly bind receptors on the receiving neuron, and are then pumped back for reuse (**reuptake**). Drugs intervene at exactly these steps. Switch the **drug mode** below and watch what changes.
+
+<SynapseViz />
+
+The four modes map onto whole classes of drugs:
+
+- **Normal** — the baseline hand-off, with reuptake clearing the gap.
+- **Reuptake blocker** — the pump is jammed, so the messenger lingers and keeps signalling. **Cocaine** does this to dopamine; **SSRI antidepressants** do it to serotonin.
+- **Agonist** — the drug *mimics* a neurotransmitter and binds the receptor itself, boosting or faking the signal. Nicotine, opioids and many others act this way.
+- **Antagonist** — the drug *plugs* receptors so the real neurotransmitter can't bind, blocking the signal — the basis of many antipsychotics and antidotes.
+
+One synapse, four levers — and most psychoactive effects come from pulling one of them.
+
+</Step>
+
+<Step title="The four families" kind="explain">
+
+Group the drugs by what they do to the nervous system and the landscape simplifies into four families:
+
+- **Depressants** *slow* the central nervous system — alcohol, sedatives, and benzodiazepines. They boost the brain's main brake, **GABA**, producing relaxation, slurred coordination, and at high doses dangerously suppressed breathing.
+- **Stimulants** *speed it up* — caffeine, nicotine, cocaine, amphetamines. They raise dopamine and noradrenaline, bringing energy, alertness and euphoria, followed by a crash.
+- **Hallucinogens** *distort perception* — LSD, psilocybin, and (with its own profile) cannabis. They scramble normal sensory processing, often by acting on serotonin systems, producing altered perception and sometimes profound shifts in thought.
+- **Opioids** *kill pain and flood reward* — heroin, morphine, prescription painkillers. They mimic the body's own endorphins (agonists at opioid receptors), producing intense relief and euphoria — and steep, fast-building dependence.
+
+</Step>
+
+<Step title="The reward pathway — the common thread" kind="interactive">
+
+Different families pull different levers, yet addictive drugs share one final target: the brain's **dopamine reward pathway**. Dopamine surges from the **VTA** to the **nucleus accumbens** and on to the **prefrontal cortex** — the circuit that normally tags food, sex and achievement as "do that again." Addictive drugs flood this circuit far beyond anything natural, screaming "this matters most of all."
+
+<RewardPathway />
+
+Drag the **uses** slider and watch the catch. The brain fights back against the flood by **down-regulating** — making fewer receptors and less dopamine. So the same dose produces a smaller and smaller response. We can even sketch the shape of that decline:
+
+<Formula tex="\text{response} \;\approx\; \text{dose} \times e^{-\,uses/k}" block />
+
+That fading curve is **tolerance** — and it sets a cruel trap, which the next step unpacks.
+
+</Step>
+
+<Step title="Tolerance, dependence, addiction" kind="explain">
+
+These three words are often muddled, but they name three distinct things:
+
+- **Tolerance** — the body adapts, so you need *more* drug to get the same effect (the fading curve you just saw). It pushes the dose ever upward.
+- **Dependence** — the body has adapted so thoroughly that removing the drug causes **withdrawal**: the opposite of the drug's effects (a depressant's withdrawal brings anxiety and tremor; a stimulant's brings crushing fatigue and low mood). The person now needs the drug just to feel *normal*.
+- **Addiction** — compulsive seeking and use *despite harm*, with loss of control. The reward circuit has been hijacked so the drug feels more important than food, relationships or safety.
+
+The escalation has a grim engine. Tolerance demands higher doses; the body becomes dependent; withdrawal punishes any attempt to stop; and the hijacked reward pathway makes the drug feel essential. Notice that the **prefrontal cortex** — the very region for planning and self-control — is part of the damaged circuit, which is why "just use willpower" so badly underestimates addiction.
+
+<Callout type="warn" title="Why willpower isn't enough">
+Addiction physically remodels the brain's motivation and control systems. Treating it as a simple moral failure ignores the biology — which is why effective treatment combines medical, psychological and social support, not shame.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Cocaine jams the pump that normally recycles dopamine, so dopamine pools in the synapse and over-stimulates the reward pathway. After weeks of use, the same amount gives a far weaker high. Which mechanism and which adaptation is this?"
+  options={[
+    "It acts as a receptor antagonist, and the weaker high is withdrawal",
+    "It acts as a reuptake blocker, and the weaker high reflects tolerance from the brain down-regulating dopamine",
+    "It is a depressant boosting GABA, and the weaker high is dependence",
+    "It mimics dopamine as an agonist, and the weaker high means the drug stopped working chemically"
+  ]}
+  correctIndex={1}
+  explanation="Jamming the recycling pump so the messenger lingers is the reuptake-blocker mechanism (the same lever SSRIs pull on serotonin). The diminishing high is tolerance: faced with the dopamine flood, the brain down-regulates receptors and dopamine, so the same dose yields less effect — driving users to escalate."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Psychoactive drugs** alter consciousness by hijacking the **synapse**, acting as **reuptake blockers** (e.g. cocaine on dopamine, SSRIs on serotonin), **agonists** (mimicking a neurotransmitter, e.g. opioids), or **antagonists** (blocking receptors).
+- The four families: **depressants** (slow the CNS via GABA — alcohol, sedatives), **stimulants** (speed it up via dopamine/noradrenaline — caffeine, cocaine), **hallucinogens** (distort perception — LSD, psilocybin), and **opioids** (pain relief + reward — heroin, morphine).
+- Addictive drugs converge on the **dopamine reward pathway** (**VTA → nucleus accumbens → prefrontal cortex**), flooding it far beyond natural rewards.
+- The brain **down-regulates**, producing **tolerance** (need more for the same effect), which feeds **dependence** (withdrawal without the drug) and **addiction** (compulsive use despite harm) — a biological trap, not mere weak will.
+
+</Step>
+
+</Lesson>

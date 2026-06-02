@@ -471,6 +471,109 @@ export const BADGES: Record<string, BadgeMeta> = {
     color: '#FFD54A',
     hint: 'Complete every lesson in The Limits of Computation.',
   },
+  // --- Psychology (17 worlds; accents mirror convex/seed.ts psychUnitsData) ---
+  'unit-what-is-psychology': {
+    label: "Mind Initiate",
+    icon: "Compass",
+    color: "#E056FD",
+    hint: "Complete every lesson in What Is Psychology?.",
+  },
+  'unit-research-methods': {
+    label: "Lab Investigator",
+    icon: "Microscope",
+    color: "#5DADE2",
+    hint: "Complete every lesson in Research Methods & Statistics.",
+  },
+  'unit-brain-and-behavior': {
+    label: "Brain Explorer",
+    icon: "Brain",
+    color: "#FF6B9D",
+    hint: "Complete every lesson in The Brain & Behavior.",
+  },
+  'unit-sensation-and-perception': {
+    label: "Perception Pro",
+    icon: "Eye",
+    color: "#00CEC9",
+    hint: "Complete every lesson in Sensation & Perception.",
+  },
+  'unit-consciousness': {
+    label: "Dream Walker",
+    icon: "Moon",
+    color: "#6C5CE7",
+    hint: "Complete every lesson in Consciousness.",
+  },
+  'unit-learning': {
+    label: "Conditioning Adept",
+    icon: "Bell",
+    color: "#27AE60",
+    hint: "Complete every lesson in Learning.",
+  },
+  'unit-memory': {
+    label: "Memory Keeper",
+    icon: "Archive",
+    color: "#F39C12",
+    hint: "Complete every lesson in Memory.",
+  },
+  'unit-language-and-thought': {
+    label: "Deep Thinker",
+    icon: "Languages",
+    color: "#1ABC9C",
+    hint: "Complete every lesson in Language & Thought.",
+  },
+  'unit-intelligence': {
+    label: "Mind Measurer",
+    icon: "Puzzle",
+    color: "#3498DB",
+    hint: "Complete every lesson in Intelligence.",
+  },
+  'unit-lifespan-development': {
+    label: "Lifespan Guide",
+    icon: "Footprints",
+    color: "#FDCB6E",
+    hint: "Complete every lesson in Lifespan Development.",
+  },
+  'unit-motivation-and-emotion': {
+    label: "Heart & Drive",
+    icon: "Flame",
+    color: "#FF7043",
+    hint: "Complete every lesson in Motivation & Emotion.",
+  },
+  'unit-stress-and-health': {
+    label: "Resilience Master",
+    icon: "HeartPulse",
+    color: "#E74C3C",
+    hint: "Complete every lesson in Stress & Health.",
+  },
+  'unit-personality': {
+    label: "Self Cartographer",
+    icon: "Fingerprint",
+    color: "#A29BFE",
+    hint: "Complete every lesson in Personality.",
+  },
+  'unit-psychological-disorders': {
+    label: "Compassion Scholar",
+    icon: "CloudRain",
+    color: "#9B59B6",
+    hint: "Complete every lesson in Psychological Disorders.",
+  },
+  'unit-psychotherapy': {
+    label: "Healing Guide",
+    icon: "Armchair",
+    color: "#16A085",
+    hint: "Complete every lesson in Therapy.",
+  },
+  'unit-social-psychology': {
+    label: "Social Decoder",
+    icon: "Users",
+    color: "#F7B731",
+    hint: "Complete every lesson in Social Psychology.",
+  },
+  'unit-positive-psychology': {
+    label: "Flourish Sage",
+    icon: "Sun",
+    color: "#FFD54A",
+    hint: "Complete every lesson in Positive Psychology & Well-Being.",
+  },
 }
 
 export function badgeMeta(key: string): BadgeMeta {
@@ -548,6 +651,24 @@ const UNIT_SUBJECT: Record<string, string> = {
   'computer-graphics': 'computer-science',
   'artificial-intelligence': 'computer-science',
   'theory-of-computation': 'computer-science',
+  // Psychology — public/badges/psychology/<slug>.png (art TBD)
+  "what-is-psychology": 'psychology',
+  "research-methods": 'psychology',
+  "brain-and-behavior": 'psychology',
+  "sensation-and-perception": 'psychology',
+  "consciousness": 'psychology',
+  "learning": 'psychology',
+  "memory": 'psychology',
+  "language-and-thought": 'psychology',
+  "intelligence": 'psychology',
+  "lifespan-development": 'psychology',
+  "motivation-and-emotion": 'psychology',
+  "stress-and-health": 'psychology',
+  "personality": 'psychology',
+  "psychological-disorders": 'psychology',
+  "psychotherapy": 'psychology',
+  "social-psychology": 'psychology',
+  "positive-psychology": 'psychology',
 }
 
 // Subjects whose medal PNGs exist under public/badges/<subject>/. A unit whose
@@ -587,6 +708,7 @@ const SUBJECT_GROUPS: Array<BadgeGroupMeta> = [
   { subject: 'chemistry', label: 'Chemistry', color: '#00D2D3', icon: 'FlaskConical' },
   { subject: 'biology', label: 'Biology', color: '#2ECC71', icon: 'Dna' },
   { subject: 'computer-science', label: 'Computer Science', color: '#FF6B6B', icon: 'Binary' },
+  { subject: 'psychology', label: 'Psychology', color: '#E056FD', icon: 'Brain' },
 ]
 
 export type BadgeGroup = BadgeGroupMeta & { keys: Array<string> }
