@@ -1,0 +1,85 @@
+---
+title: When We're Not Rational
+subject: economics
+contentSlug: economics/behavioral-economics
+order: 4
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="The cracks in the model" kind="explain">
+
+So far we've assumed a tidy shopper: someone who knows their preferences, weighs marginal utility per dollar, and lands exactly on the equimarginal optimum. Economists call this idealised character *homo economicus* — perfectly rational, perfectly self-interested, perfectly calculating.
+
+The trouble is, real humans aren't like that. We're swayed by irrelevant numbers, by how a choice is worded, by the fear of loss more than the lure of gain. **Behavioural economics** is the field that takes these quirks seriously — blending psychology into economics to study how people *actually* decide, not how a flawless calculator would.
+
+</Step>
+
+<Step title="Bounded rationality" kind="explain">
+
+The starting insight, from Herbert Simon, is **bounded rationality**: our reasoning is hemmed in by limited time, limited information, and limited mental horsepower. We can't possibly compare every option against every alternative, so we don't.
+
+Instead we lean on **heuristics** — quick mental shortcuts that are usually good enough. "Buy the brand I bought last time." "Go with the default." "If it's expensive, it must be good." These rules save enormous effort and often work fine. But because they're shortcuts, they slip into predictable errors — **biases** — that a coldly rational agent would never make. The next two are among the most studied.
+
+</Step>
+
+<Step title="Anchoring" kind="interactive">
+
+The first bias is **anchoring**: when we estimate an unknown, our mind latches onto whatever number it saw first and adjusts away from it too little — even when that number is obviously irrelevant.
+
+Below, a random spin of a wheel shows you a number you're told to ignore. Then you estimate something unrelated: what share of the world's countries are in Africa? Lock in your guess, then try the other anchor.
+
+<AnchoringDemo />
+
+People who first saw a *low* number guess too low; those who saw a *high* number guess too high — for the exact same question. The true figure is about 28%, but the anchor tugs everyone toward it. Marketers exploit this constantly: a "was $200, now $120" tag anchors you on $200, so $120 feels like a steal. The original price did no work except set the anchor.
+
+</Step>
+
+<Step title="Loss aversion and framing" kind="interactive">
+
+The second bias starts with **loss aversion**: psychologically, losses hurt about twice as much as equivalent gains feel good. Losing $50 stings far more than finding $50 delights. Because of this, the *wording* of a choice — whether it's dressed as a gain or a loss — can flip our decision even when the outcomes are identical. That's the **framing effect**.
+
+Here's the classic test. A disease threatens 600 people; you pick a response program. First the outcomes are framed as lives *saved*, then the very same outcomes as lives *lost*. Choose in both frames.
+
+<FramingDemo />
+
+Most people pick the safe, sure option when it's framed as a *gain* ("200 saved"), then flip to the risky gamble when the identical outcome is framed as a *loss* ("400 die") — gambling to avoid a certain loss. Nothing about the actual outcomes changed. Only the frame did.
+
+</Step>
+
+<Step title="Nudges" kind="explain">
+
+If our choices bend so easily to anchors and frames, then the *way* options are presented quietly steers us — whether anyone intends it or not. Behavioural economists call a deliberate tweak to that presentation a **nudge**: a change to the "choice architecture" that gently pushes behaviour without banning anything or changing prices.
+
+The headline example is the **default**. Make retirement-savings enrolment automatic (opt-out instead of opt-in) and participation soars, because inertia and the status-quo bias keep people where they're placed. Putting fruit at eye level in a cafeteria, or printing "most customers choose this plan," works the same way. Nudges are powerful precisely *because* we're not the flawless calculators the standard model assumes — and that raises real questions about who gets to design the defaults.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A store relabels a jacket from 'was $200, now $120'. Customers who'd never pay $120 outright now rush to buy. Which bias best explains this?"
+  options={[
+    "Loss aversion — they fear losing the jacket",
+    "Anchoring — the $200 'original' price sets a reference point that makes $120 feel like a bargain",
+    "Bounded rationality has no effect on prices",
+    "Diminishing marginal utility of jackets"
+  ]}
+  correctIndex={1}
+  explanation="The $200 tag is an anchor: the mind fixes on it as a reference and judges $120 relative to it, so the discount feels like a great deal even for shoppers who wouldn't pay $120 cold. This is anchoring. Loss aversion is about losses looming larger than gains, and diminishing marginal utility is about extra units giving less satisfaction — neither is what's driving the bargain illusion here."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Standard theory assumes a perfectly rational *homo economicus*; real people fall short — that's the realm of **behavioural economics**.
+- **Bounded rationality**: limited time, info, and brainpower push us onto **heuristics** that cause predictable **biases**.
+- **Anchoring**: estimates cling to the first number seen, even an irrelevant one.
+- **Loss aversion** makes losses sting more than equal gains, so **framing** a choice as a gain vs a loss can flip our decision.
+- A **nudge** changes how options are presented (e.g. the default) to steer behaviour without forcing it.
+
+</Step>
+
+</Lesson>

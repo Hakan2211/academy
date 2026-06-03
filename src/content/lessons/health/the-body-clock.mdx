@@ -1,0 +1,92 @@
+---
+title: Your Body Clock
+subject: health
+contentSlug: health/the-body-clock
+order: 33
+estimatedMinutes: 7
+summary: The circadian rhythm, melatonin, morning light, chronotypes, and why jet lag feels awful.
+level: intermediate
+---
+
+<Lesson>
+
+<Step title="An internal clock that runs itself" kind="explain">
+
+Your body does not wait for the outside world to tell it what time it is. Deep in the hypothalamus sits the **suprachiasmatic nucleus (SCN)** — a cluster of about 20,000 neurons that acts as the master clock. Left in total darkness with no environmental cues, it runs on a cycle of approximately **24.2 hours** — slightly longer than a solar day.
+
+To stay aligned with the real world, the SCN is anchored every day by **light** — specifically, blue-spectrum light detected by special photosensitive cells in the retina (ipRGCs) that feed directly into the clock. This daily light signal is called a *zeitgeber* (German for "time-giver").
+
+The clock drives a cascade of signals that coordinate:
+- **Sleep–wake timing** (melatonin release in the evening)
+- **Core body temperature** (minimum around 4–5 am, peak around 5–6 pm)
+- **Cortisol** (peaks sharply ~30–45 min after waking — the cortisol awakening response)
+- **Digestion, metabolism, immune function** — nearly every cell has its own clock gene that follows the master signal.
+
+</Step>
+
+<Step title="Melatonin: the darkness hormone" kind="explain">
+
+Melatonin is often called the "sleep hormone," but it is more accurate to call it the **darkness signal**. The pineal gland releases melatonin as daylight fades — usually starting around 9–10 pm — and suppresses it again as morning light arrives.
+
+Melatonin does not make you unconscious; it shifts your body into a "night mode" that facilitates the temperature drop and drowsiness needed to fall asleep. Its key role is **timing**, not depth of sleep.
+
+This is why light at the wrong time is so disruptive:
+- **Morning light** (especially within an hour of waking) suppresses the residual melatonin and advances the clock — you will feel sleepy earlier that evening.
+- **Evening light** (screens, bright indoor lighting after dark) delays melatonin onset — you feel alert later than intended and struggle to fall asleep at your target time.
+
+Even relatively dim light (~10–100 lux) in the hours before bed measurably delays melatonin onset.
+
+</Step>
+
+<Step title="See the clock in action" kind="interactive">
+
+The dial below shows your three core circadian rhythms across 24 hours. Select morning light or late-night screen exposure to see how the whole rhythm shifts.
+
+<CircadianClock />
+
+Notice that a shift in light exposure does not just move one thing — it displaces the entire pattern. That is what jet lag feels like: your external schedule has jumped, but the internal clock takes roughly one day per time zone to re-synchronise.
+
+</Step>
+
+<Step title="Chronotypes: larks and owls" kind="explain">
+
+Not everyone runs on the same schedule. **Chronotype** is your genetically influenced preference for earlier or later timing. About 25% of people are natural early types (larks), 25% are strong late types (owls), and the rest fall somewhere in between.
+
+Owls are not being lazy when they struggle to fall asleep at 10 pm — their melatonin simply rises later, their core body temperature stays elevated longer into the night, and their cortisol awakening response is delayed. Forcing an owl onto an early schedule chronically misaligns their clock with their environment, a state called **social jet lag**.
+
+Teenagers have a strong biological shift toward owlish timing — melatonin onset moves later during puberty, which is one reason early school start times conflict with adolescent sleep biology.
+
+<Callout type="info">
+You can gently shift your chronotype by 1–2 hours with consistent light exposure — bright morning light to advance the clock, dimmer evenings to avoid delaying it. But the underlying genetic tendency remains.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A person uses a bright phone screen for 90 minutes before their usual bedtime. What is the most likely direct effect on their circadian rhythm?"
+  options={[
+    "The light advances the clock, making them feel sleepy earlier that same evening",
+    "The light delays melatonin onset, pushing their entire rhythm later and making it harder to fall asleep at the intended time",
+    "Screens have no measurable effect because indoor light is too dim to influence the suprachiasmatic nucleus",
+    "The clock automatically compensates overnight and is fully reset by morning"
+  ]}
+  correctIndex={1}
+  explanation="Blue-spectrum light from screens suppresses melatonin and signals 'daytime' to the SCN, even at relatively low intensities. Exposure in the hours before bed delays melatonin onset — sometimes by 1–3 hours — shifting the whole rhythm later. This makes falling asleep harder at the intended time and compresses sleep if the wake time is fixed. Morning light (not evening light) advances the clock."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **suprachiasmatic nucleus (SCN)** is the master body clock; it runs on ~24.2 hours and is reset daily by light.
+- **Melatonin** is the darkness signal: released as light fades, it times the transition into sleep — it does not cause deep sleep itself.
+- **Morning light anchors the clock** (advancing it); **evening light delays it** — including screen light.
+- Core body temperature, cortisol, and digestion also follow the ~24-hour rhythm.
+- **Chronotype** (lark vs owl) is largely genetic; social jet lag occurs when your schedule is chronically misaligned with your biology.
+- Jet lag = the clock is in one time zone while the environment is in another; recovery takes ~1 day per time zone shifted.
+
+</Step>
+
+</Lesson>

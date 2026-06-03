@@ -28,31 +28,42 @@ type IslandCfg = {
   tier: Tier
 }
 
-// Hand-placed TIGHT cluster (x/y = % of stage), mirroring the 1.5B mockup:
-// Physics is the big front-centre hero; chemistry crowns the top; biology/math
-// flank it; computer-science + psychology anchor the lower corners. Kept close
-// together and large so the worlds read as one connected archipelago.
+// Hand-placed archipelago (x/y = % of stage): physics is the big front-centre
+// hero; a top crown (chemistry/biology/math) recedes into the far tier; the two
+// new humanities/applied worlds (philosophy left, economics right) flank the mid
+// band; computer-science/psychology/health form the near front row. Nine worlds
+// arranged as a loose ring around the hero so they read as one connected
+// archipelago. (Owner-tunable — desktop-first; tweak coords/scales to taste.)
 const LAYOUT: Array<IslandCfg> = [
-  { slug: 'chemistry', accent: '#FDCB6E', emblem: 'Hexagon', x: 50, y: 23, scale: 1.0, tier: 'far' },
-  { slug: 'biology', accent: '#2ecc71', emblem: 'Dna', x: 28, y: 33, scale: 0.98, tier: 'far' },
-  { slug: 'math', accent: '#74B9FF', emblem: 'Sigma', x: 72, y: 33, scale: 0.98, tier: 'far' },
-  { slug: 'computer-science', accent: '#00d2d3', emblem: 'CodeXml', x: 26, y: 67, scale: 1.12, tier: 'mid' },
-  { slug: 'psychology', accent: '#E84393', emblem: 'Brain', x: 74, y: 67, scale: 1.12, tier: 'mid' },
-  { slug: 'physics', accent: '#4F8CFF', emblem: 'Atom', x: 50, y: 63, scale: 1.32, tier: 'near' },
+  // far — top crown
+  { slug: 'chemistry', accent: '#FDCB6E', emblem: 'Hexagon', x: 50, y: 13, scale: 0.82, tier: 'far' },
+  { slug: 'biology', accent: '#2ecc71', emblem: 'Dna', x: 25, y: 21, scale: 0.84, tier: 'far' },
+  { slug: 'math', accent: '#74B9FF', emblem: 'Sigma', x: 75, y: 21, scale: 0.84, tier: 'far' },
+  // mid — flanks
+  { slug: 'philosophy', accent: '#C9A24B', emblem: 'Feather', x: 13, y: 47, scale: 0.92, tier: 'mid' },
+  { slug: 'economics', accent: '#10B981', emblem: 'TrendingUp', x: 87, y: 47, scale: 0.92, tier: 'mid' },
+  // near — front row + hero
+  { slug: 'computer-science', accent: '#00d2d3', emblem: 'CodeXml', x: 23, y: 77, scale: 1.04, tier: 'near' },
+  { slug: 'psychology', accent: '#E84393', emblem: 'Brain', x: 77, y: 77, scale: 1.04, tier: 'near' },
+  { slug: 'health', accent: '#FF5470', emblem: 'HeartPulse', x: 50, y: 85, scale: 1.0, tier: 'near' },
+  { slug: 'physics', accent: '#4F8CFF', emblem: 'Atom', x: 50, y: 52, scale: 1.2, tier: 'near' },
 ]
 
 // Glowing energy spans between adjacent islands (slug pairs). Physics is the
-// hub; the rim islands also wire to their neighbours so the cluster reads as a
+// hub; the rim islands wire to their neighbours so the nine worlds read as a
 // single lit network. Drawn center-to-center — the islands occlude the ends, so
 // only the span between two silhouettes shows (reads as edge-to-edge docks).
 const BRIDGES: Array<[string, string]> = [
   ['physics', 'chemistry'],
   ['physics', 'computer-science'],
   ['physics', 'psychology'],
+  ['physics', 'health'],
   ['chemistry', 'biology'],
   ['chemistry', 'math'],
-  ['biology', 'computer-science'],
-  ['math', 'psychology'],
+  ['biology', 'philosophy'],
+  ['math', 'economics'],
+  ['philosophy', 'computer-science'],
+  ['economics', 'psychology'],
 ]
 
 const TIER_PARALLAX: Record<Tier, number> = { far: 10, mid: 22, near: 38 }

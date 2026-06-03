@@ -1,0 +1,96 @@
+---
+title: Inflation & the Price Level
+subject: economics
+contentSlug: economics/inflation
+order: 3
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="The general price level" kind="explain">
+
+**Inflation** is a sustained rise in the *general* price level — the average price of goods and services across the whole economy. It is *not* the same as one product getting more expensive: tomatoes can spike after a bad harvest while inflation stays low, because other prices fall to balance it out. Inflation is about the average moving up, year after year.
+
+When the price level rises, each unit of money buys less. That is the real meaning of inflation: a fall in the **purchasing power** of money. A dollar in your pocket is a claim on goods, and inflation quietly shrinks that claim.
+
+To manage an economy, we first need to *measure* this average — and to do that, statisticians track a basket.
+
+</Step>
+
+<Step title="The Consumer Price Index" kind="explain">
+
+The most familiar gauge is the **Consumer Price Index (CPI)**. The idea is simple and clever: fix a representative **basket** of goods and services that a typical household buys — bread, fuel, rent, healthcare, and so on, in fixed quantities — and track what that *same* basket costs over time.
+
+Because the quantities never change, any change in the basket's cost must come from **prices**. The CPI expresses that cost relative to a base year, scaled so the base year equals 100:
+
+<Formula tex="\text{CPI} = \frac{\text{cost of basket this year}}{\text{cost of basket in base year}} \times 100" block />
+
+A CPI of 120 means the basket costs 20% more than in the base year. The **inflation rate** is then the percentage change in the index from one year to the next:
+
+<Formula tex="\text{Inflation rate} = \frac{\text{CPI}_{\text{this year}} - \text{CPI}_{\text{last year}}}{\text{CPI}_{\text{last year}}} \times 100" block />
+
+</Step>
+
+<Step title="Build a price index" kind="interactive">
+
+Raise the price of each good in the basket and watch the index — and the implied inflation — climb. The basket's quantities stay fixed, so every move is pure price.
+
+<CPIBasket />
+
+Notice that goods with a bigger share of spending (like rent) move the index more than cheap items. That is why the CPI is a *weighted* average: a 10% rent rise hurts the cost of living far more than a 10% rise in the price of bread.
+
+</Step>
+
+<Step title="Winners and losers" kind="explain">
+
+Inflation isn't a uniform tax — it quietly redistributes wealth depending on what you hold and owe:
+
+- **Savers and lenders lose.** Money sitting in cash, or a loan you made at a fixed rate, is repaid in dollars that now buy less. Unexpected inflation erodes their real value.
+- **Borrowers with fixed-rate debt win.** They repay a fixed number of dollars that are worth less than the ones they borrowed. Inflation shrinks the *real* burden of their debt.
+- **People on fixed incomes lose.** A pension or salary that isn't adjusted for inflation buys a little less each year.
+
+The crucial word is **unexpected**. If everyone correctly anticipates 5% inflation, lenders simply charge 5% more interest to compensate, and contracts adjust. It's the *surprises* that transfer wealth.
+
+</Step>
+
+<Step title="A note on hyperinflation" kind="explain">
+
+A little inflation — most central banks target around 2% — is considered healthy: it greases wage and price adjustments and keeps the economy clear of dangerous *deflation* (falling prices, which can freeze spending as people wait for cheaper tomorrows).
+
+But inflation can spiral out of control. **Hyperinflation** — prices rising more than 50% *per month* — has struck Weimar Germany in the 1920s, Zimbabwe in the 2000s, and Venezuela more recently. It almost always traces to a government printing money to pay its bills. When it hits, money fails at its most basic job: people rush to spend wages the instant they're paid, prices are re-marked daily, and the economy reverts toward barter. It is a vivid reminder that money's value rests entirely on trust and restraint.
+
+<Callout type="info" title="The CPI isn't perfect">
+Because the basket is fixed, the CPI tends to *overstate* true inflation. When beef gets pricey, shoppers switch to chicken, but the fixed basket keeps "buying" the now-expensive beef. It also struggles to capture quality improvements — today's phone costs more than a 2005 phone but does vastly more. Statisticians adjust for these, but the CPI remains an estimate, not a perfect truth.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You took out a fixed-rate loan, expecting low inflation. Instead, inflation turns out much higher than anyone predicted. How does this surprise affect you as the borrower?"
+  options={[
+    "It hurts you, because everything is now more expensive to buy",
+    "It helps you, because you repay the fixed loan in dollars that are now worth less than the ones you borrowed",
+    "It has no real effect, since the loan amount is fixed in dollars",
+    "It helps the lender at your expense"
+  ]}
+  correctIndex={1}
+  explanation="Unexpectedly high inflation helps fixed-rate borrowers and hurts lenders. You repay a fixed number of dollars, but those dollars are now worth less in purchasing power than the ones you borrowed, so the real burden of your debt shrinks. The lender receives back money that buys less than they expected. Had the high inflation been anticipated, the lender would have charged a higher interest rate to compensate, neutralising the effect."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Inflation** is a sustained rise in the **general** price level — a fall in money's **purchasing power** — not just one product getting dearer.
+- The **CPI** prices a **fixed basket** relative to a base year (= 100); the **inflation rate** is the percentage change in that index.
+- The CPI is **weighted**: big-spending items like rent move it more than cheap ones.
+- Inflation redistributes wealth: **borrowers** with fixed-rate debt win, while **savers, lenders, and fixed-income** earners lose — especially when inflation is **unexpected**.
+- A little inflation (~2%) is healthy; **deflation** can be dangerous, and **hyperinflation** (>50%/month) wrecks money's usefulness.
+- The CPI **overstates** true inflation because the fixed basket ignores substitution and quality gains.
+
+</Step>
+
+</Lesson>

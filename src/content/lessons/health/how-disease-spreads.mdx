@@ -1,0 +1,95 @@
+---
+title: How Disease Spreads
+subject: health
+contentSlug: health/how-disease-spreads
+order: 57
+estimatedMinutes: 7
+summary: Transmission routes, the chain of infection, and R₀ — how many people one case can infect.
+level: beginner
+---
+
+<Lesson>
+
+<Step title="The chain of infection" kind="explain">
+
+Infectious disease does not jump magically from one person to another. It follows a chain — a series of links that must all hold for transmission to succeed:
+
+1. **Pathogen** — the agent (virus, bacterium, etc.)
+2. **Reservoir** — where it lives between hosts (a person, animal, or surface)
+3. **Exit** — how it leaves the reservoir (respiratory secretions, blood, faeces, bites)
+4. **Transmission** — the route it travels
+5. **Entry** — how it enters a new host (airways, mouth, broken skin, mucous membranes)
+6. **Susceptible host** — someone who lacks immunity
+
+Break any single link and you stop the infection. That is the logic behind everything from hand-washing to vaccines.
+
+</Step>
+
+<Step title="Six transmission routes" kind="explain">
+
+Most infectious diseases travel by one of six main routes:
+
+- **Airborne** — tiny droplet nuclei drift in the air for minutes to hours (measles, tuberculosis, COVID-19 in poorly ventilated rooms).
+- **Droplet** — larger droplets fall within ~1 metre of a cough or sneeze (influenza, common cold, pertussis).
+- **Direct/indirect contact** — touching an infected person or a surface they contaminated and then touching your face (cold viruses, norovirus, ringworm).
+- **Fecal-oral** — contaminated food or water, or unwashed hands after using the toilet (cholera, typhoid, hepatitis A).
+- **Vector** — an insect bite carries the pathogen from one host to another (malaria via mosquito, Lyme disease via tick).
+- **Bloodborne** — exposure to infected blood or body fluids (HIV, hepatitis B and C).
+
+One disease can use more than one route — COVID-19 is mainly airborne but also travels on contaminated surfaces.
+
+</Step>
+
+<Step title="Match the route" kind="interactive">
+
+Put your knowledge to work: match each disease to its primary transmission route, then see which measures break the chain.
+
+<TransmissionRoutes />
+
+Notice that the intervention always targets the **weakest link** in the chain for that route. Hand-washing blocks contact and fecal-oral transmission; insect repellent blocks the vector; sterile needles block bloodborne spread.
+
+</Step>
+
+<Step title="R₀ — the basic reproduction number" kind="explain">
+
+Epidemiologists measure how fast a disease spreads with a single number: **R₀** (pronounced "R-naught"), the average number of people one infectious person infects in a population where nobody is immune.
+
+- R₀ < 1 → each case causes less than one new case → the outbreak fizzles out on its own.
+- R₀ > 1 → each case causes more than one new case → the outbreak grows.
+- R₀ = 1 → steady spread — disease is endemic, neither growing nor shrinking.
+
+Some reference values: seasonal flu ≈ 1.1–2; COVID-19 original strain ≈ 2–3; measles ≈ 12–18. Measles is one of the most contagious diseases known — one infectious person can seed a dozen or more cases.
+
+<Callout type="info">
+R₀ is a property of the pathogen **and** the setting — it assumes no immunity and no control measures. Real-world spread is tracked by the **effective reproduction number Rₑ**, which accounts for immunity and interventions.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Cholera spreads when the bacteria contaminate drinking water, and people get infected by drinking it. Which transmission route is this?"
+  options={[
+    "Airborne — the bacteria float in the air above water sources",
+    "Vector — a mosquito carries the bacteria between water and people",
+    "Fecal-oral — contaminated water (or food) carries bacteria from faeces into the mouth",
+    "Bloodborne — the bacteria enter through cuts in the skin during contact with water"
+  ]}
+  correctIndex={2}
+  explanation="Cholera is a classic fecal-oral infection. The bacterium Vibrio cholerae is shed in the faeces of infected people and enters new hosts via contaminated drinking water or food. The key intervention is clean water supply and sanitation — breaking the fecal-oral route."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **chain of infection** has six links: pathogen → reservoir → exit → transmission → entry → susceptible host. Breaking any link stops spread.
+- Six main **transmission routes**: airborne, droplet, contact (direct/indirect), fecal-oral, vector, bloodborne.
+- **R₀** is the average number of secondary cases from one index case in a fully susceptible population; R₀ > 1 means an outbreak can grow.
+- R₀ is a theoretical baseline — the **effective Rₑ** falls as immunity builds or interventions kick in.
+- Interventions are designed to target the weakest link in each disease's specific chain.
+
+</Step>
+
+</Lesson>

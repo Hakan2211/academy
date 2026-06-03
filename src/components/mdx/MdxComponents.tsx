@@ -526,6 +526,198 @@ import { WellBeingModel } from './WellBeingModel'
 import { WorkingMemory } from './WorkingMemory'
 import { YerkesDodson } from './YerkesDodson'
 
+// Economics
+import { AnchoringDemo } from './AnchoringDemo'
+import { ScarcityChoice } from './ScarcityChoice'
+import { OpportunityCost } from './OpportunityCost'
+import { PPFCurve } from './PPFCurve'
+import { MarginalThinking } from './MarginalThinking'
+import { CircularFlow } from './CircularFlow'
+import { SupplyDemand } from './SupplyDemand'
+import { DemandCurve } from './DemandCurve'
+import { SupplyCurve } from './SupplyCurve'
+import { MarketShifts } from './MarketShifts'
+import { PriceControlLab } from './PriceControlLab'
+import { ElasticityLab } from './ElasticityLab'
+import { ElasticityTypes } from './ElasticityTypes'
+import { TotalRevenueTest } from './TotalRevenueTest'
+import { TaxIncidence } from './TaxIncidence'
+import { UtilityLab } from './UtilityLab'
+import { DiamondWater } from './DiamondWater'
+import { BudgetConstraint } from './BudgetConstraint'
+import { EquimarginalRule } from './EquimarginalRule'
+import { ProductionFunction } from './ProductionFunction'
+import { CostCurves } from './CostCurves'
+import { ProfitMax } from './ProfitMax'
+import { ShutdownRule } from './ShutdownRule'
+import { ScaleCurve } from './ScaleCurve'
+import { CompetitionSpectrum } from './CompetitionSpectrum'
+import { MonopolyGraph } from './MonopolyGraph'
+import { ProductDifferentiation } from './ProductDifferentiation'
+import { OligopolyGame } from './OligopolyGame'
+import { AntitrustCases } from './AntitrustCases'
+import { ExternalityGraph } from './ExternalityGraph'
+import { PigouvianTax } from './PigouvianTax'
+import { TragedyCommons } from './TragedyCommons'
+import { LemonsMarket } from './LemonsMarket'
+import { PublicGoodGame } from './PublicGoodGame'
+import { LaborMarket } from './LaborMarket'
+import { WageGaps } from './WageGaps'
+import { LorenzCurve } from './LorenzCurve'
+import { MinimumWageLab } from './MinimumWageLab'
+import { GDPBuilder } from './GDPBuilder'
+import { RealNominalGDP } from './RealNominalGDP'
+import { CPIBasket } from './CPIBasket'
+import { UnemploymentTypes } from './UnemploymentTypes'
+import { BusinessCycle } from './BusinessCycle'
+import { MoneyFunctions } from './MoneyFunctions'
+import { FractionalReserve } from './FractionalReserve'
+import { MoneyCreation } from './MoneyCreation'
+import { QuantityTheory } from './QuantityTheory'
+import { ADASModel } from './ADASModel'
+import { MultiplierEffect } from './MultiplierEffect'
+import { SupplyShock } from './SupplyShock'
+import { FiscalPolicyLab } from './FiscalPolicyLab'
+import { DebtClock } from './DebtClock'
+import { InterestRateDial } from './InterestRateDial'
+import { PhillipsCurve } from './PhillipsCurve'
+import { GrowthCompounding } from './GrowthCompounding'
+import { GrowthSources } from './GrowthSources'
+import { ConvergenceLab } from './ConvergenceLab'
+import { BeyondGDP } from './BeyondGDP'
+import { ComparativeAdvantage } from './ComparativeAdvantage'
+import { TradeBarriers } from './TradeBarriers'
+import { ExchangeRate } from './ExchangeRate'
+import { GlobalSupplyChain } from './GlobalSupplyChain'
+import { PayoffMatrix } from './PayoffMatrix'
+import { PrisonersDilemma } from './PrisonersDilemma'
+import { NashFinder } from './NashFinder'
+import { RepeatedGame } from './RepeatedGame'
+import { AuctionLab } from './AuctionLab'
+
+
+// Philosophy
+import { PhilosophyBranches } from './PhilosophyBranches'
+import { SocraticMethod } from './SocraticMethod'
+import { BigQuestions } from './BigQuestions'
+import { PhilosophyTimeline } from './PhilosophyTimeline'
+import { ArgumentBuilder } from './ArgumentBuilder'
+import { DeductiveInductive } from './DeductiveInductive'
+import { ValiditySoundness } from './ValiditySoundness'
+import { SyllogismMachine } from './SyllogismMachine'
+import { FallacyGallery } from './FallacyGallery'
+import { SpotTheFallacy } from './SpotTheFallacy'
+import { FalseDilemmaLab } from './FalseDilemmaLab'
+import { SteelmanLab } from './SteelmanLab'
+import { JTBVenn } from './JTBVenn'
+import { GettierCase } from './GettierCase'
+import { RationalismEmpiricism } from './RationalismEmpiricism'
+import { SkepticismLab } from './SkepticismLab'
+import { TruthTheories } from './TruthTheories'
+import { CaveAllegory } from './CaveAllegory'
+import { UniversalsLab } from './UniversalsLab'
+import { FreeWillSpectrum } from './FreeWillSpectrum'
+import { ShipOfTheseus } from './ShipOfTheseus'
+import { MindBodyPositions } from './MindBodyPositions'
+import { MarysRoom } from './MarysRoom'
+import { ChineseRoom } from './ChineseRoom'
+import { TuringTest } from './TuringTest'
+import { TeleporterPuzzle } from './TeleporterPuzzle'
+import { ValueSorter } from './ValueSorter'
+import { IsOughtGap } from './IsOughtGap'
+import { RelativismLab } from './RelativismLab'
+import { MoralStatusCircle } from './MoralStatusCircle'
+import { UtilityCalculator } from './UtilityCalculator'
+import { CategoricalImperative } from './CategoricalImperative'
+import { GoldenMean } from './GoldenMean'
+import { EthicalLenses } from './EthicalLenses'
+import { TrolleyVariants } from './TrolleyVariants'
+import { DrowningChild } from './DrowningChild'
+import { MoralMachine } from './MoralMachine'
+import { SocialContract } from './SocialContract'
+import { HarmPrinciple } from './HarmPrinciple'
+import { VeilOfIgnorance } from './VeilOfIgnorance'
+import { IdeologyMap } from './IdeologyMap'
+import { PresocraticsLab } from './PresocraticsLab'
+import { FourCauses } from './FourCauses'
+import { StoicControl } from './StoicControl'
+import { ProblemOfInduction } from './ProblemOfInduction'
+import { KantSpectacles } from './KantSpectacles'
+import { Dialectic } from './Dialectic'
+import { ExistenceEssence } from './ExistenceEssence'
+import { BadFaith } from './BadFaith'
+import { AbsurdSisyphus } from './AbsurdSisyphus'
+import { FreedomChoices } from './FreedomChoices'
+import { Falsifiability } from './Falsifiability'
+import { DesignArgument } from './DesignArgument'
+import { ProblemOfEvil } from './ProblemOfEvil'
+import { PascalsWager } from './PascalsWager'
+import { ScienceReligionModels } from './ScienceReligionModels'
+import { MeaningSources } from './MeaningSources'
+import { TheGoodLifeLab } from './TheGoodLifeLab'
+import { MeaningfulLifePlanner } from './MeaningfulLifePlanner'
+import { PhilosophyJourney } from './PhilosophyJourney'
+
+// Health
+import { WellnessWheel } from './WellnessWheel'
+import { HealthContinuum } from './HealthContinuum'
+import { HealthDeterminants } from './HealthDeterminants'
+import { PreventionLevels } from './PreventionLevels'
+import { BodySystemMap } from './BodySystemMap'
+import { HeartRateDemo } from './HeartRateDemo'
+import { VitalSigns } from './VitalSigns'
+import { CalorieBalance } from './CalorieBalance'
+import { MacroBreakdown } from './MacroBreakdown'
+import { BloodSugarCurve } from './BloodSugarCurve'
+import { NutritionLabel } from './NutritionLabel'
+import { VitaminGuide } from './VitaminGuide'
+import { HydrationMeter } from './HydrationMeter'
+import { PlateBuilder } from './PlateBuilder'
+import { RainbowPlate } from './RainbowPlate'
+import { PortionGuide } from './PortionGuide'
+import { HungerScale } from './HungerScale'
+import { SugarDetective } from './SugarDetective'
+import { DietMythBuster } from './DietMythBuster'
+import { ExerciseTypes } from './ExerciseTypes'
+import { TargetHeartRate } from './TargetHeartRate'
+import { ProgressiveOverload } from './ProgressiveOverload'
+import { ActivityBudget } from './ActivityBudget'
+import { SleepCycles } from './SleepCycles'
+import { SleepDebt } from './SleepDebt'
+import { SleepHygiene } from './SleepHygiene'
+import { MentalHealthContinuum } from './MentalHealthContinuum'
+import { MoodThoughtLoop } from './MoodThoughtLoop'
+import { EmotionGranularity } from './EmotionGranularity'
+import { ProtectiveFactors } from './ProtectiveFactors'
+import { HabitLoop } from './HabitLoop'
+import { StressCurve } from './StressCurve'
+import { BreathPacer } from './BreathPacer'
+import { ResilienceFactors } from './ResilienceFactors'
+import { ImmuneDefenders } from './ImmuneDefenders'
+import { InfectionTimeline } from './InfectionTimeline'
+import { VaccineMemory } from './VaccineMemory'
+import { ImmuneSupport } from './ImmuneSupport'
+import { TransmissionRoutes } from './TransmissionRoutes'
+import { ContagionModel } from './ContagionModel'
+import { RiskFactorLab } from './RiskFactorLab'
+import { ScreeningTimeline } from './ScreeningTimeline'
+import { DoseResponse } from './DoseResponse'
+import { BACSimulator } from './BACSimulator'
+import { AddictionLoop } from './AddictionLoop'
+import { QuittingBenefits } from './QuittingBenefits'
+import { ReproductiveAnatomy } from './ReproductiveAnatomy'
+import { MenstrualCycleRepro } from './MenstrualCycleRepro'
+import { ContraceptionGuide } from './ContraceptionGuide'
+import { ConsentChecklist } from './ConsentChecklist'
+import { PrimarySurvey } from './PrimarySurvey'
+import { CPRTrainer } from './CPRTrainer'
+import { InjuryResponse } from './InjuryResponse'
+import { FASTStroke } from './FASTStroke'
+import { HealthPillars } from './HealthPillars'
+import { HealthMyths } from './HealthMyths'
+import { LifeStageHealth } from './LifeStageHealth'
+import { LongevityFactors } from './LongevityFactors'
+
 // Injected globally via <MDXProvider> so authored .mdx can use these directly.
 export const mdxComponents = {
   // Lesson engine + interactive blocks
@@ -1060,6 +1252,197 @@ export const mdxComponents = {
   WellBeingModel,
   WorkingMemory,
   YerkesDodson,
+
+  // Economics
+  AnchoringDemo,
+  ScarcityChoice,
+  OpportunityCost,
+  PPFCurve,
+  MarginalThinking,
+  CircularFlow,
+  SupplyDemand,
+  DemandCurve,
+  SupplyCurve,
+  MarketShifts,
+  PriceControlLab,
+  ElasticityLab,
+  ElasticityTypes,
+  TotalRevenueTest,
+  TaxIncidence,
+  UtilityLab,
+  DiamondWater,
+  BudgetConstraint,
+  EquimarginalRule,
+  ProductionFunction,
+  CostCurves,
+  ProfitMax,
+  ShutdownRule,
+  ScaleCurve,
+  CompetitionSpectrum,
+  MonopolyGraph,
+  ProductDifferentiation,
+  OligopolyGame,
+  AntitrustCases,
+  ExternalityGraph,
+  PigouvianTax,
+  TragedyCommons,
+  LemonsMarket,
+  PublicGoodGame,
+  LaborMarket,
+  WageGaps,
+  LorenzCurve,
+  MinimumWageLab,
+  GDPBuilder,
+  RealNominalGDP,
+  CPIBasket,
+  UnemploymentTypes,
+  BusinessCycle,
+  MoneyFunctions,
+  FractionalReserve,
+  MoneyCreation,
+  QuantityTheory,
+  ADASModel,
+  MultiplierEffect,
+  SupplyShock,
+  FiscalPolicyLab,
+  DebtClock,
+  InterestRateDial,
+  PhillipsCurve,
+  GrowthCompounding,
+  GrowthSources,
+  ConvergenceLab,
+  BeyondGDP,
+  ComparativeAdvantage,
+  TradeBarriers,
+  ExchangeRate,
+  GlobalSupplyChain,
+  PayoffMatrix,
+  PrisonersDilemma,
+  NashFinder,
+  RepeatedGame,
+  AuctionLab,
+
+  // Philosophy
+  PhilosophyBranches,
+  SocraticMethod,
+  BigQuestions,
+  PhilosophyTimeline,
+  ArgumentBuilder,
+  DeductiveInductive,
+  ValiditySoundness,
+  SyllogismMachine,
+  FallacyGallery,
+  SpotTheFallacy,
+  FalseDilemmaLab,
+  SteelmanLab,
+  JTBVenn,
+  GettierCase,
+  RationalismEmpiricism,
+  SkepticismLab,
+  TruthTheories,
+  CaveAllegory,
+  UniversalsLab,
+  FreeWillSpectrum,
+  ShipOfTheseus,
+  MindBodyPositions,
+  MarysRoom,
+  ChineseRoom,
+  TuringTest,
+  TeleporterPuzzle,
+  ValueSorter,
+  IsOughtGap,
+  RelativismLab,
+  MoralStatusCircle,
+  UtilityCalculator,
+  CategoricalImperative,
+  GoldenMean,
+  EthicalLenses,
+  TrolleyVariants,
+  DrowningChild,
+  MoralMachine,
+  SocialContract,
+  HarmPrinciple,
+  VeilOfIgnorance,
+  IdeologyMap,
+  PresocraticsLab,
+  FourCauses,
+  StoicControl,
+  ProblemOfInduction,
+  KantSpectacles,
+  Dialectic,
+  ExistenceEssence,
+  BadFaith,
+  AbsurdSisyphus,
+  FreedomChoices,
+  Falsifiability,
+  DesignArgument,
+  ProblemOfEvil,
+  PascalsWager,
+  ScienceReligionModels,
+  MeaningSources,
+  TheGoodLifeLab,
+  MeaningfulLifePlanner,
+  PhilosophyJourney,
+
+  // Health
+  WellnessWheel,
+  HealthContinuum,
+  HealthDeterminants,
+  PreventionLevels,
+  BodySystemMap,
+  HeartRateDemo,
+  VitalSigns,
+  CalorieBalance,
+  MacroBreakdown,
+  BloodSugarCurve,
+  NutritionLabel,
+  VitaminGuide,
+  HydrationMeter,
+  PlateBuilder,
+  RainbowPlate,
+  PortionGuide,
+  HungerScale,
+  SugarDetective,
+  DietMythBuster,
+  ExerciseTypes,
+  TargetHeartRate,
+  ProgressiveOverload,
+  ActivityBudget,
+  SleepCycles,
+  SleepDebt,
+  SleepHygiene,
+  MentalHealthContinuum,
+  MoodThoughtLoop,
+  EmotionGranularity,
+  ProtectiveFactors,
+  HabitLoop,
+  StressCurve,
+  BreathPacer,
+  ResilienceFactors,
+  ImmuneDefenders,
+  InfectionTimeline,
+  VaccineMemory,
+  ImmuneSupport,
+  TransmissionRoutes,
+  ContagionModel,
+  RiskFactorLab,
+  ScreeningTimeline,
+  DoseResponse,
+  BACSimulator,
+  AddictionLoop,
+  QuittingBenefits,
+  ReproductiveAnatomy,
+  MenstrualCycleRepro,
+  ContraceptionGuide,
+  ConsentChecklist,
+  PrimarySurvey,
+  CPRTrainer,
+  InjuryResponse,
+  FASTStroke,
+  HealthPillars,
+  HealthMyths,
+  LifeStageHealth,
+  LongevityFactors,
 
   // Styled base elements for a polished read
   h1: (p: ComponentProps<'h1'>) => (

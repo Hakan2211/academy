@@ -4565,6 +4565,2286 @@ export const PRACTICE_BANK: Array<PracticeItem> = [
     "explanation": "Programming is one tool, and hardware repair is engineering. Computer science is the broader study of computation: how to represent information and design step-by-step procedures (algorithms) to process it."
   },
   {
+    "id": "economics/aggregate-demand",
+    "contentSlug": "economics/aggregate-demand",
+    "subject": "economics",
+    "lessonTitle": "Aggregate Demand",
+    "prompt": "A wave of consumer pessimism makes households save more and spend less at every price level. What happens to the aggregate demand curve?",
+    "options": [
+      "It shifts left, because consumption (C) falls at every price level",
+      "We move down along a fixed AD curve, because spending fell",
+      "It shifts right, because more saving funds more investment",
+      "It stays put, since AD only depends on the price level"
+    ],
+    "correctIndex": 0,
+    "explanation": "Confidence is not the price level, so it shifts the whole curve rather than moving us along it. Less consumption at every price level means lower C, one of the four components of aggregate demand (C + I + G + NX), so AD shifts LEFT. Moving along the curve would require a change in the price level itself, which is not what happened here."
+  },
+  {
+    "id": "economics/aggregate-supply",
+    "contentSlug": "economics/aggregate-supply",
+    "subject": "economics",
+    "lessonTitle": "Aggregate Supply",
+    "prompt": "Why is the long-run aggregate supply (LRAS) curve vertical while the short-run (SRAS) curve slopes upward?",
+    "options": [
+      "LRAS is vertical because demand never changes in the long run",
+      "Both should be vertical; the upward SRAS is a drawing error",
+      "In the short run sticky costs (like fixed wages) let a higher price level raise profit margins and output; in the long run all costs adjust, so output returns to potential regardless of the price level",
+      "SRAS slopes up because firms always want to produce more, while LRAS is vertical because they get tired"
+    ],
+    "correctIndex": 2,
+    "explanation": "In the short run, some input costs — wages above all — are sticky. A higher price level then widens profit margins and tempts firms to produce more, giving SRAS its upward slope. Given enough time those costs fully adjust, the margin advantage vanishes, and real output settles back at potential output no matter the price level — so LRAS is vertical. Only changes in real capacity (labour, capital, technology) move LRAS."
+  },
+  {
+    "id": "economics/banks-and-credit",
+    "contentSlug": "economics/banks-and-credit",
+    "subject": "economics",
+    "lessonTitle": "Banks & Credit",
+    "prompt": "A bank pays depositors 2% interest and charges borrowers 7% on loans. What is the 5-percentage-point difference called, and what is it for?",
+    "options": [
+      "The reserve ratio — it's the share of deposits the bank must keep in its vault",
+      "The spread — it's the bank's revenue from acting as a middleman between savers and borrowers",
+      "Inflation — it's the rate at which the value of the deposits erodes over time",
+      "The money multiplier — it's how much new money each deposit creates"
+    ],
+    "correctIndex": 1,
+    "explanation": "The gap between the rate a bank charges borrowers and the rate it pays depositors is the spread, and it is how the bank earns its living. Out of the spread the bank covers its costs, absorbs bad loans, and keeps a profit. The reserve ratio (the share kept back) and the money multiplier (how deposits multiply) are different ideas, covered next."
+  },
+  {
+    "id": "economics/behavioral-economics",
+    "contentSlug": "economics/behavioral-economics",
+    "subject": "economics",
+    "lessonTitle": "When We're Not Rational",
+    "prompt": "A store relabels a jacket from 'was $200, now $120'. Customers who'd never pay $120 outright now rush to buy. Which bias best explains this?",
+    "options": [
+      "Loss aversion — they fear losing the jacket",
+      "Anchoring — the $200 'original' price sets a reference point that makes $120 feel like a bargain",
+      "Bounded rationality has no effect on prices",
+      "Diminishing marginal utility of jackets"
+    ],
+    "correctIndex": 1,
+    "explanation": "The $200 tag is an anchor: the mind fixes on it as a reference and judges $120 relative to it, so the discount feels like a great deal even for shoppers who wouldn't pay $120 cold. This is anchoring. Loss aversion is about losses looming larger than gains, and diminishing marginal utility is about extra units giving less satisfaction — neither is what's driving the bargain illusion here."
+  },
+  {
+    "id": "economics/booms-and-busts",
+    "contentSlug": "economics/booms-and-busts",
+    "subject": "economics",
+    "lessonTitle": "Booms, Busts & Shocks",
+    "prompt": "An economy suffers a sharp rise in real GDP's decline while the price level climbs at the same time. Which shock fits, and why is it so hard for policymakers?",
+    "options": [
+      "A negative demand shock; output and prices always move together",
+      "An adverse supply shock causing stagflation; boosting demand worsens inflation while restraining demand worsens the recession, so no single lever fixes both",
+      "A positive supply shock; the economy is simply growing",
+      "A positive demand shock; the boom is overheating"
+    ],
+    "correctIndex": 1,
+    "explanation": "Falling output together with a RISING price level is the signature of an adverse supply shock (SRAS shifts left) — stagflation. Unlike a demand shock, where output and prices move the same way and one demand lever can address both, a supply shock pits the two goals against each other: stimulating demand to fight the slump fuels more inflation, while tightening demand to fight inflation deepens the slump. That's why the 1970s oil shocks were so painful."
+  },
+  {
+    "id": "economics/comparative-advantage",
+    "contentSlug": "economics/comparative-advantage",
+    "subject": "economics",
+    "lessonTitle": "Comparative Advantage",
+    "prompt": "In Home, one worker makes 10 wheat OR 5 cloth. In Foreign, one worker makes 6 wheat OR 4 cloth. Which country should specialise in cloth, and why?",
+    "options": [
+      "Home, because it can make more cloth per worker",
+      "Foreign, because its opportunity cost of cloth is 1.5 wheat versus Home's 2 wheat",
+      "Neither — Home is better at both, so it should make both",
+      "Foreign, because it has an absolute advantage in cloth"
+    ],
+    "correctIndex": 1,
+    "explanation": "Comparative advantage follows the lower opportunity cost. Home gives up 2 wheat per cloth; Foreign gives up only 1.5 wheat per cloth. Foreign sacrifices less to make cloth, so it should specialise in cloth and Home in wheat — even though Home is more productive at both in absolute terms."
+  },
+  {
+    "id": "economics/correcting-externalities",
+    "contentSlug": "economics/correcting-externalities",
+    "subject": "economics",
+    "lessonTitle": "Fixing Externalities",
+    "prompt": "A factory's pollution imposes an external cost of $20 per unit. A regulator wants the market to reach the socially optimal quantity. What size Pigouvian tax should it set, and what happens if it sets a smaller one?",
+    "options": [
+      "A tax of $20; a smaller tax leaves the firm under-paying for the harm, so it still over-produces",
+      "A tax larger than $20, to be safe; any tax fixes the problem fully",
+      "No tax; the market is already efficient once pollution exists",
+      "A tax of $20; a smaller tax causes the market to under-produce"
+    ],
+    "correctIndex": 0,
+    "explanation": "The ideal Pigouvian tax equals the external cost — here $20 per unit. That lifts the firm's supply curve up to coincide with the social-cost curve, so the market quantity falls to the social optimum and the externality is internalised. A smaller tax means the firm still doesn't pay the full social cost, so it keeps over-producing and some welfare loss remains. A larger tax would over-correct and cause under-production."
+  },
+  {
+    "id": "economics/demand",
+    "contentSlug": "economics/demand",
+    "subject": "economics",
+    "lessonTitle": "The Law of Demand",
+    "prompt": "A coffee shop raises its latte price from 4 to 5 dollars and sells fewer lattes. Which best describes what happened?",
+    "options": [
+      "Demand for lattes decreased — the whole curve shifted left",
+      "A movement ALONG the demand curve: a higher price reduced the quantity demanded",
+      "The law of demand was violated, since fewer were sold",
+      "Supply must have fallen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Only the latte's own price changed, so we move ALONG the existing demand curve to a higher-price, lower-quantity point — a change in quantity demanded. This is the law of demand working exactly as expected (not a violation). A shift of the whole curve would require something OTHER than the good's own price to change, like income or tastes."
+  },
+  {
+    "id": "economics/development-economics",
+    "contentSlug": "economics/development-economics",
+    "subject": "economics",
+    "lessonTitle": "Rich & Poor Nations",
+    "prompt": "A poor country and a rich country both have stable institutions and secure property rights. Economic theory predicts the poor country can grow FASTER and converge toward the rich one. Why?",
+    "options": [
+      "Poor countries always have more natural resources",
+      "Diminishing returns mean the poor country's first capital yields huge gains, and it can adopt proven technology rather than invent it",
+      "Rich countries are legally required to slow down",
+      "Population growth alone guarantees convergence"
+    ],
+    "correctIndex": 1,
+    "explanation": "This is the catch-up (convergence) effect. A capital-starved economy earns enormous returns on its first investments — diminishing returns work in its favour — while a capital-rich economy gains little from adding still more. The poor country can also borrow mature technology off the shelf instead of inventing it. With sound institutions in place, these advantages let it grow faster and converge. Without those institutions, a poverty trap can keep the gap from ever closing."
+  },
+  {
+    "id": "economics/diminishing-marginal-utility",
+    "contentSlug": "economics/diminishing-marginal-utility",
+    "subject": "economics",
+    "lessonTitle": "Diminishing Marginal Utility",
+    "prompt": "According to the diamond-water paradox, why is water so much cheaper than diamonds despite being far more essential?",
+    "options": [
+      "Water has lower total utility than diamonds",
+      "Because water is abundant, its marginal utility (the value of one more unit) is tiny, and price tracks marginal — not total — utility",
+      "Diamonds are more useful than water",
+      "Governments set the price of water artificially low"
+    ],
+    "correctIndex": 1,
+    "explanation": "Water's TOTAL utility is enormous — we'd die without it — so the issue isn't low total utility, and diamonds aren't more useful. The key is that price reflects MARGINAL utility: because water is so abundant we consume it until one more unit is barely worth anything, so its marginal utility (and price) is tiny. Diamonds are scarce, so each one still carries high marginal utility, and a high price."
+  },
+  {
+    "id": "economics/discrimination-and-policy",
+    "contentSlug": "economics/discrimination-and-policy",
+    "subject": "economics",
+    "lessonTitle": "Wages, Discrimination & Policy",
+    "prompt": "A government raises the minimum wage well above the market equilibrium wage. According to the basic labor-market model, what is the most likely effect?",
+    "options": [
+      "It helps every low-wage worker with no downside at all",
+      "It lifts pay for those who keep their jobs but creates a labor surplus — unemployment — for those priced out",
+      "It lowers wages because supply increases",
+      "It has no effect, because wage floors never bind"
+    ],
+    "correctIndex": 1,
+    "explanation": "A minimum wage set above equilibrium is a binding price floor: more workers want jobs while firms want fewer, opening a labor surplus we call unemployment. So it helps the workers who keep their jobs (higher pay) but hurts those who can't find one. How large the job loss is depends on how responsive labor demand is — which is why the real-world debate hinges on the numbers."
+  },
+  {
+    "id": "economics/economies-of-scale",
+    "contentSlug": "economics/economies-of-scale",
+    "subject": "economics",
+    "lessonTitle": "Economies of Scale",
+    "prompt": "A furniture maker doubles every input — factory space, machines and workers — and finds its average cost per table FALLS. This is best described as:",
+    "options": [
+      "Diminishing marginal returns, since output is involved",
+      "Economies of scale — scaling all inputs up lowers average cost, so the firm is on the falling part of its LRAC curve",
+      "Diseconomies of scale, because the firm got bigger",
+      "The shutdown rule in action"
+    ],
+    "correctIndex": 1,
+    "explanation": "All inputs grew together (a long-run change) and average cost fell, so the firm is enjoying economies of scale on the downward-sloping part of its LRAC curve. It is not diminishing returns, which is a short-run effect of adding a variable input to a fixed one. And cost fell, so it is certainly not diseconomies of scale."
+  },
+  {
+    "id": "economics/elasticity-and-revenue",
+    "contentSlug": "economics/elasticity-and-revenue",
+    "subject": "economics",
+    "lessonTitle": "Elasticity & Total Revenue",
+    "prompt": "A toll bridge currently faces inelastic demand at its price. The operator raises the toll. What happens to total revenue?",
+    "options": [
+      "It falls, because higher prices always reduce revenue",
+      "It rises, because with inelastic demand quantity falls less than price rises",
+      "It stays exactly the same, because revenue never changes with price",
+      "It is impossible to say without knowing the operator's costs"
+    ],
+    "correctIndex": 1,
+    "explanation": "With inelastic demand (|E| < 1), quantity falls by a smaller percentage than the price rises, so price × quantity goes up — total revenue rises. A toll bridge with no nearby alternative is a textbook inelastic case. (Costs are irrelevant to the revenue question; revenue is just price times quantity. And there is a limit: keep raising the price and you will eventually cross into the elastic region, where further hikes would cut revenue.)"
+  },
+  {
+    "id": "economics/exchange-rates",
+    "contentSlug": "economics/exchange-rates",
+    "subject": "economics",
+    "lessonTitle": "Exchange Rates",
+    "prompt": "A country's central bank raises interest rates sharply, attracting foreign investors. What happens to its currency and its exporters?",
+    "options": [
+      "The currency depreciates, helping exporters",
+      "The currency appreciates, making its exports more expensive abroad and hurting exporters",
+      "The exchange rate doesn't respond to interest rates",
+      "Both the currency and exports get cheaper"
+    ],
+    "correctIndex": 1,
+    "explanation": "Higher interest rates lure foreign investors, who must buy the currency to invest — raising demand for it, so the currency appreciates (gets stronger). A stronger currency makes the country's exports pricier for foreign buyers, which hurts exporters, even as it makes imports cheaper for domestic consumers."
+  },
+  {
+    "id": "economics/externalities",
+    "contentSlug": "economics/externalities",
+    "subject": "economics",
+    "lessonTitle": "Externalities",
+    "prompt": "A coal plant sells electricity, but its emissions harm people far from the market. Compared with the socially optimal quantity, what does the free market do, and why?",
+    "options": [
+      "It produces too little, because pollution scares away buyers",
+      "It produces the right amount, because the price already reflects every cost",
+      "It produces too much, because the firm ignores the external cost it imposes on others",
+      "It produces too much, because buyers value electricity more than it is worth"
+    ],
+    "correctIndex": 2,
+    "explanation": "With a negative externality, social cost sits above the firm's private cost. The firm sets output based only on the costs it personally pays, so it keeps producing past the point where a unit's true social cost exceeds its value. The market over-produces, and the difference between market and optimal quantity is the welfare loss."
+  },
+  {
+    "id": "economics/factor-markets",
+    "contentSlug": "economics/factor-markets",
+    "subject": "economics",
+    "lessonTitle": "Land, Capital & Entrepreneurship",
+    "prompt": "The amount of land in a popular downtown is essentially fixed, so its supply curve is nearly vertical. A tech boom suddenly raises every firm's demand for downtown offices. What happens to the rent?",
+    "options": [
+      "Rent barely changes, because supply adjusts to meet demand",
+      "Rent rises sharply, because supply is fixed so the higher demand pushes price up",
+      "Rent falls, because more firms enter the market",
+      "Rent is set by the government, so demand has no effect"
+    ],
+    "correctIndex": 1,
+    "explanation": "When supply is fixed (vertical), the quantity can't increase to absorb extra demand, so the entire adjustment falls on the price. A surge in derived demand for downtown land therefore drives rent sharply upward — the classic reason prime locations are so expensive."
+  },
+  {
+    "id": "economics/fiscal-policy",
+    "contentSlug": "economics/fiscal-policy",
+    "subject": "economics",
+    "lessonTitle": "Fiscal Policy",
+    "prompt": "An economy is stuck in a recessionary gap. Which fiscal policy is appropriate, and what does it do to aggregate demand?",
+    "options": [
+      "Contractionary policy (cut spending or raise taxes), shifting AD left to cool the economy",
+      "Expansionary policy (raise spending or cut taxes), shifting AD right to close the gap",
+      "No policy is needed because automatic stabilizers eliminate all recessions",
+      "Raising taxes, because the government must balance its budget before output can recover"
+    ],
+    "correctIndex": 1,
+    "explanation": "A recessionary gap means output is below potential, so the goal is to raise aggregate demand. Expansionary fiscal policy — more government spending or lower taxes — shifts AD right and pushes output back toward potential. Contractionary policy would do the opposite and deepen the slump. Automatic stabilizers cushion the fall but do not fully close the gap, and prioritising a balanced budget over recovery would mean tightening into a downturn."
+  },
+  {
+    "id": "economics/fractional-reserve-banking",
+    "contentSlug": "economics/fractional-reserve-banking",
+    "subject": "economics",
+    "lessonTitle": "How Banks Create Money",
+    "prompt": "A banking system has a reserve ratio of 25%. Using the money multiplier, what is the maximum total money a fresh $1,000 deposit can ultimately support?",
+    "options": [
+      "$1,250 — the deposit plus 25%",
+      "$4,000 — the deposit times 1 divided by 0.25",
+      "$2,500 — the deposit times 2.5",
+      "$25,000 — the deposit times 25"
+    ],
+    "correctIndex": 1,
+    "explanation": "The money multiplier is 1 divided by the reserve ratio: 1 / 0.25 = 4. So a $1,000 deposit can support up to $1,000 times 4 = $4,000 in total money as it ripples through successive banks. A higher reserve ratio means a smaller multiplier and less money creation; a lower ratio means a bigger multiplier and more."
+  },
+  {
+    "id": "economics/globalization",
+    "contentSlug": "economics/globalization",
+    "subject": "economics",
+    "lessonTitle": "Globalization & Its Discontents",
+    "prompt": "Which statement best captures the mainstream economic view of globalization?",
+    "options": [
+      "It makes every individual in every country better off, so any opposition is irrational",
+      "It shrinks total world output but distributes it more fairly",
+      "It expands total world output but redistributes gains and losses, so the case for trade comes paired with a case for compensating those who lose",
+      "It benefits only wealthy nations at the expense of poor ones"
+    ],
+    "correctIndex": 2,
+    "explanation": "Globalization grows the total economic pie (lower prices, faster poverty reduction, technology spread) but the gains and losses fall on different people and places. The displaced workers' pain is real even when the nation gains overall. That's why economists pair the case for open trade with a case for genuinely compensating the losers through retraining and safety nets — a step societies have largely neglected."
+  },
+  {
+    "id": "economics/government-and-markets",
+    "contentSlug": "economics/government-and-markets",
+    "subject": "economics",
+    "lessonTitle": "Government & Markets",
+    "prompt": "A government considers a new pollution tax. An economist insists on cost-benefit analysis rather than assuming the tax must help. Which reasoning best reflects sound economic thinking?",
+    "options": [
+      "Markets always allocate best, so no pollution tax can ever improve on the free-market outcome",
+      "Because pollution is bad, any tax on it is justified regardless of its costs",
+      "A pollution tax can create value by cutting over-production, but it should be adopted only if its expected benefits exceed its costs, set where marginal benefit equals marginal cost",
+      "Government should provide everything directly, since markets fail"
+    ],
+    "correctIndex": 2,
+    "explanation": "A pollution tax corrects a negative externality, so unlike an ordinary tax it can create net value by eliminating units whose true cost exceeded their value. But intervention also has costs — administration, distortions, the risk of getting the tax wrong (government failure). Sound thinking compares a flawed market to a flawed government via cost-benefit analysis, intervening only when benefits exceed costs and setting the level where marginal benefit equals marginal cost. The other options are the 'markets always work' and 'government always helps' fallacies."
+  },
+  {
+    "id": "economics/government-budgets",
+    "contentSlug": "economics/government-budgets",
+    "subject": "economics",
+    "lessonTitle": "Deficits & Debt",
+    "prompt": "A country runs a smaller deficit this year than last year, while its GDP grows briskly. What is happening to its national debt and its debt-to-GDP ratio?",
+    "options": [
+      "The debt falls in dollars, because the deficit shrank",
+      "The debt still rises in dollars, but the debt-to-GDP ratio can fall if GDP grows faster than the debt",
+      "Both the debt and the debt-to-GDP ratio must rise, since there is still a deficit",
+      "The debt is unchanged, because a smaller deficit means a balanced budget"
+    ],
+    "correctIndex": 1,
+    "explanation": "A deficit — even a smaller one — still adds to the debt, so the debt rises in dollar terms; it only falls when there is an actual surplus. But the debt-to-GDP ratio compares the debt to the size of the economy. If GDP grows faster than the debt, that ratio falls even as the dollar figure climbs, which is why a growing economy can sustain modest deficits indefinitely."
+  },
+  {
+    "id": "economics/gross-domestic-product",
+    "contentSlug": "economics/gross-domestic-product",
+    "subject": "economics",
+    "lessonTitle": "Gross Domestic Product",
+    "prompt": "You sell your three-year-old car to a friend for 8,000 dollars. How does this transaction affect this year's GDP?",
+    "options": [
+      "It adds 8,000 dollars to consumption (C)",
+      "It adds 8,000 dollars to investment (I)",
+      "It does not add to GDP at all — the car was counted when it was first produced",
+      "It subtracts 8,000 dollars, because it is a used good"
+    ],
+    "correctIndex": 2,
+    "explanation": "GDP counts the value of newly produced final goods and services. The car's full value entered GDP in the year it was manufactured. Reselling it simply transfers an existing good from one owner to another, producing nothing new, so it does not enter this year's GDP. (Any commission paid to a dealer for the service of arranging the sale would count, since that service is produced this year.)"
+  },
+  {
+    "id": "economics/growth-and-its-limits",
+    "contentSlug": "economics/growth-and-its-limits",
+    "subject": "economics",
+    "lessonTitle": "Growth, Well-Being & Sustainability",
+    "prompt": "A country logs a sharp rise in GDP one year, driven by overtime work, a logging boom that flattens its forests, and a spike in spending to clean up a major oil spill. Why might this be a poor indicator that its people are actually better off?",
+    "options": [
+      "GDP only counts services, never goods like timber",
+      "GDP tallies market production, so it can rise from lost leisure, destroyed natural capital, and clean-up of 'bads' — none of which reflect real gains in well-being",
+      "GDP automatically subtracts environmental damage, so the number is wrong",
+      "Rising GDP always means rising well-being, so there is no problem"
+    ],
+    "correctIndex": 1,
+    "explanation": "GDP measures market output, not welfare. Overtime raises GDP while cutting leisure; logging counts the timber but ignores the lost forest (natural capital); and clean-up spending adds to GDP even though the spill made everyone worse off. These are exactly GDP's blind spots — leisure, the environment, and 'bads' counted as goods — which is why economists pair it with broader measures like HDI when judging well-being."
+  },
+  {
+    "id": "economics/how-economists-think",
+    "contentSlug": "economics/how-economists-think",
+    "subject": "economics",
+    "lessonTitle": "How Economists Think",
+    "prompt": "Which of these is a POSITIVE economic statement?",
+    "options": [
+      "The government ought to spend more on healthcare",
+      "It is unfair that some people earn far more than others",
+      "Raising tobacco taxes reduces the number of cigarettes sold",
+      "Rich countries should forgive the debts of poor ones"
+    ],
+    "correctIndex": 2,
+    "explanation": "A positive statement describes what is and can be tested with data — we can check whether higher tobacco taxes actually reduce cigarette sales. The other three contain 'ought', 'unfair', or 'should': they're normative, resting on value judgements that evidence alone can't settle."
+  },
+  {
+    "id": "economics/incentives-and-trade",
+    "contentSlug": "economics/incentives-and-trade",
+    "subject": "economics",
+    "lessonTitle": "Incentives & the Gains from Trade",
+    "prompt": "A city imposes a strict rent cap far below the market rate to help tenants. Years later there are fewer apartments available than before. What's the most likely economic explanation?",
+    "options": [
+      "Tenants stopped wanting apartments",
+      "Developers and landlords responded to the weakened incentive to build and rent out housing",
+      "The cap had no effect; the shortage is a coincidence",
+      "Rent caps always increase the housing supply"
+    ],
+    "correctIndex": 1,
+    "explanation": "People respond to incentives. By capping the reward for providing housing, the policy reduced the incentive to build or maintain rental units — an unintended consequence that shrank supply. Good intentions don't override the way incentives shape behaviour."
+  },
+  {
+    "id": "economics/inequality",
+    "contentSlug": "economics/inequality",
+    "subject": "economics",
+    "lessonTitle": "Income Inequality",
+    "prompt": "Country A's Lorenz curve hugs the 45° line of perfect equality. Country B's Lorenz curve sags far below it. Which statement is correct?",
+    "options": [
+      "Country B is more equal and has a lower Gini coefficient",
+      "Country A is more equal and has a lower Gini coefficient",
+      "Both countries have a Gini of 1",
+      "The Lorenz curve tells us nothing about inequality"
+    ],
+    "correctIndex": 1,
+    "explanation": "The closer a Lorenz curve hugs the 45° line, the more equally income is shared, and the smaller the gap between the curve and the diagonal — so the lower the Gini. Country A (close to the line) is more equal with a lower Gini; Country B (sagging far below) is more unequal with a higher Gini."
+  },
+  {
+    "id": "economics/inflation",
+    "contentSlug": "economics/inflation",
+    "subject": "economics",
+    "lessonTitle": "Inflation & the Price Level",
+    "prompt": "You took out a fixed-rate loan, expecting low inflation. Instead, inflation turns out much higher than anyone predicted. How does this surprise affect you as the borrower?",
+    "options": [
+      "It hurts you, because everything is now more expensive to buy",
+      "It helps you, because you repay the fixed loan in dollars that are now worth less than the ones you borrowed",
+      "It has no real effect, since the loan amount is fixed in dollars",
+      "It helps the lender at your expense"
+    ],
+    "correctIndex": 1,
+    "explanation": "Unexpectedly high inflation helps fixed-rate borrowers and hurts lenders. You repay a fixed number of dollars, but those dollars are now worth less in purchasing power than the ones you borrowed, so the real burden of your debt shrinks. The lender receives back money that buys less than they expected. Had the high inflation been anticipated, the lender would have charged a higher interest rate to compensate, neutralising the effect."
+  },
+  {
+    "id": "economics/inflation-vs-unemployment",
+    "contentSlug": "economics/inflation-vs-unemployment",
+    "subject": "economics",
+    "lessonTitle": "The Phillips Curve",
+    "prompt": "A government keeps using expansionary policy to hold unemployment below the natural rate, year after year. According to the expectations-augmented Phillips curve, what is the long-run result?",
+    "options": [
+      "Unemployment stays permanently low, with only a one-time rise in inflation",
+      "Unemployment returns to the natural rate while inflation ratchets ever higher, because expectations adjust and the short-run curve shifts up",
+      "Both inflation and unemployment fall, since the trade-off is permanent",
+      "Inflation stays constant while unemployment falls further each year"
+    ],
+    "correctIndex": 1,
+    "explanation": "The short-run trade-off works only by surprising people with inflation. Once workers expect higher inflation, they demand matching wages, the cost advantage disappears, and unemployment drifts back to its natural rate — now with higher inflation. The short-run Phillips curve shifts up. Persisting just ratchets inflation higher with no lasting fall in unemployment, which is why the long-run Phillips curve is vertical at the natural rate."
+  },
+  {
+    "id": "economics/information-and-markets",
+    "contentSlug": "economics/information-and-markets",
+    "subject": "economics",
+    "lessonTitle": "Information Failures",
+    "prompt": "In a used-car market, sellers know each car's quality but buyers cannot tell peaches from lemons, so buyers offer only the average value. Why do the good cars tend to disappear?",
+    "options": [
+      "Buyers refuse to purchase any car at all, so the market is empty",
+      "The average price is below a peach's true worth, so peach owners withdraw — which lowers the average and drives still more good cars out",
+      "Sellers of peaches raise their prices until no one can afford them",
+      "Lemons break down and are scrapped, leaving only peaches"
+    ],
+    "correctIndex": 1,
+    "explanation": "This is adverse selection. Because buyers can't verify quality, they pay only the average value of cars listed. That price is below what a peach is worth, so peach owners pull out. The remaining mix is more lemon-heavy, the average falls further, and even more good cars exit — a downward quality spiral that can unravel the market. Warranties, reputation, and inspections are how real markets fight back."
+  },
+  {
+    "id": "economics/macro-equilibrium",
+    "contentSlug": "economics/macro-equilibrium",
+    "subject": "economics",
+    "lessonTitle": "Macroeconomic Equilibrium",
+    "prompt": "The short-run equilibrium (where AD crosses SRAS) sits to the LEFT of the vertical LRAS line. What is this, and what is the textbook self-correction?",
+    "options": [
+      "An inflationary gap; wages rise, shifting SRAS left back to potential",
+      "A recessionary gap; with idle resources, wages and costs eventually fall, shifting SRAS right back toward potential",
+      "Long-run equilibrium; nothing further happens",
+      "A recessionary gap; the LRAS shifts left to meet the equilibrium"
+    ],
+    "correctIndex": 1,
+    "explanation": "Equilibrium GDP below potential (left of LRAS) is a recessionary gap — output and employment are below their full-employment level. In theory it self-corrects: idle workers and capacity push wages and input costs down, which shifts SRAS rightward until output returns to potential at a lower price level. The danger is speed — wages are sticky downward, so this can take years, which is why policymakers may step in rather than wait."
+  },
+  {
+    "id": "economics/market-equilibrium",
+    "contentSlug": "economics/market-equilibrium",
+    "subject": "economics",
+    "lessonTitle": "Market Equilibrium",
+    "prompt": "In a market, the current price is BELOW the equilibrium price. What will we observe, and what happens next?",
+    "options": [
+      "A surplus; the price will rise",
+      "A shortage (quantity demanded exceeds quantity supplied); the price will rise toward equilibrium",
+      "A shortage; the price will fall",
+      "The market is already balanced, so nothing happens"
+    ],
+    "correctIndex": 1,
+    "explanation": "Below equilibrium, the low price makes buyers want a lot but sellers offer little, so quantity demanded exceeds quantity supplied — a shortage. Competing buyers bid the price UP, which both discourages some buyers and encourages more sellers, closing the gap until the market clears at equilibrium. (A surplus is the opposite case: a price above equilibrium, pushing the price down.)"
+  },
+  {
+    "id": "economics/market-power-and-policy",
+    "contentSlug": "economics/market-power-and-policy",
+    "subject": "economics",
+    "lessonTitle": "Market Power & Antitrust",
+    "prompt": "A city is served by a single water company. Duplicating the pipe network would be enormously wasteful, so one provider really is the cheapest way to supply water. What is the most appropriate policy response?",
+    "options": [
+      "Break the company into several competing water firms",
+      "Leave it completely alone, since it is the most efficient provider",
+      "Regulate it — cap its prices near average cost and oversee service — because it is a natural monopoly where competition would waste resources",
+      "Fine it heavily for being a monopoly"
+    ],
+    "correctIndex": 2,
+    "explanation": "A water network is a natural monopoly: costs fall over the whole market, so a single provider is genuinely most efficient and duplicating the pipes would waste resources. Breaking it up would raise costs, not lower them. The right response is regulation — capping prices near average cost and overseeing quality — which captures the efficiency of one network while preventing the monopoly markup. Antitrust targets harmful conduct, not efficient structures it cannot avoid."
+  },
+  {
+    "id": "economics/markets-in-motion",
+    "contentSlug": "economics/markets-in-motion",
+    "subject": "economics",
+    "lessonTitle": "Markets in Motion",
+    "prompt": "A city imposes rent control, capping rents well BELOW the market equilibrium. Using supply-and-demand analysis, what is the most likely result?",
+    "options": [
+      "A surplus of apartments, since landlords must lower prices",
+      "A persistent shortage of apartments: at the capped rent, more people want to rent than there are units offered",
+      "No effect, because rent control is a price floor",
+      "Rents rise to clear the market anyway"
+    ],
+    "correctIndex": 1,
+    "explanation": "Rent control is a price CEILING (a legal maximum). Set below equilibrium, it binds: at the artificially low rent the quantity of apartments demanded exceeds the quantity supplied, producing a lasting shortage (long waiting lists, reduced upkeep, units kept off the market). Because the price is legally barred from rising, the usual self-correction can't occur. A floor — a legal minimum, like a minimum wage — would instead create a surplus when set above equilibrium."
+  },
+  {
+    "id": "economics/monetary-policy",
+    "contentSlug": "economics/monetary-policy",
+    "subject": "economics",
+    "lessonTitle": "Monetary Policy",
+    "prompt": "The central bank wants to fight a recession. What does it do, and how does the effect reach the wider economy?",
+    "options": [
+      "Sell bonds to raise interest rates, which boosts borrowing and spending",
+      "Buy bonds to lower interest rates, which makes borrowing cheaper, so investment and spending rise and aggregate demand shifts right",
+      "Raise taxes to cool the economy and bring inflation down",
+      "Buy bonds to raise interest rates, which encourages saving over spending"
+    ],
+    "correctIndex": 1,
+    "explanation": "To fight a recession the bank loosens policy. It buys government bonds in open-market operations, flooding the banking system with reserves and pushing interest rates DOWN. Cheaper borrowing lifts investment and consumer spending, so aggregate demand shifts right and output recovers. Selling bonds would do the opposite (tighten), and raising taxes is fiscal — not monetary — policy."
+  },
+  {
+    "id": "economics/money-and-inflation",
+    "contentSlug": "economics/money-and-inflation",
+    "subject": "economics",
+    "lessonTitle": "Money & Inflation",
+    "prompt": "In the equation of exchange M·V = P·Q, a central bank doubles the money supply (M). Velocity (V) is stable and the economy's real output (Q) is fixed by its resources and technology. According to the quantity theory, what happens?",
+    "options": [
+      "Real output Q doubles, because more money lets the economy produce twice as much",
+      "The price level P roughly doubles — more money chasing the same goods bids up prices (inflation)",
+      "Velocity V falls to keep total spending constant, so nothing changes",
+      "Nothing happens, because the equation is just an accounting identity with no real effects"
+    ],
+    "correctIndex": 1,
+    "explanation": "With V stable and Q fixed, the equation M·V = P·Q has only M and P free to move, and they must move together. Doubling M with Q unable to rise forces the price level P to roughly double — the same goods, bid up by twice the money. Printing money doesn't create real output (Q is set by the real economy); it shows up as inflation. That's the core of the quantity theory: too much money chasing too few goods."
+  },
+  {
+    "id": "economics/monopolistic-competition",
+    "contentSlug": "economics/monopolistic-competition",
+    "subject": "economics",
+    "lessonTitle": "Monopolistic Competition",
+    "prompt": "A city has dozens of independent coffee shops, anyone can open a new one, but each has its own loyal regulars and slightly different menu. This market is best described as:",
+    "options": [
+      "Perfect competition, because there are many firms",
+      "Monopoly, because each shop has loyal customers",
+      "Monopolistic competition — many firms with easy entry, but differentiated products give each a little pricing power",
+      "An oligopoly, because coffee is a single product"
+    ],
+    "correctIndex": 2,
+    "explanation": "Many firms and easy entry point toward competition, but differentiation — loyal regulars, distinct menus — gives each shop a gently downward-sloping demand curve and a sliver of pricing power. That blend of many-firms-plus-differentiation is exactly monopolistic competition. Free entry still drives long-run economic profit to zero, leaving each firm with some excess capacity."
+  },
+  {
+    "id": "economics/monopoly",
+    "contentSlug": "economics/monopoly",
+    "subject": "economics",
+    "lessonTitle": "Monopoly",
+    "prompt": "Why does a monopolist's marginal revenue lie BELOW the price of the good?",
+    "options": [
+      "Because monopolies always have very high costs",
+      "Because to sell one more unit it must lower the price on all units, so the gain is the new price minus the revenue lost on units it was already selling",
+      "Because the government forces the price down",
+      "Because marginal revenue and price are the same thing for every firm"
+    ],
+    "correctIndex": 1,
+    "explanation": "A monopolist faces the downward-sloping market demand curve, so selling an extra unit requires cutting the price — and the cut applies to every unit sold. Marginal revenue is therefore the new price minus the revenue given up on the previously-sold units, which makes MR less than the price. The firm sets MR = MC and then reads the higher price off the demand curve, producing less than the competitive quantity."
+  },
+  {
+    "id": "economics/nash-equilibrium",
+    "contentSlug": "economics/nash-equilibrium",
+    "subject": "economics",
+    "lessonTitle": "Nash Equilibrium",
+    "prompt": "A Nash equilibrium is best described as an outcome where:",
+    "options": [
+      "Every player gets their highest possible payoff",
+      "No player can improve their own payoff by changing strategy alone, given what the others are doing",
+      "All players have chosen the same strategy",
+      "There is exactly one stable outcome in the game"
+    ],
+    "correctIndex": 1,
+    "explanation": "At a Nash equilibrium each player is best-responding to the others, so no one can gain by unilaterally switching. It need not give anyone their highest payoff (mutual defection is a Nash equilibrium yet bad for both), players need not match, and a game can have more than one equilibrium, as coordination games show."
+  },
+  {
+    "id": "economics/oligopoly",
+    "contentSlug": "economics/oligopoly",
+    "subject": "economics",
+    "lessonTitle": "Oligopoly",
+    "prompt": "Two firms dominate a market and secretly agree to keep prices high. Why does economic theory predict this cartel will tend to break down even if no regulator catches them?",
+    "options": [
+      "Because high prices are illegal in every market",
+      "Because each firm has a private incentive to undercut the agreed price and steal extra customers, so the deal is unstable",
+      "Because consumers always refuse to buy from cartels",
+      "Because the firms cannot communicate with each other"
+    ],
+    "correctIndex": 1,
+    "explanation": "The collusive high-price outcome is jointly best, but each firm can earn even more by quietly undercutting while its rival keeps prices high. Since every member faces that same temptation, the cartel is inherently unstable and tends to collapse into a price war — the dominant-strategy trap of the prisoner's dilemma. The instability comes from each firm's own incentive, not just from the threat of getting caught."
+  },
+  {
+    "id": "economics/opportunity-cost",
+    "contentSlug": "economics/opportunity-cost",
+    "subject": "economics",
+    "lessonTitle": "Opportunity Cost & Trade-offs",
+    "prompt": "You skip a shift that pays €60 to attend a concert. The ticket cost €40. What is the total economic cost of going to the concert?",
+    "options": [
+      "€40 — just the ticket price",
+      "€60 — just the wages you gave up",
+      "€100 — the €40 ticket plus the €60 of wages you forwent",
+      "€0 — you already paid for the ticket"
+    ],
+    "correctIndex": 2,
+    "explanation": "Economic cost combines what you spent (the €40 ticket) with your opportunity cost (the €60 shift you gave up). Both are real sacrifices, so the concert truly costs you €100 — far more than the price tag suggests."
+  },
+  {
+    "id": "economics/other-elasticities",
+    "contentSlug": "economics/other-elasticities",
+    "subject": "economics",
+    "lessonTitle": "Income & Cross-Price Elasticity",
+    "prompt": "The price of video-game consoles falls, and the quantity of games sold rises. Meanwhile, a study finds that as incomes rise, people buy fewer bus tickets. How are these goods classified?",
+    "options": [
+      "Consoles and games are substitutes; bus tickets are a normal good",
+      "Consoles and games are complements (negative cross-price elasticity); bus tickets are an inferior good (negative income elasticity)",
+      "Consoles and games are unrelated; bus tickets are a luxury",
+      "Both relationships show positive elasticities"
+    ],
+    "correctIndex": 1,
+    "explanation": "When a fall in the console price raises game purchases, the price of one and the quantity of the other move in OPPOSITE directions — negative cross-price elasticity — so they are complements (used together). When rising income REDUCES bus-ticket purchases, income elasticity is negative, marking bus travel as an inferior good (people switch to cars or taxis as they get richer). The sign of each elasticity is what reveals the classification."
+  },
+  {
+    "id": "economics/perfect-competition",
+    "contentSlug": "economics/perfect-competition",
+    "subject": "economics",
+    "lessonTitle": "Perfect Competition",
+    "prompt": "In a perfectly competitive market, existing firms are earning healthy economic profits. What does the model predict will happen in the long run?",
+    "options": [
+      "Profits stay high because the firms are efficient",
+      "New firms enter, supply rises, price falls, and economic profit is squeezed to zero",
+      "The firms raise their prices to capture even more profit",
+      "Firms exit until only one large firm remains"
+    ],
+    "correctIndex": 1,
+    "explanation": "With free entry and no barriers, positive economic profit attracts new firms. Their extra output increases market supply and pushes the price down. Entry continues until price falls to the point of zero economic profit — the long-run equilibrium of perfect competition. Individual price-taking firms cannot simply raise prices, since buyers would switch to identical rivals."
+  },
+  {
+    "id": "economics/policy-in-practice",
+    "contentSlug": "economics/policy-in-practice",
+    "subject": "economics",
+    "lessonTitle": "Policy in the Real World",
+    "prompt": "Because of recognition, implementation, and impact lags, a discretionary fiscal stimulus aimed at a recession finally takes effect a year later — by which point the economy has already self-corrected back to potential. What is the likely result, and what does it argue for?",
+    "options": [
+      "The stimulus simply does nothing, since the recession is over",
+      "The stimulus pushes output above potential into an inflationary gap — pro-cyclical policy — which is a key argument for rules and automatic stabilizers over slow discretionary action",
+      "The stimulus deepens the recession, because aggregate demand falls",
+      "Lags do not matter, because monetary and fiscal policy work instantly"
+    ],
+    "correctIndex": 1,
+    "explanation": "With the gap already closed, a rightward AD shift arriving late shoves output PAST potential into an inflationary gap — so the policy amplifies the cycle (pro-cyclical) instead of smoothing it. This timing problem is exactly why critics favour predictable rules and the instant, self-adjusting action of automatic stabilizers over slow, discretionary fine-tuning. Policy does have real effects, so it is neither inert nor automatically recessionary; the issue is timing."
+  },
+  {
+    "id": "economics/price-elasticity-of-demand",
+    "contentSlug": "economics/price-elasticity-of-demand",
+    "subject": "economics",
+    "lessonTitle": "Price Elasticity of Demand",
+    "prompt": "A coffee shop raises its price by 20% and finds that the quantity it sells falls by 5%. What is the price elasticity of demand (in magnitude), and what does it mean?",
+    "options": [
+      "4.0 — demand is elastic, so buyers are very price-sensitive",
+      "0.25 — demand is inelastic, so quantity barely responds to the price change",
+      "1.0 — demand is unit elastic",
+      "It cannot be calculated without knowing the dollar prices"
+    ],
+    "correctIndex": 1,
+    "explanation": "Elasticity is the percentage change in quantity divided by the percentage change in price: 5% / 20% = 0.25. Since this is less than 1, demand is inelastic — quantity responded only weakly to a fairly large price change, which is typical of a habit good with loyal customers. The dollar prices are not needed because elasticity works entirely in percentages."
+  },
+  {
+    "id": "economics/production-and-returns",
+    "contentSlug": "economics/production-and-returns",
+    "subject": "economics",
+    "lessonTitle": "Production & Diminishing Returns",
+    "prompt": "A pizza kitchen with one fixed oven hires more cooks. The 2nd cook adds 40 pizzas a day, the 3rd adds 30, the 4th adds 18. This pattern is best explained by:",
+    "options": [
+      "The cooks getting progressively lazier",
+      "The law of diminishing marginal returns — extra cooks crowd the one fixed oven",
+      "Rising wages making later cooks less worthwhile",
+      "An error, since total product should be falling"
+    ],
+    "correctIndex": 1,
+    "explanation": "Total product is still rising (each cook adds positive output), but the marginal product is falling: 40, then 30, then 18. With the oven fixed, each added cook has less of the bottleneck resource to work with. That is the law of diminishing marginal returns, not laziness — the cooks are identical."
+  },
+  {
+    "id": "economics/public-goods",
+    "contentSlug": "economics/public-goods",
+    "subject": "economics",
+    "lessonTitle": "Public Goods & the Commons",
+    "prompt": "A coastal town's fishery is open to anyone, and each boat catches all it can. Stocks dwindle year after year. Which feature of the resource drives this 'tragedy of the commons'?",
+    "options": [
+      "It is non-rival, so one boat's catch leaves just as much for the others",
+      "It is rival but non-excludable, so every fish one boat takes is gone for the others, and no one can be kept out",
+      "It is a public good that the market over-supplies",
+      "The fish are excludable, so only payers can catch them"
+    ],
+    "correctIndex": 1,
+    "explanation": "A fishery is a common-pool resource: rival (each fish caught is one fewer for everyone else) but non-excludable (no one can be kept out). Because no boat can exclude rivals, each takes all it can — and the sum of those individually rational choices depletes the shared stock. Quotas or property rights restore the missing excludability and make sustainable use possible."
+  },
+  {
+    "id": "economics/real-vs-nominal",
+    "contentSlug": "economics/real-vs-nominal",
+    "subject": "economics",
+    "lessonTitle": "Real vs Nominal GDP",
+    "prompt": "From 2023 to 2024, a country's nominal GDP rose 6%, while the GDP deflator rose 4%. Roughly what happened to real GDP?",
+    "options": [
+      "It rose about 10%, adding the two figures",
+      "It rose about 2% — nominal growth minus the price-level increase",
+      "It fell about 4%",
+      "It stayed exactly the same"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nominal GDP growth is approximately real growth plus inflation. So real growth is roughly nominal growth minus inflation: 6% minus 4% is about 2%. Most of the headline 6% jump was just higher prices; only about 2% reflects the country actually producing more goods and services. This is why economists track real, not nominal, GDP to judge living standards."
+  },
+  {
+    "id": "economics/repeated-games",
+    "contentSlug": "economics/repeated-games",
+    "subject": "economics",
+    "lessonTitle": "Repeated Games & Cooperation",
+    "prompt": "Why can cooperation survive in a repeated Prisoner's Dilemma when it collapses in a one-shot game?",
+    "options": [
+      "Because repetition changes the payoffs so that defecting is no longer dominant in any single round",
+      "Because players get bored of defecting and switch to cooperating at random",
+      "Because today's defection can be punished in future rounds, so the long-run cost of cheating can outweigh the short-run gain",
+      "Because in a repeated game there is no longer any dominant strategy at all"
+    ],
+    "correctIndex": 2,
+    "explanation": "Repetition does not change the one-round payoffs, but it lets a defection be punished later. With enough future rounds at stake, a strategy like tit-for-tat makes the long-run cost of betrayal exceed the one-round gain, so cooperation becomes individually rational. The shadow of the future, plus reputation and credible retaliation, is what sustains it."
+  },
+  {
+    "id": "economics/revenue-and-profit",
+    "contentSlug": "economics/revenue-and-profit",
+    "subject": "economics",
+    "lessonTitle": "Revenue, Profit & Shutting Down",
+    "prompt": "A competitive firm faces a market price of €8. At its best output, average variable cost is €6 and average total cost is €11. What should it do in the short run?",
+    "options": [
+      "Shut down immediately, since price (€8) is below average total cost (€11)",
+      "Keep producing — price (€8) covers average variable cost (€6), so each unit helps pay the fixed cost even though the firm is making a loss",
+      "Raise its price to €11 to break even",
+      "Produce as much as physically possible to spread the loss"
+    ],
+    "correctIndex": 1,
+    "explanation": "The firm is making a loss because price (€8) is below average total cost (€11). But price is still above average variable cost (€6), so every unit contributes €2 toward the fixed costs that must be paid anyway. Producing loses less than shutting down. A competitive firm cannot 'raise its price' — it is a price taker."
+  },
+  {
+    "id": "economics/shifts-in-demand",
+    "contentSlug": "economics/shifts-in-demand",
+    "subject": "economics",
+    "lessonTitle": "What Moves Demand",
+    "prompt": "Tea and coffee are substitutes. The price of coffee rises sharply. What happens in the market for TEA?",
+    "options": [
+      "A movement along the tea demand curve, since tea is related to coffee",
+      "The tea demand curve shifts RIGHT — at every tea price, more people now want tea",
+      "The tea demand curve shifts LEFT, because drinks got more expensive",
+      "Nothing happens until the price of tea itself changes"
+    ],
+    "correctIndex": 1,
+    "explanation": "A change in the price of a SUBSTITUTE is one of the TRIBE shifters (related goods), so it shifts the tea curve rather than moving along it. Pricier coffee pushes buyers toward tea, so at every tea price they now want more — demand for tea shifts right. (If tea's OWN price had changed, that would be a movement along its curve instead.)"
+  },
+  {
+    "id": "economics/shifts-in-supply",
+    "contentSlug": "economics/shifts-in-supply",
+    "subject": "economics",
+    "lessonTitle": "What Moves Supply",
+    "prompt": "A breakthrough in solar-panel manufacturing dramatically lowers production costs. What happens in the market for solar panels?",
+    "options": [
+      "A movement up along the supply curve",
+      "The supply curve shifts RIGHT — at every price, firms now want to produce more",
+      "The supply curve shifts LEFT, because the market is changing",
+      "Only the demand curve moves"
+    ],
+    "correctIndex": 1,
+    "explanation": "Better technology lowers the cost of making each panel, so producers will supply MORE at every price — the supply curve shifts right (an increase in supply). Because the trigger was technology, not the panel's own price, the whole curve moves rather than sliding along it. The likely result: lower prices and higher quantity."
+  },
+  {
+    "id": "economics/sources-of-growth",
+    "contentSlug": "economics/sources-of-growth",
+    "subject": "economics",
+    "lessonTitle": "The Engines of Growth",
+    "prompt": "Two countries have identical workforces and identical numbers of machines. One consistently produces more per worker, year after year. What best explains the difference?",
+    "options": [
+      "The more productive country simply has more workers",
+      "Better technology and human capital — the same inputs organized around superior knowledge and skills produce more",
+      "It must have a larger population",
+      "There is no possible explanation; equal inputs must give equal output"
+    ],
+    "correctIndex": 1,
+    "explanation": "With labour and physical capital held equal, the remaining engines are human capital and technology. Better ideas (technology) and more skilled, healthier workers (human capital) raise the output squeezed from the very same workers and machines. This is why economists say long-run growth is, above all, a story about rising productivity driven by knowledge."
+  },
+  {
+    "id": "economics/supply",
+    "contentSlug": "economics/supply",
+    "subject": "economics",
+    "lessonTitle": "The Law of Supply",
+    "prompt": "The market price of wheat rises, and farmers plant more wheat next season. What does this illustrate?",
+    "options": [
+      "A shift of the supply curve to the right",
+      "The law of supply: a higher price raised the quantity supplied (a movement along the curve)",
+      "A decrease in supply",
+      "The law of demand"
+    ],
+    "correctIndex": 1,
+    "explanation": "Only wheat's own price changed, so we move ALONG the supply curve to a higher-price, higher-quantity point — a change in quantity supplied, exactly as the law of supply predicts. A SHIFT of the curve would require something other than wheat's own price to change, such as fertiliser costs or new farming technology."
+  },
+  {
+    "id": "economics/taxes-and-elasticity",
+    "contentSlug": "economics/taxes-and-elasticity",
+    "subject": "economics",
+    "lessonTitle": "Who Really Pays a Tax?",
+    "prompt": "A government places a new per-unit tax on cigarettes, a good with very inelastic demand and relatively elastic supply. Who bears most of the burden, and what happens to deadweight loss?",
+    "options": [
+      "Sellers bear most of it, because the law usually charges the seller",
+      "Buyers bear most of it, and deadweight loss is small because quantity barely falls",
+      "The burden splits evenly, and deadweight loss is large",
+      "The government bears it, since the government collects the tax"
+    ],
+    "correctIndex": 1,
+    "explanation": "The burden falls on the more inelastic side. Here demand is highly inelastic (smokers keep buying) while supply is relatively elastic, so BUYERS bear most of the tax. Because demand barely responds, quantity falls very little, so few trades are destroyed and deadweight loss is small. This is exactly why cigarette taxes raise so much revenue with little avoidance — and why the cost lands on consumers. Note that who the law charges does not change the economic incidence."
+  },
+  {
+    "id": "economics/the-budget-constraint",
+    "contentSlug": "economics/the-budget-constraint",
+    "subject": "economics",
+    "lessonTitle": "The Budget Constraint",
+    "prompt": "A coffee costs $4 and gives you 20 utils of extra satisfaction; a book costs $10 and gives you 40 utils. To maximise utility from your budget, what should you do?",
+    "options": [
+      "Buy more books — they give more total utility",
+      "Buy more coffee — its marginal utility per dollar (20/4 = 5) beats the book's (40/10 = 4)",
+      "Split your money exactly evenly between them",
+      "Buy whichever is cheaper, regardless of utility"
+    ],
+    "correctIndex": 1,
+    "explanation": "The rule compares marginal utility PER DOLLAR, not raw utility or price. Coffee delivers 20/4 = 5 utils per dollar; the book delivers 40/10 = 4 utils per dollar. So the next dollar does more good spent on coffee — buy more coffee. As you do, coffee's marginal utility falls until the two MU-per-dollar ratios equalise, which is the equimarginal optimum."
+  },
+  {
+    "id": "economics/the-business-cycle",
+    "contentSlug": "economics/the-business-cycle",
+    "subject": "economics",
+    "lessonTitle": "The Business Cycle",
+    "prompt": "During a typical recession, what is the most likely combined behaviour of real GDP, unemployment, and inflationary pressure?",
+    "options": [
+      "Real GDP rises, unemployment falls, and inflation pressure builds",
+      "Real GDP falls, unemployment rises, and inflationary pressure eases",
+      "Real GDP falls, unemployment falls, and inflation surges",
+      "All three stay roughly constant, since the trend keeps rising"
+    ],
+    "correctIndex": 1,
+    "explanation": "A recession is a contraction phase: real GDP falls, firms cut back so cyclical unemployment rises, and with demand weakening, inflationary pressure typically eases. The pattern reverses in an expansion (GDP up, unemployment down, inflation pressure building near the peak). This co-movement of the gauges is the empirical basis for Okun's law (growth vs unemployment) and the short-run Phillips curve (inflation vs unemployment)."
+  },
+  {
+    "id": "economics/the-central-bank",
+    "contentSlug": "economics/the-central-bank",
+    "subject": "economics",
+    "lessonTitle": "The Central Bank",
+    "prompt": "A central bank wants to EXPAND the money supply to stimulate a sluggish economy. Which combination of actions fits that goal?",
+    "options": [
+      "Sell government bonds, raise the reserve requirement, and raise the policy interest rate",
+      "Buy government bonds, lower the reserve requirement, and lower the policy interest rate",
+      "Buy government bonds, raise the reserve requirement, and raise the policy interest rate",
+      "Sell government bonds, lower the reserve requirement, and lower the policy interest rate"
+    ],
+    "correctIndex": 1,
+    "explanation": "To expand the money supply, the central bank buys bonds (pumping fresh reserves into banks to lend), lowers the reserve requirement (so each reserve dollar supports more loans), and lowers the policy interest rate (making borrowing cheaper so people and firms borrow and spend more). The opposite settings — selling bonds, raising the requirement, raising the rate — would contract the money supply instead."
+  },
+  {
+    "id": "economics/the-costs-of-production",
+    "contentSlug": "economics/the-costs-of-production",
+    "subject": "economics",
+    "lessonTitle": "The Costs of Production",
+    "prompt": "At a firm's current output, marginal cost is below average total cost. What is happening to ATC as output rises by one more unit?",
+    "options": [
+      "ATC is rising, because all costs always rise with output",
+      "ATC is falling, because the extra unit costs less than the current average",
+      "ATC stays exactly constant",
+      "There isn't enough information to say"
+    ],
+    "correctIndex": 1,
+    "explanation": "When marginal cost is below average total cost, the next unit costs less than the running average, so it pulls the average down — ATC falls. ATC only stops falling and begins to rise at the output where MC equals ATC, which is the minimum of the ATC curve."
+  },
+  {
+    "id": "economics/the-economics-of-everything",
+    "contentSlug": "economics/the-economics-of-everything",
+    "subject": "economics",
+    "lessonTitle": "The Economics of Everything",
+    "prompt": "A second-price (Vickrey) auction is celebrated as a piece of mechanism design because:",
+    "options": [
+      "It guarantees the seller earns the highest possible revenue",
+      "It makes bidding your true value a dominant strategy, so the rules themselves draw out honest bids",
+      "It removes the need for any bidding at all",
+      "It ensures every bidder pays exactly what they bid"
+    ],
+    "correctIndex": 1,
+    "explanation": "In a second-price auction the winner pays the second-highest bid, so raising or lowering your own bid never changes the price you would pay if you win — only whether you win. That makes bidding your honest value a dominant strategy. The rule is designed so self-interested players reveal the truth, which is the whole point of mechanism design."
+  },
+  {
+    "id": "economics/the-economics-of-you",
+    "contentSlug": "economics/the-economics-of-you",
+    "subject": "economics",
+    "lessonTitle": "The Economics of Everyday Choices",
+    "prompt": "You spent $60 on a non-refundable concert ticket. On the night you feel exhausted and would genuinely rather stay home and sleep. What does sound economic reasoning say?",
+    "options": [
+      "Go anyway — otherwise the $60 is wasted",
+      "The $60 is a sunk cost and is gone either way; decide only on whether going now beats staying home — so stay and rest",
+      "Go, because skipping it means you made a bad purchase",
+      "Sell the ticket for $60 to recover the sunk cost"
+    ],
+    "correctIndex": 1,
+    "explanation": "The $60 is already spent and unrecoverable — a sunk cost — so it should carry no weight in tonight's choice. The only marginal question is forward-looking: from here, does attending (while exhausted) beat resting? If you'd rather sleep, stay home; going just to 'not waste' the money is the sunk-cost fallacy, which compounds the loss with a miserable night. (The ticket is non-refundable, so selling it for $60 isn't on the table.)"
+  },
+  {
+    "id": "economics/the-labor-market",
+    "contentSlug": "economics/the-labor-market",
+    "subject": "economics",
+    "lessonTitle": "The Labor Market",
+    "prompt": "A factory installs new machinery that lets each worker produce far more per hour. Holding labor supply fixed, what happens in this labor market?",
+    "options": [
+      "Labor demand shifts left, lowering the wage",
+      "Labor demand shifts right, raising the equilibrium wage and employment",
+      "Labor supply shifts right, lowering the wage",
+      "Nothing — wages are set by employers, not by productivity"
+    ],
+    "correctIndex": 1,
+    "explanation": "More productive workers have a higher marginal revenue product, so each is worth more to the firm. Labor demand (a derived demand) shifts right, and where it now meets the unchanged supply curve the equilibrium wage and employment are both higher. Wages track productivity."
+  },
+  {
+    "id": "economics/the-multiplier",
+    "contentSlug": "economics/the-multiplier",
+    "subject": "economics",
+    "lessonTitle": "The Multiplier",
+    "prompt": "The marginal propensity to consume is 0.75. A government project injects $200 of new spending. Using the spending multiplier, by roughly how much does total spending eventually rise?",
+    "options": [
+      "$200 — spending injections don't multiply",
+      "$266, since 200 divided by 0.75",
+      "$800, because the multiplier is 1 / (1 - 0.75) = 4, and 4 times 200 is 800",
+      "$150, because people save a quarter of it"
+    ],
+    "correctIndex": 2,
+    "explanation": "The multiplier is 1 / (1 - MPC) = 1 / (1 - 0.75) = 1 / 0.25 = 4. The injection is re-spent round after round, and the rounds sum to injection times the multiplier: $200 times 4 = $800. The higher the MPC, the bigger the multiplier (more is passed along each round); the leak into saving, 1 - MPC = MPS = 0.25 here, is what eventually stops the chain."
+  },
+  {
+    "id": "economics/the-power-of-compounding",
+    "contentSlug": "economics/the-power-of-compounding",
+    "subject": "economics",
+    "lessonTitle": "The Power of Compounding",
+    "prompt": "Country A grows at 2% a year and Country B at 4%, both starting from the same income. Using the rule of 70, how do their living standards compare over the long run?",
+    "options": [
+      "B is always exactly twice as rich as A, since 4% is double 2%",
+      "B's income doubles every ~18 years while A's doubles every ~35 — so B pulls ever further ahead, compounding the gap",
+      "They stay roughly equal, since a 2-point difference is small",
+      "A eventually catches up because growth slows down on its own"
+    ],
+    "correctIndex": 1,
+    "explanation": "By the rule of 70, B doubles every 70/4 ≈ 18 years and A every 70/2 = 35 years. B therefore doubles about twice as often, and because growth multiplies on an ever-larger base, the gap between them keeps widening rather than staying fixed. A small, steady difference in growth rates compounds into a vast long-run difference in wealth."
+  },
+  {
+    "id": "economics/the-prisoners-dilemma",
+    "contentSlug": "economics/the-prisoners-dilemma",
+    "subject": "economics",
+    "lessonTitle": "The Prisoner's Dilemma",
+    "prompt": "In the Prisoner's Dilemma, why do two rational players end up both defecting even though both would prefer mutual cooperation?",
+    "options": [
+      "Because cooperating is impossible to choose",
+      "Because defecting gives a higher payoff no matter what the other player does, so it is a dominant strategy for both",
+      "Because the players cannot communicate and so choose at random",
+      "Because the payoffs for cooperation are secretly the lowest of all"
+    ],
+    "correctIndex": 1,
+    "explanation": "Defecting yields a higher payoff whether the other cooperates or defects, making it each player's dominant strategy. Since both reason this way, both defect and land in the mutually worse outcome, even though mutual cooperation would have been better for both. The tragedy is that individually rational choices produce a collectively poor result."
+  },
+  {
+    "id": "economics/the-production-possibilities-frontier",
+    "contentSlug": "economics/the-production-possibilities-frontier",
+    "subject": "economics",
+    "lessonTitle": "The Production Possibilities Frontier",
+    "prompt": "An economy is producing at a point well INSIDE its production possibilities frontier. What does this tell us?",
+    "options": [
+      "It is producing efficiently and can't do better",
+      "It is wasting resources — it could make more of both goods with what it already has",
+      "It must be experiencing rapid economic growth",
+      "The combination is impossible to produce"
+    ],
+    "correctIndex": 1,
+    "explanation": "A point inside the frontier means resources are idle or misused (think unemployment or shuttered factories). The economy could move out to the curve and make more of BOTH goods — no trade-off needed — simply by using what it has fully. Points on the curve are efficient; points outside are unattainable."
+  },
+  {
+    "id": "economics/thinking-at-the-margin",
+    "contentSlug": "economics/thinking-at-the-margin",
+    "subject": "economics",
+    "lessonTitle": "Thinking at the Margin",
+    "prompt": "A bakery finds that baking its 100th loaf of the day adds €3 in costs but only €2 in revenue. What does marginal analysis recommend?",
+    "options": [
+      "Bake it anyway — every loaf sold is good",
+      "Don't bake the 100th loaf; its marginal cost (€3) exceeds its marginal benefit (€2)",
+      "Bake 200 loaves to make up the difference",
+      "Shut the bakery down entirely"
+    ],
+    "correctIndex": 1,
+    "explanation": "At the 100th loaf, marginal cost (€3) is greater than marginal benefit (€2), so that loaf loses €1. The bakery should stop before it — at the last loaf where benefit still covered cost. Note it shouldn't necessarily shut down; earlier loaves were profitable. Decisions are made one unit at a time, at the margin."
+  },
+  {
+    "id": "economics/thinking-strategically",
+    "contentSlug": "economics/thinking-strategically",
+    "subject": "economics",
+    "lessonTitle": "Thinking Strategically",
+    "prompt": "A strategy that gives a player a higher payoff than any alternative no matter what the other players do is called:",
+    "options": [
+      "A Nash equilibrium",
+      "A dominant strategy",
+      "A coordination move",
+      "A payoff matrix"
+    ],
+    "correctIndex": 1,
+    "explanation": "A dominant strategy beats the alternatives regardless of what others choose, so a player can pick it without needing to predict anyone else. A Nash equilibrium is an outcome where all players are best-responding at once; a payoff matrix is the grid that displays the whole game."
+  },
+  {
+    "id": "economics/trade-barriers",
+    "contentSlug": "economics/trade-barriers",
+    "subject": "economics",
+    "lessonTitle": "Tariffs, Quotas & Protectionism",
+    "prompt": "A country imposes a tariff on imported steel. Which statement best describes the overall effect?",
+    "options": [
+      "Everyone in the country is better off because domestic steelmakers are protected",
+      "Domestic steelmakers and the government gain, but consumers lose more than those two gain, leaving the country poorer overall with a deadweight loss",
+      "It has no effect on price, only on the quantity imported",
+      "Consumers gain because the price of steel falls"
+    ],
+    "correctIndex": 1,
+    "explanation": "A tariff raises the internal price. Domestic producers gain (more output at a higher price) and the government collects tariff revenue, but consumers pay more and buy less. The consumer loss exceeds the producer plus government gains — the gap is the deadweight loss from trades the tariff destroys, so the nation as a whole is worse off."
+  },
+  {
+    "id": "economics/unemployment",
+    "contentSlug": "economics/unemployment",
+    "subject": "economics",
+    "lessonTitle": "Unemployment",
+    "prompt": "A group of discouraged workers stops actively searching for jobs and drops out of the labour force entirely. Holding everything else constant, what happens to the measured unemployment rate?",
+    "options": [
+      "It rises, because more people are now without work",
+      "It falls, because they leave the labour force and are no longer counted as unemployed",
+      "It is unchanged, because they still don't have jobs",
+      "It cannot be calculated without knowing the total population"
+    ],
+    "correctIndex": 1,
+    "explanation": "To be counted as unemployed, a person must be actively looking for work. Discouraged workers who give up searching leave the labour force, so they vanish from both the numerator (unemployed) and the denominator (labour force) of the unemployment rate. The measured rate can therefore fall even though no jobs were created and these people are still without work. This is exactly why economists also track the labour-force participation rate."
+  },
+  {
+    "id": "economics/utility",
+    "contentSlug": "economics/utility",
+    "subject": "economics",
+    "lessonTitle": "Utility & Satisfaction",
+    "prompt": "You've eaten three free samples at a food fair. Your total enjoyment keeps rising with each sample, but the fourth was less exciting than the third. What does this tell you?",
+    "options": [
+      "Total utility is falling",
+      "Marginal utility is negative",
+      "Marginal utility is falling, even though total utility is still rising",
+      "You dislike the food"
+    ],
+    "correctIndex": 2,
+    "explanation": "Total utility is still going up — each sample adds something — so it isn't falling and you don't dislike the food. But the fourth sample added less than the third, which means the EXTRA (marginal) satisfaction is shrinking. Marginal utility is falling while total utility keeps rising; it would only be negative if a sample actually made you worse off."
+  },
+  {
+    "id": "economics/what-determines-elasticity",
+    "contentSlug": "economics/what-determines-elasticity",
+    "subject": "economics",
+    "lessonTitle": "What Makes Demand Elastic?",
+    "prompt": "Demand for 'salt' is far more inelastic than demand for 'one particular brand of bottled water.' Which factor best explains the difference?",
+    "options": [
+      "Salt is more expensive, so buyers pay closer attention",
+      "Salt has almost no substitutes and takes a tiny budget share, while one water brand has many close substitutes",
+      "Bottled water is a necessity and salt is a luxury",
+      "Elasticity is random and cannot really be explained by features of the good"
+    ],
+    "correctIndex": 1,
+    "explanation": "The decisive factor is substitutes (with budget share reinforcing it). Salt has virtually no substitute and costs almost nothing, so buyers keep buying it at almost any price — inelastic. One brand of bottled water sits beside dozens of near-identical rivals, so buyers switch the instant its price rises — elastic. Note salt is actually the necessity here, and it is the cheaper good, which rules out the other options."
+  },
+  {
+    "id": "economics/what-determines-wages",
+    "contentSlug": "economics/what-determines-wages",
+    "subject": "economics",
+    "lessonTitle": "Why Wages Differ",
+    "prompt": "Two welders are equally skilled. One welds steel beams on the ground; the other welds underwater on offshore rigs, a far more dangerous job. The underwater welder is paid much more. This wage gap is best explained by:",
+    "options": [
+      "A difference in human capital — the underwater welder is more skilled",
+      "A compensating differential — extra pay for the danger and worse conditions",
+      "A binding minimum wage in the underwater market",
+      "Pure luck unrelated to the work"
+    ],
+    "correctIndex": 1,
+    "explanation": "The two welders have the SAME skill (the same human capital), so the gap isn't about productivity. The underwater job is far more dangerous, so the market must offer a higher wage to attract anyone to it. That premium for unpleasant or risky conditions is a compensating differential."
+  },
+  {
+    "id": "economics/what-firms-do",
+    "contentSlug": "economics/what-firms-do",
+    "subject": "economics",
+    "lessonTitle": "What Firms Do",
+    "prompt": "Maria leaves a €45,000 job to open a flower shop. The shop earns €120,000 in revenue and pays €90,000 in explicit costs. What is her economic profit?",
+    "options": [
+      "€30,000 — revenue minus explicit costs",
+      "−€15,000 — the €30,000 accounting profit minus the €45,000 salary she gave up",
+      "€75,000 — revenue minus her old salary",
+      "Zero, because the shop broke even"
+    ],
+    "correctIndex": 1,
+    "explanation": "Accounting profit is €120,000 − €90,000 = €30,000. But economic profit also subtracts the implicit cost of the €45,000 salary she forgoes: €30,000 − €45,000 = −€15,000. She is financially worse off than if she had kept her job, even though the books show a profit."
+  },
+  {
+    "id": "economics/what-is-economics",
+    "contentSlug": "economics/what-is-economics",
+    "subject": "economics",
+    "lessonTitle": "What Is Economics?",
+    "prompt": "A government can afford to fully fund either a new high-speed rail line or a network of hospitals this year, but not both. Which idea does this best illustrate?",
+    "options": [
+      "Macroeconomics, because the government is involved",
+      "Scarcity forcing a choice — limited resources can't satisfy every want at once",
+      "That the government is being wasteful",
+      "Inflation, because both projects are expensive"
+    ],
+    "correctIndex": 1,
+    "explanation": "Unlimited wants (rail AND hospitals) meet limited resources (one year's budget, workers, materials). Scarcity means you can't do everything, so a choice — and a trade-off — is forced. That's the central problem of economics."
+  },
+  {
+    "id": "economics/what-is-growth",
+    "contentSlug": "economics/what-is-growth",
+    "subject": "economics",
+    "lessonTitle": "What Is Economic Growth?",
+    "prompt": "A country's total GDP grew 3% last year, but its population also grew 3%. What happened to real GDP per capita, the standard measure of growth?",
+    "options": [
+      "It rose by about 6%",
+      "It rose by about 3%",
+      "It stayed roughly flat — the average person is no better off",
+      "It fell by about 3%"
+    ],
+    "correctIndex": 2,
+    "explanation": "Growth is measured per person. If output and population both rise 3%, then output PER capita is essentially unchanged — the extra production is exactly absorbed by the extra people, so the average person's living standard hasn't improved. This is why economists track real GDP per capita, not just total GDP."
+  },
+  {
+    "id": "economics/what-is-money",
+    "contentSlug": "economics/what-is-money",
+    "subject": "economics",
+    "lessonTitle": "What Is Money?",
+    "prompt": "A modern $20 banknote is an example of fiat money. What ultimately gives it its value?",
+    "options": [
+      "The gold stored in a national vault that can be exchanged for it on demand",
+      "The cost of the paper and ink used to print it",
+      "Trust that the government backs it and that others will accept it in trade",
+      "The fact that it can be melted down and sold as a commodity"
+    ],
+    "correctIndex": 2,
+    "explanation": "Fiat money has no commodity value of its own — the paper is nearly worthless and it isn't redeemable for gold. Its value rests entirely on trust: the government declares it legal tender, and everyone accepts it because they expect everyone else to accept it too. That shared confidence is the whole foundation, which is also why losing it (through, say, runaway printing) is so dangerous."
+  },
+  {
+    "id": "economics/why-nations-trade",
+    "contentSlug": "economics/why-nations-trade",
+    "subject": "economics",
+    "lessonTitle": "Why Nations Trade",
+    "prompt": "Atlantis can produce more of BOTH fish and timber per worker than Borealis. Should the two countries still trade?",
+    "options": [
+      "No — Atlantis is more productive at everything, so trade can only hurt it",
+      "Yes — as long as their opportunity costs differ, each has a comparative advantage in one good and both gain",
+      "Only if Borealis lowers its wages to compete",
+      "No — a country needs an absolute advantage in a good to benefit from exporting it"
+    ],
+    "correctIndex": 1,
+    "explanation": "Absolute advantage in everything is impossible to translate into comparative advantage in everything. Whichever good Atlantis is relatively best at, Borealis is relatively best at the other. Each specialises where its opportunity cost is lower, they trade, and world output — and both countries' consumption — rises."
+  },
+  {
+    "id": "health/a-balanced-diet",
+    "contentSlug": "health/a-balanced-diet",
+    "subject": "health",
+    "lessonTitle": "Putting It Together: A Balanced Diet",
+    "prompt": "Which supplement has the strongest evidence for routine use without a blood test — and in which population?",
+    "options": [
+      "A daily multivitamin for all healthy adults eating a varied Western diet",
+      "High-dose Vitamin C (1 g/day) for everyone, to prevent colds",
+      "Folate (400 μg/day) for all people who are pregnant or planning pregnancy",
+      "Beta-carotene supplements for smokers wanting antioxidant protection"
+    ],
+    "correctIndex": 2,
+    "explanation": "Folate supplementation before conception and in the first 12 weeks of pregnancy has clear, replicated evidence of reducing neural tube defects (spina bifida and anencephaly). This is recommended universally, not just for people with low dietary folate. By contrast, multivitamins show no survival or disease benefit in healthy adults with adequate diets, and beta-carotene supplements actually increased lung cancer risk in trials involving smokers."
+  },
+  {
+    "id": "health/a-healthy-relationship-with-food",
+    "contentSlug": "health/a-healthy-relationship-with-food",
+    "subject": "health",
+    "lessonTitle": "A Healthy Relationship with Food",
+    "prompt": "Which of the following best describes 'flexible restraint' in eating?",
+    "options": [
+      "Strictly tracking calories and macros every single day",
+      "Eating whatever you want with no awareness of food quality",
+      "General awareness of diet quality while allowing occasional indulgences without guilt or abandoning healthy habits",
+      "Following a specific diet plan perfectly for 30 days then switching plans"
+    ],
+    "correctIndex": 2,
+    "explanation": "Flexible restraint means general awareness of food quality combined with the understanding that individual indulgences do not derail an overall healthy pattern. Research shows people with flexible (not rigid) eating attitudes have better long-term outcomes than those with strict all-or-nothing rules."
+  },
+  {
+    "id": "health/a-movement-plan-for-life",
+    "contentSlug": "health/a-movement-plan-for-life",
+    "subject": "health",
+    "lessonTitle": "A Movement Plan for Life",
+    "prompt": "Which statement about the ~150-minute weekly exercise guideline is most accurate?",
+    "options": [
+      "It must be completed in sessions of at least 30 minutes — short bouts under 10 minutes don't count toward the total",
+      "It applies only to aerobic exercise; strength training is counted separately and does not contribute to the 150-minute target",
+      "75 minutes of vigorous exercise meets the same standard as 150 minutes of moderate exercise, because vigorous activity counts double",
+      "It is the maximum safe amount of exercise per week — exceeding it increases health risks for most people"
+    ],
+    "correctIndex": 2,
+    "explanation": "Public health guidelines explicitly allow vigorous activity to count at double the rate of moderate activity: 75 min vigorous ≈ 150 min moderate. The 10-minute minimum per bout has also been relaxed in recent guidelines — shorter bouts do accumulate. Strength training is additional to the aerobic target, not counted within it. And there is no evidence that moderate exercisers reach a harmful upper limit — more activity continues to provide benefit, with diminishing returns."
+  },
+  {
+    "id": "health/acting-when-it-counts",
+    "contentSlug": "health/acting-when-it-counts",
+    "subject": "health",
+    "lessonTitle": "Emergencies: Acting When It Counts",
+    "prompt": "A person suddenly develops hives, a swollen tongue, and is struggling to breathe after eating at a restaurant. They have an EpiPen in their bag. What is the correct sequence of actions?",
+    "options": [
+      "Give antihistamine tablets, call a doctor, and wait to see if symptoms improve",
+      "Sit them upright, administer the EpiPen to the outer thigh, and call emergency services immediately",
+      "Lay them flat, withhold the EpiPen until the ambulance arrives, and give water to drink",
+      "Administer the EpiPen only if they lose consciousness — otherwise it is too strong"
+    ],
+    "correctIndex": 1,
+    "explanation": "These are classic signs of anaphylaxis — throat swelling and breathing difficulty mean the airways are involved, making this immediately life-threatening. The EpiPen should be given straight away (outer thigh, through clothing if needed), and emergency services called immediately even if symptoms improve, as a delayed biphasic reaction can occur. Antihistamines alone are far too slow for anaphylaxis. The EpiPen is not withheld — early administration is what saves lives."
+  },
+  {
+    "id": "health/alcohol",
+    "contentSlug": "health/alcohol",
+    "subject": "health",
+    "lessonTitle": "Alcohol",
+    "prompt": "At approximately what BAC does meaningful impairment of reaction time and coordination begin?",
+    "options": [
+      "Only at or above the legal driving limit of 0.08%",
+      "Around 0.05% — well before the legal driving limit in most countries",
+      "Not until 0.15%, when slurred speech appears",
+      "BAC has no effect on driving ability below 0.10%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Research consistently shows that impairment of reaction time, tracking ability, and divided-attention tasks begins at around 0.05% BAC — significantly below the 0.08% legal limit that applies in many countries. This is why some countries have adopted a 0.05% legal limit, and why 0.02% applies to new and young drivers in many places."
+  },
+  {
+    "id": "health/building-great-sleep",
+    "contentSlug": "health/building-great-sleep",
+    "subject": "health",
+    "lessonTitle": "Building Great Sleep",
+    "prompt": "A sleep therapist recommends that a patient with chronic insomnia get up at the same time every day even after a poor night's sleep, rather than sleeping in. What is the primary scientific rationale?",
+    "options": [
+      "Sleeping in increases the risk of dreaming too much, which disrupts the next night's sleep",
+      "A fixed wake time anchors the circadian clock and rebuilds adenosine sleep pressure for the next night, preventing the cycle of delayed sleep onset",
+      "Getting up early increases morning cortisol, which directly induces sleepiness that evening",
+      "Lying in bed after waking triggers the glymphatic system to restart, wasting the previous night's waste-clearance"
+    ],
+    "correctIndex": 1,
+    "explanation": "A consistent wake time is the cornerstone of cognitive-behavioural therapy for insomnia (CBT-I) because it serves two mechanisms simultaneously. First, it anchors the circadian clock — preventing the clock from drifting later and later. Second, it ensures a full waking day before the next sleep opportunity, allowing adenosine (the chemical that drives sleep pressure) to build up to a sufficient level by bedtime. Sleeping in after a bad night reduces the next night's sleep pressure, making the following night's insomnia worse."
+  },
+  {
+    "id": "health/building-healthy-meals",
+    "contentSlug": "health/building-healthy-meals",
+    "subject": "health",
+    "lessonTitle": "Building Healthy Meals",
+    "prompt": "Which hand-based rule correctly estimates a single serving of protein?",
+    "options": [
+      "A closed fist",
+      "The flat palm (no fingers)",
+      "Both hands cupped together",
+      "One thumb"
+    ],
+    "correctIndex": 1,
+    "explanation": "The flat palm — fingers excluded — estimates one serving of cooked meat, fish, or tofu (roughly 85–100 g). A fist estimates vegetables, a cupped hand estimates grains, and a thumb estimates added fats."
+  },
+  {
+    "id": "health/building-resilience",
+    "contentSlug": "health/building-resilience",
+    "subject": "health",
+    "lessonTitle": "Building Resilience",
+    "prompt": "Which best describes post-traumatic growth (PTG)?",
+    "options": [
+      "The ability to return to exactly the same level of functioning as before the adversity",
+      "A rare phenomenon that only occurs when the traumatic event was not very serious",
+      "Positive psychological change that can emerge from the struggle with highly challenging circumstances — including deeper relationships, new possibilities, and increased personal strength",
+      "A sign that the original adversity was not actually harmful or painful"
+    ],
+    "correctIndex": 2,
+    "explanation": "Post-traumatic growth refers to genuine psychological development that can emerge from serious adversity — including deepened relationships, identification of new life paths, and a stronger sense of personal capacity. It doesn't require that the adversity was minor, nor does it mean the person simply 'bounced back' to where they were. Recovery and growth can coexist with genuine suffering."
+  },
+  {
+    "id": "health/building-strength",
+    "contentSlug": "health/building-strength",
+    "subject": "health",
+    "lessonTitle": "Building Strength & Endurance",
+    "prompt": "Why do muscles become stronger after resistance training, rather than weaker — even though the workout itself causes microscopic damage?",
+    "options": [
+      "Exercise pumps blood into muscles, stretching them permanently and making them larger",
+      "The workout directly deposits new muscle protein during the session itself",
+      "Micro-damage from training triggers a repair process that rebuilds fibres slightly thicker and stronger — adaptation happens during recovery",
+      "Muscles become stronger only if the person consumes protein within 10 minutes of finishing the workout"
+    ],
+    "correctIndex": 2,
+    "explanation": "Strength gains follow a stress-adaptation cycle: the workout creates controlled micro-damage (hence DOMS), which signals the body to repair and strengthen those fibres during the recovery period. The improvement happens after training, not during it — which is why rest, sleep, and adequate nutrition between sessions are essential parts of a training programme, not optional extras."
+  },
+  {
+    "id": "health/carbohydrates",
+    "contentSlug": "health/carbohydrates",
+    "subject": "health",
+    "lessonTitle": "Carbohydrates",
+    "prompt": "Why does a meal rich in fibre and protein cause a smaller blood glucose spike than the same number of carb grams from a sugary drink?",
+    "options": [
+      "Fibre and protein convert directly into insulin, suppressing glucose",
+      "Fibre slows digestion and blunts glucose absorption, while protein has little glycaemic effect",
+      "Sugary drinks contain more calories per gram than whole-grain meals",
+      "The stomach cannot absorb glucose from solid food at all"
+    ],
+    "correctIndex": 1,
+    "explanation": "Soluble fibre forms a gel that slows the rate of glucose absorption into the bloodstream, producing a gentler rise. Protein has a low glycaemic impact. By contrast, liquid simple sugars are absorbed rapidly, causing a sharper spike and the compensatory insulin overshoot that leads to a crash."
+  },
+  {
+    "id": "health/common-conditions",
+    "contentSlug": "health/common-conditions",
+    "subject": "health",
+    "lessonTitle": "Common Conditions",
+    "prompt": "Depression is best described as which of the following?",
+    "options": [
+      "Feeling sad about a specific bad event",
+      "A character flaw or sign of weakness",
+      "A sustained change in mood, thinking, and functioning — a medical condition",
+      "A problem that only affects certain types of people"
+    ],
+    "correctIndex": 2,
+    "explanation": "Depression is a medical condition involving real changes in brain chemistry and circuitry, affecting mood, thought, energy, sleep, and appetite. It is not a personality trait or weakness, and it is highly treatable."
+  },
+  {
+    "id": "health/consent-relationships-and-wellbeing",
+    "contentSlug": "health/consent-relationships-and-wellbeing",
+    "subject": "health",
+    "lessonTitle": "Consent, Relationships & Well-Being",
+    "prompt": "According to the FRIES model, which of the following describes a situation where genuine consent IS present?",
+    "options": [
+      "A person says yes after repeated pressure, wanting the asking to stop",
+      "Both people openly agree, either person can change their mind at any time, and no deception is involved",
+      "A person does not say no, so the other person assumes they are fine with everything",
+      "Someone agreed last week, so their partner assumes that consent carries forward to this week"
+    ],
+    "correctIndex": 1,
+    "explanation": "Genuine consent under FRIES requires all five criteria: Freely given (no pressure), Reversible (can withdraw), Informed (no deception), Enthusiastic (a willing yes, not just absence of no), and Specific (does not carry over automatically). Only option B meets all five: open agreement, freedom to withdraw, and no deception. Option A fails F (pressure) and E (reluctant yes). Option C fails E (silence is not consent). Option D fails R and S (prior consent does not automatically transfer)."
+  },
+  {
+    "id": "health/contraception-and-planning",
+    "contentSlug": "health/contraception-and-planning",
+    "subject": "health",
+    "lessonTitle": "Contraception & Planning",
+    "prompt": "Which contraceptive methods also significantly reduce the risk of sexually transmitted infections (STIs)?",
+    "options": [
+      "The combined pill and the progestogen-only pill",
+      "The hormonal IUS and the implant",
+      "External and internal condoms (barrier methods)",
+      "The copper IUD, because copper is antimicrobial"
+    ],
+    "correctIndex": 2,
+    "explanation": "Only barrier methods — primarily external (male) and internal (female) condoms — significantly reduce the risk of most STIs. Hormonal methods (pill, implant, IUS) and the copper IUD are highly effective at preventing pregnancy but do not provide meaningful protection against STIs. This is why 'dual protection' (combining a condom with another method) is recommended when there is any risk of STI transmission."
+  },
+  {
+    "id": "health/coping-and-calming",
+    "contentSlug": "health/coping-and-calming",
+    "subject": "health",
+    "lessonTitle": "Coping & Calming",
+    "prompt": "A student can't change an upcoming exam, but she's spiralling into catastrophic thinking ('I'm going to fail everything'). Which approach best fits this situation?",
+    "options": [
+      "Problem-focused coping — she should make a study plan and change the situation",
+      "Emotion-focused coping — since the exam is fixed, the most useful intervention is reframing her thinking and managing her internal state",
+      "Avoidance coping — not thinking about it will reduce the stress response",
+      "Neither type of coping is helpful; she just has to endure the anxiety"
+    ],
+    "correctIndex": 1,
+    "explanation": "Problem-focused coping works best when the stressor is changeable. Here, the exam itself is fixed. The most useful lever is emotion-focused: examining and reframing catastrophic thoughts, using breathing or relaxation to bring arousal down, and accessing social support. Avoidance coping (option 3) is an unhealthy strategy — it delays the stressor and lets anxiety compound."
+  },
+  {
+    "id": "health/diets-and-myths",
+    "contentSlug": "health/diets-and-myths",
+    "subject": "health",
+    "lessonTitle": "Diets, Fads & Myths",
+    "prompt": "Why do most fad diets fail to produce lasting results?",
+    "options": [
+      "They are too low in calories to be effective",
+      "They focus exclusively on exercise rather than food intake",
+      "They require unsustainable radical restriction that people cannot maintain long term",
+      "They work perfectly but only for young people"
+    ],
+    "correctIndex": 2,
+    "explanation": "The core problem with fad diets is adherence, not the diet's short-term mechanism. Any significant calorie reduction produces initial results — but diets built on strict rules and elimination trigger rebound eating when inevitably broken. Sustainable small changes maintained over years outperform dramatic short-term approaches."
+  },
+  {
+    "id": "health/dimensions-of-health",
+    "contentSlug": "health/dimensions-of-health",
+    "subject": "health",
+    "lessonTitle": "The Dimensions of Health",
+    "prompt": "A student eats well and exercises daily, but feels deeply lonely and without direction. Using the dimensions of health, what's the most useful conclusion?",
+    "options": [
+      "They're fully healthy because their physical dimension is strong",
+      "Their social and purpose dimensions are weak, dragging overall health down despite strong physical health",
+      "Loneliness has nothing to do with health",
+      "They just need to exercise even harder"
+    ],
+    "correctIndex": 1,
+    "explanation": "Health is multi-dimensional. Strong physical health can't compensate for weak social and purpose dimensions — and loneliness genuinely harms physical health too. The most useful move is to strengthen the short spokes (connection, meaning), not to push the already-strong one."
+  },
+  {
+    "id": "health/emotions-and-mood",
+    "contentSlug": "health/emotions-and-mood",
+    "subject": "health",
+    "lessonTitle": "Emotions & Mood",
+    "prompt": "What does 'emotional granularity' mean?",
+    "options": [
+      "Feeling emotions very intensely",
+      "The ability to name emotions precisely, which reduces their intensity",
+      "Suppressing difficult feelings so they do not interfere",
+      "Experiencing many emotions at once"
+    ],
+    "correctIndex": 1,
+    "explanation": "Emotional granularity — the ability to name feelings precisely — has been shown to reduce the intensity of those feelings and speed recovery. 'I feel disappointed' is more useful than 'I feel bad.'"
+  },
+  {
+    "id": "health/energy-balance-and-labels",
+    "contentSlug": "health/energy-balance-and-labels",
+    "subject": "health",
+    "lessonTitle": "Energy Balance & the Food Label",
+    "prompt": "A pack of biscuits shows 120 kcal per serving and states there are 5 servings per pack. You eat the whole pack. How many calories have you consumed, and approximately how many days of a 100 kcal/day surplus would this represent?",
+    "options": [
+      "120 kcal total; 1.2 days of surplus",
+      "600 kcal total; 6 days of surplus",
+      "600 kcal total; roughly 0.08 kg of fat gained immediately",
+      "240 kcal total; because the stated serving size is always half the pack"
+    ],
+    "correctIndex": 1,
+    "explanation": "120 kcal × 5 servings = 600 kcal total. At a 100 kcal/day surplus, that represents 6 days of cumulative surplus (600 ÷ 100 = 6). No, you don't immediately gain fat — it takes 7,700 kcal of surplus to accumulate ~1 kg of body fat. The 600 kcal contributes to a running total but doesn't have an instant effect. Option C is a common misconception — surplus calories accumulate into tissue over time, not instantly."
+  },
+  {
+    "id": "health/everyday-injuries",
+    "contentSlug": "health/everyday-injuries",
+    "subject": "health",
+    "lessonTitle": "Everyday Injuries",
+    "prompt": "Someone spills boiling water on their forearm. The skin is red and blistered. What is the single most important first action?",
+    "options": [
+      "Apply butter or aloe vera to soothe the skin",
+      "Pop the blisters to release trapped fluid",
+      "Cool the burn under cool running water for at least 20 minutes",
+      "Wrap tightly in a bandage to prevent infection"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cooling under cool (not ice-cold) running water for at least 20 minutes is the most important first-aid action for any burn. It limits the depth of tissue damage and significantly reduces pain. Butter, popping blisters, and tight bandaging before cooling can all worsen the injury."
+  },
+  {
+    "id": "health/fats",
+    "contentSlug": "health/fats",
+    "subject": "health",
+    "lessonTitle": "Fats",
+    "prompt": "Which type of dietary fat is considered the most harmful to heart health, and why?",
+    "options": [
+      "Monounsaturated fat, because it raises LDL cholesterol",
+      "Saturated fat, because it lowers HDL cholesterol",
+      "Trans fat (industrial), because it raises LDL and simultaneously lowers HDL",
+      "Omega-3 polyunsaturated fat, because it increases inflammation"
+    ],
+    "correctIndex": 2,
+    "explanation": "Industrial trans fats — created by partial hydrogenation — are uniquely harmful because they raise LDL ('bad') cholesterol AND lower HDL ('good') cholesterol simultaneously. Saturated fat mainly raises LDL. Unsaturated fats (mono- and poly-) are generally neutral to beneficial. Omega-3s are associated with reduced, not increased, inflammation."
+  },
+  {
+    "id": "health/first-aid-basics",
+    "contentSlug": "health/first-aid-basics",
+    "subject": "health",
+    "lessonTitle": "First-Aid Basics",
+    "prompt": "You arrive at a scene where a person has collapsed. Before you check on them, what is the very first thing DRABC says to do?",
+    "options": [
+      "Start CPR immediately",
+      "Check whether the scene is safe for you to approach",
+      "Open their airway",
+      "Call for bystanders to help"
+    ],
+    "correctIndex": 1,
+    "explanation": "D stands for Danger — your first action is always to assess whether the scene is safe. Approaching an unsafe scene risks making you a second casualty, which makes the situation worse. Only when the scene is safe (or has been made safe) do you approach and work through R, A, B, and C."
+  },
+  {
+    "id": "health/fuel-and-waste",
+    "contentSlug": "health/fuel-and-waste",
+    "subject": "health",
+    "lessonTitle": "Fuel & Waste",
+    "prompt": "Where does most nutrient absorption happen, and which organ first processes the absorbed nutrients?",
+    "options": [
+      "In the stomach; the pancreas processes nutrients first",
+      "In the large intestine; the liver processes nutrients first",
+      "In the small intestine; the liver processes nutrients first via the portal vein",
+      "In the mouth; absorbed nutrients go directly to the heart"
+    ],
+    "correctIndex": 2,
+    "explanation": "The small intestine is the main absorption zone — its 6-metre length and finger-like villi provide enormous surface area. Blood carrying absorbed nutrients travels through the hepatic portal vein directly to the liver before reaching the rest of the body, allowing the liver to regulate, process, and store them."
+  },
+  {
+    "id": "health/getting-help",
+    "contentSlug": "health/getting-help",
+    "subject": "health",
+    "lessonTitle": "When & How to Get Help",
+    "prompt": "According to the evidence, what is true about Cognitive Behavioural Therapy (CBT)?",
+    "options": [
+      "It is only suitable for people with severe mental illness",
+      "It focuses mainly on talking about childhood experiences",
+      "It is passive — the therapist does most of the work",
+      "It is the recommended first-line treatment for anxiety and depression, with a strong evidence base"
+    ],
+    "correctIndex": 3,
+    "explanation": "CBT is the most evidence-based psychological treatment for anxiety and depression. It is active and skill-focused — helping people identify and change unhelpful thought and behaviour patterns. Most people who complete it experience significant improvement."
+  },
+  {
+    "id": "health/habits-that-stick",
+    "contentSlug": "health/habits-that-stick",
+    "subject": "health",
+    "lessonTitle": "Habits That Stick",
+    "prompt": "According to behaviour-change science, why does 'starting tiny' improve the chances of a new habit sticking?",
+    "options": [
+      "Very small habits require no effort at all, so the habit loop never forms",
+      "Small starting actions bypass the brain's resistance to change, making it easier to begin and accumulate the repetitions that build automaticity",
+      "Tiny habits produce faster results, which motivates larger behaviour change",
+      "The brain only forms habits for behaviours that feel insignificant"
+    ],
+    "correctIndex": 1,
+    "explanation": "The brain resists big behavioural changes as threatening. Very small starting actions (two minutes of stretching instead of a 45-minute workout) bypass this resistance. The crucial outcome is not the two minutes themselves — it is beginning. Once begun, the cue-routine-reward loop can be run and repeated. Repetition is what builds automaticity; starting tiny removes the barrier to first repetition."
+  },
+  {
+    "id": "health/health-across-a-lifetime",
+    "contentSlug": "health/health-across-a-lifetime",
+    "subject": "health",
+    "lessonTitle": "Health Across a Lifetime",
+    "prompt": "Why does the evidence from life-course research support an optimistic rather than fatalistic view of health across a lifetime?",
+    "options": [
+      "Because genes are more important than environment, so early disadvantage does not matter",
+      "Because the body's ability to respond to healthy behaviour change is preserved throughout life, so beneficial change at any age produces measurable benefit",
+      "Because adult behaviour has no connection to childhood experiences",
+      "Because all chronic disease begins after age 60, so earlier life is irrelevant to prevention"
+    ],
+    "correctIndex": 1,
+    "explanation": "Life-course research shows that risk factors accumulate over time — but so does the benefit of protective inputs at any age. The body's repair and adaptation mechanisms respond to healthier behaviours throughout life. Stopping smoking at 40, starting exercise at 50, or improving nutrition at 60 all produce measurable reductions in disease risk. The 'never too late' finding is robust and consistent across multiple study types."
+  },
+  {
+    "id": "health/heart-and-lungs",
+    "contentSlug": "health/heart-and-lungs",
+    "subject": "health",
+    "lessonTitle": "The Heart & Lungs",
+    "prompt": "Gas exchange in the lungs occurs at which structure, and in which direction does oxygen move?",
+    "options": [
+      "At the bronchi — oxygen moves from blood into the airway",
+      "At the alveoli — oxygen moves from the air into the blood",
+      "At the capillaries around the heart — oxygen is pumped directly into blood",
+      "At the trachea — oxygen dissolves through the tracheal walls"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gas exchange happens at the alveoli — tiny air sacs with walls just one cell thick. Oxygen diffuses from the higher concentration in inhaled air into the lower concentration in blood. CO₂ moves the opposite way. The trachea and bronchi are just airways; the heart pumps blood but doesn't exchange gases."
+  },
+  {
+    "id": "health/how-disease-spreads",
+    "contentSlug": "health/how-disease-spreads",
+    "subject": "health",
+    "lessonTitle": "How Disease Spreads",
+    "prompt": "Cholera spreads when the bacteria contaminate drinking water, and people get infected by drinking it. Which transmission route is this?",
+    "options": [
+      "Airborne — the bacteria float in the air above water sources",
+      "Vector — a mosquito carries the bacteria between water and people",
+      "Fecal-oral — contaminated water (or food) carries bacteria from faeces into the mouth",
+      "Bloodborne — the bacteria enter through cuts in the skin during contact with water"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cholera is a classic fecal-oral infection. The bacterium Vibrio cholerae is shed in the faeces of infected people and enters new hosts via contaminated drinking water or food. The key intervention is clean water supply and sanitation — breaking the fecal-oral route."
+  },
+  {
+    "id": "health/how-substances-affect-the-body",
+    "contentSlug": "health/how-substances-affect-the-body",
+    "subject": "health",
+    "lessonTitle": "How Substances Affect the Body",
+    "prompt": "Cocaine produces its euphoric effect primarily by:",
+    "options": [
+      "Directly producing dopamine from scratch in the brain",
+      "Blocking dopamine reuptake, causing it to accumulate in the synapse",
+      "Mimicking the opioid receptor and releasing endorphins",
+      "Slowing central nervous system activity to create relaxation"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cocaine blocks the dopamine transporter, preventing the reuptake of dopamine into the sending neuron. Dopamine accumulates in the synapse and keeps stimulating the receiving neuron, producing a powerful but short-lived euphoria. This is different from opioids, which mimic the body's own endorphins."
+  },
+  {
+    "id": "health/how-you-fight-infection",
+    "contentSlug": "health/how-you-fight-infection",
+    "subject": "health",
+    "lessonTitle": "How You Fight an Infection",
+    "prompt": "Why do symptoms like fatigue, muscle aches, and fever occur during infection — even before the pathogen has spread widely?",
+    "options": [
+      "The pathogen directly damages muscle tissue and raises body temperature as a waste product",
+      "Symptoms are caused by cytokines released by immune cells as part of the inflammatory response",
+      "The body lowers energy to conserve resources and this is felt as fatigue",
+      "Adaptive immunity produces antibodies that temporarily impair normal cell function"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cytokines — chemical signals released by activated immune cells — are the main cause of systemic symptoms like fever, fatigue, and aches. They act on the brain (fever, fatigue), muscles (aches), and appetite centres. These are the costs of mounting an immune battle, not direct damage from the pathogen itself — though pathogens also cause local damage at the infection site."
+  },
+  {
+    "id": "health/immune-memory-and-vaccines",
+    "contentSlug": "health/immune-memory-and-vaccines",
+    "subject": "health",
+    "lessonTitle": "Immune Memory & Vaccines",
+    "prompt": "Why does the immune response to a second infection by the same pathogen reach higher antibody levels more quickly than the first?",
+    "options": [
+      "The pathogen is weaker the second time because it has already been partially destroyed by antibodies still in the blood",
+      "Memory B and T cells formed after the first exposure respond within hours and produce more, higher-affinity antibodies",
+      "The innate immune system has learned to recognise the pathogen and responds faster on its own",
+      "The liver stores antibodies from the first infection and releases them again when the pathogen returns"
+    ],
+    "correctIndex": 1,
+    "explanation": "After the first infection, a small population of memory B and T cells persists long-term. On re-exposure, these cells recognise the antigen immediately and mount a response within hours — producing antibodies far faster and in greater quantity than the initial response. This is immunological memory, and it is why vaccines work: they generate memory cells without you having to get sick first."
+  },
+  {
+    "id": "health/intensity-and-heart-rate",
+    "contentSlug": "health/intensity-and-heart-rate",
+    "subject": "health",
+    "lessonTitle": "Intensity & Your Heart Rate",
+    "prompt": "Using the 220 − age formula, what is the approximate vigorous-intensity heart rate zone for a 40-year-old?",
+    "options": [
+      "60–80 bpm",
+      "90–120 bpm",
+      "126–153 bpm",
+      "165–180 bpm"
+    ],
+    "correctIndex": 2,
+    "explanation": "Max HR for a 40-year-old ≈ 220 − 40 = 180 bpm. Vigorous intensity is 70–85% of max HR: 0.70 × 180 = 126 bpm and 0.85 × 180 = 153 bpm. So the vigorous zone is approximately 126–153 bpm. Option A is resting, B is light activity, and D exceeds the vigorous ceiling for this age."
+  },
+  {
+    "id": "health/life-saving-skills",
+    "contentSlug": "health/life-saving-skills",
+    "subject": "health",
+    "lessonTitle": "Life-Saving Skills",
+    "prompt": "During adult CPR, what is the correct compression-to-rescue-breath ratio and approximate compression rate?",
+    "options": [
+      "15 compressions : 2 breaths at 60–80 per minute",
+      "30 compressions : 2 breaths at 100–120 per minute",
+      "30 compressions : 1 breath at 80–100 per minute",
+      "50 compressions : 5 breaths at 120–140 per minute"
+    ],
+    "correctIndex": 1,
+    "explanation": "The universal adult CPR ratio is 30 compressions : 2 rescue breaths (or continuous compressions if breaths are not being given), at a rate of 100–120 compressions per minute. This rate is fast enough to maintain circulation but not so fast that chest recoil is compromised."
+  },
+  {
+    "id": "health/lifestyle-and-chronic-disease",
+    "contentSlug": "health/lifestyle-and-chronic-disease",
+    "subject": "health",
+    "lessonTitle": "Lifestyle & Chronic Disease",
+    "prompt": "Someone has a strong family history of heart disease (a non-modifiable risk factor). What is the most accurate statement about their situation?",
+    "options": [
+      "Because the risk is genetic, lifestyle changes will have no effect on their heart-disease risk",
+      "The non-modifiable factor raises their baseline risk, but eliminating modifiable factors (smoking, inactivity, poor diet, hypertension) can still substantially lower their absolute risk",
+      "Non-modifiable risk factors always outweigh modifiable ones, so prevention is pointless for this person",
+      "Family history only matters if both parents had heart disease"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non-modifiable factors raise baseline risk but do not override the protective effect of healthy choices. For someone with a genetic predisposition, removing modifiable risk factors is even more important — it is the main lever available to them. Absolute risk reduction from lifestyle changes remains substantial regardless of family history."
+  },
+  {
+    "id": "health/looking-after-your-mind",
+    "contentSlug": "health/looking-after-your-mind",
+    "subject": "health",
+    "lessonTitle": "Looking After Your Mind",
+    "prompt": "Which of the following best describes what protective factors for mental health do?",
+    "options": [
+      "They cure anxiety and depression",
+      "They build resilience and wellbeing over time, reducing risk",
+      "They only help people who are already mentally unwell",
+      "They replace the need for professional help"
+    ],
+    "correctIndex": 1,
+    "explanation": "Protective factors like connection, movement, sleep, and meaning build mental resilience and wellbeing over time. They reduce risk and help with recovery, but they are not cures for mental illness and do not replace professional care when it is needed."
+  },
+  {
+    "id": "health/meet-your-defences",
+    "contentSlug": "health/meet-your-defences",
+    "subject": "health",
+    "lessonTitle": "Meet Your Defences",
+    "prompt": "Which statement correctly describes the adaptive immune system compared to the innate immune system?",
+    "options": [
+      "Adaptive immunity responds within minutes; innate immunity takes days to gear up",
+      "Adaptive immunity is fast but non-specific; innate immunity is slow but creates memory",
+      "Adaptive immunity is slower but produces targeted antibodies and long-lasting memory cells",
+      "Both systems respond at the same speed but with different cell types"
+    ],
+    "correctIndex": 2,
+    "explanation": "The innate system is fast (minutes to hours) but general — it responds to any pathogen without specificity or memory. The adaptive system takes days to mount its first response, but it produces antibodies tailored to a specific antigen and leaves behind memory cells that allow a much faster response to future encounters with the same pathogen."
+  },
+  {
+    "id": "health/micronutrients",
+    "contentSlug": "health/micronutrients",
+    "subject": "health",
+    "lessonTitle": "Vitamins & Minerals",
+    "prompt": "Which group of vitamins can accumulate to toxic levels if taken in excess, and why?",
+    "options": [
+      "Water-soluble vitamins (B-group, C), because they dissolve in water and spread everywhere",
+      "Fat-soluble vitamins (A, D, E, K), because they are stored in body fat and the liver rather than excreted",
+      "All vitamins equally, because the body has no way to remove any of them",
+      "Minerals, because they are inorganic and cannot be broken down by enzymes"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fat-soluble vitamins (A, D, E, K) are stored in body fat and the liver. Unlike water-soluble vitamins, they are not readily excreted in urine, so excess doses from supplements can build to toxic concentrations over time. Vitamin D and Vitamin A toxicity (hypervitaminosis) are the most common examples."
+  },
+  {
+    "id": "health/mindful-eating",
+    "contentSlug": "health/mindful-eating",
+    "subject": "health",
+    "lessonTitle": "Mindful Eating",
+    "prompt": "Why does eating slowly help avoid over-eating?",
+    "options": [
+      "Slow eating burns more calories through digestion",
+      "Fullness hormones from the gut take about 20 minutes to register in the brain",
+      "Chewing more thoroughly reduces the calorie content of food",
+      "Eating slowly lowers blood sugar more effectively"
+    ],
+    "correctIndex": 1,
+    "explanation": "The gut releases satiety hormones when food arrives, but the signal takes roughly 20 minutes to reach the brain. Eating a meal in under 10 minutes means you finish before feeling full — leading to over-eating. Eating slowly closes that gap."
+  },
+  {
+    "id": "health/minerals-and-water",
+    "contentSlug": "health/minerals-and-water",
+    "subject": "health",
+    "lessonTitle": "Minerals & Hydration",
+    "prompt": "A vegan athlete notices she is constantly exhausted, her skin is pale, and she gets breathless walking upstairs. Which mineral deficiency fits this picture best?",
+    "options": [
+      "Calcium — she has too little bone mineral density causing fatigue",
+      "Iodine — her thyroid is underactive from low iodine intake",
+      "Iron — she lacks the haemoglobin needed to carry enough oxygen",
+      "Sodium — her fluid balance is disrupted from heavy sweating"
+    ],
+    "correctIndex": 2,
+    "explanation": "The classic triad of fatigue, pallor, and breathlessness on exertion describes iron-deficiency anaemia. Iron is the core of haemoglobin — without enough, red blood cells carry less oxygen to muscles and brain. Vegans and athletes (who have higher iron turnover) are at particular risk, especially women. Non-haem plant iron is less absorbable than haem iron from meat."
+  },
+  {
+    "id": "health/movement-and-framework",
+    "contentSlug": "health/movement-and-framework",
+    "subject": "health",
+    "lessonTitle": "Bones, Muscles & Movement",
+    "prompt": "Why can muscles only pull and never push, and how does the body overcome this limitation?",
+    "options": [
+      "Muscles can actually push; they lengthen against resistance to extend limbs",
+      "Muscles can only pull because contraction shortens them; the body uses antagonistic pairs — one muscle pulls in each direction — to achieve movement in both directions",
+      "Muscles push by expanding sideways, not lengthening, which creates outward force",
+      "Only tendons push; muscles always remain at the same length"
+    ],
+    "correctIndex": 1,
+    "explanation": "Muscle contraction is fundamentally a shortening action — sarcomeres shorten, which shortens the muscle fibre. A shortened muscle can only pull its attachment points toward each other. To move a limb in the opposite direction, a different muscle on the other side of the joint contracts. This antagonistic pairing (e.g. biceps/triceps) is how all skeletal movement works."
+  },
+  {
+    "id": "health/prevention-and-screening",
+    "contentSlug": "health/prevention-and-screening",
+    "subject": "health",
+    "lessonTitle": "Prevention, Screening & Check-ups",
+    "prompt": "A person has a colonoscopy that detects a slow-growing polyp, which is removed. Later analysis shows it was extremely unlikely ever to have caused symptoms or death. What term describes this scenario?",
+    "options": [
+      "A false negative — the test missed the real problem",
+      "A false positive — the test flagged a problem that did not exist",
+      "Overdiagnosis — a real abnormality was detected and treated but would never have caused harm in the person's lifetime",
+      "Tertiary prevention — a serious disease was managed to prevent complications"
+    ],
+    "correctIndex": 2,
+    "explanation": "Overdiagnosis occurs when screening detects a genuine abnormality — a real polyp, a real small tumour — that would never have progressed to cause symptoms or death. The person undergoes real treatment (with real risks and costs) for no net benefit. It is distinct from a false positive (no abnormality at all) and is one of the key trade-offs in designing screening programmes."
+  },
+  {
+    "id": "health/proteins",
+    "contentSlug": "health/proteins",
+    "subject": "health",
+    "lessonTitle": "Proteins",
+    "prompt": "A person eating only rice (low in lysine) and no other protein sources would likely develop a deficiency. Which strategy would best prevent this?",
+    "options": [
+      "Eat larger portions of rice to increase total amino acid intake",
+      "Add legumes such as lentils or beans, which are rich in lysine, to the diet",
+      "Take a fat supplement, since fat is needed to absorb amino acids",
+      "Eat more simple sugars to boost energy and spare protein"
+    ],
+    "correctIndex": 1,
+    "explanation": "Rice is low in the essential amino acid lysine. Legumes such as lentils and beans are rich in lysine, complementing rice's amino acid profile. Together they provide all essential amino acids. Larger rice portions just give more of the same limiting amino acid problem, not a solution."
+  },
+  {
+    "id": "health/risk-moderation-and-help",
+    "contentSlug": "health/risk-moderation-and-help",
+    "subject": "health",
+    "lessonTitle": "Risk, Moderation & Help",
+    "prompt": "Which of the following best describes the harm-reduction approach to substance use?",
+    "options": [
+      "Accepting that all substance use is equally dangerous and should be treated the same",
+      "Requiring complete abstinence before any health support is offered",
+      "Reducing the harms associated with substance use in practical, evidence-based ways, without making abstinence the only acceptable goal",
+      "Ignoring substance use as a health issue because people have the right to make their own choices"
+    ],
+    "correctIndex": 2,
+    "explanation": "Harm reduction is a public-health framework that prioritises practical steps to reduce the harms of substance use — providing clean needles, overdose reversal drugs, low-risk drinking guidelines, and supervised consumption sites. It does not require or demand abstinence, but it does not discourage it either. It meets people where they are and keeps them safer while pathways to treatment remain open."
+  },
+  {
+    "id": "health/sleep-debt",
+    "contentSlug": "health/sleep-debt",
+    "subject": "health",
+    "lessonTitle": "Sleep Debt & What Wrecks Sleep",
+    "prompt": "Someone drinks two cups of coffee at 4 pm, then wonders why they struggle to fall asleep at 10:30 pm. Given caffeine's approximate half-life of 5–7 hours, which explanation is most accurate?",
+    "options": [
+      "Caffeine is fully metabolised within 4 hours, so the coffee cannot be the cause",
+      "Roughly 50% of the caffeine from 4 pm is still active at 9–11 pm, blocking adenosine receptors and maintaining wakefulness",
+      "Caffeine only affects sleep if consumed within 1 hour of bedtime",
+      "The sleep difficulty is caused by the sugar in coffee, not the caffeine"
+    ],
+    "correctIndex": 1,
+    "explanation": "With a half-life of approximately 5–7 hours, half of the caffeine consumed at 4 pm is still circulating at 9–11 pm. Caffeine blocks adenosine receptors — adenosine is the chemical that builds up during waking hours and promotes sleepiness. By occupying these receptors, caffeine artificially suppresses the sleep-drive signal, making it harder to fall asleep and reducing slow-wave sleep depth even when sleep does occur."
+  },
+  {
+    "id": "health/sleep-stages",
+    "contentSlug": "health/sleep-stages",
+    "subject": "health",
+    "lessonTitle": "The Stages of Sleep",
+    "prompt": "A student practises a new guitar chord pattern for an hour, then sleeps a full 8 hours. Which stage of sleep is MOST responsible for solidifying that procedural skill overnight?",
+    "options": [
+      "N1, because that is when the mind first reviews the day's events",
+      "N3, because deep slow-wave sleep handles all forms of memory",
+      "N2, because sleep spindles during this stage are linked to motor and procedural memory consolidation",
+      "REM, because the paralysis of muscles during REM allows movement memories to be safely replayed"
+    ],
+    "correctIndex": 2,
+    "explanation": "Sleep spindles — the characteristic brain-wave bursts of N2 sleep — are strongly associated with the consolidation of procedural and motor memories. Research shows that people with more sleep spindles after practising a skill show greater improvement the next morning. N3 handles declarative (fact-based) memory and physical restoration; REM primarily processes emotional and creative associations."
+  },
+  {
+    "id": "health/spotting-health-myths",
+    "contentSlug": "health/spotting-health-myths",
+    "subject": "health",
+    "lessonTitle": "Spotting Health Myths",
+    "prompt": "A viral article claims: 'People who drink green tea live longer — green tea cures ageing.' What is the most important reasoning problem with this claim?",
+    "options": [
+      "Green tea has no beneficial compounds at all, so the claim must be false",
+      "The claim conflates an observed correlation with a causal mechanism, and 'cures ageing' vastly overstates what the evidence shows",
+      "The article is not written by a doctor, which automatically makes it false",
+      "Longevity studies are always unreliable because they take too long"
+    ],
+    "correctIndex": 1,
+    "explanation": "Green tea does contain compounds with antioxidant properties, and observational studies have found associations between green tea consumption and some health markers. However, correlation does not establish causation — green tea drinkers may also have many other healthy behaviours. More importantly, 'cures ageing' is a massive overstatement of what any observational correlation could support. Identifying the correlation-causation conflation AND the exaggeration of the claim's strength are both critical reasoning moves."
+  },
+  {
+    "id": "health/staying-safe",
+    "contentSlug": "health/staying-safe",
+    "subject": "health",
+    "lessonTitle": "Staying Safe",
+    "prompt": "You spot someone floating face-up and motionless in a lake near a small jetty. You are alone. What is the safest first action?",
+    "options": [
+      "Jump in immediately and pull them to the jetty",
+      "Shout for help and throw something buoyant — a rope, life ring, or anything that floats",
+      "Wait and watch for a few minutes to see if they are just resting",
+      "Run to get your phone before doing anything else"
+    ],
+    "correctIndex": 1,
+    "explanation": "'Throw, don't go' is the core water-rescue principle for untrained bystanders. Entering the water alone risks creating a second casualty — cold water shock, currents, or a panicked casualty can easily overwhelm a non-specialist swimmer. Shouting to alert others while throwing a buoyant object (rope, life ring, even a plastic bottle) is both effective and safe. Getting your phone to call emergency services is important but should happen alongside or just after this, not before."
+  },
+  {
+    "id": "health/sti-prevention",
+    "contentSlug": "health/sti-prevention",
+    "subject": "health",
+    "lessonTitle": "Staying Safe: STIs & Prevention",
+    "prompt": "Many STIs have no noticeable symptoms. What is the most important implication of this for sexually active people?",
+    "options": [
+      "STIs that have no symptoms are not medically significant and do not need treatment",
+      "Regular testing is important because you cannot rely on symptoms to know if you have an STI",
+      "Only people with symptoms need to use condoms",
+      "An STI without symptoms cannot be passed to a partner"
+    ],
+    "correctIndex": 1,
+    "explanation": "Many STIs — including chlamydia, gonorrhoea, and early HIV — often cause no noticeable symptoms. Without symptoms, the only way to know your status is to test. Untreated asymptomatic infections can still be passed to partners and can still cause long-term harm (for example, untreated chlamydia can lead to infertility). Regular testing is therefore a core part of sexual health care for sexually active people."
+  },
+  {
+    "id": "health/stopping-the-spread",
+    "contentSlug": "health/stopping-the-spread",
+    "subject": "health",
+    "lessonTitle": "Stopping the Spread",
+    "prompt": "A disease has R₀ = 4. What fraction of the population must be immune to reach the herd-immunity threshold?",
+    "options": [
+      "25% — because 1/R₀ = 0.25",
+      "75% — because 1 − 1/R₀ = 1 − 0.25 = 0.75",
+      "50% — because R₀/2 = 2",
+      "100% — herd immunity only works when everyone is vaccinated"
+    ],
+    "correctIndex": 1,
+    "explanation": "The herd-immunity threshold is p_c = 1 − 1/R₀. With R₀ = 4, that is 1 − 1/4 = 0.75, or 75%. Above this fraction the outbreak cannot sustain itself because each case, on average, infects fewer than one new person."
+  },
+  {
+    "id": "health/sugar-salt-and-processing",
+    "contentSlug": "health/sugar-salt-and-processing",
+    "subject": "health",
+    "lessonTitle": "Sugar, Salt & Ultra-Processed Food",
+    "prompt": "Which statement correctly describes added sugar?",
+    "options": [
+      "Added sugar and naturally occurring sugar in fruit are nutritionally identical",
+      "Added sugar is limited to table sugar (sucrose) — other sweeteners don't count",
+      "Added sugar provides energy without the fibre or protein that slow absorption in whole foods",
+      "The recommended daily limit for added sugar is 25 teaspoons"
+    ],
+    "correctIndex": 2,
+    "explanation": "Added sugars — in any form — arrive without the fibre, protein, and water matrix of whole foods. This means faster absorption and a sharper blood-glucose response, plus no accompanying satiety signals. The recommended daily limit is around 6 teaspoons (25 g), not 25 teaspoons."
+  },
+  {
+    "id": "health/supporting-your-immune-system",
+    "contentSlug": "health/supporting-your-immune-system",
+    "subject": "health",
+    "lessonTitle": "Supporting Your Immune System",
+    "prompt": "Which of the following best explains why lifestyle interventions like sleep and nutrition improve immune function?",
+    "options": [
+      "They push the immune system above its normal set point into a 'supercharged' state",
+      "They correct deficiencies and restore optimal function — rather than adding capacity beyond normal",
+      "They directly increase the number of pathogens the body is exposed to, training it over time",
+      "They reduce the production of antibodies so the immune system does not over-react"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lifestyle interventions work by correcting deficiencies — not by pushing immunity above its natural set point. Chronically poor sleep, inadequate nutrition, and high stress all impair immune function; addressing these restores it to optimal. An immune system running above normal is associated with inflammation and autoimmunity, not better health."
+  },
+  {
+    "id": "health/taking-charge-of-your-health",
+    "contentSlug": "health/taking-charge-of-your-health",
+    "subject": "health",
+    "lessonTitle": "Taking Charge of Your Health",
+    "prompt": "A health blog claims a $40 'detox tea' cleared up a customer's fatigue. Applying health literacy, what's the most reasonable response?",
+    "options": [
+      "Buy it immediately — a real person said it worked",
+      "Be skeptical: it's an anecdote attached to a product, with no control group, so it's weak evidence for cause and effect",
+      "Trust it because fatigue is common",
+      "Assume all teas cure fatigue"
+    ],
+    "correctIndex": 1,
+    "explanation": "Health literacy flags two red lights here: it's a single anecdote (not evidence), and it's selling a product (a conflict of interest). With no controlled comparison, there's no way to know the tea — rather than rest, hydration, or chance — caused the change. Healthy skepticism wins."
+  },
+  {
+    "id": "health/the-balanced-plate",
+    "contentSlug": "health/the-balanced-plate",
+    "subject": "health",
+    "lessonTitle": "The Balanced Plate",
+    "prompt": "According to the balanced plate model, which proportion is correct for a single meal?",
+    "options": [
+      "½ plate protein, ¼ plate vegetables, ¼ plate grains",
+      "½ plate grains, ¼ plate vegetables, ¼ plate protein",
+      "½ plate vegetables and fruit, ¼ plate whole grains, ¼ plate protein",
+      "Equal quarters: protein, grains, vegetables, and dairy"
+    ],
+    "correctIndex": 2,
+    "explanation": "The healthy eating plate model places vegetables and fruit as the largest portion (half the plate), with whole grains and quality protein each taking a quarter. This reflects the evidence that most people under-eat vegetables and over-eat protein and refined grains."
+  },
+  {
+    "id": "health/the-body-clock",
+    "contentSlug": "health/the-body-clock",
+    "subject": "health",
+    "lessonTitle": "Your Body Clock",
+    "prompt": "A person uses a bright phone screen for 90 minutes before their usual bedtime. What is the most likely direct effect on their circadian rhythm?",
+    "options": [
+      "The light advances the clock, making them feel sleepy earlier that same evening",
+      "The light delays melatonin onset, pushing their entire rhythm later and making it harder to fall asleep at the intended time",
+      "Screens have no measurable effect because indoor light is too dim to influence the suprachiasmatic nucleus",
+      "The clock automatically compensates overnight and is fully reset by morning"
+    ],
+    "correctIndex": 1,
+    "explanation": "Blue-spectrum light from screens suppresses melatonin and signals 'daytime' to the SCN, even at relatively low intensities. Exposure in the hours before bed delays melatonin onset — sometimes by 1–3 hours — shifting the whole rhythm later. This makes falling asleep harder at the intended time and compresses sleep if the wake time is fixed. Morning light (not evening light) advances the clock."
+  },
+  {
+    "id": "health/the-body-in-balance",
+    "contentSlug": "health/the-body-in-balance",
+    "subject": "health",
+    "lessonTitle": "The Body in Balance",
+    "prompt": "Which component of a negative feedback loop compares the current value of a variable to its set point?",
+    "options": [
+      "The sensor — it detects the deviation and immediately activates the effector",
+      "The effector — it holds the set point and activates when it detects drift",
+      "The control centre — it receives the sensor's signal, compares it to the set point, and instructs the effector",
+      "The variable itself — it resets automatically without a control centre"
+    ],
+    "correctIndex": 2,
+    "explanation": "The sensor detects the current value and sends a signal; the control centre (e.g. hypothalamus for temperature, pancreas for blood glucose) compares that signal to the set point and decides whether to send instructions to the effector. The effector (sweat glands, insulin-releasing cells) then acts. Sensors detect; control centres decide; effectors act."
+  },
+  {
+    "id": "health/the-health-continuum",
+    "contentSlug": "health/the-health-continuum",
+    "subject": "health",
+    "lessonTitle": "The Health Continuum",
+    "prompt": "On the illness–wellness continuum, why is the 'neutral / no diagnosis' point not the end goal?",
+    "options": [
+      "Because everyone with no diagnosis is secretly ill",
+      "Because there's a whole range of thriving and resilience to the right of neutral that habits can move you toward",
+      "Because only medicine can improve health, never habits",
+      "Because the continuum only applies to people who are already sick"
+    ],
+    "correctIndex": 1,
+    "explanation": "The continuum has a large 'wellness' half beyond merely 'not ill.' Treatment pushes you rightward out of illness, but everyday habits can keep moving you toward genuine thriving — so 'no diagnosis' is a starting line, not a finish line."
+  },
+  {
+    "id": "health/the-key-vitamins",
+    "contentSlug": "health/the-key-vitamins",
+    "subject": "health",
+    "lessonTitle": "The Key Vitamins",
+    "prompt": "A young child in a region with little sunlight develops soft, bowed leg bones. Which vitamin deficiency is most likely responsible?",
+    "options": [
+      "Vitamin C — needed for collagen formation in bones",
+      "Vitamin K — needed for blood clotting and bone proteins",
+      "Vitamin D — needed for calcium absorption and bone mineralisation",
+      "Folate (B9) — needed for DNA synthesis in bone cells"
+    ],
+    "correctIndex": 2,
+    "explanation": "Vitamin D is needed to absorb calcium and phosphate from the gut and incorporate them into bone. Without adequate Vitamin D (from sunlight or diet), bones remain soft and un-mineralised — the condition called rickets in children. Lack of sunlight is the most common cause in northern latitudes."
+  },
+  {
+    "id": "health/the-menstrual-cycle",
+    "contentSlug": "health/the-menstrual-cycle",
+    "subject": "health",
+    "lessonTitle": "The Menstrual Cycle",
+    "prompt": "What directly triggers ovulation — the release of the egg from the follicle?",
+    "options": [
+      "A sharp rise in FSH that peaks on day 14",
+      "A surge of progesterone from the corpus luteum",
+      "A surge of LH from the pituitary, triggered by peak oestrogen",
+      "A sudden drop in oestrogen at the start of the follicular phase"
+    ],
+    "correctIndex": 2,
+    "explanation": "The LH (luteinising hormone) surge — triggered by the peak of oestrogen from the dominant follicle — is what causes the follicle to rupture and release the egg (ovulation). FSH stimulates follicle growth earlier in the cycle, but it is the LH surge that causes ovulation specifically. Progesterone rises after ovulation, produced by the corpus luteum."
+  },
+  {
+    "id": "health/the-pillars-of-health",
+    "contentSlug": "health/the-pillars-of-health",
+    "subject": "health",
+    "lessonTitle": "The Pillars of a Healthy Life",
+    "prompt": "Why do the pillars of health reinforce one another, rather than working independently?",
+    "options": [
+      "They all require the same genes to be effective",
+      "Improving one pillar tends to make others easier, because they share biological and behavioural pathways",
+      "They must all be at a perfect level before any benefits appear",
+      "They work independently — improving sleep has no effect on nutrition or movement"
+    ],
+    "correctIndex": 1,
+    "explanation": "The pillars share biological and behavioural pathways. Better sleep improves mood and willpower, making healthy eating easier. Regular movement reduces stress hormones, improving sleep. Strong social ties buffer stress and encourage healthy behaviour. This means a small improvement in one pillar can set off a positive cascade through the others."
+  },
+  {
+    "id": "health/the-reproductive-systems",
+    "contentSlug": "health/the-reproductive-systems",
+    "subject": "health",
+    "lessonTitle": "The Reproductive Systems",
+    "prompt": "Which hormone primarily drives puberty in people assigned female at birth, causing the development of secondary sex characteristics and the start of menstrual cycles?",
+    "options": [
+      "Testosterone, produced by the adrenal glands",
+      "Oestrogen, produced by the ovaries in response to FSH and LH from the pituitary",
+      "Progesterone, produced continuously by the uterus after puberty begins",
+      "Cortisol, the main sex-hormone trigger from the hypothalamus"
+    ],
+    "correctIndex": 1,
+    "explanation": "Oestrogen — produced by the ovaries once stimulated by FSH and LH from the pituitary gland — is the primary driver of puberty in people assigned female at birth. Testosterone plays a secondary role (from the adrenal glands) in pubic hair growth. Progesterone becomes important later in the menstrual cycle but is not the main puberty driver. Cortisol is a stress hormone, not a sex hormone."
+  },
+  {
+    "id": "health/the-science-of-addiction",
+    "contentSlug": "health/the-science-of-addiction",
+    "subject": "health",
+    "lessonTitle": "The Science of Addiction",
+    "prompt": "Which of the following best describes the difference between physical dependence and addiction?",
+    "options": [
+      "They are the same thing — anyone physically dependent on a substance is addicted",
+      "Physical dependence means withdrawal occurs when stopping; addiction additionally involves compulsive use and loss of control despite harm",
+      "Addiction is purely psychological; physical dependence is purely biological",
+      "Physical dependence is more serious than addiction because it involves physical symptoms"
+    ],
+    "correctIndex": 1,
+    "explanation": "Physical dependence describes the body's adaptation to a substance such that withdrawal occurs when it is stopped. It can happen with non-addictive medicines. Addiction (substance use disorder) additionally involves compulsive use, impaired control, and continued use despite harm — changes driven largely by alterations in the prefrontal cortex and mesolimbic pathway. They often co-occur but are distinct."
+  },
+  {
+    "id": "health/the-stress-response",
+    "contentSlug": "health/the-stress-response",
+    "subject": "health",
+    "lessonTitle": "The Body's Stress Response",
+    "prompt": "Which correctly describes the role of cortisol in the stress response?",
+    "options": [
+      "Cortisol fires instantly (within seconds) and causes the initial burst of heart rate and energy.",
+      "Cortisol is released by the amygdala directly, which is why it works so fast.",
+      "Cortisol is released minutes into the response via the HPA axis — it sustains elevated blood sugar and keeps the body mobilised.",
+      "Cortisol is only released during chronic stress, not during acute stress."
+    ],
+    "correctIndex": 2,
+    "explanation": "Adrenaline (from the SAM axis) causes the rapid initial surge. Cortisol follows more slowly via the HPA cascade (hypothalamus → pituitary → adrenal cortex) and sustains the response — keeping blood glucose high and the body in a mobilised state. Both acute and chronic stress trigger cortisol; chronic stress means it never fully clears."
+  },
+  {
+    "id": "health/tobacco-and-nicotine",
+    "contentSlug": "health/tobacco-and-nicotine",
+    "subject": "health",
+    "lessonTitle": "Tobacco & Nicotine",
+    "prompt": "Which component of tobacco smoke is primarily responsible for reducing the blood's ability to carry oxygen?",
+    "options": [
+      "Tar, which coats the lung surface",
+      "Nicotine, which constricts blood vessels",
+      "Carbon monoxide, which binds to haemoglobin more strongly than oxygen",
+      "Benzene, which destroys red blood cells directly"
+    ],
+    "correctIndex": 2,
+    "explanation": "Carbon monoxide (CO) binds to haemoglobin with an affinity about 200–300 times greater than oxygen, forming carboxyhaemoglobin. This directly displaces oxygen from haemoglobin, reducing the blood's oxygen-carrying capacity and forcing the heart to work harder. Within 12 hours of quitting, CO levels return to normal and blood oxygen rises."
+  },
+  {
+    "id": "health/types-of-exercise",
+    "contentSlug": "health/types-of-exercise",
+    "subject": "health",
+    "lessonTitle": "Types of Exercise",
+    "prompt": "Which of the four exercise types is most specifically associated with protecting against age-related muscle loss (sarcopenia) and maintaining bone density?",
+    "options": [
+      "Cardio / aerobic exercise, because it keeps the heart and metabolism active as we age",
+      "Flexibility training, because keeping muscles long and supple prevents the stiffness associated with ageing",
+      "Strength / resistance training, because muscles and bones adapt by growing stronger under load",
+      "Balance training, because it targets the neuromuscular system which declines with age"
+    ],
+    "correctIndex": 2,
+    "explanation": "Resistance training is the most direct stimulus for both muscle protein synthesis (fighting sarcopenia) and bone remodelling (fighting osteoporosis). When muscles contract against resistance, they pull on bones, stimulating bone cells to deposit new mineral. While balance training also helps prevent falls, and cardio supports overall health, the specific adaptations of maintaining muscle mass and bone density come primarily from progressive resistance work."
+  },
+  {
+    "id": "health/what-is-health",
+    "contentSlug": "health/what-is-health",
+    "subject": "health",
+    "lessonTitle": "What Is Health?",
+    "prompt": "According to the modern, practical view of health, which person is best described as 'healthy'?",
+    "options": [
+      "Someone with no medical diagnosis who is exhausted, isolated, and rarely leaves home",
+      "Someone managing a chronic condition who sleeps well, stays active, feels connected, and copes with daily demands",
+      "Anyone who has never been to a hospital",
+      "Only someone in a state of complete, flawless physical perfection"
+    ],
+    "correctIndex": 1,
+    "explanation": "Health is the capacity to cope, adapt, and thrive — not merely the absence of a diagnosis. A person actively managing a condition while functioning well across body, mind, and social life is healthier than someone with no diagnosis who is struggling on every front."
+  },
+  {
+    "id": "health/what-is-mental-health",
+    "contentSlug": "health/what-is-mental-health",
+    "subject": "health",
+    "lessonTitle": "What Is Mental Health?",
+    "prompt": "Which of the following best captures what 'mental health' means?",
+    "options": [
+      "The absence of any mental illness or diagnosis",
+      "A state of wellbeing that everyone has and can tend to",
+      "Feeling happy all the time",
+      "A condition only relevant to people in crisis"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mental health is a universal state of wellbeing — not a binary or a description only of illness. Everyone has mental health, and it changes over time, just like physical health."
+  },
+  {
+    "id": "health/what-is-stress",
+    "contentSlug": "health/what-is-stress",
+    "subject": "health",
+    "lessonTitle": "What Is Stress?",
+    "prompt": "A student has a tough exam next week and feels butterflies, focus, and motivation to study. Which type of stress is this most likely to be?",
+    "options": [
+      "Chronic stress — any exam-related worry is harmful by definition",
+      "Acute stress — it's short-lived, purposeful, and likely to resolve once the exam is over",
+      "Environmental stress — exam halls are physical environments",
+      "Chronic stress — because the feeling lasts more than one day"
+    ],
+    "correctIndex": 1,
+    "explanation": "Acute stress is short-lived and tied to a specific challenge. An exam in one week creates a defined, temporary demand — the classic shape of acute stress. It's not only harmless; that focused energy and motivation is the stress response doing its intended job. Chronic stress involves prolonged, unrelenting activation with no clear recovery."
+  },
+  {
+    "id": "health/what-makes-us-ill",
+    "contentSlug": "health/what-makes-us-ill",
+    "subject": "health",
+    "lessonTitle": "What Makes Us Ill",
+    "prompt": "A friend says, 'Heart disease and flu are both diseases, so they must spread the same way.' What is wrong with this reasoning?",
+    "options": [
+      "Heart disease is caused by a bacterium, so it does spread — just slowly",
+      "Flu is non-communicable, so it does not spread between people",
+      "Heart disease is a non-communicable disease driven by lifestyle, genes, and ageing — it is not caused by a pathogen and cannot be transmitted between people",
+      "Both diseases are caused by viruses and spread the same way — only the severity differs"
+    ],
+    "correctIndex": 2,
+    "explanation": "Heart disease belongs to the non-communicable family. It is not caused by a pathogen and cannot be passed from person to person. Flu, by contrast, is an infectious disease caused by the influenza virus and spreads via airborne and droplet routes. Mixing the two categories leads to misguided prevention strategies."
+  },
+  {
+    "id": "health/what-shapes-our-health",
+    "contentSlug": "health/what-shapes-our-health",
+    "subject": "health",
+    "lessonTitle": "What Shapes Our Health",
+    "prompt": "Studies suggest medical care explains only about 10–20% of a population's health outcomes. What's the best interpretation?",
+    "options": [
+      "Medical care is useless and should be ignored",
+      "Genes decide everything, so nothing else matters",
+      "Most health is shaped outside the clinic — especially by daily behaviour and social conditions — so that's where the biggest gains lie",
+      "Only rich people can be healthy"
+    ],
+    "correctIndex": 2,
+    "explanation": "Medical care is vital but treats a small slice of overall health. Behaviour and social/economic conditions shape far more — meaning prevention and everyday habits (plus fair social conditions) offer the biggest leverage, while genes mostly set odds rather than fate."
+  },
+  {
+    "id": "health/when-immunity-goes-wrong",
+    "contentSlug": "health/when-immunity-goes-wrong",
+    "subject": "health",
+    "lessonTitle": "When Immunity Goes Wrong",
+    "prompt": "What is the underlying mechanism that causes allergic reactions?",
+    "options": [
+      "The innate immune system confuses harmless proteins with bacterial toxins and triggers non-specific inflammation",
+      "IgE antibodies against the allergen bind to mast cells; re-exposure cross-links IgE and triggers histamine release",
+      "Autoantibodies attack the body's own mast cells, causing them to release histamine spontaneously",
+      "T-helper cells destroy allergen-carrying cells directly, causing localised tissue damage"
+    ],
+    "correctIndex": 1,
+    "explanation": "In allergy, the immune system produces IgE antibodies targeted at a harmless allergen (e.g. pollen, peanut protein). These IgE molecules bind to mast cells in tissues. On re-exposure, allergen molecules cross-link the IgE on the mast cell surface, triggering degranulation — the release of histamine and other mediators that cause allergic symptoms. This is an adaptive immune error: producing IgE against a non-threatening substance."
+  },
+  {
+    "id": "health/when-stress-helps-and-harms",
+    "contentSlug": "health/when-stress-helps-and-harms",
+    "subject": "health",
+    "lessonTitle": "When Stress Helps & Harms",
+    "prompt": "According to the Yerkes-Dodson model, which intervention is most likely to improve performance for someone who is overwhelmed and anxious about a task?",
+    "options": [
+      "Increase the difficulty of the task to push them further along the arousal curve",
+      "Reduce arousal by using calming strategies — they are on the wrong side of the inverted-U",
+      "Do nothing — anxiety always improves performance by raising motivation",
+      "Remove all challenge so that arousal drops to zero"
+    ],
+    "correctIndex": 1,
+    "explanation": "The Yerkes-Dodson curve is an inverted-U: performance peaks at moderate arousal and falls at extremes. An overwhelmed person is past the peak — on the downslope — so reducing arousal (through calming strategies, breaking the task down, or removing some pressure) moves them back toward the sweet spot. Adding more challenge pushes them further the wrong way; removing all challenge drops them to the under-aroused flat zone."
+  },
+  {
+    "id": "health/why-move",
+    "contentSlug": "health/why-move",
+    "subject": "health",
+    "lessonTitle": "Why Movement Matters",
+    "prompt": "Which of the following is TRUE about the relationship between sitting time and health?",
+    "options": [
+      "Sitting for long periods is only a risk if you also never exercise — a 30-minute morning workout fully cancels out a day of sitting",
+      "Prolonged daily sitting is a health risk in its own right, even for people who meet weekly exercise guidelines",
+      "Sitting still is only harmful if you are overweight — lean people face no extra risk from sedentary time",
+      "The risks of sitting only appear after age 60 — in younger adults it has no measurable health effect"
+    ],
+    "correctIndex": 1,
+    "explanation": "Research consistently shows that prolonged unbroken sitting raises the risk of type 2 diabetes, cardiovascular disease, and early death independently of overall fitness level. The 'active couch potato' phenomenon means that exercising for 30 minutes while sitting for the rest of the day is better than nothing — but not the same as also breaking up sedentary time throughout the day."
+  },
+  {
+    "id": "health/why-we-eat",
+    "contentSlug": "health/why-we-eat",
+    "subject": "health",
+    "lessonTitle": "Why We Eat",
+    "prompt": "Which statement about the roles of food is correct?",
+    "options": [
+      "Food provides only energy — the body makes its own building materials",
+      "Food provides both energy and the raw materials needed for growth, repair, and function",
+      "Calories measure the weight of food, not its energy content",
+      "Fat provides 4 kcal per gram, the same as carbohydrates"
+    ],
+    "correctIndex": 1,
+    "explanation": "Food has two essential roles: providing energy (measured in kcal) and supplying raw materials — amino acids, fatty acids, vitamins, minerals — that the body uses for growth, repair, and biochemical function. Fat delivers 9 kcal/g, more than double the 4 kcal/g from carbs or protein."
+  },
+  {
+    "id": "health/why-we-sleep",
+    "contentSlug": "health/why-we-sleep",
+    "subject": "health",
+    "lessonTitle": "Why We Sleep",
+    "prompt": "Why does cutting sleep from 8 hours to 5 hours disproportionately reduce REM sleep rather than removing each stage equally?",
+    "options": [
+      "REM sleep only occurs in the first 90-minute cycle, so shorter nights always miss it",
+      "The brain prioritises deep N3 sleep early in the night; REM periods lengthen toward morning, so they are the first to be cut when you shorten sleep",
+      "REM requires the body to be completely still, which is harder to maintain in the early night",
+      "Short sleepers naturally skip REM as an energy-saving adaptation"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sleep architecture follows a predictable sequence: deep N3 slow-wave sleep is front-loaded in the early cycles, while REM periods become longer and more frequent toward morning. When you truncate sleep — whether by sleeping fewer hours or waking early — you lose those late-night REM windows first, cutting into memory consolidation and emotional regulation."
+  },
+  {
+    "id": "health/your-body-as-a-system",
+    "contentSlug": "health/your-body-as-a-system",
+    "subject": "health",
+    "lessonTitle": "Your Body as a System",
+    "prompt": "A student sprints in hot sun and their core temperature rises. Which sequence correctly describes the homeostatic response?",
+    "options": [
+      "Effector detects temperature rise → control centre sweats → sensor signals correction",
+      "Sensor detects temperature rise → control centre (hypothalamus) triggers effectors → sweat glands activate to cool the body",
+      "Sensor detects temperature rise → muscles shiver → body temperature falls",
+      "Control centre sets a new, higher temperature set point to match the environment"
+    ],
+    "correctIndex": 1,
+    "explanation": "Negative feedback always follows: sensor detects deviation → control centre compares to set point → effector acts to reverse the deviation. Shivering warms — the wrong direction here. The set point doesn't change; effectors act to return the value to it."
+  },
+  {
+    "id": "health/your-healthy-life-by-evidence",
+    "contentSlug": "health/your-healthy-life-by-evidence",
+    "subject": "health",
+    "lessonTitle": "Your Healthy Life, by Evidence",
+    "prompt": "What makes the Blue Zones evidence particularly compelling for health research, compared to a single study?",
+    "options": [
+      "Blue Zones used randomised controlled trials with placebo controls, the gold standard of evidence",
+      "Blue Zones are the only source of evidence that genes affect longevity",
+      "Multiple independent lines of evidence — Blue Zones observations, large prospective cohort studies, and experimental trials — converge on the same lifestyle factors, making the findings unusually robust",
+      "Blue Zone residents are genetically different from other populations, so their longevity is entirely explainable by genetics"
+    ],
+    "correctIndex": 2,
+    "explanation": "The strength of the Blue Zones evidence is not that it constitutes a single perfect study — it is that independent lines of evidence converge on the same factors. The observational patterns in Blue Zones are validated by large prospective cohort studies (like the Nurses' Health Study and EPIC) and some experimental trials (like PREDIMED for Mediterranean diet). When very different study designs, conducted independently across different populations, point in the same direction, the convergent replication is a mark of reliability. Blue Zones are also not genetically isolated — Ikaria and Sardinia have had significant outmigration, so genetic explanations alone cannot account for the patterns."
+  },
+  {
     "id": "math/adding-and-subtracting-fractions",
     "contentSlug": "math/adding-and-subtracting-fractions",
     "subject": "math",
@@ -6423,6 +8703,1131 @@ export const PRACTICE_BANK: Array<PracticeItem> = [
     ],
     "correctIndex": 0,
     "explanation": "Volume scales by the cube of the length factor: 3³ = 27. (Its surface area would grow by 3² = 9.) This is the square–cube law."
+  },
+  {
+    "id": "philosophy/animals-and-environment",
+    "contentSlug": "philosophy/animals-and-environment",
+    "subject": "philosophy",
+    "lessonTitle": "Animals & the Environment",
+    "prompt": "Peter Singer uses the term 'speciesism' to mean which of the following?",
+    "options": [
+      "The belief that all species are morally equal and deserve identical treatment",
+      "Arbitrary discrimination against individuals solely on the basis of their species membership, analogous to racism",
+      "The scientific classification of animals into species for biological purposes",
+      "The view that humans, as the most intelligent species, have the highest moral obligations"
+    ],
+    "correctIndex": 1,
+    "explanation": "Singer coined 'speciesism' to name a bias he considers morally analogous to racism or sexism: giving less moral weight to the suffering of creatures simply because they belong to a different species. Just as race is not a morally relevant criterion for how much suffering matters, Singer argues, species membership is not either. The morally relevant feature is sentience — the capacity to suffer."
+  },
+  {
+    "id": "philosophy/arguing-well",
+    "contentSlug": "philosophy/arguing-well",
+    "subject": "philosophy",
+    "lessonTitle": "Arguing Well in the Real World",
+    "prompt": "What is the core difference between 'steelmanning' and 'strawmanning' an argument?",
+    "options": [
+      "Steelmanning involves agreeing with the argument; strawmanning involves disagreeing",
+      "A steel man engages the strongest version of an opposing view; a straw man attacks an artificially weakened version",
+      "Steelmanning is used in academic philosophy; strawmanning only occurs in politics",
+      "A straw man makes the argument easier to understand; a steel man makes it more complex"
+    ],
+    "correctIndex": 1,
+    "explanation": "Steelmanning means finding and engaging the most sophisticated, well-evidenced version of an opposing argument — you can still disagree with it. Strawmanning means replacing the real argument with a weaker version that is easier to defeat. Neither approach has anything to do with agreement or academic context; both show up everywhere."
+  },
+  {
+    "id": "philosophy/arguments-for-god",
+    "contentSlug": "philosophy/arguments-for-god",
+    "subject": "philosophy",
+    "lessonTitle": "Arguments for God",
+    "prompt": "Anselm's ontological argument concludes that God must exist because:",
+    "options": [
+      "The complexity of the universe cannot be explained without a creator",
+      "Every contingent thing requires a prior cause, leading back to a first uncaused cause",
+      "A being that exists only as a concept would not be the greatest conceivable being — and God is defined as that than which nothing greater can be conceived",
+      "The fine-tuning of physical constants is too improbable to be accidental"
+    ],
+    "correctIndex": 2,
+    "explanation": "The ontological argument proceeds from the definition of God (the greatest conceivable being) alone — it does not rely on observation of the universe. Anselm's key step is that a being that existed only in the mind would be surpassed by an otherwise identical being that also existed in reality, and therefore could not be the greatest conceivable being. Options 1 and 4 describe the teleological argument; option 2 describes the cosmological argument."
+  },
+  {
+    "id": "philosophy/aristotle",
+    "contentSlug": "philosophy/aristotle",
+    "subject": "philosophy",
+    "lessonTitle": "Aristotle",
+    "prompt": "Aristotle says the 'final cause' of the eye is seeing. A modern biologist might say: 'The eye evolved its structure because seeing helps organisms survive.' How does this relate to Aristotle's teleology?",
+    "options": [
+      "It completely contradicts Aristotle — evolution proves there is no purpose in nature",
+      "It is the same claim in different vocabulary: functional explanation ('for seeing') is unavoidable in biology, just as Aristotle said",
+      "Aristotle's teleology requires a conscious designer, which evolution rules out",
+      "Modern biology has replaced the final cause with the efficient cause entirely"
+    ],
+    "correctIndex": 1,
+    "explanation": "Aristotle did not require a conscious designer for teleological explanations — he thought purposes are immanent in nature itself. When biologists say 'the heart is for pumping blood,' they are giving a functional (teleological) explanation, not a mechanical one. The language of function and purpose is irreducible in biology — which is precisely what Aristotle predicted. Evolution explains how the purpose came to be instantiated, but does not eliminate teleological language."
+  },
+  {
+    "id": "philosophy/authenticity-and-bad-faith",
+    "contentSlug": "philosophy/authenticity-and-bad-faith",
+    "subject": "philosophy",
+    "lessonTitle": "Authenticity & Bad Faith",
+    "prompt": "Sartre's waiter who plays his role 'too perfectly' is an example of bad faith because:",
+    "options": [
+      "He is being dishonest with his customers about the quality of the food",
+      "He has chosen a low-status job instead of pursuing a more meaningful career",
+      "He treats himself as a fixed, determined thing (a waiter by nature) rather than a free consciousness who has chosen this role",
+      "He is pretending to be something he is not for the entertainment of others"
+    ],
+    "correctIndex": 2,
+    "explanation": "Sartre's bad faith is specifically about self-deception regarding one's own freedom. The waiter collapses his identity into his social role, treating 'I am a waiter' as a given fact about his nature rather than an ongoing choice. This hides his freedom from himself. Authenticity would mean acknowledging: 'I am choosing to be a waiter, and that choice is mine.'"
+  },
+  {
+    "id": "philosophy/before-socrates",
+    "contentSlug": "philosophy/before-socrates",
+    "subject": "philosophy",
+    "lessonTitle": "Before Socrates",
+    "prompt": "Democritus proposed that all matter consists of tiny, indivisible units he called atoms. Roughly how many years before modern atomic theory was experimentally confirmed did he propose this?",
+    "options": [
+      "About 50 years — atomism was a minor adjustment to existing chemistry",
+      "About 200 years — Democritus influenced the early chemists directly",
+      "About 2,000 years — he proposed it around 400 BCE and Dalton confirmed it around 1800 CE",
+      "About 500 years — atoms were rediscovered during the Renaissance"
+    ],
+    "correctIndex": 2,
+    "explanation": "Democritus proposed atomic theory around 400 BCE with no instruments whatsoever — pure reasoning. John Dalton's experimental atomic theory arrived around 1803 CE. That is roughly 2,200 years of vindication waiting to happen, making it arguably the most prescient guess in intellectual history."
+  },
+  {
+    "id": "philosophy/building-strong-arguments",
+    "contentSlug": "philosophy/building-strong-arguments",
+    "subject": "philosophy",
+    "lessonTitle": "Building & Evaluating Arguments",
+    "prompt": "You reconstruct an argument and find it is valid but one of its hidden premises is almost certainly false. What is the correct conclusion about the argument?",
+    "options": [
+      "The argument is sound because at least the form is valid",
+      "The argument is invalid because hidden premises don't count",
+      "The argument is valid but not sound — the false premise means the conclusion isn't guaranteed to be true",
+      "The argument cannot be evaluated until all hidden premises are certain"
+    ],
+    "correctIndex": 2,
+    "explanation": "Validity is about form: if the premises were true, the conclusion would follow. That property is unaffected by whether the premises are actually true. But soundness requires both validity AND true premises. A false (or likely false) hidden premise breaks soundness even if the form is impeccable — so the conclusion is not guaranteed. This is precisely why surfacing hidden premises matters: they are often where arguments break down."
+  },
+  {
+    "id": "philosophy/consciousness-and-qualia",
+    "contentSlug": "philosophy/consciousness-and-qualia",
+    "subject": "philosophy",
+    "lessonTitle": "Consciousness & Qualia",
+    "prompt": "According to Nagel's argument in 'What Is It Like to Be a Bat?', what does bat echolocation experience illustrate?",
+    "options": [
+      "That bats are more conscious than humans because their senses are more complex",
+      "That subjective experience has an irreducibly first-person character that no objective physical account captures",
+      "That science will eventually explain all subjective experience through neuroscience",
+      "That animals do not have genuine conscious experience, only instinctual responses"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nagel's point is that even a complete physical account of how bat echolocation works tells us nothing about what it is like from the inside to perceive via sonar. The subjective, first-person character of experience resists capture by any third-person objective description — not because bats have immaterial souls, but because subjectivity as such is left out of the physical picture."
+  },
+  {
+    "id": "philosophy/consequentialism",
+    "contentSlug": "philosophy/consequentialism",
+    "subject": "philosophy",
+    "lessonTitle": "Consequentialism",
+    "prompt": "A strict act-utilitarian is deciding whether to break a promise. Which question is most central to their reasoning?",
+    "options": [
+      "Is promise-keeping a universal duty that holds regardless of consequences?",
+      "What kind of person does breaking this promise make me?",
+      "Will breaking this promise produce more overall happiness than keeping it?",
+      "Would I be comfortable if everyone knew I had broken this promise?"
+    ],
+    "correctIndex": 2,
+    "explanation": "Act utilitarianism directs you to choose the action that maximises overall utility — which means the central question is always about expected consequences for everyone affected. The other options reflect deontological (option 1), virtue-ethical (option 2), and Kantian universalizability (option 4) reasoning."
+  },
+  {
+    "id": "philosophy/creating-meaning",
+    "contentSlug": "philosophy/creating-meaning",
+    "subject": "philosophy",
+    "lessonTitle": "Creating Your Own Meaning",
+    "prompt": "Susan Wolf argues that meaning arises from 'active engagement in projects of worth.' Why does passionate dedication to something trivial fail to generate meaning on her view?",
+    "options": [
+      "Because passion itself is suspect — philosophers should approach life with detachment and reason",
+      "Because only cosmic or religious projects are genuinely worth loving",
+      "Because meaning requires both subjective engagement AND objective worth — a trivial project, however intensely pursued, lacks the objective worthiness that the formula requires",
+      "Because trivial projects cannot produce pleasure and pleasure is the foundation of meaning"
+    ],
+    "correctIndex": 2,
+    "explanation": "Wolf's view is that meaning requires two conditions: subjective attraction (genuine engagement and care) and objective worth (the project actually being worthwhile). These are both necessary. Passionate dedication to something trivial — say, obsessively counting the hairs on a cat — satisfies the subjective condition but not the objective one. The project must genuinely be worth doing, not just feel worth doing. Meaning lives where love meets worth."
+  },
+  {
+    "id": "philosophy/deductive-and-inductive",
+    "contentSlug": "philosophy/deductive-and-inductive",
+    "subject": "philosophy",
+    "lessonTitle": "Deductive vs Inductive",
+    "prompt": "'Every emerald ever observed has been green. Therefore the next emerald I find will be green.' This argument is best described as:",
+    "options": [
+      "Deductive, because emeralds are always green by definition",
+      "Inductive, because the conclusion is probable but not logically guaranteed",
+      "Neither deductive nor inductive — it is not a real argument",
+      "Deductive, because no counter-example has ever been found"
+    ],
+    "correctIndex": 1,
+    "explanation": "This is a classic inductive generalisation. Even an enormous number of green emeralds does not logically guarantee the next one. The absence of counter-examples so far strengthens the induction but cannot convert it into a deductive certainty — that would require knowing all emeralds by definition, not just by observation."
+  },
+  {
+    "id": "philosophy/deontology",
+    "contentSlug": "philosophy/deontology",
+    "subject": "philosophy",
+    "lessonTitle": "Duty & Deontology",
+    "prompt": "Which of the following best expresses Kant's Formula of Humanity?",
+    "options": [
+      "Always do whatever produces the greatest total happiness",
+      "Never treat a person merely as a means to your ends — always also as an end in themselves",
+      "Act only on maxims that you could will to be universal laws of nature",
+      "Duties arise from the social contract we implicitly agree to by living in society"
+    ],
+    "correctIndex": 1,
+    "explanation": "The Formula of Humanity requires treating every rational agent as having inherent dignity — never as a mere instrument for your goals. Option 3 describes the Formula of Universal Law (the other main formulation of the categorical imperative), option 1 is utilitarian, and option 4 is contractarian."
+  },
+  {
+    "id": "philosophy/dualism-and-materialism",
+    "contentSlug": "philosophy/dualism-and-materialism",
+    "subject": "philosophy",
+    "lessonTitle": "Dualism vs Materialism",
+    "prompt": "The 'multiple realizability' argument is best seen as a challenge to which view?",
+    "options": [
+      "Functionalism, because it claims that only one substrate can realize a mental state",
+      "Substance dualism, because it implies minds can be made of matter",
+      "Type-identity physicalism, because it implies that the same mental state can only exist in beings with identical physical brain states",
+      "Behaviorism, because it implies behavior isn't what defines mental states"
+    ],
+    "correctIndex": 2,
+    "explanation": "Type-identity physicalism says pain = C-fibre firing (a particular physical type). But if pain can be realized in very different physical systems — animals with different neuroanatomy, or possibly machines — then pain can't be identical to one specific physical type. Multiple realizability challenges identity theory and was one of Hilary Putnam's key arguments for functionalism."
+  },
+  {
+    "id": "philosophy/equality-and-rights",
+    "contentSlug": "philosophy/equality-and-rights",
+    "subject": "philosophy",
+    "lessonTitle": "Equality, Rights & Democracy",
+    "prompt": "The main worry behind the phrase 'tyranny of the majority' in democratic theory is:",
+    "options": [
+      "Majority rule is less efficient than expert governance",
+      "Democratic majorities may use their power to violate the rights of minorities",
+      "Most voters are uninformed about complex policy questions",
+      "Democracy always leads to economic inequality"
+    ],
+    "correctIndex": 1,
+    "explanation": "The 'tyranny of the majority' concern — raised prominently by Tocqueville and Mill — is that a numerical majority can use democratic mechanisms to oppress or strip the rights of minorities. This is why liberal democracies pair majority rule with constitutional rights that constrain what majorities may do — not because majorities are stupid, but because power over others can be abused regardless of how it is achieved."
+  },
+  {
+    "id": "philosophy/ethics-in-practice",
+    "contentSlug": "philosophy/ethics-in-practice",
+    "subject": "philosophy",
+    "lessonTitle": "Putting Theories to Work",
+    "prompt": "Why do many deontologists permit pulling the trolley lever but forbid pushing the large man off the bridge — even though both result in one death saving five?",
+    "options": [
+      "Because five lives always outweigh one, regardless of the method",
+      "Because the lever case involves redirecting an existing threat, while the bridge case uses the man as a means — violating his dignity as an end in himself",
+      "Because the lever case feels psychologically less distressing, which is morally relevant",
+      "Because virtue ethics forbids pushing but permits lever-pulling"
+    ],
+    "correctIndex": 1,
+    "explanation": "The deontological distinction rests on the doctrine of double effect and the Formula of Humanity. In the lever case, the trolley's lethal force is redirected — the one person's death is foreseen but not intended as a means. In the bridge case, the man's body is deliberately used as a trolley-stopper; his death is the means by which the five are saved, treating him as an instrument rather than a person. This violates Kant's prohibition on using persons merely as means."
+  },
+  {
+    "id": "philosophy/existence-precedes-essence",
+    "contentSlug": "philosophy/existence-precedes-essence",
+    "subject": "philosophy",
+    "lessonTitle": "Existence Precedes Essence",
+    "prompt": "Sartre says 'existence precedes essence.' Which of the following best captures what this means?",
+    "options": [
+      "Humans exist physically before they develop a spiritual soul",
+      "Human beings first exist — with no fixed nature or purpose — and then define themselves through choices",
+      "Existence is more important than meaning, so we should not worry about purpose",
+      "Only things that exist can have an essence, so existence is logically prior"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sartre's slogan is about the order of priority between being and definition. For designed objects, the concept (essence) comes first; for humans — absent a divine craftsperson — there is no pre-given design. We exist first, with no built-in nature, and we define ourselves through our choices. This makes radical freedom both possible and unavoidable."
+  },
+  {
+    "id": "philosophy/faith-and-reason",
+    "contentSlug": "philosophy/faith-and-reason",
+    "subject": "philosophy",
+    "lessonTitle": "Faith & Reason",
+    "prompt": "Which position holds that belief in God can be 'properly basic' — rationally held without requiring explicit evidential justification, in the same way that belief in the external world does not require proof?",
+    "options": [
+      "Fideism — faith is a leap beyond reason entirely",
+      "Evidentialism — belief must always be grounded in sufficient evidence",
+      "Reformed epistemology — some beliefs are foundational and do not require further evidence",
+      "Pascal's Wager — belief should be adopted on grounds of rational self-interest"
+    ],
+    "correctIndex": 2,
+    "explanation": "Reformed epistemology, associated with Alvin Plantinga and William Alston, holds that belief in God can be 'properly basic' — foundational in the structure of a person's belief system, rational without requiring further evidential support, just as belief in other minds or the reliability of memory is rational without explicit proof. Fideism (option 1) places faith outside reason entirely. Evidentialism (option 2) demands evidence for all beliefs. Pascal's Wager (option 4) is a pragmatic/decision-theoretic argument, not an epistemological foundation."
+  },
+  {
+    "id": "philosophy/fallacies-of-presumption",
+    "contentSlug": "philosophy/fallacies-of-presumption",
+    "subject": "philosophy",
+    "lessonTitle": "Fallacies of Presumption",
+    "prompt": "Which of the following best illustrates begging the question (circular reasoning)?",
+    "options": [
+      "\"Either you love your country or you support open borders.\"",
+      "\"One step toward drug decriminalisation and we'll have legalised everything within five years.\"",
+      "\"We know free markets are efficient because every efficient economy uses free markets.\"",
+      "\"Three of my friends had bad experiences with this airline, so it must be terrible.\""
+    ],
+    "correctIndex": 2,
+    "explanation": "Option C assumes the conclusion (free markets are efficient) in its premise (efficient economies use free markets) — the argument only holds if you already believe what it's trying to prove. The other options illustrate false dilemma (A), slippery slope (B), and hasty generalisation (D)."
+  },
+  {
+    "id": "philosophy/fallacies-of-relevance",
+    "contentSlug": "philosophy/fallacies-of-relevance",
+    "subject": "philosophy",
+    "lessonTitle": "Fallacies of Relevance",
+    "prompt": "A politician responds to criticism of her healthcare bill by pointing out that her opponent once supported a different healthcare policy that failed. Which fallacy does this most likely commit?",
+    "options": [
+      "Appeal to illegitimate authority",
+      "Straw man",
+      "Ad hominem (tu quoque — appeal to hypocrisy)",
+      "Appeal to emotion"
+    ],
+    "correctIndex": 2,
+    "explanation": "Pointing to an opponent's past position or inconsistency is a form of ad hominem called tu quoque ('you too'). Even if the opponent is a hypocrite, that tells us nothing about whether the current healthcare bill is good policy. The original criticism still needs to be addressed on its merits."
+  },
+  {
+    "id": "philosophy/forms-of-argument",
+    "contentSlug": "philosophy/forms-of-argument",
+    "subject": "philosophy",
+    "lessonTitle": "Classic Argument Forms",
+    "prompt": "'If a student studies every day, they will pass. This student did not study every day. Therefore they will not pass.' Which argument form is this, and is it valid?",
+    "options": [
+      "Modus Ponens — valid",
+      "Modus Tollens — valid",
+      "Affirming the Consequent — invalid (fallacy)",
+      "Denying the Antecedent — invalid (fallacy)"
+    ],
+    "correctIndex": 3,
+    "explanation": "The second premise denies the antecedent (¬P: the student did NOT study every day), and the conclusion denies the consequent (¬Q: they will not pass). That is Denying the Antecedent — a formal fallacy. The student might still pass through natural talent, tutoring, or luck. The conditional only said that studying guarantees passing; it said nothing about what happens when you don't study."
+  },
+  {
+    "id": "philosophy/free-will",
+    "contentSlug": "philosophy/free-will",
+    "subject": "philosophy",
+    "lessonTitle": "Free Will & Determinism",
+    "prompt": "A compatibilist would say that a person acted freely when:",
+    "options": [
+      "Their action was completely uncaused by any prior physical state",
+      "They acted from their own desires and reasoning, without external coercion — even if their action was determined",
+      "They could demonstrate that quantum indeterminacy played a role in their brain",
+      "They felt no desire to do otherwise"
+    ],
+    "correctIndex": 1,
+    "explanation": "Compatibilism redefines freedom not as 'being uncaused' but as 'being caused by the right thing' — your own desires and reasoning, free from coercion or manipulation. An action can be both causally determined and genuinely free on this view. The other options either describe libertarian free will (options 1 and 3) or confuse freedom with satisfaction of desires (option 4)."
+  },
+  {
+    "id": "philosophy/freedom-anxiety-and-meaning",
+    "contentSlug": "philosophy/freedom-anxiety-and-meaning",
+    "subject": "philosophy",
+    "lessonTitle": "Freedom, Anxiety & Meaning",
+    "prompt": "Kierkegaard calls anxiety 'the dizziness of freedom.' What does he mean?",
+    "options": [
+      "Anxiety is a mental illness caused by having too many life choices in a consumer society",
+      "The feeling of dizziness proves that freedom is an illusion produced by the brain",
+      "Anxiety arises from the recognition that one is free — that the future is open and one bears responsibility for it — not from fear of any particular thing",
+      "Freedom makes people anxious because other people judge our choices harshly"
+    ],
+    "correctIndex": 2,
+    "explanation": "Kierkegaard distinguishes anxiety (Angst) from fear: fear has a specific object (the dog, the fall), while anxiety is the mood that arises in the face of freedom itself — the recognition that infinite possibilities are open and you must choose among them, bearing responsibility for the result. The cliff analogy is his: you are not afraid of jumping, but the awareness that you *could* produces a vertiginous dizziness. This anxiety is the signal of genuine freedom, not a pathology."
+  },
+  {
+    "id": "philosophy/happiness-and-the-good-life",
+    "contentSlug": "philosophy/happiness-and-the-good-life",
+    "subject": "philosophy",
+    "lessonTitle": "The Good Life",
+    "prompt": "Most people, when presented with Nozick's Experience Machine, choose not to plug in. What does this reveal about hedonism?",
+    "options": [
+      "Nothing — the thought experiment is too unrealistic to have philosophical significance",
+      "It reveals that hedonism is definitely false, and that the objective-list theory is correct",
+      "It suggests that well-being involves more than pleasurable experience — people seem to care about actually doing things, actually being certain kinds of people, and actually engaging with reality",
+      "It reveals that people are irrational and should actually plug in if they were thinking clearly"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nozick designed the Experience Machine precisely to test hedonism: if well-being is just pleasure, a perfect pleasure machine should offer the ideal life. But most people refuse, suggesting they care about more than experience — they want to actually accomplish things, actually be certain kinds of people, and actually live in the real world. This doesn't definitively establish any rival theory, but it does reveal that hedonism, as a complete account of well-being, is at least incomplete."
+  },
+  {
+    "id": "philosophy/hegel-and-marx",
+    "contentSlug": "philosophy/hegel-and-marx",
+    "subject": "philosophy",
+    "lessonTitle": "History & Society",
+    "prompt": "Marx said he 'turned Hegel on his head.' What does this mean?",
+    "options": [
+      "Marx rejected the dialectical method entirely and replaced it with empirical science",
+      "Marx agreed with Hegel that ideas drive history, but thought different ideas were the cause",
+      "Marx kept Hegel's dialectical method but reversed the driver: material/economic conditions shape ideas, not the reverse",
+      "Marx showed that Hegel's logic was circular and therefore invalid"
+    ],
+    "correctIndex": 2,
+    "explanation": "Marx retained the dialectical structure — thesis, antithesis, synthesis — but rejected Hegel's idealism. For Hegel, Absolute Spirit (a kind of cosmic consciousness of ideas) drives historical change. For Marx, it is the material base — the mode of production, class relations, and economic contradictions — that drives history. Ideas, culture, and religion are the superstructure that reflects and justifies the base, not the cause of it."
+  },
+  {
+    "id": "philosophy/hellenistic-and-eastern",
+    "contentSlug": "philosophy/hellenistic-and-eastern",
+    "subject": "philosophy",
+    "lessonTitle": "Living Well: Stoics, Epicureans & the East",
+    "prompt": "Epictetus was born a slave. He argued that even as a slave, he was free. What did he mean?",
+    "options": [
+      "That his owner treated him kindly and gave him many privileges",
+      "That his owner's physical control of his body could not control his judgments, values, and inner responses",
+      "That Roman slavery was not as harsh as other forms of slavery in history",
+      "That freedom is a social construct with no real meaning"
+    ],
+    "correctIndex": 1,
+    "explanation": "Epictetus's freedom was internal: the Stoic 'inner citadel' — your own reason, judgments, and responses — cannot be enslaved. His master could control his body, his movements, and his labour, but could not control what Epictetus believed, valued, or felt in response to circumstances. This is the Stoic dichotomy of control applied to the most extreme case, making it especially powerful."
+  },
+  {
+    "id": "philosophy/identity-and-change",
+    "contentSlug": "philosophy/identity-and-change",
+    "subject": "philosophy",
+    "lessonTitle": "Identity & Change",
+    "prompt": "Locke's memory criterion of personal identity is challenged by Reid's sergeant paradox because:",
+    "options": [
+      "Memories are unreliable and often false",
+      "Transitivity of identity fails — the general is identical to the officer and the officer to the boy, but the general is not identical to the boy",
+      "Locke ignores physical continuity of the body",
+      "Animals have memories too, so the criterion proves too much"
+    ],
+    "correctIndex": 1,
+    "explanation": "Reid's objection is a logical one: identity is transitive (if A = B and B = C then A = C). But Locke's criterion yields A ≠ C (general ≠ boy, no memory link) while A = B (general = officer) and B = C (officer = boy). This is a contradiction that shows the memory criterion as stated cannot be right."
+  },
+  {
+    "id": "philosophy/ideologies",
+    "contentSlug": "philosophy/ideologies",
+    "subject": "philosophy",
+    "lessonTitle": "The Great Ideologies",
+    "prompt": "Which of the following best captures the core disagreement between social democrats and libertarians about economic inequality?",
+    "options": [
+      "Social democrats deny that markets produce wealth; libertarians think markets are the only source of value",
+      "Social democrats think inequality is a moral problem requiring collective correction; libertarians think just processes produce just outcomes regardless of resulting inequality",
+      "Social democrats favour individual freedom above all; libertarians prioritise community solidarity",
+      "Libertarians believe in democracy; social democrats prefer expert technocratic governance"
+    ],
+    "correctIndex": 1,
+    "explanation": "Both social democrats and libertarians accept that markets generate wealth, and both value individual freedom — so options A and C misstate their views. Option D has them reversed. The real core disagreement is about what makes outcomes just: social democrats hold that severe inequality is a moral problem that democratic societies may legitimately correct through redistribution; libertarians hold that if the process of acquiring wealth was fair (no theft or coercion), the resulting distribution is just, however unequal — echoing Nozick's entitlement theory."
+  },
+  {
+    "id": "philosophy/justice-and-fairness",
+    "contentSlug": "philosophy/justice-and-fairness",
+    "subject": "philosophy",
+    "lessonTitle": "Justice & Fairness",
+    "prompt": "Rawls' 'difference principle' says that economic inequalities are just only if they:",
+    "options": [
+      "Are the result of voluntary exchange between consenting adults",
+      "Produce the highest possible average wealth across the whole society",
+      "Benefit the least-advantaged members of society",
+      "Are proportional to each person's talent and effort"
+    ],
+    "correctIndex": 2,
+    "explanation": "The difference principle does not demand equality, nor does it maximise the average. It permits inequalities only when those inequalities work to improve the position of the worst-off group. This is Rawls' answer to what rational people behind the veil of ignorance would demand: since you might land at the bottom, you insist that the bottom be as good as possible."
+  },
+  {
+    "id": "philosophy/justice-and-the-world",
+    "contentSlug": "philosophy/justice-and-the-world",
+    "subject": "philosophy",
+    "lessonTitle": "A Just World",
+    "prompt": "Which objection does Singer call 'the demandingness objection,' and what is his response?",
+    "options": [
+      "The objection that charity is administratively inefficient; Singer replies that effective altruism organisations have solved this",
+      "The objection that moral obligations cannot require us to give until we approach equal deprivation with the worst-off, as this leaves no room for personal life; Singer responds that obligations are greater than common sense allows, while accepting a moderate version that permits keeping what genuinely matters",
+      "The objection that we have special obligations to our own nation; Singer replies that nationalism is always morally arbitrary",
+      "The objection that structural injustice, not individual charity, is the real problem; Singer replies that systemic change is impossible"
+    ],
+    "correctIndex": 1,
+    "explanation": "The demandingness objection holds that if Singer's strong principle is right, we must give until we approach the same deprivation as the worst-off — leaving no room for personal projects, relationships, or a distinctively human life. Singer's response: moral common sense has been wrong before; our obligations are genuinely greater than we typically admit. He accepts a moderate version: give until giving more would sacrifice something of genuine importance to your own life — which still implies far more than most people give."
+  },
+  {
+    "id": "philosophy/kant",
+    "contentSlug": "philosophy/kant",
+    "subject": "philosophy",
+    "lessonTitle": "Kant's Revolution",
+    "prompt": "What does Kant mean when he says his philosophy is a 'Copernican revolution'?",
+    "options": [
+      "He discovered that the earth revolves around the sun, like Copernicus did",
+      "He reversed the traditional assumption: instead of the mind conforming to objects, he argued objects conform to the mind's built-in structures",
+      "He argued that all previous philosophy was as mistaken as pre-Copernican astronomy",
+      "He showed that science and religion can coexist, as Copernicus implied"
+    ],
+    "correctIndex": 1,
+    "explanation": "Kant's 'Copernican revolution' is a methodological flip. Traditional epistemology assumed the mind passively receives the world and tries to match it. Kant proposed the opposite: the mind actively structures experience through built-in forms (space, time) and categories (causation, substance, etc.). Objects as we know them partly conform to how the mind must perceive — not the reverse."
+  },
+  {
+    "id": "philosophy/liberty",
+    "contentSlug": "philosophy/liberty",
+    "subject": "philosophy",
+    "lessonTitle": "Liberty & Its Limits",
+    "prompt": "According to Mill's harm principle, the state may legitimately restrict an action only when:",
+    "options": [
+      "The majority of citizens find the action immoral",
+      "The action causes harm to non-consenting others",
+      "The action is likely to harm the person performing it",
+      "The action violates traditional community standards"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mill's test is strictly about harm to others who have not consented. Neither the majority's moral disapproval, nor the risk of self-harm, nor violation of tradition is sufficient justification. This rules out both paternalism (state protecting you from yourself) and moralism (state enforcing majority norms). Only actual harm to non-consenting third parties clears the bar."
+  },
+  {
+    "id": "philosophy/life-and-death",
+    "contentSlug": "philosophy/life-and-death",
+    "subject": "philosophy",
+    "lessonTitle": "Life & Death Ethics",
+    "prompt": "Judith Jarvis Thomson's 'Violinist' argument is designed to show which of the following?",
+    "options": [
+      "That the fetus is not a person and therefore has no right to life",
+      "That even if the fetus is a person with a right to life, bodily autonomy may still justify abortion in some cases",
+      "That the right to life always overrides the right to bodily autonomy",
+      "That religious arguments against abortion fail because they are not based on reason"
+    ],
+    "correctIndex": 1,
+    "explanation": "Thomson's argument is specifically designed to sidestep the personhood debate. She grants for the sake of argument that the fetus is a person with a right to life — then argues that even so, the person carrying the fetus has a right to bodily autonomy that can, in some circumstances, justify discontinuing support. This separates the personhood question from the autonomy question."
+  },
+  {
+    "id": "philosophy/minds-and-machines",
+    "contentSlug": "philosophy/minds-and-machines",
+    "subject": "philosophy",
+    "lessonTitle": "Minds & Machines",
+    "prompt": "Searle's Chinese Room is primarily an argument that:",
+    "options": [
+      "Computers can never pass the Turing Test, no matter how sophisticated they become",
+      "Syntactic symbol manipulation — however sophisticated — is not sufficient for semantic understanding or genuine thought",
+      "Human thought is also purely mechanical and therefore not genuinely meaningful",
+      "Artificial intelligence is impossible in principle because only biological systems can think"
+    ],
+    "correctIndex": 1,
+    "explanation": "Searle does not deny that machines can produce impressive, human-like outputs (in fact his imagined Chinese Room does pass the Turing Test). His argument is that producing the right outputs by following formal rules (syntax) is not the same as genuinely understanding what those symbols mean (semantics). Strong AI claims a program running on hardware literally understands — Searle argues no amount of syntactic processing achieves this."
+  },
+  {
+    "id": "philosophy/moral-intuitions",
+    "contentSlug": "philosophy/moral-intuitions",
+    "subject": "philosophy",
+    "lessonTitle": "Moral Intuitions & Reasoning",
+    "prompt": "You pull the lever (divert the trolley, 1 dies) but refuse to push the stranger (also 1 dies, 5 saved). According to the moral psychology revealed by this inconsistency, you are most likely responding to:",
+    "options": [
+      "A calculation that the lever action saves more lives overall",
+      "A distinction between harm caused as a side effect versus harm used as the deliberate means to save others",
+      "Personal cowardice — you prefer not to be physically involved",
+      "The utilitarian principle that outcomes are all that matter"
+    ],
+    "correctIndex": 1,
+    "explanation": "The numbers are identical in both cases. If outcomes were all that mattered (option 4), you'd treat them the same. The most widely-accepted philosophical explanation of the asymmetric intuition is the doctrine of double effect: using someone's death as the means to save others (pushing) feels categorically different from causing a death as a foreseen side effect of an act aimed at something else (the lever)."
+  },
+  {
+    "id": "philosophy/moral-relativism",
+    "contentSlug": "philosophy/moral-relativism",
+    "subject": "philosophy",
+    "lessonTitle": "Is Morality Relative?",
+    "prompt": "The 'reformer's dilemma' for cultural relativism is that:",
+    "options": [
+      "Reformers often impose their culture's values on others, which relativism forbids",
+      "If right and wrong are defined by the dominant culture, moral reformers who oppose that culture are always, by definition, morally wrong",
+      "Cultural relativists cannot explain why different cultures have any moral overlap at all",
+      "Relativism requires every culture to tolerate every other culture, which is itself a universal moral principle"
+    ],
+    "correctIndex": 1,
+    "explanation": "The reformer's dilemma is internal to relativism: if morality just IS what the dominant culture endorses, then reformers (abolitionists, suffragists, resisters of genocide) who oppose that culture are, by the relativist's own logic, always morally wrong — yet we have strong intuitions that many such reformers were morally right. Option 4 is also a real problem for relativism (the tolerance point), but the classic 'reformer's dilemma' is specifically option 2."
+  },
+  {
+    "id": "philosophy/nihilism-and-pessimism",
+    "contentSlug": "philosophy/nihilism-and-pessimism",
+    "subject": "philosophy",
+    "lessonTitle": "Nihilism & Pessimism",
+    "prompt": "Camus accepts that the universe offers no built-in meaning (the nihilist's premise). What does he conclude from this?",
+    "options": [
+      "Life is therefore not worth living and we should abandon the pretence that anything matters",
+      "We should leap to religious faith to fill the void the universe leaves",
+      "We should revolt — hold the absurd in clear view, refuse false comfort, and embrace life with full intensity anyway, making our existence our own",
+      "Nihilism is correct but harmless, since most people do not think about it anyway"
+    ],
+    "correctIndex": 2,
+    "explanation": "Camus accepts the nihilist's starting point — the universe is silent and indifferent — but rejects the nihilist's conclusion. For Camus, the appropriate response to the absurd is not despair or the false comfort of a philosophical leap to God, but revolt: keeping the tension in view, refusing to pretend it away, and living with passionate intensity in spite of it. 'One must imagine Sisyphus happy' — not because the problem is solved, but because Sisyphus owns his fate and the struggle is enough."
+  },
+  {
+    "id": "philosophy/other-approaches",
+    "contentSlug": "philosophy/other-approaches",
+    "subject": "philosophy",
+    "lessonTitle": "Other Approaches",
+    "prompt": "The Euthyphro dilemma poses a problem for divine command theory because:",
+    "options": [
+      "It shows God cannot exist if evil exists",
+      "It reveals that if things are right merely because God commands them, morality becomes arbitrary; but if God commands them because they are right, morality is independent of God",
+      "It proves that care ethics is a better foundation for morality than divine commands",
+      "It demonstrates that contractarian morality is superior to religious morality"
+    ],
+    "correctIndex": 1,
+    "explanation": "The Euthyphro dilemma (from Plato) asks whether something is pious (right) because the gods love it, or whether the gods love it because it is pious (right). Applied to divine command theory: if right means 'commanded by God,' morality is arbitrary — God could command anything. But if God commands things because they are right, morality exists independently of God's will, and divine command theory fails to ground morality in divine commands."
+  },
+  {
+    "id": "philosophy/personal-identity",
+    "contentSlug": "philosophy/personal-identity",
+    "subject": "philosophy",
+    "lessonTitle": "What Makes You, You?",
+    "prompt": "What is the main problem with Locke's pure memory theory of personal identity?",
+    "options": [
+      "It relies on the existence of an immaterial soul to store memories",
+      "Memory is unreliable, so it cannot ground identity",
+      "It can generate non-transitive identity: A remembers being B, B remembers being C, but A doesn't remember being C — yet A is supposedly the same person as C",
+      "It only applies to humans, not to other animals"
+    ],
+    "correctIndex": 2,
+    "explanation": "Reid's objection shows that Locke's theory violates transitivity: if identity is grounded in memory links, and those links don't chain transitively (the old general cannot remember the flogging the boy can), then we get A=B, B=C, but A≠C — which is logically impossible for genuine identity. Parfit's response was to move from identity to psychological continuity, but that raises its own challenges."
+  },
+  {
+    "id": "philosophy/philosophy-of-science",
+    "contentSlug": "philosophy/philosophy-of-science",
+    "subject": "philosophy",
+    "lessonTitle": "What Makes Science, Science?",
+    "prompt": "According to Popper, what makes a theory scientific?",
+    "options": [
+      "It has been confirmed by a large number of observations",
+      "It is endorsed by a recognised scientific institution",
+      "There is some possible observation that, if it occurred, would show the theory to be false",
+      "It can explain all known phenomena in its domain"
+    ],
+    "correctIndex": 2,
+    "explanation": "Popper's criterion is falsifiability: a theory is scientific if and only if some possible observation would falsify it. Confirmation by many observations makes a theory well-tested, but no number of confirmations can definitively prove a universal claim — whereas a single contradicting observation can refute it. Institutional endorsement and explanatory scope are not the criterion Popper proposed."
+  },
+  {
+    "id": "philosophy/plato",
+    "contentSlug": "philosophy/plato",
+    "subject": "philosophy",
+    "lessonTitle": "Plato",
+    "prompt": "According to Plato's Theory of Forms, which of the following best describes the relationship between a beautiful painting and Beauty itself?",
+    "options": [
+      "The painting IS Beauty — beauty exists only in particular beautiful things",
+      "The painting imperfectly participates in the eternal Form of Beauty, which exists independently of any particular thing",
+      "Beauty is just a name we give to things we happen to like — there is no deeper reality",
+      "The painting causes the Form of Beauty to exist in the mind of the viewer"
+    ],
+    "correctIndex": 1,
+    "explanation": "For Plato, the Form of Beauty is real, eternal, and independent — it would exist even if every beautiful thing in the world were destroyed. Particular beautiful things participate in (or 'imitate') the Form to varying degrees. This is why we recognise beauty in very different things: they all share in one Form."
+  },
+  {
+    "id": "philosophy/reasoning-and-bias",
+    "contentSlug": "philosophy/reasoning-and-bias",
+    "subject": "philosophy",
+    "lessonTitle": "Reasoning & Bias",
+    "prompt": "In Wason's 2-4-6 task, why do most people fail to discover the actual rule?",
+    "options": [
+      "The rule is genuinely too complex to figure out by testing",
+      "They test triples designed to confirm their hypothesis rather than falsify it",
+      "They don't try enough triples to build a good sample",
+      "The task is designed so every triple fits the rule"
+    ],
+    "correctIndex": 1,
+    "explanation": "The real rule — any three increasing numbers — is simple. The problem is that most people form a hypothesis (e.g., 'even numbers going up by 2') and then only test triples that already match it. Each 'fits' response feels like confirmation, but they never test a triple designed to break the hypothesis, so they never get the disconfirming evidence that would reveal how broad the real rule is."
+  },
+  {
+    "id": "philosophy/science-religion-and-reality",
+    "contentSlug": "philosophy/science-religion-and-reality",
+    "subject": "philosophy",
+    "lessonTitle": "Science, Religion & Reality",
+    "prompt": "Stephen Jay Gould's 'Non-Overlapping Magisteria' (NOMA) model holds that:",
+    "options": [
+      "Science and religion inevitably conflict because they make claims about the same domain",
+      "Science deals with empirical facts while religion addresses meaning, value, and purpose — so they cannot directly conflict",
+      "Science and religion can inform each other's understanding through ongoing dialogue",
+      "Religious claims should be treated as scientific hypotheses and tested by the same methods"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gould's NOMA model proposes that science and religion occupy separate, non-overlapping domains: science covers empirical facts and theories about the natural world; religion covers ultimate meaning, moral value, and purpose. Because they address different questions with different methods, they cannot genuinely conflict. Option 1 describes the Conflict model. Option 3 describes the Dialogue/Integration model. Option 4 is the approach Gould is explicitly arguing against."
+  },
+  {
+    "id": "philosophy/skepticism",
+    "contentSlug": "philosophy/skepticism",
+    "subject": "philosophy",
+    "lessonTitle": "Skepticism & Doubt",
+    "prompt": "Why can't the evil-demon hypothesis make Descartes doubt his own existence?",
+    "options": [
+      "Because God would prevent such powerful deception.",
+      "Because the demon is imaginary and imaginary beings have no power.",
+      "Because even to be deceived you must exist — the act of doubting itself proves that something is thinking and therefore existing.",
+      "Because existence is a direct sensory experience that even the dreaming argument doesn't threaten."
+    ],
+    "correctIndex": 2,
+    "explanation": "The cogito's power is that it's self-verifying: any attempt to doubt 'I exist' requires a thinker doing the doubting, which confirms the existence of that thinker. Even an omnipotent evil demon cannot make it the case that you are being deceived without you existing to be deceived. The cogito survives precisely because it is not an external observation — it is the immediate fact of one's own thinking."
+  },
+  {
+    "id": "philosophy/socrates",
+    "contentSlug": "philosophy/socrates",
+    "subject": "philosophy",
+    "lessonTitle": "Socrates",
+    "prompt": "What does Socrates mean when he says 'the unexamined life is not worth living'?",
+    "options": [
+      "Only philosophers deserve to live — all others lead worthless lives",
+      "A life without constant self-reflection and questioning one's beliefs lacks genuine human value",
+      "We should examine everyone else's life to see if they are living correctly",
+      "Life must be studied through science and empirical observation to have meaning"
+    ],
+    "correctIndex": 1,
+    "explanation": "Socrates is not elitist about who can live well — he is insisting that the examined life is available to anyone willing to question themselves. The examined life asks: what do I actually believe? Are my values consistent? Am I living up to what I claim to think is good? Without this ongoing self-inquiry, we drift — shaped by habit, tradition, and others' opinions rather than our own reason."
+  },
+  {
+    "id": "philosophy/sources-of-knowledge",
+    "contentSlug": "philosophy/sources-of-knowledge",
+    "subject": "philosophy",
+    "lessonTitle": "Where Knowledge Comes From",
+    "prompt": "Which of the following is the best example of a priori knowledge?",
+    "options": [
+      "\"The Eiffel Tower is in Paris.\" — you need to have learned or observed this.",
+      "\"All effects have causes.\" — Kant argued this is built into how we structure experience.",
+      "\"Light travels at 299,792 km/s.\" — a physical measurement.",
+      "\"Dogs are mammals.\" — a biological classification requiring investigation."
+    ],
+    "correctIndex": 1,
+    "explanation": "Kant's claim that every effect has a cause is a priori — he argued it is a conceptual framework the mind brings to experience rather than a fact derived from observing the world. The others are a posteriori: they require observation, measurement, or learning about the contingent world."
+  },
+  {
+    "id": "philosophy/technology-and-the-future",
+    "contentSlug": "philosophy/technology-and-the-future",
+    "subject": "philosophy",
+    "lessonTitle": "Ethics of Technology",
+    "prompt": "What does the 'alignment problem' refer to in AI ethics?",
+    "options": [
+      "The difficulty of preventing AI systems from developing human-like emotions",
+      "The challenge of ensuring that increasingly capable AI systems pursue goals that are genuinely aligned with human values, rather than proxy goals that diverge from them",
+      "The problem of aligning different AI companies on a common set of regulations",
+      "The technical difficulty of getting multiple AI models to work together consistently"
+    ],
+    "correctIndex": 1,
+    "explanation": "The alignment problem refers to the challenge of building AI systems whose objectives — and the strategies they use to pursue those objectives — genuinely track human values. As systems become more capable, even small misalignments between the system's objective and what humans actually want can lead to large divergences in behaviour. The problem is both technical (how to specify human values formally) and philosophical (what human values actually are and how to adjudicate conflicts between them)."
+  },
+  {
+    "id": "philosophy/the-absurd",
+    "contentSlug": "philosophy/the-absurd",
+    "subject": "philosophy",
+    "lessonTitle": "The Absurd",
+    "prompt": "Camus calls the 'philosophical leap' (turning to God or a transcendent ideology to resolve the absurd) a form of philosophical suicide. Why?",
+    "options": [
+      "Because religious faith makes people passive and unwilling to engage with the real world",
+      "Because it trades intellectual honesty for comfort — it papers over the absurd rather than living within it with clear eyes",
+      "Because science has proven that God does not exist, making the leap irrational",
+      "Because it leads people to value the afterlife over the present, making them less productive"
+    ],
+    "correctIndex": 1,
+    "explanation": "Camus' charge against the philosophical leap is not that God doesn't exist, but that the leap is dishonest. The absurd arises from the confrontation between our craving for meaning and the universe's silence. Leaping to a transcendent solution dissolves that tension artificially — it is a way of not facing the absurd. Camus demands that we live within the tension with clear eyes and full passion, rather than escaping it."
+  },
+  {
+    "id": "philosophy/the-branches-of-philosophy",
+    "contentSlug": "philosophy/the-branches-of-philosophy",
+    "subject": "philosophy",
+    "lessonTitle": "The Branches of Philosophy",
+    "prompt": "'Is it possible to know anything for certain, or could I be deceived about everything?' Which branch of philosophy asks this?",
+    "options": [
+      "Ethics",
+      "Aesthetics",
+      "Epistemology",
+      "Political philosophy"
+    ],
+    "correctIndex": 2,
+    "explanation": "Questions about knowledge, certainty, and how we can tell knowledge from error belong to epistemology — the theory of knowledge. Ethics asks how to live; aesthetics asks about beauty; political philosophy asks how to organise society."
+  },
+  {
+    "id": "philosophy/the-death-of-god",
+    "contentSlug": "philosophy/the-death-of-god",
+    "subject": "philosophy",
+    "lessonTitle": "The Death of God",
+    "prompt": "When Nietzsche writes 'God is dead,' what does he primarily mean?",
+    "options": [
+      "He is claiming that atheism is scientifically proven and religion is irrational",
+      "He is diagnosing the collapse of the shared framework of values and meaning that European culture had built on religious foundations",
+      "He is arguing that God never existed and that theology has always been mistaken",
+      "He is celebrating the end of religion as a liberation for human beings"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nietzsche's 'death of God' is a cultural and philosophical diagnosis, not a theological argument. He is saying that the entire foundation of meaning, morality, and cosmic purpose that European civilization had relied on has crumbled — with profound and dangerous consequences. He was not celebrating: the madman who delivers the news is horrified by what humanity has lost."
+  },
+  {
+    "id": "philosophy/the-empiricists",
+    "contentSlug": "philosophy/the-empiricists",
+    "subject": "philosophy",
+    "lessonTitle": "The Empiricists",
+    "prompt": "Hume says we never observe causation — only 'constant conjunction.' What does he mean?",
+    "options": [
+      "We observe causes but never their effects, which remain hidden",
+      "We observe two events repeatedly occurring together in sequence, but we never directly perceive the necessary connection between them",
+      "Causation is a fiction invented by science with no basis in experience",
+      "We can prove causation exists by deduction from first principles"
+    ],
+    "correctIndex": 1,
+    "explanation": "Hume's point is precise: we see event A followed by event B, again and again. But the 'necessary connection' — the idea that A must produce B — is never itself observed. It is a habit of the mind, a feeling of expectation produced by repeated experience, projected onto the world. Causation as 'necessary connection' is not something the senses can deliver."
+  },
+  {
+    "id": "philosophy/the-enlightenment-legacy",
+    "contentSlug": "philosophy/the-enlightenment-legacy",
+    "subject": "philosophy",
+    "lessonTitle": "The Enlightenment & Its Critics",
+    "prompt": "Rousseau agreed with the Enlightenment that legitimate government requires consent — yet he is often called the Enlightenment's fiercest internal critic. What was his central objection?",
+    "options": [
+      "He thought reason was useless and only faith could ground political authority",
+      "He believed civilisation and the accumulation of property corrupt natural human virtue, leaving us less free than our primitive ancestors",
+      "He rejected the social contract entirely and defended absolute monarchy",
+      "He thought the sciences and arts were politically neutral and irrelevant to questions of justice"
+    ],
+    "correctIndex": 1,
+    "explanation": "Rousseau accepted Enlightenment political premises — consent, the general will, natural freedom — but turned them against the Enlightenment's optimism about civilisation itself. His argument: the arts, sciences, and especially property create inequality, vanity, and dependence. 'Man is born free, and everywhere he is in chains.' The chains are not political institutions alone but the entire social and economic order that 'civilised' life produces. This made Rousseau a founding voice of both Romanticism and the radical political tradition."
+  },
+  {
+    "id": "philosophy/the-gettier-problem",
+    "contentSlug": "philosophy/the-gettier-problem",
+    "subject": "philosophy",
+    "lessonTitle": "The Gettier Problem",
+    "prompt": "What exactly is wrong with the stopped-clock case as a candidate for knowledge?",
+    "options": [
+      "Henry's belief is false — the clock is stopped, so it can't be 3:15.",
+      "Henry has no justification — he has no reason to trust the clock.",
+      "Henry's belief is true and justified, but it is true only by coincidence — the justification and the truth are accidentally connected.",
+      "Henry fails to have a belief — he only glances at the clock without forming a real opinion."
+    ],
+    "correctIndex": 2,
+    "explanation": "Henry's belief is both true and justified, so JTB is satisfied. The problem is that the justification (the clock looks reliable) and the truth (it happens to be 3:15) are only accidentally connected — the clock stopped 12 hours ago. This lucky coincidence is exactly what Gettier cases exploit to show JTB is not sufficient for knowledge."
+  },
+  {
+    "id": "philosophy/the-good-and-moral-status",
+    "contentSlug": "philosophy/the-good-and-moral-status",
+    "subject": "philosophy",
+    "lessonTitle": "The Good & Who Counts",
+    "prompt": "Peter Singer argues that 'speciesism' is morally arbitrary. What is the core of this argument?",
+    "options": [
+      "All species have equal rights because all life has intrinsic value regardless of sentience",
+      "Species membership is not a morally relevant difference — what matters is the capacity to suffer, which many non-human animals share with humans",
+      "Animals are rational agents like humans, so they deserve the same legal protections",
+      "Environmental ecosystems have moral status, so all animals within them must be protected"
+    ],
+    "correctIndex": 1,
+    "explanation": "Singer's argument is that if sentience (the capacity to feel pleasure and pain) is what grounds moral status, then the fact of species membership is irrelevant — just as race or sex membership is morally irrelevant. Since many non-human animals are clearly sentient, excluding their suffering from moral consideration requires a justification beyond 'they're not human.' Options 1 and 3 misstate Singer's premise: he does not claim all life has equal status, nor that animals are rational agents."
+  },
+  {
+    "id": "philosophy/the-mind-body-problem",
+    "contentSlug": "philosophy/the-mind-body-problem",
+    "subject": "philosophy",
+    "lessonTitle": "The Mind-Body Problem",
+    "prompt": "What is the 'hard problem of consciousness' as Chalmers describes it?",
+    "options": [
+      "Explaining how the brain integrates sensory information and controls behavior",
+      "Explaining why some brains are smarter than others",
+      "Explaining why any physical brain process is accompanied by subjective experience at all",
+      "Explaining how mental illness relates to brain chemistry"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chalmers distinguishes the 'easy problems' (how the brain processes information, controls action, produces attention — hard scientifically but tractable in principle) from the 'hard problem': why any of this processing is accompanied by subjective experience — why there is something it is like to be a brain in a certain state, rather than mere information processing in the dark."
+  },
+  {
+    "id": "philosophy/the-problem-of-evil",
+    "contentSlug": "philosophy/the-problem-of-evil",
+    "subject": "philosophy",
+    "lessonTitle": "The Problem of Evil",
+    "prompt": "Alvin Plantinga's free-will defence is primarily a response to which version of the problem of evil?",
+    "options": [
+      "The evidential problem — it argues that suffering makes God's existence improbable",
+      "The logical problem — it argues that there is no formal contradiction between God's existence and the existence of evil",
+      "The natural evil problem — it explains why God permits earthquakes and disease",
+      "The horrendous evil problem — it explains why God permits evils that seem to defeat all meaning"
+    ],
+    "correctIndex": 1,
+    "explanation": "Plantinga's free-will defence targets the logical problem of evil — the claim that God and evil are formally contradictory. Plantinga argues that an omnipotent God could not create genuinely free beings who always choose good, because genuine freedom logically requires the possibility of evil. This shows the premises are compatible, dissolving the logical contradiction. It does not, by itself, address why God permits natural evil (option 3) or make God's existence probable given the evidence (option 1)."
+  },
+  {
+    "id": "philosophy/the-question-of-meaning",
+    "contentSlug": "philosophy/the-question-of-meaning",
+    "subject": "philosophy",
+    "lessonTitle": "The Question of Meaning",
+    "prompt": "What is the key distinction between cosmic meaning and personal meaning?",
+    "options": [
+      "Cosmic meaning is about the universe having a purpose imposed by a divine creator, while personal meaning is about what makes an individual life worthwhile — a question that can be answered without assuming a cosmic author",
+      "Cosmic meaning is more important than personal meaning, because personal meaning is merely subjective",
+      "Personal meaning refers to meaning found in relationships, while cosmic meaning refers to meaning found in achievement",
+      "The two concepts are identical: if life has no cosmic meaning, it has no personal meaning either"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cosmic meaning asks whether the universe itself has a grand purpose — whether there is an author who intended our existence. Personal meaning asks what makes an individual life worthwhile and rich. These questions are related but distinct: a life can be personally meaningful even if the cosmos is indifferent, and recognising this distinction is the first step toward answering the question of meaning with philosophical precision."
+  },
+  {
+    "id": "philosophy/the-rationalists",
+    "contentSlug": "philosophy/the-rationalists",
+    "subject": "philosophy",
+    "lessonTitle": "The Rationalists",
+    "prompt": "What is the 'cogito' and why does Descartes think it survives all waves of doubt?",
+    "options": [
+      "It's the claim that the external world exists — and it survives because God guarantees it",
+      "It's the claim 'I think, therefore I am' — and it survives because even a deceiver must deceive someone who is thinking",
+      "It's the claim that mathematics is certain — and it survives because numbers are abstract",
+      "It's the claim that the senses are reliable — and it survives because illusions are rare"
+    ],
+    "correctIndex": 1,
+    "explanation": "The cogito ('I think, therefore I am') is the one belief that no deceiver — not even an omnipotent evil demon — can make false. For the very act of being deceived requires that there is a deceiver and that the deceived party exists and is thinking. Descartes uses this as the bedrock on which to rebuild knowledge."
+  },
+  {
+    "id": "philosophy/the-socratic-method",
+    "contentSlug": "philosophy/the-socratic-method",
+    "subject": "philosophy",
+    "lessonTitle": "The Socratic Method",
+    "prompt": "In the Socratic method, what is the point of reaching aporia — the state of admitting 'I don't actually know'?",
+    "options": [
+      "To prove the other person is stupid",
+      "To win the argument by force",
+      "To clear away false certainty so genuine inquiry can begin",
+      "To show that no question can ever be answered"
+    ],
+    "correctIndex": 2,
+    "explanation": "Aporia isn't failure — it's the breakthrough. As long as you mistake opinion for knowledge, you can't learn. Honestly admitting you don't know reopens the question and makes real understanding possible."
+  },
+  {
+    "id": "philosophy/the-trolley-problem",
+    "contentSlug": "philosophy/the-trolley-problem",
+    "subject": "philosophy",
+    "lessonTitle": "The Trolley Problem",
+    "prompt": "What is the main philosophical reason most people distinguish pulling the lever from pushing the large man, even though both result in one death to save five?",
+    "options": [
+      "Physical effort: pushing is harder than pulling, so people hesitate",
+      "In the lever case the one death is a foreseen side-effect of redirecting harm; in the footbridge case the man's body is used as the means — his death is intentional and instrumental",
+      "The trolley problem only applies to the lever case; the footbridge case is a different type of dilemma",
+      "Consequentialists approve both cases equally, so any distinction must be based on emotion rather than reason"
+    ],
+    "correctIndex": 1,
+    "explanation": "The doctrine of double effect draws a line between harm that is foreseen (a side-effect you accept) and harm that is intended as your means. In the lever case, the one person's death is a tragic side-effect; in the footbridge case, it is the mechanism by which the five are saved. Kant's Formula of Humanity reaches the same verdict: pushing uses the man as a mere instrument."
+  },
+  {
+    "id": "philosophy/theories-of-truth",
+    "contentSlug": "philosophy/theories-of-truth",
+    "subject": "philosophy",
+    "lessonTitle": "What Is Truth?",
+    "prompt": "A pragmatist is told: 'Your theory makes it impossible to call a widely useful but factually false belief FALSE.' Which challenge does this express?",
+    "options": [
+      "That coherentism collapses into relativism because different belief systems can both be coherent.",
+      "That the correspondence theory can't account for abstract truths like mathematics.",
+      "That the pragmatic theory equates truth with usefulness — but useful beliefs can be false and true beliefs can be useless.",
+      "That the deflationary theory denies that truth is a real property at all."
+    ],
+    "correctIndex": 2,
+    "explanation": "The pragmatist identifies truth with what 'works' or is useful. The objection is that usefulness and truth come apart: a placebo can work (be useful) without it being true that it has pharmacological effects; and many truths are inconvenient or useless. If truth just means 'useful to believe,' these cases become hard to explain. The pragmatist is accused of changing the subject — analysing usefulness instead of truth."
+  },
+  {
+    "id": "philosophy/time-causation-and-being",
+    "contentSlug": "philosophy/time-causation-and-being",
+    "subject": "philosophy",
+    "lessonTitle": "Time, Causation & Existence",
+    "prompt": "Hume's central worry about causation is that:",
+    "options": [
+      "We observe too many causal connections and cannot sort them out",
+      "We never observe necessary connection itself — only constant conjunction and our own habit of expectation",
+      "Quantum mechanics shows that some events are uncaused, so causation is rare",
+      "Causation exists only in the mind and cannot be discussed scientifically"
+    ],
+    "correctIndex": 1,
+    "explanation": "Hume's point is epistemological and metaphysical: in any single causal sequence we observe contiguity, temporal priority, and constant conjunction — but we never observe the necessary connection that would make the cause *compel* the effect. What we call 'causation' is a habitual expectation the mind projects onto experience. This does not mean causation is rare (option 3) or unscientific (option 4) — it means the glue we think binds causes to effects is not visible in the world itself."
+  },
+  {
+    "id": "philosophy/universals-and-particulars",
+    "contentSlug": "philosophy/universals-and-particulars",
+    "subject": "philosophy",
+    "lessonTitle": "Universals & Particulars",
+    "prompt": "A strict nominalist, asked 'What does the word red refer to?', would most likely say:",
+    "options": [
+      "It refers to the abstract Form of Redness that exists in a Platonic realm",
+      "It refers to a property that is located inside every red particular",
+      "It is a name we apply to a group of resembling particulars — there is no extra abstract entity",
+      "It refers to light wavelengths, so physics fully answers the question"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nominalists deny that general terms like 'red' refer to any universal entity. The word is just a name (nomen) applied to a collection of resembling particular things. The physical wavelength story is not philosophy of language — a nominalist philosopher would say the question of what 'red' refers to is answered by pointing to the particulars, not to an abstract object."
+  },
+  {
+    "id": "philosophy/validity-and-soundness",
+    "contentSlug": "philosophy/validity-and-soundness",
+    "subject": "philosophy",
+    "lessonTitle": "Validity & Soundness",
+    "prompt": "An argument is valid but has one false premise. What can we say about its conclusion?",
+    "options": [
+      "The conclusion must be true, because the argument is valid",
+      "The conclusion must be false, because a premise is false",
+      "The conclusion could be either true or false — validity alone doesn't tell us",
+      "The argument is automatically unsound and therefore invalid"
+    ],
+    "correctIndex": 2,
+    "explanation": "Validity says: IF premises are true, THEN conclusion is true. With a false premise, that 'if' is not met — so we lose the guarantee. The conclusion might still happen to be true (some other reason could make it true), but it might also be false. Validity only guarantees the conclusion when ALL premises are true. Unsoundness follows from the false premise, but that doesn't make the argument invalid — those are separate properties."
+  },
+  {
+    "id": "philosophy/virtue-ethics",
+    "contentSlug": "philosophy/virtue-ethics",
+    "subject": "philosophy",
+    "lessonTitle": "Virtue Ethics",
+    "prompt": "According to Aristotle's doctrine of the mean, a virtue is:",
+    "options": [
+      "Always obeying the maxim that produces the most happiness",
+      "Following universal rules regardless of context",
+      "A character trait that lies between deficiency and excess",
+      "The capacity to calculate the correct action in each situation"
+    ],
+    "correctIndex": 2,
+    "explanation": "The doctrine of the mean holds that every virtue is a settled disposition that represents the appropriate midpoint between a vice of deficiency (too little) and a vice of excess (too much). Courage sits between cowardice and recklessness; generosity between stinginess and extravagance. The other options describe utilitarian (option 1), deontological (option 2), or decision-theoretic (option 4) approaches."
+  },
+  {
+    "id": "philosophy/what-is-a-fallacy",
+    "contentSlug": "philosophy/what-is-a-fallacy",
+    "subject": "philosophy",
+    "lessonTitle": "What Is a Fallacy?",
+    "prompt": "What is the key difference between a formal fallacy and an informal fallacy?",
+    "options": [
+      "Formal fallacies appear in written arguments; informal ones appear in speech",
+      "Formal fallacies involve a broken logical structure; informal fallacies involve problems with content, relevance, or framing",
+      "Informal fallacies are always more persuasive than formal ones",
+      "Formal fallacies are committed intentionally; informal ones are honest mistakes"
+    ],
+    "correctIndex": 1,
+    "explanation": "Formal fallacies have broken logical form — the conclusion doesn't follow even if all premises are true. Informal fallacies have valid-looking structure but fail due to irrelevant premises, misleading framing, or unwarranted assumptions. The written/spoken distinction is irrelevant, and neither type is necessarily deliberate."
+  },
+  {
+    "id": "philosophy/what-is-an-argument",
+    "contentSlug": "philosophy/what-is-an-argument",
+    "subject": "philosophy",
+    "lessonTitle": "What Is an Argument?",
+    "prompt": "Which of the following is an argument (not just a claim)?",
+    "options": [
+      "Capital punishment is wrong.",
+      "Many people disagree about the ethics of capital punishment.",
+      "Capital punishment should be abolished because innocent people have been executed.",
+      "Capital punishment has been debated for centuries."
+    ],
+    "correctIndex": 2,
+    "explanation": "Only option 3 contains a premise ('innocent people have been executed') offered as a reason for a conclusion ('capital punishment should be abolished'). The other options are standalone claims or observations — there is no inferential move from one statement to another."
+  },
+  {
+    "id": "philosophy/what-is-ethics",
+    "contentSlug": "philosophy/what-is-ethics",
+    "subject": "philosophy",
+    "lessonTitle": "What Is Ethics?",
+    "prompt": "A philosopher asks: 'Are moral claims objectively true, or are they merely expressions of cultural preference?' Which level of ethics is this?",
+    "options": [
+      "Descriptive ethics — surveying what cultures believe",
+      "Normative ethics — prescribing what people should do",
+      "Metaethics — examining the nature and status of moral claims",
+      "Applied ethics — applying moral principles to specific cases"
+    ],
+    "correctIndex": 2,
+    "explanation": "Metaethics examines what moral claims mean and whether they can be objectively true — prior to asking which moral claims are true. Descriptive ethics surveys beliefs empirically. Normative ethics prescribes what we ought to do. Applied ethics handles specific real-world moral dilemmas."
+  },
+  {
+    "id": "philosophy/what-is-knowledge",
+    "contentSlug": "philosophy/what-is-knowledge",
+    "subject": "philosophy",
+    "lessonTitle": "What Is Knowledge?",
+    "prompt": "You guess that today is Wednesday, and you happen to be right. According to the JTB analysis, do you KNOW it is Wednesday?",
+    "options": [
+      "Yes — your belief is true, and that's all knowledge requires.",
+      "No — you guessed, so the belief is not justified. It lacks one of the three ingredients.",
+      "Yes — you were correct, and correct beliefs are always knowledge.",
+      "No — you need a written record to know what day it is."
+    ],
+    "correctIndex": 1,
+    "explanation": "The JTB analysis requires all three: belief, truth, AND justification. A lucky guess satisfies 'belief' and 'truth' but fails on justification — you had no good reason to pick Wednesday over any other day. Without justification, it's just a lucky guess, not knowledge."
+  },
+  {
+    "id": "philosophy/what-is-metaphysics",
+    "contentSlug": "philosophy/what-is-metaphysics",
+    "subject": "philosophy",
+    "lessonTitle": "What Is Metaphysics?",
+    "prompt": "According to Plato's Allegory of the Cave, what does the sun represent?",
+    "options": [
+      "The physical warmth that gives energy to living things",
+      "The Form of the Good — the ultimate source of truth, being, and value",
+      "The prisoners' desire to escape the cave",
+      "The fire that casts the shadows on the wall"
+    ],
+    "correctIndex": 1,
+    "explanation": "In the allegory, the fire inside the cave casts the shadows (it represents the visible, sensory world). The sun outside the cave represents the Form of the Good — the highest principle, the source from which everything else derives both its existence and its knowability."
+  },
+  {
+    "id": "philosophy/what-is-philosophy",
+    "contentSlug": "philosophy/what-is-philosophy",
+    "subject": "philosophy",
+    "lessonTitle": "What Is Philosophy?",
+    "prompt": "What most clearly distinguishes a philosophical question from a scientific one?",
+    "options": [
+      "Philosophical questions are about the past, scientific ones about the future",
+      "Philosophical questions can't be settled by observation or experiment alone — they're answered through reasoning and argument",
+      "Philosophical questions are always about God",
+      "Scientific questions matter and philosophical ones don't"
+    ],
+    "correctIndex": 1,
+    "explanation": "Science settles questions by observation and experiment. Philosophy tackles questions that evidence alone can't decide — what knowledge is, whether we're free, how we should live — using careful reasoning and argument instead."
+  },
+  {
+    "id": "philosophy/where-morals-come-from",
+    "contentSlug": "philosophy/where-morals-come-from",
+    "subject": "philosophy",
+    "lessonTitle": "Where Do Morals Come From?",
+    "prompt": "Which of the following best describes Hume's is-ought gap?",
+    "options": [
+      "Moral facts exist, but we cannot perceive them directly with our senses",
+      "No amount of purely descriptive (factual) premises can logically entail a normative (moral) conclusion without a value premise",
+      "Morality is relative to cultures, so there is no objective 'ought'",
+      "Scientists should avoid making moral claims because science only studies what 'is'"
+    ],
+    "correctIndex": 1,
+    "explanation": "Hume's point is a logical one: the gap between IS and OUGHT cannot be bridged by facts alone. However many true descriptive premises you add, a moral conclusion requires at least one normative premise. This is independent of whether moral facts exist (option 1) or whether morality is relative (option 3)."
+  },
+  {
+    "id": "philosophy/why-philosophy-matters",
+    "contentSlug": "philosophy/why-philosophy-matters",
+    "subject": "philosophy",
+    "lessonTitle": "Why Philosophy Still Matters",
+    "prompt": "The lesson argues philosophy is deeply practical. Which best captures its everyday payoff?",
+    "options": [
+      "It lets you win every argument and prove others wrong",
+      "It trains clear thinking, a defence against bad reasoning, and reflection on how to live — skills that apply everywhere",
+      "It replaces science as the way to discover facts about the world",
+      "It guarantees you'll reach certain, final answers to life's questions"
+    ],
+    "correctIndex": 1,
+    "explanation": "Philosophy's value isn't winning arguments or certainty. It's a transferable habit of mind: defining terms and exposing assumptions (clarity), evaluating arguments (a defence against nonsense), and reflecting on how to live well — all of which apply far beyond the classroom."
+  },
+  {
+    "id": "philosophy/why-the-state",
+    "contentSlug": "philosophy/why-the-state",
+    "subject": "philosophy",
+    "lessonTitle": "Why Have a State?",
+    "prompt": "John Locke's state of nature differs from Hobbes' mainly because Locke believed:",
+    "options": [
+      "People have no rights until a government grants them",
+      "Natural law already protects life, liberty and property even without a sovereign",
+      "The only escape from the state of nature is an absolute monarch",
+      "Human beings are incapable of rational cooperation"
+    ],
+    "correctIndex": 1,
+    "explanation": "Locke held that natural rights exist prior to any government — they are not gifts of the state but features of our rational nature. Government is needed not to create rights but to provide an impartial arbiter when rights are violated. This is why Locke's social contract produces a limited government with a right to revolution, rather than Hobbes' all-powerful Leviathan."
+  },
+  {
+    "id": "philosophy/wisdom-for-living",
+    "contentSlug": "philosophy/wisdom-for-living",
+    "subject": "philosophy",
+    "lessonTitle": "Wisdom for a Life",
+    "prompt": "The Stoics distinguish between things 'up to us' and things 'not up to us.' Which of the following best captures what this distinction is meant to achieve?",
+    "options": [
+      "It teaches us to be passive and accept whatever happens without trying to change the world",
+      "It directs our energy and care toward our own judgements, values, and responses — where we have genuine agency — while holding the external world with equanimity rather than anxiety",
+      "It teaches that only material goods matter, since only they are reliably within our control",
+      "It provides a justification for ignoring other people's suffering, since their suffering is not up to us"
+    ],
+    "correctIndex": 1,
+    "explanation": "The Stoic dichotomy of control is not a counsel of passivity but a strategic allocation of care and energy. By concentrating attention on what is genuinely up to us — our judgements, values, and responses — and holding what is not up to us (external outcomes, other people's behaviour, death) with equanimity, we free ourselves from the anxiety that comes from grasping at things we cannot control. Marcus Aurelius, Epictetus, and Seneca were active, engaged people — soldiers, statesmen, philosophers — who found in this distinction not an excuse to withdraw, but the freedom to act well without being enslaved to outcomes."
+  },
+  {
+    "id": "philosophy/wonder-and-the-examined-life",
+    "contentSlug": "philosophy/wonder-and-the-examined-life",
+    "subject": "philosophy",
+    "lessonTitle": "Wonder & the Examined Life",
+    "prompt": "When Socrates said 'the unexamined life is not worth living,' he meant that a good life requires —",
+    "options": [
+      "becoming a professional philosopher",
+      "reaching final, certain answers to every question",
+      "actively questioning your own beliefs and values rather than drifting on autopilot",
+      "rejecting all traditions and starting from scratch"
+    ],
+    "correctIndex": 2,
+    "explanation": "Socrates wasn't demanding final answers or a career in philosophy. He meant that living well requires reflection — examining why you believe and value what you do, so your life is genuinely yours rather than unthinking habit."
   },
   {
     "id": "physics/acceleration",

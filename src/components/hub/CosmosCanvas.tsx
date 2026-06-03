@@ -12,7 +12,7 @@ import vertexShader from '#/shaders/nebula.vert.glsl'
 import fragmentShader from '#/shaders/nebula.frag.glsl'
 import { ClientOnly } from '#/components/ClientOnly'
 
-const MAX_ISLANDS = 8
+const MAX_ISLANDS = 12
 
 export type HubIsland = { x: number; y: number; accent: string }
 

@@ -1,0 +1,79 @@
+---
+title: Information Failures
+subject: economics
+contentSlug: economics/information-and-markets
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="When one side knows more" kind="explain">
+
+Markets rest on a quiet assumption we rarely state: that buyers and sellers know what they're trading. You know the apple is fresh; the grocer knows it too. But for many goods one side knows far more than the other — the used-car seller knows the car's history, you don't; the job applicant knows their own work ethic, the employer doesn't; you know your own health, the insurer doesn't.
+
+This is **asymmetric information**, and it's a third kind of market failure. When information is lopsided, good trades that *should* happen don't — and sometimes the whole market unravels.
+
+</Step>
+
+<Step title="Adverse selection: the market for lemons" kind="explain">
+
+The classic case is the used-car market, analysed by George Akerlof in a paper so influential it won a Nobel Prize. Some used cars are good (call them **peaches**), some are bad (**lemons**). The seller knows which is which; the buyer cannot tell them apart on the lot.
+
+So what will a buyer pay? Not the price of a peach — that would be a sucker's bet, since the car might be a lemon. The rational move is to offer only the **average** value of cars on the lot. But that average price is *below* what a peach is genuinely worth, so peach owners pull their cars off the market. Now the lot is more lemon-heavy, the average drops further, and even more good cars exit. Quality spirals downward. This self-reinforcing exit of the good side of the market is **adverse selection**.
+
+</Step>
+
+<Step title="Watch the lot unravel" kind="interactive">
+
+Here's a lot that starts half peaches, half lemons. Buyers offer the average value of what's listed; any peach worth more than that price withdraws. Step through the rounds.
+
+<LemonsMarket />
+
+Each round, the price drags down the average, the underpaid peaches leave, and the price falls again — until the good cars are gone and mostly lemons remain. A market that could have served *everyone* — buyers who'd love a fairly priced peach, sellers who'd love to sell one — has mostly collapsed, purely because one side couldn't verify quality.
+
+</Step>
+
+<Step title="Moral hazard and the cures" kind="explain">
+
+Asymmetric information has a second face. **Adverse selection** is about hidden information *before* a deal — who shows up. **Moral hazard** is about hidden *action after* a deal — how people behave once they're protected. With full fire insurance, you might grow careless about leaving the stove on; once a bank is bailed out, it might take wilder risks. The insurer or rescuer can't watch your every move, so the protected party behaves worse than they otherwise would.
+
+The good news is that real markets fight back with clever institutions:
+
+- **Signalling** — the informed side proves its quality at a cost only the genuine can bear: a used-car *warranty*, a diploma, a brand's reputation.
+- **Screening** — the uninformed side designs choices that sort people: insurers offer a low-premium-high-deductible plan that only the low-risk will pick.
+- **Reputation and reviews** — repeat business and ratings give sellers a reason to be honest.
+- **Regulation** — mandatory disclosures, inspections, lemon laws, and required insurance (which kills adverse selection by forcing *everyone* into the pool).
+
+<Callout type="tip" title="Why a warranty is information, not just a perk">
+A seller only offers a strong warranty if the car is genuinely reliable — a lemon would trigger costly claims. So the warranty isn't merely a nice extra; it's a credible *signal* that lets the good cars stay in the market. The deductible on an insurance plan plays the same trick in reverse, screening the careful from the reckless.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In a used-car market, sellers know each car's quality but buyers cannot tell peaches from lemons, so buyers offer only the average value. Why do the good cars tend to disappear?"
+  options={[
+    "Buyers refuse to purchase any car at all, so the market is empty",
+    "The average price is below a peach's true worth, so peach owners withdraw — which lowers the average and drives still more good cars out",
+    "Sellers of peaches raise their prices until no one can afford them",
+    "Lemons break down and are scrapped, leaving only peaches"
+  ]}
+  correctIndex={1}
+  explanation="This is adverse selection. Because buyers can't verify quality, they pay only the average value of cars listed. That price is below what a peach is worth, so peach owners pull out. The remaining mix is more lemon-heavy, the average falls further, and even more good cars exit — a downward quality spiral that can unravel the market. Warranties, reputation, and inspections are how real markets fight back."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Asymmetric information** — one side of a trade knows more than the other — is a market failure: good trades fail to happen.
+- **Adverse selection** is hidden information *before* the deal. In the **market for lemons**, buyers pay only the average value, good cars exit, and quality spirals down.
+- **Moral hazard** is hidden *action after* the deal — being protected (insurance, a bailout) makes people behave more carelessly.
+- Markets fight back with **signalling** (warranties, diplomas), **screening** (deductibles), **reputation/reviews**, and **regulation** (disclosure, mandatory insurance).
+
+</Step>
+
+</Lesson>

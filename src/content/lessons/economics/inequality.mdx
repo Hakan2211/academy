@@ -1,0 +1,78 @@
+---
+title: Income Inequality
+subject: economics
+contentSlug: economics/inequality
+order: 4
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Income is unevenly shared" kind="explain">
+
+Markets reward each factor according to what it produces — and because people own very different amounts of human capital, land and wealth, the incomes that result are very **unequal**. Some of that gap reflects skill, effort and risk-taking; some reflects luck, inheritance and unequal opportunity. Either way, the spread of incomes is one of the most studied facts in economics.
+
+But "the country is unequal" is too vague to act on. To compare one economy to another, or to track inequality over time, we need to **measure** it. The trick is to ask a simple question: *how is total income shared out across the population?*
+
+</Step>
+
+<Step title="The Lorenz curve" kind="explain">
+
+Line everyone up from poorest to richest. Now walk along the line and keep a running total: what share of *all income* has the poorest 20% earned? The poorest 40%? And so on up to 100%.
+
+Plot that — the cumulative **share of people** on the horizontal axis against the cumulative **share of income** on the vertical — and you get the **Lorenz curve**.
+
+If income were shared perfectly equally, the bottom 20% of people would earn exactly 20% of income, the bottom 40% would earn 40%, and so on. That's the straight 45° **line of perfect equality**. Real distributions always sag *below* it: the poorest fifth earns far less than a fifth of income. **The more the curve bows away from the diagonal, the more unequal the society.**
+
+</Step>
+
+<Step title="Bow the curve, read the Gini" kind="interactive">
+
+Drag the income share held by each fifth of the population — or load a preset. Watch the Lorenz curve bow away from the line of perfect equality as the rich quintile's share grows.
+
+The number in the corner is the **Gini coefficient**, the single most-used summary of inequality.
+
+<LorenzCurve />
+
+Start at **Equal** and the curve hugs the diagonal — Gini near 0. Slide income toward the top fifth and the curve sags lower, the shaded gap widens, and the Gini climbs toward 1. That gap between the curve and the diagonal *is* what the Gini measures.
+
+</Step>
+
+<Step title="What the Gini means" kind="explain">
+
+The **Gini coefficient** turns the whole Lorenz curve into one number between 0 and 1. It is essentially the area of the gap between the line of perfect equality and the Lorenz curve, scaled so that:
+
+<Formula tex="G = 0 \;\text{(perfect equality)} \quad\to\quad G = 1 \;\text{(one person has everything)}" block />
+
+A Gini around **0.25–0.30** describes a fairly equal society; **0.40 and up** signals high inequality; values above **0.55** are extreme. As a rough guide, most rich countries sit somewhere between 0.25 and 0.45.
+
+The Gini is handy but blunt. Two very different distributions can share the same Gini, and it says nothing about *poverty* itself. **Poverty** asks a different question: not how income is shared, but how many people fall below some basic standard of living — the **poverty line**. A country can lower its Gini (less inequality) while still leaving many in poverty, or grow richer overall while inequality rises. Inequality and poverty are related, but they are not the same thing.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Country A's Lorenz curve hugs the 45° line of perfect equality. Country B's Lorenz curve sags far below it. Which statement is correct?"
+  options={[
+    "Country B is more equal and has a lower Gini coefficient",
+    "Country A is more equal and has a lower Gini coefficient",
+    "Both countries have a Gini of 1",
+    "The Lorenz curve tells us nothing about inequality"
+  ]}
+  correctIndex={1}
+  explanation="The closer a Lorenz curve hugs the 45° line, the more equally income is shared, and the smaller the gap between the curve and the diagonal — so the lower the Gini. Country A (close to the line) is more equal with a lower Gini; Country B (sagging far below) is more unequal with a higher Gini."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Markets pay factors by what they produce, so unequal ownership of skills, land and wealth produces **unequal incomes**.
+- The **Lorenz curve** plots the cumulative share of people (poorest → richest) against their cumulative share of income; the **45° line** is perfect equality, and the more the curve bows below it, the more unequal the society.
+- The **Gini coefficient** summarizes the curve as one number, **0** (perfect equality) to **1** (one person has it all); roughly, 0.25–0.30 is fairly equal and 0.40+ is high inequality.
+- **Inequality** (how income is shared) is not the same as **poverty** (how many fall below a basic standard) — a country can change one without the other.
+
+</Step>
+
+</Lesson>

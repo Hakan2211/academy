@@ -1,0 +1,86 @@
+---
+title: The Power of Compounding
+subject: economics
+contentSlug: economics/the-power-of-compounding
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="A rounding error that reshapes nations" kind="explain">
+
+Suppose two countries start at exactly the same income. One grows at 2% a year, the other at 3%. That single percentage point sounds trivial — the kind of difference you'd round away. Hold that thought.
+
+Now let both economies run for a few generations. The "trivial" gap doesn't stay trivial. It widens, then yawns open, until the two countries live in visibly different worlds — one of comfortable abundance, the other still struggling. The cause isn't a war, a resource, or luck. It's **compounding**: the quiet, relentless multiplication of small advantages over long stretches of time. Albert Einstein supposedly called compound interest the most powerful force in the universe; whether or not he did, it is certainly the most powerful force in economic growth.
+
+</Step>
+
+<Step title="Adding versus multiplying" kind="explain">
+
+The key to compounding is that growth **multiplies** rather than **adds**. If income simply rose by a fixed dollar amount each year, two countries with a small gap would stay roughly parallel forever. But growth is a *percentage* of an ever-larger base.
+
+Year one's 3% is applied to the starting income. Year two's 3% is applied to *that already-larger* income — so the absolute gain is bigger. Year three's gain is bigger still. The faster-growing country isn't just ahead; its lead is *accelerating*, because it's compounding on a bigger and bigger number. A constant growth *rate* produces an ever-increasing growth *amount*.
+
+<Formula tex="\text{income after } t \text{ years} = \text{income}_0 \times (1 + g)^{t}" block />
+
+That exponent $t$ is where the magic lives. Small differences in the base $(1+g)$ get raised to a large power — and large powers turn small differences into enormous ones.
+
+</Step>
+
+<Step title="See small gaps explode" kind="interactive">
+
+Set both countries to nearly the same growth rate, then separate them by just half a point. Drag the years out and watch the gap compound from a sliver into a chasm.
+
+<GrowthCompounding />
+
+The two paths leave the starting line almost together. By the end, one country may be several times richer than the other — built entirely from a gap so small it looked like a rounding error.
+
+</Step>
+
+<Step title="The rule of 70 makes it concrete" kind="explain">
+
+The **rule of 70** turns this abstraction into something you can feel. Divide 70 by the growth rate to get the doubling time:
+
+<Formula tex="\text{years to double} \approx \frac{70}{\text{growth rate (\%)}}" block />
+
+- At **1%**, income doubles every 70 years — roughly once in a long lifetime.
+- At **2%**, every 35 years — about once a generation.
+- At **3.5%**, every 20 years — *three to four times* in a lifetime.
+- At **7%**, every 10 years — the pace that took South Korea from poorer than Ghana to a wealthy nation in a few decades.
+
+Real history bears this out. Over the past century the United States grew at roughly 2% per year in real per-capita terms — slow-looking, yet enough to multiply living standards manyfold. Countries that managed to grow a couple of points faster, for a few decades, leapt from poverty to prosperity. Those stuck a couple of points slower fell ever further behind.
+
+<Callout type="warn" title="The flip side: stagnation compounds too">
+Compounding is not always your friend. A country growing 1% slower than its neighbours isn't slightly poorer — it's *relentlessly* falling behind, the gap compounding against it every single year. In growth, standing still relative to others means sliding backward.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Country A grows at 2% a year and Country B at 4%, both starting from the same income. Using the rule of 70, how do their living standards compare over the long run?"
+  options={[
+    "B is always exactly twice as rich as A, since 4% is double 2%",
+    "B's income doubles every ~18 years while A's doubles every ~35 — so B pulls ever further ahead, compounding the gap",
+    "They stay roughly equal, since a 2-point difference is small",
+    "A eventually catches up because growth slows down on its own"
+  ]}
+  correctIndex={1}
+  explanation="By the rule of 70, B doubles every 70/4 ≈ 18 years and A every 70/2 = 35 years. B therefore doubles about twice as often, and because growth multiplies on an ever-larger base, the gap between them keeps widening rather than staying fixed. A small, steady difference in growth rates compounds into a vast long-run difference in wealth."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Growth **multiplies** rather than adds, so a faster-growing economy's lead keeps *accelerating*.
+- Income after $t$ years is $\text{income}_0 \times (1+g)^t$ — the exponent turns small rate gaps into huge wealth gaps.
+- The **rule of 70** (doubling time ≈ 70 ÷ rate) makes this concrete: 1% doubles every 70 years, 7% every 10.
+- A difference of just one or two percentage points, sustained for decades, separates rich nations from poor ones.
+- Compounding cuts both ways — a country growing slightly slower than its peers falls relentlessly behind.
+
+</Step>
+
+</Lesson>

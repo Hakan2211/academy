@@ -1,0 +1,85 @@
+---
+title: Price Elasticity of Demand
+subject: economics
+contentSlug: economics/price-elasticity-of-demand
+order: 1
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="How much does quantity care about price?" kind="explain">
+
+The law of demand says that when price rises, quantity demanded falls. True — but it leaves out the most useful question of all: *by how much?*
+
+Raise the price of petrol by 10% and people grumble but keep driving — quantity barely budges. Raise the price of one brand of cereal by 10% and shoppers calmly reach for the box next to it — quantity collapses. Same 10% price hike, wildly different reactions.
+
+**Price elasticity of demand** measures exactly this responsiveness: how strongly quantity demanded reacts to a change in price. It is the difference between a price hike that prints money and one that empties your shelves.
+
+</Step>
+
+<Step title="The elasticity formula" kind="explain">
+
+Elasticity compares two *percentage* changes — the percentage change in quantity against the percentage change in price:
+
+<Formula tex="E_d = \frac{\%\,\Delta Q}{\%\,\Delta P}" block />
+
+We use percentages, not raw amounts, so the measure does not depend on whether we count in litres or gallons, dollars or yen. Because price and quantity always move in opposite directions, the raw number is negative, so economists usually quote the **magnitude** (the size, ignoring the minus sign).
+
+That magnitude sorts demand into three buckets:
+
+- **Elastic** (|E| > 1): quantity reacts *more* than price — buyers are sensitive.
+- **Inelastic** (|E| < 1): quantity reacts *less* than price — buyers are stuck.
+- **Unit elastic** (|E| = 1): quantity and price move in equal proportion.
+
+<Callout type="tip" title="Use the midpoint method">
+Measuring from a low price to a high one gives a different percentage than measuring back the other way. To get one consistent number, economists divide each change by the *average* (midpoint) of the two values. The lab below does this for you.
+</Callout>
+
+</Step>
+
+<Step title="Slide along a demand curve" kind="interactive">
+
+Pick two price points on the demand line and watch the midpoint elasticity between them. Then try sliding the same-sized span to a different part of the curve.
+
+<ElasticityLab />
+
+Here is the surprise most people miss: the line is perfectly straight — its **slope never changes** — yet its **elasticity does**. High up (where price is high and quantity low) demand is elastic; low down it turns inelastic; it passes through unit elasticity at the midpoint. Slope and elasticity are not the same thing.
+
+</Step>
+
+<Step title="Why slope is not elasticity" kind="explain">
+
+It feels paradoxical, so it is worth pinning down. Slope is about *raw* amounts — how many units of quantity per dollar. Elasticity is about *percentages*.
+
+Near the top of the curve, quantity is tiny, so even a small absolute change in quantity is a huge *percentage* change — demand looks elastic. Near the bottom, quantity is large, so the same absolute change is a tiny percentage, while price is small (so a price change is a large percentage) — demand looks inelastic. The slope stayed put; the percentages flipped. That is why you can never read elasticity off steepness alone.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A coffee shop raises its price by 20% and finds that the quantity it sells falls by 5%. What is the price elasticity of demand (in magnitude), and what does it mean?"
+  options={[
+    "4.0 — demand is elastic, so buyers are very price-sensitive",
+    "0.25 — demand is inelastic, so quantity barely responds to the price change",
+    "1.0 — demand is unit elastic",
+    "It cannot be calculated without knowing the dollar prices"
+  ]}
+  correctIndex={1}
+  explanation="Elasticity is the percentage change in quantity divided by the percentage change in price: 5% / 20% = 0.25. Since this is less than 1, demand is inelastic — quantity responded only weakly to a fairly large price change, which is typical of a habit good with loyal customers. The dollar prices are not needed because elasticity works entirely in percentages."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Price elasticity of demand** measures how strongly quantity demanded responds to a price change.
+- The formula is the **percentage change in quantity divided by the percentage change in price**.
+- |E| > 1 = **elastic** (sensitive); |E| < 1 = **inelastic** (stuck); |E| = 1 = **unit elastic**.
+- Use the **midpoint method** (divide by the average) for one consistent number.
+- **Slope is not elasticity**: a straight demand line is elastic up top, inelastic at the bottom, unit elastic in the middle.
+
+</Step>
+
+</Lesson>

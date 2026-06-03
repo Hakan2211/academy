@@ -1,0 +1,91 @@
+---
+title: How Banks Create Money
+subject: economics
+contentSlug: economics/fractional-reserve-banking
+order: 3
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="The money in the vault is mostly gone" kind="explain">
+
+Here is something that surprises almost everyone: when you deposit $1,000 in a bank, the bank does *not* lock your $1,000 in a vault. It keeps only a small slice — its **reserve** — and lends the rest out to someone else.
+
+This is **fractional-reserve banking**, and almost every bank on Earth runs this way. The bank keeps a *fraction* of deposits on hand to cover everyday withdrawals, and puts the rest to work as loans. The slice it keeps is set by the **reserve ratio**. If the reserve ratio is 10%, a bank holds $100 of every $1,000 deposited and lends out the other $900.
+
+Why does this work? Because on any normal day, only a small fraction of depositors come to withdraw cash at once. The bank can safely lend most of the money, confident there will be enough on hand for the few who do show up. (The danger, of course, is a **bank run** — when *everyone* tries to withdraw at once. That's exactly the panic the central bank exists to stop, as the next lesson shows.)
+
+</Step>
+
+<Step title="One deposit, many deposits" kind="explain">
+
+Now follow the $900 the first bank lent out. The borrower spends it, and whoever receives it deposits *that* into a second bank. The second bank keeps 10% ($90) and lends out $810. *That* gets spent, redeposited, and a third bank lends out $729. And so on.
+
+Each round is smaller than the last, because every bank skims off its reserve before lending. But every round adds *brand-new deposits* to the banking system that didn't exist before. Add up the whole chain and the original $1,000 has supported many times that in total deposits and loans.
+
+This is the startling truth: **commercial banks create money.** Not by printing it — only the central bank does that — but by lending. Every time a bank makes a loan, it credits the borrower's account with new spendable balances, expanding the money supply (the M1 and M2 you met in lesson 1).
+
+</Step>
+
+<Step title="Ripple the deposit" kind="interactive">
+
+Slide the reserve ratio and watch one $1,000 deposit cascade through the banking system. Each bar splits into the reserve held back and the part lent out — the new money.
+
+<FractionalReserve />
+
+A *lower* reserve ratio means each bank lends out more, so the chain runs longer and the total swells. A *higher* ratio chokes lending off sooner. The reserve ratio is the dial that controls how much money the banking system can conjure from a given deposit.
+
+</Step>
+
+<Step title="The money multiplier" kind="explain">
+
+The total money created from a single deposit follows a beautifully simple rule. The successive loans form a shrinking series — $1,000, then $900, then $810, ... — and that series sums to the deposit divided by the reserve ratio:
+
+<Formula tex="\text{money multiplier} = \frac{1}{\text{reserve ratio}}" block />
+
+With a 10% reserve ratio, the multiplier is 1 ÷ 0.10 = **10**. So a $1,000 deposit can ultimately support up to $10,000 in total money. With a 20% ratio the multiplier is only 5; with a 5% ratio it leaps to 20.
+
+<Formula tex="\text{total money} = \text{initial deposit} \times \frac{1}{\text{reserve ratio}}" block />
+
+<Callout type="warn" title="The textbook maximum">
+The multiplier shows the *maximum* money the system could create — it assumes every dollar lent is fully redeposited and every bank lends out all it can. In reality people hold some cash, and banks sometimes hold extra reserves, so the real-world multiplier is smaller. The lesson still holds: a small reserve ratio lets a little base money support a lot of bank money.
+</Callout>
+
+</Step>
+
+<Step title="Why this gives the central bank its power" kind="explain">
+
+Step back and see why this matters so much. If the banking system can multiply money, then whoever controls the *inputs* to that multiplier controls the whole money supply.
+
+Change the **reserve ratio** and you change the multiplier directly. Change the amount of **base money** banks have to lend against, and the multiplier scales it up. These are precisely the levers a central bank reaches for to steer how much money flows through the economy — the subject of the next lesson. Fractional-reserve banking is the machine; the central bank's hand is on the controls.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A banking system has a reserve ratio of 25%. Using the money multiplier, what is the maximum total money a fresh $1,000 deposit can ultimately support?"
+  options={[
+    "$1,250 — the deposit plus 25%",
+    "$4,000 — the deposit times 1 divided by 0.25",
+    "$2,500 — the deposit times 2.5",
+    "$25,000 — the deposit times 25"
+  ]}
+  correctIndex={1}
+  explanation="The money multiplier is 1 divided by the reserve ratio: 1 / 0.25 = 4. So a $1,000 deposit can support up to $1,000 times 4 = $4,000 in total money as it ripples through successive banks. A higher reserve ratio means a smaller multiplier and less money creation; a lower ratio means a bigger multiplier and more."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Fractional-reserve banking**: banks keep only a fraction of deposits (the **reserve ratio**) and lend the rest.
+- Each loan is spent and redeposited, so one deposit ripples into many — **banks create money** by lending, not printing.
+- The **money multiplier = 1 ÷ reserve ratio**; total money = initial deposit × the multiplier.
+- A *lower* reserve ratio → a *bigger* multiplier → more money created; a higher ratio chokes it off.
+- The real-world multiplier is smaller (people hold cash, banks hold extra reserves), but the principle stands — and it's what gives the **central bank** its grip on the money supply.
+
+</Step>
+
+</Lesson>

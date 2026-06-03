@@ -1,0 +1,82 @@
+---
+title: Externalities
+subject: economics
+contentSlug: economics/externalities
+order: 1
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="When your choice spills onto others" kind="explain">
+
+So far, markets have looked almost magical: buyers and sellers pursue their own interests, prices adjust, and — as if guided by an invisible hand — the outcome serves everyone. But that happy result quietly assumes one thing: that the only people affected by a trade are the buyer and the seller.
+
+Often that assumption breaks. A factory makes steel and sells it; the buyer and the factory both gain. But the smoke drifting over the town harms people who never set foot in the market. That spilled-over harm is an **externality** — a cost (or benefit) of a transaction that lands on a third party, outside the price.
+
+When externalities are present, the market still clears — but it clears at the **wrong** quantity. This is our first **market failure**: a case where free markets, left alone, do not produce the best outcome for society.
+
+</Step>
+
+<Step title="Private cost versus social cost" kind="explain">
+
+The key is to separate two things the market usually treats as one.
+
+- **Private cost** is what the producer personally pays — wages, materials, energy. This is what the supply curve reflects.
+- **Social cost** is the private cost *plus* the spillover — the harm to bystanders (the smog, the polluted river). This is the cost society as a whole bears.
+
+With a **negative externality**, social cost sits *above* private cost. Because firms decide based only on the costs they personally face, they happily produce every unit where their price covers their **private** cost — sailing right past the point where the unit's **social** cost exceeds its value. The result: the market **over-produces**.
+
+The mirror image is a **positive externality**, where a transaction also helps third parties. A vaccination protects you *and* everyone you might have infected; education makes you more productive *and* a better-informed neighbour. Here the **social benefit** exceeds the private benefit, and the market **under-produces** — people buy only enough to satisfy *their own* gain, ignoring the bonus to everyone else.
+
+</Step>
+
+<Step title="See the gap" kind="interactive">
+
+Below, the blue line is what buyers value each unit at, and the orange line is the firm's private cost. The free market settles where those two cross. The dashed line adds the spillover — the true cost (or benefit) to society. Slide the size of the spillover and toggle between a negative and a positive externality.
+
+<ExternalityGraph />
+
+Notice the two marked quantities pull apart. With pollution, the market quantity overshoots the socially optimal one; with vaccination, it falls short. The grey triangle is the **welfare loss** — the value society throws away by producing the wrong amount. Shrink the spillover to zero and the gap closes: when there is no third-party effect, the free market is efficient after all.
+
+</Step>
+
+<Step title="Why the gap is real money" kind="explain">
+
+It is tempting to dismiss the welfare loss as a textbook abstraction, but it is genuine. Every unit the steel mill makes between the social optimum and the market quantity is a unit whose true cost — including the damage to lungs and rivers downstream — is *greater* than what anyone gains from it. Society would be richer if those units were never made.
+
+<Callout type="info" title="Externalities are everywhere">
+Traffic congestion (your car slows everyone else's), antibiotic overuse (each prescription erodes everyone's future protection), a neighbour's beautiful garden (a gift to the whole street), and carbon emissions (the textbook case, on a planetary scale) are all externalities. The market price simply never asked the bystanders.
+</Callout>
+
+The diagnosis points straight at the cure. If the problem is that decision-makers ignore costs (or benefits) that fall on others, then the fix is to make them *feel* those costs and benefits — to fold the spillover back into the price. That is exactly what the next lesson does.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A coal plant sells electricity, but its emissions harm people far from the market. Compared with the socially optimal quantity, what does the free market do, and why?"
+  options={[
+    "It produces too little, because pollution scares away buyers",
+    "It produces the right amount, because the price already reflects every cost",
+    "It produces too much, because the firm ignores the external cost it imposes on others",
+    "It produces too much, because buyers value electricity more than it is worth"
+  ]}
+  correctIndex={2}
+  explanation="With a negative externality, social cost sits above the firm's private cost. The firm sets output based only on the costs it personally pays, so it keeps producing past the point where a unit's true social cost exceeds its value. The market over-produces, and the difference between market and optimal quantity is the welfare loss."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- An **externality** is a cost or benefit of a transaction that falls on a **third party**, outside the price — the first market failure.
+- **Negative externality** (pollution): social cost > private cost, so the market **over-produces**.
+- **Positive externality** (vaccination, education): social benefit > private benefit, so the market **under-produces**.
+- The gap between the market quantity and the **socially optimal** quantity is a real **welfare loss** — value society wastes.
+- The cure is to fold the spillover back into the price, which the next lesson tackles.
+
+</Step>
+
+</Lesson>

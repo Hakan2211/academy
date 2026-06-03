@@ -1,0 +1,85 @@
+---
+title: Validity & Soundness
+subject: philosophy
+contentSlug: philosophy/validity-and-soundness
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Form before facts" kind="explain">
+
+Here is one of the most important ideas in all of logic: **validity is entirely about form, not facts**.
+
+A deductive argument is **valid** if and only if it is *impossible* for all the premises to be true while the conclusion is false. That's the whole definition. It says nothing at all about whether the premises actually *are* true in the real world.
+
+Consider this argument:
+
+> Premise 1: All cats are made of chocolate.
+> Premise 2: Whiskers is a cat.
+> Conclusion: Therefore, Whiskers is made of chocolate.
+
+Both premises are false. The conclusion is false. And yet — the argument is **valid**. Why? Because *if* those premises were true, the conclusion *would have to* follow. The logical form is flawless, even though the content is absurd.
+
+This is counterintuitive but crucial. Validity is a **conditional guarantee**: *if* the premises hold, *then* the conclusion holds. Whether the premises actually do hold is a separate question.
+
+</Step>
+
+<Step title="Soundness: the full package" kind="explain">
+
+Validity alone doesn't tell you whether to believe a conclusion. A valid argument with false premises can still produce a false conclusion. To get from logic to truth, you need more.
+
+A **sound** argument is one that is:
+
+1. **Valid** — the form guarantees the conclusion given the premises, AND
+2. **All premises are true** — the premises accurately describe reality.
+
+A sound argument gives you everything: the conclusion *must* follow from the premises (validity), and the premises are actually true, so the conclusion is true too.
+
+<Callout type="info" title="Only sound arguments deliver truth">
+Validity is a property of the *inference*. Truth is a property of individual *statements*. Soundness is what happens when a valid inference is loaded with true premises — then and only then is the conclusion guaranteed to be true.
+</Callout>
+
+The four possible combinations — valid/invalid × true/false premises — form a 2×2 that every logician internalises.
+
+</Step>
+
+<Step title="Explore the 2×2" kind="interactive">
+
+Each quadrant shows a real example. Notice especially the top-right cell: a valid argument with a false premise that produces a false conclusion. The logical *form* is fine — the argument is "correct" as an inference — but the false premise poisons the output.
+
+<ValiditySoundness />
+
+Only the top-left cell lights up as SOUND. That's the only combination where logic fully delivers truth.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="An argument is valid but has one false premise. What can we say about its conclusion?"
+  options={[
+    "The conclusion must be true, because the argument is valid",
+    "The conclusion must be false, because a premise is false",
+    "The conclusion could be either true or false — validity alone doesn't tell us",
+    "The argument is automatically unsound and therefore invalid"
+  ]}
+  correctIndex={2}
+  explanation="Validity says: IF premises are true, THEN conclusion is true. With a false premise, that 'if' is not met — so we lose the guarantee. The conclusion might still happen to be true (some other reason could make it true), but it might also be false. Validity only guarantees the conclusion when ALL premises are true. Unsoundness follows from the false premise, but that doesn't make the argument invalid — those are separate properties."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Valid** = if all premises were true, the conclusion *must* follow — about *form*, not facts.
+- A valid argument can have false premises and a false conclusion.
+- **Sound** = valid *and* all premises actually true — the full package.
+- Only a sound argument guarantees a true conclusion.
+- The 2×2: valid/invalid × true/false premises produces four combinations; only valid + true = sound.
+- Evaluating an argument always requires two checks: Is the form valid? Are the premises true?
+
+</Step>
+
+</Lesson>

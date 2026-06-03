@@ -1,0 +1,91 @@
+---
+title: The Prisoner's Dilemma
+subject: economics
+contentSlug: economics/the-prisoners-dilemma
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="A deal you can't refuse" kind="explain">
+
+Two suspects are arrested for a serious crime, but the police only have enough evidence to convict them of a minor one. So the prosecutor separates them and offers each the same deal: *confess and testify against your partner, and you'll go easy. Stay silent, and you take your chances.*
+
+Here's the catch. If **both** stay silent, the police can only pin the minor charge on them — a light sentence for each. If **both** confess, they each get a medium sentence. But if **one** confesses while the other stays silent, the confessor walks free while the loyal partner takes the full fall.
+
+Neither suspect can talk to the other. Each must decide alone, knowing the other faces the identical choice. What should you do? This is the **Prisoner's Dilemma** — the single most famous game in all of game theory, and a tiny story that explains an enormous amount about why cooperation is so hard.
+
+</Step>
+
+<Step title="Play it yourself" kind="interactive">
+
+You're one of the suspects. Choose to **cooperate** (stay silent, protecting your partner) or **defect** (confess, betraying them). Your partner — a coldly rational player — is deciding at the same moment.
+
+<PrisonersDilemma />
+
+You may have noticed something uncomfortable: it doesn't matter what your partner does. If they stay silent, you do better by confessing. If they confess, you *still* do better by confessing. Confessing is a **dominant strategy** — and since your partner reasons exactly the same way, you both confess and both land in the medium-sentence corner. The trap has sprung.
+
+</Step>
+
+<Step title="The trap, spelled out" kind="explain">
+
+Trace the logic that makes mutual defection inescapable for two rational players:
+
+- **If my partner cooperates,** I get a *better* payoff by defecting (I walk free instead of taking a light sentence).
+- **If my partner defects,** I *still* do better by defecting (a medium sentence instead of the worst-case fall).
+
+Defecting wins in *both* cases, so a rational player defects. But the same is true for the partner. So both defect — even though **both would have been better off cooperating**. That's the heartbreak of the dilemma: the pursuit of individual self-interest leads everyone to an outcome that's worse for everyone.
+
+The mutual-defection corner is stable in a deep sense: once you're there, neither player can improve by switching alone. We'll give that property its proper name — a **Nash equilibrium** — in the next lesson.
+
+</Step>
+
+<Step title="Individually rational, collectively foolish" kind="explain">
+
+The Prisoner's Dilemma exposes a gap that runs through all of economics: what's best for each person separately can be terrible for the group together. There's no villain here, no mistake, no irrationality — just two people each doing the smartest thing for themselves, arriving together at a bad place.
+
+This is the same tension behind **market failure**. Each fisher hauls in one more catch (rational for them) and the fishery collapses (disaster for all). Each country keeps its tariffs (rational defence) and global trade shrinks (worse for everyone). Each firm in a cartel quietly undercuts (rational greed) and the price war begins. The dilemma names the structure shared by all of them.
+
+</Step>
+
+<Step title="Dilemmas in the wild" kind="explain">
+
+Once you know the shape, you see Prisoner's Dilemmas everywhere:
+
+- **Arms races.** Two rivals each build more weapons (rational, in case the other does) and both end up poorer and no safer.
+- **Advertising.** Two cola giants each spend billions on ads that mostly cancel out — but neither dares stop first.
+- **Climate.** Every nation gains by polluting freely while others cut back; if all reason that way, the planet pays.
+- **Doping in sport.** Each athlete is tempted to cheat to keep up; if all do, no one gains an edge and all bear the harm.
+
+The good news, which the next two lessons build toward: dilemmas aren't always destiny. Repetition, reputation, communication, and clever rules can rescue cooperation. But you have to understand the trap before you can escape it.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In the Prisoner's Dilemma, why do two rational players end up both defecting even though both would prefer mutual cooperation?"
+  options={[
+    "Because cooperating is impossible to choose",
+    "Because defecting gives a higher payoff no matter what the other player does, so it is a dominant strategy for both",
+    "Because the players cannot communicate and so choose at random",
+    "Because the payoffs for cooperation are secretly the lowest of all"
+  ]}
+  correctIndex={1}
+  explanation="Defecting yields a higher payoff whether the other cooperates or defects, making it each player's dominant strategy. Since both reason this way, both defect and land in the mutually worse outcome, even though mutual cooperation would have been better for both. The tragedy is that individually rational choices produce a collectively poor result."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **Prisoner's Dilemma** pits two players who'd both gain from cooperating but are each tempted to defect.
+- **Defecting is a dominant strategy** — it pays more no matter what the other does — so both rational players defect.
+- The result: **mutual defection**, which is worse for both than mutual cooperation would have been.
+- It captures the central tension of economics: **individually rational choices can be collectively self-defeating.**
+- The same structure underlies arms races, advertising wars, climate inaction, cartels, and the tragedy of the commons.
+
+</Step>
+
+</Lesson>

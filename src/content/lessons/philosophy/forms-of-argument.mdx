@@ -1,0 +1,98 @@
+---
+title: Classic Argument Forms
+subject: philosophy
+contentSlug: philosophy/forms-of-argument
+order: 4
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="The conditional and its four children" kind="explain">
+
+Much of everyday reasoning pivots on a **conditional statement**: "If P, then Q." Conditionals encode causal links, rules, and dependencies — "if it rains, the ground gets wet," "if you press the button, the alarm sounds," "if all humans are mortal and Socrates is human, Socrates is mortal."
+
+A conditional has two parts:
+- **P** — the *antecedent* (the "if" part)
+- **Q** — the *consequent* (the "then" part)
+
+The conditional alone doesn't tell you whether P or Q are true. It only says: *whenever P, you get Q.* To draw a conclusion, you need a second premise. And crucially, **which second premise you add determines which of four argument forms you get** — two valid, two fallacious.
+
+</Step>
+
+<Step title="The two valid forms" kind="explain">
+
+**Modus Ponens** ("the way that affirms by affirming"):
+
+<Formula tex="P \rightarrow Q \quad P \quad \therefore \; Q" block />
+
+You have the conditional. You confirm the antecedent. You conclude the consequent. If it rains, the ground gets wet. It rained. Therefore the ground is wet. Airtight.
+
+**Modus Tollens** ("the way that denies by denying"):
+
+<Formula tex="P \rightarrow Q \quad \neg Q \quad \therefore \; \neg P" block />
+
+You have the conditional. You discover the consequent is false. You conclude the antecedent must also be false. If it rains, the ground gets wet. The ground is *not* wet. Therefore it did not rain. This runs the conditional *backwards* — a contrapositive move, and equally valid.
+
+<Callout type="tip" title="Mnemonic">
+Modus **P**onens affirms **P**. Modus **T**ollens **t**olls (negates) — the consequent, then the antecedent.
+</Callout>
+
+</Step>
+
+<Step title="The two formal fallacies" kind="explain">
+
+**Affirming the Consequent** (invalid):
+
+<Formula tex="P \rightarrow Q \quad Q \quad \therefore \; P \;\; \text{(fallacy!)}" block />
+
+The ground is wet, therefore it rained. But the ground could be wet because of a sprinkler, dew, or a spilled bucket. Knowing Q doesn't pin down P as the cause. The *form* is broken regardless of the content.
+
+**Denying the Antecedent** (invalid):
+
+<Formula tex="P \rightarrow Q \quad \neg P \quad \therefore \; \neg Q \;\; \text{(fallacy!)}" block />
+
+It didn't rain, therefore the ground isn't wet. But again — the ground could be wet from other sources. The conditional says rain *suffices* for wet ground; it doesn't say rain is the *only* way to get wet ground.
+
+<Callout type="warn" title="These fallacies feel valid — that's what makes them dangerous">
+Both fallacies appear in real debates constantly. Politicians, advertisers, and even scientists sometimes argue: "if our policy works, crime falls; crime fell; therefore our policy worked." That's affirming the consequent. Learn to spot it.
+</Callout>
+
+</Step>
+
+<Step title="The Syllogism Machine" kind="interactive">
+
+Pick a conditional and a second premise, and watch the machine identify the form, display it abstractly, and give a crisp verdict. Try all four second-premise options for the same conditional — you'll see the two valid forms and two fallacies side by side.
+
+<SyllogismMachine />
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="'If a student studies every day, they will pass. This student did not study every day. Therefore they will not pass.' Which argument form is this, and is it valid?"
+  options={[
+    "Modus Ponens — valid",
+    "Modus Tollens — valid",
+    "Affirming the Consequent — invalid (fallacy)",
+    "Denying the Antecedent — invalid (fallacy)"
+  ]}
+  correctIndex={3}
+  explanation="The second premise denies the antecedent (¬P: the student did NOT study every day), and the conclusion denies the consequent (¬Q: they will not pass). That is Denying the Antecedent — a formal fallacy. The student might still pass through natural talent, tutoring, or luck. The conditional only said that studying guarantees passing; it said nothing about what happens when you don't study."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **conditional** (P → Q) pairs an antecedent P with a consequent Q.
+- **Modus Ponens**: P → Q, P ∴ Q — **valid**. Affirm the antecedent, get the consequent.
+- **Modus Tollens**: P → Q, ¬Q ∴ ¬P — **valid**. Deny the consequent, deny the antecedent.
+- **Affirming the Consequent**: P → Q, Q ∴ P — **fallacy**. Q can have many causes.
+- **Denying the Antecedent**: P → Q, ¬P ∴ ¬Q — **fallacy**. Other paths to Q may exist.
+- Both fallacies *feel* valid because they resemble valid forms — which makes them the most dangerous reasoning errors in practice.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,120 @@
+---
+title: Energy Balance & the Food Label
+subject: health
+contentSlug: health/energy-balance-and-labels
+order: 5
+estimatedMinutes: 12
+summary: How energy surplus and deficit compound over weeks, and how to read a nutrition label without being misled by serving sizes, %DV, and added sugar.
+level: intermediate
+---
+
+<Lesson>
+
+<Step title="Energy balance is cumulative, not daily" kind="explain">
+
+Body weight change is not a daily event — it's the **accumulated result** of energy balance over time. The body doesn't "reset" at midnight. Every day of surplus or deficit adds to (or subtracts from) a running total.
+
+The key number: roughly **7,700 kcal of surplus ≈ 1 kg of body-fat gained** (and vice versa for deficit). This is because:
+- 1 kg of human adipose tissue stores about 7,000–8,000 kcal of chemical energy.
+- The "7,700" figure accounts for the mix of fat plus small amounts of protein and water in real tissue.
+
+What this means in practice:
+- A daily surplus of **100 kcal** (roughly half a banana) → ~500 kcal per week → ~1 kg gained over 15 weeks, without you noticing.
+- A daily deficit of **500 kcal** → ~3,500 kcal per week → ~0.5 kg lost per week (a common clinical target).
+- A single "bad day" of +1,500 kcal is not 0.2 kg of fat — it takes 7,700 kcal to accumulate that. One day barely registers.
+
+<Callout type="info">
+The 7,700 kcal/kg figure is a useful approximation. In reality, as body composition changes, so does metabolic rate — the body adapts, which is why weight loss often slows after the first few weeks.
+</Callout>
+
+</Step>
+
+<Step title="Energy balance simulator" kind="interactive">
+
+Set your daily energy in and out, then extend the timeline. Pay attention to how small daily gaps compound — and how dramatically different a 12-week outcome looks when the gap is 100 kcal vs 500 kcal per day.
+
+<CalorieBalance />
+
+Also notice: the model becomes less accurate at extremes. Real bodies adapt — BMR decreases during prolonged deficit, appetite increases, fidgeting decreases. Energy balance is the framework, not a perfect formula.
+
+</Step>
+
+<Step title="Macros and their calorie yields — a quick recap" kind="explain">
+
+Before reading labels, it helps to have the calorie-per-gram values memorised:
+
+- **Carbohydrate: 4 kcal/g** — sugars and starches.
+- **Protein: 4 kcal/g** — amino acids.
+- **Fat: 9 kcal/g** — the densest macro.
+- **Alcohol: 7 kcal/g** — not a nutrient, but calorie-bearing; often invisible on food labels.
+
+So a food with 10 g fat, 20 g carbs, and 5 g protein contains:
+<Formula tex="(10 \times 9) + (20 \times 4) + (5 \times 4) = 90 + 80 + 20 = 190 \text{ kcal}" block />
+
+You can usually verify a label's calorie count this way — small discrepancies are normal because fibre (a carb) yields less than 4 kcal/g in practice.
+
+</Step>
+
+<Step title="The serving size trap" kind="explain">
+
+The most important line on a nutrition label is not the calorie number — it's the **serving size**. Everything else on the label is per serving, not per package.
+
+Common traps:
+- A small bag of chips states 150 kcal per serving, but **the bag contains 4 servings**. Eating the bag = 600 kcal.
+- A bottle of juice may list "1 serving = 250 mL," but the bottle holds 500 mL. Read twice.
+- A granola bar that looks like one serving can be listed as **2 servings**.
+
+The fix is simple: find "servings per container" at the top of the label, decide how many you're actually eating, and multiply.
+
+**Added sugar** is a separate line below "Total Sugars." It distinguishes sugars added during processing (problematic in excess) from naturally occurring sugars in fruit or dairy (less of a concern). Guidelines suggest limiting added sugar to under 10% of daily calories — about **50 g** on a 2,000 kcal diet.
+
+**%DV (Percent Daily Value)** is based on a 2,000 kcal reference diet. It's a rough guide:
+- ≤ 5% DV = low in that nutrient.
+- ≥ 20% DV = high in that nutrient.
+
+Use it to flag nutrients you want to limit (sodium, saturated fat, added sugar) and nutrients you want to get enough of (fibre, vitamins, minerals).
+
+</Step>
+
+<Step title="Read the label yourself" kind="interactive">
+
+Pick a product, then try eating more than one serving — and see what happens when you finish the whole container. Toggle added sugar and %DV highlights to practise reading the two most commonly overlooked sections.
+
+<NutritionLabel />
+
+The sweetened cereal is particularly instructive: one bowl might feel modest at 120 kcal, but many people pour two to three servings without measuring.
+
+</Step>
+
+<Step title="Putting it together: what a good daily pattern looks like" kind="explain">
+
+No single food is "healthy" or "unhealthy" in isolation — dietary patterns over time are what matter. A few evidence-based principles that hold across many dietary traditions:
+
+- **Eat mostly whole, minimally processed foods** — they tend to be higher in fibre, micronutrients, and protein relative to their calorie content.
+- **Don't fear any one macro** — the healthiest diets in the world vary enormously in their fat and carb ratios. Ultra-processed foods are the consistent concern.
+- **Portion awareness without obsession** — you don't need to count every calorie, but knowing rough densities (fat is dense; vegetables are not) helps.
+- **Protein at each meal** helps with satiety and muscle maintenance.
+- **Fibre is almost universally under-consumed** — adding vegetables, legumes, and wholegrains addresses this.
+- **Liquids can be invisible calories** — juice, smoothies, alcohol, and flavoured drinks add up quickly without triggering satiety.
+
+Balance is cumulative, just like energy balance itself — a week of bad eating doesn't permanently derail health, and one salad doesn't guarantee it. The pattern over months and years is what leaves a mark.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A pack of biscuits shows 120 kcal per serving and states there are 5 servings per pack. You eat the whole pack. How many calories have you consumed, and approximately how many days of a 100 kcal/day surplus would this represent?"
+  options={[
+    "120 kcal total; 1.2 days of surplus",
+    "600 kcal total; 6 days of surplus",
+    "600 kcal total; roughly 0.08 kg of fat gained immediately",
+    "240 kcal total; because the stated serving size is always half the pack"
+  ]}
+  correctIndex={1}
+  explanation="120 kcal × 5 servings = 600 kcal total. At a 100 kcal/day surplus, that represents 6 days of cumulative surplus (600 ÷ 100 = 6). No, you don't immediately gain fat — it takes 7,700 kcal of surplus to accumulate ~1 kg of body fat. The 600 kcal contributes to a running total but doesn't have an instant effect. Option C is a common misconception — surplus calories accumulate into tissue over time, not instantly."
+/>
+
+</Step>
+
+</Lesson>

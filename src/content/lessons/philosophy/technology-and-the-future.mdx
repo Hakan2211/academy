@@ -1,0 +1,99 @@
+---
+title: Ethics of Technology
+subject: philosophy
+contentSlug: philosophy/technology-and-the-future
+order: 5
+estimatedMinutes: 12
+---
+
+<Lesson>
+
+<Step title="When tools become moral actors" kind="explain">
+
+Every technology changes the moral landscape. The printing press redistributed epistemic power; nuclear weapons created obligations of restraint without precedent; antibiotics produced new ethical questions about allocation and access. What distinguishes our current technological moment is **speed and scope**: the technologies coming into mass deployment — artificial intelligence, gene editing, ubiquitous surveillance — are not merely tools that extend human capacity. Some of them make autonomous decisions, reshape human biology, and enable surveillance at a scale that was literally impossible a generation ago.
+
+Applied ethics — the world we are exploring — is where philosophy meets these questions before the norms are settled. The arguments we have built across this island become urgent when the trolley problem is being coded into a car's firmware; when a genome is being edited to remove disease risk; when an algorithm decides who sees what news.
+
+This lesson maps the terrain: AI ethics, privacy and surveillance, bioethics, and self-driving cars. The frameworks — consequentialism, deontology, virtue ethics — are our instruments for navigating it.
+
+</Step>
+
+<Step title="AI ethics: bias, autonomy, and alignment" kind="explain">
+
+**Algorithmic bias** is the most immediately documented AI ethics problem. Machine-learning systems trained on historical data inherit the biases embedded in that data. A recidivism-prediction algorithm trained on past arrest records will reflect the racial disparities in policing; a hiring algorithm trained on past hiring decisions will reflect historical gender exclusion. The system is "neutral" only in the sense that it replicates the past.
+
+From a consequentialist view, biased algorithms cause measurable, quantifiable harm — they must be audited and corrected. From a deontological view, using biased systems treats individuals not as ends in themselves, but as statistical abstractions — denying their particularity and dignity.
+
+**Autonomous decision-making** raises a deeper question: when an AI system makes a consequential decision — credit, bail, medical diagnosis, targeted advertising — and its reasoning is opaque (the "black box" problem), who is morally responsible for the outcome? The programmer? The company? The regulator? Responsibility, traditionally, attaches to human agents with the capacity for moral reasoning. When the agent is an algorithm, responsibility seems to dissolve — which is itself a moral problem.
+
+**The alignment problem** is the most speculative but potentially most serious concern. As AI systems become more capable, the risk is not that they become malicious, but that they pursue proxy goals in ways that are not aligned with human values. Stuart Russell and others argue that the foundational challenge is building AI systems that genuinely represent and pursue human preferences — a problem that is technically unsolved and philosophically deep. Nick Bostrom's *Superintelligence* explored the extreme case: a superintelligent system with even a slightly misspecified objective could, pursuing that objective with superhuman competence, pose catastrophic risks.
+
+</Step>
+
+<Step title="Privacy, surveillance, and power" kind="explain">
+
+Modern surveillance infrastructure — CCTV cameras, smartphone tracking, social-media behavioural profiling, facial recognition — enables a degree of observation that Bentham's panopticon only imagined. The question is not whether it is technologically possible (it manifestly is) but whether it is morally justified.
+
+**The consequentialist case for surveillance**: crime deterrence, public health tracking, terrorism prevention. If mass surveillance produces measurably better outcomes — fewer murders, faster pandemic response — the aggregate welfare gain may justify the intrusion.
+
+**The deontological objection**: Privacy is not merely instrumentally useful; it is constitutive of autonomy. A person who knows they are always watched cannot form beliefs, relationships, or political views freely. Constant observation transforms the subject from an autonomous agent into a data point. Kant's Formula of Humanity: using people's private data without genuine consent treats them as means — as sources of information — not as ends.
+
+**The power asymmetry**: surveillance is not symmetric. States and corporations observe individuals; individuals cannot observe back at comparable scale. This asymmetry is a structural shift in the balance of power, independent of whether any specific surveillance act is harmful. Historian Shoshana Zuboff calls this **surveillance capitalism**: the extraction of behavioural data as raw material for prediction products, creating economic incentives to surveil that are independent of any public benefit.
+
+**Virtue ethics** asks what kind of citizens and institutions we are building through normalised mass surveillance. A society in which the default assumption is observation may be a different kind of society — one in which trust, dissent, and authentic self-expression are systematically discouraged.
+
+</Step>
+
+<Step title="Bioethics: gene editing and human nature" kind="explain">
+
+The CRISPR-Cas9 breakthrough (2012) made targeted gene editing orders of magnitude cheaper and more precise. Its ethical implications span a spectrum from the relatively uncontroversial to the deeply contested.
+
+**Somatic editing** — modifying the genes of an existing person's non-reproductive cells — affects only that person and is analogous to other medical interventions. Most bioethicists accept this in therapeutic contexts, subject to the usual requirements of informed consent and proportionate benefit.
+
+**Germline editing** — modifying embryos in ways that are heritable — is categorically different. Changes propagate to all future descendants, whose consent cannot be obtained. In 2018, Chinese scientist He Jiankui produced the first gene-edited babies, claiming to have introduced resistance to HIV. The scientific community condemned the action as premature, nonconsensual (the children could not consent), and potentially harmful.
+
+**The enhancement debate** is the frontier. If gene editing can remove disease risk, can it also enhance intelligence, physical capacity, or emotional resilience? Bioethicist Michael Sandel argues this is hubris: the drive to redesign human nature reflects a failure to accept "the giftedness" of human beings — our vulnerability and our dependence — which are morally important features of human life, not bugs to be engineered out. Julian Savulescu (the principle of **procreative beneficence**) argues parents have an obligation to choose the child, of the children they could have, who is likely to have the best life — which may imply an obligation to use genetic selection.
+
+Both positions track deep intuitions about the boundary between treatment and enhancement, and between accepting human nature and improving it.
+
+</Step>
+
+<Step title="The trolley problem in engineering" kind="interactive">
+
+Self-driving cars are the trolley problem in deployed code. When brakes fail and collision is unavoidable, the car's algorithm determines who is harmed. Someone had to program that choice. Work through three scenarios and explore how ethical frameworks apply — and who should actually be making these decisions.
+
+<MoralMachine />
+
+The self-driving-car case makes vivid what is true of all autonomous systems: every algorithm encodes a moral choice, often invisibly. The question is not whether to make moral choices in code — it is whether to make them explicitly and accountably.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What does the 'alignment problem' refer to in AI ethics?"
+  options={[
+    "The difficulty of preventing AI systems from developing human-like emotions",
+    "The challenge of ensuring that increasingly capable AI systems pursue goals that are genuinely aligned with human values, rather than proxy goals that diverge from them",
+    "The problem of aligning different AI companies on a common set of regulations",
+    "The technical difficulty of getting multiple AI models to work together consistently"
+  ]}
+  correctIndex={1}
+  explanation="The alignment problem refers to the challenge of building AI systems whose objectives — and the strategies they use to pursue those objectives — genuinely track human values. As systems become more capable, even small misalignments between the system's objective and what humans actually want can lead to large divergences in behaviour. The problem is both technical (how to specify human values formally) and philosophical (what human values actually are and how to adjudicate conflicts between them)."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **AI bias**: systems trained on historical data inherit historical injustices. Both consequentialist harm and deontological dignity arguments demand audit and correction.
+- **Responsibility gap**: when autonomous systems cause harm, traditional responsibility attribution becomes unclear — a moral problem in itself.
+- **The alignment problem**: ensuring that increasingly capable AI systems pursue what humans actually value, not proxy objectives that diverge from it.
+- **Privacy and surveillance**: deontological autonomy arguments hold that constant observation is incompatible with genuine self-determination, independent of specific harms.
+- **Surveillance capitalism** (Zuboff): behavioural data is extracted as raw material, creating economic incentives to surveil that exist independently of public benefit.
+- **Gene editing**: somatic editing is analogous to medical treatment; germline editing raises consent and heritable-change concerns; enhancement raises questions about accepting vs redesigning human nature.
+- **Self-driving cars**: unavoidable collisions force moral choices into code — making explicit that every algorithm is a moral actor, and raising questions about who should program those choices and on what basis.
+
+</Step>
+
+</Lesson>

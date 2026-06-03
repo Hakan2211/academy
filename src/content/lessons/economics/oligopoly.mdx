@@ -1,0 +1,88 @@
+---
+title: Oligopoly
+subject: economics
+contentSlug: economics/oligopoly
+order: 4
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="A market of a few" kind="explain">
+
+Some of the biggest industries in the world are run by just a handful of firms: airlines, mobile networks, soft drinks, smartphone makers, oil producers. This structure is **oligopoly** — a market dominated by a **few large firms**.
+
+What lets a few firms dominate is the same thing that creates monopoly: **barriers to entry**. Usually they are enormous fixed costs and economies of scale — building a phone network or a chip factory costs billions, so only a few firms can reach the scale needed to compete. The products may be near-identical (oil, steel) or differentiated (smartphones, cars), but either way the market belongs to a small club.
+
+</Step>
+
+<Step title="The defining feature: interdependence" kind="explain">
+
+The thing that makes oligopoly fascinating — and hard to analyse — is **interdependence**. With only a few firms, each one's decisions visibly affect the others, and *everyone knows it*.
+
+When a perfectly competitive farmer cuts output, no one notices. When one of three airlines on a route cuts its fares, its two rivals notice *immediately* and must decide how to respond. Each firm's best move depends on what it expects the others to do — and the others are reasoning the very same way about it.
+
+This is **strategic** behaviour: choices made in anticipation of rivals' reactions. It is exactly the situation that **game theory** was built to analyse, which is why oligopoly is the bridge from ordinary supply-and-demand into the strategic world we will explore at the summit of this island.
+
+</Step>
+
+<Step title="The temptation to collude" kind="explain">
+
+Because the firms are so few, a tantalising possibility arises: instead of competing, why not **cooperate** and act like a single monopoly?
+
+If the firms could agree to keep prices high and split the market, they would jointly earn monopoly-level profits — far more than they make fighting each other. A formal agreement to do this is a **cartel** (OPEC is the most famous example). Even without a written deal, firms may fall into **tacit collusion** — quietly matching each other's high prices without ever meeting.
+
+Collusion is great for the firms and bad for consumers, which is exactly why it is **illegal** in most countries. But there is a deeper reason cartels keep collapsing even when they form, and it has nothing to do with the law.
+
+</Step>
+
+<Step title="The pricing game" kind="interactive">
+
+Picture two firms that have agreed to keep prices high. Each must privately decide: honour the deal (**Price High**) or secretly undercut (**Price Low**) to steal the rival's customers? Click the cells to play out every combination.
+
+<OligopolyGame />
+
+Walk through the tension. **Both high** is best *jointly* — the collusive outcome, fat profits all round. But look what happens if you undercut while your rival stays high: you grab the market and earn *even more*. Both firms see that temptation, so both are pulled toward **Price Low**. And once both undercut, they crash into a **price war** with thin profits — the worse outcome they were both trying to avoid. Pricing low is each firm's *dominant strategy*, so that low–low corner is where the market tends to settle.
+
+</Step>
+
+<Step title="Why cartels crack" kind="explain">
+
+That little game captures why collusion is so unstable. Every member of a cartel has a private **incentive to cheat**: shave the price a little, sell a lot more, and pocket extra profit while everyone else holds the line. But since *every* member faces the same temptation, the agreement is constantly under strain.
+
+The result, again and again, is the **price war** — firms undercut one another until prices tumble toward competitive levels and profits evaporate. Consumers love a price war; the firms dread it. Real oligopolies spend enormous effort trying to escape this trap without breaking the law: matching rivals' prices, signalling through public announcements, following a **price leader**, or competing on advertising and features instead of price.
+
+<Callout type="info">
+This is a real-world version of the **prisoner's dilemma**: each player, acting in its own rational self-interest, drives everyone to a worse outcome than if they had all cooperated. We will meet the dilemma formally — and ask how repetition and reputation can rescue cooperation — in the game-theory world.
+</Callout>
+
+Oligopoly thus lives in permanent tension: powerful enough to raise prices like a monopoly *if* the firms can hold together, but constantly pulled apart by each firm's incentive to compete. Where it lands — closer to monopoly or closer to competition — depends on how well the few firms can manage their interdependence.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Two firms dominate a market and secretly agree to keep prices high. Why does economic theory predict this cartel will tend to break down even if no regulator catches them?"
+  options={[
+    "Because high prices are illegal in every market",
+    "Because each firm has a private incentive to undercut the agreed price and steal extra customers, so the deal is unstable",
+    "Because consumers always refuse to buy from cartels",
+    "Because the firms cannot communicate with each other"
+  ]}
+  correctIndex={1}
+  explanation="The collusive high-price outcome is jointly best, but each firm can earn even more by quietly undercutting while its rival keeps prices high. Since every member faces that same temptation, the cartel is inherently unstable and tends to collapse into a price war — the dominant-strategy trap of the prisoner's dilemma. The instability comes from each firm's own incentive, not just from the threat of getting caught."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- An **oligopoly** is a market of a **few large firms**, kept exclusive by big barriers to entry (high fixed costs, economies of scale).
+- Its defining feature is **interdependence**: each firm's best move depends on rivals' reactions, making behaviour **strategic** — the bridge to **game theory**.
+- Firms are tempted to **collude** (a **cartel** or tacit price-matching) to earn monopoly profits, which is why collusion is illegal.
+- But each firm has an **incentive to cheat** by undercutting, so cartels are unstable and often collapse into **price wars** — a real-world **prisoner's dilemma**.
+
+</Step>
+
+</Lesson>

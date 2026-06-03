@@ -1,0 +1,89 @@
+---
+title: Nash Equilibrium
+subject: economics
+contentSlug: economics/nash-equilibrium
+order: 3
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="A resting point for a game" kind="explain">
+
+In the Prisoner's Dilemma, both players defect and get stuck there. Notice *why* they're stuck: once both are defecting, neither can do better by changing their mind alone. If you switched to cooperating while your partner kept defecting, you'd only make yourself worse off. So you stay put. The outcome is **self-enforcing**.
+
+That's the most important idea in game theory, due to the mathematician **John Nash**. A **Nash equilibrium** is a combination of strategies — one per player — where **no player can improve their payoff by changing strategy on their own**, given what everyone else is doing. It's a resting point: a place where, once you've arrived, nobody has a reason to move.
+
+A Nash equilibrium isn't necessarily *good* — mutual defection is one, and it's bad for both. It's just **stable**. That distinction is the whole subtlety of the concept.
+
+</Step>
+
+<Step title="Best responses" kind="explain">
+
+To find a Nash equilibrium, we use the idea of a **best response**: the strategy that gives a player their highest payoff *given* a specific choice by the other player.
+
+The recipe is mechanical:
+
+1. For each thing the *column* player might do, ask which row gives the **row** player the most. Mark it.
+2. For each thing the *row* player might do, ask which column gives the **column** player the most. Mark it.
+3. Any cell marked by **both** players is a Nash equilibrium — because there, each is simultaneously best-responding to the other, so neither wants to deviate.
+
+A Nash equilibrium is simply a pair of **mutual best responses**: my move is best given yours, and yours is best given mine, at the same time.
+
+</Step>
+
+<Step title="Find the equilibrium" kind="interactive">
+
+Let's hunt for it visually. Turn on the best-response highlights: each player's best-response payoff gets underlined. Where both are underlined in the same cell, you've found a Nash equilibrium.
+
+<NashFinder />
+
+Switch between the two games. The **Prisoner's Dilemma** has exactly *one* Nash equilibrium — both defect — even though both prefer to cooperate. The **Coordination** game has *two* equilibria: both pick standard A, or both pick standard B. Either is stable, because once matched, nobody wants to switch.
+
+</Step>
+
+<Step title="Coordination: when matching is everything" kind="explain">
+
+The coordination game shows a softer side of strategy. There's no conflict — both players simply want to do the *same* thing. Should two firms build their gadgets to standard A or standard B? It doesn't matter which, as long as they agree.
+
+But agreement isn't automatic. With two equilibria and no way to talk, players can get stranded on the wrong one or fail to coordinate at all. This is why the world runs on **conventions** — driving on the right, a common language, the QWERTY keyboard, time zones. Each is a coordination equilibrium we've collectively settled into. None is uniquely "correct"; each is stable because everyone expects everyone else to follow it.
+
+Often a **focal point** breaks the tie — an option that stands out for reasons outside the payoffs (it's the obvious one, the traditional one, the one a leader announced). Focal points are how groups silently agree without a word.
+
+</Step>
+
+<Step title="Why Nash matters" kind="explain">
+
+The Nash equilibrium is the workhorse prediction of game theory. When economists ask "what will happen here?" — in an auction, an oligopoly, a negotiation, an election — they typically look for the Nash equilibrium, because that's where rational, self-interested players come to rest.
+
+Two cautions keep it honest. First, an equilibrium can be **bad for everyone** (the dilemma) — stability is not the same as desirability. Second, a game can have **more than one** equilibrium (coordination), so predicting *which* one we land in may need extra clues like focal points or history. Nash's insight wasn't that games have good outcomes; it was that they have *predictable resting points* — and that turns out to be enough to explain a stunning range of human behaviour.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A Nash equilibrium is best described as an outcome where:"
+  options={[
+    "Every player gets their highest possible payoff",
+    "No player can improve their own payoff by changing strategy alone, given what the others are doing",
+    "All players have chosen the same strategy",
+    "There is exactly one stable outcome in the game"
+  ]}
+  correctIndex={1}
+  explanation="At a Nash equilibrium each player is best-responding to the others, so no one can gain by unilaterally switching. It need not give anyone their highest payoff (mutual defection is a Nash equilibrium yet bad for both), players need not match, and a game can have more than one equilibrium, as coordination games show."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **Nash equilibrium** is a set of strategies where **no player can do better by switching alone** — a stable resting point.
+- You find it with **best responses**: a cell where both players are simultaneously best-responding is a Nash equilibrium.
+- Equilibria are **stable, not necessarily good** — mutual defection in the Prisoner's Dilemma is one.
+- **Coordination games** have *two* equilibria; players must agree which, often via a **focal point** or convention.
+- Economists predict outcomes — in auctions, oligopolies, negotiations — by finding the Nash equilibrium.
+
+</Step>
+
+</Lesson>

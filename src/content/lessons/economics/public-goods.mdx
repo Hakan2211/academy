@@ -1,0 +1,90 @@
+---
+title: Public Goods & the Commons
+subject: economics
+contentSlug: economics/public-goods
+order: 3
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Two questions that classify every good" kind="explain">
+
+Externalities were one way markets fail. Here is another, and it starts with two simple questions about any good.
+
+**Is it rival?** A good is **rival** if my using it leaves less for you. A sandwich is rival — once I eat it, it's gone. A radio broadcast is **non-rival** — my listening doesn't dim your signal at all.
+
+**Is it excludable?** A good is **excludable** if a seller can stop non-payers from getting it. A cinema seat is excludable (you need a ticket). The light from a lighthouse is **non-excludable** — once it's lit, every ship sees it, paying or not.
+
+Most things we buy are both rival and excludable — *private goods* — and markets handle them beautifully. But the goods that sit in the other corners of this grid are where markets stumble.
+
+</Step>
+
+<Step title="Public goods and the free rider" kind="explain">
+
+A **public good** is both **non-rival** *and* **non-excludable**: national defence, a flood barrier, clean air, a lighthouse, basic research. Everyone benefits, my benefit doesn't reduce yours, and no one can be shut out.
+
+That sounds wonderful, but it wrecks the market. If you cannot exclude non-payers, why would anyone pay? You can simply enjoy the flood barrier your neighbours funded — that's the **free-rider problem**. And since *everyone* reasons this way, hardly anyone pays, and the good never gets built — even though every single person would gladly have it.
+
+This is why public goods are typically funded by **taxes** rather than sold in a market. The government compels everyone to chip in precisely *because* voluntary contribution unravels.
+
+</Step>
+
+<Step title="Play the free-rider trap" kind="interactive">
+
+Here is the tension in miniature. Four people share a pot. Every dollar contributed is doubled and split equally among all four — so contributing makes the *group* richer. But you keep your share of the pot whether you give or not, so keeping your own money always leaves *you* ahead. The other three are coldly rational. What will you do?
+
+<PublicGoodGame />
+
+Try both buttons. Free-riding genuinely pays *you* more, every time — and that's exactly the trap. When everyone follows the privately smart move, the pot stays tiny and all four end up poorer than if everyone had contributed. The socially best outcome is reachable, but no individual has a reason to choose it.
+
+</Step>
+
+<Step title="The commons: a slow-motion version" kind="explain">
+
+There is a close cousin in the fourth corner of the grid: goods that are **rival but non-excludable** — a fish stock in open water, a shared pasture, an aquifer, the atmosphere's capacity to absorb carbon. These are **common-pool resources**.
+
+Here the failure plays out over time. Because no one can be excluded, everyone has access; because the resource *is* rival, every unit one person takes is a unit gone for everyone else. Each user, acting sensibly for themselves, takes as much as they can — and the sum of all those sensible choices drains the resource to ruin. This is the famous **tragedy of the commons**.
+
+</Step>
+
+<Step title="When the tragedy strikes — and how to stop it" kind="interactive">
+
+Watch a shared fishing ground over the years. The stock regrows on its own, but several boats each haul out as much as they can. Run it under **open access**, then switch on a **quota**.
+
+<TragedyCommons />
+
+Under open access the stock collapses — add more boats and it crashes faster — because no boat has any reason to leave fish for tomorrow when a rival will just take them today. The fix is to break the 'no one can be excluded' condition: a **quota** caps the total catch at what the lake can regrow, and assigning **property rights** gives someone a stake in the resource's future. Either way, self-interest is realigned with conservation, and the stock can feed everyone year after year.
+
+<Callout type="info" title="Elinor Ostrom's twist">
+The tragedy isn't inevitable. The Nobel laureate Elinor Ostrom documented communities — fisheries, irrigation systems, forests — that govern shared resources sustainably for centuries, using local rules, monitoring, and trust. Sometimes neither pure markets nor distant governments solve it best; the people who depend on the commons do.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A coastal town's fishery is open to anyone, and each boat catches all it can. Stocks dwindle year after year. Which feature of the resource drives this 'tragedy of the commons'?"
+  options={[
+    "It is non-rival, so one boat's catch leaves just as much for the others",
+    "It is rival but non-excludable, so every fish one boat takes is gone for the others, and no one can be kept out",
+    "It is a public good that the market over-supplies",
+    "The fish are excludable, so only payers can catch them"
+  ]}
+  correctIndex={1}
+  explanation="A fishery is a common-pool resource: rival (each fish caught is one fewer for everyone else) but non-excludable (no one can be kept out). Because no boat can exclude rivals, each takes all it can — and the sum of those individually rational choices depletes the shared stock. Quotas or property rights restore the missing excludability and make sustainable use possible."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Goods are classified by two questions: **rival?** (does my use leave less for you?) and **excludable?** (can non-payers be shut out?).
+- A **public good** is non-rival *and* non-excludable. The **free-rider problem** means markets under-supply it, so it's usually funded by **taxes**.
+- A **common-pool resource** is rival *but* non-excludable, leading to the **tragedy of the commons** — everyone overuses the shared resource until it collapses.
+- The fixes restore excludability: **quotas/regulation**, **property rights**, or **community governance** (Ostrom) realign self-interest with sustainability.
+
+</Step>
+
+</Lesson>

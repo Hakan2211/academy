@@ -113,6 +113,29 @@ const LAYOUT_14: Array<Pt> = [
   { x: 49, y: 13, scale: 0.6 }, // summit
 ]
 
+// Hand-tuned winding path for a 15-world trail (Economics, Philosophy, Health —
+// all three have 15 worlds). Sits between LAYOUT_14 and LAYOUT_16: the same even,
+// wide meander, just one extra slalom over LAYOUT_14. Foreground worlds swing the
+// full width (x ~26→78) and the amplitude recedes toward the summit. Without this
+// these subjects fell back to genLayout(), which packed the orbs too tightly.
+const LAYOUT_15: Array<Pt> = [
+  { x: 72, y: 88, scale: 0.98 },
+  { x: 49, y: 82.5, scale: 0.93 },
+  { x: 26, y: 77, scale: 0.88 },
+  { x: 41, y: 71.5, scale: 0.84 },
+  { x: 65, y: 66, scale: 0.8 },
+  { x: 78, y: 60.5, scale: 0.76 },
+  { x: 57, y: 55, scale: 0.72 },
+  { x: 34, y: 49.5, scale: 0.69 },
+  { x: 47, y: 44, scale: 0.66 },
+  { x: 67, y: 38.5, scale: 0.63 },
+  { x: 57, y: 33, scale: 0.6 },
+  { x: 38, y: 27.5, scale: 0.58 },
+  { x: 48, y: 22, scale: 0.56 },
+  { x: 58, y: 16.5, scale: 0.55 },
+  { x: 49, y: 10, scale: 0.6 }, // summit
+]
+
 // Hand-tuned winding path for a 16-world trail (Computer Science). Same even,
 // wide meander as LAYOUT_14, just one extra slalom: foreground worlds swing the
 // full width (x ~26→78) and the amplitude recedes toward the summit. Slightly
@@ -189,6 +212,7 @@ const LAYOUT_17: Array<Pt> = [
 const HAND_LAYOUTS: Record<number, Array<Pt>> = {
   12: LAYOUT_12,
   14: LAYOUT_14,
+  15: LAYOUT_15,
   16: LAYOUT_16,
   17: LAYOUT_17,
   18: LAYOUT_18,

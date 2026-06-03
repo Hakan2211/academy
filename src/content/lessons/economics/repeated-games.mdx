@@ -1,0 +1,91 @@
+---
+title: Repeated Games & Cooperation
+subject: economics
+contentSlug: economics/repeated-games
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="The shadow of the future" kind="explain">
+
+The Prisoner's Dilemma painted a grim picture: rational players betray each other and everyone loses. Yet look around — people cooperate constantly. Businesses honour deals, neighbours help each other, nations sign treaties that hold. If defection is dominant, how does any of this survive?
+
+The escape hatch is **repetition**. The dilemma is bleakproof only when the game is played **once** and never again. But most of life is played over and over with the *same* people: you'll trade with this supplier next month, see this neighbour tomorrow, face this rival every quarter. When the game repeats, today's betrayal invites tomorrow's revenge — and that **shadow of the future** can make cooperation the smart choice after all.
+
+Suddenly your move isn't just about this round's payoff. It's an investment in (or against) the relationship.
+
+</Step>
+
+<Step title="Tit-for-tat: nice, but no pushover" kind="explain">
+
+In the 1980s the political scientist Robert Axelrod ran a famous tournament: he invited experts to submit strategies for a *repeated* Prisoner's Dilemma and pitted them against one another over many rounds. The winner was almost embarrassingly simple — a strategy called **tit-for-tat**:
+
+> **Cooperate on the first move. After that, do whatever your opponent did last round.**
+
+Tit-for-tat won by being four things at once: **nice** (it never defects first), **retaliatory** (it punishes a defection immediately, so it can't be exploited), **forgiving** (it returns to cooperation the moment the opponent does), and **clear** (its rule is obvious, so others learn they can safely cooperate with it). Against another cooperative strategy, two tit-for-tat players cooperate forever and both score handsomely.
+
+</Step>
+
+<Step title="Watch cooperation emerge" kind="interactive">
+
+Let's run the repeated game. Pit strategies against each other across many rounds and watch the cumulative scores. Compare **always defect** (betray every round) with **tit-for-tat** and **grim trigger** (cooperate until betrayed once, then defect forever).
+
+<RepeatedGame />
+
+Set both players to **tit-for-tat** and slide the rounds up: they cooperate every round and both pull far ahead of what mutual defection ever earns. Now pit **tit-for-tat against always-defect**: the defector steals one round, then gets nothing but retaliation — it can never exploit a strategy that fights back. Over many rounds, *cooperation outscores betrayal* — which is exactly why it survives.
+
+</Step>
+
+<Step title="Reputation and the threat of punishment" kind="explain">
+
+What actually sustains cooperation in a repeated game? Two linked forces:
+
+- **Reputation.** When you'll meet again, your past behaviour becomes information. A reputation for honesty earns you future deals; a reputation for cheating gets you shunned. Cooperation becomes a valuable asset worth protecting.
+- **The credible threat of punishment.** Tit-for-tat and grim trigger both work because defecting triggers a cost down the line. If the future matters enough — many rounds still to come — the long-run cost of being punished outweighs the one-round gain from cheating. So you cooperate.
+
+There's a catch, though. If the players *know* the game has a **fixed final round**, the logic unravels by **backward induction**: in the last round there's no future to protect, so both defect — which makes the second-to-last round effectively the last, so they defect there too, and so on back to the start. Cooperation in repeated games leans on the future being open-ended (or at least uncertain in length).
+
+</Step>
+
+<Step title="Designing for cooperation" kind="explain">
+
+The deepest lesson of repeated games is that cooperation is **engineerable**. We can't change the payoffs of a one-shot dilemma, but we *can* change whether and how the game repeats — and that changes everything. Societies are full of institutions built to do exactly this:
+
+- **Contracts and courts** turn a one-shot deal into a repeated relationship with the legal system — break your word and you'll pay later.
+- **Reviews and ratings** (think online marketplaces) give strangers a reputation, so even one-time interactions carry a future.
+- **Repeated elections** discipline politicians who'd otherwise have no reason to keep promises.
+- **Trade agreements and treaties** create ongoing relationships where defection invites retaliation.
+
+The takeaway runs against the cynical reading of the dilemma: cooperation is fragile, but not doomed. Lengthen the shadow of the future, make reputations visible, and let people meet again — and self-interest itself starts to favour playing nice.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Why can cooperation survive in a repeated Prisoner's Dilemma when it collapses in a one-shot game?"
+  options={[
+    "Because repetition changes the payoffs so that defecting is no longer dominant in any single round",
+    "Because players get bored of defecting and switch to cooperating at random",
+    "Because today's defection can be punished in future rounds, so the long-run cost of cheating can outweigh the short-run gain",
+    "Because in a repeated game there is no longer any dominant strategy at all"
+  ]}
+  correctIndex={2}
+  explanation="Repetition does not change the one-round payoffs, but it lets a defection be punished later. With enough future rounds at stake, a strategy like tit-for-tat makes the long-run cost of betrayal exceed the one-round gain, so cooperation becomes individually rational. The shadow of the future, plus reputation and credible retaliation, is what sustains it."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **repeated game** is the same game played over and over with the same players — and the **shadow of the future** can rescue cooperation.
+- **Tit-for-tat** — cooperate first, then copy the opponent — won Axelrod's tournament by being nice, retaliatory, forgiving, and clear.
+- Cooperation is sustained by **reputation** and the **credible threat of punishment** for defecting.
+- It relies on an open-ended future: a known final round can unravel cooperation through **backward induction**.
+- Institutions — contracts, courts, reviews, elections, treaties — are ways of engineering repetition so self-interest favours cooperation.
+
+</Step>
+
+</Lesson>

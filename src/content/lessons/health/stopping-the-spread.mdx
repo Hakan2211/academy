@@ -1,0 +1,90 @@
+---
+title: Stopping the Spread
+subject: health
+contentSlug: health/stopping-the-spread
+order: 58
+estimatedMinutes: 7
+summary: How hygiene, isolation, clean water, and vaccination break transmission — and why herd immunity works.
+level: intermediate
+---
+
+<Lesson>
+
+<Step title="The toolkit for breaking transmission" kind="explain">
+
+Every measure that stops infectious disease works by severing at least one link in the chain of infection. The core toolkit has four tiers:
+
+**Hygiene** targets contact and fecal-oral routes — the cheapest, most universally applicable intervention. Regular hand-washing with soap reduces respiratory infections by ~20% and diarrhoeal disease by ~30% (WHO evidence synthesis). Cleaning contaminated surfaces, covering coughs and sneezes, and not touching your face all belong here.
+
+**Isolation and distancing** keep infectious people away from susceptible ones. Quarantine (separating exposed people who may be incubating) and isolation (separating confirmed cases) have been used since medieval plague times and remain central to outbreak control.
+
+**Clean water and sanitation** eliminate the fecal-oral route almost entirely. Cholera, typhoid, dysentery, and intestinal worm infections are diseases of poor sanitation; they virtually disappeared from high-income countries after the great 19th-century sewer and water-treatment projects — one of the greatest public-health achievements in history.
+
+**Vaccination** is the most powerful tool for respiratory and bloodborne pathogens where the other routes are hard to block. It works differently from the above three: instead of blocking the path, it makes the host immune so even if exposed, they do not become infectious.
+
+</Step>
+
+<Step title="See the dynamics" kind="interactive">
+
+Adjust R₀ and the immune fraction to watch the effective reproduction number respond — and find the point at which herd immunity is reached.
+
+<ContagionModel />
+
+Notice that even small increases in the immune fraction can push Rₑ below 1 when R₀ is moderate. For high-R₀ diseases like measles, a much higher fraction must be immune — which is why measles vaccination coverage targets 95%.
+
+</Step>
+
+<Step title="Herd immunity — the maths" kind="explain">
+
+When enough of a population is immune (through vaccination or prior infection), the pathogen cannot sustain transmission even among unvaccinated individuals — they are shielded by the immune majority around them. This is **herd immunity**.
+
+The threshold fraction that must be immune is:
+
+<Formula tex="p_c = 1 - \frac{1}{R_0}" block />
+
+A disease with R₀ = 2 needs 50% immune. R₀ = 10 needs 90%. Measles (R₀ ≈ 15) needs ~93–95% — which is why a single unvaccinated cluster can sustain an outbreak.
+
+<Callout type="warn">
+Herd immunity through natural infection carries a heavy cost in illness and death. Vaccination achieves the same threshold safely. The two routes are not equivalent.
+</Callout>
+
+</Step>
+
+<Step title="Vaccine memory" kind="interactive">
+
+Vaccines work by teaching the immune system to recognise a pathogen before it ever arrives. Review how immunological memory is built and why boosters matter.
+
+<VaccineMemory />
+
+Every vaccinated person is a "firebreak" — they cannot amplify the outbreak even if exposed. Enough firebreaks and the fire (outbreak) runs out of fuel.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A disease has R₀ = 4. What fraction of the population must be immune to reach the herd-immunity threshold?"
+  options={[
+    "25% — because 1/R₀ = 0.25",
+    "75% — because 1 − 1/R₀ = 1 − 0.25 = 0.75",
+    "50% — because R₀/2 = 2",
+    "100% — herd immunity only works when everyone is vaccinated"
+  ]}
+  correctIndex={1}
+  explanation="The herd-immunity threshold is p_c = 1 − 1/R₀. With R₀ = 4, that is 1 − 1/4 = 0.75, or 75%. Above this fraction the outbreak cannot sustain itself because each case, on average, infects fewer than one new person."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Hygiene** (hand-washing, surface cleaning) targets contact and fecal-oral routes — cheap and powerful.
+- **Isolation and quarantine** keep infectious people away from susceptible ones.
+- **Clean water and sanitation** eliminate fecal-oral diseases almost entirely.
+- **Vaccination** makes hosts immune, reducing the effective Rₑ toward zero.
+- The **herd-immunity threshold** is 1 − 1/R₀. High-R₀ diseases (measles ≈ 15) need very high coverage (~95%).
+- Herd immunity through vaccination is the safe route; natural infection achieves the same threshold at a devastating human cost.
+
+</Step>
+
+</Lesson>

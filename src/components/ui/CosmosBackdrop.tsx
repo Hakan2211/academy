@@ -11,13 +11,17 @@ import type { HubIsland } from '#/components/hub/CosmosCanvas'
 // six subject accents (kept in sync with SubjectsHub's LAYOUT) so it reads as
 // the hub's universe everywhere. The immersive lesson player opts out (it has
 // its own calm CSS backdrop), so this returns null on /learn.
+// (Positions/accents kept in sync with SubjectsHub's LAYOUT — nine worlds.)
 const SUBJECT_ISLANDS: Array<HubIsland> = [
-  { x: 50, y: 23, accent: '#FDCB6E' }, // chemistry
-  { x: 28, y: 33, accent: '#2ecc71' }, // biology
-  { x: 72, y: 33, accent: '#74B9FF' }, // math
-  { x: 26, y: 67, accent: '#00d2d3' }, // computer-science
-  { x: 74, y: 67, accent: '#E84393' }, // psychology
-  { x: 50, y: 60, accent: '#4F8CFF' }, // physics (hero, front-centre)
+  { x: 50, y: 13, accent: '#FDCB6E' }, // chemistry
+  { x: 25, y: 21, accent: '#2ecc71' }, // biology
+  { x: 75, y: 21, accent: '#74B9FF' }, // math
+  { x: 13, y: 47, accent: '#C9A24B' }, // philosophy
+  { x: 87, y: 47, accent: '#10B981' }, // economics
+  { x: 23, y: 77, accent: '#00d2d3' }, // computer-science
+  { x: 77, y: 77, accent: '#E84393' }, // psychology
+  { x: 50, y: 85, accent: '#FF5470' }, // health
+  { x: 50, y: 52, accent: '#4F8CFF' }, // physics (hero, front-centre)
 ]
 
 export function CosmosBackdrop() {

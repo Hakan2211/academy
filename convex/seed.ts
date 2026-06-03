@@ -64,6 +64,33 @@ export const run = internalMutation({
         order: 6,
         isPublished: true,
       },
+      {
+        slug: 'economics',
+        name: 'Economics',
+        description: 'Master how the world allocates scarce resources.',
+        color: '#10B981',
+        icon: 'TrendingUp',
+        order: 7,
+        isPublished: true,
+      },
+      {
+        slug: 'philosophy',
+        name: 'Philosophy',
+        description: 'Question everything — knowledge, reality, right and wrong.',
+        color: '#C9A24B',
+        icon: 'Feather',
+        order: 8,
+        isPublished: true,
+      },
+      {
+        slug: 'health',
+        name: 'Health',
+        description: 'The science of a healthy body and mind.',
+        color: '#FF5470',
+        icon: 'HeartPulse',
+        order: 9,
+        isPublished: true,
+      },
     ]
 
     const subjectIds: Record<string, any> = {}
@@ -2501,6 +2528,432 @@ export const run = internalMutation({
       await ctx.db.insert('lessons', {
         subjectId: subjectIds['psychology'],
         unitId: psychUnitIds[l.unitSlug],
+        contentSlug: l.contentSlug,
+        title: l.title,
+        summary: l.summary,
+        order: l.order,
+        estimatedMinutes: l.estimatedMinutes,
+        xpReward: l.xpReward,
+        isPublished: l.isPublished,
+        level: l.level,
+        format: l.format,
+      })
+    }
+
+    const econUnitsData: typeof unitsData = [
+      { slug: "economic-thinking", name: "What Is Economics?", order: 1, description: "Scarcity, choice, opportunity cost, and how economists think.", icon: "Scale", accentColor: "#FDCB6E", levelRange: "Beginner" },
+      { slug: "supply-and-demand", name: "Supply & Demand", order: 2, description: "How prices are set where the forces of supply and demand meet.", icon: "TrendingUp", accentColor: "#F39C12", levelRange: "Beginner" },
+      { slug: "elasticity", name: "Elasticity", order: 3, description: "How sensitively quantity responds to price — and why it matters.", icon: "Spline", accentColor: "#E67E22", levelRange: "Beginner → Intermediate" },
+      { slug: "consumer-choice", name: "Consumer Choice", order: 4, description: "Utility, budgets, and the psychology behind what we buy.", icon: "ShoppingCart", accentColor: "#FF7043", levelRange: "Beginner → Intermediate" },
+      { slug: "firms-and-production", name: "Firms & Production", order: 5, description: "How firms produce, what it costs, and how they maximise profit.", icon: "Factory", accentColor: "#E17055", levelRange: "Intermediate" },
+      { slug: "market-structures", name: "Market Structures", order: 6, description: "From perfect competition to monopoly — and the power in between.", icon: "Building2", accentColor: "#9B59B6", levelRange: "Intermediate" },
+      { slug: "market-failure", name: "Market Failure", order: 7, description: "Externalities, public goods, and when markets need help.", icon: "TriangleAlert", accentColor: "#16A085", levelRange: "Intermediate → Advanced" },
+      { slug: "labor-and-income", name: "Labor & Income", order: 8, description: "How wages are set and why incomes differ so much.", icon: "HardHat", accentColor: "#27AE60", levelRange: "Intermediate" },
+      { slug: "measuring-the-economy", name: "Measuring the Economy", order: 9, description: "GDP, inflation, unemployment, and the business cycle.", icon: "Gauge", accentColor: "#0984E3", levelRange: "Beginner → Intermediate" },
+      { slug: "money-and-banking", name: "Money & Banking", order: 10, description: "What money is, how banks create it, and the central bank.", icon: "Landmark", accentColor: "#3498DB", levelRange: "Intermediate" },
+      { slug: "aggregate-economy", name: "The Aggregate Economy", order: 11, description: "Aggregate demand and supply, and the spending multiplier.", icon: "Waves", accentColor: "#5DADE2", levelRange: "Intermediate → Advanced" },
+      { slug: "economic-policy", name: "Fiscal & Monetary Policy", order: 12, description: "How governments and central banks steer the economy.", icon: "SlidersHorizontal", accentColor: "#5B6CFF", levelRange: "Intermediate → Advanced" },
+      { slug: "economic-growth", name: "Growth & Development", order: 13, description: "Why economies grow, and why some nations stay poor.", icon: "Sprout", accentColor: "#9BDE3C", levelRange: "Intermediate → Advanced" },
+      { slug: "global-economy", name: "Trade & the Global Economy", order: 14, description: "Comparative advantage, trade barriers, and exchange rates.", icon: "Globe", accentColor: "#4834D4", levelRange: "Intermediate → Advanced" },
+      { slug: "game-theory", name: "Game Theory & the Economics of Everything", order: 15, description: "Strategic thinking, Nash equilibrium, and economics everywhere.", icon: "Swords", accentColor: "#FFD54A", levelRange: "Advanced" },
+    ]
+
+    const econUnitIds: Record<string, any> = {}
+    for (const u of econUnitsData) {
+      econUnitIds[u.slug] = await ctx.db.insert('units', {
+        subjectId: subjectIds['economics'],
+        slug: u.slug,
+        name: u.name,
+        order: u.order,
+        description: u.description,
+        icon: u.icon,
+        accentColor: u.accentColor,
+        levelRange: u.levelRange,
+      })
+    }
+
+    const econLessonsData: typeof lessonsData = [
+      // --- What Is Economics? ---
+      { unitSlug: "economic-thinking", contentSlug: "economics/what-is-economics", title: "What Is Economics?", summary: "Scarcity, choice, and the one problem behind all of economics.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "economic-thinking", contentSlug: "economics/opportunity-cost", title: "Opportunity Cost & Trade-offs", summary: "The true cost of anything is the next-best thing you give up.", order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "economic-thinking", contentSlug: "economics/the-production-possibilities-frontier", title: "The Production Possibilities Frontier", summary: "Scarcity drawn as a curve: efficiency, trade-offs, and growth.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "economic-thinking", contentSlug: "economics/thinking-at-the-margin", title: "Thinking at the Margin", summary: "Weigh one more unit's benefit against its cost, and ignore sunk costs.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "economic-thinking", contentSlug: "economics/incentives-and-trade", title: "Incentives & the Gains from Trade", summary: "People respond to incentives, and specialisation makes everyone richer.", order: 5, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "economic-thinking", contentSlug: "economics/how-economists-think", title: "How Economists Think", summary: "Models, ceteris paribus, the circular flow, and positive vs normative.", order: 6, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Supply & Demand ---
+      { unitSlug: "supply-and-demand", contentSlug: "economics/demand", title: "The Law of Demand", summary: "Why the demand curve slopes down, and the demand schedule.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "supply-and-demand", contentSlug: "economics/shifts-in-demand", title: "What Moves Demand", summary: "The shifters of demand, and movement along versus a shift of the curve.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "supply-and-demand", contentSlug: "economics/supply", title: "The Law of Supply", summary: "Why the supply curve slopes up.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "supply-and-demand", contentSlug: "economics/shifts-in-supply", title: "What Moves Supply", summary: "Input costs, technology, and the other supply shifters.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "supply-and-demand", contentSlug: "economics/market-equilibrium", title: "Market Equilibrium", summary: "Where supply meets demand, and how surpluses and shortages clear.", order: 5, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "supply-and-demand", contentSlug: "economics/markets-in-motion", title: "Markets in Motion", summary: "Combined shifts, the four-step analysis, and price controls.", order: 6, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Elasticity ---
+      { unitSlug: "elasticity", contentSlug: "economics/price-elasticity-of-demand", title: "Price Elasticity of Demand", summary: "How responsive quantity is to price: elastic, inelastic, or unit.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "elasticity", contentSlug: "economics/what-determines-elasticity", title: "What Makes Demand Elastic?", summary: "Substitutes, necessity, time, and budget share decide elasticity.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "elasticity", contentSlug: "economics/elasticity-and-revenue", title: "Elasticity & Total Revenue", summary: "The total-revenue test: when a price cut actually raises revenue.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "elasticity", contentSlug: "economics/other-elasticities", title: "Income & Cross-Price Elasticity", summary: "Income and cross-price elasticity, and the elasticity of supply.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "elasticity", contentSlug: "economics/taxes-and-elasticity", title: "Who Really Pays a Tax?", summary: "Who bears a tax, and the deadweight loss it creates.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Consumer Choice ---
+      { unitSlug: "consumer-choice", contentSlug: "economics/utility", title: "Utility & Satisfaction", summary: "Total and marginal utility: measuring satisfaction.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "consumer-choice", contentSlug: "economics/diminishing-marginal-utility", title: "Diminishing Marginal Utility", summary: "Each extra unit satisfies less — and the diamond-water paradox.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "consumer-choice", contentSlug: "economics/the-budget-constraint", title: "The Budget Constraint", summary: "What you can afford, and the rule for the best bundle.", order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "consumer-choice", contentSlug: "economics/behavioral-economics", title: "When We're Not Rational", summary: "Anchoring, framing, and loss aversion: the limits of rationality.", order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "consumer-choice", contentSlug: "economics/the-economics-of-you", title: "The Economics of Everyday Choices", summary: "Sunk costs, present bias, and the economics of daily life.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Firms & Production ---
+      { unitSlug: "firms-and-production", contentSlug: "economics/what-firms-do", title: "What Firms Do", summary: "Factors of production, profit, and accounting versus economic profit.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "firms-and-production", contentSlug: "economics/production-and-returns", title: "Production & Diminishing Returns", summary: "Total and marginal product, and the law of diminishing returns.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "firms-and-production", contentSlug: "economics/the-costs-of-production", title: "The Costs of Production", summary: "Fixed, variable, average, and marginal cost — the U-shaped curves.", order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "firms-and-production", contentSlug: "economics/revenue-and-profit", title: "Revenue, Profit & Shutting Down", summary: "Profit-max where MR equals MC, and the shutdown rule.", order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "firms-and-production", contentSlug: "economics/economies-of-scale", title: "Economies of Scale", summary: "The long-run cost curve and why bigger can be cheaper.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- Market Structures ---
+      { unitSlug: "market-structures", contentSlug: "economics/perfect-competition", title: "Perfect Competition", summary: "Price takers, free entry, and long-run zero profit.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "market-structures", contentSlug: "economics/monopoly", title: "Monopoly", summary: "One seller, marginal revenue below price, and deadweight loss.", order: 2, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "market-structures", contentSlug: "economics/monopolistic-competition", title: "Monopolistic Competition", summary: "Many firms, differentiated products, and the power of branding.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "market-structures", contentSlug: "economics/oligopoly", title: "Oligopoly", summary: "A few interdependent firms, collusion, and price wars.", order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "market-structures", contentSlug: "economics/market-power-and-policy", title: "Market Power & Antitrust", summary: "The competition spectrum, regulation, and antitrust.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- Market Failure ---
+      { unitSlug: "market-failure", contentSlug: "economics/externalities", title: "Externalities", summary: "Spillover costs and benefits, and the gap from the social optimum.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "market-failure", contentSlug: "economics/correcting-externalities", title: "Fixing Externalities", summary: "Pigouvian taxes, subsidies, cap-and-trade, and the Coase theorem.", order: 2, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "market-failure", contentSlug: "economics/public-goods", title: "Public Goods & the Commons", summary: "Free riders, public goods, and the tragedy of the commons.", order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "market-failure", contentSlug: "economics/information-and-markets", title: "Information Failures", summary: "Asymmetric information, adverse selection, and the market for lemons.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "market-failure", contentSlug: "economics/government-and-markets", title: "Government & Markets", summary: "When government improves on markets — and when it fails.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- Labor & Income ---
+      { unitSlug: "labor-and-income", contentSlug: "economics/the-labor-market", title: "The Labor Market", summary: "Labour supply and demand set the wage; the marginal revenue product.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "labor-and-income", contentSlug: "economics/what-determines-wages", title: "Why Wages Differ", summary: "Human capital, education, and compensating differentials.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "labor-and-income", contentSlug: "economics/factor-markets", title: "Land, Capital & Entrepreneurship", summary: "The markets for land, capital, and entrepreneurship.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "labor-and-income", contentSlug: "economics/inequality", title: "Income Inequality", summary: "The income distribution, the Lorenz curve, and the Gini coefficient.", order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "labor-and-income", contentSlug: "economics/discrimination-and-policy", title: "Wages, Discrimination & Policy", summary: "Minimum wages, unions, discrimination, and redistribution.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- Measuring the Economy ---
+      { unitSlug: "measuring-the-economy", contentSlug: "economics/gross-domestic-product", title: "Gross Domestic Product", summary: "GDP = C + I + G + NX, and what it leaves out.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "measuring-the-economy", contentSlug: "economics/real-vs-nominal", title: "Real vs Nominal GDP", summary: "Stripping out inflation with the GDP deflator.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "measuring-the-economy", contentSlug: "economics/inflation", title: "Inflation & the Price Level", summary: "The CPI, who inflation helps and hurts, and hyperinflation.", order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "measuring-the-economy", contentSlug: "economics/unemployment", title: "Unemployment", summary: "The unemployment rate and its frictional, structural, and cyclical types.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "measuring-the-economy", contentSlug: "economics/the-business-cycle", title: "The Business Cycle", summary: "Expansions, recessions, peaks, troughs, and leading indicators.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Money & Banking ---
+      { unitSlug: "money-and-banking", contentSlug: "economics/what-is-money", title: "What Is Money?", summary: "The functions of money, and commodity versus fiat.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "money-and-banking", contentSlug: "economics/banks-and-credit", title: "Banks & Credit", summary: "What banks do: deposits, loans, interest, and credit.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "money-and-banking", contentSlug: "economics/fractional-reserve-banking", title: "How Banks Create Money", summary: "How banks conjure money through the money multiplier.", order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "money-and-banking", contentSlug: "economics/the-central-bank", title: "The Central Bank", summary: "The central bank, the money supply, and lender of last resort.", order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "money-and-banking", contentSlug: "economics/money-and-inflation", title: "Money & Inflation", summary: "The quantity theory of money: MV = PQ.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- The Aggregate Economy ---
+      { unitSlug: "aggregate-economy", contentSlug: "economics/aggregate-demand", title: "Aggregate Demand", summary: "The AD curve: why it slopes down and what shifts it.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "aggregate-economy", contentSlug: "economics/aggregate-supply", title: "Aggregate Supply", summary: "Short-run and long-run aggregate supply.", order: 2, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "aggregate-economy", contentSlug: "economics/macro-equilibrium", title: "Macroeconomic Equilibrium", summary: "AD equals AS, and recessionary versus inflationary gaps.", order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "aggregate-economy", contentSlug: "economics/the-multiplier", title: "The Multiplier", summary: "How an injection of spending multiplies through the economy.", order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "advanced", format: "core" },
+      { unitSlug: "aggregate-economy", contentSlug: "economics/booms-and-busts", title: "Booms, Busts & Shocks", summary: "Demand and supply shocks, and stagflation.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- Fiscal & Monetary Policy ---
+      { unitSlug: "economic-policy", contentSlug: "economics/fiscal-policy", title: "Fiscal Policy", summary: "Government spending and taxes to steer the economy.", order: 1, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "economic-policy", contentSlug: "economics/government-budgets", title: "Deficits & Debt", summary: "Budget deficits, the national debt, and crowding out.", order: 2, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "economic-policy", contentSlug: "economics/monetary-policy", title: "Monetary Policy", summary: "Interest rates and open-market operations.", order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "economic-policy", contentSlug: "economics/inflation-vs-unemployment", title: "The Phillips Curve", summary: "The Phillips curve and the inflation-unemployment trade-off.", order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "advanced", format: "core" },
+      { unitSlug: "economic-policy", contentSlug: "economics/policy-in-practice", title: "Policy in the Real World", summary: "Policy lags, the 2008 and COVID responses, rules versus discretion.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- Growth & Development ---
+      { unitSlug: "economic-growth", contentSlug: "economics/what-is-growth", title: "What Is Economic Growth?", summary: "Real GDP per capita and the rule of 70.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "economic-growth", contentSlug: "economics/sources-of-growth", title: "The Engines of Growth", summary: "Capital, human capital, technology, and productivity.", order: 2, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "economic-growth", contentSlug: "economics/the-power-of-compounding", title: "The Power of Compounding", summary: "Why small growth differences become huge over time.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "economic-growth", contentSlug: "economics/development-economics", title: "Rich & Poor Nations", summary: "The development gap, institutions, and convergence.", order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "advanced", format: "core" },
+      { unitSlug: "economic-growth", contentSlug: "economics/growth-and-its-limits", title: "Growth, Well-Being & Sustainability", summary: "Does growth equal happiness? GDP's limits and sustainability.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- Trade & the Global Economy ---
+      { unitSlug: "global-economy", contentSlug: "economics/why-nations-trade", title: "Why Nations Trade", summary: "Absolute versus comparative advantage and the gains from trade.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "global-economy", contentSlug: "economics/comparative-advantage", title: "Comparative Advantage", summary: "Specialise by opportunity cost, then trade — and both win.", order: 2, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "global-economy", contentSlug: "economics/trade-barriers", title: "Tariffs, Quotas & Protectionism", summary: "Who wins, who loses, and the deadweight loss of a tariff.", order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "global-economy", contentSlug: "economics/exchange-rates", title: "Exchange Rates", summary: "How currencies are priced, and what appreciation means.", order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "advanced", format: "core" },
+      { unitSlug: "global-economy", contentSlug: "economics/globalization", title: "Globalization & Its Discontents", summary: "Global supply chains and the debate over globalisation.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- Game Theory & the Economics of Everything ---
+      { unitSlug: "game-theory", contentSlug: "economics/thinking-strategically", title: "Thinking Strategically", summary: "Players, strategies, payoffs, and how to read a game.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "advanced", format: "core" },
+      { unitSlug: "game-theory", contentSlug: "economics/the-prisoners-dilemma", title: "The Prisoner's Dilemma", summary: "Dominant strategies and why cooperation can fail.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "advanced", format: "core" },
+      { unitSlug: "game-theory", contentSlug: "economics/nash-equilibrium", title: "Nash Equilibrium", summary: "Best responses and the equilibrium of a game.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "advanced", format: "core" },
+      { unitSlug: "game-theory", contentSlug: "economics/repeated-games", title: "Repeated Games & Cooperation", summary: "Tit-for-tat, reputation, and how cooperation emerges.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "advanced", format: "core" },
+      { unitSlug: "game-theory", contentSlug: "economics/the-economics-of-everything", title: "The Economics of Everything", summary: "Auctions, information, behaviour, and the reach of economics.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+    ]
+
+    for (const l of econLessonsData) {
+      await ctx.db.insert('lessons', {
+        subjectId: subjectIds['economics'],
+        unitId: econUnitIds[l.unitSlug],
+        contentSlug: l.contentSlug,
+        title: l.title,
+        summary: l.summary,
+        order: l.order,
+        estimatedMinutes: l.estimatedMinutes,
+        xpReward: l.xpReward,
+        isPublished: l.isPublished,
+        level: l.level,
+        format: l.format,
+      })
+    }
+
+
+    const philoUnitsData: typeof unitsData = [
+      { slug: "what-is-philosophy", name: "What Is Philosophy?", order: 1, description: "Wisdom, wonder, and learning to ask the deepest questions.", icon: "BookOpen", accentColor: "#FDCB6E", levelRange: "Beginner" },
+      { slug: "logic-and-arguments", name: "Logic & Arguments", order: 2, description: "Premises, conclusions, and how to reason well.", icon: "Workflow", accentColor: "#5DADE2", levelRange: "Beginner → Intermediate" },
+      { slug: "reasoning-and-fallacies", name: "Reasoning & Fallacies", order: 3, description: "Spot the traps and errors that derail good thinking.", icon: "SearchCheck", accentColor: "#E67E22", levelRange: "Beginner → Intermediate" },
+      { slug: "epistemology", name: "Knowledge & Truth", order: 4, description: "What can we know, and how do we know it?", icon: "KeyRound", accentColor: "#00CEC9", levelRange: "Beginner → Intermediate" },
+      { slug: "metaphysics", name: "Reality & Being", order: 5, description: "Being, reality, free will, and what is ultimately real.", icon: "Layers", accentColor: "#9B59B6", levelRange: "Beginner → Advanced" },
+      { slug: "philosophy-of-mind", name: "Mind & Consciousness", order: 6, description: "The mind, consciousness, and the puzzle of mind and matter.", icon: "Brain", accentColor: "#A29BFE", levelRange: "Beginner → Advanced" },
+      { slug: "moral-foundations", name: "What Is Right & Wrong?", order: 7, description: "What right and wrong are, and where morals come from.", icon: "Compass", accentColor: "#E74C3C", levelRange: "Beginner → Intermediate" },
+      { slug: "ethical-theories", name: "How Should We Live?", order: 8, description: "The great theories of how we ought to live.", icon: "Scale", accentColor: "#E17055", levelRange: "Beginner → Intermediate" },
+      { slug: "applied-ethics", name: "Ethics in Action", order: 9, description: "Ethics put to work on real dilemmas.", icon: "Split", accentColor: "#FF7043", levelRange: "Beginner → Advanced" },
+      { slug: "political-philosophy", name: "Society & Justice", order: 10, description: "The state, liberty, justice, and how to live together.", icon: "Landmark", accentColor: "#0984E3", levelRange: "Beginner → Intermediate" },
+      { slug: "ancient-philosophy", name: "The Ancient World", order: 11, description: "Socrates, Plato, Aristotle, and the ancient schools.", icon: "Columns3", accentColor: "#16A085", levelRange: "Beginner → Intermediate" },
+      { slug: "modern-philosophy", name: "The Modern Turn", order: 12, description: "Rationalists, empiricists, Kant, and the age of reason.", icon: "Lightbulb", accentColor: "#3498DB", levelRange: "Beginner → Advanced" },
+      { slug: "existential-philosophy", name: "The Existential Turn", order: 13, description: "Freedom, authenticity, the absurd, and making meaning.", icon: "PersonStanding", accentColor: "#E84393", levelRange: "Intermediate → Advanced" },
+      { slug: "science-and-religion", name: "Science, Religion & Reality", order: 14, description: "Science, faith, God, and the limits of each.", icon: "Telescope", accentColor: "#1ABC9C", levelRange: "Beginner → Advanced" },
+      { slug: "meaning-of-life", name: "The Meaning of Life", order: 15, description: "What makes a life meaningful — the summit of the journey.", icon: "Sunrise", accentColor: "#FFD54A", levelRange: "Beginner → Advanced" },
+    ]
+
+    const philoUnitIds: Record<string, any> = {}
+    for (const u of philoUnitsData) {
+      philoUnitIds[u.slug] = await ctx.db.insert('units', {
+        subjectId: subjectIds['philosophy'],
+        slug: u.slug,
+        name: u.name,
+        order: u.order,
+        description: u.description,
+        icon: u.icon,
+        accentColor: u.accentColor,
+        levelRange: u.levelRange,
+      })
+    }
+
+    const philoLessonsData: typeof lessonsData = [
+      // --- What Is Philosophy? ---
+      { unitSlug: "what-is-philosophy", contentSlug: "philosophy/what-is-philosophy", title: "What Is Philosophy?", summary: "The love of wisdom, the big questions, and how philosophy differs from science and religion.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "what-is-philosophy", contentSlug: "philosophy/the-branches-of-philosophy", title: "The Branches of Philosophy", summary: "Logic, epistemology, metaphysics, ethics — the map of the whole field.", order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "what-is-philosophy", contentSlug: "philosophy/the-socratic-method", title: "The Socratic Method", summary: "Socrates and the art of questioning your way past false certainty.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "what-is-philosophy", contentSlug: "philosophy/wonder-and-the-examined-life", title: "Wonder & the Examined Life", summary: "Philosophy begins in wonder — and the unexamined life is not worth living.", order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "what-is-philosophy", contentSlug: "philosophy/why-philosophy-matters", title: "Why Philosophy Still Matters", summary: "Clear thinking, a defence against nonsense, and a way of life.", order: 5, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Logic & Arguments ---
+      { unitSlug: "logic-and-arguments", contentSlug: "philosophy/what-is-an-argument", title: "What Is an Argument?", summary: "Premises, conclusions, and what turns a claim into an argument.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "logic-and-arguments", contentSlug: "philosophy/deductive-and-inductive", title: "Deductive vs Inductive", summary: "Certainty versus probability: the two kinds of reasoning.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "logic-and-arguments", contentSlug: "philosophy/validity-and-soundness", title: "Validity & Soundness", summary: "Good form plus true premises — what makes an argument sound.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "logic-and-arguments", contentSlug: "philosophy/forms-of-argument", title: "Classic Argument Forms", summary: "Modus ponens, modus tollens, and the fallacies that mimic them.", order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "logic-and-arguments", contentSlug: "philosophy/building-strong-arguments", title: "Building & Evaluating Arguments", summary: "Charity, counterexamples, and evaluating arguments like a philosopher.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Reasoning & Fallacies ---
+      { unitSlug: "reasoning-and-fallacies", contentSlug: "philosophy/what-is-a-fallacy", title: "What Is a Fallacy?", summary: "Errors in reasoning that still manage to persuade — formal and informal.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "reasoning-and-fallacies", contentSlug: "philosophy/fallacies-of-relevance", title: "Fallacies of Relevance", summary: "Ad hominem, straw man, and other ways to dodge the real issue.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "reasoning-and-fallacies", contentSlug: "philosophy/fallacies-of-presumption", title: "Fallacies of Presumption", summary: "False dilemmas, circular reasoning, and slippery slopes.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "reasoning-and-fallacies", contentSlug: "philosophy/reasoning-and-bias", title: "Reasoning & Bias", summary: "How confirmation bias and motivated reasoning trip us up.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "reasoning-and-fallacies", contentSlug: "philosophy/arguing-well", title: "Arguing Well in the Real World", summary: "Steelmanning, charity, and spotting fallacies in the wild.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Knowledge & Truth ---
+      { unitSlug: "epistemology", contentSlug: "philosophy/what-is-knowledge", title: "What Is Knowledge?", summary: "Knowledge as justified true belief — and why all three are needed.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "epistemology", contentSlug: "philosophy/the-gettier-problem", title: "The Gettier Problem", summary: "When a justified true belief still isn't knowledge.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "epistemology", contentSlug: "philosophy/sources-of-knowledge", title: "Where Knowledge Comes From", summary: "Rationalism versus empiricism, a priori versus a posteriori.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "epistemology", contentSlug: "philosophy/skepticism", title: "Skepticism & Doubt", summary: "Descartes' doubt, the evil demon, and the one belief that survives.", order: 4, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "epistemology", contentSlug: "philosophy/theories-of-truth", title: "What Is Truth?", summary: "Correspondence, coherence, and pragmatic theories of truth.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Reality & Being ---
+      { unitSlug: "metaphysics", contentSlug: "philosophy/what-is-metaphysics", title: "What Is Metaphysics?", summary: "Appearance versus reality, and Plato's cave.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "metaphysics", contentSlug: "philosophy/universals-and-particulars", title: "Universals & Particulars", summary: "Is there one 'redness' behind all red things? Realism versus nominalism.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "metaphysics", contentSlug: "philosophy/free-will", title: "Free Will & Determinism", summary: "Determinism, libertarian freedom, and compatibilism.", order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "metaphysics", contentSlug: "philosophy/identity-and-change", title: "Identity & Change", summary: "The Ship of Theseus and what makes something the same over time.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "metaphysics", contentSlug: "philosophy/time-causation-and-being", title: "Time, Causation & Existence", summary: "Time, causation, and why there is something rather than nothing.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- Mind & Consciousness ---
+      { unitSlug: "philosophy-of-mind", contentSlug: "philosophy/the-mind-body-problem", title: "The Mind-Body Problem", summary: "How do mind and matter relate? The central puzzle.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "philosophy-of-mind", contentSlug: "philosophy/dualism-and-materialism", title: "Dualism vs Materialism", summary: "Dualism, physicalism, behaviorism, and functionalism.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "philosophy-of-mind", contentSlug: "philosophy/consciousness-and-qualia", title: "Consciousness & Qualia", summary: "The hard problem, qualia, and Mary's room.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "philosophy-of-mind", contentSlug: "philosophy/personal-identity", title: "What Makes You, You?", summary: "What makes you the same person over time — and the teleporter puzzle.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "philosophy-of-mind", contentSlug: "philosophy/minds-and-machines", title: "Minds & Machines", summary: "The Turing test, Searle's Chinese Room, and whether machines can think.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- What Is Right & Wrong? ---
+      { unitSlug: "moral-foundations", contentSlug: "philosophy/what-is-ethics", title: "What Is Ethics?", summary: "Descriptive, normative, and metaethics — the three levels.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "moral-foundations", contentSlug: "philosophy/where-morals-come-from", title: "Where Do Morals Come From?", summary: "Moral realism, anti-realism, and Hume's is-ought gap.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "moral-foundations", contentSlug: "philosophy/moral-relativism", title: "Is Morality Relative?", summary: "Is right and wrong relative to culture? The promise and the problems.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "moral-foundations", contentSlug: "philosophy/moral-intuitions", title: "Moral Intuitions & Reasoning", summary: "Gut feelings, reasoning, and what the trolley problem reveals.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "moral-foundations", contentSlug: "philosophy/the-good-and-moral-status", title: "The Good & Who Counts", summary: "Intrinsic value and the expanding circle of who counts.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- How Should We Live? ---
+      { unitSlug: "ethical-theories", contentSlug: "philosophy/consequentialism", title: "Consequentialism", summary: "Utilitarianism, the greatest happiness, and the hedonic calculus.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "ethical-theories", contentSlug: "philosophy/deontology", title: "Duty & Deontology", summary: "Kant, duty, and the categorical imperative.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "ethical-theories", contentSlug: "philosophy/virtue-ethics", title: "Virtue Ethics", summary: "Aristotle, character, and the golden mean.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "ethical-theories", contentSlug: "philosophy/other-approaches", title: "Other Approaches", summary: "Care ethics, contractarianism, and divine command theory.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "ethical-theories", contentSlug: "philosophy/ethics-in-practice", title: "Putting Theories to Work", summary: "One dilemma run through all three great theories.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Ethics in Action ---
+      { unitSlug: "applied-ethics", contentSlug: "philosophy/the-trolley-problem", title: "The Trolley Problem", summary: "The dilemma, the footbridge twist, and the doctrine of double effect.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "applied-ethics", contentSlug: "philosophy/life-and-death", title: "Life & Death Ethics", summary: "Euthanasia and abortion as philosophical debates.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "applied-ethics", contentSlug: "philosophy/animals-and-environment", title: "Animals & the Environment", summary: "Animal rights, the environment, and future generations.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "applied-ethics", contentSlug: "philosophy/justice-and-the-world", title: "A Just World", summary: "Singer's drowning child and our duties to the distant poor.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "applied-ethics", contentSlug: "philosophy/technology-and-the-future", title: "Ethics of Technology", summary: "AI, privacy, and bioethics — the trolley problem in code.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- Society & Justice ---
+      { unitSlug: "political-philosophy", contentSlug: "philosophy/why-the-state", title: "Why Have a State?", summary: "The social contract from Hobbes, Locke, and Rousseau.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "political-philosophy", contentSlug: "philosophy/liberty", title: "Liberty & Its Limits", summary: "Mill's harm principle and two kinds of freedom.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "political-philosophy", contentSlug: "philosophy/justice-and-fairness", title: "Justice & Fairness", summary: "Rawls' veil of ignorance and Nozick's reply.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "political-philosophy", contentSlug: "philosophy/equality-and-rights", title: "Equality, Rights & Democracy", summary: "Rights, equality, and democracy with its critics.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "political-philosophy", contentSlug: "philosophy/ideologies", title: "The Great Ideologies", summary: "Liberalism, conservatism, socialism, libertarianism, anarchism.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- The Ancient World ---
+      { unitSlug: "ancient-philosophy", contentSlug: "philosophy/before-socrates", title: "Before Socrates", summary: "The Presocratics ask what everything is made of.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "ancient-philosophy", contentSlug: "philosophy/socrates", title: "Socrates", summary: "The gadfly of Athens, his method, and his death.", order: 2, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "ancient-philosophy", contentSlug: "philosophy/plato", title: "Plato", summary: "The Forms, the cave, and the just soul.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "ancient-philosophy", contentSlug: "philosophy/aristotle", title: "Aristotle", summary: "The four causes, virtue, and the golden mean.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "ancient-philosophy", contentSlug: "philosophy/hellenistic-and-eastern", title: "\"Living Well: Stoics, Epicureans & the East\"", summary: "Stoics, Epicureans, and a nod to Eastern wisdom.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- The Modern Turn ---
+      { unitSlug: "modern-philosophy", contentSlug: "philosophy/the-rationalists", title: "The Rationalists", summary: "Descartes, Spinoza, Leibniz, and knowledge from reason.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "modern-philosophy", contentSlug: "philosophy/the-empiricists", title: "The Empiricists", summary: "Locke, Berkeley, Hume, and knowledge from experience.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "modern-philosophy", contentSlug: "philosophy/kant", title: "Kant's Revolution", summary: "How the mind shapes experience — Kant's revolution.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "modern-philosophy", contentSlug: "philosophy/hegel-and-marx", title: "History & Society", summary: "The dialectic of history and Marx's materialism.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "modern-philosophy", contentSlug: "philosophy/the-enlightenment-legacy", title: "The Enlightenment & Its Critics", summary: "Reason, progress, and the doubts that followed.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- The Existential Turn ---
+      { unitSlug: "existential-philosophy", contentSlug: "philosophy/the-death-of-god", title: "The Death of God", summary: "Nietzsche, nihilism, and creating your own values.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "existential-philosophy", contentSlug: "philosophy/existence-precedes-essence", title: "Existence Precedes Essence", summary: "Sartre and our condemnation to be free.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "existential-philosophy", contentSlug: "philosophy/authenticity-and-bad-faith", title: "Authenticity & Bad Faith", summary: "Owning your freedom versus fleeing it.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "existential-philosophy", contentSlug: "philosophy/the-absurd", title: "The Absurd", summary: "Camus, Sisyphus, and rebelling against a silent universe.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "existential-philosophy", contentSlug: "philosophy/freedom-anxiety-and-meaning", title: "Freedom, Anxiety & Meaning", summary: "Kierkegaard's leap and the dizziness of freedom.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- Science, Religion & Reality ---
+      { unitSlug: "science-and-religion", contentSlug: "philosophy/philosophy-of-science", title: "What Makes Science, Science?", summary: "Falsifiability, paradigms, and what makes science science.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "science-and-religion", contentSlug: "philosophy/arguments-for-god", title: "Arguments for God", summary: "The cosmological, design, and ontological arguments.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "science-and-religion", contentSlug: "philosophy/the-problem-of-evil", title: "The Problem of Evil", summary: "If God is good and all-powerful, why is there suffering?", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "science-and-religion", contentSlug: "philosophy/faith-and-reason", title: "Faith & Reason", summary: "Fideism, evidentialism, and Pascal's wager.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "science-and-religion", contentSlug: "philosophy/science-religion-and-reality", title: "Science, Religion & Reality", summary: "Conflict, independence, and dialogue between science and faith.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+      // --- The Meaning of Life ---
+      { unitSlug: "meaning-of-life", contentSlug: "philosophy/the-question-of-meaning", title: "The Question of Meaning", summary: "Cosmic versus personal meaning — what are we asking?", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "meaning-of-life", contentSlug: "philosophy/nihilism-and-pessimism", title: "Nihilism & Pessimism", summary: "The claim that life has no meaning — and the answers to it.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "meaning-of-life", contentSlug: "philosophy/happiness-and-the-good-life", title: "The Good Life", summary: "Hedonism, desire, and what makes a life go well.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "meaning-of-life", contentSlug: "philosophy/creating-meaning", title: "Creating Your Own Meaning", summary: "Meaning made, not found — projects, love, and worth.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "meaning-of-life", contentSlug: "philosophy/wisdom-for-living", title: "Wisdom for a Life", summary: "Bringing the whole journey together into wisdom for life.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+    ]
+
+    for (const l of philoLessonsData) {
+      await ctx.db.insert('lessons', {
+        subjectId: subjectIds['philosophy'],
+        unitId: philoUnitIds[l.unitSlug],
+        contentSlug: l.contentSlug,
+        title: l.title,
+        summary: l.summary,
+        order: l.order,
+        estimatedMinutes: l.estimatedMinutes,
+        xpReward: l.xpReward,
+        isPublished: l.isPublished,
+        level: l.level,
+        format: l.format,
+      })
+    }
+
+    const healthUnitsData: typeof unitsData = [
+      { slug: "what-is-health", name: "What Is Health?", order: 1, description: "What health really is — and how to take charge of it.", icon: "HeartPulse", accentColor: "#FF6B9D", levelRange: "Beginner" },
+      { slug: "the-healthy-body", name: "How Your Body Works", order: 2, description: "A friendly tour of the body's systems and how they stay in balance.", icon: "PersonStanding", accentColor: "#E74C3C", levelRange: "Beginner" },
+      { slug: "nutrition-basics", name: "Nutrition Basics", order: 3, description: "Energy, carbohydrates, proteins, and fats — the fundamentals of food.", icon: "Utensils", accentColor: "#E67E22", levelRange: "Beginner" },
+      { slug: "vitamins-and-diet", name: "Vitamins, Minerals & a Balanced Diet", order: 4, description: "Micronutrients, hydration, and what a balanced plate looks like.", icon: "Apple", accentColor: "#F39C12", levelRange: "Beginner" },
+      { slug: "eating-well", name: "Eating Well", order: 5, description: "Mindful, sustainable eating in the real world.", icon: "Salad", accentColor: "#9BDE3C", levelRange: "Beginner → Intermediate" },
+      { slug: "fitness-and-movement", name: "Fitness & Movement", order: 6, description: "Why and how to move — cardio, strength, and a plan for life.", icon: "Dumbbell", accentColor: "#2ECC71", levelRange: "Beginner → Intermediate" },
+      { slug: "sleep-and-rest", name: "Sleep & Rest", order: 7, description: "Sleep stages, your body clock, and building great sleep.", icon: "Moon", accentColor: "#6C5CE7", levelRange: "Beginner → Intermediate" },
+      { slug: "mental-health", name: "Mental Health", order: 8, description: "Caring for your mind — and knowing when and how to get help.", icon: "Brain", accentColor: "#A29BFE", levelRange: "Beginner → Intermediate" },
+      { slug: "stress-and-resilience", name: "Stress & Resilience", order: 9, description: "The stress response, coping tools, and bouncing back.", icon: "Wind", accentColor: "#00CEC9", levelRange: "Beginner → Intermediate" },
+      { slug: "immunity", name: "Immunity & Staying Well", order: 10, description: "Your defences, immune memory, vaccines, and what really helps.", icon: "Shield", accentColor: "#1ABC9C", levelRange: "Beginner → Intermediate" },
+      { slug: "disease-and-prevention", name: "Disease & Prevention", order: 11, description: "How disease spreads, and how to prevent it.", icon: "ShieldPlus", accentColor: "#0984E3", levelRange: "Beginner → Intermediate" },
+      { slug: "substances-and-the-body", name: "Substances & the Body", order: 12, description: "How substances affect the body, the science of addiction, and informed choices.", icon: "Scale", accentColor: "#9B59B6", levelRange: "Intermediate" },
+      { slug: "sexual-and-reproductive-health", name: "Sexual & Reproductive Health", order: 13, description: "Bodies, the cycle, contraception, STIs, and consent — factually and respectfully.", icon: "HeartHandshake", accentColor: "#FD79A8", levelRange: "Intermediate" },
+      { slug: "first-aid-and-safety", name: "First Aid & Safety", order: 14, description: "Life-saving basics, everyday injuries, and staying safe.", icon: "Cross", accentColor: "#FF7043", levelRange: "Beginner → Intermediate" },
+      { slug: "healthy-living", name: "A Healthy Life, by Evidence", order: 15, description: "The pillars, the habits, and the evidence for a long, healthy life.", icon: "Sunrise", accentColor: "#FFD54A", levelRange: "Beginner → Advanced" },
+    ]
+
+    const healthUnitIds: Record<string, any> = {}
+    for (const u of healthUnitsData) {
+      healthUnitIds[u.slug] = await ctx.db.insert('units', {
+        subjectId: subjectIds['health'],
+        slug: u.slug,
+        name: u.name,
+        order: u.order,
+        description: u.description,
+        icon: u.icon,
+        accentColor: u.accentColor,
+        levelRange: u.levelRange,
+      })
+    }
+
+    const healthLessonsData: typeof lessonsData = [
+      // --- What Is Health? ---
+      { unitSlug: "what-is-health", contentSlug: "health/what-is-health", title: "What Is Health?", summary: "What health really means — the WHO definition and why it's far more than the absence of disease.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "what-is-health", contentSlug: "health/dimensions-of-health", title: "The Dimensions of Health", summary: "Physical, mental, emotional, social, purpose, and environmental — the many connected sides of health.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "what-is-health", contentSlug: "health/the-health-continuum", title: "The Health Continuum", summary: "Health is a slider from illness through a neutral middle to peak wellness — not a sick/well switch.", order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "what-is-health", contentSlug: "health/what-shapes-our-health", title: "What Shapes Our Health", summary: "Behaviour, social conditions, environment, and genes shape health far more than the clinic does.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "what-is-health", contentSlug: "health/taking-charge-of-your-health", title: "Taking Charge of Your Health", summary: "Prevention, health literacy, and how small habits compound into big health outcomes.", order: 5, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- How Your Body Works ---
+      { unitSlug: "the-healthy-body", contentSlug: "health/your-body-as-a-system", title: "Your Body as a System", summary: "How organs form cooperating systems, and why the body works as an integrated whole kept in balance by homeostasis.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "the-healthy-body", contentSlug: "health/heart-and-lungs", title: "The Heart & Lungs", summary: "How the cardiovascular and respiratory systems work together to deliver oxygen to every cell and remove carbon dioxide.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "the-healthy-body", contentSlug: "health/fuel-and-waste", title: "Fuel & Waste", summary: "How digestion breaks food into usable nutrients, how the liver processes them, and how the kidneys filter the blood clean.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "the-healthy-body", contentSlug: "health/movement-and-framework", title: "Bones, Muscles & Movement", summary: "How the skeleton provides a living framework, muscles pull on it to create movement, and how to keep both strong throughout life.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "the-healthy-body", contentSlug: "health/the-body-in-balance", title: "The Body in Balance", summary: "A deep dive into homeostasis — how the body regulates temperature, blood sugar, hydration, and blood pressure using negative feedback loops, and what happens when balance fails.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Nutrition Basics ---
+      { unitSlug: "nutrition-basics", contentSlug: "health/why-we-eat", title: "Why We Eat", summary: "Food gives the body two things — energy to run on and the raw materials it needs to grow, repair, and function.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "nutrition-basics", contentSlug: "health/carbohydrates", title: "Carbohydrates", summary: "Carbohydrates are the body's main fuel — simple carbs burn fast, complex carbs and fibre burn slow and steadier.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "nutrition-basics", contentSlug: "health/proteins", title: "Proteins", summary: "Proteins are the body's building blocks — amino acids used for growth, repair, enzymes, and immune defence.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "nutrition-basics", contentSlug: "health/fats", title: "Fats", summary: "Fat is an essential macronutrient — for energy storage, cell membranes, and vitamins — but fat type matters enormously.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "nutrition-basics", contentSlug: "health/energy-balance-and-labels", title: "Energy Balance & the Food Label", summary: "How energy surplus and deficit compound over weeks, and how to read a nutrition label without being misled by serving sizes, %DV, and added sugar.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Vitamins, Minerals & a Balanced Diet ---
+      { unitSlug: "vitamins-and-diet", contentSlug: "health/micronutrients", title: "Vitamins & Minerals", summary: "What micronutrients are, why tiny amounts matter so much, and the key difference between vitamins and minerals.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "vitamins-and-diet", contentSlug: "health/the-key-vitamins", title: "The Key Vitamins", summary: "The headline vitamins — what each does, its deficiency disease, and why fat-soluble excess is dangerous.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "vitamins-and-diet", contentSlug: "health/minerals-and-water", title: "Minerals & Hydration", summary: "The key dietary minerals, why water is a nutrient, and how to stay ahead of dehydration.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "vitamins-and-diet", contentSlug: "health/the-balanced-plate", title: "The Balanced Plate", summary: "The food groups, their ideal proportions on a plate, and practical portion intuition for everyday eating.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "vitamins-and-diet", contentSlug: "health/a-balanced-diet", title: "\"Putting It Together: A Balanced Diet\"", summary: "Why variety is the core strategy, how phytonutrients add depth, and how to build sustainable balance without obsession.", order: 5, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Eating Well ---
+      { unitSlug: "eating-well", contentSlug: "health/building-healthy-meals", title: "Building Healthy Meals", summary: "Putting the balanced plate into practice — portion sizes, hand-based guides, and assembling everyday meals from real foods.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "eating-well", contentSlug: "health/mindful-eating", title: "Mindful Eating", summary: "Tuning in to hunger and fullness cues, eating slowly, and telling apart physical and emotional hunger.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "eating-well", contentSlug: "health/sugar-salt-and-processing", title: "Sugar, Salt & Ultra-Processed Food", summary: "Added vs. natural sugar, hidden salt, and why ultra-processed foods are engineered to override our natural fullness cues.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "eating-well", contentSlug: "health/diets-and-myths", title: "Diets, Fads & Myths", summary: "Why most fad diets fail, how to evaluate diet claims, and why sustainable small changes beat extreme approaches.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "eating-well", contentSlug: "health/a-healthy-relationship-with-food", title: "A Healthy Relationship with Food", summary: "Flexible eating, no good/bad food labels, the 80/20 idea, food as culture and joy, and intuitive eating — with a compassionate note on disordered eating.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Fitness & Movement ---
+      { unitSlug: "fitness-and-movement", contentSlug: "health/why-move", title: "Why Movement Matters", summary: "How regular movement benefits the heart, muscles, bones, mood, sleep, and brain — and why sitting too much is a health risk in itself.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "fitness-and-movement", contentSlug: "health/types-of-exercise", title: "Types of Exercise", summary: "The four pillars of exercise — cardio, strength, flexibility, and balance — and why a complete routine needs all four.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "fitness-and-movement", contentSlug: "health/intensity-and-heart-rate", title: "Intensity & Your Heart Rate", summary: "How to measure exercise intensity using heart rate and the talk test, and how the FITT principle guides a balanced training programme.", order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "fitness-and-movement", contentSlug: "health/building-strength", title: "Building Strength & Endurance", summary: "How progressive overload, adaptation, and recovery combine to build lasting strength and fitness — and why doing too much too soon backfires.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "fitness-and-movement", contentSlug: "health/a-movement-plan-for-life", title: "A Movement Plan for Life", summary: "The weekly activity guidelines, the hidden power of NEAT, and practical strategies for making movement enjoyable and permanent.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Sleep & Rest ---
+      { unitSlug: "sleep-and-rest", contentSlug: "health/why-we-sleep", title: "Why We Sleep", summary: "What sleep actually does for your body and brain — and what it costs when you skip it.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "sleep-and-rest", contentSlug: "health/sleep-stages", title: "The Stages of Sleep", summary: "N1, N2, N3, and REM — what happens in each stage and why the full cycle matters.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "sleep-and-rest", contentSlug: "health/the-body-clock", title: "Your Body Clock", summary: "The circadian rhythm, melatonin, morning light, chronotypes, and why jet lag feels awful.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "sleep-and-rest", contentSlug: "health/sleep-debt", title: "Sleep Debt & What Wrecks Sleep", summary: "How sleep debt accumulates, what it costs, and the specific habits that undermine sleep quality.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "sleep-and-rest", contentSlug: "health/building-great-sleep", title: "Building Great Sleep", summary: "A practical deep-dive into sleep hygiene — the evidence-based habits that build consistently good sleep.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Mental Health ---
+      { unitSlug: "mental-health", contentSlug: "health/what-is-mental-health", title: "What Is Mental Health?", summary: "Mental health is a spectrum we all sit on — not just the presence or absence of illness, but a state of wellbeing everyone can tend to.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "mental-health", contentSlug: "health/emotions-and-mood", title: "Emotions & Mood", summary: "Emotions are signals worth listening to — naming them precisely reduces their intensity, and understanding the thought–feeling–behaviour loop puts you in the driver's seat.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "mental-health", contentSlug: "health/common-conditions", title: "Common Conditions", summary: "Anxiety and depression are among the most common health conditions worldwide — understanding what they actually feel like, and that they are real and treatable, matters enormously.", order: 3, estimatedMinutes: 8, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "mental-health", contentSlug: "health/looking-after-your-mind", title: "Looking After Your Mind", summary: "Everyday habits — connection, movement, sleep, meaning, nature, and helping others — build mental resilience and wellbeing like regular exercise builds physical fitness.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "mental-health", contentSlug: "health/getting-help", title: "When & How to Get Help", summary: "Knowing when to reach out, what kinds of support exist, and how to support a friend are skills as important as any other health knowledge.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Stress & Resilience ---
+      { unitSlug: "stress-and-resilience", contentSlug: "health/what-is-stress", title: "What Is Stress?", summary: "Stressors, the body's alarm system, and why some stress is normal and even useful.", order: 1, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "stress-and-resilience", contentSlug: "health/the-stress-response", title: "The Body's Stress Response", summary: "Fight-or-flight in detail — the amygdala alarm, adrenaline and cortisol, and what changes in the body.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "stress-and-resilience", contentSlug: "health/when-stress-helps-and-harms", title: "When Stress Helps & Harms", summary: "Eustress vs distress, the Yerkes-Dodson inverted-U, and how chronic stress harms sleep, heart, immunity, and mood.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "stress-and-resilience", contentSlug: "health/coping-and-calming", title: "Coping & Calming", summary: "Practical tools for managing stress — slow breathing, reframing, and the difference between healthy and unhealthy coping.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "stress-and-resilience", contentSlug: "health/building-resilience", title: "Building Resilience", summary: "Resilience as a buildable skill — the protective factors, post-stress growth, and how to build a buffer before you need it.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Immunity & Staying Well ---
+      { unitSlug: "immunity", contentSlug: "health/meet-your-defences", title: "Meet Your Defences", summary: "The three layers that protect you — physical barriers, fast innate immunity, and targeted adaptive immunity.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "immunity", contentSlug: "health/how-you-fight-infection", title: "How You Fight an Infection", summary: "The hour-by-hour story of what your body does when a pathogen breaks through your defences.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "immunity", contentSlug: "health/immune-memory-and-vaccines", title: "Immune Memory & Vaccines", summary: "How memory cells make the second encounter far milder — and how vaccines safely teach this without causing disease.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "immunity", contentSlug: "health/supporting-your-immune-system", title: "Supporting Your Immune System", summary: "What genuinely helps your immune system — and why \"immune-boosting\" products are mostly hype.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "immunity", contentSlug: "health/when-immunity-goes-wrong", title: "When Immunity Goes Wrong", summary: "Allergies, autoimmunity, and immunodeficiency — what happens when the immune system tips too far in either direction.", order: 5, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Disease & Prevention ---
+      { unitSlug: "disease-and-prevention", contentSlug: "health/what-makes-us-ill", title: "What Makes Us Ill", summary: "The two big families of disease — infectious and non-communicable — and what drives each.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "disease-and-prevention", contentSlug: "health/how-disease-spreads", title: "How Disease Spreads", summary: "Transmission routes, the chain of infection, and R₀ — how many people one case can infect.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "disease-and-prevention", contentSlug: "health/stopping-the-spread", title: "Stopping the Spread", summary: "How hygiene, isolation, clean water, and vaccination break transmission — and why herd immunity works.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "disease-and-prevention", contentSlug: "health/lifestyle-and-chronic-disease", title: "Lifestyle & Chronic Disease", summary: "Non-communicable diseases are the world's biggest killers — and most share a handful of modifiable risk factors.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "disease-and-prevention", contentSlug: "health/prevention-and-screening", title: "Prevention, Screening & Check-ups", summary: "The three levels of prevention, the logic of screening, its trade-offs, and which check-ups to expect at different life stages.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Substances & the Body ---
+      { unitSlug: "substances-and-the-body", contentSlug: "health/how-substances-affect-the-body", title: "How Substances Affect the Body", summary: "How psychoactive substances alter the nervous system, the broad categories they fall into, and why dose and frequency drive both effect and risk.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "substances-and-the-body", contentSlug: "health/alcohol", title: "Alcohol", summary: "Standard drinks, blood-alcohol concentration and its effects, how the liver clears alcohol, and what the evidence says about low-risk drinking.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "substances-and-the-body", contentSlug: "health/tobacco-and-nicotine", title: "Tobacco & Nicotine", summary: "How smoking harms the body through tar, carbon monoxide, and nicotine, and the evidence-backed benefits that begin within minutes of quitting.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "substances-and-the-body", contentSlug: "health/the-science-of-addiction", title: "The Science of Addiction", summary: "How the brain's reward pathway drives addiction, the difference between tolerance, dependence, and addiction, and why it is a treatable health condition, not a character flaw.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "substances-and-the-body", contentSlug: "health/risk-moderation-and-help", title: "Risk, Moderation & Help", summary: "Making informed decisions about substance use — harm reduction, recognising when use has become a problem, and where to find judgement-free support.", order: 5, estimatedMinutes: 11, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- Sexual & Reproductive Health ---
+      { unitSlug: "sexual-and-reproductive-health", contentSlug: "health/the-reproductive-systems", title: "The Reproductive Systems", summary: "A factual, respectful overview of the male and female reproductive systems, key structures, and the hormones that drive puberty.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "sexual-and-reproductive-health", contentSlug: "health/the-menstrual-cycle", title: "The Menstrual Cycle", summary: "The ~28-day hormonal cycle, its four phases, the key hormones driving each phase, and what is typical versus worth discussing with a doctor.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "sexual-and-reproductive-health", contentSlug: "health/contraception-and-planning", title: "\"Contraception & Planning\"", summary: "How the main contraceptive methods work, their effectiveness, reversibility, and the basics of making an informed personal choice.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "sexual-and-reproductive-health", contentSlug: "health/sti-prevention", title: "\"Staying Safe: STIs & Prevention\"", summary: "What sexually transmitted infections are, how they spread, how to protect against them, and the importance of testing and treatment.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "sexual-and-reproductive-health", contentSlug: "health/consent-relationships-and-wellbeing", title: "\"Consent, Relationships & Well-Being\"", summary: "The FRIES model of consent, the hallmarks of healthy vs unhealthy relationships, communication and respect, and where to find care and support.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- First Aid & Safety ---
+      { unitSlug: "first-aid-and-safety", contentSlug: "health/first-aid-basics", title: "First-Aid Basics", summary: "The DRABC primary survey — how to assess any emergency scene, keep yourself safe, and call for help effectively.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "first-aid-and-safety", contentSlug: "health/life-saving-skills", title: "Life-Saving Skills", summary: "CPR compressions, rescue breaths, the recovery position, and the back-blow and abdominal-thrust sequence for choking.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "first-aid-and-safety", contentSlug: "health/everyday-injuries", title: "Everyday Injuries", summary: "Practical first aid for cuts, burns, sprains, nosebleeds, and knowing when a GP or A&E visit is needed.", order: 3, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "first-aid-and-safety", contentSlug: "health/staying-safe", title: "Staying Safe", summary: "Preventing accidents before they happen — home, road, water, and sun safety, and why prevention beats first aid every time.", order: 4, estimatedMinutes: 6, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "first-aid-and-safety", contentSlug: "health/acting-when-it-counts", title: "\"Emergencies: Acting When It Counts\"", summary: "Recognising a heart attack, stroke (FAST), anaphylaxis, and seizures — plus the chain of survival and staying calm under pressure.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "intermediate", format: "deepdive" },
+      // --- A Healthy Life, by Evidence ---
+      { unitSlug: "healthy-living", contentSlug: "health/the-pillars-of-health", title: "The Pillars of a Healthy Life", summary: "The handful of pillars that do most of the work — sleep, nutrition, movement, connection, and managing stress — and why they reinforce one another.", order: 1, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "beginner", format: "core" },
+      { unitSlug: "healthy-living", contentSlug: "health/habits-that-stick", title: "Habits That Stick", summary: "The science of behaviour change — cue, routine, reward, starting tiny, habit stacking, and identity-based habits.", order: 2, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "healthy-living", contentSlug: "health/health-across-a-lifetime", title: "Health Across a Lifetime", summary: "What matters most at each life stage — and the reassuring evidence that healthy change is never too late.", order: 3, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "healthy-living", contentSlug: "health/spotting-health-myths", title: "Spotting Health Myths", summary: "Becoming a savvy consumer of health information — correlation vs causation, anecdote vs evidence, marketing red flags, and finding trustworthy sources.", order: 4, estimatedMinutes: 7, xpReward: 50, isPublished: true, level: "intermediate", format: "core" },
+      { unitSlug: "healthy-living", contentSlug: "health/your-healthy-life-by-evidence", title: "Your Healthy Life, by Evidence", summary: "What the evidence — Blue Zones, large cohort studies, and compounding habits — actually predicts about a long, healthy life, and how to build your own evidence-based plan.", order: 5, estimatedMinutes: 12, xpReward: 100, isPublished: true, level: "advanced", format: "deepdive" },
+    ]
+
+    for (const l of healthLessonsData) {
+      await ctx.db.insert('lessons', {
+        subjectId: subjectIds['health'],
+        unitId: healthUnitIds[l.unitSlug],
         contentSlug: l.contentSlug,
         title: l.title,
         summary: l.summary,

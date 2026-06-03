@@ -1,0 +1,94 @@
+---
+title: Minds & Machines
+subject: philosophy
+contentSlug: philosophy/minds-and-machines
+order: 5
+estimatedMinutes: 12
+---
+
+<Lesson>
+
+<Step title="Can a machine think?" kind="explain">
+
+In 1950, Alan Turing opened one of the most consequential papers in the history of science with a deceptively simple question: **"Can machines think?"** He immediately noted that the question depends on contested definitions of "machine" and "think" — so he proposed replacing it with something more precise: the **Imitation Game**.
+
+The Imitation Game (now called the Turing Test) works like this. A human judge exchanges text messages with two interlocutors in separate rooms — one human, one machine. The machine's goal is to convince the judge it is human. If the machine can fool the judge reliably, Turing suggested, we have good reason to attribute intelligence to it.
+
+This is a behavioral criterion for intelligence. It asks not "what is the machine made of?" or "how does it process information?" but "can it do what intelligent beings do?" The test is elegant and operationalizable — which is exactly why it became so influential, and exactly why Searle's later objection hit so hard.
+
+</Step>
+
+<Step title="Try the imitation game" kind="interactive">
+
+Read these short exchanges and try to judge which response came from a human and which from a machine — then reflect on what fooling a judge does and doesn't prove.
+
+<TuringTest />
+
+The test shows something real: modern language models can produce outputs that are extremely difficult to distinguish from human outputs. But Searle argues this proves less than it seems.
+
+</Step>
+
+<Step title="The Chinese Room" kind="interactive">
+
+John Searle's 1980 thought experiment is the most famous objection to the idea that passing the Turing Test is sufficient for genuine thinking. Suppose you are locked in a room with a very large rulebook in English. Chinese speakers outside pass in Chinese symbols through a slot. You look up the symbols in the rulebook, follow the instructions, and pass back the appropriate Chinese symbols. To those outside, you appear to understand Chinese fluently. But you understand nothing.
+
+<ChineseRoom />
+
+Searle's argument: a digital computer is, at the formal level, exactly like the person in the room. It takes in input symbols, applies rules (a program), and outputs symbols. It manipulates **syntax** (the formal structure of symbols) without ever grasping **semantics** (what the symbols mean). No matter how sophisticated the program, syntax alone never constitutes understanding.
+
+</Step>
+
+<Step title="Syntax vs semantics — and the replies" kind="explain">
+
+The Chinese Room generated enormous debate. Several replies have been offered:
+
+**The Systems Reply:** the person in the room doesn't understand Chinese, but the *whole system* — person, rulebook, room — does. Understanding is a property of the system, not the individual components. Searle responds: internalize the whole system — memorize the rulebook and do all the computation in your head. You still understand nothing.
+
+**The Robot Reply:** put the rulebook system in a robot with perception and motor control, embedded in the world. Now the symbols are causally connected to things they refer to. Searle responds: adding input-output connections doesn't add understanding — it just adds more syntactic processes.
+
+**The Brain Simulator Reply:** make the program simulate the actual neuron-by-neuron firing of a Chinese speaker's brain. Searle responds: simulating neurons is not the same as having neurons. A perfect computer simulation of a storm doesn't get you wet.
+
+None of these replies has definitively settled the matter. Searle remains one of the most cited — and most contested — arguments in philosophy of mind.
+
+</Step>
+
+<Step title="Strong AI vs weak AI — and what current models show" kind="explain">
+
+Searle distinguishes **weak AI** from **strong AI**. Weak AI is the uncontroversial claim that computers are useful tools for studying the mind — they can model cognitive processes, help us test theories, perform impressive feats of language generation. Almost no one denies this.
+
+**Strong AI** is the claim that a suitably programmed computer *just is* a mind — it literally understands, believes, and is conscious, not merely simulates these things. This is Searle's target.
+
+Today's large language models are spectacular examples of weak AI: they can generate fluent, contextually appropriate text, appear to reason about complex topics, and pass versions of the Turing Test. Whether they involve any genuine understanding — any semantics rather than mere syntax — is exactly what Searle's argument puts in question, and it is not resolved by pointing to their impressive performance.
+
+The hard problem of consciousness lurks here: even if we could verify that a machine behaves exactly as a conscious being would, we face the same question as with other minds — whether there is anything it is like to *be* that machine. Behavior, however sophisticated, underdetermines inner experience.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="Searle's Chinese Room is primarily an argument that:"
+  options={[
+    "Computers can never pass the Turing Test, no matter how sophisticated they become",
+    "Syntactic symbol manipulation — however sophisticated — is not sufficient for semantic understanding or genuine thought",
+    "Human thought is also purely mechanical and therefore not genuinely meaningful",
+    "Artificial intelligence is impossible in principle because only biological systems can think"
+  ]}
+  correctIndex={1}
+  explanation="Searle does not deny that machines can produce impressive, human-like outputs (in fact his imagined Chinese Room does pass the Turing Test). His argument is that producing the right outputs by following formal rules (syntax) is not the same as genuinely understanding what those symbols mean (semantics). Strong AI claims a program running on hardware literally understands — Searle argues no amount of syntactic processing achieves this."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **The Turing Test**: if a machine can fool a judge into thinking it is human via text conversation, we have reason to attribute intelligence to it. A behavioral criterion for thinking.
+- **Searle's Chinese Room**: a person follows a rulebook to produce fluent Chinese outputs without understanding Chinese. A computer does the same — manipulating syntax without grasping semantics.
+- **Syntax vs semantics**: the central distinction. Symbol manipulation (however fast and sophisticated) does not automatically produce meaning or understanding.
+- **Main replies and Searle's counters**: the systems reply (understanding belongs to the whole system), the robot reply (add perception and action), the brain simulator reply — each contested by Searle.
+- **Weak AI** (computers as useful cognitive tools) vs **strong AI** (computers that genuinely think). Current large language models are powerful examples of weak AI; whether they constitute strong AI remains genuinely open.
+- The hard problem of consciousness underlies the debate: behavioral indistinguishability does not settle whether there is inner experience.
+
+</Step>
+
+</Lesson>

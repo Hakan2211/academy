@@ -1,0 +1,85 @@
+---
+title: Unemployment
+subject: economics
+contentSlug: economics/unemployment
+order: 4
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="Who counts as unemployed?" kind="explain">
+
+"Unemployed" has a surprisingly strict economic definition. To be counted, a person must be **without a job, available to work, and actively looking** for one. Miss any of those, and you're not unemployed in the statistical sense.
+
+That has a sharp consequence. The economy's adults split into three groups:
+
+- **Employed** — anyone with a paid job, even part-time.
+- **Unemployed** — jobless but actively searching.
+- **Not in the labour force** — everyone else: retirees, full-time students, stay-at-home parents, and the **discouraged workers** who have given up looking.
+
+The **labour force** is just the first two combined — the people either working or trying to. Everyone in the third group sits *outside* it entirely.
+
+</Step>
+
+<Step title="The unemployment rate" kind="explain">
+
+The headline number is the **unemployment rate**: the share of the *labour force* that is unemployed.
+
+<Formula tex="\text{Unemployment rate} = \frac{\text{unemployed}}{\text{labour force}} \times 100" block />
+
+The denominator is the key subtlety. It's the labour force, **not** the whole population, so people who aren't looking never enter the calculation. This produces a famously counter-intuitive effect: if discouraged workers stop searching, they leave the labour force, and the unemployment rate can *fall* even though nobody got a job.
+
+That's why economists pair the unemployment rate with the **labour-force participation rate** — the share of the working-age population that is *in* the labour force. A falling unemployment rate alongside falling participation can be a warning sign, not good news.
+
+</Step>
+
+<Step title="Define the rate, sort the cause" kind="interactive">
+
+First nudge people between the three states and watch how the rate responds — especially what happens when someone moves into "not looking." Then read each story and sort it into the right *type* of unemployment.
+
+<UnemploymentTypes />
+
+Watch the trap in the rate: moving a person from "looking" to "not looking" shrinks both the numerator and the labour force, dropping the rate without creating a single job.
+
+</Step>
+
+<Step title="Three kinds of unemployment" kind="explain">
+
+Not all unemployment has the same cause or cure. Economists name three types:
+
+- **Frictional** unemployment is the short-term joblessness of people *between* jobs or searching for their first one. It reflects the time it takes to match workers to openings. A little of it is normal and even healthy — it means people are finding better fits.
+- **Structural** unemployment comes from a *mismatch* between the skills (or location) workers have and the jobs available. When automation replaces a task, or an industry moves away, displaced workers can't simply walk into the new jobs — they need retraining or relocation. It tends to be longer-lasting.
+- **Cyclical** unemployment rises and falls with the **business cycle**. In a recession, weak demand across the whole economy means firms everywhere cut jobs; in a boom, it shrinks toward zero. This is the type policymakers most try to fight.
+
+Frictional and structural unemployment never fully disappear — together they make up the economy's **natural rate of unemployment**, the level that persists even in good times. "Full employment" doesn't mean zero unemployment; it means cyclical unemployment is roughly zero and only the natural rate remains.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A group of discouraged workers stops actively searching for jobs and drops out of the labour force entirely. Holding everything else constant, what happens to the measured unemployment rate?"
+  options={[
+    "It rises, because more people are now without work",
+    "It falls, because they leave the labour force and are no longer counted as unemployed",
+    "It is unchanged, because they still don't have jobs",
+    "It cannot be calculated without knowing the total population"
+  ]}
+  correctIndex={1}
+  explanation="To be counted as unemployed, a person must be actively looking for work. Discouraged workers who give up searching leave the labour force, so they vanish from both the numerator (unemployed) and the denominator (labour force) of the unemployment rate. The measured rate can therefore fall even though no jobs were created and these people are still without work. This is exactly why economists also track the labour-force participation rate."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- To be **unemployed** you must be jobless, available, and **actively looking**; others (retirees, students, discouraged workers) are **not in the labour force**.
+- The **labour force** = employed + unemployed; the **unemployment rate** = unemployed ÷ labour force × 100.
+- Because the denominator excludes non-searchers, the rate can **fall when discouraged workers quit looking** — so watch the **participation rate** too.
+- **Frictional** = between jobs (normal); **structural** = skills/location mismatch (longer-lasting); **cyclical** = driven by recessions.
+- Frictional + structural make up the **natural rate**; "full employment" means roughly zero **cyclical** unemployment, not zero unemployment.
+
+</Step>
+
+</Lesson>

@@ -1,0 +1,94 @@
+---
+title: Gross Domestic Product
+subject: economics
+contentSlug: economics/gross-domestic-product
+order: 1
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="One number for a whole economy" kind="explain">
+
+How do you measure something as vast as an entire economy in a single number? Economists reach for **gross domestic product (GDP)**: the total market value of all the **final** goods and services produced **within a country** in a given period — usually a year.
+
+Unpack that definition, because every word is doing work:
+
+- **Market value** lets us add unlike things. You can't sum 4 million haircuts and 200,000 cars directly, so we multiply each by its price and add up the dollars.
+- **Final** means we count the loaf of bread you buy, not the flour, the wheat, and the dough that went into it. Counting those too would be **double counting** — the value of the inputs is already baked into the final price.
+- **Produced within a country** is what makes it *domestic*. A German car built in a US factory counts in US GDP; an American song streamed worldwide and recorded abroad does not.
+- **In a given period** means GDP is a *flow* — output per year — not a stock of wealth sitting around.
+
+GDP is the headline gauge of how much an economy makes. When you hear that an economy "grew 3%" or "shrank," that is real GDP changing.
+
+</Step>
+
+<Step title="The expenditure approach: C + I + G + NX" kind="explain">
+
+Everything produced is bought by *someone*, so we can measure GDP by adding up all the spending in the economy. That spending falls into exactly four buckets:
+
+- **Consumption (C)** — households buying goods and services: food, rent, phones, haircuts. Usually the biggest slice, often around two-thirds.
+- **Investment (I)** — firms buying *capital* that helps produce future output: new factories, machines, and business inventories, plus new housing. (Careful: buying stocks is **not** investment in this sense — that just transfers ownership.)
+- **Government (G)** — government purchases of goods and services: roads, soldiers' salaries, public schools. This excludes transfer payments like pensions and welfare, which we'll come back to.
+- **Net exports (NX)** — exports minus imports. We add what foreigners buy from us and subtract what we buy from abroad (since imports were produced elsewhere, not domestically).
+
+Put together, that gives the single most-used identity in macroeconomics:
+
+<Formula tex="GDP = C + I + G + NX" block />
+
+</Step>
+
+<Step title="Build a GDP" kind="interactive">
+
+Slide each spending category and watch them stack into one total. Then test your instincts: tap each transaction below and decide whether it adds to *this year's* GDP.
+
+<GDPBuilder />
+
+Notice how consumption usually dwarfs the others, and how negative net exports (importing more than you export) actually *subtract* from the total. The four-bucket identity always holds — every dollar of output shows up as someone's spending.
+
+</Step>
+
+<Step title="What GDP leaves out" kind="explain">
+
+GDP is powerful, but it is a deliberately narrow ruler. Several things slip through it entirely:
+
+- **Used goods and resales.** A second-hand car was already counted the year it was built. Reselling it shuffles an existing good, producing nothing new.
+- **Financial transactions.** Buying shares or bonds is a transfer of ownership, not new output. (The broker's *fee* — a service — does count.)
+- **Transfer payments.** Pensions, welfare, and unemployment cheques move money without producing a good or service in exchange, so they're outside G.
+- **Non-market and unpaid work.** Cooking your own dinner or caring for your own children produces real value, but no market transaction records it.
+- **The underground economy.** Cash-in-hand and illegal activity go unmeasured.
+
+<Callout type="warn" title="GDP is not a scorecard for well-being">
+GDP counts *output*, not happiness. It ignores leisure, the value of a clean environment (and even rises when we spend to clean up pollution), and says nothing about how income is shared. A country can have a high GDP and deep inequality. Useful gauge, terrible verdict on a good life.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You sell your three-year-old car to a friend for 8,000 dollars. How does this transaction affect this year's GDP?"
+  options={[
+    "It adds 8,000 dollars to consumption (C)",
+    "It adds 8,000 dollars to investment (I)",
+    "It does not add to GDP at all — the car was counted when it was first produced",
+    "It subtracts 8,000 dollars, because it is a used good"
+  ]}
+  correctIndex={2}
+  explanation="GDP counts the value of newly produced final goods and services. The car's full value entered GDP in the year it was manufactured. Reselling it simply transfers an existing good from one owner to another, producing nothing new, so it does not enter this year's GDP. (Any commission paid to a dealer for the service of arranging the sale would count, since that service is produced this year.)"
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **GDP** is the total market value of all **final** goods and services produced **within a country** in a period.
+- "Final" avoids **double counting**; "market value" lets us add unlike goods; "domestic" means location of production, not nationality of producer.
+- The **expenditure approach** sums four buckets: **GDP = C + I + G + NX** (consumption, investment, government, net exports).
+- **Investment** means new capital and inventories — *not* buying stocks. **Net exports** can be negative and then subtract.
+- GDP **leaves out** used-good resales, financial transactions, transfer payments, unpaid/non-market work, and the underground economy.
+- High GDP measures **output**, not well-being, equality, or the value of leisure and the environment.
+
+</Step>
+
+</Lesson>

@@ -6,8 +6,8 @@ uniform float uTime;
 uniform vec2 uResolution;
 uniform vec2 uMouse;
 uniform float uReduced;
-uniform vec2 uIslandPos[8];   // centred, y-up; x is multiplied by aspect below
-uniform vec3 uIslandColor[8]; // accent rgb (0..1, sRGB)
+uniform vec2 uIslandPos[12];   // centred, y-up; x is multiplied by aspect below
+uniform vec3 uIslandColor[12]; // accent rgb (0..1, sRGB)
 uniform float uIslandCount;
 
 float hash21(vec2 p) {
@@ -101,7 +101,7 @@ void main() {
   // island-tinted colour field — each subject world bleeds its accent into space
   vec3 acc = vec3(0.0);
   float wsum = 0.0;
-  for (int i = 0; i < 8; i++) {
+  for (int i = 0; i < 12; i++) {
     if (float(i) >= uIslandCount) break;
     vec2 ipos = vec2(uIslandPos[i].x * aspect, uIslandPos[i].y);
     float d = length(p - ipos);

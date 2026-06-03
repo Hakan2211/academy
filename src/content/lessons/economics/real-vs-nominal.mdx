@@ -1,0 +1,86 @@
+---
+title: Real vs Nominal GDP
+subject: economics
+contentSlug: economics/real-vs-nominal
+order: 2
+estimatedMinutes: 7
+---
+
+<Lesson>
+
+<Step title="When the number lies" kind="explain">
+
+Suppose a country's GDP doubles in ten years. Are people twice as well off? Not necessarily — and spotting why is one of the most important skills in macroeconomics.
+
+GDP is prices times quantities added up across the whole economy. So GDP can rise for two completely different reasons:
+
+1. The country genuinely produces **more stuff** — more cars, more haircuts, more software.
+2. **Prices simply went up** while output barely changed.
+
+The first is real progress. The second is just inflation wearing a disguise. A measure that can't tell them apart is dangerous, so economists split GDP in two.
+
+</Step>
+
+<Step title="Nominal vs real" kind="explain">
+
+- **Nominal GDP** values output at the prices of the **current** year. Because it mixes changing quantities with changing prices, it overstates growth whenever prices rise.
+- **Real GDP** values output at the prices of a fixed **base year**. By holding prices constant, it strips inflation out, so any change reflects a genuine change in the *quantity* of goods and services.
+
+Here is the intuition in one example. If a baker makes the exact same 1,000 loaves this year as last year, but the price rises from 2 dollars to 3 dollars, nominal "bread GDP" jumps from 2,000 to 3,000 — a 50% leap. Yet not a single extra loaf was baked. Real GDP, valuing both years at the base-year price of 2 dollars, stays flat at 2,000. It correctly reports **zero** real growth.
+
+When news reports say the economy "grew 2.5% last year," they almost always mean **real** GDP. That is the number that tracks living standards.
+
+</Step>
+
+<Step title="The GDP deflator" kind="explain">
+
+How do we convert between the two? With a price index called the **GDP deflator**, set to 100 in the base year:
+
+<Formula tex="\text{GDP deflator} = \frac{\text{Nominal GDP}}{\text{Real GDP}} \times 100" block />
+
+The deflator measures the average price level of everything in GDP relative to the base year. A deflator of 130 means prices are 30% higher than in the base year. Rearranging the formula lets you recover real GDP from the nominal figure:
+
+<Formula tex="\text{Real GDP} = \frac{\text{Nominal GDP}}{\text{GDP deflator}} \times 100" block />
+
+So the deflator is the bridge. Inflate output at this year's prices to get nominal GDP; divide back out by the deflator to get real GDP. The two only agree in the base year, where the deflator is exactly 100.
+
+</Step>
+
+<Step title="Separate real growth from inflation" kind="interactive">
+
+Set a real growth rate and an inflation rate, then watch the two GDP lines diverge over ten years.
+
+<RealNominalGDP />
+
+Push real growth to zero and inflation high: the nominal line still climbs steeply, but the real line lies flat — *all* of that apparent growth is rising prices. Now flip it: high real growth, zero inflation, and the lines sit on top of each other. The shaded gap between them is exactly the inflation that nominal GDP smuggles in.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="From 2023 to 2024, a country's nominal GDP rose 6%, while the GDP deflator rose 4%. Roughly what happened to real GDP?"
+  options={[
+    "It rose about 10%, adding the two figures",
+    "It rose about 2% — nominal growth minus the price-level increase",
+    "It fell about 4%",
+    "It stayed exactly the same"
+  ]}
+  correctIndex={1}
+  explanation="Nominal GDP growth is approximately real growth plus inflation. So real growth is roughly nominal growth minus inflation: 6% minus 4% is about 2%. Most of the headline 6% jump was just higher prices; only about 2% reflects the country actually producing more goods and services. This is why economists track real, not nominal, GDP to judge living standards."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Nominal GDP** uses current-year prices, so it mixes price changes with quantity changes and overstates growth during inflation.
+- **Real GDP** uses fixed base-year prices, so its changes reflect genuine changes in output.
+- The **GDP deflator** = (nominal ÷ real) × 100 measures the price level relative to the base year (where it equals 100).
+- **Real GDP** = (nominal ÷ deflator) × 100 strips inflation back out.
+- Roughly, **nominal growth ≈ real growth + inflation**, so real growth ≈ nominal growth − inflation.
+- Living standards track **real** GDP, not nominal — a doubling number can be all prices and no extra stuff.
+
+</Step>
+
+</Lesson>

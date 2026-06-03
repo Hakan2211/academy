@@ -1,0 +1,79 @@
+---
+title: Fixing Externalities
+subject: economics
+contentSlug: economics/correcting-externalities
+order: 2
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="Folding the spillover back into the price" kind="explain">
+
+We left the last lesson with a clear diagnosis: a negative externality makes the market over-produce because firms ignore the costs they push onto others. The cure follows directly — make the firm *feel* that cost. If polluting is no longer free, the firm will pollute less, all on its own.
+
+The economist Arthur Pigou proposed the cleanest version: a tax on each polluting unit equal to the harm it causes. We call it a **Pigouvian tax**. It does not ban anything or set a quota. It simply changes the price the firm faces so that the firm's *private* cost finally matches the *social* cost — and then lets the market do the rest.
+
+</Step>
+
+<Step title="The right tax closes the gap exactly" kind="interactive">
+
+A per-unit tax lifts the firm's supply curve upward — every unit now costs the firm more by the amount of the tax. Slide the tax and watch the supply curve climb toward the dashed social-cost line.
+
+<PigouvianTax />
+
+The magic is in the *size*. Set the tax too low and the firm still under-pays for the harm, so it over-produces. Set it too high and you over-correct — now the market makes too little, and a new welfare loss opens on the other side. But set the tax **equal to the external cost**, and the supply curve lands exactly on the social-cost curve. The market quantity slides down to the social optimum, and the welfare loss disappears. The externality has been **internalised**: the price now tells the whole truth.
+
+</Step>
+
+<Step title="Taxes, subsidies, and the budget twist" kind="explain">
+
+The same logic runs in reverse for **positive** externalities. If a vaccination or a year of schooling benefits society beyond the buyer, a **Pigouvian subsidy** — a payment per unit equal to the external benefit — lowers the price the buyer faces, nudges quantity up to the optimum, and captures the spillover. Tax the bad, subsidise the good.
+
+A subtle bonus: a pollution tax doesn't just shrink output, it raises **revenue** — money a government can use to cut other taxes or repair the very damage the pollution caused. The tax does useful work even on the units that *do* still get produced, because the firm is at last paying for the harm.
+
+<Callout type="tip" title="Tax the externality, not the activity">
+A good Pigouvian tax targets the *spillover itself* — tons of carbon, not 'factories'; tailpipe emissions, not 'driving'. That way firms keep every cheap way to cut harm (cleaner fuel, scrubbers, off-peak shifts) and only pay for the damage that remains. Banning the activity outright throws away those cheaper adjustments.
+</Callout>
+
+</Step>
+
+<Step title="Cap-and-trade and the Coase surprise" kind="explain">
+
+Taxes set the *price* of polluting and let quantity adjust. **Cap-and-trade** flips that: the government sets the total *quantity* of pollution allowed — the cap — issues that many permits, and lets firms buy and sell them. A firm that can cut emissions cheaply does so and sells its spare permits; a firm for whom cutting is costly buys permits instead. The cap is hit at the lowest total cost, and the permit price emerges from the market.
+
+Then there is the contrarian insight. Ronald Coase argued that if **property rights are clear** and bargaining is cheap, the people involved can sometimes solve an externality *themselves*, with no government at all. If a factory's smoke bothers a nearby laundry, and the right to the air is well defined, the two parties can simply strike a deal — whoever values the clean air more pays the other to get it. The remarkable claim of the **Coase theorem** is that the efficient outcome emerges regardless of *who* holds the right; the right only decides who pays whom.
+
+<Callout type="warn" title="Coase has a catch">
+The Coase theorem works only when bargaining is cheap and the parties are few. With a million people downwind of a power plant — strangers who can never all sit at one table — the transaction costs are enormous and private bargaining collapses. That is precisely when a tax, a subsidy, or a cap does the job the market cannot.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="A factory's pollution imposes an external cost of $20 per unit. A regulator wants the market to reach the socially optimal quantity. What size Pigouvian tax should it set, and what happens if it sets a smaller one?"
+  options={[
+    "A tax of $20; a smaller tax leaves the firm under-paying for the harm, so it still over-produces",
+    "A tax larger than $20, to be safe; any tax fixes the problem fully",
+    "No tax; the market is already efficient once pollution exists",
+    "A tax of $20; a smaller tax causes the market to under-produce"
+  ]}
+  correctIndex={0}
+  explanation="The ideal Pigouvian tax equals the external cost — here $20 per unit. That lifts the firm's supply curve up to coincide with the social-cost curve, so the market quantity falls to the social optimum and the externality is internalised. A smaller tax means the firm still doesn't pay the full social cost, so it keeps over-producing and some welfare loss remains. A larger tax would over-correct and cause under-production."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- A **Pigouvian tax** equal to the external cost makes the firm's private cost match the **social cost**, pushing output to the optimum — the externality is **internalised**.
+- Set it too low and the market over-produces; too high and it under-produces; **equal to the harm** closes the gap exactly.
+- **Positive** externalities call for a **Pigouvian subsidy** — pay the external benefit to lift quantity up.
+- **Cap-and-trade** fixes the quantity of pollution and lets a permit market set the price, hitting the cap at least cost.
+- The **Coase theorem**: with clear property rights and cheap bargaining, parties can fix externalities privately — but high transaction costs (many strangers) break it, leaving room for policy.
+
+</Step>
+
+</Lesson>

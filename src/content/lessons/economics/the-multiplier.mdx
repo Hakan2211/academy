@@ -1,0 +1,84 @@
+---
+title: The Multiplier
+subject: economics
+contentSlug: economics/the-multiplier
+order: 4
+estimatedMinutes: 8
+---
+
+<Lesson>
+
+<Step title="One dollar, spent again and again" kind="explain">
+
+We've seen that shifting aggregate demand moves the whole economy. But there's a twist that makes AD shifts more powerful than they first appear: a dollar of new spending doesn't stop after one transaction. It ripples.
+
+Suppose the government spends $1,000 building a road. That $1,000 becomes **income** for the construction workers and suppliers. They don't bury it — they spend part of it on groceries, rent, a new phone. *That* spending becomes income for grocers, landlords, and phone shops, who in turn spend part of *their* new income. And on it goes. The single injection sets off round after round of re-spending, each one becoming someone's income and feeding the next.
+
+This chain reaction is the **multiplier effect**: an initial injection of spending raises total output and income by some **multiple** of itself. The key to how large that multiple is lies in one number — how much of each new dollar people choose to spend.
+
+</Step>
+
+<Step title="The marginal propensity to consume" kind="explain">
+
+When people receive an extra dollar of income, they spend some and save the rest. The fraction they **spend** is the **marginal propensity to consume (MPC)**. If you spend 60 cents of every extra dollar, your MPC is 0.6. The fraction you save is the **marginal propensity to save (MPS)** — and since every extra dollar is either spent or saved, MPC + MPS = 1.
+
+The MPC is the engine of the multiplier. Each round of re-spending is the previous round's income times the MPC:
+
+- Round 0: the injection — say $1,000.
+- Round 1: recipients spend MPC × $1,000 = $600 (at MPC = 0.6).
+- Round 2: the next group spends MPC × $600 = $360.
+- Round 3: MPC × $360 = $216. And so on, each round a fraction of the last.
+
+The rounds shrink toward zero — but they never quite vanish, and they **add up** to far more than the original $1,000. The higher the MPC, the more each group passes along, and the longer the chain runs before it peters out.
+
+</Step>
+
+<Step title="Summing the chain" kind="explain">
+
+Adding an endless series of shrinking rounds sounds hard, but it collapses to a beautifully simple formula. The total effect of the injection is the injection multiplied by the **spending multiplier**:
+
+<Formula tex="\text{multiplier} = \frac{1}{1 - MPC}" block />
+
+At MPC = 0.6, the multiplier is 1 / (1 − 0.6) = 1 / 0.4 = **2.5**. So a $1,000 injection ultimately raises total spending by $2,500. At MPC = 0.8 the multiplier jumps to 1 / 0.2 = **5**; at MPC = 0.5 it's just **2**. A higher propensity to consume means a bigger ripple.
+
+Notice that the denominator, 1 − MPC, is exactly the **MPS** — the fraction that *leaks* out into saving each round. The multiplier is really 1 / MPS: the more people save (or, in the fuller story, the more leaks out into taxes and imports), the faster the chain dies out and the smaller the multiplier. This is why the multiplier matters so much for policy — it tells us how much "bang" a given dollar of government spending delivers, the very calculation behind a stimulus package.
+
+</Step>
+
+<Step title="Watch the rounds add up" kind="interactive">
+
+The first bar is the initial injection; each bar below is the next round of re-spending, a fraction MPC of the one above. Slide the MPC and watch two things at once: how slowly the bars fade, and how the **total** at the bottom grows.
+
+<MultiplierEffect />
+
+At a low MPC the bars shrink fast and the total barely exceeds the injection. Crank the MPC up and the bars decay slowly, the chain runs long, and the total balloons — exactly what 1 / (1 − MPC) predicts. Each individual round is smaller than the last, yet they sum to a multiple of where you started.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="The marginal propensity to consume is 0.75. A government project injects $200 of new spending. Using the spending multiplier, by roughly how much does total spending eventually rise?"
+  options={[
+    "$200 — spending injections don't multiply",
+    "$266, since 200 divided by 0.75",
+    "$800, because the multiplier is 1 / (1 - 0.75) = 4, and 4 times 200 is 800",
+    "$150, because people save a quarter of it"
+  ]}
+  correctIndex={2}
+  explanation="The multiplier is 1 / (1 - MPC) = 1 / (1 - 0.75) = 1 / 0.25 = 4. The injection is re-spent round after round, and the rounds sum to injection times the multiplier: $200 times 4 = $800. The higher the MPC, the bigger the multiplier (more is passed along each round); the leak into saving, 1 - MPC = MPS = 0.25 here, is what eventually stops the chain."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The **multiplier effect**: an initial spending injection becomes income, part of which is re-spent, becoming more income — round after round.
+- The **marginal propensity to consume (MPC)** is the fraction of each extra dollar that is spent; the rest is saved (**MPS**), and **MPC + MPS = 1**.
+- Each re-spending round equals the previous one times the MPC, so the rounds shrink but **sum** to a multiple of the injection.
+- The **spending multiplier** is **1 / (1 − MPC)** = 1 / MPS; total effect = injection × multiplier.
+- A **higher MPC** means a bigger multiplier; **leaks** (saving, taxes, imports) shrink it — which is why the multiplier is central to judging fiscal policy.
+
+</Step>
+
+</Lesson>

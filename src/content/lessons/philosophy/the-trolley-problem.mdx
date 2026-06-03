@@ -1,0 +1,87 @@
+---
+title: The Trolley Problem
+subject: philosophy
+contentSlug: philosophy/the-trolley-problem
+order: 1
+estimatedMinutes: 6
+---
+
+<Lesson>
+
+<Step title="A thought experiment that became a field" kind="explain">
+
+In 1967, philosopher Philippa Foot posed a dilemma that was meant to probe a single narrow question about intention and harm. It became, instead, one of the most studied thought experiments in the history of ethics — with thousands of academic papers, a real MIT survey of 2.3 million people, and now a direct role in programming self-driving cars.
+
+The dilemma is simple: **a runaway trolley is heading toward five people tied to a track. You stand at a lever. Pull it and the trolley diverts onto a side track, killing one person. Do nothing and five die.** Same arithmetic either way — only the action differs.
+
+Most people, when they first hear this, feel a pull to pull the lever. One death is better than five. But then comes the variant that Judith Jarvis Thomson sharpened in 1985: **the footbridge case**. Now you are on a bridge above the track, beside a large stranger. The only way to stop the trolley is to push the stranger off — their body is large enough to halt it. Same numbers, different method. And suddenly, most people say: no. They would not push.
+
+Why? The arithmetic has not changed. Something else has.
+
+</Step>
+
+<Step title="Pull the lever, or not?" kind="interactive">
+
+Work through the switch case, the footbridge case, and the loop variant. Make your choice in each, see how most people respond, and explore why identical numbers produce such different intuitions.
+
+<TrolleyVariants />
+
+The key contrast is between the switch and the footbridge. In the switch, the one person's death is a foreseen side-effect of redirecting a threat. In the footbridge, the one person is used as a tool — a trolley-stopper. Their death is not a side-effect; it is the means by which the five are saved.
+
+</Step>
+
+<Step title="The doctrine of double effect" kind="explain">
+
+The most widely discussed explanation of why the two cases feel different is the **doctrine of double effect** (DDE), a principle with roots in medieval scholastic ethics:
+
+An action that causes harm may be permissible if:
+1. The action itself is not inherently wrong.
+2. The harm is foreseen but not **intended** — neither as the end nor as the means.
+3. The intended good is proportionate to the foreseen harm.
+
+Under the DDE, pulling the lever is potentially permissible: you intend to save five, and the one death is a foreseen but unintended side-effect of diverting the trolley.
+
+Pushing the man off the bridge is not permissible under the DDE: his death is your **means** — without it, the trolley is not stopped. You intend to use him as a trolley-stopper. His death is not a side-effect of saving the five; it is the instrument by which the five are saved.
+
+Kant's **Formula of Humanity** reaches the same verdict by a different route: treat every person as an end in themselves, never merely as a means. Pushing the man uses him as a means — a tool — in a way that redirecting an existing threat does not.
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="What is the main philosophical reason most people distinguish pulling the lever from pushing the large man, even though both result in one death to save five?"
+  options={[
+    "Physical effort: pushing is harder than pulling, so people hesitate",
+    "In the lever case the one death is a foreseen side-effect of redirecting harm; in the footbridge case the man's body is used as the means — his death is intentional and instrumental",
+    "The trolley problem only applies to the lever case; the footbridge case is a different type of dilemma",
+    "Consequentialists approve both cases equally, so any distinction must be based on emotion rather than reason"
+  ]}
+  correctIndex={1}
+  explanation="The doctrine of double effect draws a line between harm that is foreseen (a side-effect you accept) and harm that is intended as your means. In the lever case, the one person's death is a tragic side-effect; in the footbridge case, it is the mechanism by which the five are saved. Kant's Formula of Humanity reaches the same verdict: pushing uses the man as a mere instrument."
+/>
+
+</Step>
+
+<Step title="Why this is not just a puzzle" kind="explain">
+
+The trolley problem matters beyond the seminar room. Moral psychologist Jonathan Haidt used variants of it to show that people often have the intuition first and construct the rationale second — a challenge to the idea that moral reasoning is purely rational.
+
+Neuroscientists Greene and Cohen have used trolley variants in fMRI studies to map the difference between emotional and deliberative moral processing. And engineers now face the problem concretely: a self-driving car with failed brakes must, in some sense, choose whom to harm. The algorithm is the lever.
+
+The deeper lesson is this: when your intuitions about two cases conflict even though their arithmetic is identical, you should ask what morally relevant feature you are tracking — and whether that feature holds up to scrutiny. That is how abstract dilemmas sharpen real moral thinking.
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- The trolley problem (Philippa Foot, 1967): pull a lever to kill one and save five, or do nothing?
+- The footbridge variant (Judith Jarvis Thomson, 1985): push a person to save five. Same numbers, sharply different intuitions.
+- **Doctrine of double effect**: you may foresee harm as a side-effect; you may not intend harm as your means.
+- **Formula of Humanity** (Kant): do not use persons merely as instruments — the footbridge case violates this in a way the lever case arguably does not.
+- The loop track variant probes whether the distinction is genuine or illusory.
+- Identical arithmetic does not produce identical moral verdicts — framing and causal structure matter.
+
+</Step>
+
+</Lesson>

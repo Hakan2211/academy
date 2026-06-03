@@ -1,0 +1,132 @@
+---
+title: Building & Evaluating Arguments
+subject: philosophy
+contentSlug: philosophy/building-strong-arguments
+order: 5
+estimatedMinutes: 12
+---
+
+<Lesson>
+
+<Step title="The principle of charity" kind="explain">
+
+When you encounter an argument — especially one you disagree with — the first instinct is often to find its weakest version and knock it down. This is called a **straw man**, and it's both intellectually dishonest and unproductive.
+
+The antidote is the **principle of charity**: always engage with the *strongest reasonable interpretation* of an argument, not the weakest. If an argument is ambiguous, assume the most defensible reading. If a premise seems implausible, ask whether there's a charitable version that is more defensible.
+
+Why? Two reasons:
+
+1. **You learn more.** Defeating a strong argument teaches you something. Defeating a weak one teaches you nothing.
+2. **You earn the right to disagree.** If you can show that even the best version of an argument fails, your objection carries real weight.
+
+Charitable reading is not the same as agreeing. It is the discipline of engaging with the real argument before judging it.
+
+</Step>
+
+<Step title="Reconstructing hidden premises" kind="explain">
+
+Real-world arguments almost never spell out all their premises. People omit steps they consider obvious. The philosopher's job is to **make the implicit explicit** — to surface hidden premises (also called *suppressed* or *unstated* premises) so they can be examined.
+
+Consider: *"We should ban sugary drinks because obesity is rising."* The visible structure is:
+
+> P1: Obesity is rising.
+> Conclusion: We should ban sugary drinks.
+
+But as stated, P1 doesn't connect to the conclusion. There must be hidden premises, something like:
+
+> P2 (hidden): Sugary drinks significantly contribute to obesity.
+> P3 (hidden): Banning them would reduce obesity.
+> P4 (hidden): Governments should act to reduce obesity.
+
+Once surfaced, each hidden premise becomes a target for scrutiny. P3 might be disputed (do bans work?). P4 raises questions about state paternalism. Revealing the hidden premises transforms a slogan into an argument that can actually be evaluated.
+
+<Callout type="info" title="Enthymemes">
+An argument with a missing premise is called an **enthymeme** (from Greek for "in mind"). Most ordinary arguments are enthymemes — the speaker assumes the audience will supply the missing step. Philosophers make the assumed step explicit.
+</Callout>
+
+</Step>
+
+<Step title="Testing validity with counterexamples" kind="explain">
+
+How do you check whether a deductive argument is valid? The most powerful method is to try to **construct a counterexample**: a scenario in which all the premises are true yet the conclusion is false.
+
+If you can describe such a scenario — even a hypothetical or fantastic one — the argument is **invalid**. If you cannot, the argument is (likely) valid.
+
+Example:
+
+> P1: All politicians are liars.
+> P2: Maria is a liar.
+> Conclusion: Maria is a politician.
+
+Counterexample: imagine a world where Maria is a con artist — not a politician — who lies habitually. In that scenario P1 and P2 are both true, but the conclusion is false. The argument is **invalid** (this is the affirming-the-consequent fallacy dressed up as a syllogism).
+
+The counterexample method works because validity is about all *possible* worlds, not just the actual one. One possible counterexample is enough to break it.
+
+</Step>
+
+<Step title="The full evaluation checklist" kind="interactive">
+
+Let's put it all together. Use the ArgumentBuilder to examine a multi-premise argument — look for what's explicit, what might be hidden, and which premise is doing the most work.
+
+<ArgumentBuilder />
+
+Then run the Syllogism Machine to test the logical form of any conditional inference inside the argument:
+
+<SyllogismMachine />
+
+When evaluating any argument, work through this checklist:
+
+- **Step 1: Identify** — What are the explicit premises? What is the conclusion? Where are indicator words?
+- **Step 2: Reconstruct** — What hidden premises does the argument rely on?
+- **Step 3: Check validity** — Is the form valid? Try to construct a counterexample.
+- **Step 4: Check truth** — Are the premises (including hidden ones) actually true?
+- **Step 5: Assess soundness** — Valid + all premises true = sound. Only then does the conclusion follow with certainty.
+
+</Step>
+
+<Step title="Good arguments in practice" kind="explain">
+
+Building a good argument means attending to both the logical structure and the factual content. Here are the key habits of a strong philosophical reasoner:
+
+**Be precise about your terms.** Many apparent disagreements dissolve when you define your terms carefully. "Freedom" means different things to different people; an argument about freedom that never defines it is arguing in fog.
+
+**Separate validity from truth.** You can concede that an argument is valid while disputing a premise. Saying "your logic is fine, but premise 2 is false" is far more powerful than a vague objection.
+
+**Look for the weakest link.** In a multi-premise argument, the conclusion is only as strong as the weakest premise. Identifying that link is where the real work happens.
+
+**Distinguish absence of counter-evidence from positive evidence.** "No one has proved it false" does not mean it is true. This is the fallacy of *argument from ignorance* — a common pitfall in both everyday life and philosophy.
+
+<Callout type="tip" title="The dialectical method">
+Socrates taught by **elenchus** — systematically exposing the hidden assumptions in a position until the questioner sees a contradiction. Every time you ask "but what justifies *that* premise?", you are doing philosophy in the oldest tradition.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="You reconstruct an argument and find it is valid but one of its hidden premises is almost certainly false. What is the correct conclusion about the argument?"
+  options={[
+    "The argument is sound because at least the form is valid",
+    "The argument is invalid because hidden premises don't count",
+    "The argument is valid but not sound — the false premise means the conclusion isn't guaranteed to be true",
+    "The argument cannot be evaluated until all hidden premises are certain"
+  ]}
+  correctIndex={2}
+  explanation="Validity is about form: if the premises were true, the conclusion would follow. That property is unaffected by whether the premises are actually true. But soundness requires both validity AND true premises. A false (or likely false) hidden premise breaks soundness even if the form is impeccable — so the conclusion is not guaranteed. This is precisely why surfacing hidden premises matters: they are often where arguments break down."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- **Principle of charity**: always engage with the strongest version of an argument.
+- **Hidden premises (enthymemes)**: make implicit assumptions explicit before evaluating.
+- **Counterexample method**: to test validity, try to construct a scenario where premises are true but the conclusion is false; one counter-example is enough to defeat validity.
+- **Full checklist**: identify → reconstruct → check validity → check truth → assess soundness.
+- **Weakest link**: a chain of premises is only as strong as its shakiest link.
+- Good philosophical reasoning separates the question of *valid form* from the question of *true premises* — both matter, but they are distinct.
+
+</Step>
+
+</Lesson>

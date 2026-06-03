@@ -1,0 +1,111 @@
+---
+title: Money & Inflation
+subject: economics
+contentSlug: economics/money-and-inflation
+order: 5
+estimatedMinutes: 12
+---
+
+<Lesson>
+
+<Step title="Where does inflation come from?" kind="explain">
+
+You've seen that fiat money has value only because we trust it, that banks multiply it, and that the central bank steers it. Now the deepest question of this world: what happens when there's simply *too much* money?
+
+The intuition is captured in one famous phrase: inflation is **too much money chasing too few goods**. If the amount of money in an economy doubles overnight but the economy still makes the same cars, haircuts, and loaves of bread, then all that extra money just bids up the prices of the *same* goods. Each dollar ends up buying less. That general, sustained rise in prices is **inflation**, and at its root it is very often a *monetary* phenomenon — a story about the quantity of money.
+
+The Nobel laureate Milton Friedman put it bluntly: "Inflation is always and everywhere a monetary phenomenon." That's a strong claim, and not every economist accepts it for every episode — but as a way of seeing the *long-run* link between money and prices, it's one of the most powerful ideas in macroeconomics. Let's make it precise.
+
+</Step>
+
+<Step title="The equation of exchange" kind="explain">
+
+Economists tie money to prices with a single equation, the **equation of exchange**:
+
+<Formula tex="M \cdot V = P \cdot Q" block />
+
+Four quantities:
+
+- **M** — the **money supply**, the total amount of money in the economy.
+- **V** — the **velocity of money**, how many times the average dollar is spent in a year. (A dollar that changes hands five times does as much work as five dollars spent once.)
+- **P** — the **price level**, an index of how expensive things are on average.
+- **Q** — **real output**, the actual quantity of goods and services the economy produces.
+
+The left side, M·V, is **total spending** — all the money there is, times how often each unit gets spent. The right side, P·Q, is the **value of everything bought** — the price level times the real quantity of goods. The two *must* be equal, because every dollar spent is a dollar received for some good. As written, the equation is an **identity**: true by definition.
+
+</Step>
+
+<Step title="The quantity theory of money" kind="explain">
+
+The equation alone doesn't explain inflation — it's just bookkeeping. The **quantity theory of money** turns it into a theory by adding two reasonable assumptions about the *long run*:
+
+1. **Velocity (V) is fairly stable.** How often people spend money is driven by slow-moving habits and institutions, not by how much money exists.
+2. **Real output (Q) is set by the real economy** — by the labour, capital, technology, and resources available — *not* by how much money is printed. Printing money doesn't build more factories or train more workers.
+
+Hold V and Q roughly fixed, and the equation has only two free quantities left: **M** and **P**. They must move *together*. So if the money supply M grows much faster than real output Q can grow, the price level P has nowhere to go but **up**. That is inflation, derived straight from the equation:
+
+<Formula tex="\text{if } V, Q \text{ are fixed:} \quad M \uparrow \;\Rightarrow\; P \uparrow" block />
+
+In growth terms, a useful approximation is that inflation roughly equals money growth minus real output growth (assuming velocity is steady). Print money at 10% a year while the economy grows at 3%, and you get something near 7% inflation.
+
+</Step>
+
+<Step title="Drive the price level" kind="interactive">
+
+Hold real output Q fixed — the theory's key assumption — and slide the money supply M and velocity V. Watch the price level P move in lockstep.
+
+<QuantityTheory />
+
+The lesson is visible in the bars: both sides of M·V = P·Q stay equal, so when you pump up spending on the left while output Q is frozen, the *only* thing that can rise on the right is the price level. More money chasing the same goods means higher prices — not more stuff.
+
+</Step>
+
+<Step title="What inflation actually does to people" kind="explain">
+
+Why care so much about prices drifting up? Because inflation quietly **redistributes** wealth and erodes the very trust that fiat money depends on.
+
+Recall the consumer price index — a fixed basket of goods, repriced over time. As prices climb, the same dollars in your wallet buy a smaller and smaller basket. Inflation is a tax on holding money.
+
+<CPIBasket />
+
+The pain isn't shared evenly:
+
+- **Savers and people on fixed incomes** are hurt: their cash and fixed pensions buy less each year.
+- **Borrowers with fixed-rate debt** are helped: they repay loans in dollars that are worth less than the ones they borrowed.
+- **Lenders** lose the mirror image of what borrowers gain — which is why interest rates rise when inflation is expected, to compensate.
+
+Moderate, *predictable* inflation (most central banks target around 2%) is manageable and may even grease the wheels of the economy. The real danger is **hyperinflation** — prices doubling in weeks or days — which happens when a government prints money wildly to pay its bills. In 1920s Germany and 2000s Zimbabwe, money lost value so fast that workers spent their wages within hours and people burned banknotes for warmth. That's the quantity theory at its most extreme: M soaring while Q collapses, so P explodes — and the trust that made the money worth anything evaporates entirely.
+
+<Callout type="warn" title="The temptation that independence guards against">
+A government can always pay its bills by printing money — for a while. But printing far faster than the economy grows just converts to inflation, taxing every holder of cash. This is exactly why central banks are kept independent: to resist the short-term temptation to print, and protect the long-run value of money.
+</Callout>
+
+</Step>
+
+<Step title="Check yourself" kind="quiz">
+
+<Quiz
+  prompt="In the equation of exchange M·V = P·Q, a central bank doubles the money supply (M). Velocity (V) is stable and the economy's real output (Q) is fixed by its resources and technology. According to the quantity theory, what happens?"
+  options={[
+    "Real output Q doubles, because more money lets the economy produce twice as much",
+    "The price level P roughly doubles — more money chasing the same goods bids up prices (inflation)",
+    "Velocity V falls to keep total spending constant, so nothing changes",
+    "Nothing happens, because the equation is just an accounting identity with no real effects"
+  ]}
+  correctIndex={1}
+  explanation="With V stable and Q fixed, the equation M·V = P·Q has only M and P free to move, and they must move together. Doubling M with Q unable to rise forces the price level P to roughly double — the same goods, bid up by twice the money. Printing money doesn't create real output (Q is set by the real economy); it shows up as inflation. That's the core of the quantity theory: too much money chasing too few goods."
+/>
+
+</Step>
+
+<Step title="Recap" kind="recap">
+
+- Inflation is, at root, often **too much money chasing too few goods** — a monetary phenomenon.
+- The **equation of exchange**, M·V = P·Q, links the money supply (M), velocity (V), the price level (P), and real output (Q); total spending equals the value of output.
+- The **quantity theory** assumes V is stable and Q is set by the real economy, so faster money growth than output growth shows up as a rising **price level** — inflation.
+- Inflation **redistributes**: it hurts savers and fixed-income earners, helps fixed-rate borrowers, and erodes purchasing power.
+- **Hyperinflation** is the extreme case (money printed wildly), which destroys the trust fiat money rests on — the reason central banks guard the money supply and stay independent.
+
+</Step>
+
+</Lesson>
