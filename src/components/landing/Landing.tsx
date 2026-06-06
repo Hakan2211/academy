@@ -96,11 +96,11 @@ export function Landing() {
       <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5">
         <div className="flex items-center gap-2.5">
           <span
-            className="grid h-9 w-9 place-items-center rounded-xl text-white"
+            className="grid h-11 w-11 place-items-center rounded-xl text-white"
             style={{ background: 'rgba(79,140,255,0.22)', boxShadow: '0 0 18px -3px rgba(79,140,255,0.95)' }}
           >
             <span style={{ filter: 'drop-shadow(0 0 7px rgba(79,140,255,0.9))' }}>
-              <Icon name="Atom" size={20} />
+              <img src="/logo.png" alt="" className="h-9 w-9" />
             </span>
           </span>
           <span className="text-lg font-extrabold tracking-tight text-white">Academy</span>

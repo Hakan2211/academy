@@ -68,10 +68,10 @@ export function NavMenu({ open, onClose }: { open: boolean; onClose: () => void 
             <div className="flex items-center justify-between px-5 pb-4 pt-5">
               <div className="flex items-center gap-2.5">
                 <span
-                  className="grid h-8 w-8 place-items-center rounded-lg bg-accent/15 text-accent"
+                  className="grid h-9 w-9 place-items-center rounded-lg bg-accent/15 text-accent"
                   style={{ boxShadow: '0 0 14px -2px rgba(79,140,255,0.85)' }}
                 >
-                  <Icon name="Atom" size={19} />
+                  <img src="/logo.png" alt="" className="h-7 w-7" />
                 </span>
                 <span className="text-lg font-extrabold tracking-tight">Academy</span>
               </div>

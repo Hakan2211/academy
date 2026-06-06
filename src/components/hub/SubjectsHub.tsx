@@ -64,6 +64,8 @@ const BRIDGES: Array<[string, string]> = [
   ['math', 'economics'],
   ['philosophy', 'computer-science'],
   ['economics', 'psychology'],
+  ['computer-science', 'health'],
+  ['health', 'psychology'],
 ]
 
 const TIER_PARALLAX: Record<Tier, number> = { far: 10, mid: 22, near: 38 }

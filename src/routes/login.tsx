@@ -110,7 +110,7 @@ function LoginPage() {
             }}
           >
             <span style={{ filter: 'drop-shadow(0 0 8px rgba(79,140,255,0.9))' }}>
-              <Icon name="Atom" size={26} />
+              <img src="/logo.png" alt="" className="h-8 w-8" />
             </span>
           </span>
           <h1 className="text-xl font-extrabold text-ink">

@@ -25,7 +25,6 @@ import { mdxComponents } from '#/components/mdx/MdxComponents'
 import { StatBar } from '#/components/ui/StatBar'
 import { SideRail } from '#/components/ui/SideRail'
 import { CosmosBackdrop } from '#/components/ui/CosmosBackdrop'
-import { Icon } from '#/components/ui/Icon'
 import { Landing } from '#/components/landing/Landing'
 import appCss from '../styles.css?url'
 
@@ -37,9 +36,16 @@ export const Route = createRootRouteWithContext<{
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'theme-color', content: '#0b1020' },
       { title: 'Academy — Learn science, visually' },
     ],
-    links: [{ rel: 'stylesheet', href: appCss }],
+    links: [
+      { rel: 'stylesheet', href: appCss },
+      { rel: 'icon', href: '/favicon.ico', sizes: '48x48 32x32 16x16' },
+      { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/logo192.png' },
+      { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+      { rel: 'manifest', href: '/manifest.json' },
+    ],
   }),
   shellComponent: RootDocument,
 })
@@ -59,7 +65,7 @@ function AuthSplash() {
           boxShadow: '0 0 24px -6px rgba(79,140,255,0.9)',
         }}
       >
-        <Icon name="Atom" size={26} />
+        <img src="/logo.png" alt="" className="h-8 w-8" />
       </span>
     </div>
   )

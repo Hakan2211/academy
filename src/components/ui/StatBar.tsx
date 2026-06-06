@@ -52,7 +52,7 @@ export function StatBar() {
           style={{ borderColor: RIM, boxShadow: GLASS }}
         >
           <span style={{ filter: 'drop-shadow(0 0 8px rgba(79,140,255,0.9))' }}>
-            <Icon name="Atom" size={20} />
+            <img src="/logo.png" alt="" className="h-9 w-9" />
           </span>
         </Link>
 
