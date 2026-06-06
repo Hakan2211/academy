@@ -910,7 +910,26 @@ const UNIT_SUBJECT: Record<string, string> = {
   electrochemistry: 'chemistry',
   organic: 'chemistry',
   biochemistry: 'chemistry',
-  // Computer Science — public/badges/computer-science/<slug>.png (art TBD)
+  // Math — public/badges/math/<slug>.png
+  'number-sense': 'math',
+  'factors-and-primes': 'math',
+  fractions: 'math',
+  'ratio-proportion': 'math',
+  'powers-and-roots': 'math',
+  'algebra-basics': 'math',
+  equations: 'math',
+  quadratics: 'math',
+  'functions-and-graphs': 'math',
+  sequences: 'math',
+  'angles-and-shapes': 'math',
+  measurement: 'math',
+  geometry: 'math',
+  trigonometry: 'math',
+  probability: 'math',
+  statistics: 'math',
+  calculus: 'math',
+  'the-infinite': 'math',
+  // Computer Science — public/badges/computer-science/<slug>.png
   foundations: 'computer-science',
   'data-representation': 'computer-science',
   'boolean-logic': 'computer-science',
@@ -927,7 +946,7 @@ const UNIT_SUBJECT: Record<string, string> = {
   'computer-graphics': 'computer-science',
   'artificial-intelligence': 'computer-science',
   'theory-of-computation': 'computer-science',
-  // Psychology — public/badges/psychology/<slug>.png (art TBD)
+  // Psychology — public/badges/psychology/<slug>.png
   "what-is-psychology": 'psychology',
   "research-methods": 'psychology',
   "brain-and-behavior": 'psychology',
@@ -945,7 +964,7 @@ const UNIT_SUBJECT: Record<string, string> = {
   "psychotherapy": 'psychology',
   "social-psychology": 'psychology',
   "positive-psychology": 'psychology',
-  // Economics — public/badges/economics/<slug>.png (art TBD)
+  // Economics — public/badges/economics/<slug>.png
   'economic-thinking': 'economics',
   'supply-and-demand': 'economics',
   elasticity: 'economics',
@@ -961,7 +980,7 @@ const UNIT_SUBJECT: Record<string, string> = {
   'economic-growth': 'economics',
   'global-economy': 'economics',
   'game-theory': 'economics',
-  // Philosophy — public/badges/philosophy/<slug>.png (art TBD)
+  // Philosophy — public/badges/philosophy/<slug>.png
   'what-is-philosophy': 'philosophy',
   'logic-and-arguments': 'philosophy',
   'reasoning-and-fallacies': 'philosophy',
@@ -977,7 +996,7 @@ const UNIT_SUBJECT: Record<string, string> = {
   'existential-philosophy': 'philosophy',
   'science-and-religion': 'philosophy',
   'meaning-of-life': 'philosophy',
-  // Health — public/badges/health/<slug>.png (art TBD)
+  // Health — public/badges/health/<slug>.png
   'what-is-health': 'health',
   'the-healthy-body': 'health',
   'nutrition-basics': 'health',
@@ -998,7 +1017,17 @@ const UNIT_SUBJECT: Record<string, string> = {
 // Subjects whose medal PNGs exist under public/badges/<subject>/. A unit whose
 // subject isn't here resolves to no image, so its lucide icon (BadgeMeta.icon)
 // renders instead of a broken <img>.
-const SUBJECTS_WITH_ART = new Set(['physics', 'biology', 'chemistry'])
+const SUBJECTS_WITH_ART = new Set([
+  'physics',
+  'biology',
+  'chemistry',
+  'math',
+  'computer-science',
+  'psychology',
+  'economics',
+  'philosophy',
+  'health',
+])
 
 // Resolve a badge's medal-art URL, or null to fall back to the lucide icon.
 // Per-category badges are keyed `unit-<unitSlug>`; the onboarding badge and any
@@ -1031,6 +1060,7 @@ const SUBJECT_GROUPS: Array<BadgeGroupMeta> = [
   { subject: 'physics', label: 'Physics', color: '#4F8CFF', icon: 'Atom' },
   { subject: 'chemistry', label: 'Chemistry', color: '#00D2D3', icon: 'FlaskConical' },
   { subject: 'biology', label: 'Biology', color: '#2ECC71', icon: 'Dna' },
+  { subject: 'math', label: 'Math', color: '#FFB020', icon: 'Sigma' },
   { subject: 'computer-science', label: 'Computer Science', color: '#FF6B6B', icon: 'Binary' },
   { subject: 'psychology', label: 'Psychology', color: '#E056FD', icon: 'Brain' },
   { subject: 'economics', label: 'Economics', color: '#10B981', icon: 'TrendingUp' },
