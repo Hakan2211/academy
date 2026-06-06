@@ -9,7 +9,12 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as PracticeRouteImport } from './routes/practice'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as LeaderboardRouteImport } from './routes/leaderboard'
+import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as BadgesRouteImport } from './routes/badges'
 import { Route as IndexRouteImport } from './routes/index'
@@ -18,9 +23,34 @@ import { Route as LearnSplatRouteImport } from './routes/learn.$'
 import { Route as SubjectsSubjectSlugIndexRouteImport } from './routes/subjects.$subjectSlug.index'
 import { Route as SubjectsSubjectSlugUnitSlugRouteImport } from './routes/subjects.$subjectSlug.$unitSlug'
 
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PracticeRoute = PracticeRouteImport.update({
   id: '/practice',
   path: '/practice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeaderboardRoute = LeaderboardRouteImport.update({
+  id: '/leaderboard',
+  path: '/leaderboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscoverRoute = DiscoverRouteImport.update({
+  id: '/discover',
+  path: '/discover',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -65,7 +95,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/badges': typeof BadgesRoute
   '/dashboard': typeof DashboardRoute
+  '/discover': typeof DiscoverRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/login': typeof LoginRoute
   '/practice': typeof PracticeRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
   '/learn/$': typeof LearnSplatRoute
   '/subjects/$subjectSlug': typeof SubjectsSubjectSlugRouteWithChildren
   '/subjects/$subjectSlug/$unitSlug': typeof SubjectsSubjectSlugUnitSlugRoute
@@ -75,7 +110,12 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/badges': typeof BadgesRoute
   '/dashboard': typeof DashboardRoute
+  '/discover': typeof DiscoverRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/login': typeof LoginRoute
   '/practice': typeof PracticeRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
   '/learn/$': typeof LearnSplatRoute
   '/subjects/$subjectSlug/$unitSlug': typeof SubjectsSubjectSlugUnitSlugRoute
   '/subjects/$subjectSlug': typeof SubjectsSubjectSlugIndexRoute
@@ -85,7 +125,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/badges': typeof BadgesRoute
   '/dashboard': typeof DashboardRoute
+  '/discover': typeof DiscoverRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/login': typeof LoginRoute
   '/practice': typeof PracticeRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
   '/learn/$': typeof LearnSplatRoute
   '/subjects/$subjectSlug': typeof SubjectsSubjectSlugRouteWithChildren
   '/subjects/$subjectSlug/$unitSlug': typeof SubjectsSubjectSlugUnitSlugRoute
@@ -97,7 +142,12 @@ export interface FileRouteTypes {
     | '/'
     | '/badges'
     | '/dashboard'
+    | '/discover'
+    | '/leaderboard'
+    | '/login'
     | '/practice'
+    | '/profile'
+    | '/settings'
     | '/learn/$'
     | '/subjects/$subjectSlug'
     | '/subjects/$subjectSlug/$unitSlug'
@@ -107,7 +157,12 @@ export interface FileRouteTypes {
     | '/'
     | '/badges'
     | '/dashboard'
+    | '/discover'
+    | '/leaderboard'
+    | '/login'
     | '/practice'
+    | '/profile'
+    | '/settings'
     | '/learn/$'
     | '/subjects/$subjectSlug/$unitSlug'
     | '/subjects/$subjectSlug'
@@ -116,7 +171,12 @@ export interface FileRouteTypes {
     | '/'
     | '/badges'
     | '/dashboard'
+    | '/discover'
+    | '/leaderboard'
+    | '/login'
     | '/practice'
+    | '/profile'
+    | '/settings'
     | '/learn/$'
     | '/subjects/$subjectSlug'
     | '/subjects/$subjectSlug/$unitSlug'
@@ -127,18 +187,58 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BadgesRoute: typeof BadgesRoute
   DashboardRoute: typeof DashboardRoute
+  DiscoverRoute: typeof DiscoverRoute
+  LeaderboardRoute: typeof LeaderboardRoute
+  LoginRoute: typeof LoginRoute
   PracticeRoute: typeof PracticeRoute
+  ProfileRoute: typeof ProfileRoute
+  SettingsRoute: typeof SettingsRoute
   LearnSplatRoute: typeof LearnSplatRoute
   SubjectsSubjectSlugRoute: typeof SubjectsSubjectSlugRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/practice': {
       id: '/practice'
       path: '/practice'
       fullPath: '/practice'
       preLoaderRoute: typeof PracticeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leaderboard': {
+      id: '/leaderboard'
+      path: '/leaderboard'
+      fullPath: '/leaderboard'
+      preLoaderRoute: typeof LeaderboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discover': {
+      id: '/discover'
+      path: '/discover'
+      fullPath: '/discover'
+      preLoaderRoute: typeof DiscoverRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -210,7 +310,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BadgesRoute: BadgesRoute,
   DashboardRoute: DashboardRoute,
+  DiscoverRoute: DiscoverRoute,
+  LeaderboardRoute: LeaderboardRoute,
+  LoginRoute: LoginRoute,
   PracticeRoute: PracticeRoute,
+  ProfileRoute: ProfileRoute,
+  SettingsRoute: SettingsRoute,
   LearnSplatRoute: LearnSplatRoute,
   SubjectsSubjectSlugRoute: SubjectsSubjectSlugRouteWithChildren,
 }

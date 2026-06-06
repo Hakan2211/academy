@@ -5,7 +5,6 @@ import { convexQuery } from '@convex-dev/react-query'
 import { useQuery } from '@tanstack/react-query'
 import { useMutation } from 'convex/react'
 import { api } from '../../../convex/_generated/api'
-import { useDeviceId } from '#/lib/deviceId.context'
 import { PRACTICE_BANK } from '#/content/practice/bank.generated'
 import { shuffleOptions } from '#/lib/practice'
 import type { PracticeItem } from '#/lib/practice'
@@ -53,21 +52,15 @@ function Card({
 }
 
 export function Practice() {
-  const deviceId = useDeviceId()
-  const enabled = Boolean(deviceId)
   const today = todayLocalDate()
 
   const pathQ = useQuery(
     convexQuery(api.catalog.getSubjectPath, { subjectSlug: SUBJECT }),
   )
-  const progressQ = useQuery({
-    ...convexQuery(api.progress.getProgressForUser, { deviceId: deviceId ?? '' }),
-    enabled,
-  })
-  const reviewQ = useQuery({
-    ...convexQuery(api.practice.getReviewStates, { deviceId: deviceId ?? '' }),
-    enabled,
-  })
+  const progressQ = useQuery(
+    convexQuery(api.progress.getProgressForUser, {}),
+  )
+  const reviewQ = useQuery(convexQuery(api.practice.getReviewStates, {}))
   const grade = useMutation(api.practice.gradeItem)
 
   const lessons = pathQ.data?.lessons ?? []
@@ -139,14 +132,11 @@ export function Practice() {
   }
 
   const onGrade = (itemId: string, correct: boolean) => {
-    if (!deviceId) return
-    void grade({ deviceId, itemId, correct, localDate: today })
+    void grade({ itemId, correct, localDate: today })
   }
 
   const loading =
-    deviceId === undefined ||
-    pathQ.isLoading ||
-    (enabled && (progressQ.isLoading || reviewQ.isLoading))
+    pathQ.isLoading || progressQ.isLoading || reviewQ.isLoading
 
   return (
     <div className="relative min-h-[calc(100vh-64px)] w-full px-4 pb-20 pt-6 sm:pl-28 sm:pr-10">

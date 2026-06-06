@@ -2,7 +2,6 @@ import { createFileRoute } from '@tanstack/react-router'
 import { convexQuery } from '@convex-dev/react-query'
 import { useSuspenseQuery, useQuery } from '@tanstack/react-query'
 import { api } from '../../convex/_generated/api'
-import { useDeviceId } from '#/lib/deviceId.context'
 import { CategoryOverworld } from '#/components/ui/CategoryOverworld'
 import type { OverworldUnit } from '#/components/ui/CategoryOverworld'
 
@@ -19,19 +18,15 @@ export const Route = createFileRoute('/subjects/$subjectSlug/')({
 
 function SubjectPage() {
   const { subjectSlug } = Route.useParams()
-  const deviceId = useDeviceId()
 
   const { data } = useSuspenseQuery(
     convexQuery(api.catalog.getSubjectOverview, { subjectSlug }),
   )
 
-  // Progress is per-device and client-only; used to count completed lessons.
-  const progressQuery = useQuery({
-    ...convexQuery(api.progress.getProgressForUser, {
-      deviceId: deviceId ?? '',
-    }),
-    enabled: Boolean(deviceId),
-  })
+  // Per-user progress; used to count completed lessons.
+  const progressQuery = useQuery(
+    convexQuery(api.progress.getProgressForUser, {}),
+  )
 
   if (!data) {
     return (

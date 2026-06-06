@@ -2,40 +2,36 @@ import { mutation, query } from './_generated/server'
 import { v } from 'convex/values'
 import type { Doc } from './_generated/dataModel'
 import type { MutationCtx } from './_generated/server'
+import { getAuthUserId } from '@convex-dev/auth/server'
 import { levelForXp, streakTransition } from './gamification'
 
-async function requireUser(
-  ctx: MutationCtx,
-  deviceId: string,
-): Promise<Doc<'users'>> {
-  const user = await ctx.db
-    .query('users')
-    .withIndex('by_device', (q) => q.eq('deviceId', deviceId))
-    .unique()
-  if (!user) throw new Error(`No user for device ${deviceId}`)
+// Resolve the signed-in user row, or throw. Identity comes from the auth token
+// (ctx.auth), not a client-supplied id.
+async function requireUser(ctx: MutationCtx): Promise<Doc<'users'>> {
+  const userId = await getAuthUserId(ctx)
+  if (!userId) throw new Error('Not authenticated')
+  const user = await ctx.db.get(userId)
+  if (!user) throw new Error('Authenticated user row missing')
   return user
 }
 
 export const getProgressForUser = query({
-  args: { deviceId: v.string() },
-  handler: async (ctx, { deviceId }) => {
-    const user = await ctx.db
-      .query('users')
-      .withIndex('by_device', (q) => q.eq('deviceId', deviceId))
-      .unique()
-    if (!user) return []
+  args: {},
+  handler: async (ctx) => {
+    const userId = await getAuthUserId(ctx)
+    if (!userId) return []
     return await ctx.db
       .query('userProgress')
-      .withIndex('by_user', (q) => q.eq('userId', user._id))
+      .withIndex('by_user', (q) => q.eq('userId', userId))
       .collect()
   },
 })
 
 // Gamification snapshot for the persistent stat bar (level/XP/streak/badges).
-// Returns null for an unknown device so the UI can show a "Lv.1 · 0 XP" target
+// Returns null when signed out so the UI can show a "Lv.1 · 0 XP" target
 // instead of hiding. The data already lives denormalized on the user row.
 export const getUserStats = query({
-  args: { deviceId: v.string() },
+  args: {},
   returns: v.union(
     v.null(),
     v.object({
@@ -47,11 +43,10 @@ export const getUserStats = query({
       badges: v.array(v.string()),
     }),
   ),
-  handler: async (ctx, { deviceId }) => {
-    const user = await ctx.db
-      .query('users')
-      .withIndex('by_device', (q) => q.eq('deviceId', deviceId))
-      .unique()
+  handler: async (ctx) => {
+    const userId = await getAuthUserId(ctx)
+    if (!userId) return null
+    const user = await ctx.db.get(userId)
     if (!user) return null
     return {
       totalXP: user.totalXP,
@@ -67,13 +62,12 @@ export const getUserStats = query({
 // Advance the saved cursor. Monotonic (never moves backwards), awards no XP.
 export const recordStepCompletion = mutation({
   args: {
-    deviceId: v.string(),
     lessonId: v.id('lessons'),
     stepIndex: v.number(),
     totalSteps: v.number(),
   },
-  handler: async (ctx, { deviceId, lessonId, stepIndex, totalSteps }) => {
-    const user = await requireUser(ctx, deviceId)
+  handler: async (ctx, { lessonId, stepIndex, totalSteps }) => {
+    const user = await requireUser(ctx)
     const existing = await ctx.db
       .query('userProgress')
       .withIndex('by_user_lesson', (q) =>
@@ -113,12 +107,11 @@ export type CompleteLessonResult = {
 // and return the deltas so the client can animate the reward screen.
 export const completeLesson = mutation({
   args: {
-    deviceId: v.string(),
     lessonId: v.id('lessons'),
     localDate: v.string(), // "YYYY-MM-DD" from the client's local clock
   },
-  handler: async (ctx, { deviceId, lessonId, localDate }): Promise<CompleteLessonResult> => {
-    const user = await requireUser(ctx, deviceId)
+  handler: async (ctx, { lessonId, localDate }): Promise<CompleteLessonResult> => {
+    const user = await requireUser(ctx)
     const lesson = await ctx.db.get(lessonId)
     if (!lesson) throw new Error('Lesson not found')
 

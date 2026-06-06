@@ -4,7 +4,6 @@ import { motion, useReducedMotion } from 'motion/react'
 import { convexQuery } from '@convex-dev/react-query'
 import { useQuery } from '@tanstack/react-query'
 import { api } from '../../../convex/_generated/api'
-import { useDeviceId } from '#/lib/deviceId.context'
 import { xpToNextLevel } from '#/lib/xp'
 import { BADGES, badgeImage, badgeMeta } from '#/lib/badges'
 import { Icon } from '#/components/ui/Icon'
@@ -23,24 +22,14 @@ const GREEN = '#2ECC71'
 
 export function Dashboard() {
   const reduce = useReducedMotion()
-  const deviceId = useDeviceId()
-  const enabled = Boolean(deviceId)
 
-  const statsQ = useQuery({
-    ...convexQuery(api.progress.getUserStats, { deviceId: deviceId ?? '' }),
-    enabled,
-  })
-  const resumeQ = useQuery({
-    ...convexQuery(api.catalog.getResumePoint, {
-      deviceId: deviceId ?? '',
-      subjectSlug: SUBJECT,
-    }),
-    enabled,
-  })
-  const progressQ = useQuery({
-    ...convexQuery(api.progress.getProgressForUser, { deviceId: deviceId ?? '' }),
-    enabled,
-  })
+  const statsQ = useQuery(convexQuery(api.progress.getUserStats, {}))
+  const resumeQ = useQuery(
+    convexQuery(api.catalog.getResumePoint, { subjectSlug: SUBJECT }),
+  )
+  const progressQ = useQuery(
+    convexQuery(api.progress.getProgressForUser, {}),
+  )
   const overviewQ = useQuery(
     convexQuery(api.catalog.getSubjectOverview, { subjectSlug: SUBJECT }),
   )

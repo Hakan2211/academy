@@ -8,8 +8,10 @@
  * @module
  */
 
+import type * as auth from "../auth.js";
 import type * as catalog from "../catalog.js";
 import type * as gamification from "../gamification.js";
+import type * as http from "../http.js";
 import type * as practice from "../practice.js";
 import type * as progress from "../progress.js";
 import type * as seed from "../seed.js";
@@ -22,8 +24,10 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  auth: typeof auth;
   catalog: typeof catalog;
   gamification: typeof gamification;
+  http: typeof http;
   practice: typeof practice;
   progress: typeof progress;
   seed: typeof seed;

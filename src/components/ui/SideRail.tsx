@@ -33,22 +33,18 @@ export function SideRail() {
       <Link to="/" className="block">
         <RailBody icon="Orbit" label="Home" active={pathname === '/'} />
       </Link>
+      <Link to="/discover" className="block">
+        <RailBody
+          icon="Compass"
+          label="Discover"
+          active={pathname.startsWith('/discover')}
+        />
+      </Link>
       <Link to="/dashboard" className="block">
         <RailBody
           icon="LayoutDashboard"
           label="Stats"
           active={pathname.startsWith('/dashboard')}
-        />
-      </Link>
-      <Link
-        to="/subjects/$subjectSlug"
-        params={{ subjectSlug: 'physics' }}
-        className="block"
-      >
-        <RailBody
-          icon="Atom"
-          label="Physics"
-          active={pathname.startsWith('/subjects/physics')}
         />
       </Link>
       <Link to="/practice" className="block">
@@ -64,8 +60,16 @@ export function SideRail() {
 
       <div className="my-1 h-px w-8 self-center bg-white/10" />
 
-      <RailSoon icon="Compass" label="Discover" />
-      <RailSoon icon="User" label="Profile" />
+      <Link to="/leaderboard" className="block">
+        <RailBody
+          icon="Trophy"
+          label="Ranks"
+          active={pathname.startsWith('/leaderboard')}
+        />
+      </Link>
+      <Link to="/profile" className="block">
+        <RailBody icon="User" label="Profile" active={pathname.startsWith('/profile')} />
+      </Link>
     </nav>
   )
 }
@@ -109,19 +113,3 @@ function RailBody({
   )
 }
 
-function RailSoon({ icon, label }: { icon: string; label: string }) {
-  return (
-    <div
-      className="flex w-14 cursor-not-allowed flex-col items-center gap-1 rounded-xl px-1 py-2 opacity-45"
-      title={`${label} — coming soon`}
-      aria-disabled
-    >
-      <span className="grid h-9 w-9 place-items-center rounded-lg bg-white/[0.03] text-muted">
-        <Icon name={icon} size={18} />
-      </span>
-      <span className="text-[9px] font-bold uppercase tracking-wide text-muted">
-        {label}
-      </span>
-    </div>
-  )
-}

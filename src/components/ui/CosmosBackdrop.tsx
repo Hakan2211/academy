@@ -59,6 +59,12 @@ export function CosmosBackdrop() {
 
   if (pathname.startsWith('/learn')) return null
 
+  // The island hub (`/`) is the showcase and keeps the vivid, undimmed nebula.
+  // Every other route is a text-heavy content page, so it gets a readability
+  // scrim that tames the bright nebula midtones — without it, muted text (page
+  // subtitles, stat captions) washes out where the cosmos is light.
+  const isHub = pathname === '/'
+
   return (
     <div
       className="pointer-events-none fixed inset-0 -z-10"
@@ -74,6 +80,17 @@ export function CosmosBackdrop() {
             'radial-gradient(135% 100% at 50% 28%, transparent 56%, rgba(5,7,16,0.72) 100%)',
         }}
       />
+      {/* content-route readability scrim (slightly stronger up top, where the
+          page header + subtitle sit). Hub stays bright. */}
+      {!isHub && (
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(6,9,20,0.62) 0%, rgba(6,9,20,0.5) 100%)',
+          }}
+        />
+      )}
     </div>
   )
 }

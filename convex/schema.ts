@@ -1,10 +1,15 @@
 import { defineSchema, defineTable } from 'convex/server'
 import { v } from 'convex/values'
+import { authTables } from '@convex-dev/auth/server'
 
-// Content catalog (static structure) + anonymous user state + progress/gamification.
+// Content catalog (static structure) + authenticated user state + progress/gamification.
 // Lesson *content* lives in MDX files (src/content/lessons); the `lessons` table
 // only stores metadata and a `contentSlug` pointer into that MDX.
 export default defineSchema({
+  // Convex Auth tables (authSessions/authAccounts/authVerificationCodes/...).
+  // We override `users` below to carry our gamification fields.
+  ...authTables,
+
   subjects: defineTable({
     slug: v.string(), // "physics"
     name: v.string(), // "Physics"
@@ -52,14 +57,28 @@ export default defineSchema({
   })
     .index('by_subject', ['subjectId', 'order'])
     .index('by_unit', ['unitId', 'order'])
-    .index('by_contentSlug', ['contentSlug']),
+    .index('by_contentSlug', ['contentSlug'])
+    // Full-text lesson search for the Discover page. Filter fields let us scope
+    // to published lessons (always) and to one subject (when a chip is active).
+    .searchIndex('search_title', {
+      searchField: 'title',
+      filterFields: ['isPublished', 'subjectId'],
+    }),
 
-  // Anonymous, device-keyed identity. `authId` is reserved for a future
-  // Better Auth migration (look up by authId, else deviceId, then backfill).
+  // The authenticated user. The signed-in identity (getAuthUserId) IS this row.
+  // Overrides Convex Auth's default `users` table to also carry gamification.
   users: defineTable({
-    deviceId: v.string(), // crypto.randomUUID stored in localStorage
-    authId: v.optional(v.string()), // FUTURE: real account subject id
-    displayName: v.optional(v.string()),
+    // Auth profile fields (populated from the provider via createOrUpdateUser).
+    email: v.optional(v.string()),
+    name: v.optional(v.string()),
+    image: v.optional(v.string()),
+    emailVerificationTime: v.optional(v.number()),
+    phone: v.optional(v.string()),
+    phoneVerificationTime: v.optional(v.number()),
+
+    // Legacy anonymous identity. Now only used to claim a device's pre-auth
+    // progress into the account on first sign-in (users.claimAnonymousProgress).
+    deviceId: v.optional(v.string()),
     createdAt: v.number(),
 
     // Gamification denormalized onto the user row (single-doc reads).
@@ -70,8 +89,9 @@ export default defineSchema({
     lastActivityDate: v.optional(v.string()), // "YYYY-MM-DD" in the user's local tz
     badges: v.array(v.string()), // badge keys, e.g. ["first-lesson","unit-oscillations"]
   })
-    .index('by_device', ['deviceId'])
-    .index('by_auth', ['authId']),
+    .index('email', ['email']) // account linking + createOrUpdateUser lookup
+    .index('by_device', ['deviceId']) // one-time anonymous-progress claim
+    .index('by_xp', ['totalXP']), // leaderboard ranking (read .order('desc'))
 
   userProgress: defineTable({
     userId: v.id('users'),

@@ -2,7 +2,7 @@ import { createRouter } from '@tanstack/react-router'
 import { QueryClient } from '@tanstack/react-query'
 import { setupRouterSsrQueryIntegration } from '@tanstack/react-router-ssr-query'
 import { ConvexQueryClient } from '@convex-dev/react-query'
-import { ConvexProvider } from 'convex/react'
+import { ConvexAuthProvider } from '@convex-dev/auth/react'
 import { routeTree } from './routeTree.gen'
 
 export function getRouter() {
@@ -30,10 +30,13 @@ export function getRouter() {
     defaultPreload: 'intent',
     defaultPreloadStaleTime: 0,
     scrollRestoration: true,
+    // ConvexAuthProvider supplies the Convex client context *and* the auth
+    // state (token kept in localStorage). It replaces the plain ConvexProvider;
+    // useQuery/useMutation now run as the signed-in user.
     Wrap: ({ children }) => (
-      <ConvexProvider client={convexQueryClient.convexClient}>
+      <ConvexAuthProvider client={convexQueryClient.convexClient}>
         {children}
-      </ConvexProvider>
+      </ConvexAuthProvider>
     ),
   })
 

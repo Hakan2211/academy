@@ -4,7 +4,6 @@ import { motion, useReducedMotion } from 'motion/react'
 import { convexQuery } from '@convex-dev/react-query'
 import { useQuery } from '@tanstack/react-query'
 import { api } from '../../../convex/_generated/api'
-import { useDeviceId } from '#/lib/deviceId.context'
 import { xpToNextLevel } from '#/lib/xp'
 import { Icon } from './Icon'
 import { NavMenu } from './NavMenu'
@@ -30,12 +29,8 @@ function Divider() {
 export function StatBar() {
   const pathname = useRouterState({ select: (s) => s.location.pathname })
   const reduce = useReducedMotion()
-  const deviceId = useDeviceId()
   const [menuOpen, setMenuOpen] = useState(false)
-  const statsQ = useQuery({
-    ...convexQuery(api.progress.getUserStats, { deviceId: deviceId ?? '' }),
-    enabled: Boolean(deviceId),
-  })
+  const statsQ = useQuery(convexQuery(api.progress.getUserStats, {}))
 
   // Immersive lesson player: no chrome. (Hooks run first, so this is safe.)
   if (pathname.startsWith('/learn')) return null

@@ -1,5 +1,6 @@
 import { mutation, query } from './_generated/server'
 import { v } from 'convex/values'
+import { getAuthUserId } from '@convex-dev/auth/server'
 
 // Practice = spaced retrieval review. Item *content* is static (the generated
 // bank in src/content/practice); this module only owns the per-user schedule
@@ -14,10 +15,10 @@ function addDays(ymd: string, days: number): string {
   return dt.toISOString().slice(0, 10)
 }
 
-// The user's review schedule (one entry per practiced item). Returns [] for an
-// unknown device so the client can treat every unlocked item as "new/due".
+// The user's review schedule (one entry per practiced item). Returns [] when
+// signed out so the client can treat every unlocked item as "new/due".
 export const getReviewStates = query({
-  args: { deviceId: v.string() },
+  args: {},
   returns: v.array(
     v.object({
       itemId: v.string(),
@@ -27,15 +28,12 @@ export const getReviewStates = query({
       intervalDays: v.number(),
     }),
   ),
-  handler: async (ctx, { deviceId }) => {
-    const user = await ctx.db
-      .query('users')
-      .withIndex('by_device', (q) => q.eq('deviceId', deviceId))
-      .unique()
-    if (!user) return []
+  handler: async (ctx) => {
+    const userId = await getAuthUserId(ctx)
+    if (!userId) return []
     const rows = await ctx.db
       .query('reviewState')
-      .withIndex('by_user', (q) => q.eq('userId', user._id))
+      .withIndex('by_user', (q) => q.eq('userId', userId))
       .collect()
     return rows.map((r) => ({
       itemId: r.itemId,
@@ -49,26 +47,22 @@ export const getReviewStates = query({
 
 // Grade one review and reschedule it (SM-2-lite). `correct` from the learner's
 // first answer; `localDate` is the client's "YYYY-MM-DD". Returns the next due
-// date (or null if the device has no user row yet).
+// date (or null if signed out).
 export const gradeItem = mutation({
   args: {
-    deviceId: v.string(),
     itemId: v.string(),
     correct: v.boolean(),
     localDate: v.string(),
   },
   returns: v.union(v.null(), v.object({ dueDate: v.string(), intervalDays: v.number() })),
-  handler: async (ctx, { deviceId, itemId, correct, localDate }) => {
-    const user = await ctx.db
-      .query('users')
-      .withIndex('by_device', (q) => q.eq('deviceId', deviceId))
-      .unique()
-    if (!user) return null
+  handler: async (ctx, { itemId, correct, localDate }) => {
+    const userId = await getAuthUserId(ctx)
+    if (!userId) return null
 
     const existing = await ctx.db
       .query('reviewState')
       .withIndex('by_user_item', (q) =>
-        q.eq('userId', user._id).eq('itemId', itemId),
+        q.eq('userId', userId).eq('itemId', itemId),
       )
       .unique()
 
@@ -102,7 +96,7 @@ export const gradeItem = mutation({
     if (existing) {
       await ctx.db.patch(existing._id, patch)
     } else {
-      await ctx.db.insert('reviewState', { userId: user._id, itemId, ...patch })
+      await ctx.db.insert('reviewState', { userId, itemId, ...patch })
     }
     return { dueDate, intervalDays }
   },

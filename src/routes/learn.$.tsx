@@ -5,7 +5,6 @@ import { useQuery } from '@tanstack/react-query'
 import { useMutation } from 'convex/react'
 import { api } from '../../convex/_generated/api'
 import { getLessonModule } from '#/lib/lessonModules'
-import { useDeviceId } from '#/lib/deviceId.context'
 import { LessonRuntimeProvider } from '#/components/lesson/context'
 import type { LessonRuntime } from '#/components/lesson/context'
 import { LessonBackdrop } from '#/components/lesson/LessonBackdrop'
@@ -36,18 +35,12 @@ function LessonPlayer() {
   const { _splat } = Route.useParams()
   const contentSlug = _splat ?? ''
   const subjectSlug = contentSlug.split('/')[0] ?? ''
-  const deviceId = useDeviceId()
   const navigate = useNavigate()
 
   const lessonMetaQ = useQuery(
     convexQuery(api.catalog.getLessonMeta, { contentSlug }),
   )
-  const progressQ = useQuery({
-    ...convexQuery(api.progress.getProgressForUser, {
-      deviceId: deviceId ?? '',
-    }),
-    enabled: Boolean(deviceId),
-  })
+  const progressQ = useQuery(convexQuery(api.progress.getProgressForUser, {}))
 
   const recordStep = useMutation(api.progress.recordStepCompletion)
   const complete = useMutation(api.progress.completeLesson)
@@ -58,12 +51,9 @@ function LessonPlayer() {
     return lazy(() => loader().then((m) => ({ default: m.default })))
   }, [contentSlug])
 
-  // Resolve identity + saved progress before mounting the engine so it can
-  // resume at the right step.
-  const waiting =
-    deviceId === undefined ||
-    lessonMetaQ.isLoading ||
-    (Boolean(deviceId) && progressQ.isLoading)
+  // Resolve saved progress before mounting the engine so it can resume at the
+  // right step. (The route is gated, so the user is already authenticated.)
+  const waiting = lessonMetaQ.isLoading || progressQ.isLoading
   if (waiting) return <CenteredLoader />
 
   const lesson = lessonMetaQ.data
@@ -107,28 +97,14 @@ function LessonPlayer() {
     initialStep,
     accent,
     onStepAdvance: (nextStepIndex, totalSteps) => {
-      if (!deviceId) return
       void recordStep({
-        deviceId,
         lessonId,
         stepIndex: nextStepIndex - 1,
         totalSteps,
       })
     },
-    onComplete: async () => {
-      if (!deviceId) {
-        return {
-          xpAwarded: lesson.xpReward,
-          totalXP: lesson.xpReward,
-          level: 1,
-          leveledUp: false,
-          currentStreak: 1,
-          longestStreak: 1,
-          newBadges: ['first-lesson'],
-        }
-      }
-      return await complete({ deviceId, lessonId, localDate: todayLocalDate() })
-    },
+    onComplete: async () =>
+      await complete({ lessonId, localDate: todayLocalDate() }),
     onExit: exit,
   }
 

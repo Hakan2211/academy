@@ -2,7 +2,6 @@ import { createFileRoute } from '@tanstack/react-router'
 import { convexQuery } from '@convex-dev/react-query'
 import { useSuspenseQuery, useQuery } from '@tanstack/react-query'
 import { api } from '../../convex/_generated/api'
-import { useDeviceId } from '#/lib/deviceId.context'
 import { LessonTrail } from '#/components/ui/LessonTrail'
 import type {
   LessonLevel,
@@ -24,18 +23,14 @@ export const Route = createFileRoute('/subjects/$subjectSlug/$unitSlug')({
 
 function CategoryPage() {
   const { subjectSlug, unitSlug } = Route.useParams()
-  const deviceId = useDeviceId()
 
   const { data } = useSuspenseQuery(
     convexQuery(api.catalog.getCategoryPath, { subjectSlug, unitSlug }),
   )
 
-  const progressQuery = useQuery({
-    ...convexQuery(api.progress.getProgressForUser, {
-      deviceId: deviceId ?? '',
-    }),
-    enabled: Boolean(deviceId),
-  })
+  const progressQuery = useQuery(
+    convexQuery(api.progress.getProgressForUser, {}),
+  )
 
   if (!data) {
     return (

@@ -3,7 +3,6 @@ import { motion } from 'motion/react'
 import { convexQuery } from '@convex-dev/react-query'
 import { useQuery } from '@tanstack/react-query'
 import { api } from '../../../convex/_generated/api'
-import { useDeviceId } from '#/lib/deviceId.context'
 import { Icon } from './Icon'
 
 // Home-screen entry point back into the journey. Reads the resume point for the
@@ -14,14 +13,9 @@ const SUBJECT = 'physics'
 const DEFAULT_ACCENT = '#4F8CFF'
 
 export function ContinueCard() {
-  const deviceId = useDeviceId()
-  const resumeQ = useQuery({
-    ...convexQuery(api.catalog.getResumePoint, {
-      deviceId: deviceId ?? '',
-      subjectSlug: SUBJECT,
-    }),
-    enabled: Boolean(deviceId),
-  })
+  const resumeQ = useQuery(
+    convexQuery(api.catalog.getResumePoint, { subjectSlug: SUBJECT }),
+  )
 
   const resume = resumeQ.data
   if (!resume) return null // loading, unknown subject, or no published lessons

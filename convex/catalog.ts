@@ -1,5 +1,7 @@
 import { query } from './_generated/server'
 import { v } from 'convex/values'
+import type { Id } from './_generated/dataModel'
+import { getAuthUserId } from '@convex-dev/auth/server'
 
 export const listSubjects = query({
   args: {},
@@ -137,7 +139,7 @@ type ResumeLesson = {
 }
 
 export const getResumePoint = query({
-  args: { deviceId: v.string(), subjectSlug: v.string() },
+  args: { subjectSlug: v.string() },
   // NOTE: the resume-lesson fields are kept FLAT (top-level), not grouped under a
   // nested `lesson` object. A `v.object` nested inside a union-typed field gets
   // dropped by Convex's return-type inference (the branch collapses to `never` on
@@ -160,7 +162,7 @@ export const getResumePoint = query({
       unitLessonCount: v.union(v.number(), v.null()),
     }),
   ),
-  handler: async (ctx, { deviceId, subjectSlug }) => {
+  handler: async (ctx, { subjectSlug }) => {
     const subject = await ctx.db
       .query('subjects')
       .withIndex('by_slug', (q) => q.eq('slug', subjectSlug))
@@ -174,17 +176,14 @@ export const getResumePoint = query({
         .collect()
     ).sort((a, b) => a.order - b.order)
 
-    // Completed lesson ids + whether the device has touched anything at all.
-    const user = await ctx.db
-      .query('users')
-      .withIndex('by_device', (q) => q.eq('deviceId', deviceId))
-      .unique()
+    // Completed lesson ids + whether the signed-in user has touched anything.
+    const userId = await getAuthUserId(ctx)
     const completed = new Set<string>()
     let anyProgress = false
-    if (user) {
+    if (userId) {
       const progress = await ctx.db
         .query('userProgress')
-        .withIndex('by_user', (q) => q.eq('userId', user._id))
+        .withIndex('by_user', (q) => q.eq('userId', userId))
         .collect()
       anyProgress = progress.length > 0
       for (const p of progress) if (p.completed) completed.add(p.lessonId)
@@ -243,6 +242,120 @@ export const getResumePoint = query({
       lessonNumber: resume ? resume.lessonNumber : null,
       unitLessonCount: resume ? resume.unitLessonCount : null,
     }
+  },
+})
+
+// The whole published catalog for the Discover browser: every subject with its
+// ordered units (card fields + published lessonCount + lessonIds so the client
+// can colour progress from getProgressForUser). Lightweight — unit metadata
+// only, no lesson titles (those come from searchLessons on demand).
+export const getCatalog = query({
+  args: {},
+  handler: async (ctx) => {
+    const subjects = (await ctx.db.query('subjects').collect()).sort(
+      (a, b) => a.order - b.order,
+    )
+
+    return await Promise.all(
+      subjects.map(async (subject) => {
+        const units = (
+          await ctx.db
+            .query('units')
+            .withIndex('by_subject', (q) => q.eq('subjectId', subject._id))
+            .collect()
+        ).sort((a, b) => a.order - b.order)
+
+        const unitsWithCounts = await Promise.all(
+          units.map(async (unit) => {
+            const published = (
+              await ctx.db
+                .query('lessons')
+                .withIndex('by_unit', (q) => q.eq('unitId', unit._id))
+                .collect()
+            ).filter((l) => l.isPublished)
+            return {
+              slug: unit.slug,
+              name: unit.name,
+              icon: unit.icon ?? null,
+              accentColor: unit.accentColor ?? null,
+              description: unit.description ?? null,
+              levelRange: unit.levelRange ?? null,
+              lessonCount: published.length,
+              lessonIds: published.map((l) => l._id),
+            }
+          }),
+        )
+
+        const lessonTotal = unitsWithCounts.reduce(
+          (sum, u) => sum + u.lessonCount,
+          0,
+        )
+
+        return {
+          slug: subject.slug,
+          name: subject.name,
+          description: subject.description,
+          color: subject.color,
+          icon: subject.icon,
+          order: subject.order,
+          isPublished: subject.isPublished,
+          unitCount: unitsWithCounts.length,
+          lessonTotal,
+          units: unitsWithCounts,
+        }
+      }),
+    )
+  },
+})
+
+// Full-text search over published lesson titles (Discover search box). Joins
+// each hit back to its unit + subject so the result card can show a breadcrumb,
+// its category accent, and link straight into the lesson player. Empty term →
+// no results; optional subjectSlug scopes the search to one subject.
+export const searchLessons = query({
+  args: { term: v.string(), subjectSlug: v.optional(v.string()) },
+  handler: async (ctx, { term, subjectSlug }) => {
+    const q = term.trim()
+    if (q.length === 0) return []
+
+    let subjectId: Id<'subjects'> | undefined
+    if (subjectSlug) {
+      const subject = await ctx.db
+        .query('subjects')
+        .withIndex('by_slug', (x) => x.eq('slug', subjectSlug))
+        .unique()
+      if (!subject) return []
+      subjectId = subject._id
+    }
+
+    const matches = await ctx.db
+      .query('lessons')
+      .withSearchIndex('search_title', (s) =>
+        subjectId
+          ? s.search('title', q).eq('isPublished', true).eq('subjectId', subjectId)
+          : s.search('title', q).eq('isPublished', true),
+      )
+      .take(24)
+
+    return await Promise.all(
+      matches.map(async (l) => {
+        const unit = await ctx.db.get(l.unitId)
+        const subject = await ctx.db.get(l.subjectId)
+        return {
+          lessonId: l._id,
+          contentSlug: l.contentSlug,
+          title: l.title,
+          summary: l.summary,
+          estimatedMinutes: l.estimatedMinutes,
+          level: l.level ?? 'beginner',
+          subjectSlug: subject?.slug ?? '',
+          subjectName: subject?.name ?? '',
+          unitSlug: unit?.slug ?? '',
+          unitName: unit?.name ?? '',
+          accentColor: unit?.accentColor ?? subject?.color ?? '#4F8CFF',
+        }
+      }),
+    )
   },
 })
 

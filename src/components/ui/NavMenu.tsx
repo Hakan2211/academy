@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link, useRouterState } from '@tanstack/react-router'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
+import { useAuthActions } from '@convex-dev/auth/react'
 import { Icon } from './Icon'
 
 // The slide-in navigation drawer opened from the HUD hamburger (mockup `1.5A`
@@ -10,18 +11,14 @@ import { Icon } from './Icon'
 // "Soon" chip so the roadmap is visible without being clickable.
 
 // Planned destinations (not built yet) — surfaced as the roadmap.
-const SOON: Array<{ label: string; icon: string; desc: string }> = [
-  { label: 'Discover', icon: 'Compass', desc: 'Browse every subject & lesson' },
-  { label: 'Leaderboard', icon: 'Trophy', desc: 'See how you stack up' },
-  { label: 'Profile', icon: 'User', desc: 'You, streaks & preferences' },
-  { label: 'Settings', icon: 'Settings', desc: 'Theme, motion & account' },
-]
+const SOON: Array<{ label: string; icon: string; desc: string }> = []
 
 const RIM = 'rgba(79,140,255,0.30)'
 
 export function NavMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   const reduce = useReducedMotion()
   const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const { signOut } = useAuthActions()
 
   // Close on Escape while open.
   useEffect(() => {
@@ -124,6 +121,16 @@ export function NavMenu({ open, onClose }: { open: boolean; onClose: () => void 
                   </Link>
                 </li>
                 <li>
+                  <Link to="/discover" onClick={onClose} className={linkClass}>
+                    <NavRowBody
+                      icon="Compass"
+                      label="Discover"
+                      desc="Browse every subject & lesson"
+                      active={pathname.startsWith('/discover')}
+                    />
+                  </Link>
+                </li>
+                <li>
                   <Link
                     to="/subjects/$subjectSlug"
                     params={{ subjectSlug: 'physics' }}
@@ -158,42 +165,91 @@ export function NavMenu({ open, onClose }: { open: boolean; onClose: () => void 
                     />
                   </Link>
                 </li>
+                <li>
+                  <Link to="/leaderboard" onClick={onClose} className={linkClass}>
+                    <NavRowBody
+                      icon="Trophy"
+                      label="Leaderboard"
+                      desc="See how you stack up"
+                      active={pathname.startsWith('/leaderboard')}
+                    />
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/profile" onClick={onClose} className={linkClass}>
+                    <NavRowBody
+                      icon="User"
+                      label="Profile"
+                      desc="You, streaks & badges"
+                      active={pathname.startsWith('/profile')}
+                    />
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/settings" onClick={onClose} className={linkClass}>
+                    <NavRowBody
+                      icon="Settings"
+                      label="Settings"
+                      desc="Motion & account"
+                      active={pathname.startsWith('/settings')}
+                    />
+                  </Link>
+                </li>
               </ul>
 
-              <div className="mb-1 mt-5 px-3 text-[11px] font-bold uppercase tracking-[0.16em] text-muted">
-                Coming soon
-              </div>
-              <ul className="flex flex-col gap-1">
-                {SOON.map((item) => (
-                  <li key={item.label}>
-                    <div
-                      className="flex cursor-not-allowed items-center gap-3 rounded-xl px-3 py-2.5 opacity-55"
-                      title={`${item.label} — coming soon`}
-                      aria-disabled
-                    >
-                      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white/[0.04] text-muted">
-                        <Icon name={item.icon} size={18} />
-                      </span>
-                      <span className="min-w-0">
-                        <span className="block text-sm font-semibold text-ink/80">
-                          {item.label}
-                        </span>
-                        <span className="block truncate text-xs text-muted">
-                          {item.desc}
-                        </span>
-                      </span>
-                      <span className="ml-auto shrink-0">
-                        <SoonChip />
-                      </span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              {SOON.length > 0 && (
+                <>
+                  <div className="mb-1 mt-5 px-3 text-[11px] font-bold uppercase tracking-[0.16em] text-muted">
+                    Coming soon
+                  </div>
+                  <ul className="flex flex-col gap-1">
+                    {SOON.map((item) => (
+                      <li key={item.label}>
+                        <div
+                          className="flex cursor-not-allowed items-center gap-3 rounded-xl px-3 py-2.5 opacity-55"
+                          title={`${item.label} — coming soon`}
+                          aria-disabled
+                        >
+                          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white/[0.04] text-muted">
+                            <Icon name={item.icon} size={18} />
+                          </span>
+                          <span className="min-w-0">
+                            <span className="block text-sm font-semibold text-ink/80">
+                              {item.label}
+                            </span>
+                            <span className="block truncate text-xs text-muted">
+                              {item.desc}
+                            </span>
+                          </span>
+                          <span className="ml-auto shrink-0">
+                            <SoonChip />
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
 
             {/* footer */}
-            <div className="border-t border-white/[0.08] px-5 py-3 text-[11px] text-muted">
-              Physics · Phase 1 — more subjects on the way.
+            <div className="border-t border-white/[0.08] px-3 pb-3 pt-2">
+              <button
+                type="button"
+                onClick={() => {
+                  onClose()
+                  void signOut()
+                }}
+                className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-white/[0.06]"
+              >
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white/[0.05] text-muted">
+                  <Icon name="LogOut" size={18} />
+                </span>
+                <span className="text-sm font-semibold text-ink">Sign out</span>
+              </button>
+              <p className="px-3 pt-2 text-[11px] text-muted">
+                Physics · Phase 1 — more subjects on the way.
+              </p>
             </div>
           </motion.nav>
         </>
