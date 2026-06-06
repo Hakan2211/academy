@@ -13,7 +13,8 @@ export type OrbState = 'locked' | 'available' | 'current' | 'complete'
 // falls back to a procedural lit sphere (other subjects, before art exists).
 // This is the design.md §2 layer-3 overlay; the "shine" = bloom halo + a masked
 // specular sweep over the coin (the islands' technique) + canvas bloom behind.
-const BASE = 120 // orb diameter (px) at scale 1.0
+// `base` is the orb diameter (px) at scale 1.0 — 120 on desktop, smaller on the
+// narrow mobile climbing trail so the orbs + labels fit a phone's width.
 
 export function OrbStation({
   subjectSlug,
@@ -33,6 +34,7 @@ export function OrbStation({
   index,
   lockHint,
   captionAbove,
+  base = 120,
 }: {
   subjectSlug: string
   unitSlug: string
@@ -51,6 +53,7 @@ export function OrbStation({
   index: number
   lockHint?: string
   captionAbove?: boolean // foreground orbs put the label above so it never clips
+  base?: number // orb diameter (px) at scale 1.0; smaller on mobile
 }) {
   const locked = state === 'locked'
   const current = state === 'current'
@@ -58,7 +61,7 @@ export function OrbStation({
   const lit = !locked
   const frac = complete ? 1 : total > 0 ? Math.min(1, done / total) : 0
 
-  const D = Math.round(BASE * scale)
+  const D = Math.round(base * scale)
   const RGAP = Math.max(7, Math.round(10 * scale))
   const RING = D + RGAP * 2
   const rr = RING / 2 - 2.5

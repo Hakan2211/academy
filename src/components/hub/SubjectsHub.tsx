@@ -70,6 +70,23 @@ const BRIDGES: Array<[string, string]> = [
 
 const TIER_PARALLAX: Record<Tier, number> = { far: 10, mid: 22, near: 38 }
 
+// Phones get a legible vertical list instead of the constellation (which needs a
+// wide stage to breathe). Curated reading order — the physics hero first, then a
+// gentle science → applied → humanities flow. Any subject missing here is
+// appended in LAYOUT order, so adding a world can't drop it from the list.
+const MOBILE_ORDER = [
+  'physics',
+  'chemistry',
+  'biology',
+  'math',
+  'computer-science',
+  'psychology',
+  'economics',
+  'philosophy',
+  'health',
+]
+const MAX_MOBILE = 899 // ≤ this viewport width → the vertical list
+
 export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
   const reduce = useReducedMotion()
   const navigate = useNavigate()
@@ -93,6 +110,18 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
     if (dive) return
     setDive({ slug: cfg.slug, accent: cfg.accent, x: cfg.x, y: cfg.y })
   }
+
+  // Viewport mode. Content mounts client-side (inside <Authenticated>), so reading
+  // window on the first render is safe and avoids a layout flash.
+  const [vw, setVw] = useState(() =>
+    typeof window === 'undefined' ? 1280 : window.innerWidth,
+  )
+  useEffect(() => {
+    const onResize = () => setVw(window.innerWidth)
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+  const mobile = vw <= MAX_MOBILE
 
   const bySlug = new Map(subjects.map((s) => [s.slug, s]))
 
@@ -129,7 +158,7 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
       cancelAnimationFrame(raf)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [mobile])
 
   // Atmosphere: additive (screen-blend) bloom — nebula glows, drifting star
   // particles, and the glowing energy bridges with flowing light + pulses.
@@ -243,7 +272,35 @@ export function SubjectsHub({ subjects }: { subjects: Array<HubSubject> }) {
       cancelAnimationFrame(raf)
       window.removeEventListener('resize', resize)
     }
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mobile])
+
+  // Phones: a tidy vertical list of worlds over the same cosmos backdrop.
+  if (mobile) {
+    const ordered = [
+      ...MOBILE_ORDER,
+      ...LAYOUT.map((c) => c.slug).filter((s) => !MOBILE_ORDER.includes(s)),
+    ]
+    return (
+      <div
+        className="mx-auto w-full max-w-md overflow-y-auto px-4 pb-12 pt-4"
+        style={{ height: 'calc(100vh - 64px)', minHeight: 540 }}
+      >
+        <ul className="flex flex-col gap-2.5">
+          {ordered.map((slug) => {
+            const cfg = LAYOUT.find((c) => c.slug === slug)
+            const subject = bySlug.get(slug)
+            if (!cfg || !subject) return null
+            return (
+              <li key={slug}>
+                <SubjectRow cfg={cfg} subject={subject} />
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    )
+  }
 
   const tiers: Array<Tier> = ['far', 'mid', 'near']
 
@@ -525,6 +582,88 @@ function Island({
   return (
     <div className={cn(cls, 'pointer-events-auto cursor-not-allowed')} style={style} title="Coming soon">
       {inner}
+    </div>
+  )
+}
+
+// One row of the phone list: island thumbnail + glass emblem + name + state. Live
+// subjects are a tappable Link; coming-soon ones are dimmed and non-interactive.
+function SubjectRow({ cfg, subject }: { cfg: IslandCfg; subject: HubSubject }) {
+  const live = subject.isPublished
+  const body = (
+    <div
+      className={cn(
+        'flex items-center gap-3.5 rounded-2xl border border-white/10 bg-black/30 p-3 backdrop-blur-md transition-colors',
+        live ? 'hover:border-white/25 hover:bg-black/45' : 'opacity-90',
+      )}
+    >
+      {/* island thumbnail with accent bloom */}
+      <div className="relative h-16 w-16 shrink-0">
+        <div
+          aria-hidden
+          className="absolute inset-1 rounded-full blur-xl"
+          style={{ background: cfg.accent, opacity: live ? 0.5 : 0.16, mixBlendMode: 'screen' }}
+        />
+        <img
+          src={`/islands/${cfg.slug}.png?v=3`}
+          alt=""
+          draggable={false}
+          decoding="async"
+          className={cn(
+            'relative h-full w-full select-none object-contain',
+            !live && 'opacity-70 grayscale-[0.4]',
+          )}
+          style={{ filter: live ? `drop-shadow(0 4px 10px ${cfg.accent}aa)` : undefined }}
+        />
+      </div>
+
+      {/* glass emblem badge */}
+      <div
+        className="relative grid h-9 w-9 shrink-0 place-items-center rounded-full border border-white/25 bg-white/10"
+        style={{
+          boxShadow: live
+            ? `0 0 12px ${cfg.accent}88, inset 0 0 8px ${cfg.accent}44`
+            : undefined,
+        }}
+      >
+        <Icon
+          name={cfg.emblem}
+          size={18}
+          style={{ color: '#fff', filter: live ? `drop-shadow(0 0 4px ${cfg.accent})` : undefined }}
+        />
+      </div>
+
+      {/* name + state */}
+      <div className="min-w-0 flex-1">
+        <p className={cn('truncate text-base font-extrabold', live ? 'text-ink' : 'text-muted')}>
+          {subject.name}
+        </p>
+        <p
+          className={cn('text-xs font-semibold', !live && 'text-muted')}
+          style={{ color: live ? cfg.accent : undefined }}
+        >
+          {live ? 'Enter' : 'Coming soon'}
+        </p>
+      </div>
+
+      {live ? (
+        <Icon name="ChevronRight" size={20} style={{ color: cfg.accent }} />
+      ) : (
+        <Icon name="Lock" size={16} className="text-muted" />
+      )}
+    </div>
+  )
+
+  if (live) {
+    return (
+      <Link to="/subjects/$subjectSlug" params={{ subjectSlug: subject.slug }} className="block">
+        {body}
+      </Link>
+    )
+  }
+  return (
+    <div className="cursor-not-allowed" title="Coming soon" aria-disabled>
+      {body}
     </div>
   )
 }

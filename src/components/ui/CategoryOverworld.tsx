@@ -1,9 +1,10 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from '@tanstack/react-router'
 import { motion, useReducedMotion } from 'motion/react'
 import { OrbStation } from './OrbStation'
 import type { OrbState } from './OrbStation'
 import { Icon } from './Icon'
+import { cn } from '#/lib/cn'
 
 export type OverworldUnit = {
   slug: string
@@ -320,7 +321,9 @@ const HAND_LAYOUTS: Record<number, Array<Pt>> = {
   18: LAYOUT_18,
 }
 
-const ORB_BASE = 120 // must match OrbStation BASE (orb px diameter at scale 1)
+const ORB_BASE = 120 // desktop orb px diameter at scale 1 (matches OrbStation default)
+const ORB_BASE_MOBILE = 84 // smaller orbs on the narrow phone climbing trail
+const MOBILE_MAX = 899 // ≤ this viewport width → the vertical climbing-trail layout
 
 // Fallback for any subject whose category count differs from physics' 12.
 function genLayout(n: number): Array<Pt> {
@@ -334,6 +337,29 @@ function genLayout(n: number): Array<Pt> {
       scale: 1.3 - t * 0.76,
     })
   }
+  return out
+}
+
+// Phone layout — a gentle vertical climb the user scrolls UP, regardless of world
+// count (the hand-tuned desktop meanders assume a wide landscape stage and pack
+// too tightly when squeezed into a narrow column). World 1 sits centred at the
+// bottom; the trail winds within a safe horizontal band (x ~27→73, narrowing as
+// it climbs) and the summit lands centred at the top. The stage is made tall
+// (see stageHeight) so the even vertical spacing keeps neighbours from touching.
+function mobileLayout(n: number): Array<Pt> {
+  const top = 8
+  const bottom = 92
+  const out: Array<Pt> = []
+  for (let i = 0; i < n; i++) {
+    const t = n > 1 ? i / (n - 1) : 0 // 0 = world 1 (bottom) … 1 = summit (top)
+    const amp = 23 - 8 * t // wider sway low, tighter near the summit
+    out.push({
+      x: 50 + Math.sin(i * 0.95) * amp,
+      y: bottom - t * (bottom - top),
+      scale: 0.9 - 0.2 * t,
+    })
+  }
+  if (n > 0) out[n - 1] = { ...out[n - 1], x: 50, scale: 1.0 } // summit: centred + hero-sized
   return out
 }
 
@@ -406,12 +432,33 @@ export function CategoryOverworld({
   const reduce = useReducedMotion()
   const wrapRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const scrollRef = useRef<HTMLDivElement>(null)
   const orbRefs = useRef<Array<HTMLDivElement | null>>([])
 
   const n = units.length
   const states = useMemo(() => computeStates(units), [units])
 
-  const layout = useMemo<Array<Pt>>(() => HAND_LAYOUTS[n] ?? genLayout(n), [n])
+  // Viewport-driven mode. Content mounts client-side (it lives inside
+  // <Authenticated>), so reading window on first render is safe and flicker-free.
+  const [vp, setVp] = useState(() =>
+    typeof window === 'undefined'
+      ? { w: 1280, h: 800 }
+      : { w: window.innerWidth, h: window.innerHeight },
+  )
+  useEffect(() => {
+    const onResize = () => setVp({ w: window.innerWidth, h: window.innerHeight })
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+  const mobile = vp.w <= MOBILE_MAX
+  const orbBase = mobile ? ORB_BASE_MOBILE : ORB_BASE
+  // Tall stage so the winding climb has room to breathe; scrolls vertically.
+  const stageHeight = Math.max(vp.h - 64, Math.round(n * 150))
+
+  const layout = useMemo<Array<Pt>>(
+    () => (mobile ? mobileLayout(n) : (HAND_LAYOUTS[n] ?? genLayout(n))),
+    [n, mobile],
+  )
   const scales = layout.map((p) => p.scale)
   const sMax = Math.max(...scales, 1)
   const sMin = Math.min(...scales, 0.5)
@@ -534,7 +581,7 @@ export function CategoryOverworld({
         const ox = (o.x / 100) * w
         const oy = (o.y / 100) * h
         const pulse = o.current && !reduceM ? 0.85 + 0.22 * Math.sin(t * 2.3) : 1
-        const rad = (ORB_BASE * o.scale * 0.85 + 26) * pulse
+        const rad = (orbBase * o.scale * 0.85 + 26) * pulse
         const [r, g, b] = o.rgb
         const grad = ctx.createRadialGradient(ox, oy, 0, ox, oy, rad)
         grad.addColorStop(0, `rgba(${r},${g},${b},${o.intensity * pulse})`)
@@ -617,30 +664,109 @@ export function CategoryOverworld({
       cancelAnimationFrame(raf)
       window.removeEventListener('resize', resize)
     }
-  }, [layout, n, fillUpTo, orbGlow])
+  }, [layout, n, fillUpTo, orbGlow, orbBase, stageHeight])
+
+  // Phone trail: open scrolled to where the learner is — the current world, else
+  // the last completed one, else the start at the bottom.
+  useEffect(() => {
+    if (!mobile) return
+    const el = scrollRef.current
+    if (!el) return
+    const idx = currentIdx >= 0 ? currentIdx : lastComplete >= 0 ? lastComplete : 0
+    const yPct = layout[idx]?.y ?? 92
+    el.scrollTop = Math.max(0, (yPct / 100) * el.scrollHeight - el.clientHeight / 2)
+  }, [mobile, layout, currentIdx, lastComplete, stageHeight])
 
   return (
-    // Narrow screens: keep the stage at a usable min width and pan horizontally
-    // rather than letting the fixed-position orbs overlap (portrait redesign TBD).
     <div
-      className="w-full overflow-x-auto overflow-y-hidden"
+      className="relative w-full overflow-hidden"
       style={{ height: 'calc(100vh - 64px)', minHeight: 620 }}
     >
+      {/* the shared universe (CosmosBackdrop) shows through; depth vignette over it —
+          pinned to the viewport so it stays put while the trail scrolls */}
       <div
-        ref={wrapRef}
-        className="relative h-full w-full overflow-hidden"
-        style={{ minWidth: 920 }}
-      >
-      {/* the shared universe (CosmosBackdrop) shows through; depth vignette over it */}
-      <div
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 z-0"
         style={{
           background:
             'radial-gradient(125% 90% at 50% 42%, transparent 58%, rgba(7,10,22,0.6) 100%)',
         }}
       />
-      {/* layer 2 — the luminous winding path */}
-      <canvas ref={canvasRef} className="pointer-events-none absolute inset-0" />
+
+      {/* scroll region — desktop pans horizontally if the stage is wider than the
+          viewport; the phone trail scrolls vertically up toward the summit */}
+      <div
+        ref={scrollRef}
+        className={cn(
+          'relative z-10 h-full w-full',
+          mobile
+            ? 'overflow-y-auto overflow-x-hidden'
+            : 'overflow-x-auto overflow-y-hidden',
+        )}
+      >
+        <div
+          ref={wrapRef}
+          className="relative overflow-hidden"
+          style={
+            mobile
+              ? { width: '100%', height: stageHeight }
+              : { minWidth: 920, height: '100%' }
+          }
+        >
+          {/* layer 2 — the luminous winding path */}
+          <canvas ref={canvasRef} className="pointer-events-none absolute inset-0" />
+
+          {/* layer 3 — the interactive orb worlds */}
+          {units.map((u, i) => {
+            const p = layout[i]
+            const depth = depthOf(p.scale)
+            return (
+              <div
+                key={u.slug}
+                className="absolute"
+                style={{
+                  left: `${p.x}%`,
+                  top: `${p.y}%`,
+                  zIndex: 10 + Math.round(depth * 40),
+                }}
+              >
+                {/* parallax wrapper (transform set per-frame) */}
+                <div
+                  ref={(el) => {
+                    orbRefs.current[i] = el
+                  }}
+                  className="will-change-transform"
+                >
+                  {/* static centring — kept off the parallax/motion transforms */}
+                  <div className="-translate-x-1/2 -translate-y-1/2">
+                    <OrbStation
+                      subjectSlug={subjectSlug}
+                      unitSlug={u.slug}
+                      name={u.name}
+                      icon={u.icon}
+                      image={ORB_IMAGE[u.slug]}
+                      accent={u.accentColor ?? subjectColor}
+                      state={states[i]}
+                      done={u.done}
+                      total={u.total}
+                      order={i + 1}
+                      scale={p.scale}
+                      depth={depth}
+                      isSummit={i === n - 1}
+                      reduce={Boolean(reduce)}
+                      index={i}
+                      base={orbBase}
+                      captionAbove={p.y > 78}
+                      lockHint={
+                        i > 0 ? `Finish ${units[i - 1].name} to unlock` : undefined
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
 
       {/* arrival flash — fades out the hub's "dive into the island" bloom */}
       {!reduce && (
@@ -655,7 +781,7 @@ export function CategoryOverworld({
         />
       )}
 
-      {/* chrome — back link + subject progress (glass) */}
+      {/* chrome — back link + subject progress (glass), pinned over the scroll region */}
       <div className="absolute left-4 top-4 z-30 flex flex-col items-start gap-2">
         <Link
           to="/"
@@ -679,53 +805,6 @@ export function CategoryOverworld({
             </span>
           </div>
         </div>
-      </div>
-
-      {/* layer 3 — the interactive orb worlds */}
-      {units.map((u, i) => {
-        const p = layout[i]
-        const depth = depthOf(p.scale)
-        return (
-          <div
-            key={u.slug}
-            className="absolute"
-            style={{ left: `${p.x}%`, top: `${p.y}%`, zIndex: 10 + Math.round(depth * 40) }}
-          >
-            {/* parallax wrapper (transform set per-frame) */}
-            <div
-              ref={(el) => {
-                orbRefs.current[i] = el
-              }}
-              className="will-change-transform"
-            >
-              {/* static centring — kept off the parallax/motion transforms */}
-              <div className="-translate-x-1/2 -translate-y-1/2">
-                <OrbStation
-                  subjectSlug={subjectSlug}
-                  unitSlug={u.slug}
-                  name={u.name}
-                  icon={u.icon}
-                  image={ORB_IMAGE[u.slug]}
-                  accent={u.accentColor ?? subjectColor}
-                  state={states[i]}
-                  done={u.done}
-                  total={u.total}
-                  order={i + 1}
-                  scale={p.scale}
-                  depth={depth}
-                  isSummit={i === n - 1}
-                  reduce={Boolean(reduce)}
-                  index={i}
-                  captionAbove={p.y > 78}
-                  lockHint={
-                    i > 0 ? `Finish ${units[i - 1].name} to unlock` : undefined
-                  }
-                />
-              </div>
-            </div>
-          </div>
-        )
-      })}
       </div>
     </div>
   )
