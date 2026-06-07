@@ -37,7 +37,32 @@ export const Route = createRootRouteWithContext<{
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'theme-color', content: '#0b1020' },
-      { title: 'Academy — Learn science, visually' },
+      { title: 'Orbisle | Learn science, visually' },
+      {
+        name: 'description',
+        content:
+          'From atoms to the cosmos — nine subjects you can see, touch and play with.',
+      },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:site_name', content: 'Orbisle' },
+      { property: 'og:url', content: 'https://orbisle.com' },
+      { property: 'og:title', content: 'Orbisle | Learn science, visually' },
+      {
+        property: 'og:description',
+        content:
+          'From atoms to the cosmos — nine subjects you can see, touch and play with.',
+      },
+      { property: 'og:image', content: 'https://orbisle.com/og-image.jpg' },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Orbisle | Learn science, visually' },
+      {
+        name: 'twitter:description',
+        content:
+          'From atoms to the cosmos — nine subjects you can see, touch and play with.',
+      },
+      { name: 'twitter:image', content: 'https://orbisle.com/og-image.jpg' },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
