@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { Icon } from './Icon'
 import { cn } from '#/lib/cn'
 
-export type OrbState = 'locked' | 'available' | 'current' | 'complete'
+export type OrbState = 'locked' | 'available' | 'current' | 'complete' | 'premium'
 
 // A single category "world" on the overworld. When a medal image is supplied
 // (the §3.3 / §7a per-category coin), it IS the orb art — a glossy chrome-rimmed
@@ -58,6 +58,9 @@ export function OrbStation({
   const locked = state === 'locked'
   const current = state === 'current'
   const complete = state === 'complete'
+  // Premium-locked worlds stay LIT (the catalog sells itself) but wear a steady
+  // gold ring + Crown and link to /upgrade instead of the trail.
+  const premium = state === 'premium'
   const lit = !locked
   const frac = complete ? 1 : total > 0 ? Math.min(1, done / total) : 0
 
@@ -273,6 +276,22 @@ export function OrbStation({
         </>
       )}
 
+      {/* premium ring — steady warn-gold (no pulse: it's an offer, not a target) */}
+      {premium && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute rounded-full"
+          style={{
+            width: RING,
+            height: RING,
+            border: '2px solid var(--color-warn)',
+            boxShadow:
+              '0 0 18px 3px rgba(255,176,32,0.55), inset 0 0 14px rgba(255,176,32,0.25)',
+            opacity: 0.85,
+          }}
+        />
+      )}
+
       {/* current-target pulsing halo — the bright "you are here" ring */}
       {current && (
         <motion.div
@@ -354,6 +373,20 @@ export function OrbStation({
           <Icon name="Lock" size={13} />
         </span>
       )}
+      {premium && (
+        <span
+          className="absolute grid h-7 w-7 place-items-center rounded-full text-warn"
+          style={{
+            right: RGAP,
+            bottom: RGAP,
+            background: 'rgba(36,28,8,0.95)',
+            border: '2px solid #070a16',
+            boxShadow: '0 0 10px rgba(255,176,32,0.7)',
+          }}
+        >
+          <Icon name="Crown" size={13} />
+        </span>
+      )}
 
     </div>
   )
@@ -401,13 +434,17 @@ export function OrbStation({
         className="text-muted"
         style={{ fontSize: Math.max(10, Math.round(11 * scale)) }}
       >
-        {locked
-          ? 'Locked'
-          : complete
-            ? `${total}/${total} ✓`
-            : total > 0
-              ? `${done}/${total} lessons`
-              : 'Coming soon'}
+        {locked ? (
+          'Locked'
+        ) : premium ? (
+          <span className="font-semibold text-warn">Premium</span>
+        ) : complete ? (
+          `${total}/${total} ✓`
+        ) : total > 0 ? (
+          `${done}/${total} lessons`
+        ) : (
+          'Coming soon'
+        )}
       </div>
     </div>
   )
@@ -429,6 +466,20 @@ export function OrbStation({
       >
         {body}
       </div>
+    )
+  }
+
+  // Premium-locked: the orb is an invitation — it links to the upgrade page.
+  if (premium) {
+    return (
+      <Link
+        to="/upgrade"
+        title={lockHint}
+        aria-label={`${name} — Premium. Unlock with lifetime access.`}
+        className="block transition-transform duration-300 ease-out hover:scale-[1.07] focus-visible:scale-[1.07] focus-visible:outline-none"
+      >
+        {body}
+      </Link>
     )
   }
 

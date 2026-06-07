@@ -1,6 +1,7 @@
 import { mutation, query } from './_generated/server'
 import { v } from 'convex/values'
 import { getAuthUserId } from '@convex-dev/auth/server'
+import { viewerIsPremium } from './entitlements'
 
 // Practice = spaced retrieval review. Item *content* is static (the generated
 // bank in src/content/practice); this module only owns the per-user schedule
@@ -31,6 +32,9 @@ export const getReviewStates = query({
   handler: async (ctx) => {
     const userId = await getAuthUserId(ctx)
     if (!userId) return []
+    // Practice is a premium feature — free users get the same graceful empty
+    // contract as signed-out visitors (the route shows the upgrade gate).
+    if (!(await viewerIsPremium(ctx))) return []
     const rows = await ctx.db
       .query('reviewState')
       .withIndex('by_user', (q) => q.eq('userId', userId))
@@ -58,6 +62,8 @@ export const gradeItem = mutation({
   handler: async (ctx, { itemId, correct, localDate }) => {
     const userId = await getAuthUserId(ctx)
     if (!userId) return null
+    // Premium-only (mirrors getReviewStates): no schedule writes on free tier.
+    if (!(await viewerIsPremium(ctx))) return null
 
     const existing = await ctx.db
       .query('reviewState')

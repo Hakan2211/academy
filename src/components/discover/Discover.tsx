@@ -5,6 +5,7 @@ import { convexQuery } from '@convex-dev/react-query'
 import { useQuery } from '@tanstack/react-query'
 import { api } from '../../../convex/_generated/api'
 import { Icon } from '#/components/ui/Icon'
+import { useIsPremium } from '#/lib/billing'
 
 // The catalog browser (NavMenu "Discover"). A fast, searchable counterpart to
 // the cinematic island hub: drill All subjects → a subject's units → the unit's
@@ -22,6 +23,7 @@ type CatalogUnit = {
   levelRange: string | null
   lessonCount: number
   lessonIds: Array<string>
+  requiresPremium?: boolean
 }
 type CatalogSubject = {
   slug: string
@@ -50,7 +52,11 @@ export function Discover() {
   }, [raw])
 
   const catalogQ = useQuery(convexQuery(api.catalog.getCatalog, {}))
-  const progressQ = useQuery(convexQuery(api.progress.getProgressForUser, {}))
+  // Completed-lesson set from the one-doc progress summary (bandwidth-lean).
+  const progressQ = useQuery(convexQuery(api.progress.getCompletedLessons, {}))
+  // Browsing stays free for everyone; premium content is marked, and premium
+  // lesson hits route to /upgrade for free users (locks only when === false).
+  const { isPremium } = useIsPremium()
   const searchQ = useQuery({
     ...convexQuery(
       api.catalog.searchLessons,
@@ -61,12 +67,7 @@ export function Discover() {
 
   const catalog = (catalogQ.data ?? []) as Array<CatalogSubject>
   const completed = useMemo(
-    () =>
-      new Set(
-        (progressQ.data ?? [])
-          .filter((p) => p.completed)
-          .map((p) => String(p.lessonId)),
-      ),
+    () => new Set(progressQ.data ?? []),
     [progressQ.data],
   )
 
@@ -171,6 +172,7 @@ export function Discover() {
             term={term}
             completed={completed}
             scopedTo={activeSubject?.name ?? null}
+            isPremium={isPremium}
           />
         ) : catalogQ.isLoading ? (
           <GridSkeleton />
@@ -179,6 +181,7 @@ export function Discover() {
             subject={activeSubject}
             doneInUnit={doneInUnit}
             onBack={() => setSubject(null)}
+            isPremium={isPremium}
           />
         ) : (
           <SubjectGrid
@@ -301,10 +304,12 @@ function SubjectUnits({
   subject,
   doneInUnit,
   onBack,
+  isPremium,
 }: {
   subject: CatalogSubject
   doneInUnit: (u: CatalogUnit) => number
   onBack: () => void
+  isPremium: boolean | undefined
 }) {
   return (
     <div>
@@ -373,6 +378,14 @@ function SubjectUnits({
                 <h3 className="min-w-0 flex-1 truncate text-sm font-bold text-ink">
                   {u.name}
                 </h3>
+                {/* tier chip: users see what's premium before they click; the
+                    unit route itself shows the upgrade gate */}
+                {u.requiresPremium && isPremium === false && !complete && (
+                  <span className="flex shrink-0 items-center gap-1 rounded-full border border-warn/40 bg-warn/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-warn">
+                    <Icon name="Crown" size={11} />
+                    Premium
+                  </span>
+                )}
                 {complete && (
                   <span style={{ color: accent }}>
                     <Icon name="CheckCircle2" size={16} />
@@ -420,6 +433,7 @@ type LessonHit = {
   unitSlug: string
   unitName: string
   accentColor: string
+  requiresPremium?: boolean
 }
 
 function SearchResults({
@@ -428,12 +442,14 @@ function SearchResults({
   term,
   completed,
   scopedTo,
+  isPremium,
 }: {
   results: Array<LessonHit>
   loading: boolean
   term: string
   completed: Set<string>
   scopedTo: string | null
+  isPremium: boolean | undefined
 }) {
   if (loading) {
     return (
@@ -472,40 +488,78 @@ function SearchResults({
       <ul className="flex flex-col gap-2">
         {results.map((r) => {
           const done = completed.has(r.lessonId)
+          // Premium hits stay visible (the catalog sells itself) but lead to
+          // /upgrade for free users; completed ones keep their normal link.
+          const lockedHit =
+            r.requiresPremium === true && isPremium === false && !done
+          const row = (
+            <>
+              <span
+                className="grid h-9 w-9 shrink-0 place-items-center rounded-lg"
+                style={{
+                  color: done
+                    ? r.accentColor
+                    : lockedHit
+                      ? 'var(--color-warn)'
+                      : 'var(--color-muted)',
+                  background: done
+                    ? `${r.accentColor}1f`
+                    : lockedHit
+                      ? 'rgba(255,176,32,0.1)'
+                      : 'rgba(255,255,255,0.04)',
+                }}
+              >
+                <Icon
+                  name={done ? 'CheckCircle2' : lockedHit ? 'Lock' : 'Play'}
+                  size={17}
+                />
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-sm font-bold text-ink">{r.title}</p>
+                <p className="flex items-center gap-1.5 truncate text-xs text-muted">
+                  <span
+                    className="h-2 w-2 shrink-0 rounded-full"
+                    style={{ background: r.accentColor }}
+                  />
+                  {r.subjectName} · {r.unitName}
+                </p>
+              </div>
+              {lockedHit && (
+                <span className="flex shrink-0 items-center gap-1 rounded-full border border-warn/40 bg-warn/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-warn">
+                  <Icon name="Crown" size={11} />
+                  Premium
+                </span>
+              )}
+              <span className="hidden shrink-0 text-xs font-medium text-muted sm:inline">
+                {r.estimatedMinutes} min
+              </span>
+              <span className="text-muted transition-transform group-hover:translate-x-0.5">
+                <Icon name="ChevronRight" size={18} />
+              </span>
+            </>
+          )
+          const cardClass =
+            'group flex items-center gap-3 rounded-2xl border bg-black/40 px-4 py-3 backdrop-blur-xl transition-colors hover:bg-black/55'
           return (
             <li key={r.lessonId}>
-              <Link
-                to="/learn/$"
-                params={{ _splat: r.contentSlug }}
-                className="group flex items-center gap-3 rounded-2xl border bg-black/40 px-4 py-3 backdrop-blur-xl transition-colors hover:bg-black/55"
-                style={{ borderColor: `${r.accentColor}33` }}
-              >
-                <span
-                  className="grid h-9 w-9 shrink-0 place-items-center rounded-lg"
-                  style={{
-                    color: done ? r.accentColor : 'var(--color-muted)',
-                    background: done ? `${r.accentColor}1f` : 'rgba(255,255,255,0.04)',
-                  }}
+              {lockedHit ? (
+                <Link
+                  to="/upgrade"
+                  className={cardClass}
+                  style={{ borderColor: 'rgba(255,176,32,0.3)' }}
                 >
-                  <Icon name={done ? 'CheckCircle2' : 'Play'} size={17} />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-bold text-ink">{r.title}</p>
-                  <p className="flex items-center gap-1.5 truncate text-xs text-muted">
-                    <span
-                      className="h-2 w-2 shrink-0 rounded-full"
-                      style={{ background: r.accentColor }}
-                    />
-                    {r.subjectName} · {r.unitName}
-                  </p>
-                </div>
-                <span className="hidden shrink-0 text-xs font-medium text-muted sm:inline">
-                  {r.estimatedMinutes} min
-                </span>
-                <span className="text-muted transition-transform group-hover:translate-x-0.5">
-                  <Icon name="ChevronRight" size={18} />
-                </span>
-              </Link>
+                  {row}
+                </Link>
+              ) : (
+                <Link
+                  to="/learn/$"
+                  params={{ _splat: r.contentSlug }}
+                  className={cardClass}
+                  style={{ borderColor: `${r.accentColor}33` }}
+                >
+                  {row}
+                </Link>
+              )}
             </li>
           )
         })}

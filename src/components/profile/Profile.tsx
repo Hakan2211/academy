@@ -46,11 +46,12 @@ function Card({
 export function Profile() {
   const reduce = useReducedMotion()
   const meQ = useQuery(convexQuery(api.users.currentUser, {}))
-  const progressQ = useQuery(convexQuery(api.progress.getProgressForUser, {}))
+  // Completed count from the one-doc progress summary (bandwidth-lean).
+  const progressQ = useQuery(convexQuery(api.progress.getCompletedLessons, {}))
 
   const me = meQ.data ?? null
   const lessonsDone = useMemo(
-    () => (progressQ.data ?? []).filter((p) => p.completed).length,
+    () => (progressQ.data ?? []).length,
     [progressQ.data],
   )
 

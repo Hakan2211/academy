@@ -8,6 +8,8 @@ import type {
   LessonNodeData,
   LessonNodeState,
 } from '#/components/ui/LessonNode'
+import { PremiumGate } from '#/components/billing/PremiumGate'
+import { useIsPremium } from '#/lib/billing'
 
 export const Route = createFileRoute('/subjects/$subjectSlug/$unitSlug')({
   component: CategoryPage,
@@ -28,9 +30,11 @@ function CategoryPage() {
     convexQuery(api.catalog.getCategoryPath, { subjectSlug, unitSlug }),
   )
 
+  // Per-user completed-lesson set (one summary doc — bandwidth-lean).
   const progressQuery = useQuery(
-    convexQuery(api.progress.getProgressForUser, {}),
+    convexQuery(api.progress.getCompletedLessons, {}),
   )
+  const { isPremium } = useIsPremium()
 
   if (!data) {
     return (
@@ -43,10 +47,24 @@ function CategoryPage() {
   const { subject, unit, lessons } = data
   const accent = unit.accentColor ?? subject.color
 
-  const progressById = new Map<string, { completed: boolean }>()
-  for (const p of progressQuery.data ?? []) {
-    progressById.set(p.lessonId, { completed: p.completed })
+  // Freemium wall: whole premium worlds gate at the route (the free tier is
+  // unit-granular, so a premium unit's trail would be 100% locked anyway).
+  // Only gates on isPremium === false — never while entitlement is loading.
+  if (data.unitRequiresPremium && isPremium === false) {
+    return (
+      <PremiumGate
+        title={unit.name}
+        description={`${
+          lessons.filter((l) => l.isPublished).length
+        } interactive lessons — included with the lifetime unlock, along with every world in all nine subjects.`}
+        accent={accent}
+        backTo={`/subjects/${subjectSlug}`}
+        backLabel={`Back to ${subject.name}`}
+      />
+    )
   }
+
+  const completedSet = new Set(progressQuery.data ?? [])
 
   // Gating is computed over PUBLISHED lessons only: completed -> complete, the
   // first open one -> current, the rest stay locked until the one before is
@@ -55,9 +73,9 @@ function CategoryPage() {
   let unlocked = true
   let assignedCurrent = false
   for (const l of lessons.filter((x) => x.isPublished)) {
-    const p = progressById.get(l._id)
+    const isDone = completedSet.has(l._id)
     let state: LessonNodeState
-    if (p?.completed) {
+    if (isDone) {
       state = 'complete'
     } else if (unlocked) {
       state = assignedCurrent ? 'available' : 'current'
@@ -65,7 +83,7 @@ function CategoryPage() {
     } else {
       state = 'locked'
     }
-    unlocked = p?.completed ?? false
+    unlocked = isDone
     stateBySlug.set(l.contentSlug, state)
   }
 
@@ -84,9 +102,7 @@ function CategoryPage() {
 
   // Category completion: every published lesson done -> celebration card.
   const published = lessons.filter((l) => l.isPublished)
-  const doneCount = published.filter(
-    (l) => progressById.get(l._id)?.completed,
-  ).length
+  const doneCount = published.filter((l) => completedSet.has(l._id)).length
   const allComplete = published.length > 0 && doneCount === published.length
 
   if (nodes.length === 0) {

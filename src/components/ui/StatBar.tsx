@@ -5,6 +5,7 @@ import { convexQuery } from '@convex-dev/react-query'
 import { useQuery } from '@tanstack/react-query'
 import { api } from '../../../convex/_generated/api'
 import { xpToNextLevel } from '#/lib/xp'
+import { useIsPremium } from '#/lib/billing'
 import { Icon } from './Icon'
 import { NavMenu } from './NavMenu'
 
@@ -31,6 +32,8 @@ export function StatBar() {
   const reduce = useReducedMotion()
   const [menuOpen, setMenuOpen] = useState(false)
   const statsQ = useQuery(convexQuery(api.progress.getUserStats, {}))
+  // Gold "Upgrade" capsule for free users only (hidden while loading + premium).
+  const { isPremium } = useIsPremium()
 
   // Immersive lesson player: no chrome. (Hooks run first, so this is safe.)
   if (pathname.startsWith('/learn')) return null
@@ -153,6 +156,31 @@ export function StatBar() {
             <span className="hidden text-xs font-medium text-muted lg:inline">badges</span>
           </Link>
         </div>
+
+        {/* upgrade — gold capsule, free users only */}
+        {isPremium === false && (
+          <Link
+            to="/upgrade"
+            aria-label="Upgrade — lifetime access"
+            title="Unlock everything with lifetime access"
+            className="flex h-11 shrink-0 items-center gap-1.5 rounded-2xl border bg-black/40 px-3 backdrop-blur-xl transition-colors hover:bg-black/60"
+            style={{
+              borderColor: 'rgba(255,176,32,0.42)',
+              boxShadow:
+                '0 0 0 1px rgba(255,176,32,0.08), 0 16px 40px -16px rgba(255,176,32,0.7), inset 0 1px 0 rgba(255,255,255,0.08)',
+            }}
+          >
+            <span
+              className="text-warn"
+              style={{ filter: 'drop-shadow(0 0 6px rgba(255,176,32,0.9))' }}
+            >
+              <Icon name="Crown" size={18} />
+            </span>
+            <span className="hidden text-sm font-bold text-ink sm:inline">
+              Upgrade
+            </span>
+          </Link>
+        )}
 
         {/* menu — its own floating capsule */}
         <button

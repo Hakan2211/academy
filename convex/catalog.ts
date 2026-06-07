@@ -2,6 +2,7 @@ import { query } from './_generated/server'
 import { v } from 'convex/values'
 import type { Id } from './_generated/dataModel'
 import { getAuthUserId } from '@convex-dev/auth/server'
+import { unitRequiresPremium, viewerIsPremium } from './entitlements'
 
 export const listSubjects = query({
   args: {},
@@ -75,6 +76,10 @@ export const getSubjectOverview = query({
           ...unit,
           lessonCount: published.length,
           lessonIds: published.map((l) => l._id),
+          // Freemium tier (viewer-independent so the query stays cacheable);
+          // whether THIS viewer is locked out is decided client-side from
+          // users.currentUser.isPremium.
+          requiresPremium: unitRequiresPremium(unit),
         }
       }),
     )
@@ -120,6 +125,8 @@ export const getCategoryPath = query({
       lessons,
       nextUnitSlug: next ? next.slug : null,
       nextUnitName: next ? next.name : null,
+      // Freemium tier of this unit (viewer-independent; flat by convention).
+      unitRequiresPremium: unitRequiresPremium(unit),
     }
   },
 })
@@ -136,6 +143,7 @@ type ResumeLesson = {
   accentColor: string
   lessonNumber: number // 1-based position among published lessons in the unit
   unitLessonCount: number
+  requiresPremium: boolean
 }
 
 export const getResumePoint = query({
@@ -160,6 +168,7 @@ export const getResumePoint = query({
       accentColor: v.union(v.string(), v.null()),
       lessonNumber: v.union(v.number(), v.null()),
       unitLessonCount: v.union(v.number(), v.null()),
+      requiresPremium: v.union(v.boolean(), v.null()),
     }),
   ),
   handler: async (ctx, { subjectSlug }) => {
@@ -177,16 +186,27 @@ export const getResumePoint = query({
     ).sort((a, b) => a.order - b.order)
 
     // Completed lesson ids + whether the signed-in user has touched anything.
+    // Reads the one-doc progressSummary (bandwidth: O(1) docs, invalidated only
+    // on completion), falling back to a userProgress scan pre-backfill.
     const userId = await getAuthUserId(ctx)
     const completed = new Set<string>()
     let anyProgress = false
     if (userId) {
-      const progress = await ctx.db
-        .query('userProgress')
+      const summary = await ctx.db
+        .query('progressSummary')
         .withIndex('by_user', (q) => q.eq('userId', userId))
-        .collect()
-      anyProgress = progress.length > 0
-      for (const p of progress) if (p.completed) completed.add(p.lessonId)
+        .unique()
+      if (summary) {
+        anyProgress = summary.hasAnyProgress
+        for (const id of summary.completedLessonIds) completed.add(id)
+      } else {
+        const progress = await ctx.db
+          .query('userProgress')
+          .withIndex('by_user', (q) => q.eq('userId', userId))
+          .collect()
+        anyProgress = progress.length > 0
+        for (const p of progress) if (p.completed) completed.add(p.lessonId)
+      }
     }
 
     let resume: ResumeLesson | null = null
@@ -216,6 +236,7 @@ export const getResumePoint = query({
               accentColor: unit.accentColor ?? subject.color,
               lessonNumber: i + 1,
               unitLessonCount: published.length,
+              requiresPremium: unitRequiresPremium(unit),
             }
           }
         }
@@ -241,6 +262,7 @@ export const getResumePoint = query({
       accentColor: resume ? resume.accentColor : null,
       lessonNumber: resume ? resume.lessonNumber : null,
       unitLessonCount: resume ? resume.unitLessonCount : null,
+      requiresPremium: resume ? resume.requiresPremium : null,
     }
   },
 })
@@ -282,6 +304,7 @@ export const getCatalog = query({
               levelRange: unit.levelRange ?? null,
               lessonCount: published.length,
               lessonIds: published.map((l) => l._id),
+              requiresPremium: unitRequiresPremium(unit),
             }
           }),
         )
@@ -353,6 +376,7 @@ export const searchLessons = query({
           unitSlug: unit?.slug ?? '',
           unitName: unit?.name ?? '',
           accentColor: unit?.accentColor ?? subject?.color ?? '#4F8CFF',
+          requiresPremium: unit ? unitRequiresPremium(unit) : false,
         }
       }),
     )
@@ -372,11 +396,18 @@ export const getLessonMeta = query({
     // can return to the lesson's own category trail (the unit slug).
     const unit = await ctx.db.get(lesson.unitId)
     const subject = await ctx.db.get(lesson.subjectId)
+    // Premium gate for the player. `requiresPremium` is the lesson's tier;
+    // `premiumLocked` is the viewer-specific verdict (makes this query
+    // per-user — acceptable for the player route). Flat booleans by convention.
+    const requiresPremium = unit ? unitRequiresPremium(unit) : false
+    const premiumLocked = requiresPremium && !(await viewerIsPremium(ctx))
     return {
       ...lesson,
       unitAccentColor: unit?.accentColor ?? null,
       subjectColor: subject?.color ?? null,
       unitSlug: unit?.slug ?? null,
+      requiresPremium,
+      premiumLocked,
     }
   },
 })

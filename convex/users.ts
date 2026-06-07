@@ -2,6 +2,7 @@ import { mutation, query } from './_generated/server'
 import { v } from 'convex/values'
 import { getAuthUserId } from '@convex-dev/auth/server'
 import { levelForXp } from './gamification'
+import { rebuildSummary } from './progress'
 
 // The signed-in user row (or null when signed out). Powers the HUD/chrome.
 export const currentUser = query({
@@ -166,6 +167,10 @@ export const claimAnonymousProgress = mutation({
       badges: Array.from(new Set([...authed.badges, ...anon.badges])),
       ...(dates.length ? { lastActivityDate: dates[dates.length - 1] } : {}),
     })
+
+    // The bulk merge above changed completed lessons wholesale — rebuild the
+    // denormalized progress summary so the lean reads stay correct.
+    await rebuildSummary(ctx, authedId)
 
     // The anonymous row is now empty — remove it.
     await ctx.db.delete(anon._id)

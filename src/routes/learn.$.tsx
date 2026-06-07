@@ -8,6 +8,7 @@ import { getLessonModule } from '#/lib/lessonModules'
 import { LessonRuntimeProvider } from '#/components/lesson/context'
 import type { LessonRuntime } from '#/components/lesson/context'
 import { LessonBackdrop } from '#/components/lesson/LessonBackdrop'
+import { PremiumGate } from '#/components/billing/PremiumGate'
 
 // Client-only: the lesson player renders WebGL canvases and reads device-local
 // progress, neither of which should run during SSR.
@@ -40,7 +41,11 @@ function LessonPlayer() {
   const lessonMetaQ = useQuery(
     convexQuery(api.catalog.getLessonMeta, { contentSlug }),
   )
-  const progressQ = useQuery(convexQuery(api.progress.getProgressForUser, {}))
+  // Point read for THIS lesson only — per-step writes re-run just this tiny
+  // query, not a scan of the user's whole progress history (bandwidth).
+  const progressQ = useQuery(
+    convexQuery(api.progress.getLessonProgress, { contentSlug }),
+  )
 
   const recordStep = useMutation(api.progress.recordStepCompletion)
   const complete = useMutation(api.progress.completeLesson)
@@ -66,7 +71,7 @@ function LessonPlayer() {
   }
 
   const lessonId = lesson._id
-  const mine = (progressQ.data ?? []).find((p) => p.lessonId === lessonId)
+  const mine = progressQ.data ?? null
   const initialStep = mine && !mine.completed ? mine.currentStep : 0
 
   // The lesson glows in its category accent (unit accent → subject colour →
@@ -77,9 +82,28 @@ function LessonPlayer() {
     unitAccentColor?: string | null
     subjectColor?: string | null
     unitSlug?: string | null
+    premiumLocked?: boolean
   }
   const accent = themed.unitAccentColor ?? themed.subjectColor ?? '#4F8CFF'
   const unitSlug = themed.unitSlug ?? null
+
+  // Premium wall for deep links (Discover hits, resume cards, pasted URLs).
+  // Viewer-specific verdict computed server-side; the server also refuses
+  // progress/XP writes, so this gate is UX, not the security boundary.
+  if (themed.premiumLocked === true) {
+    return (
+      <div className="relative min-h-screen w-full">
+        <LessonBackdrop accent={accent} />
+        <PremiumGate
+          title={lesson.title}
+          description="This lesson is part of the lifetime unlock — every world in all nine subjects, yours forever."
+          accent={accent}
+          backTo={`/subjects/${subjectSlug}`}
+          backLabel="Back to the island"
+        />
+      </div>
+    )
+  }
 
   // Finishing or leaving a lesson returns to its own category trail (one level
   // back), not the subject overworld (two levels back). Falls back to the

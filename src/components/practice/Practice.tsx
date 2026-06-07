@@ -11,6 +11,8 @@ import type { PracticeItem } from '#/lib/practice'
 import { QuizOption } from '#/components/ui/QuizOption'
 import type { QuizOptionState } from '#/components/ui/QuizOption'
 import { Icon } from '#/components/ui/Icon'
+import { PremiumGate } from '#/components/billing/PremiumGate'
+import { useIsPremium } from '#/lib/billing'
 
 // Practice = spaced retrieval review. Only items from COMPLETED lessons are
 // unlocked; the spaced schedule (reviewState) decides what's due today. Item
@@ -57,11 +59,13 @@ export function Practice() {
   const pathQ = useQuery(
     convexQuery(api.catalog.getSubjectPath, { subjectSlug: SUBJECT }),
   )
+  // Completed-lesson set from the one-doc progress summary (bandwidth-lean).
   const progressQ = useQuery(
-    convexQuery(api.progress.getProgressForUser, {}),
+    convexQuery(api.progress.getCompletedLessons, {}),
   )
   const reviewQ = useQuery(convexQuery(api.practice.getReviewStates, {}))
   const grade = useMutation(api.practice.gradeItem)
+  const { isPremium } = useIsPremium()
 
   const lessons = pathQ.data?.lessons ?? []
   const slugToLessonId = useMemo(() => {
@@ -71,12 +75,7 @@ export function Practice() {
   }, [lessons])
 
   const completed = useMemo(
-    () =>
-      new Set(
-        (progressQ.data ?? [])
-          .filter((p) => p.completed)
-          .map((p) => String(p.lessonId)),
-      ),
+    () => new Set(progressQ.data ?? []),
     [progressQ.data],
   )
   const reviewMap = useMemo(
@@ -137,6 +136,17 @@ export function Practice() {
 
   const loading =
     pathQ.isLoading || progressQ.isLoading || reviewQ.isLoading
+
+  // Practice is a premium feature. Gate only on === false (loading shows the
+  // normal skeleton); the server already returns empty schedules for free users.
+  if (isPremium === false) {
+    return (
+      <PremiumGate
+        title="Practice is Premium"
+        description="Spaced-retrieval review resurfaces every idea you've learned right before you'd forget it — included with lifetime access."
+      />
+    )
+  }
 
   return (
     <div className="relative min-h-[calc(100vh-64px)] w-full px-4 pb-20 pt-6 sm:pl-28 sm:pr-10">

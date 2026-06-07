@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UpgradeRouteImport } from './routes/upgrade'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as PracticeRouteImport } from './routes/practice'
@@ -23,6 +24,11 @@ import { Route as LearnSplatRouteImport } from './routes/learn.$'
 import { Route as SubjectsSubjectSlugIndexRouteImport } from './routes/subjects.$subjectSlug.index'
 import { Route as SubjectsSubjectSlugUnitSlugRouteImport } from './routes/subjects.$subjectSlug.$unitSlug'
 
+const UpgradeRoute = UpgradeRouteImport.update({
+  id: '/upgrade',
+  path: '/upgrade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -101,6 +107,7 @@ export interface FileRoutesByFullPath {
   '/practice': typeof PracticeRoute
   '/profile': typeof ProfileRoute
   '/settings': typeof SettingsRoute
+  '/upgrade': typeof UpgradeRoute
   '/learn/$': typeof LearnSplatRoute
   '/subjects/$subjectSlug': typeof SubjectsSubjectSlugRouteWithChildren
   '/subjects/$subjectSlug/$unitSlug': typeof SubjectsSubjectSlugUnitSlugRoute
@@ -116,6 +123,7 @@ export interface FileRoutesByTo {
   '/practice': typeof PracticeRoute
   '/profile': typeof ProfileRoute
   '/settings': typeof SettingsRoute
+  '/upgrade': typeof UpgradeRoute
   '/learn/$': typeof LearnSplatRoute
   '/subjects/$subjectSlug/$unitSlug': typeof SubjectsSubjectSlugUnitSlugRoute
   '/subjects/$subjectSlug': typeof SubjectsSubjectSlugIndexRoute
@@ -131,6 +139,7 @@ export interface FileRoutesById {
   '/practice': typeof PracticeRoute
   '/profile': typeof ProfileRoute
   '/settings': typeof SettingsRoute
+  '/upgrade': typeof UpgradeRoute
   '/learn/$': typeof LearnSplatRoute
   '/subjects/$subjectSlug': typeof SubjectsSubjectSlugRouteWithChildren
   '/subjects/$subjectSlug/$unitSlug': typeof SubjectsSubjectSlugUnitSlugRoute
@@ -148,6 +157,7 @@ export interface FileRouteTypes {
     | '/practice'
     | '/profile'
     | '/settings'
+    | '/upgrade'
     | '/learn/$'
     | '/subjects/$subjectSlug'
     | '/subjects/$subjectSlug/$unitSlug'
@@ -163,6 +173,7 @@ export interface FileRouteTypes {
     | '/practice'
     | '/profile'
     | '/settings'
+    | '/upgrade'
     | '/learn/$'
     | '/subjects/$subjectSlug/$unitSlug'
     | '/subjects/$subjectSlug'
@@ -177,6 +188,7 @@ export interface FileRouteTypes {
     | '/practice'
     | '/profile'
     | '/settings'
+    | '/upgrade'
     | '/learn/$'
     | '/subjects/$subjectSlug'
     | '/subjects/$subjectSlug/$unitSlug'
@@ -193,12 +205,20 @@ export interface RootRouteChildren {
   PracticeRoute: typeof PracticeRoute
   ProfileRoute: typeof ProfileRoute
   SettingsRoute: typeof SettingsRoute
+  UpgradeRoute: typeof UpgradeRoute
   LearnSplatRoute: typeof LearnSplatRoute
   SubjectsSubjectSlugRoute: typeof SubjectsSubjectSlugRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/upgrade': {
+      id: '/upgrade'
+      path: '/upgrade'
+      fullPath: '/upgrade'
+      preLoaderRoute: typeof UpgradeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/settings': {
       id: '/settings'
       path: '/settings'
@@ -316,6 +336,7 @@ const rootRouteChildren: RootRouteChildren = {
   PracticeRoute: PracticeRoute,
   ProfileRoute: ProfileRoute,
   SettingsRoute: SettingsRoute,
+  UpgradeRoute: UpgradeRoute,
   LearnSplatRoute: LearnSplatRoute,
   SubjectsSubjectSlugRoute: SubjectsSubjectSlugRouteWithChildren,
 }

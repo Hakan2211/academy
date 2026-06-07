@@ -107,8 +107,53 @@ export function Settings() {
             </Card>
           </motion.div>
 
-          {/* appearance */}
+          {/* plan / billing */}
           <motion.div {...rise(2)}>
+            <Card title="Plan" icon="Gem">
+              {me?.isPremium ? (
+                <div className="flex items-center gap-3">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-warn/12 text-warn">
+                    <Icon name="Crown" size={18} />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-bold text-ink">Lifetime access</p>
+                    <p className="text-xs text-muted">
+                      {me.premiumSince
+                        ? `Unlocked ${new Date(me.premiumSince).toLocaleDateString(
+                            undefined,
+                            { year: 'numeric', month: 'long', day: 'numeric' },
+                          )} · one-time purchase`
+                        : 'Everything unlocked · one-time purchase'}
+                    </p>
+                  </div>
+                  <span className="shrink-0 rounded-full border border-warn/40 bg-warn/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-warn">
+                    Premium
+                  </span>
+                </div>
+              ) : (
+                <div className="flex items-center gap-3">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white/[0.05] text-muted">
+                    <Icon name="Compass" size={18} />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-bold text-ink">Free plan</p>
+                    <p className="text-xs text-muted">
+                      The first world of every subject is free to explore.
+                    </p>
+                  </div>
+                  <Link
+                    to="/upgrade"
+                    className="inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-warn/40 bg-warn/10 px-3 py-2 text-sm font-semibold text-warn transition-colors hover:bg-warn/20"
+                  >
+                    <Icon name="Crown" size={14} /> Upgrade
+                  </Link>
+                </div>
+              )}
+            </Card>
+          </motion.div>
+
+          {/* appearance */}
+          <motion.div {...rise(3)}>
             <Card title="Appearance" icon="Sparkles">
               <ToggleRow
                 icon="Wind"
@@ -130,7 +175,7 @@ export function Settings() {
           </motion.div>
 
           {/* session */}
-          <motion.div {...rise(3)}>
+          <motion.div {...rise(4)}>
             <Card title="Session" icon="ShieldCheck">
               <button
                 type="button"
@@ -150,7 +195,7 @@ export function Settings() {
             </Card>
           </motion.div>
 
-          <motion.p {...rise(4)} className="px-1 text-center text-xs text-muted">
+          <motion.p {...rise(5)} className="px-1 text-center text-xs text-muted">
             Academy · Phase 1 — your progress saves to your account.
           </motion.p>
         </div>

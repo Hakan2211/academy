@@ -88,6 +88,13 @@ export default defineSchema({
     longestStreak: v.number(),
     lastActivityDate: v.optional(v.string()), // "YYYY-MM-DD" in the user's local tz
     badges: v.array(v.string()), // badge keys, e.g. ["first-lesson","unit-oscillations"]
+
+    // Billing (lifetime unlock — one-time Stripe payment, no subscription).
+    // Granted by the Stripe webhook (http.ts -> billing.grantLifetime); absent
+    // means free tier. premiumSince is set once and never overwritten.
+    isPremium: v.optional(v.boolean()),
+    premiumSince: v.optional(v.number()),
+    stripeCustomerId: v.optional(v.string()),
   })
     .index('email', ['email']) // account linking + createOrUpdateUser lookup
     .index('by_device', ['deviceId']) // one-time anonymous-progress claim
@@ -105,6 +112,20 @@ export default defineSchema({
   })
     .index('by_user', ['userId'])
     .index('by_user_lesson', ['userId', 'lessonId']),
+
+  // BANDWIDTH-CRITICAL denormalization: one small doc per user holding the
+  // completed-lesson id set. Every screen that colours progress (overworld,
+  // trail, Discover, Dashboard, Practice, Profile) reads THIS one doc instead
+  // of collecting the user's whole userProgress range — and, crucially, it only
+  // changes on lesson COMPLETION, so per-step writes (recordStepCompletion)
+  // no longer invalidate those subscriptions. userProgress stays the source of
+  // truth (step cursors, timestamps, XP idempotency); this is a projection.
+  progressSummary: defineTable({
+    userId: v.id('users'),
+    completedLessonIds: v.array(v.string()), // Id<'lessons'> as strings
+    completedCount: v.number(),
+    hasAnyProgress: v.boolean(), // any lesson ever started (resume-point state)
+  }).index('by_user', ['userId']),
 
   // Spaced-retrieval schedule for the Practice route. One row per (user, item),
   // where itemId is a practice-bank id (= a lesson's contentSlug for now). The

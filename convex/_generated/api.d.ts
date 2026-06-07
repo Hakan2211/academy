@@ -9,7 +9,9 @@
  */
 
 import type * as auth from "../auth.js";
+import type * as billing from "../billing.js";
 import type * as catalog from "../catalog.js";
+import type * as entitlements from "../entitlements.js";
 import type * as gamification from "../gamification.js";
 import type * as http from "../http.js";
 import type * as practice from "../practice.js";
@@ -25,7 +27,9 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   auth: typeof auth;
+  billing: typeof billing;
   catalog: typeof catalog;
+  entitlements: typeof entitlements;
   gamification: typeof gamification;
   http: typeof http;
   practice: typeof practice;
@@ -60,4 +64,6 @@ export declare const internal: FilterApi<
   FunctionReference<any, "internal">
 >;
 
-export declare const components: {};
+export declare const components: {
+  stripe: import("@convex-dev/stripe/_generated/component.js").ComponentApi<"stripe">;
+};

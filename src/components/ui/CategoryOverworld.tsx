@@ -13,6 +13,7 @@ export type OverworldUnit = {
   accentColor?: string
   done: number
   total: number
+  requiresPremium?: boolean // freemium tier from the catalog (world 1 is free)
 }
 
 type Pt = { x: number; y: number; scale: number }
@@ -365,7 +366,16 @@ function mobileLayout(n: number): Array<Pt> {
 
 // Strict gating mirrors lesson gating: a world unlocks only once the previous is
 // 100% complete. The first incomplete unlocked world is the "current" target.
-function computeStates(units: Array<OverworldUnit>): Array<OrbState> {
+// Freemium overlay: for free users (isPremium === false), premium worlds show as
+// 'premium' (gold ring → /upgrade) instead of current/available/locked. Worlds
+// completed before the paywall stay 'complete' — earned progress is never
+// visually revoked (the server refuses NEW premium progress regardless). While
+// entitlement is still loading (isPremium === undefined) no premium overlay is
+// applied, so premium users never see a gold flash.
+function computeStates(
+  units: Array<OverworldUnit>,
+  isPremium: boolean | undefined,
+): Array<OrbState> {
   const states: Array<OrbState> = []
   let unlocked = true
   let assignedCurrent = false
@@ -379,6 +389,13 @@ function computeStates(units: Array<OverworldUnit>): Array<OrbState> {
     } else s = 'locked'
     unlocked = complete
     states.push(s)
+  }
+  if (isPremium === false) {
+    for (let i = 0; i < units.length; i++) {
+      if (units[i].requiresPremium && states[i] !== 'complete') {
+        states[i] = 'premium'
+      }
+    }
   }
   return states
 }
@@ -423,11 +440,14 @@ export function CategoryOverworld({
   subjectName,
   subjectColor,
   units,
+  isPremium,
 }: {
   subjectSlug: string
   subjectName: string
   subjectColor: string
   units: Array<OverworldUnit>
+  // undefined while entitlement loads — premium overlay only renders on `false`
+  isPremium?: boolean
 }) {
   const reduce = useReducedMotion()
   const wrapRef = useRef<HTMLDivElement>(null)
@@ -436,7 +456,7 @@ export function CategoryOverworld({
   const orbRefs = useRef<Array<HTMLDivElement | null>>([])
 
   const n = units.length
-  const states = useMemo(() => computeStates(units), [units])
+  const states = useMemo(() => computeStates(units, isPremium), [units, isPremium])
 
   // Viewport-driven mode. Content mounts client-side (it lives inside
   // <Authenticated>), so reading window on first render is safe and flicker-free.
@@ -757,7 +777,11 @@ export function CategoryOverworld({
                       base={orbBase}
                       captionAbove={p.y > 78}
                       lockHint={
-                        i > 0 ? `Finish ${units[i - 1].name} to unlock` : undefined
+                        states[i] === 'premium'
+                          ? 'Premium — unlock everything with lifetime access'
+                          : i > 0
+                            ? `Finish ${units[i - 1].name} to unlock`
+                            : undefined
                       }
                     />
                   </div>

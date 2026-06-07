@@ -5,6 +5,8 @@ import { convexQuery } from '@convex-dev/react-query'
 import { useQuery } from '@tanstack/react-query'
 import { api } from '../../../convex/_generated/api'
 import { Icon } from '#/components/ui/Icon'
+// Plan bullets are shared with the in-app /upgrade card so the offer never drifts.
+import { PLAN_INCLUDES } from '#/lib/billing'
 
 // The public front door (shown by the auth gate to signed-out visitors at `/`).
 // A Cosmic-Glass marketing showcase over the shared WebGL universe. Model (owner
@@ -57,13 +59,6 @@ const AUDIENCES: Array<{ icon: string; title: string; body: string }> = [
   { icon: 'Gift', title: 'A gift like no other', body: 'Give someone a whole universe of knowledge. Lifetime access is a thoughtful, lasting gift for the curious people you love.' },
 ]
 
-const PLAN_INCLUDES = [
-  'All 9 subjects: 136 worlds, 880+ interactive lessons',
-  'Every future subject & update, included free',
-  'Interactive sims, quizzes & spaced-retrieval practice',
-  'Badges, streaks & your own learning journey',
-  'Yours forever. One payment, no subscription',
-]
 
 export function Landing() {
   const reduce = useReducedMotion()

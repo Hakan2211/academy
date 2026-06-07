@@ -4,6 +4,7 @@ import { useSuspenseQuery, useQuery } from '@tanstack/react-query'
 import { api } from '../../convex/_generated/api'
 import { CategoryOverworld } from '#/components/ui/CategoryOverworld'
 import type { OverworldUnit } from '#/components/ui/CategoryOverworld'
+import { useIsPremium } from '#/lib/billing'
 
 export const Route = createFileRoute('/subjects/$subjectSlug/')({
   component: SubjectPage,
@@ -23,10 +24,13 @@ function SubjectPage() {
     convexQuery(api.catalog.getSubjectOverview, { subjectSlug }),
   )
 
-  // Per-user progress; used to count completed lessons.
+  // Per-user completed-lesson set (one summary doc — bandwidth-lean).
   const progressQuery = useQuery(
-    convexQuery(api.progress.getProgressForUser, {}),
+    convexQuery(api.progress.getCompletedLessons, {}),
   )
+
+  // Lifetime-unlock entitlement; premium worlds show the gold ring for free users.
+  const { isPremium } = useIsPremium()
 
   if (!data) {
     return (
@@ -36,11 +40,7 @@ function SubjectPage() {
     )
   }
 
-  const completedIds = new Set(
-    (progressQuery.data ?? [])
-      .filter((p) => p.completed)
-      .map((p) => p.lessonId),
-  )
+  const completedIds = new Set(progressQuery.data ?? [])
 
   const units: Array<OverworldUnit> = data.units.map((unit) => ({
     slug: unit.slug,
@@ -49,6 +49,7 @@ function SubjectPage() {
     accentColor: unit.accentColor,
     done: unit.lessonIds.filter((id) => completedIds.has(id)).length,
     total: unit.lessonCount,
+    requiresPremium: unit.requiresPremium,
   }))
 
   if (units.length === 0) {
@@ -65,6 +66,7 @@ function SubjectPage() {
       subjectName={data.subject.name}
       subjectColor={data.subject.color}
       units={units}
+      isPremium={isPremium}
     />
   )
 }

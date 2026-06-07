@@ -5,6 +5,7 @@ import { convexQuery } from '@convex-dev/react-query'
 import { useQuery } from '@tanstack/react-query'
 import { api } from '../../../convex/_generated/api'
 import { xpToNextLevel } from '#/lib/xp'
+import { useIsPremium } from '#/lib/billing'
 import { BADGES, badgeImage, badgeMeta } from '#/lib/badges'
 import { Icon } from '#/components/ui/Icon'
 
@@ -27,8 +28,9 @@ export function Dashboard() {
   const resumeQ = useQuery(
     convexQuery(api.catalog.getResumePoint, { subjectSlug: SUBJECT }),
   )
+  // Completed-lesson set from the one-doc progress summary (bandwidth-lean).
   const progressQ = useQuery(
-    convexQuery(api.progress.getProgressForUser, {}),
+    convexQuery(api.progress.getCompletedLessons, {}),
   )
   const overviewQ = useQuery(
     convexQuery(api.catalog.getSubjectOverview, { subjectSlug: SUBJECT }),
@@ -48,9 +50,7 @@ export function Dashboard() {
   const completed = useMemo(
     () =>
       new Set(
-        (progressQ.data ?? [])
-          .filter((p) => p.completed)
-          .map((p) => String(p.lessonId)),
+        progressQ.data ?? [],
       ),
     [progressQ.data],
   )
@@ -196,9 +196,14 @@ function ContinueHero({
     lessonNumber: number | null
     unitLessonCount: number | null
     accentColor: string | null
+    requiresPremium?: boolean | null
   } | null
 }) {
   const accent = resume?.accentColor ?? ACCENT
+  // A free user whose next lesson sits in a premium world gets an honest
+  // gold "Unlock" CTA instead of a Resume that dead-ends at the gate.
+  const { isPremium } = useIsPremium()
+  const premiumNext = resume?.requiresPremium === true && isPremium === false
 
   if (!resume || resume.state === 'done') {
     const done = resume?.state === 'done'
@@ -250,17 +255,31 @@ function ContinueHero({
           {resume.unitName} · Lesson {resume.lessonNumber} of {resume.unitLessonCount}
         </p>
       </div>
-      <Link
-        to="/learn/$"
-        params={{ _splat: contentSlug }}
-        className="group inline-flex shrink-0 items-center gap-2 rounded-xl px-5 py-3 font-semibold text-white transition-all hover:brightness-110 active:scale-[0.98]"
-        style={{
-          background: `linear-gradient(105deg, ${accent}, color-mix(in srgb, ${accent} 50%, white))`,
-          boxShadow: `0 14px 36px -12px ${accent}`,
-        }}
-      >
-        <Icon name="Play" size={18} /> {isStart ? 'Start' : 'Resume'}
-      </Link>
+      {premiumNext ? (
+        <Link
+          to="/upgrade"
+          className="group inline-flex shrink-0 items-center gap-2 rounded-xl px-5 py-3 font-semibold text-[#1a1304] transition-all hover:brightness-110 active:scale-[0.98]"
+          style={{
+            background:
+              'linear-gradient(105deg, var(--color-warn), color-mix(in srgb, var(--color-warn) 60%, white))',
+            boxShadow: '0 14px 36px -12px var(--color-warn)',
+          }}
+        >
+          <Icon name="Crown" size={18} /> Unlock
+        </Link>
+      ) : (
+        <Link
+          to="/learn/$"
+          params={{ _splat: contentSlug }}
+          className="group inline-flex shrink-0 items-center gap-2 rounded-xl px-5 py-3 font-semibold text-white transition-all hover:brightness-110 active:scale-[0.98]"
+          style={{
+            background: `linear-gradient(105deg, ${accent}, color-mix(in srgb, ${accent} 50%, white))`,
+            boxShadow: `0 14px 36px -12px ${accent}`,
+          }}
+        >
+          <Icon name="Play" size={18} /> {isStart ? 'Start' : 'Resume'}
+        </Link>
+      )}
     </Card>
   )
 }

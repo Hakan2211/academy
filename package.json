@@ -17,6 +17,7 @@
     "@auth/core": "^0.37.0",
     "@convex-dev/auth": "^0.0.93",
     "@convex-dev/react-query": "^0.1.0",
+    "@convex-dev/stripe": "^0.1.4",
     "@mdx-js/react": "^3.1.1",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
