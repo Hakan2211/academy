@@ -1,4 +1,4 @@
-# Academy — Tasks & Handoff
+# Orbisle — Tasks & Handoff
 
 > Pick-up note for the next session. Point Claude at this file to resume.
 > Last worked: 2026-05-31. Project: gamified visual science app (Physics first).

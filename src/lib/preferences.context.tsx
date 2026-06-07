@@ -8,7 +8,7 @@ import { MotionConfig } from 'motion/react'
 // today is "reduce motion", bridged into Motion via <MotionConfig> below so that
 // every existing useReducedMotion() call across the app honors it.
 
-const STORAGE_KEY = 'academy:reduce-motion'
+const STORAGE_KEY = 'orbisle:reduce-motion'
 
 type Preferences = {
   reduceMotion: boolean

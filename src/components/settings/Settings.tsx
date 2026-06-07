@@ -196,7 +196,7 @@ export function Settings() {
           </motion.div>
 
           <motion.p {...rise(5)} className="px-1 text-center text-xs text-muted">
-            Academy · Phase 1 — your progress saves to your account.
+            Orbisle · Phase 1 — your progress saves to your account.
           </motion.p>
         </div>
       </div>

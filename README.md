@@ -1,4 +1,4 @@
-# Academy — Learn science, visually
+# Orbisle — Learn science, visually
 
 A gamified visual learning platform (think Brilliant × Blinkist × Mondly, for
 science). Phase 1 is the **web app**, starting with **Physics**. Lessons are

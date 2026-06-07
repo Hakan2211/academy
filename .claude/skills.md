@@ -1,4 +1,4 @@
-# Academy — Development Playbook (skills)
+# Orbisle — Development Playbook (skills)
 
 Practical recipes for building this app. See `VISION.md` for the why,
 `README.md` for setup. This file is reference material for development sessions.

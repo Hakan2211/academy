@@ -98,7 +98,7 @@ export function Landing() {
               <img src="/logo.png" alt="" className="h-9 w-9" />
             </span>
           </span>
-          <span className="text-lg font-extrabold tracking-tight text-white">Academy</span>
+          <span className="text-lg font-extrabold tracking-tight text-white">Orbisle</span>
         </div>
         <div className="flex items-center gap-2">
           <a
@@ -231,7 +231,7 @@ export function Landing() {
             Made for the curious, at any age
           </h2>
           <p className={`mt-3 ${TXT_BODY}`}>
-            Whether it’s for you or someone you love, Academy turns curiosity into a habit.
+            Whether it’s for you or someone you love, Orbisle turns curiosity into a habit.
           </p>
         </motion.div>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -348,7 +348,7 @@ export function Landing() {
         </motion.div>
 
         <p className={`mt-12 text-center text-xs ${TXT_SUBTLE}`}>
-          Academy · Learn science, visually
+          Orbisle · Learn science, visually
         </p>
       </section>
     </div>

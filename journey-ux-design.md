@@ -1,4 +1,4 @@
-# Academy — Journey UX Design Spec
+# Orbisle — Journey UX Design Spec
 
 > Design-only spec for the gamified "journey" UX. **No code yet** — build begins
 > after the in-browser QA pass (needs the Convex login). Authored 2026-05-30.
@@ -55,7 +55,7 @@ Lives in `__root.tsx` so it's on every page. Slim, sticky top, ~52px.
 
 ```
 ┌────────────────────────────────────────────────────────────────┐
-│  ⚛ Academy        Lv.7  ▓▓▓▓▓▓▓░░░  40/100 XP      🔥 5    🏅 3  │
+│  ⚛ Orbisle        Lv.7  ▓▓▓▓▓▓▓░░░  40/100 XP      🔥 5    🏅 3  │
 └────────────────────────────────────────────────────────────────┘
         logo/home        level + xp bar            streak   badges
 ```

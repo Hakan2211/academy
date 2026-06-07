@@ -7,7 +7,7 @@ What remains is connecting YOUR Stripe account. ~15 minutes, test mode first.
 
 1. [dashboard.stripe.com](https://dashboard.stripe.com) → toggle **Test mode** (top right).
 2. Product catalog → **Add product**:
-   - Name: `Academy — Lifetime access`
+   - Name: `Orbisle — Lifetime access`
    - Price: **$199.00**, **One-off** (not recurring)
 3. Copy the price id (`price_...`).
 

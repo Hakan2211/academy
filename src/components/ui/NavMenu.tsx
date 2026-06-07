@@ -73,7 +73,7 @@ export function NavMenu({ open, onClose }: { open: boolean; onClose: () => void 
                 >
                   <img src="/logo.png" alt="" className="h-7 w-7" />
                 </span>
-                <span className="text-lg font-extrabold tracking-tight">Academy</span>
+                <span className="text-lg font-extrabold tracking-tight">Orbisle</span>
               </div>
               <button
                 type="button"

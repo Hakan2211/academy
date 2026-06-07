@@ -1,4 +1,4 @@
-# Academy — Visual Design & Architecture Plan
+# Orbisle — Visual Design & Architecture Plan
 
 > The plan for taking the app to a top-tier ("Brilliant × a premium sci-fi game") look.
 > Started 2026-05-31. Companion to `journey-ux-design.md` (UX/IA) and
