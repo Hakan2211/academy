@@ -36,6 +36,18 @@ registerRoutes(http, components.stripe, {
           typeof intent.customer === 'string' ? intent.customer : undefined,
       })
     },
+    // The component has no customer.deleted handler (its mapping row goes
+    // stale and getOrCreateCustomer keeps returning the dead id, breaking
+    // checkout with "No such customer"). Orphan the row: re-point userId AND
+    // email away so neither lookup path matches a real user again.
+    'customer.deleted': async (ctx, event) => {
+      const customer = event.data.object
+      await ctx.runMutation(components.stripe.public.createOrUpdateCustomer, {
+        stripeCustomerId: customer.id,
+        email: `deleted+${customer.id}@invalid.local`,
+        metadata: { userId: `deleted:${customer.id}` },
+      })
+    },
     // Belt-and-braces second chance: a paid checkout session also grants. The
     // session itself carries our metadata only when set at the session level,
     // so this fires only for sessions whose metadata.userId is present.

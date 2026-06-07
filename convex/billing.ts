@@ -113,20 +113,9 @@ export const createCheckoutSession = action({
       )
     }
 
-    const customer = await stripe.getOrCreateCustomer(ctx, {
-      userId: profile.userId,
-      email: profile.email ?? undefined,
-      name: profile.name ?? undefined,
-    })
-    await ctx.runMutation(internal.billing.setStripeCustomerId, {
-      userId,
-      stripeCustomerId: customer.customerId,
-    })
-
-    const session = await stripe.createCheckoutSession(ctx, {
+    const checkoutArgs = {
       priceId,
-      customerId: customer.customerId,
-      mode: 'payment',
+      mode: 'payment' as const,
       successUrl: `${siteUrl}/upgrade?status=success`,
       cancelUrl: `${siteUrl}/upgrade?status=cancelled`,
       // Attribution keys the webhooks read to grant the unlock: the payment
@@ -134,7 +123,70 @@ export const createCheckoutSession = action({
       // copy feeds checkout.session.completed (belt-and-braces).
       metadata: { userId: profile.userId },
       paymentIntentMetadata: { userId: profile.userId },
+    }
+
+    const customer = await stripe.getOrCreateCustomer(ctx, {
+      userId: profile.userId,
+      email: profile.email ?? undefined,
+      name: profile.name ?? undefined,
+    })
+    let customerId = customer.customerId
+
+    let session: { url: string | null }
+    try {
+      session = await stripe.createCheckoutSession(ctx, {
+        ...checkoutArgs,
+        customerId,
+      })
+    } catch (e) {
+      if (!(e instanceof Error) || !e.message.includes('No such customer')) {
+        throw e
+      }
+      // Self-heal a stale mapping: the Stripe customer was deleted (dashboard
+      // cleanup / GDPR) but the component kept its row — getOrCreateCustomer
+      // keeps returning the dead id. Orphan the row (re-point its userId AND
+      // email away so neither lookup matches), mint a fresh customer, retry.
+      await ctx.runMutation(components.stripe.public.createOrUpdateCustomer, {
+        stripeCustomerId: customerId,
+        email: `deleted+${customerId}@invalid.local`,
+        metadata: { userId: `deleted:${customerId}` },
+      })
+      const fresh = await stripe.createCustomer(ctx, {
+        email: profile.email ?? undefined,
+        name: profile.name ?? undefined,
+        metadata: { userId: profile.userId },
+        // Deliberately NO idempotencyKey: getOrCreateCustomer keys creation on
+        // the userId, and Stripe replays idempotent requests for 24h — a keyed
+        // retry would hand back the DELETED customer again.
+      })
+      customerId = fresh.customerId
+      session = await stripe.createCheckoutSession(ctx, {
+        ...checkoutArgs,
+        customerId,
+      })
+    }
+
+    await ctx.runMutation(internal.billing.setStripeCustomerId, {
+      userId,
+      stripeCustomerId: customerId,
     })
     return { url: session.url }
+  },
+})
+
+// Support/dev helper: revoke the lifetime unlock (after a refund, or to
+// re-test checkout in dev). Run:
+//   npx convex run billing:revokePremium '{"email":"user@example.com"}'
+export const revokePremium = internalMutation({
+  args: { email: v.string() },
+  returns: v.boolean(),
+  handler: async (ctx, { email }) => {
+    const user = await ctx.db
+      .query('users')
+      .withIndex('email', (q) => q.eq('email', email))
+      .unique()
+    if (!user) return false
+    await ctx.db.patch(user._id, { isPremium: false, premiumSince: undefined })
+    return true
   },
 })
